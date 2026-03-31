@@ -6,6 +6,17 @@ import { parseArmyList, getCasters, getShootingUnits, getMovementUnits } from '.
 import { RANGED_WEAPONS } from './weapons.js'
 import { findMagicItem } from './magic-items.js'
 import { SPECIAL_RULES } from './special-rules.js'
+import RULES_INDEX from './rules-index-export.json'
+
+// Army name → rules index key overrides (both lowercase)
+const UNIT_NAME_ALIASES = {
+  'bloodwrack medusas': 'bloodwrack medusa',
+}
+
+function resolveRulesIndexKey(name) {
+  const key = name.toLowerCase()
+  return UNIT_NAME_ALIASES[key] || key
+}
 import {
   getArmy, saveArmy, clearArmy, clearAll,
   getSpellSelections, saveSpellSelections,
@@ -447,6 +458,9 @@ function renderPhaseContext(army, phase, subPhase) {
   if (subPhase.showCasters) html += renderCasterContext(army, ['enchantment', 'hex'])
   if (subPhase.showShooting) html += renderShootingContext(army)
 
+  // Charge context
+  if (subPhase.id === 'declare-charges') html += renderChargeContext(army)
+
   // Spell type contexts for specific sub-phases
   if (subPhase.id === 'choose-target') html += renderCasterContext(army, ['magic-missile', 'magical-vortex'])
   if (subPhase.id === 'remaining-moves') html += renderCasterContext(army, ['conveyance'])
@@ -615,24 +629,55 @@ function renderChargeContext(army) {
       <h3 class="text-sm font-bold text-wh-phase-combat mb-3">Charge Ranges</h3>
       <div class="space-y-1">
         ${units.map(u => {
-          const mv = u.stats?.[0]?.M
+          // Try unit stats first, fall back to rules index lookup (lowercase name)
+          let mv = u.stats?.[0]?.M
+          if (!mv || mv === '-') {
+            const entry = RULES_INDEX[resolveRulesIndexKey(u.name)]
+            if (entry?.stats) {
+              // Find last stat line with a numeric M (mount line for cavalry)
+              for (let i = entry.stats.length - 1; i >= 0; i--) {
+                if (entry.stats[i].M && entry.stats[i].M !== '-') {
+                  mv = entry.stats[i].M
+                  break
+                }
+              }
+            }
+          }
           const allRules = [...parseUnitRules(u.specialRules), ...u.equipment]
           const hasSwiftstride = allRules.some(r => normaliseRuleName(r).toLowerCase() === 'swiftstride')
-          const maxCharge = mv != null ? (hasSwiftstride ? Number(mv) + 6 + 3 : Number(mv) + 6) : null
-          const chargeStr = mv != null ? (hasSwiftstride ? `M${mv}+6+3` : `M${mv}+6`) : null
+
+          // Check for Fly (X) — extract the numeric fly movement value
+          const flyRule = allRules.find(r => /^fly\s*\(/i.test(r.trim()))
+          const flyMatch = flyRule ? flyRule.match(/\((\d+)\)/) : null
+          const flyMv = flyMatch ? Number(flyMatch[1]) : null
+          const hasFly = flyMv != null
+
+          // Fly units use fly movement for charges; others use base M
+          const chargeMv = hasFly ? flyMv : (mv != null ? Number(mv) : null)
+          const swiftBonus = hasSwiftstride ? 3 : 0
+          const maxCharge = chargeMv != null ? chargeMv + 6 + swiftBonus : null
+
+          // Build the formula string
+          let chargeStr = null
+          if (chargeMv != null) {
+            const mvLabel = hasFly ? `Fly ${flyMv}` : `M${mv}`
+            chargeStr = hasSwiftstride ? `${mvLabel} + 6 + 3` : `${mvLabel} + 6`
+          }
+
           return `
             <div class="flex justify-between items-center text-sm py-1 px-2 rounded bg-wh-card">
               <div>
                 <span class="text-wh-text">${u.name}</span>
                 ${u.strength > 1 ? `<span class="text-wh-muted ml-1">x${u.strength}</span>` : ''}
                 ${u.magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${u.magicWeapons.join(', ')}</span>` : ''}
+                ${hasFly ? `<span class="text-wh-phase-movement ml-1 text-xs">Fly</span><span class="text-wh-muted ml-1 text-xs">(M${mv})</span>` : ''}
                 ${hasSwiftstride ? '<span class="text-wh-phase-movement ml-1 text-xs">Swiftstride</span>' : ''}
               </div>
               <div class="text-right">
                 ${maxCharge != null
-                  ? `<span class="text-wh-phase-combat font-mono text-xs">max ${maxCharge}"</span>
-                     <span class="text-wh-muted font-mono text-xs ml-1">(${chargeStr})</span>`
-                  : `<span class="text-wh-muted font-mono text-xs">M?${hasSwiftstride ? '+6+3' : '+6'}</span>`
+                  ? `<span class="text-wh-muted font-mono text-xs">${chargeStr} =</span>
+                     <span class="text-wh-phase-combat font-mono text-xs ml-1">${maxCharge}"</span>`
+                  : `<span class="text-wh-muted font-mono text-xs">M? + 6${hasSwiftstride ? ' + 3' : ''}</span>`
                 }
               </div>
             </div>
