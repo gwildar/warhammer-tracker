@@ -13,23 +13,23 @@ const UNIT_NAME_ALIASES = {
   'bloodwrack medusas': 'bloodwrack medusa',
 }
 
-// Mounts with Fly — m = base movement, f = fly movement
+// Mounts with Fly — m = base movement, f = fly movement, s = swiftstride
 const FLYING_MOUNTS = {
-  'hippogryph': { m: 7, f: 9 },
-  'royal pegasus': { m: 8, f: 10 },
-  'barded pegasus': { m: 7, f: 10 },
-  'pegasus': { m: 8, f: 10 },
-  'great eagle': { m: 2, f: 10 },
-  'wyvern': { m: 4, f: 9 },
-  'manticore': { m: 6, f: 9 },
-  'griffon': { m: 6, f: 9 },
-  'star dragon': { m: 6, f: 10 },
-  'chaos dragon': { m: 6, f: 10 },
-  'black dragon': { m: 6, f: 10 },
-  'moon dragon': { m: 6, f: 10 },
-  'forest dragon': { m: 6, f: 10 },
-  'necrolith bone dragon': { m: 6, f: 9 },
-  'sun dragon': { m: 6, f: 10 },
+  'hippogryph': { m: 7, f: 9, s: true },
+  'royal pegasus': { m: 8, f: 10, s: true },
+  'barded pegasus': { m: 7, f: 10, s: true },
+  'pegasus': { m: 8, f: 10, s: true },
+  'great eagle': { m: 2, f: 10, s: true },
+  'wyvern': { m: 4, f: 9, s: true },
+  'manticore': { m: 6, f: 9, s: true  },
+  'griffon': { m: 6, f: 9, s: true },
+  'star dragon': { m: 6, f: 10, s: true  },
+  'chaos dragon': { m: 6, f: 10, s: true  },
+  'black dragon': { m: 6, f: 10, s: true  },
+  'moon dragon': { m: 6, f: 10, s: true },
+  'forest dragon': { m: 6, f: 10, s: true },
+  'necrolith bone dragon': { m: 6, f: 9, s: true },
+  'sun dragon': { m: 6, f: 10, s: true },
 }
 
 function resolveRulesIndexKey(name) {
@@ -112,7 +112,7 @@ function renderSetupScreen() {
       <header class="p-4 border-b border-wh-border">
         <div class="flex justify-between items-center max-w-2xl mx-auto">
           <div></div>
-          <h1 class="text-2xl font-bold text-wh-accent text-center">The Old World — Turn Tracker <span class="text-xs text-wh-muted font-normal">v${version}</span></h1>
+          <h1 class="text-2xl font-bold text-wh-accent text-center">The Old World — Turner Overdrive <span class="text-xs text-wh-muted font-normal">v${version}</span></h1>
           <button id="about-btn" class="text-sm text-wh-muted hover:text-wh-accent transition-colors">About</button>
         </div>
       </header>
@@ -673,17 +673,18 @@ function renderChargeContext(army) {
         ${units.map(u => {
           const mv = resolveMovement(u)
           const allRules = [...parseUnitRules(u.specialRules), ...u.equipment]
-          const hasSwiftstride = allRules.some(r => normaliseRuleName(r).toLowerCase() === 'swiftstride')
+          const unitSwiftstride = allRules.some(r => normaliseRuleName(r).toLowerCase() === 'swiftstride')
 
           // Check for Fly — unit special rules first, then flying mount lookup
           const flyRule = allRules.find(r => /^fly\s*\(/i.test(r.trim()))
           const flyMatch = flyRule ? flyRule.match(/\((\d+)\)/) : null
-          const mountFly = u.mount ? FLYING_MOUNTS[u.mount.toLowerCase()] : null
-          const flyMv = flyMatch ? Number(flyMatch[1]) : (mountFly?.f ?? null)
+          const mountData = u.mount ? FLYING_MOUNTS[u.mount.toLowerCase()] : null
+          const flyMv = flyMatch ? Number(flyMatch[1]) : (mountData?.f ?? null)
           const hasFly = flyMv != null
+          const hasSwiftstride = unitSwiftstride || (mountData?.s ?? false)
 
           // Base movement — for fly mounts use mount's m value
-          const baseMv = mountFly ? mountFly.m : (mv != null ? Number(mv) : null)
+          const baseMv = mountData ? mountData.m : (mv != null ? Number(mv) : null)
           const swiftBonus = hasSwiftstride ? 3 : 0
 
           // Ground charge: M + 6 (+ 3 if swiftstride)
