@@ -722,7 +722,6 @@ function renderChargeContext(army) {
                   <span class="text-wh-phase-movement font-mono text-xs ml-1">${flyCharge}"</span>
                 </div>
               ` : ''}
-              </div>
             </div>
           `
         }).join('')}
