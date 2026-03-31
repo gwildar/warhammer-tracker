@@ -396,7 +396,7 @@ function renderGameScreen(army) {
       </header>
 
       <!-- Main content -->
-      <main class="flex-1 overflow-y-auto p-4 pb-24">
+      <main class="flex-1 overflow-y-auto p-4">
         <div class="max-w-2xl mx-auto">
           <!-- Phase & sub-phase heading -->
           <div class="mb-4">
@@ -423,7 +423,7 @@ function renderGameScreen(army) {
       </main>
 
       <!-- Footer nav -->
-      <footer class="fixed bottom-0 left-0 right-0 bg-wh-surface border-t border-wh-border p-3">
+      <footer class="sticky bottom-0 bg-wh-surface border-t border-wh-border p-3">
         <div class="max-w-2xl mx-auto flex gap-3">
           <button id="prev-btn"
             class="flex-1 py-3 rounded-lg font-semibold text-lg transition-colors
