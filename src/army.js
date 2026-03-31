@@ -1,27 +1,11 @@
+import { LORES } from './spells.js'
+
 const UNIT_CATEGORIES = ['characters', 'core', 'special', 'rare', 'mercenaries', 'allies', 'lords', 'heroes']
 
-const ARMY_FACTION_LORES = {
-  'dark-elves': ['naggaroth'],
-  'high-elves': ['saphery'],
-  'wood-elves': ['athel-loren', 'the-wilds'],
-  'bretonnia': ['the-lady'],
-  'empire-of-man': [],
-  'dwarfen-mountain-holds': [],
-  'tomb-kings-of-khemri': ['nehekhara'],
-  'vampire-counts': ['undeath'],
-  'orc-and-goblin-tribes': ['gork', 'mork', 'troll-magic'],
-  'warriors-of-chaos': ['chaos', 'shadowlands'],
-  'daemons-of-chaos': ['daemons'],
-  'beastmen': ['beasts', 'primal-magic'],
-  'skaven': ['horned-rat'],
-  'lizardmen': ['lustria'],
-  'ogre-kingdoms': ['great-maw'],
-  'chaos-dwarfs': ['hashut'],
-  'grand-cathay': ['yang', 'yin'],
-}
-
-export function getFactionLores(armySlug) {
-  return ARMY_FACTION_LORES[armySlug] || []
+// Build a map from lore display name → lore key, e.g. "lore of naggaroth" → "naggaroth"
+const LORE_NAME_TO_KEY = {}
+for (const [key, lore] of Object.entries(LORES)) {
+  LORE_NAME_TO_KEY[lore.name.toLowerCase()] = key
 }
 
 export function parseArmyList(json) {
@@ -58,6 +42,7 @@ function parseUnit(raw, category) {
     isCaster: false,
     lores: [],
     activeLore: raw.activeLore || null,
+    factionLores: [],
     magicItems: [],
     magicWeapons: [],
     hasLoreFamiliar: false,
@@ -132,6 +117,18 @@ function parseUnit(raw, category) {
   }
   if (raw.activeLore) {
     unit.isCaster = true
+  }
+
+  // Faction lores from special rules (e.g. "Lore of Naggaroth" → naggaroth key)
+  if (unit.specialRules) {
+    const rules = unit.specialRules.split(',').map(r => r.trim())
+    for (const rule of rules) {
+      // Strip {renegade}, {dark elves} etc. and trailing *
+      const cleaned = rule.replace(/\s*\{[^}]*\}/g, '').replace(/\*$/, '').trim().toLowerCase()
+      if (LORE_NAME_TO_KEY[cleaned] && !unit.factionLores.includes(LORE_NAME_TO_KEY[cleaned])) {
+        unit.factionLores.push(LORE_NAME_TO_KEY[cleaned])
+      }
+    }
   }
 
   // Stats

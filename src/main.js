@@ -1,7 +1,7 @@
 import './style.css'
 import { PHASES, getAllSubPhases } from './phases.js'
 import { LORES, getSpellTypeLabel } from './spells.js'
-import { parseArmyList, getCasters, getShootingUnits, getMovementUnits, getCombatUnits, getFactionLores } from './army.js'
+import { parseArmyList, getCasters, getShootingUnits, getMovementUnits, getCombatUnits } from './army.js'
 import { SPECIAL_RULES } from './special-rules.js'
 import {
   getArmy, saveArmy, clearArmy,
@@ -171,7 +171,6 @@ function renderUnitList(army) {
 
 function renderSpellSelection(army, casters) {
   const selections = getSpellSelections()
-  const factionLoreKeys = getFactionLores(army.armySlug)
 
   return `
     <div class="bg-wh-surface rounded-lg border border-wh-border p-4">
@@ -212,7 +211,7 @@ function renderSpellSelection(army, casters) {
             `}
 
             <div class="spell-list" data-unit-id="${caster.id}" data-lore="${coreLoreKey || ''}">
-              ${coreLoreKey ? renderCasterSpells(coreLoreKey, caster, unitSelections, signatureSource, factionLoreKeys) : '<p class="text-sm text-wh-muted">Select a lore above</p>'}
+              ${coreLoreKey ? renderCasterSpells(coreLoreKey, caster, unitSelections, signatureSource, caster.factionLores) : '<p class="text-sm text-wh-muted">Select a lore above</p>'}
             </div>
           </div>
         `
@@ -753,8 +752,6 @@ function bindArmyActions() {
 }
 
 function bindSpellSelectors(army) {
-  const factionLoreKeys = getFactionLores(army.armySlug)
-
   // Lore dropdowns
   document.querySelectorAll('.lore-select').forEach(select => {
     select.addEventListener('change', () => {
@@ -762,8 +759,8 @@ function bindSpellSelectors(army) {
       const loreKey = select.value
 
       // Update army caster's activeLore
-      const unit = army.units.find(u => u.id === unitId)
-      if (unit) unit.activeLore = loreKey
+      const caster = army.units.find(u => u.id === unitId)
+      if (caster) caster.activeLore = loreKey
       saveArmy(army)
 
       // Reset spell selections for this caster
@@ -775,8 +772,7 @@ function bindSpellSelectors(army) {
       const container = document.querySelector(`.spell-list[data-unit-id="${unitId}"]`)
       if (container) {
         container.dataset.lore = loreKey
-        const caster = army.units.find(u => u.id === unitId)
-        container.innerHTML = renderCasterSpells(loreKey, caster, selections[unitId], 'core', factionLoreKeys)
+        container.innerHTML = renderCasterSpells(loreKey, caster, selections[unitId], 'core', caster.factionLores)
         bindSpellCheckboxes()
         bindSignatureRadios(army)
       }
