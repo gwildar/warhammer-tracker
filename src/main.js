@@ -13,9 +13,51 @@ const UNIT_NAME_ALIASES = {
   'bloodwrack medusas': 'bloodwrack medusa',
 }
 
+// Mounts with Fly — m = base movement, f = fly movement
+const FLYING_MOUNTS = {
+  'hippogryph': { m: 7, f: 9 },
+  'royal pegasus': { m: 8, f: 10 },
+  'barded pegasus': { m: 7, f: 10 },
+  'pegasus': { m: 8, f: 10 },
+  'great eagle': { m: 2, f: 10 },
+  'wyvern': { m: 4, f: 9 },
+  'manticore': { m: 6, f: 9 },
+  'griffon': { m: 6, f: 9 },
+  'star dragon': { m: 6, f: 10 },
+  'chaos dragon': { m: 6, f: 10 },
+  'black dragon': { m: 6, f: 10 },
+  'moon dragon': { m: 6, f: 10 },
+  'forest dragon': { m: 6, f: 10 },
+  'necrolith bone dragon': { m: 6, f: 9 },
+  'sun dragon': { m: 6, f: 10 },
+}
+
 function resolveRulesIndexKey(name) {
   const key = name.toLowerCase()
   return UNIT_NAME_ALIASES[key] || key
+}
+
+function lookupMovement(name) {
+  const entry = RULES_INDEX[resolveRulesIndexKey(name)]
+  if (!entry?.stats) return null
+  // Scan from last to first — mount stat line is typically last
+  for (let i = entry.stats.length - 1; i >= 0; i--) {
+    if (entry.stats[i].M && entry.stats[i].M !== '-') return entry.stats[i].M
+  }
+  return null
+}
+
+function resolveMovement(unit) {
+  // 1. Inline stats from army file
+  const inlineMv = unit.stats?.[0]?.M
+  if (inlineMv && inlineMv !== '-') return inlineMv
+  // 2. Mount lookup (characters on mounts)
+  if (unit.mount) {
+    const mountMv = lookupMovement(unit.mount)
+    if (mountMv) return mountMv
+  }
+  // 3. Unit name lookup (cavalry etc.)
+  return lookupMovement(unit.name)
 }
 import {
   getArmy, saveArmy, clearArmy, clearAll,
@@ -629,56 +671,57 @@ function renderChargeContext(army) {
       <h3 class="text-sm font-bold text-wh-phase-combat mb-3">Charge Ranges</h3>
       <div class="space-y-1">
         ${units.map(u => {
-          // Try unit stats first, fall back to rules index lookup (lowercase name)
-          let mv = u.stats?.[0]?.M
-          if (!mv || mv === '-') {
-            const entry = RULES_INDEX[resolveRulesIndexKey(u.name)]
-            if (entry?.stats) {
-              // Find last stat line with a numeric M (mount line for cavalry)
-              for (let i = entry.stats.length - 1; i >= 0; i--) {
-                if (entry.stats[i].M && entry.stats[i].M !== '-') {
-                  mv = entry.stats[i].M
-                  break
-                }
-              }
-            }
-          }
+          const mv = resolveMovement(u)
           const allRules = [...parseUnitRules(u.specialRules), ...u.equipment]
           const hasSwiftstride = allRules.some(r => normaliseRuleName(r).toLowerCase() === 'swiftstride')
 
-          // Check for Fly (X) — extract the numeric fly movement value
+          // Check for Fly — unit special rules first, then flying mount lookup
           const flyRule = allRules.find(r => /^fly\s*\(/i.test(r.trim()))
           const flyMatch = flyRule ? flyRule.match(/\((\d+)\)/) : null
-          const flyMv = flyMatch ? Number(flyMatch[1]) : null
+          const mountFly = u.mount ? FLYING_MOUNTS[u.mount.toLowerCase()] : null
+          const flyMv = flyMatch ? Number(flyMatch[1]) : (mountFly?.f ?? null)
           const hasFly = flyMv != null
 
-          // Fly units use fly movement for charges; others use base M
-          const chargeMv = hasFly ? flyMv : (mv != null ? Number(mv) : null)
+          // Base movement — for fly mounts use mount's m value
+          const baseMv = mountFly ? mountFly.m : (mv != null ? Number(mv) : null)
           const swiftBonus = hasSwiftstride ? 3 : 0
-          const maxCharge = chargeMv != null ? chargeMv + 6 + swiftBonus : null
 
-          // Build the formula string
-          let chargeStr = null
-          if (chargeMv != null) {
-            const mvLabel = hasFly ? `Fly ${flyMv}` : `M${mv}`
-            chargeStr = hasSwiftstride ? `${mvLabel} + 6 + 3` : `${mvLabel} + 6`
-          }
+          // Ground charge: M + 6 (+ 3 if swiftstride)
+          const groundCharge = baseMv != null ? baseMv + 6 + swiftBonus : null
+          const groundStr = baseMv != null
+            ? (hasSwiftstride ? `M${baseMv} + 6 + 3` : `M${baseMv} + 6`)
+            : null
+
+          // Fly charge: Fly + 6 (+ 3 if swiftstride)
+          const flyCharge = hasFly ? flyMv + 6 + swiftBonus : null
+          const flyStr = hasFly
+            ? (hasSwiftstride ? `Fly ${flyMv} + 6 + 3` : `Fly ${flyMv} + 6`)
+            : null
 
           return `
-            <div class="flex justify-between items-center text-sm py-1 px-2 rounded bg-wh-card">
-              <div>
-                <span class="text-wh-text">${u.name}</span>
-                ${u.strength > 1 ? `<span class="text-wh-muted ml-1">x${u.strength}</span>` : ''}
-                ${u.magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${u.magicWeapons.join(', ')}</span>` : ''}
-                ${hasFly ? `<span class="text-wh-phase-movement ml-1 text-xs">Fly</span><span class="text-wh-muted ml-1 text-xs">(M${mv})</span>` : ''}
-                ${hasSwiftstride ? '<span class="text-wh-phase-movement ml-1 text-xs">Swiftstride</span>' : ''}
+            <div class="text-sm py-1 px-2 rounded bg-wh-card">
+              <div class="flex justify-between items-center">
+                <div>
+                  <span class="text-wh-text">${u.name}</span>
+                  ${u.strength > 1 ? `<span class="text-wh-muted ml-1">x${u.strength}</span>` : ''}
+                  ${u.magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${u.magicWeapons.join(', ')}</span>` : ''}
+                  ${hasFly ? '<span class="text-wh-phase-movement ml-1 text-xs">Fly</span>' : ''}
+                  ${hasSwiftstride ? '<span class="text-wh-phase-movement ml-1 text-xs">Swiftstride</span>' : ''}
+                </div>
+                <div class="text-right">
+                  ${groundCharge != null
+                    ? `<span class="text-wh-muted font-mono text-xs">${groundStr} =</span>
+                       <span class="text-wh-phase-combat font-mono text-xs ml-1">${groundCharge}"</span>`
+                    : `<span class="text-wh-muted font-mono text-xs">M? + 6${hasSwiftstride ? ' + 3' : ''}</span>`
+                  }
+                </div>
               </div>
-              <div class="text-right">
-                ${maxCharge != null
-                  ? `<span class="text-wh-muted font-mono text-xs">${chargeStr} =</span>
-                     <span class="text-wh-phase-combat font-mono text-xs ml-1">${maxCharge}"</span>`
-                  : `<span class="text-wh-muted font-mono text-xs">M? + 6${hasSwiftstride ? ' + 3' : ''}</span>`
-                }
+              ${hasFly ? `
+                <div class="flex justify-end mt-0.5">
+                  <span class="text-wh-muted font-mono text-xs">${flyStr} =</span>
+                  <span class="text-wh-phase-movement font-mono text-xs ml-1">${flyCharge}"</span>
+                </div>
+              ` : ''}
               </div>
             </div>
           `
