@@ -180,7 +180,6 @@ function renderSpellSelection(army, casters) {
       ${casters.map(caster => {
         const coreLoreKey = caster.activeLore || (caster.lores.length > 0 ? caster.lores[0] : null)
         const unitSelections = selections[caster.id] || {}
-        const signatureSource = unitSelections.signatureSource || 'core'
 
         return `
           <div class="mb-6 last:mb-0 pb-4 border-b border-wh-border last:border-0">
@@ -211,7 +210,7 @@ function renderSpellSelection(army, casters) {
             `}
 
             <div class="spell-list" data-unit-id="${caster.id}" data-lore="${coreLoreKey || ''}">
-              ${coreLoreKey ? renderCasterSpells(coreLoreKey, caster, unitSelections, signatureSource, caster.factionLores) : '<p class="text-sm text-wh-muted">Select a lore above</p>'}
+              ${coreLoreKey ? renderCasterSpells(coreLoreKey, caster, unitSelections, caster.factionLores) : '<p class="text-sm text-wh-muted">Select a lore above</p>'}
             </div>
           </div>
         `
@@ -220,7 +219,7 @@ function renderSpellSelection(army, casters) {
   `
 }
 
-function renderCasterSpells(coreLoreKey, caster, unitSelections, signatureSource, factionLoreKeys) {
+function renderCasterSpells(coreLoreKey, caster, unitSelections, factionLoreKeys) {
   const coreLore = LORES[coreLoreKey]
   if (!coreLore) return `<p class="text-sm text-wh-muted">Unknown lore: ${coreLoreKey}</p>`
 
@@ -254,60 +253,43 @@ function renderCasterSpells(coreLoreKey, caster, unitSelections, signatureSource
   let html = ''
 
   // Signature spell section
-  if (hasFactionOption) {
-    html += `
-      <div class="mb-3">
-        <div class="text-xs text-wh-muted mb-1">Signature Spell (choose one):</div>
-        <div class="space-y-1">
-          <!-- Core signature options -->
-          ${coreSignatures.map(spell => {
-            const spellKey = `${coreLoreKey}:${spell.num}:${spell.name}`
-            const isSelected = signatureSource === 'core' && unitSelections[spellKey]
-            return `
-              <label class="flex items-center gap-2 py-1 px-2 rounded hover:bg-wh-card text-sm cursor-pointer">
-                <input type="radio" name="sig-${caster.id}" class="sig-radio accent-wh-purple"
-                  data-unit-id="${caster.id}" data-spell-key="${spellKey}" data-source="core"
-                  ${isSelected ? 'checked' : ''} />
-                <span class="font-mono text-xs text-wh-muted w-4">S</span>
-                <span class="text-wh-text flex-1">${spell.name}</span>
-                <span class="text-xs text-wh-muted">${coreLore.name}</span>
-                <span class="spell-type-${spell.type} text-xs">${getSpellTypeLabel(spell.type)}</span>
-                <span class="text-wh-accent font-mono text-xs">${spell.cv}</span>
-              </label>
-            `
-          }).join('')}
-
-          <!-- Faction signature options -->
-          ${factionSignatures.map(({ loreKey, loreName, spell }) => {
-            const spellKey = `${loreKey}:${spell.num}:${spell.name}`
-            const isSelected = signatureSource === `faction:${loreKey}:${spell.name}` && unitSelections[spellKey]
-            return `
-              <label class="flex items-center gap-2 py-1 px-2 rounded hover:bg-wh-card text-sm cursor-pointer">
-                <input type="radio" name="sig-${caster.id}" class="sig-radio accent-wh-purple"
-                  data-unit-id="${caster.id}" data-spell-key="${spellKey}" data-source="faction:${loreKey}:${spell.name}"
-                  ${isSelected ? 'checked' : ''} />
-                <span class="font-mono text-xs text-wh-muted w-4">S</span>
-                <span class="text-wh-text flex-1">${spell.name}</span>
-                <span class="text-xs text-wh-purple">${loreName}</span>
-                <span class="spell-type-${spell.type} text-xs">${getSpellTypeLabel(spell.type)}</span>
-                <span class="text-wh-accent font-mono text-xs">${spell.cv}</span>
-              </label>
-            `
-          }).join('')}
-        </div>
+  html += `
+    <div class="mb-3">
+      <div class="text-xs text-wh-muted mb-1">Signature Spells:</div>
+      <div class="space-y-1">
+        ${coreSignatures.map(spell => {
+          const spellKey = `${coreLoreKey}:${spell.num}:${spell.name}`
+          return `
+            <label class="flex items-center gap-2 py-1 px-2 rounded hover:bg-wh-card text-sm cursor-pointer">
+              <input type="checkbox" class="spell-checkbox accent-wh-purple"
+                data-unit-id="${caster.id}" data-spell-key="${spellKey}"
+                ${unitSelections[spellKey] ? 'checked' : ''} />
+              <span class="font-mono text-xs text-wh-muted w-4">S</span>
+              <span class="text-wh-text flex-1">${spell.name}</span>
+              <span class="text-xs text-wh-muted">${coreLore.name}</span>
+              <span class="spell-type-${spell.type} text-xs">${getSpellTypeLabel(spell.type)}</span>
+              <span class="text-wh-accent font-mono text-xs">${spell.cv}</span>
+            </label>
+          `
+        }).join('')}
+        ${factionSignatures.map(({ loreKey, loreName, spell }) => {
+          const spellKey = `${loreKey}:${spell.num}:${spell.name}`
+          return `
+            <label class="flex items-center gap-2 py-1 px-2 rounded hover:bg-wh-card text-sm cursor-pointer">
+              <input type="checkbox" class="spell-checkbox accent-wh-purple"
+                data-unit-id="${caster.id}" data-spell-key="${spellKey}"
+                ${unitSelections[spellKey] ? 'checked' : ''} />
+              <span class="font-mono text-xs text-wh-muted w-4">S</span>
+              <span class="text-wh-text flex-1">${spell.name}</span>
+              <span class="text-xs text-wh-purple">${loreName}</span>
+              <span class="spell-type-${spell.type} text-xs">${getSpellTypeLabel(spell.type)}</span>
+              <span class="text-wh-accent font-mono text-xs">${spell.cv}</span>
+            </label>
+          `
+        }).join('')}
       </div>
-    `
-  } else {
-    // No faction lores — signature is a simple checkbox
-    html += `
-      <div class="mb-3">
-        <div class="text-xs text-wh-muted mb-1">Signature Spell:</div>
-        <div class="space-y-1">
-          ${coreSignatures.map(spell => renderSpellCheckbox(coreLoreKey, spell, caster.id, unitSelections, false)).join('')}
-        </div>
-      </div>
-    `
-  }
+    </div>
+  `
 
   // Numbered spells (always from core lore)
   if (numberedSpells.length > 0) {
@@ -474,7 +456,7 @@ function getKnownSpells(caster) {
 
   // Gather all selected spells across all lores
   for (const [key, selected] of Object.entries(unitSel)) {
-    if (key === 'signatureSource' || !selected) continue
+    if (!selected) continue
     // key format: "loreKey:num:name"
     const parts = key.split(':')
     if (parts.length < 3) continue
@@ -727,7 +709,7 @@ function handleFile(file, errorEl) {
       const casters = getCasters(army)
       const selections = {}
       for (const c of casters) {
-        selections[c.id] = { signatureSource: 'core' }
+        selections[c.id] = {}
       }
       saveSpellSelections(selections)
       resetGame()
@@ -765,22 +747,21 @@ function bindSpellSelectors(army) {
 
       // Reset spell selections for this caster
       const selections = getSpellSelections()
-      selections[unitId] = { signatureSource: 'core' }
+      selections[unitId] = {}
       saveSpellSelections(selections)
 
       // Re-render spell list for this caster
       const container = document.querySelector(`.spell-list[data-unit-id="${unitId}"]`)
       if (container) {
         container.dataset.lore = loreKey
-        container.innerHTML = renderCasterSpells(loreKey, caster, selections[unitId], 'core', caster.factionLores)
+        container.innerHTML = renderCasterSpells(loreKey, caster, selections[unitId], caster.factionLores)
         bindSpellCheckboxes()
-        bindSignatureRadios(army)
+
       }
     })
   })
 
   bindSpellCheckboxes()
-  bindSignatureRadios(army)
 }
 
 function bindSpellCheckboxes() {
@@ -789,39 +770,13 @@ function bindSpellCheckboxes() {
       const unitId = cb.dataset.unitId
       const spellKey = cb.dataset.spellKey
       const selections = getSpellSelections()
-      if (!selections[unitId]) selections[unitId] = { signatureSource: 'core' }
+      if (!selections[unitId]) selections[unitId] = {}
       selections[unitId][spellKey] = cb.checked
       saveSpellSelections(selections)
     })
   })
 }
 
-function bindSignatureRadios(army) {
-  document.querySelectorAll('.sig-radio').forEach(radio => {
-    radio.addEventListener('change', () => {
-      const unitId = radio.dataset.unitId
-      const spellKey = radio.dataset.spellKey
-      const source = radio.dataset.source
-      const selections = getSpellSelections()
-      if (!selections[unitId]) selections[unitId] = {}
-
-      // Clear all previous signature selections
-      const prevSource = selections[unitId].signatureSource || 'core'
-      for (const key of Object.keys(selections[unitId])) {
-        if (key === 'signatureSource') continue
-        // Check if this key is a signature spell (contains :S:)
-        if (key.includes(':S:')) {
-          delete selections[unitId][key]
-        }
-      }
-
-      // Set new signature
-      selections[unitId].signatureSource = source
-      selections[unitId][spellKey] = true
-      saveSpellSelections(selections)
-    })
-  })
-}
 
 function bindGameActions(army) {
   document.getElementById('prev-btn')?.addEventListener('click', () => {
