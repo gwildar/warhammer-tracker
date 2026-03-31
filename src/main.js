@@ -2,7 +2,8 @@ import './style.css'
 import { version } from '../package.json'
 import { PHASES, getAllSubPhases } from './phases.js'
 import { LORES, getSpellTypeLabel } from './spells.js'
-import { parseArmyList, getCasters, getShootingUnits, getMovementUnits, getCombatUnits } from './army.js'
+import { parseArmyList, getCasters, getShootingUnits, getMovementUnits } from './army.js'
+import { RANGED_WEAPONS } from './weapons.js'
 import { SPECIAL_RULES } from './special-rules.js'
 import {
   getArmy, saveArmy, clearArmy, clearAll,
@@ -437,7 +438,7 @@ function renderPhaseContext(army, subPhase) {
   if (subPhase.showCasters) html += renderCasterContext(army, ['enchantment', 'hex', 'magical-vortex'])
   if (subPhase.showShooting) html += renderShootingContext(army)
   if (subPhase.showMovement) html += renderMovementContext(army)
-  if (subPhase.showCombat) html += renderCombatContext(army)
+  if (subPhase.id === 'declare-charges') html += renderChargeContext(army)
 
   // Spell type contexts for specific sub-phases
   if (subPhase.id === 'choose-target') html += renderCasterContext(army, ['magic-missile'])
@@ -518,20 +519,53 @@ function renderShootingContext(army) {
   const shooters = getShootingUnits(army)
   if (shooters.length === 0) return ''
 
+  // Group units by matched weapon type
+  const groups = {}
+  const other = []
+
+  for (const u of shooters) {
+    if (u.isCaster) continue // casters shown separately via magic missile context
+    let matched = false
+    const allGear = [...u.equipment]
+    for (const gear of allGear) {
+      const lower = gear.toLowerCase()
+      for (const [key, weapon] of Object.entries(RANGED_WEAPONS)) {
+        if (lower.includes(key)) {
+          const groupKey = weapon.name
+          if (!groups[groupKey]) groups[groupKey] = { weapon, units: [] }
+          groups[groupKey].units.push(u)
+          matched = true
+          break
+        }
+      }
+      if (matched) break
+    }
+    if (!matched) other.push(u)
+  }
+
+  const groupEntries = Object.values(groups)
+  if (groupEntries.length === 0 && other.length === 0) return ''
+
   return `
     <div class="bg-wh-surface rounded-lg border border-wh-phase-shooting/30 p-4 mb-4">
       <h3 class="text-sm font-bold text-wh-phase-shooting mb-3">Shooting Units</h3>
-      <div class="space-y-1">
-        ${shooters.map(u => `
-          <div class="flex justify-between items-center text-sm py-1 px-2 rounded bg-wh-card">
-            <div>
-              <span class="text-wh-text">${u.name}</span>
-              ${u.strength > 1 ? `<span class="text-wh-muted ml-1">x${u.strength}</span>` : ''}
-              ${u.magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${u.magicWeapons.join(', ')}</span>` : ''}
+      <div class="space-y-3">
+        ${groupEntries.map(({ weapon, units }) => `
+          <div class="p-2 rounded bg-wh-card">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-wh-text font-semibold text-sm">${weapon.name}</span>
+              <span class="text-wh-phase-shooting font-mono text-xs">${weapon.range}</span>
             </div>
-            <span class="text-xs text-wh-muted">${u.equipment.join(', ')}</span>
+            ${weapon.rules ? `<p class="text-xs text-wh-muted mb-1">${weapon.rules}</p>` : ''}
+            <p class="text-xs text-wh-text">${units.map(u => u.name + (u.strength > 1 ? ` x${u.strength}` : '')).join(', ')}</p>
           </div>
         `).join('')}
+        ${other.length > 0 ? `
+          <div class="p-2 rounded bg-wh-card">
+            <div class="text-sm font-semibold text-wh-text mb-1">Other</div>
+            <p class="text-xs text-wh-text">${other.map(u => u.name + (u.strength > 1 ? ` x${u.strength}` : '')).join(', ')}</p>
+          </div>
+        ` : ''}
       </div>
     </div>
   `
@@ -562,37 +596,36 @@ function renderMovementContext(army) {
   `
 }
 
-function renderCombatContext(army) {
-  const units = getCombatUnits(army)
+function renderChargeContext(army) {
+  const units = army.units
   if (units.length === 0) return ''
 
   return `
     <div class="bg-wh-surface rounded-lg border border-wh-phase-combat/30 p-4 mb-4">
-      <h3 class="text-sm font-bold text-wh-phase-combat mb-3">Combat Units</h3>
+      <h3 class="text-sm font-bold text-wh-phase-combat mb-3">Charge Ranges</h3>
       <div class="space-y-1">
         ${units.map(u => {
-          const s = u.stats?.[0]
+          const mv = u.stats?.[0]?.M
+          if (mv == null) return ''
+          const allRules = [...parseUnitRules(u.specialRules), ...u.equipment]
+          const hasSwiftstride = allRules.some(r => normaliseRuleName(r).toLowerCase() === 'swiftstride')
+          const maxCharge = hasSwiftstride ? Number(mv) + 6 + 3 : Number(mv) + 6
+          const chargeStr = hasSwiftstride ? `M${mv}+6+3` : `M${mv}+6`
           return `
-            <div class="text-sm py-1 px-2 rounded bg-wh-card">
-              <div class="flex justify-between items-center">
-                <div>
-                  <span class="text-wh-text">${u.name}</span>
-                  ${u.magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${u.magicWeapons.join(', ')}</span>` : ''}
-                </div>
-                ${u.strength > 1 ? `<span class="text-wh-muted text-xs">x${u.strength}</span>` : ''}
+            <div class="flex justify-between items-center text-sm py-1 px-2 rounded bg-wh-card">
+              <div>
+                <span class="text-wh-text">${u.name}</span>
+                ${u.strength > 1 ? `<span class="text-wh-muted ml-1">x${u.strength}</span>` : ''}
+                ${u.magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${u.magicWeapons.join(', ')}</span>` : ''}
+                ${hasSwiftstride ? '<span class="text-wh-phase-movement ml-1 text-xs">Swiftstride</span>' : ''}
               </div>
-              ${s ? `
-                <div class="flex gap-2 text-xs text-wh-muted mt-0.5 font-mono">
-                  <span>WS${s.WS}</span>
-                  <span>S${s.S}</span>
-                  <span>T${s.T}</span>
-                  <span>I${s.I}</span>
-                  <span>A${s.A}</span>
-                </div>
-              ` : ''}
+              <div class="text-right">
+                <span class="text-wh-phase-combat font-mono text-xs">max ${maxCharge}"</span>
+                <span class="text-wh-muted font-mono text-xs ml-1">(${chargeStr})</span>
+              </div>
             </div>
           `
-        }).join('')}
+        }).filter(Boolean).join('')}
       </div>
     </div>
   `
@@ -647,17 +680,23 @@ function renderSpecialRulesContext(army, subPhase) {
 
   if (matches.length === 0) return ''
 
+  // Group by rule name + description
+  const grouped = {}
+  for (const m of matches) {
+    const key = `${m.ruleName}||${m.description}`
+    if (!grouped[key]) grouped[key] = { ruleName: m.ruleName, description: m.description, units: [] }
+    if (!grouped[key].units.includes(m.unitName)) grouped[key].units.push(m.unitName)
+  }
+
   return `
     <div class="bg-wh-surface rounded-lg border border-wh-accent/20 p-4 mb-4">
       <h3 class="text-sm font-bold text-wh-accent mb-3">Special Rules This Step</h3>
       <div class="space-y-2">
-        ${matches.map(m => `
+        ${Object.values(grouped).map(g => `
           <div class="p-2 rounded bg-wh-card text-sm">
-            <div class="flex items-center gap-2 mb-1">
-              <span class="text-wh-text font-semibold">${m.unitName}</span>
-              <span class="text-xs bg-wh-accent/20 text-wh-accent px-1.5 py-0.5 rounded">${m.ruleName}</span>
-            </div>
-            <p class="text-wh-muted text-xs">${m.description}</p>
+            <span class="text-xs bg-wh-accent/20 text-wh-accent px-1.5 py-0.5 rounded">${g.ruleName}</span>
+            <p class="text-wh-muted text-xs mt-1">${g.description}</p>
+            <p class="text-wh-text text-xs mt-1">${g.units.join(', ')}</p>
           </div>
         `).join('')}
       </div>

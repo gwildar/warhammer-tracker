@@ -164,7 +164,7 @@ export const PHASES = [
           'Defender makes Armour and Ward saves, then remove casualties.',
           'All engaged models must fight \u2014 no opting out.',
         ],
-        showCombat: true,
+
       },
       {
         id: 'combat-result',
@@ -178,7 +178,7 @@ export const PHASES = [
           '\u2022 High ground, outnumber, etc.',
           'The side with the higher total wins the combat.',
         ],
-        showCombat: true,
+
       },
       {
         id: 'break-test',
