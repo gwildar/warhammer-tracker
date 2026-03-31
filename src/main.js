@@ -4,6 +4,7 @@ import { PHASES, getAllSubPhases } from './phases.js'
 import { LORES, getSpellTypeLabel } from './spells.js'
 import { parseArmyList, getCasters, getShootingUnits, getMovementUnits } from './army.js'
 import { RANGED_WEAPONS } from './weapons.js'
+import { findMagicItem } from './magic-items.js'
 import { SPECIAL_RULES } from './special-rules.js'
 import {
   getArmy, saveArmy, clearArmy, clearAll,
@@ -401,7 +402,7 @@ function renderGameScreen(army) {
           </div>
 
           <!-- Contextual army info -->
-          ${renderPhaseContext(army, subPhase)}
+          ${renderPhaseContext(army, phase, subPhase)}
         </div>
       </main>
 
@@ -431,7 +432,7 @@ function renderGameScreen(army) {
 
 // ─── Phase Context Rendering ────────────────────────────────────────────────
 
-function renderPhaseContext(army, subPhase) {
+function renderPhaseContext(army, phase, subPhase) {
   let html = ''
 
   // Existing type-based contexts
@@ -442,6 +443,9 @@ function renderPhaseContext(army, subPhase) {
   if (subPhase.id === 'choose-target') html += renderCasterContext(army, ['magic-missile', 'magical-vortex'])
   if (subPhase.id === 'remaining-moves') html += renderCasterContext(army, ['conveyance'])
   if (subPhase.id === 'choose-fight') html += renderCasterContext(army, ['assailment'])
+
+  // Magic items context per phase
+  html += renderMagicItemsContext(army, phase.id)
 
   // Special rules context for ALL sub-phases
   html += renderSpecialRulesContext(army, subPhase)
@@ -626,6 +630,43 @@ function renderChargeContext(army) {
             </div>
           `
         }).join('')}
+      </div>
+    </div>
+  `
+}
+
+// ─── Magic Items Context ────────────────────────────────────────────────────
+
+function renderMagicItemsContext(army, phaseId) {
+  const grouped = {}
+
+  for (const unit of army.units) {
+    for (const itemName of unit.magicItems) {
+      // Strip "(Standard bearer)" etc. before matching
+      const cleanName = itemName.replace(/\s*\([^)]*\)\s*$/, '').replace(/\*$/, '').trim()
+      const item = findMagicItem(cleanName)
+      if (!item || !item.phases.includes(phaseId)) continue
+      const key = item.name
+      if (!grouped[key]) grouped[key] = { item, units: [] }
+      if (!grouped[key].units.includes(unit.name)) grouped[key].units.push(unit.name)
+    }
+  }
+
+  const entries = Object.values(grouped)
+  if (entries.length === 0) return ''
+
+  return `
+    <div class="bg-wh-surface rounded-lg border border-wh-purple/30 p-4 mb-4">
+      <h3 class="text-sm font-bold text-wh-purple mb-3">Magic Items</h3>
+      <div class="space-y-2">
+        ${entries.map(({ item, units }) => `
+          <div class="p-2 rounded bg-wh-card text-sm">
+            <span class="text-wh-accent font-semibold">${item.name}</span>
+            <span class="text-xs text-wh-muted ml-1">${item.type}</span>
+            <p class="text-wh-muted text-xs mt-1">${item.effect}</p>
+            <p class="text-wh-text text-xs mt-1">${units.join(', ')}</p>
+          </div>
+        `).join('')}
       </div>
     </div>
   `
