@@ -5,7 +5,7 @@ import { LORES, getSpellTypeLabel } from './spells.js'
 import { parseArmyList, getCasters, getShootingUnits, getMovementUnits, getCombatUnits } from './army.js'
 import { SPECIAL_RULES } from './special-rules.js'
 import {
-  getArmy, saveArmy, clearArmy,
+  getArmy, saveArmy, clearArmy, clearAll,
   getSpellSelections, saveSpellSelections,
   getPhaseIndex, savePhaseIndex,
   getRound, saveRound, resetGame,
@@ -823,4 +823,5 @@ function formatSlug(slug) {
 
 // ─── Init ───────────────────────────────────────────────────────────────────
 
+clearAll()
 render()

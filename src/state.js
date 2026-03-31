@@ -64,3 +64,10 @@ export function resetGame() {
   save(KEYS.phaseIndex, 0)
   save(KEYS.round, 1)
 }
+
+// Clear all app state
+export function clearAll() {
+  for (const key of Object.values(KEYS)) {
+    localStorage.removeItem(key)
+  }
+}
