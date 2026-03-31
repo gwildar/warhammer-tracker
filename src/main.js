@@ -741,10 +741,17 @@ function renderMagicItemsContext(army, phaseId) {
       // Strip "(Standard bearer)" etc. before matching
       const cleanName = itemName.replace(/\s*\([^)]*\)\s*$/, '').replace(/\*$/, '').trim()
       const item = findMagicItem(cleanName)
-      if (!item || !item.phases.includes(phaseId)) continue
-      const key = item.name
-      if (!grouped[key]) grouped[key] = { item, units: [] }
-      if (!grouped[key].units.includes(unit.name)) grouped[key].units.push(unit.name)
+      if (item) {
+        if (!item.phases.includes(phaseId)) continue
+        const key = item.name
+        if (!grouped[key]) grouped[key] = { item, units: [] }
+        if (!grouped[key].units.includes(unit.name)) grouped[key].units.push(unit.name)
+      } else if (phaseId === 'combat' && unit.magicWeapons.includes(itemName)) {
+        // Unrecognised magic weapons still show in combat phase
+        const key = cleanName
+        if (!grouped[key]) grouped[key] = { item: { name: cleanName, type: 'weapon', effect: '', phases: ['combat'] }, units: [] }
+        if (!grouped[key].units.includes(unit.name)) grouped[key].units.push(unit.name)
+      }
     }
   }
 
