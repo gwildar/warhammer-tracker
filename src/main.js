@@ -3,7 +3,7 @@ import { version } from '../package.json'
 import { PHASES, getAllSubPhases } from './phases.js'
 import { LORES, getSpellTypeLabel } from './spells.js'
 import { parseArmyList, getCasters, getShootingUnits, getMovementUnits } from './army.js'
-import { RANGED_WEAPONS } from './weapons.js'
+import { RANGED_WEAPONS, COMBAT_WEAPONS } from './weapons.js'
 import { findMagicItem } from './magic-items.js'
 import { SPECIAL_RULES } from './special-rules.js'
 import { findMount, TROOP_TYPE_RULES } from './mounts.js'
@@ -496,7 +496,10 @@ function renderPhaseContext(army, phase, subPhase) {
   // Spell type contexts for specific sub-phases
   if (subPhase.id === 'choose-target') html += renderCasterContext(army, ['magic-missile', 'magical-vortex'])
   if (subPhase.id === 'remaining-moves') html += renderCasterContext(army, ['conveyance'])
-  if (subPhase.id === 'choose-fight') html += renderCasterContext(army, ['assailment'])
+  if (subPhase.id === 'choose-fight') {
+    html += renderCasterContext(army, ['assailment'])
+    html += renderCombatWeaponsContext(army)
+  }
 
   // Magic items context per phase
   html += renderMagicItemsContext(army, phase.id, subPhase.id)
@@ -580,8 +583,21 @@ function renderShootingContext(army) {
   const other = []
 
   for (const u of shooters) {
-    if (u.isCaster) continue // casters shown separately via magic missile context
     let matched = false
+    // Check mount breath weapon first (applies to casters too)
+    if (u.mount) {
+      const mount = findMount(u.mount)
+      if (mount?.breath) {
+        const breathKey = mount.breath.toLowerCase()
+        const weapon = RANGED_WEAPONS[breathKey]
+        if (weapon) {
+          const groupKey = weapon.name
+          if (!groups[groupKey]) groups[groupKey] = { weapon, units: [] }
+          groups[groupKey].units.push(u)
+          matched = true
+        }
+      }
+    }
     const allGear = [...u.equipment]
     for (const gear of allGear) {
       const lower = gear.toLowerCase()
@@ -611,6 +627,8 @@ function renderShootingContext(army) {
             <div class="flex items-center gap-2 mb-1">
               <span class="text-wh-text font-semibold text-sm">${weapon.name}</span>
               <span class="text-wh-phase-shooting font-mono text-xs">${weapon.range}</span>
+              ${weapon.s ? `<span class="text-wh-muted font-mono text-xs">S${weapon.s}</span>` : ''}
+              ${weapon.ap && weapon.ap !== '—' ? `<span class="text-wh-muted font-mono text-xs">AP ${weapon.ap}</span>` : ''}
             </div>
             ${weapon.rules ? `<p class="text-xs text-wh-muted mb-1">${weapon.rules}</p>` : ''}
             <p class="text-xs text-wh-text">${units.map(u => u.name + (u.strength > 1 ? ` x${u.strength}` : '')).join(', ')}</p>
@@ -622,6 +640,55 @@ function renderShootingContext(army) {
             <p class="text-xs text-wh-text">${other.map(u => u.name + (u.strength > 1 ? ` x${u.strength}` : '')).join(', ')}</p>
           </div>
         ` : ''}
+      </div>
+    </div>
+  `
+}
+
+function renderCombatWeaponsContext(army) {
+  const units = army.units
+  if (units.length === 0) return ''
+
+  const groups = {}
+
+  for (const u of units) {
+    const allGear = [...u.equipment]
+    for (const gear of allGear) {
+      const parts = gear.split(',').map(s => s.trim())
+      for (const part of parts) {
+        const lower = part.toLowerCase()
+        for (const [key, weapon] of Object.entries(COMBAT_WEAPONS)) {
+          if (lower.includes(key)) {
+            const groupKey = weapon.name
+            if (!groups[groupKey]) groups[groupKey] = { weapon, units: [] }
+            if (!groups[groupKey].units.some(x => x.name === u.name)) {
+              groups[groupKey].units.push(u)
+            }
+            break
+          }
+        }
+      }
+    }
+  }
+
+  const groupEntries = Object.values(groups)
+  if (groupEntries.length === 0) return ''
+
+  return `
+    <div class="bg-wh-surface rounded-lg border border-wh-phase-combat/30 p-4 mb-4">
+      <h3 class="text-sm font-bold text-wh-phase-combat mb-3">Combat Weapons</h3>
+      <div class="space-y-3">
+        ${groupEntries.map(({ weapon, units }) => `
+          <div class="p-2 rounded bg-wh-card">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-wh-text font-semibold text-sm">${weapon.name}</span>
+              <span class="text-wh-muted font-mono text-xs">S${weapon.s}</span>
+              ${weapon.ap && weapon.ap !== '—' ? `<span class="text-wh-muted font-mono text-xs">AP ${weapon.ap}</span>` : ''}
+            </div>
+            ${weapon.rules ? `<p class="text-xs text-wh-muted mb-1">${weapon.rules}</p>` : ''}
+            <p class="text-xs text-wh-text">${units.map(u => u.name + (u.strength > 1 ? ` x${u.strength}` : '')).join(', ')}</p>
+          </div>
+        `).join('')}
       </div>
     </div>
   `
@@ -788,7 +855,7 @@ function renderSpecialRulesContext(army, subPhase) {
     // Check both specialRules string AND equipment (options like Ambushers, Scouts, Fire & Flee are purchased as options)
     const unitRules = [
       ...parseUnitRules(unit.specialRules),
-      ...unit.equipment,
+      ...unit.equipment.flatMap(e => e.split(',').map(s => s.trim()).filter(Boolean)),
     ]
     // Inject mount-granted rules
     if (unit.mount) {
@@ -1176,7 +1243,7 @@ function renderSpecialRulesForPhase(army, phase) {
     for (const unit of army.units) {
       const unitRules = [
         ...parseUnitRules(unit.specialRules),
-        ...unit.equipment,
+        ...unit.equipment.flatMap(e => e.split(',').map(s => s.trim()).filter(Boolean)),
       ]
       if (unit.mount) {
         const mount = findMount(unit.mount)
@@ -1304,6 +1371,9 @@ function renderAboutScreen() {
             <a href="https://old-world-builder.com" target="_blank" rel="noopener noreferrer"
               class="text-wh-accent hover:underline">Old World Builder</a>.
             Thank you to the Old World Builder team for making such a fantastic tool for the community.
+          </p>
+          <p class="text-wh-muted text-sm">
+            Huge thanks to https://tow.whfb.app/ for their excellent resource as well.
           </p>
         </div>
 

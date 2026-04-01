@@ -1,4 +1,5 @@
 import { LORES } from './spells.js'
+import { findMount } from './mounts.js'
 
 const UNIT_CATEGORIES = ['characters', 'core', 'special', 'rare', 'mercenaries', 'allies', 'lords', 'heroes']
 
@@ -211,10 +212,13 @@ export function getCasters(army) {
 
 export function getShootingUnits(army) {
   if (!army) return []
-  const missileKeywords = ['bow', 'crossbow', 'handgun', 'pistol', 'javelin', 'sling', 'throwing', 'bolt thrower', 'cannon', 'mortar', 'catapult', 'trebuchet', 'gun', 'rifle']
+  const missileKeywords = ['bow', 'crossbow', 'handgun', 'pistol', 'javelin', 'sling', 'throwing', 'bolt thrower', 'cannon', 'mortar', 'catapult', 'trebuchet', 'gun', 'rifle', 'petrifying gaze', 'gaze', 'bombard', 'harpoon', 'breath']
   return army.units.filter(u => {
     const allGear = [...u.equipment, ...u.armour].map(e => e.toLowerCase())
-    return allGear.some(g => missileKeywords.some(k => g.includes(k))) || u.isCaster
+    const hasRangedGear = allGear.some(g => missileKeywords.some(k => g.includes(k)))
+    const mountData = u.mount ? findMount(u.mount) : null
+    const hasBreath = mountData?.breath != null
+    return hasRangedGear || hasBreath || u.isCaster
   })
 }
 

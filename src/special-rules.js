@@ -268,13 +268,24 @@ export const SPECIAL_RULES = [
 
   // ─── Shooting Phase ───────────────────────────────────────────────
   {
-    name: 'Petrifying Gaze',
+    name: 'Stony Stare',
     phases: [
       {
-        phaseId: 'shooting',
-        subPhaseId: 'choose-target',
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
         description:
-          '18" range, S2. Magical Attacks, Multiple Wounds (D3). To Wound uses target\'s Initiative instead of Toughness. No armour saves permitted (Ward and Regeneration allowed).',
+          'At the start of each Combat phase, enemy models in base contact must pass an Initiative test or suffer D3 S2 hits. No armour saves (Ward and Regeneration allowed).',
+      },
+    ],
+  },
+  {
+    name: 'Cleaving Blow',
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          'Natural 6 To Wound: regular infantry, heavy infantry, light/heavy cavalry, and war beasts cannot take armour or Regeneration saves (Ward saves allowed).',
       },
     ],
   },
