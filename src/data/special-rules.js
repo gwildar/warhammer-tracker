@@ -734,6 +734,166 @@ export const SPECIAL_RULES = [
     ],
   },
 
+  // ─── Kingdom of Bretonnia ─────────────────────────────────────────
+  {
+    name: 'Blessings of the Lady',
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          '6+ Ward save (5+ vs S5+). Lost if the unit flees or a character refuses a challenge.',
+      },
+    ],
+  },
+  {
+    name: 'Finest Warhorses',
+    phases: [
+      {
+        phaseId: 'movement',
+        subPhaseId: 'charge-moves',
+        yourTurnOnly: true,
+        description:
+          'Re-roll any natural 1s on Charge, Flee, or Pursuit rolls (before discarding dice).',
+      },
+      {
+        phaseId: 'combat',
+        subPhaseId: 'pursuit',
+        description:
+          'Re-roll any natural 1s on Flee or Pursuit rolls (before discarding dice).',
+      },
+    ],
+  },
+  {
+    name: "Crusader's Zeal",
+    phases: [
+      {
+        phaseId: 'movement',
+        subPhaseId: 'declare-charges',
+        yourTurnOnly: true,
+        description:
+          '+1" to maximum charge range and +1 to Charge roll result. Also gains Impetuous.',
+      },
+    ],
+  },
+  {
+    name: 'Earn Your Spurs',
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          'Enemy standards captured worth 100 VPs. Within 6" of a Grail Vow model or Lord of Bretonnia, re-roll natural 1s To Hit.',
+      },
+    ],
+  },
+  {
+    name: 'Beguiling Aura',
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        opponentOnly: true,
+        description:
+          'Enemy models must pass Ld test before rolling To Hit against this model; if failed, only natural 6s hit.',
+      },
+    ],
+  },
+  {
+    name: "Peasant's Duty",
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'break-test',
+        description:
+          'May Give Ground instead of Fall Back in Good Order. Friendly Levies within Command range re-roll failed Panic tests.',
+      },
+    ],
+  },
+  {
+    name: 'The Grail Vow',
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          'Immune to Psychology, Magical Attacks, Stubborn. Cannot refuse challenges.',
+      },
+    ],
+  },
+  {
+    name: 'The Questing Vow',
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'break-test',
+        description:
+          'Stubborn. Re-roll failed Fear, Panic, and Terror tests.',
+      },
+    ],
+  },
+  {
+    name: "The Knight's Vow",
+    phases: [
+      {
+        phaseId: 'strategy',
+        subPhaseId: 'start-of-turn',
+        description:
+          'No Panic test when a friendly Peasantry unit is destroyed within 6" or flees through.',
+      },
+    ],
+  },
+  {
+    name: 'Guardian of the Sacred Sites',
+    phases: [
+      {
+        phaseId: 'strategy',
+        subPhaseId: 'start-of-turn',
+        yourTurnOnly: true,
+        description:
+          'D6 roll of 3+ to awaken the Green Knight (automatic from round 5). Place within any natural terrain feature.',
+      },
+    ],
+  },
+  {
+    name: 'Aura of the Fay',
+    phases: [
+      {
+        phaseId: 'strategy',
+        subPhaseId: 'start-of-turn',
+        yourTurnOnly: true,
+        description:
+          'If removed, attempt to reawaken with cumulative -1 penalty. -1 Wounds characteristic each time (min 1).',
+      },
+    ],
+  },
+  {
+    name: 'Arcane Backlash',
+    phases: [
+      {
+        phaseId: 'strategy',
+        subPhaseId: 'conjuration',
+        opponentOnly: true,
+        description:
+          '+1 to Dispel rolls. On any natural double (except double 1), the spell is unbound and the casting Wizard loses a Wound.',
+      },
+      {
+        phaseId: 'shooting',
+        subPhaseId: 'choose-target',
+        opponentOnly: true,
+        description:
+          '+1 to Dispel rolls vs Magic Missiles. On any natural double (except double 1), the spell is unbound and the casting Wizard loses a Wound.',
+      },
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        opponentOnly: true,
+        description:
+          '+1 to Dispel rolls vs Assailment spells. On any natural double (except double 1), the spell is unbound and the casting Wizard loses a Wound.',
+      },
+    ],
+  },
+
   // ─── Passive / always-on rules ────────────────────────────────────
   {
     name: 'Armoured Hide',

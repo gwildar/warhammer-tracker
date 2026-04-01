@@ -1,5 +1,6 @@
 import { LORES } from './data/spells.js'
 import { findMount } from './data/mounts.js'
+import { UNIT_STATS } from './data/units.js'
 
 const UNIT_CATEGORIES = ['characters', 'core', 'special', 'rare', 'mercenaries', 'allies', 'lords', 'heroes']
 
@@ -49,6 +50,7 @@ function parseUnit(raw, category) {
     banners: [],
     hasLoreFamiliar: false,
     mount: null,
+    hasBarding: false,
     stats: null,
     customNote: raw.customNote || '',
   }
@@ -115,7 +117,21 @@ function parseUnit(raw, category) {
     const activeMount = raw.mounts.find(m => m.active)
     if (activeMount) {
       unit.mount = activeMount.name_en
+      // Barding from mount name or mount options
+      if (activeMount.name_en?.toLowerCase().includes('barded')) {
+        unit.hasBarding = true
+      }
+      if (Array.isArray(activeMount.options)) {
+        if (activeMount.options.some(o => o.active && o.name_en?.toLowerCase() === 'barding')) {
+          unit.hasBarding = true
+        }
+      }
     }
+  }
+
+  // Barding from armour string (e.g. "Heavy armour, Barding")
+  if (unit.armour.some(a => a.toLowerCase().includes('barding'))) {
+    unit.hasBarding = true
   }
 
   // Lores / caster detection
@@ -139,9 +155,20 @@ function parseUnit(raw, category) {
     }
   }
 
-  // Stats
+  // Stats — from OWB export, or fall back to rules-index lookup
   if (raw.profile?.stats && raw.profile.stats.length > 0) {
     unit.stats = raw.profile.stats
+  } else {
+    const baseId = (raw.id || '').split('.')[0]
+    if (UNIT_STATS[baseId]) {
+      unit.stats = UNIT_STATS[baseId]
+    } else {
+      // Fallback: try name_en as slug (handles OWB ID typos)
+      const nameSlug = (raw.name_en || '').toLowerCase().replace(/\s+/g, '-')
+      if (UNIT_STATS[nameSlug]) {
+        unit.stats = UNIT_STATS[nameSlug]
+      }
+    }
   }
 
   // Detachments
