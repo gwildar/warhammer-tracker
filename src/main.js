@@ -210,6 +210,7 @@ function renderUnitList(army) {
             ${u.mount ? `<span class="text-wh-muted ml-1">(${u.mount})</span>` : ''}
             ${u.isCaster ? '<span class="text-wh-purple ml-1 text-xs">WIZARD</span>' : ''}
             ${u.magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${u.magicWeapons.join(', ')}</span>` : ''}
+            ${u.banners.length > 0 ? `<span class="text-wh-muted ml-1 text-xs">${u.banners.map(b => `${b.name} (${b.points}pts)`).join(', ')}</span>` : ''}
           </div>
           <span class="text-wh-muted font-mono text-xs">${u.points}pts</span>
         </div>
@@ -374,7 +375,6 @@ function renderSpellCheckbox(loreKey, spell, unitId, unitSelections, disabled) {
       <span class="font-mono text-xs text-wh-muted w-4">${spell.num}</span>
       <span class="text-wh-text flex-1">${spell.name}</span>
       <span class="spell-type-${spell.type} text-xs">${getSpellTypeLabel(spell.type)}</span>
-      ${spell.range ? `<span class="text-wh-muted font-mono text-xs">${spell.range}</span>` : ''}
       <span class="text-wh-accent font-mono text-xs">${spell.cv}</span>
     </label>
   `
@@ -559,7 +559,6 @@ function renderCasterContext(army, allowedTypes) {
               <div class="flex justify-between text-xs">
                 <span class="spell-type-${s.type}">${s.name}</span>
                 <div class="flex gap-2">
-                  <span class="text-wh-muted">${s.loreName}</span>
                   ${s.range ? `<span class="text-wh-muted font-mono">${s.range}</span>` : ''}
                   <span class="text-wh-accent font-mono">${s.cv}</span>
                 </div>

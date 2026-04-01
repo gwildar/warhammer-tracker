@@ -45,6 +45,7 @@ function parseUnit(raw, category) {
     factionLores: [],
     magicItems: [],
     magicWeapons: [],
+    banners: [],
     hasLoreFamiliar: false,
     mount: null,
     stats: null,
@@ -82,6 +83,9 @@ function parseUnit(raw, category) {
           if (item.type === 'weapon') {
             unit.magicWeapons.push(item.name_en)
           }
+          if (item.type === 'banner') {
+            unit.banners.push({ name: item.name_en, points: item.points || 0 })
+          }
         }
       }
     }
@@ -93,6 +97,9 @@ function parseUnit(raw, category) {
       if (cmd.active && cmd.magic?.selected) {
         for (const item of cmd.magic.selected) {
           unit.magicItems.push(`${item.name_en} (${cmd.name_en})`)
+          if (item.type === 'banner') {
+            unit.banners.push({ name: item.name_en, points: item.points || 0 })
+          }
         }
       }
     }
@@ -166,7 +173,14 @@ function calculateUnitPoints(raw) {
 
   if (Array.isArray(raw.command)) {
     for (const cmd of raw.command) {
-      if (cmd.active && cmd.points) pts += cmd.points
+      if (cmd.active) {
+        if (cmd.points) pts += cmd.points
+        if (Array.isArray(cmd.magic?.selected)) {
+          for (const item of cmd.magic.selected) {
+            pts += item.points || 0
+          }
+        }
+      }
     }
   }
 
