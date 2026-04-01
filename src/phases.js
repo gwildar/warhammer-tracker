@@ -73,7 +73,7 @@ export const PHASES = [
         name: 'Charge Moves',
         rules: [
           'Move charging units in an order of your choosing.',
-          'Charge range = dice roll + Movement characteristic.',
+          'Charge range = 2d6 (pick the highest unless charging into dangerous or difficult terrain then pick the lowest) + Movement characteristic + swiftstride d6 (if applicable).',
           'Failed charges: unit moves forward a reduced distance.',
           'Align charging unit with the target on contact.',
         ],
@@ -123,7 +123,7 @@ export const PHASES = [
         rules: [
           'Roll To Hit for the shooting unit (BS-based).',
           'Not all models in a unit may be able to shoot (check arcs, range).',
-          'Apply To Hit modifiers: long range (\u22121), moving (\u22121), cover, large target (+1), etc.',
+          'Apply To Hit modifiers: long range (\u22121), moving (\u22121), cover, etc.',
           'A natural 1 always misses. A natural 6 always hits.',
         ],
         showShooting: true,
