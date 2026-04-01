@@ -479,6 +479,28 @@ export const SPECIAL_RULES = [
     ],
   },
   {
+    name: 'Eternal Hatred',
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          'Against High Elves, Hatred applies in every round of combat, not just the first. Does not affect mount.',
+      },
+    ],
+  },
+  {
+    name: 'Murderous',
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          'Fighting with a single hand weapon: re-roll any To Wound rolls of natural 1. Does not apply with two hand weapons or other weapon types. Does not affect mount.',
+      },
+    ],
+  },
+  {
     name: 'Hatred',
     phases: [
       {
