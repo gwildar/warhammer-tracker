@@ -97,6 +97,10 @@ export const COMBAT_WEAPONS = {
   'rancid maw': { name: 'Rancid Maw', s: 'S', ap: '-2', rules: 'Armour Bane (1), Multiple Wounds (2). One attack per turn with this weapon.' },
   'spectral scythe': { name: 'Spectral Scythe', s: 'S', ap: '—', rules: 'Magical Attacks, Multiple Wounds (D3). No armour saves (Ward and Regeneration allowed).' },
   'wicked claws': { name: 'Wicked Claws', s: 'S', ap: '-2', rules: '' },
+
+  // ─── Mount Weapons ───────────────────────────────────────────────────
+  'serrated maw': { name: 'Serrated Maw', s: 'S', ap: '—', rules: 'Armour Bane (2), Multiple Wounds (2). Must make one attack per turn with this weapon.' },
+  'mighty antlers': { name: 'Mighty Antlers', s: 'S', ap: '-1', rules: 'Armour Bane (1)' },
 }
 
 /**

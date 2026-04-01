@@ -1,4 +1,5 @@
 import { COMBAT_WEAPONS } from '../data/weapons.js'
+import { findMount } from '../data/mounts.js'
 
 function matchCombatWeapon(gearStr) {
   const lower = gearStr.toLowerCase()
@@ -23,6 +24,21 @@ export function renderCombatWeaponsContext(army) {
         matched.add(weapon.name)
         if (!groups[weapon.name]) groups[weapon.name] = { weapon, units: [] }
         groups[weapon.name].units.push(u)
+      }
+    }
+
+    // Check mount combat weapons
+    if (u.mount) {
+      const mount = findMount(u.mount)
+      if (mount?.weapons) {
+        for (const wKey of mount.weapons) {
+          const weapon = COMBAT_WEAPONS[wKey]
+          if (weapon && !matched.has(weapon.name)) {
+            matched.add(weapon.name)
+            if (!groups[weapon.name]) groups[weapon.name] = { weapon, units: [] }
+            groups[weapon.name].units.push(u)
+          }
+        }
       }
     }
   }
