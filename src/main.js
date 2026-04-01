@@ -679,15 +679,9 @@ function renderChargeContext(army) {
 
           // Ground charge: M + 6 (+ 3 if swiftstride)
           const groundCharge = baseMv != null ? baseMv + 6 + swiftBonus : null
-          const groundStr = baseMv != null
-            ? (hasSwiftstride ? `M${baseMv} + 6 + 3` : `M${baseMv} + 6`)
-            : null
 
           // Fly charge: Fly + 6 (+ 3 if swiftstride)
           const flyCharge = hasFly ? flyMv + 6 + swiftBonus : null
-          const flyStr = hasFly
-            ? (hasSwiftstride ? `Fly ${flyMv} + 6 + 3` : `Fly ${flyMv} + 6`)
-            : null
 
           return `
             <div class="text-sm py-1 px-2 rounded bg-wh-card">
@@ -701,16 +695,15 @@ function renderChargeContext(army) {
                 </div>
                 <div class="text-right">
                   ${groundCharge != null
-                    ? `<span class="text-wh-muted font-mono text-xs">${groundStr} =</span>
-                       <span class="text-wh-phase-combat font-mono text-xs ml-1">${groundCharge}"</span>`
-                    : `<span class="text-wh-muted font-mono text-xs">M? + 6${hasSwiftstride ? ' + 3' : ''}</span>`
+                    ? `<span class="text-wh-phase-combat font-mono text-xs">${groundCharge}"</span>`
+                    : ''
                   }
                 </div>
               </div>
               ${hasFly ? `
                 <div class="flex justify-end mt-0.5">
-                  <span class="text-wh-muted font-mono text-xs">${flyStr} =</span>
-                  <span class="text-wh-phase-movement font-mono text-xs ml-1">${flyCharge}"</span>
+                  <span class="text-wh-muted text-xs mr-1">Fly</span>
+                  <span class="text-wh-phase-movement font-mono text-xs">${flyCharge}"</span>
                 </div>
               ` : ''}
             </div>
