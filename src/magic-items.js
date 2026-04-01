@@ -875,8 +875,8 @@ export const MAGIC_ITEMS = [
     name: 'Crown of the Damned',
     type: 'talisman',
     points: 35,
-    effect: 'The wearer gains a 4+ Ward save. However, the wearer becomes subject to the Stupidity special rule.',
-    phases: ['combat', 'shooting'],
+    effect: 'The wearer gains a 4+ Ward save but becomes subject to Stupidity. Test Ld at Start of Turn — if failed: cannot move, shoot, cast, or dispel.',
+    phases: ['strategy', 'combat', 'shooting'],
   },
   {
     name: 'Skull Staff',

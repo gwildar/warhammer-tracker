@@ -6,7 +6,7 @@ import { parseArmyList, getCasters, getShootingUnits, getMovementUnits } from '.
 import { RANGED_WEAPONS } from './weapons.js'
 import { findMagicItem } from './magic-items.js'
 import { SPECIAL_RULES } from './special-rules.js'
-import { findMount } from './mounts.js'
+import { findMount, TROOP_TYPE_RULES } from './mounts.js'
 import RULES_INDEX from './rules-index-export.json'
 
 // Army name → rules index key overrides (both lowercase)
@@ -789,11 +789,26 @@ function renderSpecialRulesContext(army, subPhase) {
       ...parseUnitRules(unit.specialRules),
       ...unit.equipment,
     ]
-    // Inject mount-granted swiftstride if the unit doesn't already have it
-    const hasSwiftstride = unitRules.some(r => normaliseRuleName(r).toLowerCase() === 'swiftstride')
-    if (!hasSwiftstride && unit.mount) {
+    // Inject mount-granted rules
+    if (unit.mount) {
       const mount = findMount(unit.mount)
-      if (mount?.swiftstride) unitRules.push('Swiftstride')
+      if (mount) {
+        if (mount.swiftstride && !unitRules.some(r => normaliseRuleName(r).toLowerCase() === 'swiftstride')) {
+          unitRules.push('Swiftstride')
+        }
+        const troopRules = TROOP_TYPE_RULES[mount.troopType] || []
+        for (const rule of troopRules) {
+          if (!unitRules.some(r => normaliseRuleName(r).toLowerCase() === rule.toLowerCase())) {
+            unitRules.push(rule)
+          }
+        }
+        if (mount.stomp && !unitRules.some(r => normaliseRuleName(r).toLowerCase() === 'stomp attacks')) {
+          unitRules.push(`Stomp Attacks (${mount.stomp})`)
+        }
+        if (mount.impactHits && !unitRules.some(r => normaliseRuleName(r).toLowerCase() === 'impact hits')) {
+          unitRules.push(`Impact Hits (${mount.impactHits})`)
+        }
+      }
     }
 
     for (const ruleName of unitRules) {
@@ -1157,10 +1172,25 @@ function renderSpecialRulesForPhase(army, phase) {
         ...parseUnitRules(unit.specialRules),
         ...unit.equipment,
       ]
-      const hasSwiftstride = unitRules.some(r => normaliseRuleName(r).toLowerCase() === 'swiftstride')
-      if (!hasSwiftstride && unit.mount) {
+      if (unit.mount) {
         const mount = findMount(unit.mount)
-        if (mount?.swiftstride) unitRules.push('Swiftstride')
+        if (mount) {
+          if (mount.swiftstride && !unitRules.some(r => normaliseRuleName(r).toLowerCase() === 'swiftstride')) {
+            unitRules.push('Swiftstride')
+          }
+          const troopRules = TROOP_TYPE_RULES[mount.troopType] || []
+          for (const rule of troopRules) {
+            if (!unitRules.some(r => normaliseRuleName(r).toLowerCase() === rule.toLowerCase())) {
+              unitRules.push(rule)
+            }
+          }
+          if (mount.stomp && !unitRules.some(r => normaliseRuleName(r).toLowerCase() === 'stomp attacks')) {
+            unitRules.push(`Stomp Attacks (${mount.stomp})`)
+          }
+          if (mount.impactHits && !unitRules.some(r => normaliseRuleName(r).toLowerCase() === 'impact hits')) {
+            unitRules.push(`Impact Hits (${mount.impactHits})`)
+          }
+        }
       }
 
       for (const ruleName of unitRules) {
