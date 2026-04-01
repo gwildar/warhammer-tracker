@@ -998,7 +998,7 @@ function bindGameActions(army) {
     if (confirm('Start a new game? This will reset the round counter.')) {
       resetGame()
       saveFirstTurn(null)
-      renderFirstTurnScreen(army)
+      render()
     }
   })
 }
@@ -1236,7 +1236,7 @@ function bindOpponentTurnActions(army) {
     if (confirm('Start a new game? This will reset the round counter.')) {
       resetGame()
       saveFirstTurn(null)
-      renderFirstTurnScreen(army)
+      render()
     }
   })
 }
