@@ -12,6 +12,8 @@
  *                 when set, the item only shows in those specific sub-phases
  *                 when absent, the item shows in all sub-phases of its phase(s)
  *   extremely   – true if the item is an "Extremely Common" magic item (no duplicate limit)
+ *   armourBase  – optional, base armour value provided (e.g. 5 for heavy armour, 4 for full plate)
+ *   armourMod   – optional, modifier to armour save (negative = better, e.g. -1 improves by 1)
  *
  * Source: https://tow.whfb.app/magic-items
  */
@@ -150,6 +152,8 @@ export const MAGIC_ITEMS = [
     points: 70,
     effect: 'Heavy armour. The wearer has a 4+ Ward save against any wounds suffered.',
     phases: ['combat', 'shooting'],
+    armourBase: 5,
+    ward: '4+',
   },
   {
     name: 'Bedazzling Helm',
@@ -157,6 +161,7 @@ export const MAGIC_ITEMS = [
     points: 60,
     effect: 'Infantry or cavalry only. May be worn with other armour. Improves armour value by 1 (max 2+). Any enemy model directing attacks against the wearer during the Combat phase suffers -1 To Hit.',
     phases: ['combat'],
+    armourMod: -1,
   },
   {
     name: 'Armour of Silvered Steel',
@@ -164,6 +169,7 @@ export const MAGIC_ITEMS = [
     points: 40,
     effect: 'Gives the wearer an armour value of 3+ which cannot be improved in any way.',
     phases: ['combat', 'shooting'],
+    armourBase: 3,
   },
   {
     name: 'Glittering Scales',
@@ -171,6 +177,7 @@ export const MAGIC_ITEMS = [
     points: 35,
     effect: 'Light armour. Once per turn, you may make your opponent re-roll a single roll To Hit made against the wearer.',
     phases: ['combat', 'shooting'],
+    armourBase: 6,
   },
   {
     name: 'Shield of the Warrior True',
@@ -200,6 +207,7 @@ export const MAGIC_ITEMS = [
     points: 20,
     effect: 'Gives the wearer an armour value of 5+ which cannot be improved or reduced in any way.',
     phases: ['combat'],
+    armourBase: 5,
   },
   {
     name: "Trailblazer's Hauberk",
@@ -207,6 +215,7 @@ export const MAGIC_ITEMS = [
     points: 20,
     effect: 'Infantry only. Heavy armour. The wearer gains Move Through Cover and Scouts special rules.',
     phases: ['movement'],
+    armourBase: 5,
   },
   {
     name: 'Enchanted Shield',
@@ -251,6 +260,7 @@ export const MAGIC_ITEMS = [
     points: 30,
     effect: 'Gives the bearer a 5+ Ward save against any wounds suffered.',
     phases: ['combat', 'shooting'],
+    ward: '5+',
   },
   {
     name: "Paymaster's Coin",
@@ -565,6 +575,7 @@ export const MAGIC_ITEMS = [
     type: 'armour',
     points: 30,
     effect: 'Infantry or cavalry only. Armour value of 5+. For each unsaved wound the wearer inflicts, this armour value is improved by 1, to a maximum of 2+.',
+    armourBase: 5,
     phases: ['combat'],
   },
   {
@@ -704,6 +715,7 @@ export const MAGIC_ITEMS = [
     points: 45,
     effect: 'Heavy armour (5+). While the wearer maintains the Blessing of the Lady, they are immune to Killing Blow and Multiple Wounds (X). Grail Vow, infantry or cavalry only.',
     phases: ['combat', 'shooting'],
+    armourBase: 5,
   },
   {
     name: 'Ironspike Shield',
@@ -820,6 +832,141 @@ export const MAGIC_ITEMS = [
     effect: 'The unit gains the Vanguard special rule. Bretonnian Exiles only.',
     phases: ['movement'],
   },
+  {
+    name: 'Sword of the Quest',
+    type: 'weapon',
+    points: 70,
+    effect: 'Two profiles, chosen at start of each combat round. Single-handed: S user, AP -1, Armour Bane (1), Magical Attacks. Double-handed: S+2, AP -2, Armour Bane (1), Magical Attacks, Requires Two Hands.',
+    phases: ['combat'],
+  },
+  {
+    name: 'Sword of Heroes',
+    type: 'weapon',
+    points: 60,
+    effect: 'S user, AP -1. Always Wounds on a 5+, regardless of target Toughness. Magical Attacks.',
+    phases: ['combat'],
+  },
+  {
+    name: 'Heartwood Lance',
+    type: 'weapon',
+    points: 50,
+    effect: 'S+2, AP -2. Armour Bane (1), Magical Attacks, Unbreakable (wielder only). Cavalry or monster only. Only usable during the turn a charge occurs; otherwise must use hand weapon.',
+    phases: ['combat'],
+  },
+  {
+    name: 'Morning Star of Fracasse',
+    type: 'weapon',
+    points: 40,
+    effect: 'S+1. Magical Attacks. If an enemy character suffers one or more unsaved wounds, any magic weapon they carry is destroyed.',
+    phases: ['combat'],
+  },
+  {
+    name: 'Gilded Cuirass',
+    type: 'armour',
+    points: 60,
+    effect: 'Heavy armour (5+). The wearer gains Regeneration (5+).',
+    phases: ['combat', 'shooting'],
+    armourBase: 5,
+    regen: '5+',
+  },
+  {
+    name: 'Gromril Great Helm',
+    type: 'armour',
+    points: 40,
+    effect: '+1 to armour value (max 2+). The wearer may re-roll natural 1s on armour save rolls.',
+    phases: ['combat', 'shooting'],
+    armourMod: -1,
+  },
+  {
+    name: 'Mantle of the Damsel Elena',
+    type: 'talisman',
+    points: 25,
+    effect: 'Immune to Poisoned Attacks. Any attacks with Poisoned Attacks targeting the bearer must roll To Wound normally instead.',
+    phases: ['combat', 'shooting'],
+  },
+  {
+    name: 'Sirienne\'s Locket',
+    type: 'talisman',
+    points: 25,
+    effect: 'Immune to Multiple Wounds. Infantry or cavalry only.',
+    phases: ['combat', 'shooting'],
+  },
+  {
+    name: 'Valorous Standard',
+    type: 'banner',
+    points: 60,
+    effect: 'When taking Break tests, roll 3D6 and discard the highest result.',
+    phases: ['combat'],
+  },
+  {
+    name: 'Conqueror\'s Tapestry',
+    type: 'banner',
+    points: 40,
+    effect: 'Enemy standards captured by the unit are worth 100 Victory Points each.',
+    phases: ['passive'],
+  },
+  {
+    name: 'Errantry Banner',
+    type: 'banner',
+    points: 30,
+    effect: 'The unit gains +1 Strength on a turn in which it charged. The unit also gains Impetuous.',
+    phases: ['combat'],
+  },
+  {
+    name: 'Banner of Chalons',
+    type: 'banner',
+    points: 20,
+    effect: 'Enemy units may not choose Stand & Shoot as a charge reaction against this unit.',
+    phases: ['movement'],
+  },
+  {
+    name: 'Falcon-horn of Fredemund',
+    type: 'enchanted-item',
+    points: 40,
+    effect: 'Single use. In the Command sub-phase, take a Ld test. If passed, select one enemy unit within 24" — it suffers -1 to Movement, WS, BS, and Initiative until the start of your next turn.',
+    phases: ['strategy'],
+    subPhases: ['command'],
+  },
+  {
+    name: 'Antlers of the Great Hunt',
+    type: 'enchanted-item',
+    points: 25,
+    effect: 'The bearer\'s unit gains Move Through Cover. Must be mounted on a Bretonnian Warhorse.',
+    phases: ['movement'],
+  },
+  {
+    name: 'Gauntlet of the Duel',
+    type: 'enchanted-item',
+    points: 5,
+    effect: 'Challenges issued by the bearer cannot be refused.',
+    phases: ['combat'],
+    extremely: true,
+  },
+  {
+    name: 'Silver Mirror',
+    type: 'arcane-item',
+    points: 35,
+    effect: 'Single use. When making a Wizardly dispel attempt, roll an extra D6 and discard the lowest. If a double 1 is rolled, the dispel attempt fails regardless.',
+    phases: ['strategy'],
+    subPhases: ['conjuration'],
+  },
+  {
+    name: 'Sacrament of the Lady',
+    type: 'arcane-item',
+    points: 30,
+    effect: 'Single use. Add +2 to a single Casting roll.',
+    phases: ['strategy'],
+    subPhases: ['conjuration'],
+    extremely: true,
+  },
+  {
+    name: 'Prayer Icon of Quenelles',
+    type: 'arcane-item',
+    points: 25,
+    effect: '+3" to Dispel range. +1 to Dispel rolls when attempting to dispel Hex spells.',
+    phases: ['strategy'],
+    subPhases: ['conjuration'],
+  },
 
   // ─── Vampire Counts ──────────────────────────────────────────────────
   {
@@ -855,13 +1002,16 @@ export const MAGIC_ITEMS = [
     type: 'armour',
     points: 35,
     effect: 'Heavy armour that wizards can equip without penalty. The wearer gains a 6+ Ward save.',
+    armourBase: 5,
     phases: ['combat', 'shooting'],
+    ward: '6+',
   },
   {
     name: 'The Accursed Armour',
     type: 'armour',
     points: 30,
     effect: 'Infantry or cavalry only. Full plate armour (4+). The wearer gains +1 Toughness but suffers -1 WS and -1 Initiative (min 1).',
+    armourBase: 4,
     phases: ['combat', 'shooting'],
   },
   {
@@ -877,6 +1027,7 @@ export const MAGIC_ITEMS = [
     points: 35,
     effect: 'The wearer gains a 4+ Ward save but becomes subject to Stupidity. Test Ld at Start of Turn — if failed: cannot move, shoot, cast, or dispel.',
     phases: ['strategy', 'combat', 'shooting'],
+    ward: '4+',
   },
   {
     name: 'Skull Staff',
@@ -1047,6 +1198,7 @@ export const MAGIC_ITEMS = [
     points: 20,
     effect: 'Improves armour value by 1 (max 2+). Can be worn with other armour. The wearer is subject to the Stupidity special rule.',
     phases: ['combat', 'shooting'],
+    armourMod: -1,
   },
   {
     name: 'Glyph Necklace',
@@ -1054,6 +1206,7 @@ export const MAGIC_ITEMS = [
     points: 45,
     effect: 'The bearer has a 5+ Ward save and gains Magic Resistance (-2).',
     phases: ['combat', 'shooting'],
+    ward: '5+',
   },
   {
     name: 'Aura of Quetzl',
@@ -1121,6 +1274,7 @@ export const MAGIC_ITEMS = [
     points: 35,
     effect: 'The bearer gains the Regeneration (5+) special rule.',
     phases: ['passive'],
+    regen: '5+',
   },
   {
     name: 'Sorcerous Void',
@@ -1230,6 +1384,7 @@ export const MAGIC_ITEMS = [
     points: 40,
     effect: 'May be worn with other armour. +1 armour value (max 2+) and a 3+ Ward save against wounds caused by Flaming Attacks.',
     phases: ['combat', 'shooting'],
+    armourMod: -1,
   },
   {
     name: 'Mantle of Stone',
@@ -1296,6 +1451,7 @@ export const MAGIC_ITEMS = [
     points: 65,
     effect: 'The unit gains a 6+ Ward save and Magic Resistance (-2). Friendly units within 6" gain a 5+ Ward save during the Shooting phase and Magic Resistance (-1).',
     phases: ['combat', 'shooting'],
+    ward: '6+',
   },
   {
     name: 'Ashen Banner',
@@ -1403,6 +1559,7 @@ export const MAGIC_ITEMS = [
     points: 50,
     effect: 'May be worn with other armour. +1 armour value (max 2+). During any turn the wearer charges, they gain +1 WS and +1 Attacks.',
     phases: ['combat'],
+    armourMod: -1,
   },
   {
     name: 'Mantle of Rebirth',
@@ -1410,6 +1567,7 @@ export const MAGIC_ITEMS = [
     points: 40,
     effect: 'Light armour (6+). The wearer gains Regeneration (5+).',
     phases: ['combat', 'shooting'],
+    regen: '5+',
   },
   {
     name: 'Railarian\'s Mantle',
@@ -1460,6 +1618,7 @@ export const MAGIC_ITEMS = [
     points: 0,
     effect: '5+ Ward save. During each Start of Turn sub-phase, roll a D6; on a 5+, recover a single lost Wound.',
     phases: ['combat', 'shooting'],
+    ward: '5+',
   },
   {
     name: 'Deepwood Sphere',
@@ -1564,6 +1723,7 @@ export const MAGIC_ITEMS = [
     points: 25,
     effect: 'Noble Kindred. Wood Elf Mages only. The character has a 5+ Ward save and gains the Tree Spirit special rule.',
     phases: ['combat', 'shooting'],
+    ward: '5+',
   },
   {
     name: 'A Murder of Spites',
@@ -1806,6 +1966,8 @@ export const MAGIC_ITEMS = [
     points: 40,
     effect: 'May be worn with other armour. +1 armour value (max 2+). The wearer gains Regeneration (5+).',
     phases: ['combat', 'shooting'],
+    armourMod: -1,
+    regen: '5+',
   },
   {
     name: 'Dead \'Ard Armour',
@@ -1968,6 +2130,7 @@ export const MAGIC_ITEMS = [
     points: 0,
     effect: 'Ogdruz Swampdigga only. +1 armour value. The bearer gains Regeneration (5+) and Flammable.',
     phases: ['combat', 'shooting'],
+    regen: '5+',
   },
   {
     name: 'The Big Red Raggedy Flag',
@@ -2125,6 +2288,7 @@ export const MAGIC_ITEMS = [
     points: 45,
     effect: 'The bearer gains Regeneration (5+) and Poisoned Attacks.',
     phases: ['combat', 'shooting'],
+    regen: '5+',
   },
   {
     name: 'Crown of Everlasting Conquest',
@@ -2132,6 +2296,7 @@ export const MAGIC_ITEMS = [
     points: 40,
     effect: 'The wearer gains Regeneration (5+).',
     phases: ['passive'],
+    regen: '5+',
   },
   {
     name: 'Talisman of the Soaring Eagle',
@@ -2427,6 +2592,7 @@ export const MAGIC_ITEMS = [
     points: 45,
     effect: 'Heavy armour. 6+ Ward save. Immune to Killing Blow; if struck, may attempt armour and Regeneration saves normally, losing only a single Wound if unsaved.',
     phases: ['combat', 'shooting'],
+    ward: '6+',
   },
   {
     name: 'Shield of the Gorgon',
@@ -2441,6 +2607,7 @@ export const MAGIC_ITEMS = [
     points: 35,
     effect: 'Light armour that may be worn by an Imperial Wizard without penalty. 5+ Ward save.',
     phases: ['combat', 'shooting'],
+    ward: '5+',
   },
   {
     name: 'Twice-Blessed Armour',
@@ -2456,6 +2623,7 @@ export const MAGIC_ITEMS = [
     points: 0,
     effect: '5+ Ward save. Immune to Killing Blow; may attempt armour and Regeneration saves normally, losing only a single Wound if unsaved.',
     phases: ['combat', 'shooting'],
+    ward: '5+',
   },
   {
     name: 'The White Cloak',
@@ -2463,6 +2631,7 @@ export const MAGIC_ITEMS = [
     points: 30,
     effect: '5+ Ward save. 3+ Ward save against wounds caused by Flaming Attacks.',
     phases: ['combat', 'shooting'],
+    ward: '5+',
   },
   {
     name: 'Jade Amulet',
@@ -2529,6 +2698,7 @@ export const MAGIC_ITEMS = [
     effect: 'Single use. May cast Oaken Shield (Lore of Battle Magic) as a Bound Spell with Power Level 3. Grants 5+ Ward save until next Start of Turn.',
     phases: ['strategy'],
     subPhases: ['conjuration'],
+    ward: '5+',
   },
   {
     name: 'Order of the White Wolf',
@@ -2550,6 +2720,7 @@ export const MAGIC_ITEMS = [
     points: 15,
     effect: 'Knightly Order. Gains Hatred (Undead) and 6+ Ward save vs non-magical attacks. Inner Circle gains Fear and Magical Attacks.',
     phases: ['combat', 'shooting'],
+    ward: '6+',
   },
   {
     name: 'Order of the Blazing Sun',
@@ -2707,6 +2878,7 @@ export const MAGIC_ITEMS = [
     points: 35,
     effect: 'Full plate armour (4+). 5+ Ward save.',
     phases: ['combat', 'shooting'],
+    ward: '5+',
   },
   {
     name: 'The Golden Shield',
@@ -2721,6 +2893,7 @@ export const MAGIC_ITEMS = [
     points: 10,
     effect: 'May be worn with other armour. +1 armour value (max 2+). 6+ Ward save against Flaming Attacks.',
     phases: ['combat', 'shooting'],
+    armourMod: -1,
   },
   {
     name: 'Circlet of Atrazar',
@@ -2848,6 +3021,7 @@ export const MAGIC_ITEMS = [
     points: 20,
     effect: 'The bearer gains Regeneration (5+).',
     phases: ['combat', 'shooting'],
+    regen: '5+',
   },
   {
     name: 'Blood of Caledor',
@@ -2890,6 +3064,7 @@ export const MAGIC_ITEMS = [
     points: 0,
     effect: '+1 armour in melee, +2 armour (max 2+) vs non-magical ranged attacks. Regeneration (5+).',
     phases: ['combat', 'shooting'],
+    regen: '5+',
   },
   {
     name: 'Pure of Heart',
@@ -3034,6 +3209,7 @@ export const MAGIC_ITEMS = [
     points: 40,
     effect: 'Full plate armour. A Wizard may equip without penalty. 5+ Ward save.',
     phases: ['combat', 'shooting'],
+    ward: '5+',
   },
   {
     name: 'Pelt of the Dark Young',
@@ -3041,6 +3217,7 @@ export const MAGIC_ITEMS = [
     points: 40,
     effect: 'May be worn with other armour. +1 armour value (max 2+). The wearer and their unit gains Magic Resistance (-2).',
     phases: ['combat', 'shooting'],
+    armourMod: -1,
   },
   {
     name: 'Heavy Chaos Armour',
@@ -3048,6 +3225,7 @@ export const MAGIC_ITEMS = [
     points: 30,
     effect: 'Heavy armour. A Wizard may equip without penalty. 5+ Ward save.',
     phases: ['combat', 'shooting'],
+    ward: '5+',
   },
   {
     name: 'The Blackened Plate',
@@ -3099,6 +3277,7 @@ export const MAGIC_ITEMS = [
     points: 0,
     effect: 'Ghorros only. 6+ Ward save vs non-magical attacks. 5+ Ward save vs magical attacks.',
     phases: ['combat', 'shooting'],
+    ward: '6+',
   },
   {
     name: 'The Plague Chalice',
@@ -3441,6 +3620,7 @@ export const MAGIC_ITEMS = [
     points: 45,
     effect: 'The wearer has an armour value of 2+ which cannot be improved.',
     phases: ['combat', 'shooting'],
+    armourBase: 2,
   },
   {
     name: 'Rune of Iron',
@@ -3469,6 +3649,7 @@ export const MAGIC_ITEMS = [
     points: 15,
     effect: 'One Rune: 6+ Ward save. Each additional Rune improves by 1.',
     phases: ['combat', 'shooting'],
+    ward: '6+',
   },
   {
     name: 'Rune of Stone',
@@ -3544,6 +3725,7 @@ export const MAGIC_ITEMS = [
     points: 80,
     effect: 'The unit gains a 5+ Ward save. Friendly units within 6" gain a 6+ Ward save during the Shooting phase.',
     phases: ['passive'],
+    ward: '5+',
   },
   {
     name: 'Master Rune of Stromni Redbeard',

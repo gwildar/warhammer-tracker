@@ -175,7 +175,7 @@ describe('Combat phase with Bretonnia charge army', () => {
     renderGameScreen(army)
     // Baron: heavy armour (5+) + shield (-1) + barding (-1) = 3+
     const text = getApp().textContent
-    expect(text).toContain('AS: 3+')
+    expect(text).toContain('AS3+')
   })
 
   it('does not show unit count for merged Knights Errant', () => {
