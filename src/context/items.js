@@ -1,4 +1,4 @@
-import { findMagicItem } from '../magic-items.js'
+import { findMagicItem } from '../data/magic-items.js'
 
 export function renderMagicItemsContext(army, phaseId, subPhaseId) {
   const grouped = {}

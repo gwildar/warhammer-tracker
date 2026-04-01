@@ -1,4 +1,4 @@
-import { LORES, getSpellTypeLabel } from '../spells.js'
+import { LORES, getSpellTypeLabel } from '../data/spells.js'
 import { getSpellSelections, saveSpellSelections, saveArmy } from '../state.js'
 import { formatSlug } from '../helpers.js'
 

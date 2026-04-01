@@ -186,10 +186,10 @@ export const PHASES = [
         name: 'Break Test',
         rules: [
           'Each unit on the losing side takes a Break test.',
-          'Roll 2D6 \u2264 Ld (modified by amount lost by).',
-          'Gives Ground: lost by 1 \u2014 unit moves back but maintains formation.',
-          'Falls Back in Good Order: lost by 2+ but passed Break test \u2014 controlled retreat.',
-          'Breaks and Flees: failed Break test \u2014 unit routs and flees.',
+          'Roll 2D6 vs Ld (modified by combat result difference).',
+          'Gives Ground: modified roll \u2264 Ld (or natural double 1) \u2014 moves 2" back, maintains formation.',
+          'Falls Back in Good Order: natural roll \u2264 Ld but modified roll > Ld \u2014 controlled retreat, auto-rallies.',
+          'Breaks and Flees: natural roll > Ld \u2014 unit routs and flees.',
         ],
       },
       {

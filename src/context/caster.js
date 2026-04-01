@@ -1,4 +1,4 @@
-import { LORES, getSpellTypeLabel } from '../spells.js'
+import { LORES, getSpellTypeLabel } from '../data/spells.js'
 import { getCasters } from '../army.js'
 import { getSpellSelections } from '../state.js'
 

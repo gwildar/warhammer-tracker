@@ -1,5 +1,5 @@
-import { SPECIAL_RULES } from '../special-rules.js'
-import { findMount, TROOP_TYPE_RULES } from '../mounts.js'
+import { SPECIAL_RULES } from '../data/special-rules.js'
+import { findMount, TROOP_TYPE_RULES } from '../data/mounts.js'
 import { getRound } from '../state.js'
 import { parseUnitRules, normaliseRuleName, ruleMatches } from '../helpers.js'
 

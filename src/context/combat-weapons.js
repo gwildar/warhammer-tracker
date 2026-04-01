@@ -1,27 +1,28 @@
-import { COMBAT_WEAPONS } from '../weapons.js'
+import { COMBAT_WEAPONS } from '../data/weapons.js'
+
+function matchCombatWeapon(gearStr) {
+  const lower = gearStr.toLowerCase()
+  for (const [key, weapon] of Object.entries(COMBAT_WEAPONS)) {
+    if (lower.includes(key)) return weapon
+  }
+  return null
+}
 
 export function renderCombatWeaponsContext(army) {
-  const units = army.units
-  if (units.length === 0) return ''
+  if (army.units.length === 0) return ''
 
   const groups = {}
 
-  for (const u of units) {
-    const allGear = [...u.equipment]
-    for (const gear of allGear) {
-      const parts = gear.split(',').map(s => s.trim())
-      for (const part of parts) {
-        const lower = part.toLowerCase()
-        for (const [key, weapon] of Object.entries(COMBAT_WEAPONS)) {
-          if (lower.includes(key)) {
-            const groupKey = weapon.name
-            if (!groups[groupKey]) groups[groupKey] = { weapon, units: [] }
-            if (!groups[groupKey].units.some(x => x.name === u.name)) {
-              groups[groupKey].units.push(u)
-            }
-            break
-          }
-        }
+  for (const u of army.units) {
+    const parts = u.equipment.flatMap(g => g.split(',').map(s => s.trim()))
+    const matched = new Set()
+
+    for (const part of parts) {
+      const weapon = matchCombatWeapon(part)
+      if (weapon && !matched.has(weapon.name)) {
+        matched.add(weapon.name)
+        if (!groups[weapon.name]) groups[weapon.name] = { weapon, units: [] }
+        groups[weapon.name].units.push(u)
       }
     }
   }

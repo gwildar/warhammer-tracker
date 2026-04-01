@@ -1,6 +1,6 @@
 import { getShootingUnits } from '../army.js'
-import { RANGED_WEAPONS } from '../weapons.js'
-import { findMount } from '../mounts.js'
+import { RANGED_WEAPONS } from '../data/weapons.js'
+import { findMount } from '../data/mounts.js'
 
 export function renderShootingContext(army) {
   const shooters = getShootingUnits(army)

@@ -1,5 +1,5 @@
-import { LORES } from './spells.js'
-import { findMount } from './mounts.js'
+import { LORES } from './data/spells.js'
+import { findMount } from './data/mounts.js'
 
 const UNIT_CATEGORIES = ['characters', 'core', 'special', 'rare', 'mercenaries', 'allies', 'lords', 'heroes']
 
