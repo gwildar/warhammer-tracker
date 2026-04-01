@@ -133,6 +133,7 @@ export const SPECIAL_RULES = [
       {
         phaseId: 'movement',
         subPhaseId: 'declare-charges',
+        opponentOnly: true,
         description:
           'Charge reaction vs cavalry/chariots/monsters charging front arc. Pivot to face, move D3+1" toward charger. Both units count as having charged. Cannot use if distance < charger\'s M.',
       },
@@ -144,6 +145,7 @@ export const SPECIAL_RULES = [
       {
         phaseId: 'movement',
         subPhaseId: 'declare-charges',
+        opponentOnly: true,
         description:
           'Charge reaction: Stand & Shoot then Flee. Flee roll discards lowest D6. Cannot use if distance < charger\'s M.',
       },
@@ -450,17 +452,6 @@ export const SPECIAL_RULES = [
     ],
   },
   {
-    name: 'Stomp Attacks',
-    phases: [
-      {
-        phaseId: 'combat',
-        subPhaseId: 'choose-fight',
-        description:
-          'Resolved last (after I1 attacks). Auto-hit at unmodified S. Only models in base contact.',
-      },
-    ],
-  },
-  {
     name: 'Extra Attacks',
     phases: [
       {
@@ -565,6 +556,7 @@ export const SPECIAL_RULES = [
       {
         phaseId: 'movement',
         subPhaseId: 'declare-charges',
+        opponentOnly: true,
         description:
           'When charging a Fear-causing unit with higher Unit Strength, take Ld test or fail the charge.',
       },
@@ -665,12 +657,6 @@ export const SPECIAL_RULES = [
   {
     name: 'Armour Bane',
     phases: [
-      {
-        phaseId: 'shooting',
-        subPhaseId: 'wound-and-save',
-        description:
-          'Natural 6 To Wound: AP improves by X.',
-      },
       {
         phaseId: 'combat',
         subPhaseId: 'choose-fight',

@@ -7,6 +7,7 @@ import { renderCombatWeaponsContext } from '../context/combat-weapons.js'
 import { renderChargeContext } from '../context/charge.js'
 import { renderMagicItemsContext } from '../context/items.js'
 import { renderSpecialRulesContext } from '../context/special-rules-context.js'
+import { renderStompContext } from '../context/stomps.js'
 import { navigate } from '../navigate.js'
 
 const app = document.getElementById('app')
@@ -134,6 +135,7 @@ function renderPhaseContext(army, phase, subPhase) {
 
   if (subPhase.id !== 'remove-casualties') html += renderMagicItemsContext(army, phase.id, subPhase.id)
   html += renderSpecialRulesContext(army, subPhase)
+  if (subPhase.id === 'choose-fight') html += renderStompContext(army)
 
   return html
 }
