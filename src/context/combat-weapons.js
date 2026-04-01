@@ -37,7 +37,7 @@ export function renderCombatWeaponsContext(army) {
           <div class="p-2 rounded bg-wh-card">
             <div class="flex items-center gap-2 mb-1">
               <span class="text-wh-text font-semibold text-sm">${weapon.name}</span>
-              <span class="text-wh-muted font-mono text-xs">S${weapon.s}</span>
+              <span class="text-wh-muted font-mono text-xs">${weapon.s}</span>
               ${weapon.ap && weapon.ap !== '—' ? `<span class="text-wh-muted font-mono text-xs">AP ${weapon.ap}</span>` : ''}
             </div>
             ${weapon.rules ? `<p class="text-xs text-wh-muted mb-1">${weapon.rules}</p>` : ''}
