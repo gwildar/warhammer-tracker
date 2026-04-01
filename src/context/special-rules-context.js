@@ -108,6 +108,7 @@ export function renderSpecialRulesForPhase(army, phase) {
           for (const rulePhase of rule.phases) {
             if (rulePhase.subPhaseId !== sub.id) continue
             if (rulePhase.fromRound && round < rulePhase.fromRound) continue
+            if (rulePhase.yourTurnOnly) continue
             const key = `${ruleName}||${rulePhase.description}`
             if (!grouped[key]) grouped[key] = { ruleName, description: rulePhase.description, units: [] }
             if (!grouped[key].units.includes(unit.name)) grouped[key].units.push(unit.name)

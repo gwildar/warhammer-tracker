@@ -5,12 +5,14 @@ import { getCasters } from '../army.js'
 import darkElvesJson from './fixtures/dark-elves.owb.json'
 import lizardmenJson from './fixtures/lizardmen.owb.json'
 import bretonniaJson from './fixtures/bretonnia.owb.json'
+import bretonniaChargeJson from './fixtures/bretonnia-charge.owb.json'
 
 export function loadArmy(fixture) {
   const jsonMap = {
     'dark-elves': darkElvesJson,
     'lizardmen': lizardmenJson,
     'bretonnia': bretonniaJson,
+    'bretonnia-charge': bretonniaChargeJson,
   }
   const json = jsonMap[fixture]
   const army = parseArmyList(json)

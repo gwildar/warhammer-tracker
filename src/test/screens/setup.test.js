@@ -104,4 +104,23 @@ describe('Setup Screen', () => {
       expect(getApp().textContent).toContain('Bretonnia')
     })
   })
+
+  describe('with Bretonnia charge army', () => {
+    let army
+
+    beforeEach(() => {
+      army = loadArmy('bretonnia-charge')
+    })
+
+    it('includes mount option points in unit total (barding)', () => {
+      const baron = army.units.find(u => u.mount === 'Hippogryph')
+      expect(baron).toBeTruthy()
+      expect(baron.points).toBe(346)
+    })
+
+    it('shows mount option points on setup screen', () => {
+      renderSetupScreen()
+      expect(getApp().textContent).toContain('346pts')
+    })
+  })
 })

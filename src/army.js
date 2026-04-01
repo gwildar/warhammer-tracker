@@ -172,6 +172,15 @@ function calculateUnitPoints(raw) {
   addActivePoints(raw.options)
   addActivePoints(raw.mounts)
 
+  // Mount options (e.g. barding)
+  if (Array.isArray(raw.mounts)) {
+    for (const mount of raw.mounts) {
+      if (mount.active) {
+        addActivePoints(mount.options)
+      }
+    }
+  }
+
   if (Array.isArray(raw.command)) {
     for (const cmd of raw.command) {
       if (cmd.active) {
@@ -218,7 +227,7 @@ export function getShootingUnits(army) {
     const hasRangedGear = allGear.some(g => missileKeywords.some(k => g.includes(k)))
     const mountData = u.mount ? findMount(u.mount) : null
     const hasBreath = mountData?.breath != null
-    return hasRangedGear || hasBreath || u.isCaster
+    return hasRangedGear || hasBreath
   })
 }
 

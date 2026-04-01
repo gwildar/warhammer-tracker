@@ -137,6 +137,7 @@ export const PHASES = [
           'Armour Piercing (AP) modifies the save (e.g. AP \u22121 means save worsened by 1).',
           'Ward saves are taken after armour saves (not modified by AP).',
         ],
+        showShooting: true,
       },
       {
         id: 'remove-casualties',

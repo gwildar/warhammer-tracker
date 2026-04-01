@@ -43,6 +43,7 @@ export const SPECIAL_RULES = [
       {
         phaseId: 'strategy',
         subPhaseId: 'start-of-turn',
+        yourTurnOnly: true,
         description:
           'Unless fleeing or in combat, test Ld. If failed: cannot move, shoot, cast, or dispel until next Start of Turn. Must Hold if charged.',
       },
@@ -187,12 +188,14 @@ export const SPECIAL_RULES = [
       {
         phaseId: 'movement',
         subPhaseId: 'declare-charges',
+        yourTurnOnly: true,
         description:
           'Max declarable charge range is M+6+3" (instead of M+6").',
       },
       {
         phaseId: 'movement',
         subPhaseId: 'charge-moves',
+        yourTurnOnly: true,
         description:
           '+3" max charge range. May add +D6 to Charge, Flee, or Pursuit rolls.',
       },
@@ -579,6 +582,7 @@ export const SPECIAL_RULES = [
       {
         phaseId: 'movement',
         subPhaseId: 'declare-charges',
+        yourTurnOnly: true,
         description:
           'When a Terror-causing unit declares a charge, the target takes Ld test — failed = must Flee. Also causes Fear.',
       },

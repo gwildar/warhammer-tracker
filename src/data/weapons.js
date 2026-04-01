@@ -57,6 +57,12 @@ export const RANGED_WEAPONS = {
   'dragon fire': { name: 'Dragon Fire', range: 'Template', s: '4', ap: '-1', rules: 'Breath Weapon, Flaming Attacks' },
   'soporific breath': { name: 'Soporific Breath', range: 'Template', s: '2', ap: '—', rules: 'Breath Weapon. No armour saves.' },
   'dark fire of chaos': { name: 'Dark Fire of Chaos', range: 'Template', s: '4', ap: '-1', rules: 'Breath Weapon, Flaming Attacks, Magical Attacks' },
+  'briny breath': { name: 'Briny Breath', range: 'Template', s: '2', ap: '-2', rules: 'Breath Weapon. -1 Initiative on wounded models.' },
+
+  // ─── High Elf Ranged ─────────────────────────────────────────────────
+  'bow of avelorn': { name: 'Bow of Avelorn', range: '30"', s: 'S', ap: '—', rules: 'Armour Bane (1), Magical Attacks, Volley Fire' },
+  'bows of avelorn': { name: 'Bow of Avelorn', range: '30"', s: 'S', ap: '—', rules: 'Armour Bane (1), Magical Attacks, Volley Fire' },
+  'eagle-eye bolt thrower': { name: 'Eagle-eye Bolt Thrower', range: '24"', s: '5', ap: '-3', rules: 'Cumbersome, Multiple Wounds (D3)' },
 }
 
 export const COMBAT_WEAPONS = {
@@ -101,6 +107,18 @@ export const COMBAT_WEAPONS = {
   // ─── Mount Weapons ───────────────────────────────────────────────────
   'serrated maw': { name: 'Serrated Maw', s: 'S', ap: '—', rules: 'Armour Bane (2), Multiple Wounds (2). Must make one attack per turn with this weapon.' },
   'mighty antlers': { name: 'Mighty Antlers', s: 'S', ap: '-1', rules: 'Armour Bane (1)' },
+  'lashing talons': { name: 'Lashing Talons', s: 'S', ap: '-1', rules: 'Armour Bane (1)' },
+  'serpentine tail': { name: 'Serpentine Tail', s: 'S+2', ap: '-2', rules: 'Strike Last. Must make one attack per turn with this weapon.' },
+
+  // ─── High Elf Weapons ────────────────────────────────────────────────
+  'ceremonial halberd': { name: 'Ceremonial Halberd', s: 'S+1', ap: '-1', rules: 'Armour Bane (1), Fight In Extra Rank, Magical Attacks, Requires Two Hands. No supporting attacks on charge turn.' },
+  'ceremonial halberds': { name: 'Ceremonial Halberd', s: 'S+1', ap: '-1', rules: 'Armour Bane (1), Fight In Extra Rank, Magical Attacks, Requires Two Hands. No supporting attacks on charge turn.' },
+  'chracian great blade': { name: 'Chracian Great Blade', s: 'S+2', ap: '-3', rules: 'Requires Two Hands, Strike Last' },
+  'chracian great blades': { name: 'Chracian Great Blade', s: 'S+2', ap: '-3', rules: 'Requires Two Hands, Strike Last' },
+  "handmaiden's spear": { name: "Handmaiden's Spear", s: 'S', ap: '-1', rules: '+1 Initiative when charged in front arc.' },
+  "handmaiden's spears": { name: "Handmaiden's Spear", s: 'S', ap: '-1', rules: '+1 Initiative when charged in front arc.' },
+  'sword of hoeth': { name: 'Sword of Hoeth', s: 'S+2', ap: '-2', rules: 'Magical Attacks, Requires Two Hands' },
+  'swords of hoeth': { name: 'Sword of Hoeth', s: 'S+2', ap: '-2', rules: 'Magical Attacks, Requires Two Hands' },
 }
 
 /**

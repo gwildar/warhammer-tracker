@@ -73,12 +73,18 @@ export function renderGameScreen(army) {
           <!-- Rules -->
           <div class="bg-wh-surface rounded-lg border border-wh-border p-4 mb-4">
             <ul class="space-y-2">
-              ${subPhase.rules.map(rule => `
-                <li class="flex gap-2 text-sm">
+              ${subPhase.rules.map(rule => {
+                if (rule.startsWith('•')) {
+                  return `<li class="flex gap-2 text-sm ml-5">
+                    <span class="text-wh-muted mt-0.5 shrink-0">•</span>
+                    <span>${rule.slice(1).trim()}</span>
+                  </li>`
+                }
+                return `<li class="flex gap-2 text-sm">
                   <span class="${PHASE_TEXT[phase.colour]} mt-0.5 shrink-0">&#9654;</span>
                   <span>${rule}</span>
-                </li>
-              `).join('')}
+                </li>`
+              }).join('')}
             </ul>
           </div>
 
