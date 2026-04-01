@@ -6,30 +6,12 @@ import { parseArmyList, getCasters, getShootingUnits, getMovementUnits } from '.
 import { RANGED_WEAPONS } from './weapons.js'
 import { findMagicItem } from './magic-items.js'
 import { SPECIAL_RULES } from './special-rules.js'
+import { findMount } from './mounts.js'
 import RULES_INDEX from './rules-index-export.json'
 
 // Army name → rules index key overrides (both lowercase)
 const UNIT_NAME_ALIASES = {
   'bloodwrack medusas': 'bloodwrack medusa',
-}
-
-// Mounts with Fly — m = base movement, f = fly movement, s = swiftstride
-const FLYING_MOUNTS = {
-  'hippogryph': { m: 7, f: 9, s: true },
-  'royal pegasus': { m: 8, f: 10, s: true },
-  'barded pegasus': { m: 7, f: 10, s: true },
-  'pegasus': { m: 8, f: 10, s: true },
-  'great eagle': { m: 2, f: 10, s: true },
-  'wyvern': { m: 4, f: 9, s: true },
-  'manticore': { m: 6, f: 9, s: true  },
-  'griffon': { m: 6, f: 9, s: true },
-  'star dragon': { m: 6, f: 10, s: true  },
-  'chaos dragon': { m: 6, f: 10, s: true  },
-  'black dragon': { m: 6, f: 10, s: true  },
-  'moon dragon': { m: 6, f: 10, s: true },
-  'forest dragon': { m: 6, f: 10, s: true },
-  'necrolith bone dragon': { m: 6, f: 9, s: true },
-  'sun dragon': { m: 6, f: 10, s: true },
 }
 
 function resolveRulesIndexKey(name) {
@@ -40,7 +22,6 @@ function resolveRulesIndexKey(name) {
 function lookupMovement(name) {
   const entry = RULES_INDEX[resolveRulesIndexKey(name)]
   if (!entry?.stats) return null
-  // Scan from last to first — mount stat line is typically last
   for (let i = entry.stats.length - 1; i >= 0; i--) {
     if (entry.stats[i].M && entry.stats[i].M !== '-') return entry.stats[i].M
   }
@@ -53,6 +34,8 @@ function resolveMovement(unit) {
   if (inlineMv && inlineMv !== '-') return inlineMv
   // 2. Mount lookup (characters on mounts)
   if (unit.mount) {
+    const mount = findMount(unit.mount)
+    if (mount) return String(mount.m)
     const mountMv = lookupMovement(unit.mount)
     if (mountMv) return mountMv
   }
@@ -678,12 +661,12 @@ function renderChargeContext(army) {
           // Check for Fly — unit special rules first, then flying mount lookup
           const flyRule = allRules.find(r => /^fly\s*\(/i.test(r.trim()))
           const flyMatch = flyRule ? flyRule.match(/\((\d+)\)/) : null
-          const mountData = u.mount ? FLYING_MOUNTS[u.mount.toLowerCase()] : null
+          const mountData = u.mount ? findMount(u.mount) : null
           const flyMv = flyMatch ? Number(flyMatch[1]) : (mountData?.f ?? null)
           const hasFly = flyMv != null
-          const hasSwiftstride = unitSwiftstride || (mountData?.s ?? false)
+          const hasSwiftstride = unitSwiftstride || (mountData?.swiftstride ?? false)
 
-          // Base movement — for fly mounts use mount's m value
+          // Base movement — for mounts use mount's m value
           const baseMv = mountData ? mountData.m : (mv != null ? Number(mv) : null)
           const swiftBonus = hasSwiftstride ? 3 : 0
 
@@ -805,6 +788,13 @@ function renderSpecialRulesContext(army, subPhase) {
       ...parseUnitRules(unit.specialRules),
       ...unit.equipment,
     ]
+    // Inject mount-granted swiftstride if the unit doesn't already have it
+    const hasSwiftstride = unitRules.some(r => normaliseRuleName(r).toLowerCase() === 'swiftstride')
+    if (!hasSwiftstride && unit.mount) {
+      const mount = findMount(unit.mount)
+      if (mount?.swiftstride) unitRules.push('Swiftstride')
+    }
+
     for (const ruleName of unitRules) {
       const normName = normaliseRuleName(ruleName)
       for (const rule of SPECIAL_RULES) {
