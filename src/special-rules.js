@@ -268,6 +268,17 @@ export const SPECIAL_RULES = [
 
   // ─── Shooting Phase ───────────────────────────────────────────────
   {
+    name: 'Petrifying Gaze',
+    phases: [
+      {
+        phaseId: 'shooting',
+        subPhaseId: 'choose-target',
+        description:
+          '18" range, S2. Magical Attacks, Multiple Wounds (D3). To Wound uses target\'s Initiative instead of Toughness. No armour saves permitted (Ward and Regeneration allowed).',
+      },
+    ],
+  },
+  {
     name: 'Breath Weapon',
     phases: [
       {
