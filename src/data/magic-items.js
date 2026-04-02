@@ -84,6 +84,7 @@ export const MAGIC_ITEMS = [
     phases: ['combat', 'strategy'],
     subPhases: ['combat'],
     s: 'S', ap: '-1',
+    mr: -2,
   },
   {
     name: 'Giant Blade',
@@ -290,6 +291,7 @@ export const MAGIC_ITEMS = [
   {
     name: 'Obsidian Lodestone',
     type: 'talisman',
+    mr: -1,
     points: 20,
     effect: 'May purchase up to three. One gives Magic Resistance (-1), two gives (-2), three gives (-3).',
     phases: ['strategy'],
@@ -1223,6 +1225,7 @@ export const MAGIC_ITEMS = [
   {
     name: 'Glyph Necklace',
     type: 'talisman',
+    mr: -2,
     points: 45,
     effect: 'The bearer has a 5+ Ward save and gains Magic Resistance (-2).',
     phases: ['combat', 'shooting'],
@@ -1299,6 +1302,7 @@ export const MAGIC_ITEMS = [
   {
     name: 'Sorcerous Void',
     type: 'enchanted-item',
+    mr: -3,
     points: 30,
     effect: 'The bearer gains Magic Resistance (-D3). Roll the D3 before armies are deployed.',
     phases: ['strategy'],
@@ -1394,6 +1398,7 @@ export const MAGIC_ITEMS = [
   {
     name: 'Armour of Bazherak the Cruel',
     type: 'armour',
+    mr: -2,
     points: 50,
     effect: 'Full plate armour. The wearer gains Immune to Psychology and Magic Resistance (-2).',
     phases: ['combat', 'shooting'],
@@ -1461,6 +1466,7 @@ export const MAGIC_ITEMS = [
   {
     name: 'Obsidian Vambraces',
     type: 'enchanted-item',
+    mr: -1,
     points: 15,
     effect: '+1 Strength, Magic Resistance (-1). If the wearer rolls a natural 1 To Hit during Combat, the gauntlets shatter.',
     phases: ['combat'],
@@ -1468,6 +1474,7 @@ export const MAGIC_ITEMS = [
   {
     name: 'The Lammasu\'s Beard',
     type: 'banner',
+    mr: -2,
     points: 65,
     effect: 'The unit gains a 6+ Ward save and Magic Resistance (-2). Friendly units within 6" gain a 5+ Ward save during the Shooting phase and Magic Resistance (-1).',
     phases: ['combat', 'shooting'],
@@ -1620,6 +1627,7 @@ export const MAGIC_ITEMS = [
   {
     name: 'Ariel\'s Favour',
     type: 'talisman',
+    mr: -2,
     points: 30,
     effect: 'The bearer gains Magic Resistance (-2). Any enemy spell casting roll targeting the bearer\'s unit suffers a -2 modifier.',
     phases: ['strategy'],
@@ -1999,6 +2007,7 @@ export const MAGIC_ITEMS = [
   {
     name: 'Armour of Mork',
     type: 'armour',
+    mr: -2,
     points: 30,
     effect: 'Heavy armour (5+). The wearer gains Magic Resistance (-2).',
     phases: ['combat', 'shooting'],
@@ -2020,6 +2029,7 @@ export const MAGIC_ITEMS = [
   {
     name: 'Sparkly Wizard Finda',
     type: 'talisman',
+    mr: -2,
     points: 45,
     effect: 'The bearer gains Magic Resistance (-2) and Hatred (enemy Wizards).',
     phases: ['combat', 'shooting'],
@@ -2321,6 +2331,7 @@ export const MAGIC_ITEMS = [
   {
     name: 'Talisman of the Soaring Eagle',
     type: 'talisman',
+    mr: -2,
     points: 35,
     effect: 'Magic Resistance (-2) and a 5+ Ward save against wounds caused by Magical Attacks.',
     phases: ['combat', 'shooting'],
@@ -2328,6 +2339,7 @@ export const MAGIC_ITEMS = [
   {
     name: 'Brazen Collar',
     type: 'talisman',
+    mr: -2,
     points: 20,
     effect: 'Magic Resistance (-2).',
     phases: ['strategy'],
@@ -2494,6 +2506,7 @@ export const MAGIC_ITEMS = [
   {
     name: 'Banner of the Dark Powers',
     type: 'banner',
+    mr: -3,
     points: 50,
     effect: 'The unit gains Magic Resistance (-3).',
     phases: ['strategy'],
@@ -2663,6 +2676,7 @@ export const MAGIC_ITEMS = [
   {
     name: 'Witch Hunter\'s Ward',
     type: 'talisman',
+    mr: -2,
     points: 20,
     effect: 'Magic Resistance (-2). Once per game, may re-roll a single failed Armour Save.',
     phases: ['combat', 'shooting'],
@@ -2752,6 +2766,7 @@ export const MAGIC_ITEMS = [
   {
     name: 'Order of the Knights Panther',
     type: 'enchanted-item',
+    mr: -1,
     points: 10,
     effect: 'Knightly Order. Must be armed with lances. May re-roll a single natural 1 on Charge rolls. Gains Hatred (Warriors of Chaos, Beastmen, Daemons). Inner Circle gains Magic Resistance (-1).',
     phases: ['combat'],
@@ -3111,6 +3126,7 @@ export const MAGIC_ITEMS = [
   {
     name: 'Banner of Arcane Protection',
     type: 'banner',
+    mr: -3,
     points: 70,
     effect: 'The unit gains Magic Resistance (-3). All friendly units within 6" gain Magic Resistance (-1).',
     phases: ['strategy'],
@@ -3234,6 +3250,7 @@ export const MAGIC_ITEMS = [
   {
     name: 'Pelt of the Dark Young',
     type: 'armour',
+    mr: -2,
     points: 40,
     effect: 'May be worn with other armour. +1 armour value (max 2+). The wearer and their unit gains Magic Resistance (-2).',
     phases: ['combat', 'shooting'],

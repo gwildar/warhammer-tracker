@@ -31,7 +31,14 @@ export function resolveMovement(unit) {
     const mountMv = lookupMovement(unit.mount)
     if (mountMv) return mountMv
   }
-  // 3. Unit name lookup (cavalry etc.)
+  // 3. Embedded mount stat line (e.g. Blood Knights with Nightmare)
+  if (unit.stats && unit.stats.length > 1) {
+    for (let i = 1; i < unit.stats.length; i++) {
+      const s = unit.stats[i]
+      if (s.M && s.M !== '-' && s.Ld === '-') return s.M
+    }
+  }
+  // 4. Unit name lookup (cavalry etc.)
   return lookupMovement(unit.name)
 }
 

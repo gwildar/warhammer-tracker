@@ -29,6 +29,12 @@ function normaliseItemName(name) {
   return name.toLowerCase().replace(/\*$/, '')
 }
 
+// Items whose effect is fully represented by MR on the header
+const MR_ITEM_NAMES = new Set(
+  MAGIC_ITEMS.filter(i => i.mr && !i.ward && !i.regen && !i.armourBase && !i.armourMod)
+    .map(i => i.name.toLowerCase())
+)
+
 const HAND_WEAPON = { name: 'Hand Weapon', s: 'S', ap: '—', rules: '' }
 
 function calculateArmourSave(unit) {
@@ -338,7 +344,7 @@ const COMBAT_RELEVANT_RULES = [
   'poisoned attacks', 'flaming attacks', 'immune to psychology',
   'stubborn', 'unbreakable', 'frenzy', 'hatred', 'eternal hatred',
   'first charge', 'counter charge',
-  'multiple wounds', 'regeneration', 'shield of the lady',
+  'cleaving blow', 'multiple wounds', 'shield of the lady',
   'aura of the lady', 'living saints', 'murderous',
 ]
 
@@ -352,9 +358,16 @@ function extractCombatRules(unit) {
 }
 
 function detectMagicResistance(unit) {
-  if (!unit.specialRules) return null
-  const match = unit.specialRules.match(/Magic Resistance\s*\((-?\d+)\)/i)
-  return match ? match[1] : null
+  let total = 0
+  // From special rules
+  const match = unit.specialRules?.match(/Magic Resistance\s*\((-?\d+)\)/i)
+  if (match) total += parseInt(match[1])
+  // From magic items
+  for (const itemName of unit.magicItems) {
+    const mi = MAGIC_ITEM_MAP[normaliseItemName(itemName)]
+    if (mi?.mr) total += mi.mr
+  }
+  return total !== 0 ? `${total}` : null
 }
 
 function detectArmouredHide(unit) {
@@ -394,7 +407,7 @@ export function renderCombatWeaponsContext(army) {
         stomp: detectStompFromRules(u),
         impactHits: detectImpactHitsFromRules(u),
         singleUseItems: suItems,
-        itemNames: buildItemNames(u).filter(n => !suNames.has(n.toLowerCase())),
+        itemNames: buildItemNames(u).filter(n => !suNames.has(n.toLowerCase()) && !MR_ITEM_NAMES.has(n.toLowerCase())),
         riderTags: buildRiderTags(u),
         combatRules: extractCombatRules(u),
         crew: [],
@@ -490,7 +503,7 @@ export function renderCombatWeaponsContext(army) {
       itemNames: (() => {
         const suItems = detectSingleUseItems(u)
         const suNames = new Set(suItems.map(i => i.name.toLowerCase()))
-        return buildItemNames(u).filter(n => !suNames.has(n.toLowerCase()))
+        return buildItemNames(u).filter(n => !suNames.has(n.toLowerCase()) && !MR_ITEM_NAMES.has(n.toLowerCase()))
       })(),
       riderTags: buildRiderTags(u),
       combatRules: extractCombatRules(u),

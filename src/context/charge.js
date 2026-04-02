@@ -5,34 +5,35 @@ export function renderChargeContext(army) {
   const units = army.units
   if (units.length === 0) return ''
 
+  const rows = units.map(u => {
+    const mv = resolveMovement(u)
+    const allRules = [...parseUnitRules(u.specialRules), ...u.equipment]
+    const unitSwiftstride = allRules.some(r => normaliseRuleName(r).toLowerCase() === 'swiftstride')
+
+    const flyRule = allRules.find(r => /^fly\s*\(/i.test(r.trim()))
+    const flyMatch = flyRule ? flyRule.match(/\((\d+)\)/) : null
+    const mountData = u.mount ? findMount(u.mount) : null
+    const flyMv = flyMatch ? Number(flyMatch[1]) : (mountData?.f ?? null)
+    const hasFly = flyMv != null
+    const hasSwiftstride = unitSwiftstride || (mountData?.swiftstride ?? false)
+
+    const baseMv = mountData ? mountData.m : (mv != null ? Number(mv) : null)
+    const swiftBonus = hasSwiftstride ? 3 : 0
+
+    const groundCharge = baseMv != null ? baseMv + 6 + swiftBonus : null
+    const flyCharge = hasFly ? flyMv + 6 + swiftBonus : null
+    const maxCharge = Math.max(groundCharge || 0, flyCharge || 0)
+
+    return { u, groundCharge, flyCharge, hasFly, hasSwiftstride, maxCharge }
+  })
+
+  rows.sort((a, b) => b.maxCharge - a.maxCharge)
+
   return `
     <div class="bg-wh-surface rounded-lg border border-wh-phase-combat/30 p-4 mb-4">
       <h3 class="text-sm font-bold text-wh-phase-combat mb-3">Max Declarable Charge</h3>
       <div class="space-y-1">
-        ${units.map(u => {
-          const mv = resolveMovement(u)
-          const allRules = [...parseUnitRules(u.specialRules), ...u.equipment]
-          const unitSwiftstride = allRules.some(r => normaliseRuleName(r).toLowerCase() === 'swiftstride')
-
-          // Check for Fly — unit special rules first, then flying mount lookup
-          const flyRule = allRules.find(r => /^fly\s*\(/i.test(r.trim()))
-          const flyMatch = flyRule ? flyRule.match(/\((\d+)\)/) : null
-          const mountData = u.mount ? findMount(u.mount) : null
-          const flyMv = flyMatch ? Number(flyMatch[1]) : (mountData?.f ?? null)
-          const hasFly = flyMv != null
-          const hasSwiftstride = unitSwiftstride || (mountData?.swiftstride ?? false)
-
-          // Base movement — for mounts use mount's m value
-          const baseMv = mountData ? mountData.m : (mv != null ? Number(mv) : null)
-          const swiftBonus = hasSwiftstride ? 3 : 0
-
-          // Ground charge: M + 6 (+ 3 if swiftstride)
-          const groundCharge = baseMv != null ? baseMv + 6 + swiftBonus : null
-
-          // Fly charge: Fly + 6 (+ 3 if swiftstride)
-          const flyCharge = hasFly ? flyMv + 6 + swiftBonus : null
-
-          return `
+        ${rows.map(({ u, groundCharge, flyCharge, hasFly, hasSwiftstride }) => `
             <div class="text-sm py-1 px-2 rounded bg-wh-card">
               <div class="flex justify-between items-center">
                 <div>
@@ -55,8 +56,7 @@ export function renderChargeContext(army) {
                 </div>
               ` : ''}
             </div>
-          `
-        }).join('')}
+        `).join('')}
       </div>
     </div>
   `
