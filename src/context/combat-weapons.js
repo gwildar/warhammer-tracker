@@ -230,8 +230,8 @@ function hasRiderMagicalAttacks(unit) {
   // Magic weapon equipped — rider only
   for (const itemName of unit.magicItems) {
     const mi = MAGIC_ITEM_MAP[normaliseItemName(itemName)]
-    if (mi?.type === 'weapon') return true
-    if (mi?.effect?.includes('Magical Attacks')) return true
+    if (mi?.type === 'weapon' && mi.phases?.includes('combat')) return true
+    if (mi?.type !== 'weapon' && mi?.effect?.includes('Magical Attacks')) return true
   }
   // Special rules or equipment
   if (unit.specialRules?.includes('Magical Attacks')) return true
@@ -319,7 +319,7 @@ function getChampionWeapons(unit) {
   // Format in magicItems: "Spelleater Axe (Dread Knight (champion))"
   for (const itemName of unit.magicItems) {
     if (!itemName.includes('(champion)')) continue
-    const baseName = itemName.replace(/\s*\([^)]*\)$/, '').replace(/\s*\([^)]*\)$/, '')
+    const baseName = itemName.replace(/\s*\(.*$/, '')
     const mi = MAGIC_ITEM_MAP[normaliseItemName(baseName)]
     if (mi?.type === 'weapon') {
       return [{
@@ -426,7 +426,12 @@ export function renderCombatWeaponsContext(army) {
         stomp: detectStompFromRules(u),
         impactHits: detectImpactHitsFromRules(u),
         singleUseItems: suItems,
-        itemNames: buildItemNames(u).filter(n => !suNames.has(n.toLowerCase()) && !MR_ITEM_NAMES.has(n.toLowerCase())),
+        itemNames: buildItemNames(u).filter(n => {
+          if (suNames.has(n.toLowerCase()) || MR_ITEM_NAMES.has(n.toLowerCase())) return false
+          const mi = MAGIC_ITEM_MAP[normaliseItemName(n)]
+          if (mi?.type === 'weapon' && mi.phases && !mi.phases.includes('combat')) return false
+          return true
+        }),
         riderTags: buildRiderTags(u),
         combatRules: extractCombatRules(u),
         crew: [],
@@ -531,7 +536,12 @@ export function renderCombatWeaponsContext(army) {
       itemNames: (() => {
         const suItems = detectSingleUseItems(u)
         const suNames = new Set(suItems.map(i => i.name.toLowerCase()))
-        return buildItemNames(u).filter(n => !suNames.has(n.toLowerCase()) && !MR_ITEM_NAMES.has(n.toLowerCase()))
+        return buildItemNames(u).filter(n => {
+          if (suNames.has(n.toLowerCase()) || MR_ITEM_NAMES.has(n.toLowerCase())) return false
+          const mi = MAGIC_ITEM_MAP[normaliseItemName(n)]
+          if (mi?.type === 'weapon' && mi.phases && !mi.phases.includes('combat')) return false
+          return true
+        })
       })(),
       riderTags: buildRiderTags(u),
       combatRules: extractCombatRules(u),

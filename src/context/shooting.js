@@ -34,12 +34,20 @@ export function renderShootingContext(army) {
     const matchedWeapons = new Set()
     const allParts = [...u.equipment, u.specialRules || ''].flatMap(g => g.split(',').map(s => s.trim().toLowerCase()))
     for (const part of allParts) {
+      // Find the longest matching key for this part to avoid substring false positives
+      // e.g. "repeater crossbows" should match "repeater crossbows" not "crossbow"
+      let bestKey = null
+      let bestWeapon = null
       for (const [key, weapon] of Object.entries(RANGED_WEAPONS)) {
-        if (part.includes(key) && !matchedWeapons.has(weapon.name)) {
-          matchedWeapons.add(weapon.name)
-          entries.push({ unitName: u.name, strength: u.strength, bs, weapon })
-          matched = true
+        if (part.includes(key) && (!bestKey || key.length > bestKey.length)) {
+          bestKey = key
+          bestWeapon = weapon
         }
+      }
+      if (bestWeapon && !matchedWeapons.has(bestWeapon.name)) {
+        matchedWeapons.add(bestWeapon.name)
+        entries.push({ unitName: u.name, strength: u.strength, bs, weapon: bestWeapon })
+        matched = true
       }
     }
 

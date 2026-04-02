@@ -64,6 +64,19 @@ describe('Game Screen', () => {
       renderGameScreen(army)
       expect(getApp().textContent).toContain('Shooting')
     })
+
+    it('shows Repeater Crossbow without also matching Crossbow', () => {
+      savePhaseIndex(8)
+      renderGameScreen(army)
+      const panel = getApp().querySelector('.border-wh-phase-shooting\\/30')
+      const cards = [...panel.querySelectorAll('.bg-wh-card')]
+      const rxbowCard = cards.find(el => el.textContent.includes('Repeater Crossbow'))
+      expect(rxbowCard).toBeTruthy()
+      const crossbowCard = cards.find(el =>
+        el.textContent.includes('Crossbow') && !el.textContent.includes('Repeater Crossbow')
+      )
+      expect(crossbowCard).toBeFalsy()
+    })
   })
 
   describe('combat phase', () => {
@@ -217,6 +230,35 @@ describe('Combat phase with Bretonnia charge army', () => {
     renderGameScreen(army)
     const text = getApp().textContent
     expect(text).toContain('Lance')
+  })
+})
+
+describe('Combat phase with Dark Elves', () => {
+  let army
+
+  beforeEach(() => {
+    army = loadArmy('dark-elves')
+    startGame(army)
+    savePhaseIndex(12) // choose-fight sub-phase
+  })
+
+  it('shows champion magic weapon replacing mundane weapon', () => {
+    renderGameScreen(army)
+    const combatPanel = getApp().querySelector('.border-wh-phase-combat\\/30')
+    const knightsCard = [...combatPanel.querySelectorAll('.bg-wh-card')]
+      .find(el => el.textContent.includes('Cold One Knight'))
+    expect(knightsCard).toBeTruthy()
+    expect(knightsCard.textContent).toContain('Spelleater Axe')
+    expect(knightsCard.textContent).toContain('Dread Knight')
+  })
+
+  it('does not show Magical Attacks for shooting-only weapons like Sword of Sorrow', () => {
+    renderGameScreen(army)
+    const combatPanel = getApp().querySelector('.border-wh-phase-combat\\/30')
+    const masterCard = [...combatPanel.querySelectorAll('.bg-wh-card')]
+      .find(el => el.textContent.includes('Dark Elf Master'))
+    expect(masterCard).toBeTruthy()
+    expect(masterCard.textContent).not.toContain('Magical')
   })
 })
 
