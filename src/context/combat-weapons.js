@@ -302,7 +302,7 @@ const COMBAT_VOWS = ['the grail vow', 'the questing vow']
 
 function buildItemNames(unit) {
   const names = unit.magicItems.map(n => n.replace(/\*$/, ''))
-  const parts = unit.equipment.flatMap(e => e.split(',').map(s => s.trim()))
+  const parts = [...unit.equipment, ...(unit.specialRules ? unit.specialRules.split(',') : [])].flatMap(e => e.split(',').map(s => s.trim()))
   for (const part of parts) {
     if (COMBAT_VOWS.includes(part.toLowerCase()) && !names.some(n => n.toLowerCase() === part.toLowerCase())) {
       names.push(part)

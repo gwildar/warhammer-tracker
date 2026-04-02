@@ -241,6 +241,15 @@ describe('Combat phase with Bretonnia charge army', () => {
     expect(baronCard.textContent).toContain('The Grail Vow')
     expect(baronCard.textContent).toContain('Magical')
   })
+
+  it('shows The Grail Vow from special rules in footer', () => {
+    renderGameScreen(army)
+    const combatPanel = getApp().querySelector('.border-wh-phase-combat\\/30')
+    const dukeCard = [...combatPanel.querySelectorAll('.bg-wh-card')]
+      .find(el => el.textContent.includes('Duke Gerard'))
+    expect(dukeCard).toBeTruthy()
+    expect(dukeCard.textContent).toContain('The Grail Vow')
+  })
 })
 
 describe('Combat phase with Dark Elves', () => {
