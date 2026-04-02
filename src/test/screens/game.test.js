@@ -85,6 +85,14 @@ describe('Game Screen', () => {
       renderGameScreen(army)
       expect(getApp().textContent).toContain('Combat')
     })
+
+    it('shows Close Order in Special Rules on combat-result step', () => {
+      savePhaseIndex(13) // combat-result is step 14 (index 13)
+      renderGameScreen(army)
+      const specialRulesPanel = getApp().querySelector('.border-wh-accent\\/20')
+      expect(specialRulesPanel).toBeTruthy()
+      expect(specialRulesPanel.textContent).toContain('Close Order')
+    })
   })
 
   describe('last step', () => {

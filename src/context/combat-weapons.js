@@ -1,6 +1,8 @@
 import { COMBAT_WEAPONS } from '../data/weapons.js'
 import { findMount } from '../data/mounts.js'
 import { MAGIC_ITEMS } from '../data/magic-items.js'
+import { SPECIAL_RULES } from '../data/special-rules.js'
+import { parseUnitRules, normaliseRuleName } from '../helpers.js'
 
 const ARMOUR_BASE = {
   'light armour': 6,
@@ -36,6 +38,19 @@ const MR_ITEM_NAMES = new Set(
 )
 
 const HAND_WEAPON = { name: 'Hand Weapon', s: 'S', ap: '—', rules: '' }
+
+// Build lookup for special rules that modify armour save
+const ARMOUR_MOD_RULES = {}
+for (const rule of SPECIAL_RULES) {
+  if (rule.armourMod) {
+    ARMOUR_MOD_RULES[rule.id] = rule.armourMod
+    if (rule.aliases) {
+      for (const alias of rule.aliases) {
+        ARMOUR_MOD_RULES[alias.toLowerCase()] = rule.armourMod
+      }
+    }
+  }
+}
 
 function calculateArmourSave(unit) {
   let best = null
@@ -92,6 +107,14 @@ function calculateArmourSave(unit) {
   const hasShield = hasMundaneShield || hasMagicShield
   if (hasShield) best -= 1
   if (unit.hasBarding) best -= 1
+  // Apply armour modifiers from special rules (e.g. Lion Cloak)
+  if (unit.specialRules) {
+    const rules = parseUnitRules(unit.specialRules)
+    for (const rule of rules) {
+      const normId = normaliseRuleName(rule).toLowerCase()
+      if (ARMOUR_MOD_RULES[normId]) best += ARMOUR_MOD_RULES[normId]
+    }
+  }
   best += mod
   if (best < 2) best = 2
 
