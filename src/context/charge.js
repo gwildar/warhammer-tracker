@@ -7,7 +7,7 @@ export function renderChargeContext(army) {
 
   return `
     <div class="bg-wh-surface rounded-lg border border-wh-phase-combat/30 p-4 mb-4">
-      <h3 class="text-sm font-bold text-wh-phase-combat mb-3">Charge Ranges</h3>
+      <h3 class="text-sm font-bold text-wh-phase-combat mb-3">Max Declarable Charge</h3>
       <div class="space-y-1">
         ${units.map(u => {
           const mv = resolveMovement(u)
@@ -38,7 +38,6 @@ export function renderChargeContext(army) {
                 <div>
                   <span class="text-wh-text">${u.name}</span>
                   ${u.strength > 1 ? `<span class="text-wh-muted ml-1">x${u.strength}</span>` : ''}
-                  ${u.magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${u.magicWeapons.join(', ')}</span>` : ''}
                   ${hasFly ? '<span class="text-wh-phase-movement ml-1 text-xs">Fly</span>' : ''}
                   ${hasSwiftstride ? '<span class="text-wh-phase-movement ml-1 text-xs">Swiftstride</span>' : ''}
                 </div>
