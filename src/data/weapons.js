@@ -112,6 +112,8 @@ export const COMBAT_WEAPONS = {
   'serrated maw': { name: 'Serrated Maw', s: 'S', ap: '—', rules: 'Armour Bane (2), Multiple Wounds (2).', reservedAttacks: 1 },
   'mighty antlers': { name: 'Mighty Antlers', s: 'S', ap: '-1', rules: 'Armour Bane (1)' },
   'lashing talons': { name: 'Lashing Talons', s: 'S', ap: '-1', rules: 'Armour Bane (1)' },
+  'slashing talons': { name: 'Slashing Talons', s: 'S', ap: '—', rules: 'Multiple Wounds (D3) vs Monsters.' },
+  'great horns': { name: 'Great Horns', s: 'S+1', ap: '-1', rules: 'Armour Bane (1). Charge turn only.' },
   'serpentine tail': { name: 'Serpentine Tail', s: 'S+2', ap: '-2', rules: 'Strike Last. Must make one attack per turn with this weapon.' },
 
   // ─── High Elf Weapons ────────────────────────────────────────────────

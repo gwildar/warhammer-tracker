@@ -46,6 +46,10 @@ export const MOUNTS = [
   { name: 'Chaos Dragon', m: 6, f: 10, swiftstride: true, troopType: 'Be', stomp: 'D6', impactHits: null, breath: 'Dark Fire of Chaos', weapons: ['wicked claws', 'serrated maw'], ws: 6, s: 7, i: 4, a: 6, tBonus: 1, wBonus: 6 },
   { name: 'Necrolith Bone Dragon', m: 6, f: 9, swiftstride: true, troopType: 'Be', stomp: 'D6', impactHits: null, breath: null, weapons: ['wicked claws'], ws: 4, s: 6, i: 2, a: 5, tBonus: 1, wBonus: 5 },
 
+  // ─── Lizardmen Mounts ─────────────────────────────────────────────────
+  { name: 'Carnosaur', m: 7, f: null, swiftstride: true, troopType: 'Be', stomp: '2', impactHits: null, breath: null, weapons: ['slashing talons'], ws: 3, s: 7, i: 2, a: 4, tBonus: 1, wBonus: 4 },
+  { name: 'Ancient Stegadon', m: 6, f: null, swiftstride: false, troopType: 'Be', stomp: 'D3+2', impactHits: 'D3+1', breath: null, weapons: ['great horns'], ws: 4, s: 6, i: 1, a: 3, tBonus: 0, wBonus: 0 },
+
   // ─── Non-Flying Mounts ───────────────────────────────────────────────
   { name: 'Bretonnian Warhorse', m: 8, f: null, swiftstride: true, troopType: 'HCa', stomp: null, impactHits: null, breath: null, weapons: [], ws: 3, s: 3, i: 3, a: 1, tBonus: 0, wBonus: 0 },
   { name: 'Empire Warhorse', m: 8, f: null, swiftstride: true, troopType: 'LCa', stomp: null, impactHits: null, breath: null, weapons: [], ws: 3, s: 3, i: 3, a: 1, tBonus: 0, wBonus: 0 },
