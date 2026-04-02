@@ -12,7 +12,7 @@ export function renderMagicItemsContext(army, phaseId, subPhaseId) {
         if (!item.phases.includes(phaseId)) continue
         if (subPhaseId && item.subPhases && !item.subPhases.includes(subPhaseId)) continue
         if (subPhaseId && item.opponentOnly) continue
-        if (phaseId === 'shooting' && item.type !== 'weapon') continue
+        if (phaseId === 'shooting' && item.type !== 'weapon' && !item.effect?.toLowerCase().includes('bound spell')) continue
         if (subPhaseId === 'combat-result' && item.type !== 'banner') continue
         if (subPhaseId === 'break-test' && item.type !== 'banner') continue
         if (subPhaseId === 'pursuit' && !item.subPhases?.includes('pursuit')) continue

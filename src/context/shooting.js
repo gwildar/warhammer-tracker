@@ -7,6 +7,19 @@ function getBS(unit) {
   return unit.stats[0].BS || null
 }
 
+function getS(unit) {
+  if (!unit.stats || unit.stats.length === 0) return null
+  return unit.stats[0].S || null
+}
+
+function resolveStrength(weaponS, unitS) {
+  if (!weaponS || !unitS) return weaponS
+  if (weaponS === 'S') return unitS
+  const mod = weaponS.match(/^S([+-]\d+)$/)
+  if (mod) return `${unitS}${mod[1]}`
+  return weaponS
+}
+
 export function renderShootingContext(army) {
   const shooters = getShootingUnits(army)
   if (shooters.length === 0) return ''
@@ -16,6 +29,7 @@ export function renderShootingContext(army) {
   for (const u of shooters) {
     let matched = false
     const bs = getBS(u)
+    const unitS = getS(u)
 
     // Check mount breath weapon
     if (u.mount) {
@@ -24,7 +38,7 @@ export function renderShootingContext(army) {
         const breathKey = mount.breath.toLowerCase()
         const weapon = RANGED_WEAPONS[breathKey]
         if (weapon) {
-          entries.push({ unitName: u.name, strength: u.strength, bs: null, weapon })
+          entries.push({ unitName: u.name, strength: u.strength, bs: null, unitS, weapon })
           matched = true
         }
       }
@@ -46,13 +60,13 @@ export function renderShootingContext(army) {
       }
       if (bestWeapon && !matchedWeapons.has(bestWeapon.name)) {
         matchedWeapons.add(bestWeapon.name)
-        entries.push({ unitName: u.name, strength: u.strength, bs, weapon: bestWeapon })
+        entries.push({ unitName: u.name, strength: u.strength, bs, unitS, weapon: bestWeapon })
         matched = true
       }
     }
 
     if (!matched) {
-      entries.push({ unitName: u.name, strength: u.strength, bs, weapon: null })
+      entries.push({ unitName: u.name, strength: u.strength, bs, unitS, weapon: null })
     }
   }
 
@@ -85,7 +99,7 @@ export function renderShootingContext(army) {
               <span class="text-wh-muted text-sm">${r.weapon.name}</span>
               ${r.bs ? `<span class="text-wh-phase-shooting font-mono text-xs">BS${r.bs}</span>` : ''}
               <span class="text-wh-phase-shooting font-mono text-xs">${r.weapon.range}</span>
-              ${r.weapon.s ? `<span class="text-wh-muted font-mono text-xs">S${r.weapon.s}</span>` : ''}
+              ${r.weapon.s ? `<span class="text-wh-muted font-mono text-xs">S${resolveStrength(r.weapon.s, r.unitS)}</span>` : ''}
               ${r.weapon.ap && r.weapon.ap !== '—' ? `<span class="text-wh-muted font-mono text-xs">AP ${r.weapon.ap}</span>` : ''}
             </div>
             ${r.weapon.rules ? `<p class="text-xs text-wh-muted mt-1">${r.weapon.rules}</p>` : ''}

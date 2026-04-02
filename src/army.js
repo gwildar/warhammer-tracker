@@ -210,18 +210,21 @@ function parseUnit(raw, category) {
 function calculateUnitPoints(raw) {
   let pts = (raw.points || 0) * (raw.strength || 1)
 
-  const addActivePoints = (items) => {
+  const addActivePoints = (items, recurse = false) => {
     if (!Array.isArray(items)) return
     for (const item of items) {
       if (item.active && item.points) {
         pts += item.perModel ? item.points * (raw.strength || 1) : item.points
+      }
+      if (recurse && item.active && Array.isArray(item.options)) {
+        addActivePoints(item.options, true)
       }
     }
   }
 
   addActivePoints(raw.equipment)
   addActivePoints(raw.armor)
-  addActivePoints(raw.options)
+  addActivePoints(raw.options, true)
   addActivePoints(raw.mounts)
 
   // Mount options (e.g. barding)
@@ -250,7 +253,7 @@ function calculateUnitPoints(raw) {
     for (const slot of raw.items) {
       if (Array.isArray(slot.selected)) {
         for (const item of slot.selected) {
-          pts += item.points || 0
+          pts += (item.points || 0) * (item.amount || 1)
         }
       }
     }

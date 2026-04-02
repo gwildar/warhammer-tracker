@@ -789,7 +789,7 @@ export const MAGIC_ITEMS = [
     type: 'arcane-item',
     points: 15,
     effect: 'Single use. The bearer may cast Fireball from Battle Magic as a bound spell with Power Level 3. Bretonnian Exiles only.',
-    phases: ['strategy'],
+    phases: ['strategy', 'shooting'],
     subPhases: ['conjuration'],
   },
   {
@@ -2419,7 +2419,7 @@ export const MAGIC_ITEMS = [
     type: 'enchanted-item',
     points: 40,
     effect: 'The bearer may cast The Summoning (Lore of Daemonology) as a Bound Spell with Power Level 2. Magic Missile, range 18", 2D6 S4, AP -1 hits.',
-    phases: ['strategy'],
+    phases: ['strategy', 'shooting'],
     subPhases: ['conjuration'],
   },
   {
@@ -3952,7 +3952,7 @@ export const MAGIC_ITEMS = [
     type: 'arcane-item',
     points: 30,
     effect: 'Bound spell (Magic Missile), Power Level 1. Casting Value 8+, 18" range. Target enemy unit suffers D3+1 S5 hits, each with -2 AP.',
-    phases: ['strategy'],
+    phases: ['strategy', 'shooting'],
     subPhases: ['conjuration'],
   },
   {
