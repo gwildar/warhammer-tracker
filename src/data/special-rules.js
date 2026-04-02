@@ -424,6 +424,17 @@ export const SPECIAL_RULES = [
 
   // ─── Combat Phase ─────────────────────────────────────────────────
   {
+    id: 'elven reflexes', displayName: 'Elven Reflexes',
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          '+1 Initiative (max 10) during the first round of any combat. Does not apply to mount.',
+      },
+    ],
+  },
+  {
     id: 'strike first', displayName: 'Strike First',
     phases: [
       {

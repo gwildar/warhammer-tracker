@@ -83,9 +83,9 @@ function parseUnit(raw, category) {
     }
   }
 
-  // Detect magic items embedded in equipment strings (named characters)
-  const equipParts = unit.equipment.flatMap(e => e.split(',').map(s => s.trim()))
-  for (const part of equipParts) {
+  // Detect magic items embedded in equipment and armour strings (named characters)
+  const gearParts = [...unit.equipment, ...unit.armour].flatMap(e => e.split(',').map(s => s.trim()))
+  for (const part of gearParts) {
     if (MAGIC_ITEM_NAMES.has(part.toLowerCase()) && !unit.magicItems.includes(part)) {
       unit.magicItems.push(part)
     }

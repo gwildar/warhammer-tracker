@@ -369,6 +369,7 @@ const COMBAT_RELEVANT_RULES = [
   'first charge', 'counter charge',
   'cleaving blow', 'multiple wounds', 'shield of the lady',
   'aura of the lady', 'living saints', 'murderous',
+  'elven reflexes', 'mighty constitution', 'valour of ages',
 ]
 
 function extractCombatRules(unit) {

@@ -2900,8 +2900,9 @@ export const MAGIC_ITEMS = [
     name: 'Chayal',
     type: 'weapon',
     points: 0,
-    effect: 'S+2, AP -3. Killing Blow, Requires Two Hands. May re-roll any To Hit rolls of natural 1.',
+    effect: 'Killing Blow, Requires Two Hands. May re-roll any To Hit rolls of natural 1.',
     phases: ['combat'],
+    s: 'S+2', ap: '-3',
   },
   {
     name: 'Mathlann\'s Ire',
@@ -3110,6 +3111,7 @@ export const MAGIC_ITEMS = [
     effect: '+1 armour in melee, +2 armour (max 2+) vs non-magical ranged attacks. Regeneration (5+).',
     phases: ['combat', 'shooting'],
     regen: '5+',
+    armourMod: -1,
   },
   {
     name: 'Pure of Heart',
