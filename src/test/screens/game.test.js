@@ -231,6 +231,16 @@ describe('Combat phase with Bretonnia charge army', () => {
     const text = getApp().textContent
     expect(text).toContain('Lance')
   })
+
+  it('shows The Grail Vow and Magical on ridden monster character card', () => {
+    renderGameScreen(army)
+    const combatPanel = getApp().querySelector('.border-wh-phase-combat\\/30')
+    const baronCard = [...combatPanel.querySelectorAll('.bg-wh-card')]
+      .find(el => el.textContent.includes('Baron Guy de Bastille'))
+    expect(baronCard).toBeTruthy()
+    expect(baronCard.textContent).toContain('The Grail Vow')
+    expect(baronCard.textContent).toContain('Magical')
+  })
 })
 
 describe('Combat phase with Dark Elves', () => {
