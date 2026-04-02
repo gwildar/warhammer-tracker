@@ -15,7 +15,7 @@ export function renderSetupScreen() {
       <header class="p-4 border-b border-wh-border">
         <div class="flex justify-between items-center max-w-2xl mx-auto">
           <div></div>
-          <h1 class="text-2xl font-bold text-wh-accent text-center">TOW — Turner Overdrive <span class="text-xs text-wh-muted font-normal">v${version}</span></h1>
+          <h1 class="text-2xl font-bold text-wh-accent text-center">Turner Overdrive <span class="text-xs text-wh-muted font-normal">v${version}</span> <span class="text-xs text-wh-red font-normal">Alpha</span></h1>
           <button id="about-btn" class="text-sm text-wh-muted hover:text-wh-accent transition-colors">About</button>
         </div>
       </header>

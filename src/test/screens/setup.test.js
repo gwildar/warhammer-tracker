@@ -20,7 +20,7 @@ describe('Setup Screen', () => {
 
     it('shows app title', () => {
       renderSetupScreen()
-      expect(getApp().textContent).toContain('TOW — Turner Overdrive')
+      expect(getApp().textContent).toContain('Turner Overdrive')
     })
   })
 

@@ -9,7 +9,7 @@ export function renderFirstTurnScreen(army) {
       <header class="p-4 border-b border-wh-border">
         <div class="flex justify-between items-center max-w-2xl mx-auto">
           <div></div>
-          <h1 class="text-2xl font-bold text-wh-accent text-center">TOW — Turner Overdrive</h1>
+          <h1 class="text-2xl font-bold text-wh-accent text-center">Turner Overdrive <span class="text-xs text-wh-red font-normal">Alpha</span></h1>
           <div></div>
         </div>
       </header>
