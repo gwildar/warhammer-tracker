@@ -777,7 +777,7 @@ export const SPECIAL_RULES = [
     ],
   },
   {
-    name: "Crusader's Zeal",
+    id: "crusader's zeal", displayName: "Crusader's Zeal",
     phases: [
       {
         phaseId: 'movement',
@@ -785,6 +785,13 @@ export const SPECIAL_RULES = [
         yourTurnOnly: true,
         description:
           '+1" to maximum charge range and +1 to Charge roll result. Also gains Impetuous.',
+      },
+      {
+        phaseId: 'movement',
+        subPhaseId: 'charge-moves',
+        yourTurnOnly: true,
+        description:
+          '+1" to maximum charge range and +1 to Charge roll result.',
       },
     ],
   },
@@ -885,6 +892,12 @@ export const SPECIAL_RULES = [
       {
         phaseId: 'strategy',
         subPhaseId: 'conjuration',
+        opponentOnly: true,
+        description:
+          '+1 to Dispel rolls. On any natural double (except double 1), the spell is unbound and the casting Wizard loses a Wound.',
+      },
+      {
+        phaseId: 'movement',
         opponentOnly: true,
         description:
           '+1 to Dispel rolls. On any natural double (except double 1), the spell is unbound and the casting Wizard loses a Wound.',

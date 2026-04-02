@@ -2,6 +2,7 @@ import { LORES } from './data/spells.js'
 import { findMount } from './data/mounts.js'
 import { UNIT_STATS } from './data/units.js'
 import { MAGIC_ITEMS } from './data/magic-items.js'
+import { ARMY_COMPOSITIONS } from './data/army-compositions.js'
 
 const MAGIC_ITEM_NAMES = new Set(MAGIC_ITEMS.map(i => i.name.toLowerCase()))
 
@@ -28,6 +29,21 @@ export function parseArmyList(json) {
     if (!Array.isArray(units)) continue
     for (const unit of units) {
       army.units.push(parseUnit(unit, cat))
+    }
+  }
+
+  // Inject bonus rules from Army of Infamy compositions
+  const comp = ARMY_COMPOSITIONS[army.composition]
+  if (comp) {
+    for (const { rule, unitIds } of comp.rules) {
+      for (const unit of army.units) {
+        const baseId = unit.id.split('.')[0]
+        if (unitIds.includes(baseId) && !unit.specialRules?.includes(rule)) {
+          unit.specialRules = unit.specialRules
+            ? `${unit.specialRules}, ${rule}`
+            : rule
+        }
+      }
     }
   }
 
