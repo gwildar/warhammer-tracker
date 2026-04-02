@@ -98,6 +98,35 @@ describe('Game Screen with Lizardmen', () => {
   })
 })
 
+describe('Shooting phase with Lizardmen', () => {
+  let army
+
+  beforeEach(() => {
+    army = loadArmy('lizardmen')
+    startGame(army)
+    savePhaseIndex(8) // choose-target sub-phase
+  })
+
+  it('shows Solar Engine in shooting units', () => {
+    renderGameScreen(army)
+    const text = getApp().textContent
+    expect(text).toContain('Solar Engine')
+    expect(text).toContain('Bound Spell')
+  })
+
+  it('shows Engine of the Gods in shooting units', () => {
+    renderGameScreen(army)
+    const text = getApp().textContent
+    expect(text).toContain('Engine of the Gods')
+  })
+
+  it('shows Javelin alongside Engine for same unit', () => {
+    renderGameScreen(army)
+    const text = getApp().textContent
+    expect(text).toContain('Javelin')
+  })
+})
+
 describe('Game Screen with Bretonnia', () => {
   let army
 

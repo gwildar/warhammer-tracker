@@ -30,18 +30,17 @@ export function renderShootingContext(army) {
       }
     }
 
-    // Check equipment
-    const allGear = [...u.equipment]
-    for (const gear of allGear) {
-      const lower = gear.toLowerCase()
+    // Check equipment — split comma-separated strings and match all weapons
+    const matchedWeapons = new Set()
+    const allParts = u.equipment.flatMap(g => g.split(',').map(s => s.trim().toLowerCase()))
+    for (const part of allParts) {
       for (const [key, weapon] of Object.entries(RANGED_WEAPONS)) {
-        if (lower.includes(key)) {
+        if (part.includes(key) && !matchedWeapons.has(weapon.name)) {
+          matchedWeapons.add(weapon.name)
           entries.push({ unitName: u.name, strength: u.strength, bs, weapon })
           matched = true
-          break
         }
       }
-      if (matched) break
     }
 
     if (!matched) {

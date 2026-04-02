@@ -213,10 +213,23 @@ function hasFuriousCharge(unit) {
   return allText.includes('furious charge')
 }
 
+const RANGED_WEAPON_NAMES = ['javelin', 'bow', 'crossbow', 'handgun', 'pistol', 'sling', 'throwing', 'bolt thrower', 'cannon', 'mortar', 'catapult', 'harpoon', 'breath']
+
+function hasPoisonedAttacks(unit) {
+  if (!unit.specialRules) return false
+  const match = unit.specialRules.match(/Poisoned Attacks(?:\s*\(([^)]+)\))?/i)
+  if (!match) return false
+  if (!match[1]) return true
+  // Conditional — skip if it's a ranged weapon qualifier
+  const qualifier = match[1].toLowerCase()
+  return !RANGED_WEAPON_NAMES.some(w => qualifier.includes(w))
+}
+
 function buildRiderTags(unit) {
   const tags = []
   if (hasRiderMagicalAttacks(unit)) tags.push('<span class="text-wh-phase-combat font-mono ml-1">\u2728 Magical</span>')
   if (hasFuriousCharge(unit)) tags.push('<span class="text-wh-phase-combat font-mono ml-1">\u{1F4A5} +1A</span>')
+  if (hasPoisonedAttacks(unit)) tags.push('<span class="text-wh-phase-combat font-mono ml-1">\u2620\uFE0F Poison</span>')
   return tags.join('')
 }
 
