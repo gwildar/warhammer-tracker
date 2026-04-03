@@ -1,15 +1,21 @@
 import { getShootingUnits } from '../army.js'
-import { RANGED_WEAPONS } from '../data/weapons.js'
+import { RANGED_WEAPONS, MISFIRE_TABLES } from '../data/weapons.js'
 import { findMount } from '../data/mounts.js'
 
 function getBS(unit) {
   if (!unit.stats || unit.stats.length === 0) return null
-  return unit.stats[0].BS || null
+  for (const profile of unit.stats) {
+    if (profile.BS && profile.BS !== '-') return profile.BS
+  }
+  return null
 }
 
 function getS(unit) {
   if (!unit.stats || unit.stats.length === 0) return null
-  return unit.stats[0].S || null
+  for (const profile of unit.stats) {
+    if (profile.S && profile.S !== '-') return profile.S
+  }
+  return null
 }
 
 function resolveStrength(weaponS, unitS) {
@@ -49,7 +55,6 @@ export function renderShootingContext(army) {
     const allParts = [...u.equipment, u.specialRules || ''].flatMap(g => g.split(',').map(s => s.trim().toLowerCase()))
     for (const part of allParts) {
       // Find the longest matching key for this part to avoid substring false positives
-      // e.g. "repeater crossbows" should match "repeater crossbows" not "crossbow"
       let bestKey = null
       let bestWeapon = null
       for (const [key, weapon] of Object.entries(RANGED_WEAPONS)) {
@@ -62,6 +67,17 @@ export function renderShootingContext(army) {
         matchedWeapons.add(bestWeapon.name)
         entries.push({ unitName: u.name, strength: u.strength, bs, unitS, weapon: bestWeapon })
         matched = true
+
+        // Include alternate profiles (e.g. scatter shot)
+        if (bestWeapon.altProfiles) {
+          for (const altKey of bestWeapon.altProfiles) {
+            const altWeapon = RANGED_WEAPONS[altKey]
+            if (altWeapon && !matchedWeapons.has(altWeapon.name)) {
+              matchedWeapons.add(altWeapon.name)
+              entries.push({ unitName: u.name, strength: u.strength, bs, unitS, weapon: altWeapon })
+            }
+          }
+        }
       }
     }
 
@@ -88,21 +104,38 @@ export function renderShootingContext(army) {
 
   if (weaponRows.length === 0 && otherRows.length === 0) return ''
 
+  // Group weapon rows by unit name
+  const groups = new Map()
+  for (const r of weaponRows) {
+    if (!groups.has(r.unitName)) {
+      groups.set(r.unitName, { strength: r.strength, merged: r.merged, weapons: [] })
+    }
+    groups.get(r.unitName).weapons.push(r)
+  }
+
   return `
     <div class="bg-wh-surface rounded-lg border border-wh-phase-shooting/30 p-4 mb-4">
       <h3 class="text-sm font-bold text-wh-phase-shooting mb-3">Shooting Units</h3>
       <div class="space-y-2">
-        ${weaponRows.map(r => `
+        ${[...groups.entries()].map(([unitName, group]) => `
           <div class="p-2 rounded bg-wh-card">
-            <div class="flex items-center gap-2 flex-wrap">
-              <span class="text-wh-text font-semibold text-sm">${r.unitName}${!r.merged && r.strength > 1 ? ` x${r.strength}` : ''}</span>
-              <span class="text-wh-muted text-sm">${r.weapon.name}</span>
-              ${r.bs ? `<span class="text-wh-phase-shooting font-mono text-xs">BS${r.bs}</span>` : ''}
-              <span class="text-wh-phase-shooting font-mono text-xs">${r.weapon.range}</span>
-              ${r.weapon.s ? `<span class="text-wh-muted font-mono text-xs">S${resolveStrength(r.weapon.s, r.unitS)}</span>` : ''}
-              ${r.weapon.ap && r.weapon.ap !== '—' ? `<span class="text-wh-muted font-mono text-xs">AP ${r.weapon.ap}</span>` : ''}
+            <div class="text-sm font-semibold text-wh-text mb-1">
+              ${unitName}${!group.merged && group.strength > 1 ? ` <span class="text-wh-muted font-normal">x${group.strength}</span>` : ''}
             </div>
-            ${r.weapon.rules ? `<p class="text-xs text-wh-muted mt-1">${r.weapon.rules}</p>` : ''}
+            <div class="space-y-1">
+              ${group.weapons.map(r => `
+                <div class="pl-2 border-l-2 border-wh-phase-shooting/20">
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="text-wh-muted text-sm">${r.weapon.name}</span>
+                    ${r.bs ? `<span class="text-wh-phase-shooting font-mono text-xs">BS${r.bs}</span>` : ''}
+                    <span class="text-wh-phase-shooting font-mono text-xs">${r.weapon.range}</span>
+                    ${r.weapon.s ? `<span class="text-wh-muted font-mono text-xs">S${resolveStrength(r.weapon.s, r.unitS)}</span>` : ''}
+                    ${r.weapon.ap && r.weapon.ap !== '—' ? `<span class="text-wh-muted font-mono text-xs">AP ${r.weapon.ap}</span>` : ''}
+                  </div>
+                  ${r.weapon.rules ? `<p class="text-xs text-wh-muted mt-0.5">${r.weapon.rules}</p>` : ''}
+                </div>
+              `).join('')}
+            </div>
           </div>
         `).join('')}
         ${otherRows.length > 0 ? `
@@ -112,6 +145,40 @@ export function renderShootingContext(army) {
           </div>
         ` : ''}
       </div>
+      ${renderMisfireTables(weaponRows)}
     </div>
   `
+}
+
+function renderMisfireTables(weaponRows) {
+  const keys = [...new Set(weaponRows.filter(r => r.weapon?.misfireTable).map(r => r.weapon.misfireTable))]
+  if (keys.length === 0) return ''
+
+  return keys.map(key => {
+    const table = MISFIRE_TABLES[key]
+    if (!table) return ''
+    return `
+      <div class="mt-3 pt-3 border-t border-wh-phase-shooting/20">
+        <h4 class="text-xs font-bold text-wh-phase-shooting mb-2">${table.name}</h4>
+        <table class="w-full text-xs">
+          <thead>
+            <tr class="text-left text-wh-muted">
+              <th class="pb-1 pr-2 font-medium w-8">D6</th>
+              <th class="pb-1 pr-2 font-medium">Result</th>
+              <th class="pb-1 font-medium">Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${table.rows.map(r => `
+              <tr>
+                <td class="py-0.5 pr-2 font-mono text-wh-phase-shooting align-top">${r.roll}</td>
+                <td class="py-0.5 pr-2 font-semibold text-wh-text align-top whitespace-nowrap">${r.result}</td>
+                <td class="py-0.5 text-wh-muted">${r.effect}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    `
+  }).join('')
 }

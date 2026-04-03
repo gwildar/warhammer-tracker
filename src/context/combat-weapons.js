@@ -233,18 +233,35 @@ function mergeStrength(baseS, weaponS) {
   return weaponS
 }
 
+// Rules already represented visually (tags, stats) — stripped from the rules text line
+const REDUNDANT_RULE_PATTERNS = [
+  { pattern: /,?\s*Extra Attacks\s*\([^)]*\)/i, condition: w => w.attacks },
+  { pattern: /,?\s*Magical Attacks/i },
+]
+
+function stripRedundantRules(rules, w) {
+  if (!rules) return ''
+  let cleaned = rules
+  for (const { pattern, condition } of REDUNDANT_RULE_PATTERNS) {
+    if (!condition || condition(w)) cleaned = cleaned.replace(pattern, '')
+  }
+  return cleaned.replace(/^[,.\s]+/, '').replace(/[,.\s]+$/, '').trim()
+}
+
 function renderWeaponLine(initiative, ws, s, attacks, w, label, tags) {
   const displayS = mergeStrength(s, w.s)
+  const displayA = w.attacks ? `${attacks}${w.attacks}` : attacks
+  const displayRules = stripRedundantRules(w.rules, w)
   return `<div class="text-xs mb-1">
     <span class="text-wh-phase-combat font-mono">I${initiative}</span>
-    <span class="text-wh-phase-combat font-mono ml-1">A${attacks}</span>
+    <span class="text-wh-phase-combat font-mono ml-1">A${displayA}</span>
     <span class="text-wh-muted font-mono ml-1">WS${ws}</span>
     <span class="text-wh-muted font-mono ml-1">S${displayS}</span>
     ${label ? `<span class="text-wh-accent text-xs ml-1">${label}</span> —` : ''}
     <span class="text-wh-text ml-1">${w.name}</span>
     ${w.ap && w.ap !== '—' ? `<span class="text-wh-muted font-mono ml-1">AP${w.ap}</span>` : ''}
     ${tags || ''}
-    ${w.rules ? `<div class="text-wh-muted">${w.rules}</div>` : ''}
+    ${displayRules ? `<div class="text-wh-muted">${displayRules}</div>` : ''}
   </div>`
 }
 

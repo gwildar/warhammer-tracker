@@ -39,11 +39,27 @@ export const RANGED_WEAPONS = {
 
   // ─── War Machines ────────────────────────────────────────────────────
   'bolt thrower': { name: 'Bolt Thrower', range: '48"', s: '—', ap: '—', rules: '' },
-  'cannon': { name: 'Cannon', range: '48"', s: '—', ap: '—', rules: 'Multiple Wounds (D3)' },
+  'cannon': { name: 'Cannon', range: '48"', s: '—', ap: '—', rules: 'Multiple Wounds (D3)', misfireTable: 'black-powder' },
   'mortar': { name: 'Mortar', range: '12"-48"', s: '—', ap: '—', rules: '' },
   'catapult': { name: 'Catapult', range: '12"-60"', s: '—', ap: '—', rules: '' },
   'trebuchet': { name: 'Trebuchet', range: '12"-60"', s: '—', ap: '—', rules: '' },
-  'bombard': { name: 'Bombard', range: '48"', s: '8', ap: '-3', rules: 'Armour Bane (2), Cannon Fire, Cumbersome, Move or Shoot, Multiple Wounds (D3+1)' },
+  'bombard': { name: 'Bombard', range: '48"', s: '8', ap: '-3', rules: 'Armour Bane (2), Cannon Fire, Cumbersome, Move or Shoot, Multiple Wounds (D3+1)', misfireTable: 'bombard' },
+
+  // ─── Ogre Kingdoms Ranged ─────────────────────────────────────────────
+  'blood vulture': { name: 'Blood Vulture', range: '36"', s: '4', ap: '-1', rules: 'Ignores Cover, Move & Shoot, Quick Shot' },
+  'brace of ogre pistols': { name: 'Brace of Ogre Pistols', range: '24"', s: '4', ap: '-1', rules: 'Armour Bane (1), Multiple Shots (2), Quick Shot' },
+  'cannon of the sky-titans': { name: 'Cannon of the Sky-Titans', range: '36"', s: '10', ap: '-3', rules: 'Armour Bane (2), Cannon Fire, Cumbersome, Multiple Wounds (D3+1)', misfireTable: 'ironblaster', altProfiles: ['cannon of the sky-titans (scatter shot)'] },
+  'cannon of the sky-titans (scatter shot)': { name: 'Cannon of the Sky-Titans (Scatter Shot)', range: 'Template', s: '4', ap: '-1', rules: 'Breath Weapon' },
+  'chaintrap': { name: 'Chaintrap', range: '12"', s: 'S+1', ap: '—', rules: 'Killing Blow' },
+  'chill breath': { name: 'Chill Breath', range: 'Template', s: '2', ap: '-1', rules: 'Breath Weapon, Multiple Wounds (D3)' },
+  'flaming breath': { name: 'Flaming Breath', range: 'Template', s: '4', ap: '-1', rules: 'Breath Weapon, Flaming Attacks' },
+  'great throwing spear': { name: 'Great Throwing Spear', range: '12"', s: 'S+1', ap: '-1', rules: 'Move & Shoot, Quick Shot' },
+  'great throwing spears': { name: 'Great Throwing Spear', range: '12"', s: 'S+1', ap: '-1', rules: 'Move & Shoot, Quick Shot' },
+  'harpoon launcher': { name: 'Harpoon Launcher', range: '36"', s: '6', ap: '-2', rules: 'Multiple Wounds (D3), Ponderous' },
+  'leadbelcher gun': { name: 'Leadbelcher Gun (Solid Shot)', range: '24"', s: '5', ap: '-2', rules: 'Armour Bane (1), Cumbersome, Multiple Wounds (2)', altProfiles: ['leadbelcher gun (scatter shot)'] },
+  'leadbelcher gun (scatter shot)': { name: 'Leadbelcher Gun (Scatter Shot)', range: '18"', s: '3', ap: '—', rules: 'Armour Bane (1), D3 hits' },
+  'ogre pistol': { name: 'Ogre Pistol', range: '24"', s: '4', ap: '-1', rules: 'Armour Bane (1), Quick Shot' },
+  'scraplauncher catapult': { name: 'Scraplauncher Catapult', range: '12"-48"', s: '3(4)', ap: '-(-2)', rules: 'Bombardment (5" blast), Cumbersome, Multiple Wounds (2) on central model' },
 
   // ─── Faction-specific Ranged ─────────────────────────────────────────
   'petrifying gaze': { name: 'Petrifying Gaze', range: '18"', s: '2', ap: '—', rules: 'Magical Attacks, Multiple Wounds (D3). Wounds vs Initiative not Toughness. No armour saves.' },
@@ -119,6 +135,18 @@ export const COMBAT_WEAPONS = {
   'great horns': { name: 'Great Horns', s: 'S+1', ap: '-1', rules: 'Armour Bane (1). Charge turn only.' },
   'serpentine tail': { name: 'Serpentine Tail', s: 'S+2', ap: '-2', rules: 'Strike Last. Must make one attack per turn with this weapon.' },
 
+  // ─── Ogre Kingdoms Combat ─────────────────────────────────────────────
+  'brace of ogre pistols (combat)': { name: 'Brace of Ogre Pistols', s: 'S', ap: '—', rules: 'Extra Attacks (+1), Requires Two Hands' },
+  'distensible jaw': { name: 'Distensible Jaw', s: 'S', ap: '—', rules: 'Killing Blow. Must make one attack per turn with this weapon.' },
+  "giant's club": { name: "Giant's Club", s: '*', ap: '*', rules: 'See Giant Attacks table.' },
+  'great tusks': { name: 'Great Tusks', s: 'S', ap: '-1', rules: 'Armour Bane (2)' },
+  'grimfrost weapon': { name: 'Grimfrost Weapon', s: 'S', ap: '-1', rules: 'Armour Bane (1), Magical Attacks' },
+  'grimfrost weapons': { name: 'Grimfrost Weapon', s: 'S', ap: '-1', rules: 'Armour Bane (1), Magical Attacks' },
+  'horns of stone': { name: 'Horns of Stone', s: 'S', ap: '-2', rules: '' },
+  'ironfist': { name: 'Ironfist', s: 'S', ap: '—', rules: 'Extra Attacks (+1), Requires Two Hands. +1 armour value.' },
+  'ironfists': { name: 'Ironfist', s: 'S', ap: '—', rules: 'Extra Attacks (+1), Requires Two Hands. +1 armour value.' },
+  'monstrous tusks': { name: 'Monstrous Tusks', s: 'S', ap: '-1', rules: 'Armour Bane (1)' },
+
   // ─── High Elf Weapons ────────────────────────────────────────────────
   'ceremonial halberd': { name: 'Ceremonial Halberd', s: 'S+1', ap: '-1', rules: 'Armour Bane (1), Fight In Extra Rank, Magical Attacks, Requires Two Hands. No supporting attacks on charge turn.' },
   'ceremonial halberds': { name: 'Ceremonial Halberd', s: 'S+1', ap: '-1', rules: 'Armour Bane (1), Fight In Extra Rank, Magical Attacks, Requires Two Hands. No supporting attacks on charge turn.' },
@@ -128,6 +156,35 @@ export const COMBAT_WEAPONS = {
   "handmaiden's spears": { name: "Handmaiden's Spear", s: 'S', ap: '-1', rules: '+1 Initiative when charged in front arc.' },
   'sword of hoeth': { name: 'Sword of Hoeth', s: 'S+2', ap: '-2', rules: 'Magical Attacks, Requires Two Hands' },
   'swords of hoeth': { name: 'Sword of Hoeth', s: 'S+2', ap: '-2', rules: 'Magical Attacks, Requires Two Hands' },
+}
+
+// ─── Misfire Tables ─────────────────────────────────────────────────
+export const MISFIRE_TABLES = {
+  'black-powder': {
+    name: 'Black Powder Misfire Table',
+    rows: [
+      { roll: '1', result: 'Destroyed!', effect: 'The weapon explodes. The model is destroyed and removed from play.' },
+      { roll: '2-4', result: 'Malfunction', effect: 'Crew loses one Wound. Cannot shoot this turn or until end of next round.' },
+      { roll: '5-6', result: 'Pffft', effect: 'Fuse goes out. Fails to shoot this turn.' },
+    ],
+  },
+  'bombard': {
+    name: 'Bombard Misfire Table',
+    rows: [
+      { roll: '1', result: 'Destroyed!', effect: 'The weapon explodes. The model is destroyed and removed from play.' },
+      { roll: '2-3', result: 'Malfunction', effect: 'Charge misfires. Crew loses one Wound. Fails to shoot this turn.' },
+      { roll: '4-5', result: 'Pffft', effect: 'Fuse goes out. Fails to shoot this turn.' },
+      { roll: '6', result: 'Boom!', effect: 'Shoots as if a 2 was rolled on the Artillery dice, but cannot shoot during the next round.' },
+    ],
+  },
+  'ironblaster': {
+    name: 'Ironblaster Misfire Table',
+    rows: [
+      { roll: '1', result: 'Kaboom!', effect: 'The cannon explodes. The model is destroyed and removed from play.' },
+      { roll: '2-3', result: 'Krrack!', effect: 'Cannon splits along its length. Cannot shoot with this weapon for the remainder of the game.' },
+      { roll: '4-6', result: 'Ack!', effect: 'Gnoblar Scrapper stuck in mechanism. Cannot shoot this turn or during the next round.' },
+    ],
+  },
 }
 
 /**
