@@ -404,7 +404,7 @@ function findEmbeddedMount(unit) {
 }
 
 const COMBAT_RELEVANT_RULES = [
-  'beguiling aura', 'killing blow',
+  'armour bane', 'beguiling aura', 'killing blow',
   'poisoned attacks', 'flaming attacks', 'immune to psychology',
   'stubborn', 'unbreakable', 'frenzy', 'hatred', 'eternal hatred',
   'first charge', 'counter charge',
