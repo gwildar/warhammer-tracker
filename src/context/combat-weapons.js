@@ -666,10 +666,10 @@ export function renderCombatWeaponsContext(army) {
             <div class="flex items-center gap-2 flex-wrap mt-0.5">
               <span class="text-wh-muted font-mono text-xs">T:${r.t}</span>
               <span class="text-wh-muted font-mono text-xs">W:${r.w}</span>
-              ${r.as ? `<span class="text-wh-muted font-mono text-xs">AS:${r.as}</span>` : ''}
+              ${r.as ? `<span class="text-blue-400 font-mono text-xs">\u{1F6E1}\uFE0FAS:${r.as}</span>` : ''}
               ${r.mr ? `<span class="text-wh-muted font-mono text-xs">MR:${r.mr}</span>` : ''}
-              ${r.ward ? `<span class="text-wh-muted font-mono text-xs">Ward:${r.ward}</span>` : ''}
-              ${r.regen ? `<span class="text-wh-muted font-mono text-xs">Regen:${r.regen}</span>` : ''}
+              ${r.ward ? `<span class="text-purple-400 font-mono text-xs">\u{1F52E}Ward:${r.ward}</span>` : ''}
+              ${r.regen ? `<span class="text-green-400 font-mono text-xs">\u{1F49A}Regen:${r.regen}</span>` : ''}
             </div>
               ${r.singleUseItems.length > 0 ? `
                 <div class="mt-1 ml-2">
