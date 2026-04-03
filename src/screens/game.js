@@ -6,6 +6,7 @@ import { renderShootingContext } from '../context/shooting.js'
 import { renderCombatWeaponsContext, renderCombatResultContext, renderCombatLeadershipContext } from '../context/combat-weapons.js'
 import { renderChargeContext } from '../context/charge.js'
 import { renderMagicItemsContext } from '../context/items.js'
+import { renderVirtuesContext } from '../context/virtues.js'
 import { renderSpecialRulesContext } from '../context/special-rules-context.js'
 import { navigate } from '../navigate.js'
 
@@ -134,7 +135,10 @@ function renderPhaseContext(army, phase, subPhase) {
   if (subPhase.id === 'combat-result') html += renderCombatResultContext(army)
   if (subPhase.id === 'break-test') html += renderCombatLeadershipContext(army)
 
-  if (subPhase.id !== 'remove-casualties') html += renderMagicItemsContext(army, phase.id, subPhase.id)
+  if (subPhase.id !== 'remove-casualties') {
+    html += renderMagicItemsContext(army, phase.id, subPhase.id)
+    html += renderVirtuesContext(army, phase.id, subPhase.id)
+  }
   html += renderSpecialRulesContext(army, subPhase)
 
   return html

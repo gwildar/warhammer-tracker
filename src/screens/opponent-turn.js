@@ -4,6 +4,7 @@ import { getPhaseIndex, savePhaseIndex, getRound, saveRound, saveIsOpponentTurn,
 import { PHASE_BG } from '../helpers.js'
 import { renderChargeContext } from '../context/charge.js'
 import { renderMagicItemsContext } from '../context/items.js'
+import { renderVirtuesContext } from '../context/virtues.js'
 import { renderSpecialRulesForPhase } from '../context/special-rules-context.js'
 import { renderCombatWeaponsContext, renderDefensiveStatsContext } from '../context/combat-weapons.js'
 import { navigate } from '../navigate.js'
@@ -103,6 +104,7 @@ function renderOpponentPhaseContext(army, phase) {
   if (phase.id === 'shooting') html += renderDefensiveStatsContext(army)
   if (phase.id === 'combat') html += renderCombatWeaponsContext(army)
   html += renderMagicItemsContext(army, phase.id, null)
+  html += renderVirtuesContext(army, phase.id, null)
   html += renderSpecialRulesForPhase(army, phase)
 
   return html

@@ -9,6 +9,7 @@ export function renderMagicItemsContext(army, phaseId, subPhaseId) {
       const cleanName = itemName.replace(/\s*\([^)]*\)\s*$/, '').replace(/\*$/, '').trim()
       const item = findMagicItem(cleanName)
       if (item) {
+        if (item.type === 'virtue') continue
         if (!item.phases.includes(phaseId)) continue
         if (subPhaseId && item.subPhases && !item.subPhases.includes(subPhaseId)) continue
         if (subPhaseId && item.opponentOnly) continue
