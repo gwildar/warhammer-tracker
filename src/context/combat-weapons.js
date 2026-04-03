@@ -840,9 +840,11 @@ export function renderDefensiveStatsContext(army) {
       }
     }
 
+    const hasEvasive = u.specialRules?.toLowerCase().includes('evasive') || false
+
     const key = `${u.name}||${t}||${w}||${as}`
     if (!deduped[key]) {
-      deduped[key] = { name: u.name, strength: u.strength, mount: isRiddenMonster ? u.mount : null, t, w, as, ward, regen, ld, ldNum: parseInt(ld) || 0, merged: false }
+      deduped[key] = { name: u.name, strength: u.strength, mount: isRiddenMonster ? u.mount : null, t, w, as, ward, regen, ld, ldNum: parseInt(ld) || 0, hasEvasive, merged: false }
     } else {
       deduped[key].merged = true
     }
@@ -864,6 +866,7 @@ export function renderDefensiveStatsContext(army) {
               ${r.as ? `<span class="text-blue-400 font-mono text-xs">\u{1F6E1}\uFE0FAS:${r.as}</span>` : ''}
               ${r.ward ? `<span class="text-purple-400 font-mono text-xs">\u{1F52E}Ward:${r.ward}</span>` : ''}
               ${r.regen ? `<span class="text-green-400 font-mono text-xs">\u{1F49A}Regen:${r.regen}</span>` : ''}
+              ${r.hasEvasive ? '<span class="text-green-400 font-mono text-xs">\u{1F3C3}\u200D\u2640\uFE0FEvasive</span>' : ''}
               <span class="text-wh-muted font-mono text-xs ml-auto">Ld${r.ld}</span>
             </div>
           </div>

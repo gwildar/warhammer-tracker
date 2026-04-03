@@ -677,12 +677,14 @@ export const SPECIAL_RULES = [
       {
         phaseId: 'shooting',
         subPhaseId: 'roll-to-hit',
+        yourTurnOnly: true,
         description:
           'Natural 6 To Hit: +2 To Wound modifier. Cannot use if To Hit needs 7+ or hits automatically. Does not apply to spells or magic weapons.',
       },
       {
         phaseId: 'shooting',
         subPhaseId: 'wound-and-save',
+        yourTurnOnly: true,
         description:
           'Natural 6 To Hit: +2 To Wound modifier. Does not apply to spells or magic weapons.',
       },

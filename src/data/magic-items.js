@@ -638,6 +638,7 @@ export const MAGIC_ITEMS = [
     effect: 'Single use. When casting a spell, place a marker within 12". The range and effects of the spell are measured from this marker rather than the caster.',
     phases: ['strategy'],
     subPhases: ['conjuration'],
+    yourTurnOnly: true,
   },
   {
     name: 'Black Dragon Egg',
