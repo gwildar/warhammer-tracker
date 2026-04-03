@@ -1179,10 +1179,18 @@ export const SPECIAL_RULES = [
   {
     id: 'ithilmar armour', displayName: 'Ithilmar Armour',
     passive: true,
-    phases: [],
+    phases: ['movement'],
     description:
       'Re-roll any rolls of 1 on Dangerous Terrain tests. Wizards may wear armour without penalty.',
     aliases: ['Ithilmar Barding'],
+  },
+  {
+    id: 'ithilmar barding', displayName: 'Ithilmar Barding',
+    passive: true,
+    phases: ['movement'],
+    description:
+      'Re-roll any rolls of 1 on Dangerous Terrain tests. Wizards may wear armour without penalty.',
+    aliases: ['Ithilmar Armour'],
   },
   {
     id: 'ithilmar weapons', displayName: 'Ithilmar Weapons',
