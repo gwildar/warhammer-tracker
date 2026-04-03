@@ -187,7 +187,7 @@ export const SPECIAL_RULES = [
     ],
   },
   {
-    id: 'swiftstride', displayName: 'Swiftstride',
+    id: 'swiftstride', displayName: 'Swiftstride', chargeMod: { range: 3, tag: 'Swift', color: 'green', order: 1 },
     phases: [
       {
         phaseId: 'movement',
@@ -777,7 +777,7 @@ export const SPECIAL_RULES = [
     ],
   },
   {
-    id: "crusader's zeal", displayName: "Crusader's Zeal",
+    id: "crusader's zeal", displayName: "Crusader's Zeal", chargeMod: { range: 1, tag: 'Zeal', color: 'orange', order: 2 },
     phases: [
       {
         phaseId: 'movement',
@@ -1392,6 +1392,205 @@ export const SPECIAL_RULES = [
     id: 'warriors of the wilderness', displayName: 'Warriors of the Wilderness',
     passive: true, phases: [],
     description: 'After terrain placement, place one additional wood (3"-9" wide) on the battlefield. Cannot be in opponent deployment zone or within 6" of special features.',
+  },
+
+  // ─── Ogre Kingdoms ──────────────────────────────────────────────────
+  {
+    id: 'ogre charge', displayName: 'Ogre Charge',
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          'The AP of any Impact Hits caused by this model (not its mount) is improved by the current Rank Bonus of its unit.',
+      },
+    ],
+  },
+  {
+    id: 'bull charge', displayName: 'Bull Charge',
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          'Impact Hits caused by this model (not its mount) have an Armour Piercing characteristic of -1.',
+      },
+    ],
+  },
+  {
+    id: 'thunderous charge', displayName: 'Thunderous Charge',
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          'Impact Hits caused by this model have an AP of -2.',
+      },
+    ],
+  },
+  {
+    id: 'mournfang charge', displayName: 'Mournfang Charge',
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          'Impact Hits caused by this model have Armour Bane (1) and AP -1.',
+      },
+    ],
+  },
+  {
+    id: 'belly flop', displayName: 'Belly Flop',
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          'Place a 3" blast template over the target unit centre. Models underneath suffer a hit at this model\'s Strength with AP -2.',
+      },
+    ],
+  },
+  {
+    id: 'giant attacks', displayName: 'Giant Attacks',
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          'Instead of normal attacks, roll D6: 1 = \'Eadbutt (D3+1 wounds, no armour/regen), 2 = Belly Flop (3" blast, S, AP -2), 3-4 = Mighty Swing (D6+1 attacks, S+1, AP -2), 5 = Thump with Club (single model, S+4, AP -4, Multiple Wounds D6), 6 = Jump Up & Down (D6+1 hits, no armour saves).',
+      },
+    ],
+  },
+  {
+    id: 'pick up and', displayName: 'Pick Up And...',
+    aliases: ['pick up and...'],
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          'Instead of normal attacks vs infantry/heavy infantry: target makes Initiative test. Fail = one model removed as casualty. Then roll D6: 4+ = repeat. 1-3 = stop.',
+      },
+    ],
+  },
+  {
+    id: 'numbing chill', displayName: 'Numbing Chill',
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          'Enemy models in base contact suffer -1 WS and -1 Initiative (minimum 1).',
+      },
+    ],
+  },
+  {
+    id: "butcher's cauldron", displayName: "Butcher's Cauldron",
+    aliases: ['butchers cauldron'],
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          'Replaces Impact Hits (2) with Impact Hits (D3+1).',
+      },
+      {
+        phaseId: 'strategy',
+        subPhaseId: 'command',
+        yourTurnOnly: true,
+        description:
+          'If not in combat, take a Leadership test. Pass: character and joined unit gain Regeneration (5+) until next Start of Turn. Fail: lose 1 Wound.',
+      },
+    ],
+  },
+  {
+    id: 'blessings of the volcano god', displayName: 'Blessings of the Volcano God',
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          '4+ Ward save against wounds caused by Flaming Attacks.',
+      },
+      {
+        phaseId: 'shooting',
+        subPhaseId: 'shoot',
+        opponentTurnOnly: true,
+        description:
+          '4+ Ward save against wounds caused by Flaming Attacks.',
+      },
+    ],
+  },
+  {
+    id: 'stone skeleton', displayName: 'Stone Skeleton',
+    passive: true,
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          'When suffering an unsaved wound from Multiple Wounds (X), reduce the number of wounds lost by 1 (minimum 1).',
+      },
+    ],
+  },
+  {
+    id: 'ravenous hunger', displayName: 'Ravenous Hunger',
+    chargeMod: { range: 0, tag: 'Ravenous', color: 'orange', order: 3 },
+    phases: [
+      {
+        phaseId: 'movement',
+        subPhaseId: 'declare-charges',
+        yourTurnOnly: true,
+        description:
+          'When declaring a charge, may re-roll the Charge roll.',
+      },
+    ],
+  },
+  {
+    id: 'look-out gnoblar', displayName: 'Look-out Gnoblar',
+    phases: [
+      {
+        phaseId: 'shooting',
+        subPhaseId: 'shoot',
+        opponentTurnOnly: true,
+        description:
+          'Champion/character may make "Look Out, Sir!" with 2+ rank-and-file (instead of 5). With 5+, may re-roll the roll.',
+      },
+    ],
+  },
+  {
+    id: 'largely insignificant', displayName: 'Largely Insignificant',
+    passive: true,
+    phases: [],
+    description:
+      'Unit never causes friendly Panic tests. Cannot be joined by a character without this rule.',
+  },
+  {
+    id: 'running with the pack', displayName: 'Running with the Pack',
+    passive: true,
+    phases: [],
+    description:
+      'Hunter joining Sabretusks gains Swiftstride. Sabretusks lose Impetuous while the Hunter remains.',
+  },
+  {
+    id: 'traps and snares', displayName: 'Traps & Snares',
+    aliases: ['traps & snares'],
+    phases: [
+      {
+        phaseId: 'combat',
+        subPhaseId: 'choose-fight',
+        description:
+          'Any enemy model that ends its charge move in base contact with this model must make a Dangerous Terrain test.',
+      },
+    ],
+  },
+  {
+    id: 'bellowers and musicians', displayName: 'Bellowers & Musicians',
+    aliases: ['bellowers & musicians'],
+    passive: true,
+    phases: [],
+    description:
+      'Ogre musicians are Bellowers who use their voice instead of instruments. Function as standard musicians.',
   },
 ]
 

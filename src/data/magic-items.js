@@ -533,6 +533,7 @@ export const MAGIC_ITEMS = [
     points: 30,
     effect: 'When the unit declares a charge, it may re-roll its Charge roll.',
     phases: ['movement'],
+    chargeMod: { range: 0, tag: 'Rampage', color: 'orange', order: 10 },
   },
   {
     name: 'The Blazing Banner',
@@ -2190,6 +2191,7 @@ export const MAGIC_ITEMS = [
     points: 40,
     effect: 'The unit increases maximum charge range by 3" and may apply a +D3 modifier to its charge roll.',
     phases: ['combat'],
+    chargeMod: { range: 3, tag: 'Waaagh!', color: 'orange', order: 10 },
   },
   {
     name: 'Da Banner of Butchery',
@@ -3530,6 +3532,7 @@ export const MAGIC_ITEMS = [
     points: 40,
     effect: 'The unit increases maximum charge range by 3". When making a Charge roll, may apply +D3 to the result.',
     phases: ['combat'],
+    chargeMod: { range: 3, tag: 'Beast', color: 'orange', order: 10 },
   },
   {
     name: 'Manbane Standard',
@@ -4039,6 +4042,60 @@ export const MAGIC_ITEMS = [
     points: 35,
     effect: 'The unit gains the Swiftstride special rule.',
     phases: ['movement'],
+  },
+
+  // ─── Ogre Kingdoms ───────────────────────────────────────────────────
+
+  // Big Names
+  {
+    name: 'Mawseeker',
+    type: 'enchanted-item',
+    points: 30,
+    effect: 'Infantry only. +1 Toughness modifier. Subject to Stupidity.',
+    phases: ['combat'],
+  },
+  {
+    name: 'Mountaineater',
+    type: 'enchanted-item',
+    points: 25,
+    effect: 'Infantry only. Cannot be wounded by a roll To Wound of 2, regardless of the Strength of the attack.',
+    phases: ['combat'],
+  },
+  {
+    name: 'Giantbreaker',
+    type: 'enchanted-item',
+    points: 20,
+    effect: '+1 Strength modifier (character only, not mount). Cannot refuse challenges and neither the character nor their unit can flee as a charge reaction.',
+    phases: ['combat'],
+    strengthMod: '+1',
+  },
+  {
+    name: 'Kineater',
+    type: 'enchanted-item',
+    points: 15,
+    effect: 'Army General only. Friendly models within command range may re-roll any failed Panic or Rally test, unless the character is fleeing.',
+    phases: ['movement'],
+  },
+  {
+    name: 'Longstrider',
+    type: 'enchanted-item',
+    points: 10,
+    effect: 'Infantry only. +1 Movement modifier.',
+    phases: ['movement'],
+  },
+  {
+    name: 'Beastkiller',
+    type: 'enchanted-item',
+    points: 5,
+    effect: 'Once per turn, may re-roll a single failed roll To Wound against an enemy model with the Large Target special rule.',
+    phases: ['combat'],
+  },
+  {
+    name: 'Deathcheater',
+    type: 'enchanted-item',
+    points: 5,
+    effect: 'Once per game, make your opponent re-roll a single roll To Wound made against this character.',
+    phases: ['combat'],
   },
 ]
 
