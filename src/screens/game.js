@@ -129,8 +129,8 @@ function renderPhaseContext(army, phase, subPhase) {
   if (subPhase.id === 'shoot') html += renderCasterContext(army, ['magic-missile', 'magical-vortex'])
   if (subPhase.id === 'remaining-moves') html += renderCasterContext(army, ['conveyance'])
   if (subPhase.id === 'choose-fight') {
-    html += renderCasterContext(army, ['assailment'])
     html += renderCombatWeaponsContext(army)
+    html += renderCasterContext(army, ['assailment'])
   }
   if (subPhase.id === 'combat-result') html += renderCombatResultContext(army)
   if (subPhase.id === 'break-test') html += renderCombatLeadershipContext(army)
