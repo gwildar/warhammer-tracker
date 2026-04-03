@@ -667,7 +667,7 @@ export function renderCombatWeaponsContext(army) {
               <span class="text-wh-muted font-mono text-xs">T:${r.t}</span>
               <span class="text-wh-muted font-mono text-xs">W:${r.w}</span>
               ${r.as ? `<span class="text-blue-400 font-mono text-xs">\u{1F6E1}\uFE0FAS:${r.as}</span>` : ''}
-              ${r.mr ? `<span class="text-wh-muted font-mono text-xs">MR:${r.mr}</span>` : ''}
+              ${r.mr ? `<span class="text-wh-phase-combat font-mono text-xs">\u2728MR:${r.mr}</span>` : ''}
               ${r.ward ? `<span class="text-purple-400 font-mono text-xs">\u{1F52E}Ward:${r.ward}</span>` : ''}
               ${r.regen ? `<span class="text-green-400 font-mono text-xs">\u{1F49A}Regen:${r.regen}</span>` : ''}
             </div>
