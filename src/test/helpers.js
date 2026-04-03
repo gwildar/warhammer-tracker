@@ -7,6 +7,7 @@ import lizardmenJson from './fixtures/lizardmen.owb.json'
 import bretonniaJson from './fixtures/bretonnia.owb.json'
 import bretonniaChargeJson from './fixtures/bretonnia-charge.owb.json'
 import vampireCountsJson from './fixtures/vampire-counts.owb.json'
+import ogreKingdomsJson from './fixtures/ogre-kingdoms.owb.json'
 
 export function loadArmy(fixture) {
   const jsonMap = {
@@ -15,6 +16,7 @@ export function loadArmy(fixture) {
     'bretonnia': bretonniaJson,
     'bretonnia-charge': bretonniaChargeJson,
     'vampire-counts': vampireCountsJson,
+    'ogre-kingdoms': ogreKingdomsJson,
   }
   const json = jsonMap[fixture]
   const army = parseArmyList(json)

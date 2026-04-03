@@ -355,3 +355,77 @@ describe('Vampire Counts army', () => {
     expect(text).toContain('8"')
   })
 })
+
+describe('Ogre Kingdoms army', () => {
+  let army
+
+  beforeEach(() => {
+    army = loadArmy('ogre-kingdoms')
+    startGame(army)
+  })
+
+  it('renders without errors', () => {
+    renderGameScreen(army)
+    expect(getApp().textContent).toContain('Round 1')
+    expect(getApp().textContent).toContain(army.name)
+  })
+
+  it('shows Ironguts with AS:5+ from innate heavy armour', () => {
+    savePhaseIndex(12) // choose-fight
+    renderGameScreen(army)
+    const combatPanel = getApp().querySelector('.border-wh-phase-combat\\/30')
+    const irongutCard = [...combatPanel.querySelectorAll('.bg-wh-card')]
+      .find(el => el.textContent.includes('Irongut'))
+    expect(irongutCard).toBeTruthy()
+    expect(irongutCard.textContent).toContain('AS:5+')
+  })
+
+  it('shows Thundertusk Riders with AS:5+ from frozen pelt', () => {
+    savePhaseIndex(12)
+    renderGameScreen(army)
+    const combatPanel = getApp().querySelector('.border-wh-phase-combat\\/30')
+    const ttCard = [...combatPanel.querySelectorAll('.bg-wh-card')]
+      .find(el => el.textContent.includes('Thundertusk'))
+    expect(ttCard).toBeTruthy()
+    expect(ttCard.textContent).toContain('AS:5+')
+  })
+
+  it('shows Cackling Blade extra attacks on Tyrant card', () => {
+    savePhaseIndex(12)
+    renderGameScreen(army)
+    const combatPanel = getApp().querySelector('.border-wh-phase-combat\\/30')
+    const tyrantCard = [...combatPanel.querySelectorAll('.bg-wh-card')]
+      .find(el => el.textContent.includes('Tyrant'))
+    expect(tyrantCard).toBeTruthy()
+    expect(tyrantCard.textContent).toContain('A5+D6')
+    expect(tyrantCard.textContent).toContain('Cackling Blade')
+  })
+
+  it('shows Cannibal Totem in combat phase magic items', () => {
+    savePhaseIndex(12) // choose-fight
+    renderGameScreen(army)
+    const text = getApp().textContent
+    expect(text).toContain('Cannibal Totem')
+    expect(text).toContain('Regeneration')
+  })
+
+  it('shows Regen on Ironguts from Cannibal Totem', () => {
+    savePhaseIndex(12)
+    renderGameScreen(army)
+    const combatPanel = getApp().querySelector('.border-wh-phase-combat\\/30')
+    const irongutCard = [...combatPanel.querySelectorAll('.bg-wh-card')]
+      .find(el => el.textContent.includes('Irongut'))
+    expect(irongutCard).toBeTruthy()
+    expect(irongutCard.textContent).toContain('Regen:5+')
+  })
+
+  it('shows crew Ld for Ironblaster on break test', () => {
+    savePhaseIndex(14) // break-test
+    renderGameScreen(army)
+    const combatPanel = getApp().querySelector('.border-wh-phase-combat\\/30')
+    const ironblasterCard = [...combatPanel.querySelectorAll('.bg-wh-card')]
+      .find(el => el.textContent.includes('Ironblaster'))
+    expect(ironblasterCard).toBeTruthy()
+    expect(ironblasterCard.textContent).toContain('Ld7')
+  })
+})
