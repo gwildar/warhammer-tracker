@@ -1,5 +1,5 @@
 import { PHASES, getAllSubPhases } from '../phases.js'
-import { getPhaseIndex, savePhaseIndex, getRound, saveRound, getIsOpponentTurn, saveIsOpponentTurn, getFirstTurn, saveFirstTurn, resetGame } from '../state.js'
+import { getPhaseIndex, savePhaseIndex, getRound, saveRound, getIsOpponentTurn, saveIsOpponentTurn, getFirstTurn, saveFirstTurn, resetGame, canGoBackToPreviousTurn } from '../state.js'
 import { PHASE_BG, PHASE_TEXT } from '../helpers.js'
 import { renderCasterContext } from '../context/caster.js'
 import { renderShootingContext } from '../context/shooting.js'
@@ -98,11 +98,11 @@ export function renderGameScreen(army) {
         <div class="max-w-2xl mx-auto flex gap-3">
           <button id="prev-btn"
             class="flex-1 py-3 rounded-lg font-semibold text-lg transition-colors
-            ${isFirst
+            ${isFirst && !canGoBackToPreviousTurn()
               ? 'bg-wh-card text-wh-muted cursor-not-allowed opacity-50'
               : 'bg-wh-card text-wh-text hover:bg-wh-border'}"
-            ${isFirst ? 'disabled' : ''}>
-            &#8592; Previous
+            ${isFirst && !canGoBackToPreviousTurn() ? 'disabled' : ''}>
+            ${isFirst && canGoBackToPreviousTurn() ? '&#8592; Opponent Turn' : '&#8592; Previous'}
           </button>
           <button id="next-btn"
             class="flex-1 py-3 rounded-lg font-bold text-lg transition-colors
@@ -146,6 +146,11 @@ function bindGameActions(army) {
     if (idx > 0) {
       savePhaseIndex(idx - 1)
       renderGameScreen(army)
+    } else if (canGoBackToPreviousTurn()) {
+      saveIsOpponentTurn(true)
+      savePhaseIndex(PHASES.length - 1)
+      if (getFirstTurn() === 'you') saveRound(getRound() - 1)
+      navigate('opponentTurnScreen', army)
     }
   })
 

@@ -79,6 +79,18 @@ export function saveFirstTurn(value) {
   save(KEYS.firstTurn, value)
 }
 
+// Can we go back to the previous turn?
+export function canGoBackToPreviousTurn() {
+  const round = getRound()
+  const firstTurn = getFirstTurn()
+  const isOpponentTurn = getIsOpponentTurn()
+  if (round === 1) {
+    if (firstTurn === 'you' && !isOpponentTurn) return false
+    if (firstTurn === 'opponent' && isOpponentTurn) return false
+  }
+  return true
+}
+
 // Reset game (keeps army)
 export function resetGame() {
   save(KEYS.phaseIndex, 0)

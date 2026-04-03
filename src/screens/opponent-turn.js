@@ -1,5 +1,6 @@
 import { PHASES } from '../phases.js'
-import { getPhaseIndex, savePhaseIndex, getRound, saveRound, saveIsOpponentTurn, getFirstTurn, saveFirstTurn, resetGame } from '../state.js'
+import { getAllSubPhases } from '../phases.js'
+import { getPhaseIndex, savePhaseIndex, getRound, saveRound, saveIsOpponentTurn, getFirstTurn, saveFirstTurn, resetGame, canGoBackToPreviousTurn } from '../state.js'
 import { PHASE_BG } from '../helpers.js'
 import { renderChargeContext } from '../context/charge.js'
 import { renderMagicItemsContext } from '../context/items.js'
@@ -76,11 +77,11 @@ export function renderOpponentTurnScreen(army) {
         <div class="max-w-2xl mx-auto flex gap-3">
           <button id="prev-btn"
             class="flex-1 py-3 rounded-lg font-semibold text-lg transition-colors
-            ${isFirst
+            ${isFirst && !canGoBackToPreviousTurn()
               ? 'bg-wh-card text-wh-muted cursor-not-allowed opacity-50'
               : 'bg-wh-card text-wh-text hover:bg-wh-border'}"
-            ${isFirst ? 'disabled' : ''}>
-            &#8592; Previous
+            ${isFirst && !canGoBackToPreviousTurn() ? 'disabled' : ''}>
+            ${isFirst && canGoBackToPreviousTurn() ? '&#8592; Your Turn' : '&#8592; Previous'}
           </button>
           <button id="next-btn"
             class="flex-1 py-3 rounded-lg font-bold text-lg transition-colors
@@ -112,6 +113,12 @@ function bindOpponentTurnActions(army) {
     if (idx > 0) {
       savePhaseIndex(idx - 1)
       renderOpponentTurnScreen(army)
+    } else if (canGoBackToPreviousTurn()) {
+      const allSubPhases = getAllSubPhases()
+      saveIsOpponentTurn(false)
+      savePhaseIndex(allSubPhases.length - 1)
+      if (getFirstTurn() === 'opponent') saveRound(getRound() - 1)
+      navigate('gameScreen', army)
     }
   })
 
