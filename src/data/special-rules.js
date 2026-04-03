@@ -1088,11 +1088,16 @@ export const SPECIAL_RULES = [
   // ─── High Elf Realms ─────────────────────────────────────────────
   {
     id: 'arrows of isha', displayName: 'Arrows of Isha',
-    passive: true,
-    phases: [],
+    phases: [
+      {
+        phaseId: 'shooting',
+        subPhaseId: 'shoot',
+        yourTurnOnly: true,
+        description: 'Bows gain Armour Bane (1) and AP -1.',
+      },
+    ],
     description:
       'Any bow (longbow, shortbow, warbow, or Bow of Avelorn) gains Armour Bane (1) and AP -1.',
-    armourMod: 0,
   },
   {
     id: 'blessings of asuryan', displayName: 'Blessings of Asuryan',

@@ -50,6 +50,7 @@ export function renderShootingContext(army) {
     const unitS = getS(u)
     const champBS = getChampionBS(u)
     const championBS = champBS && champBS !== bs ? champBS : null
+    const hasArrowsOfIsha = u.specialRules?.toLowerCase().includes('arrows of isha') || false
 
     // Check mount breath weapon
     if (u.mount) {
@@ -58,7 +59,7 @@ export function renderShootingContext(army) {
         const breathKey = mount.breath.toLowerCase()
         const weapon = RANGED_WEAPONS[breathKey]
         if (weapon) {
-          entries.push({ unitName: u.name, strength: u.strength, bs: null, unitS, championBS, weapon })
+          entries.push({ unitName: u.name, strength: u.strength, bs: null, unitS, championBS, hasArrowsOfIsha, weapon })
           matched = true
         }
       }
@@ -79,7 +80,7 @@ export function renderShootingContext(army) {
       }
       if (bestWeapon && !matchedWeapons.has(bestWeapon.name)) {
         matchedWeapons.add(bestWeapon.name)
-        entries.push({ unitName: u.name, strength: u.strength, bs, unitS, championBS, weapon: bestWeapon })
+        entries.push({ unitName: u.name, strength: u.strength, bs, unitS, championBS, hasArrowsOfIsha, weapon: bestWeapon })
         matched = true
 
         // Include alternate profiles (e.g. scatter shot)
@@ -88,7 +89,7 @@ export function renderShootingContext(army) {
             const altWeapon = RANGED_WEAPONS[altKey]
             if (altWeapon && !matchedWeapons.has(altWeapon.name)) {
               matchedWeapons.add(altWeapon.name)
-              entries.push({ unitName: u.name, strength: u.strength, bs, unitS, championBS, weapon: altWeapon })
+              entries.push({ unitName: u.name, strength: u.strength, bs, unitS, championBS, hasArrowsOfIsha, weapon: altWeapon })
             }
           }
         }
@@ -96,7 +97,7 @@ export function renderShootingContext(army) {
     }
 
     if (!matched) {
-      entries.push({ unitName: u.name, strength: u.strength, bs, unitS, championBS, weapon: null })
+      entries.push({ unitName: u.name, strength: u.strength, bs, unitS, championBS, hasArrowsOfIsha, weapon: null })
     }
   }
 
@@ -122,7 +123,7 @@ export function renderShootingContext(army) {
   const groups = new Map()
   for (const r of weaponRows) {
     if (!groups.has(r.unitName)) {
-      groups.set(r.unitName, { strength: r.strength, merged: r.merged, championBS: r.championBS, weapons: [] })
+      groups.set(r.unitName, { strength: r.strength, merged: r.merged, championBS: r.championBS, hasArrowsOfIsha: r.hasArrowsOfIsha, weapons: [] })
     }
     groups.get(r.unitName).weapons.push(r)
   }
@@ -148,6 +149,7 @@ export function renderShootingContext(army) {
                     ${group.championBS ? `<div class="text-xs text-wh-muted pl-1">Champion: <span class="text-wh-phase-shooting font-mono">BS${group.championBS}</span></div>` : ''}
                   </div>
                   ${r.weapon.rules ? `<p class="text-xs text-wh-muted mt-0.5">${r.weapon.rules}</p>` : ''}
+                  ${group.hasArrowsOfIsha && r.weapon.name.toLowerCase().includes('bow') ? '<p class="text-xs text-wh-accent mt-0.5">+Arrows of Isha: AP -1, Armour Bane (1)</p>' : ''}
 
                 </div>
               `).join('')}
