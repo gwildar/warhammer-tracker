@@ -267,7 +267,7 @@ function renderWeaponLine(initiative, ws, s, attacks, w, label, tags) {
     <span class="text-wh-phase-combat font-mono ml-1">A${displayA}</span>
     <span class="text-wh-muted font-mono ml-1">WS${ws}</span>
     <span class="text-wh-muted font-mono ml-1">S${displayS}</span>
-    ${label ? `<span class="text-wh-accent text-xs ml-1">${label}</span> —` : ''}
+    ${label ? `<span class="text-wh-accent text-xs ml-1">${label}</span>` : ''}
     <span class="text-wh-text ml-1">${w.name}</span>
     ${w.ap && w.ap !== '—' ? `<span class="text-wh-muted font-mono ml-1">AP${w.ap}</span>` : ''}
     ${tags || ''}
@@ -504,14 +504,15 @@ export function renderCombatWeaponsContext(army) {
     const isRiddenMonster = mount && mount.wBonus > 0
 
     // Check for embedded mount profile in unit stats (e.g. Knights Errant, Pegasus Knights)
-    const embedded = !isRiddenMonster ? findEmbeddedMount(u) : null
+    // Skip for crewed units — their creature weapons come from stat line weapons field
+    const embedded = !isRiddenMonster && !stats.crewed ? findEmbeddedMount(u) : null
     const hasEmbeddedMount = embedded && (embedded.statLine.A && embedded.statLine.A !== '-')
 
     // Check for champion profile (non-character units only)
     const champion = u.category !== 'characters' ? findChampion(u) : null
     const championWeapons = champion ? getChampionWeapons(u) : null
 
-    // Check for crew profiles (monsters with crew)
+    // Check for crew profiles (crewed units like chariots)
     const crew = findCrewProfiles(u)
 
     const baseT = parseInt(stats.T) || 0
@@ -531,23 +532,25 @@ export function renderCombatWeaponsContext(army) {
       }
     }
 
-    // For crewed units (stats[0].crewed), match mount weapons from the crewed stat line name
-    if (crew.length > 0 && mountWeapons.length === 0 && stats.crewed) {
-      const cleanName = stats.Name.replace(/\s*\(x?\d+\)$/i, '').trim()
-      const crewedMount = findMount(cleanName)
-      if (crewedMount?.weapons) {
-        for (const wKey of crewedMount.weapons) {
-          const weapon = COMBAT_WEAPONS[wKey]
-          if (weapon && !matched.has(weapon.name)) {
-            matched.add(weapon.name)
-            mountWeapons.push(weapon)
-          }
-        }
+    // For crewed units with weapons on stat lines, remove those from riderWeapons (they belong to creatures)
+    if (stats.crewed) {
+      const crewWeaponNames = new Set()
+      if (stats.weapons) stats.weapons.forEach(wKey => { const w = COMBAT_WEAPONS[wKey]; if (w) crewWeaponNames.add(w.name) })
+      for (const c of crew) {
+        if (c.weapons) c.weapons.forEach(wKey => { const w = COMBAT_WEAPONS[wKey]; if (w) crewWeaponNames.add(w.name) })
+      }
+      if (crewWeaponNames.size > 0) {
+        const filtered = riderWeapons.filter(w => !crewWeaponNames.has(w.name))
+        riderWeapons.length = 0
+        riderWeapons.push(...filtered)
       }
     }
 
+    // Crewed units with weapons on stats[0] have no rider — mount is in crew array
+    if (stats.crewed && stats.weapons) riderWeapons.length = 0
+
     // Default to hand weapon if no combat weapons matched
-    if (riderWeapons.length === 0) riderWeapons.push(HAND_WEAPON)
+    if (riderWeapons.length === 0 && !(stats.crewed && stats.weapons)) riderWeapons.push(HAND_WEAPON)
 
     const riderI = stats.I || '?'
     const riderWS = stats.WS || '?'
@@ -572,8 +575,8 @@ export function renderCombatWeaponsContext(army) {
       mountName = u.mount
       mountStomp = mount.stomp
       mountArmourBane = mount.armourBane || null
-    } else if (stats.crewed && stats.A && stats.A !== '-') {
-      // Crewed unit: stats[0] is the mount/vehicle itself
+    } else if (stats.crewed && stats.A && stats.A !== '-' && !stats.weapons) {
+      // Crewed unit without explicit weapons: stats[0] is the mount/vehicle itself
       mountI = parseInt(stats.I) || null
       mountWS = parseInt(stats.WS) || null
       mountA = parseInt(stats.A) || stats.A
@@ -632,7 +635,16 @@ export function renderCombatWeaponsContext(army) {
       })(),
       riderTags: buildRiderTags(u),
       combatRules: extractCombatRules(u),
-      crew: crew.map(c => ({ name: c.Name, i: c.I, ws: c.WS, s: c.S, a: c.A })),
+      crew: [
+        ...(stats.crewed && stats.weapons && stats.A && stats.A !== '-'
+          ? [{ name: stats.Name, i: stats.I, ws: stats.WS, s: stats.S, a: stats.A,
+               weapons: stats.weapons.map(wKey => COMBAT_WEAPONS[wKey]).filter(Boolean) }]
+          : []),
+        ...crew.map(c => ({
+          name: c.Name, i: c.I, ws: c.WS, s: c.S, a: c.A,
+          weapons: (c.weapons || []).map(wKey => COMBAT_WEAPONS[wKey]).filter(Boolean),
+        })),
+      ],
       champion: champion ? {
         name: champion.Name,
         i: champion.I || riderI,
@@ -689,7 +701,10 @@ export function renderCombatWeaponsContext(army) {
               <div class="mt-1">
                 ${r.champion ? r.champion.weapons.map(w => renderWeaponLine(r.champion.i, r.champion.ws, r.champion.s, r.champion.a, w, r.champion.name, r.champion.tags !== null ? r.champion.tags : r.riderTags)).join('') : ''}
                 ${r.riderWeapons.map(w => renderWeaponLine(r.riderI, r.riderWS, r.riderS, r.riderA, w, r.riderName, r.riderTags)).join('')}
-                ${r.crew.map(c => renderWeaponLine(c.i, c.ws, c.s, c.a, HAND_WEAPON, c.name)).join('')}
+                ${r.crew.map(c => c.weapons.length > 0
+                  ? c.weapons.map(w => renderWeaponLine(c.i, c.ws, c.s, c.a, w, c.name)).join('')
+                  : renderWeaponLine(c.i, c.ws, c.s, c.a, HAND_WEAPON, c.name)
+                ).join('')}
                 ${r.mountWeapons.length > 0
                   ? renderMountWeapons(r.mountWeapons, r.mountA, r.mountS, r.mountI || r.riderI, r.mountWS || r.riderWS)
                   : r.mountA ? renderWeaponLine(r.mountI || r.riderI, r.mountWS || r.riderWS, r.mountS, r.mountA, { name: r.mountName || 'Mount', s: '', ap: '—', rules: r.mountArmourBane ? `Armour Bane (${r.mountArmourBane})` : '' }) : ''}

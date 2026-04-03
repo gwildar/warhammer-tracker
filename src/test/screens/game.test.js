@@ -419,6 +419,50 @@ describe('Ogre Kingdoms army', () => {
     expect(irongutCard.textContent).toContain('Regen:5+')
   })
 
+  it('shows Ironblaster Rhinox with Monstrous Tusks exactly once', () => {
+    savePhaseIndex(12)
+    renderGameScreen(army)
+    const combatPanel = getApp().querySelector('.border-wh-phase-combat\\/30')
+    const ironblasterCard = [...combatPanel.querySelectorAll('.bg-wh-card')]
+      .find(el => el.textContent.includes('Ironblaster'))
+    expect(ironblasterCard).toBeTruthy()
+    const matches = ironblasterCard.textContent.match(/Monstrous Tusks/g)
+    expect(matches).toHaveLength(1)
+  })
+
+  it('shows Thundertusk Great Tusks exactly once', () => {
+    savePhaseIndex(12)
+    renderGameScreen(army)
+    const combatPanel = getApp().querySelector('.border-wh-phase-combat\\/30')
+    const ttCard = [...combatPanel.querySelectorAll('.bg-wh-card')]
+      .find(el => el.textContent.includes('Thundertusk'))
+    expect(ttCard).toBeTruthy()
+    const matches = ttCard.textContent.match(/Great Tusks/g)
+    expect(matches).toHaveLength(1)
+  })
+
+  it('shows Stonehorn Horns of Stone exactly once', () => {
+    savePhaseIndex(12)
+    renderGameScreen(army)
+    const combatPanel = getApp().querySelector('.border-wh-phase-combat\\/30')
+    const shCard = [...combatPanel.querySelectorAll('.bg-wh-card')]
+      .find(el => el.textContent.includes('Stonehorn'))
+    expect(shCard).toBeTruthy()
+    const matches = shCard.textContent.match(/Horns of Stone/g)
+    expect(matches).toHaveLength(1)
+  })
+
+  it('shows Ironblaster Leadbelcher crew with Hand Weapon', () => {
+    savePhaseIndex(12)
+    renderGameScreen(army)
+    const combatPanel = getApp().querySelector('.border-wh-phase-combat\\/30')
+    const ironblasterCard = [...combatPanel.querySelectorAll('.bg-wh-card')]
+      .find(el => el.textContent.includes('Ironblaster'))
+    expect(ironblasterCard).toBeTruthy()
+    expect(ironblasterCard.textContent).toContain('Hand Weapon')
+    expect(ironblasterCard.textContent).toContain('Leadbelcher')
+  })
+
   it('shows crew Ld for Ironblaster on break test', () => {
     savePhaseIndex(14) // break-test
     renderGameScreen(army)
