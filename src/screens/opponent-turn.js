@@ -5,7 +5,7 @@ import { PHASE_BG } from '../helpers.js'
 import { renderChargeContext } from '../context/charge.js'
 import { renderMagicItemsContext } from '../context/items.js'
 import { renderSpecialRulesForPhase } from '../context/special-rules-context.js'
-import { renderCombatWeaponsContext } from '../context/combat-weapons.js'
+import { renderCombatWeaponsContext, renderDefensiveStatsContext } from '../context/combat-weapons.js'
 import { navigate } from '../navigate.js'
 
 const app = document.getElementById('app')
@@ -100,6 +100,7 @@ function renderOpponentPhaseContext(army, phase) {
   let html = ''
 
   if (phase.id === 'movement') html += renderChargeContext(army)
+  if (phase.id === 'shooting') html += renderDefensiveStatsContext(army)
   if (phase.id === 'combat') html += renderCombatWeaponsContext(army)
   html += renderMagicItemsContext(army, phase.id, null)
   html += renderSpecialRulesForPhase(army, phase)

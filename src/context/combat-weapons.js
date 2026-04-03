@@ -815,3 +815,60 @@ export function renderCombatLeadershipContext(army) {
     </div>
   `
 }
+
+export function renderDefensiveStatsContext(army) {
+  if (army.units.length === 0) return ''
+
+  const deduped = {}
+  for (const u of army.units) {
+    const stats = u.stats?.[0]
+    const mount = u.mount ? findMount(u.mount) : null
+    const isRiddenMonster = mount && mount.wBonus > 0
+
+    const baseT = parseInt(stats?.T) || 0
+    const baseW = parseInt(stats?.W) || 0
+    const t = isRiddenMonster ? `${baseT + mount.tBonus}` : stats?.T || '?'
+    const w = isRiddenMonster ? `${baseW + mount.wBonus}` : stats?.W || '?'
+    const as = calculateArmourSave(u)
+    const ward = detectWard(u)
+    const regen = detectRegen(u)
+
+    let ld = '?'
+    if (u.stats) {
+      for (const profile of u.stats) {
+        if (profile.Ld && profile.Ld !== '-') { ld = profile.Ld; break }
+      }
+    }
+
+    const key = `${u.name}||${t}||${w}||${as}`
+    if (!deduped[key]) {
+      deduped[key] = { name: u.name, strength: u.strength, mount: isRiddenMonster ? u.mount : null, t, w, as, ward, regen, ld, ldNum: parseInt(ld) || 0, merged: false }
+    } else {
+      deduped[key].merged = true
+    }
+  }
+
+  const rows = Object.values(deduped).sort((a, b) => b.ldNum - a.ldNum)
+  if (rows.length === 0) return ''
+
+  return `
+    <div class="bg-wh-surface rounded-lg border border-wh-phase-shooting/30 p-4 mb-4">
+      <h3 class="text-sm font-bold text-wh-phase-shooting mb-3">Your Units</h3>
+      <div class="space-y-1">
+        ${rows.map(r => `
+          <div class="p-2 rounded bg-wh-card">
+            <div class="flex items-center gap-2 flex-wrap text-sm">
+              <span class="text-wh-text font-semibold">${r.name}${r.mount ? ` (${r.mount})` : ''}${!r.merged && r.strength > 1 ? ` <span class="text-wh-muted font-normal">x${r.strength}</span>` : ''}</span>
+              <span class="text-wh-muted font-mono text-xs">T:${r.t}</span>
+              <span class="text-wh-muted font-mono text-xs">W:${r.w}</span>
+              ${r.as ? `<span class="text-blue-400 font-mono text-xs">\u{1F6E1}\uFE0FAS:${r.as}</span>` : ''}
+              ${r.ward ? `<span class="text-purple-400 font-mono text-xs">\u{1F52E}Ward:${r.ward}</span>` : ''}
+              ${r.regen ? `<span class="text-green-400 font-mono text-xs">\u{1F49A}Regen:${r.regen}</span>` : ''}
+              <span class="text-wh-muted font-mono text-xs ml-auto">Ld${r.ld}</span>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `
+}

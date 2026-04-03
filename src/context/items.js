@@ -12,7 +12,10 @@ export function renderMagicItemsContext(army, phaseId, subPhaseId) {
         if (!item.phases.includes(phaseId)) continue
         if (subPhaseId && item.subPhases && !item.subPhases.includes(subPhaseId)) continue
         if (subPhaseId && item.opponentOnly) continue
-        if (phaseId === 'shooting' && item.type !== 'weapon' && item.type !== 'banner' && !item.effect?.toLowerCase().includes('bound spell')) continue
+        // Your shooting phase: show weapons, banners, bound spells
+        // Opponent shooting phase (subPhaseId null): only show defensive items (banners, talismans, etc.)
+        if (phaseId === 'shooting' && !subPhaseId && (item.type === 'weapon' || item.effect?.toLowerCase().includes('poisoned attacks'))) continue
+        if (phaseId === 'shooting' && subPhaseId && item.type !== 'weapon' && item.type !== 'banner' && !item.effect?.toLowerCase().includes('bound spell')) continue
         if (subPhaseId === 'combat-result' && item.type !== 'banner') continue
         if (subPhaseId === 'break-test' && item.type !== 'banner') continue
         if (subPhaseId === 'pursuit' && !item.subPhases?.includes('pursuit')) continue
