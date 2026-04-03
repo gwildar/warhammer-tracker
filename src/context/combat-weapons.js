@@ -719,7 +719,12 @@ export function renderCombatLeadershipContext(army) {
 
   const deduped = {}
   for (const u of army.units) {
-    const ld = u.stats?.[0]?.Ld || '?'
+    let ld = '?'
+    if (u.stats) {
+      for (const profile of u.stats) {
+        if (profile.Ld && profile.Ld !== '-') { ld = profile.Ld; break }
+      }
+    }
     const key = `${u.name}||${ld}`
     if (!deduped[key]) deduped[key] = { name: u.name, ld, ldNum: parseInt(ld) || 0 }
   }
