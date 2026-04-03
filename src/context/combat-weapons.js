@@ -632,7 +632,6 @@ export function renderCombatWeaponsContext(army) {
   return `
     <div class="bg-wh-surface rounded-lg border border-wh-phase-combat/30 p-4 mb-4">
       <h3 class="text-sm font-bold text-wh-phase-combat mb-3">Combat Units</h3>
-      ${hasRegen ? '<p class="text-xs text-wh-muted mb-3">Regeneration: roll each wound from Multiple Wounds separately (unlike Ward saves, which apply once per wound).</p>' : ''}
       <div class="space-y-2">
         ${rows.map(r => `
           <div class="p-2 rounded bg-wh-card">

@@ -164,7 +164,9 @@ export const PHASES = [
           'Models fight in Initiative order (highest first).',
           'Each model makes its attacks, rolling To Hit (WS vs WS) then To Wound (S vs T).',
           'Defender makes Armour and Ward saves, then remove casualties.',
+          'Regeneration: roll each wound from Multiple Wounds separately.',
           'All engaged models must fight \u2014 no opting out.',
+
         ],
 
       },
