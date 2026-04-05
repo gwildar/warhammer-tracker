@@ -5,6 +5,7 @@ const KEYS = {
   round: 'tow-round',
   opponentTurn: 'tow-opponent-turn',
   firstTurn: 'tow-first-turn',
+  scores: 'tow-scores',
 }
 
 function load(key, fallback) {
@@ -79,6 +80,22 @@ export function saveFirstTurn(value) {
   save(KEYS.firstTurn, value)
 }
 
+// Scores: { [round]: { you: N, opponent: N } }
+export function getScores() {
+  return load(KEYS.scores, {})
+}
+
+export function saveScores(scores) {
+  save(KEYS.scores, scores)
+}
+
+export function updateScore(round, player, score) {
+  const scores = getScores()
+  if (!scores[round]) scores[round] = { you: 0, opponent: 0 }
+  scores[round][player] = score
+  saveScores(scores)
+}
+
 // Can we go back to the previous turn?
 export function canGoBackToPreviousTurn() {
   const round = getRound()
@@ -96,6 +113,7 @@ export function resetGame() {
   save(KEYS.phaseIndex, 0)
   save(KEYS.round, 1)
   save(KEYS.opponentTurn, false)
+  save(KEYS.scores, {})
 }
 
 // Clear all app state

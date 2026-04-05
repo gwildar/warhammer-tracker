@@ -1,6 +1,6 @@
 import './style.css'
 import { getArmy, clearAll, getFirstTurn, getIsOpponentTurn } from './state.js'
-import { registerScreen, navigate } from './navigate.js'
+import { registerScreen } from './navigate.js'
 
 // Import screens
 import { renderSetupScreen } from './screens/setup.js'

@@ -189,6 +189,13 @@ export const PHASES = [
           'This is the last sub-phase \u2014 the turn ends after all combats are resolved.',
         ],
       },
+      {
+        id: 'scoring',
+        name: 'Scoring',
+        rules: [
+          'Score objectives',
+        ],
+      },
     ],
   },
 ]

@@ -8,6 +8,7 @@ import { renderChargeContext } from '../context/charge.js'
 import { renderMagicItemsContext } from '../context/items.js'
 import { renderVirtuesContext } from '../context/virtues.js'
 import { renderSpecialRulesContext } from '../context/special-rules-context.js'
+import { renderScoringUI, bindScoringEvents } from './scoring.js'
 import { navigate } from '../navigate.js'
 
 const app = document.getElementById('app')
@@ -91,6 +92,7 @@ export function renderGameScreen(army) {
 
           <!-- Contextual army info -->
           ${renderPhaseContext(army, phase, subPhase)}
+
         </div>
       </main>
 
@@ -136,17 +138,23 @@ function renderPhaseContext(army, phase, subPhase) {
   if (subPhase.id === 'combat-result') html += renderCombatResultContext(army)
   if (subPhase.id === 'break-test') html += renderCombatLeadershipContext(army)
 
-  if (subPhase.id !== 'remove-casualties') {
+  if (subPhase.id !== 'remove-casualties' && subPhase.id !== 'scoring') {
     html += renderMagicItemsContext(army, phase.id, subPhase.id)
     html += renderVirtuesContext(army, phase.id, subPhase.id)
   }
+  if (subPhase.id === 'scoring') {
+    html += renderScoringUI();
+  }
   html += renderSpecialRulesContext(army, subPhase)
   if (subPhase.id === 'command' && army.units.some(u => u.specialRules?.toLowerCase().includes('rallying cry'))) html += renderCombatLeadershipContext(army, 'Rally Leadership')
-
+ 
+ 
   return html
 }
 
 function bindGameActions(army) {
+  bindScoringEvents(army, renderGameScreen)
+
   document.getElementById('prev-btn')?.addEventListener('click', () => {
     const idx = getPhaseIndex()
     if (idx > 0) {

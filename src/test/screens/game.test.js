@@ -97,7 +97,7 @@ describe('Game Screen', () => {
 
   describe('last step', () => {
     it('shows End Turn on last step', () => {
-      savePhaseIndex(13) // last step
+      savePhaseIndex(14) // last step (Scoring)
       renderGameScreen(army)
       expect(getApp().querySelector('#next-btn').textContent).toContain('End Turn')
     })
@@ -471,5 +471,36 @@ describe('Ogre Kingdoms army', () => {
       .find(el => el.textContent.includes('Ironblaster'))
     expect(ironblasterCard).toBeTruthy()
     expect(ironblasterCard.textContent).toContain('Ld7')
+  })
+})
+
+describe('Scoring UI', () => {
+  let army
+
+  beforeEach(() => {
+    army = loadArmy('dark-elves')
+    startGame(army)
+  })
+
+  it('shows scoring section', () => {
+    savePhaseIndex(14) // Scoring
+    renderGameScreen(army)
+    expect(getApp().textContent).toContain('Strategic Objectives')
+    expect(getApp().querySelector('#score-you')).toBeTruthy()
+    expect(getApp().querySelector('#score-opponent')).toBeTruthy()
+  })
+
+  it('shows total scores', () => {
+    savePhaseIndex(14) // Scoring
+    renderGameScreen(army)
+    expect(getApp().textContent).toContain('Total')
+  })
+
+  it('hides magic items in scoring sub-phase', () => {
+    savePhaseIndex(14) // Scoring
+    renderGameScreen(army)
+    expect(getApp().textContent).toContain('Strategic Objectives')
+    // Should NOT contain any magic items (e.g. Spelleater Axe)
+    expect(getApp().textContent).not.toContain('Spelleater Axe')
   })
 })
