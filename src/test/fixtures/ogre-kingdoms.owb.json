@@ -1,1 +1,1431 @@
-{"name":"Renegade","description":"","game":"the-old-world","points":2400,"army":"ogre-kingdoms","characters":[{"name_en":"Tyrant","name_cn":"暴君","name_fr":"Tyran","name_de":"Tyrann","id":"tyrant.uplgazok","points":185,"command":[{"name_en":"General","name_cn":"主将","name_de":"General","name_fr":"Général","name_es":"General","points":0,"id":0,"active":true}],"equipment":[{"name_en":"Hand weapon","name_cn":"单手武器","name_fr":"Arme de base","name_de":"Handwaffe","points":0,"perModel":true,"active":true,"id":0},{"name_en":"Additional hand weapon","name_cn":"额外单手武器","name_fr":"Arme de base additionnelle","name_de":"Zusätzliche Handwaffe","points":4,"perModel":true,"id":1},{"name_en":"Ironfist","name_cn":"铁拳套","name_fr":"Poing d’Acier","name_de":"Eisenfaust","points":6,"perModel":true,"armyComposition":"ogre-kingdoms","id":2},{"name_en":"Ironfist {renegade}","name_cn":"铁拳套","name_fr":"Poing d’Acier","name_de":"Eisenfaust","points":6,"perModel":true,"armyComposition":"ok-renegade","id":3},{"name_en":"Great weapon","name_cn":"重型武器","name_fr":"Arme lourde","name_de":"Zweihandwaffe","points":5,"perModel":true,"id":4}],"armor":[{"name_en":"Light armour","name_cn":"轻甲","name_fr":"Armure légère","name_de":"Leichte Rüstung","points":0,"perModel":true,"active":false,"activeDefault":false,"id":0},{"name_en":"Heavy armour","name_cn":"重甲","name_fr":"Armure lourde","name_de":"Schwere Rüstung","points":3,"perModel":true,"id":1,"active":true}],"options":[{"name_en":"Ogre pistol","name_cn":"食人魔手枪","name_fr":"Pistolet Ogre","name_de":"Ogerpistole","points":6,"exclusive":true,"id":0},{"name_en":"Brace of Ogre pistols","name_cn":"成对食人魔手枪","name_fr":"Paire de pistolets Ogres","name_de":"Ogerpistolenpaar","points":12,"exclusive":true,"id":1}],"mounts":[{"name_en":"On foot","name_cn":"步行","name_fr":"À Pied","name_de":"Zu Fuß","points":0,"active":true,"id":0},{"name_en":"Stonehorn","name_cn":"石角兽","name_fr":"Mastauroc","name_de":"Steinyak","points":195,"id":1},{"name_en":"Thundertusk","name_cn":"雷牙兽","name_fr":"Mégastodonte","name_de":"Donnerhorn","points":165,"id":2}],"items":[{"name_en":"Magic Items","name_cn":"魔法物品","name_fr":"Objets Magiques","name_de":"Magische Gegenstände","types":["weapon","armor","talisman","enchanted-item"],"selected":[{"name_cn":"絮语之刃","name_de":"Kichernde Klinge","name_en":"Cackling Blade","name_fr":"Lame Caquetante","name_it":"Cackling Blade","name_pl":"Cackling Blade","points":65,"type":"weapon","onePerArmy":true,"name":"cackling blade","id":1},{"name_cn":"强韧圣符","name_de":"Ikone der Standhaftigkeit","name_en":"Icon of Fortitude","name_fr":"Icône d’Endurance","name_it":"Icon of Fortitude","name_pl":"Icon of Fortitude","points":35,"type":"talisman","onePerArmy":true,"name":"icon of fortitude","id":29}],"maxPoints":100},{"name_en":"Big Name","name_cn":"威名","name_de":"Großer Name","name_fr":"Grand Nom","types":["big-name"],"selected":[{"name_de":"Bergfresser","name_en":"Mountaineater","name_cn":"吞山者","name_fr":"Mange-montagne","name_it":"Mountaineater","points":25,"type":"big-name","onePerArmy":false,"name":"mountaineater","id":1}],"maxPoints":0}],"lores":[],"specialRules":{"name_en":"Armour Bane (1), Bull Charge, Fear, Impact Hits (2), Ogre Charge","name_cn":"碎甲攻击(1), 蛮牛冲锋, 恐惧, 撞击(2), 食人魔冲锋","name_fr":"Arme Perforante (1), Charge Buffle, Peur, Touches d’Impact (2), Charge Ogre","name_de":"Rüstungsfluch (1), Walze, Angst, Aufpralltreffer (2), Ogerangriff"},"notes":{"name_en":"0-1 per 1000 points","name_cn":"每1000分0-1","name_fr":"0-1 par tranche de 1000 points","name_de":"0-1 pro 1.000 Punkte"},"magic":{"items":[]}},{"name_en":"Slaughtermaster","name_cn":"屠宰大师","name_fr":"Désosseur","name_de":"Fleischermeister","id":"slaughtermaster.jgneag","points":230,"command":[{"name_en":"General","name_cn":"主将","name_de":"General","name_fr":"Général","name_es":"General","points":0,"id":0}],"equipment":[{"name_en":"Hand weapon","name_cn":"单手武器","name_fr":"Arme de base","name_de":"Handwaffe","points":0,"perModel":true,"active":true,"id":0},{"name_en":"Additional hand weapon","name_cn":"额外单手武器","name_fr":"Arme de base additionnelle","name_de":"Zusätzliche Handwaffe","points":4,"perModel":true,"id":1}],"armor":[],"options":[{"name_en":"Butcher's Cauldron","name_cn":"屠夫大锅","name_fr":"Chaudron de Boucher","name_de":"Fleischerkessel","points":30,"perModel":true,"minimum":0,"maximum":0,"id":0},{"name_en":"Wizard","name_cn":"法师","name_de":"Wizard","name_fr":"Sorcier","name_es":"Hechicero","points":0,"active":true,"alwaysActive":true,"options":[{"name_en":"Level 3 Wizard","name_cn":"3级法师","name_de":"Level 3 Wizard","name_fr":"Sorcier de Niveau 3","name_es":"Hechicero de Nivel 3","points":0,"exclusive":true,"active":false},{"name_en":"Level 4 Wizard","name_cn":"4级法师","name_de":"Level 4 Wizard","name_fr":"Sorcier de Niveau 4","name_es":"Hechicero de Nivel 4","points":35,"exclusive":true,"active":true}],"id":1}],"mounts":[],"items":[{"name_en":"Magic Items","name_cn":"魔法物品","name_fr":"Objets Magiques","name_de":"Magische Gegenstände","types":["enchanted-item","talisman","weapon","arcane-item"],"selected":[{"name_cn":"法系仆从","name_de":"Gelehrsamer Homunkulus","name_en":"Lore Familiar","name_fr":"Familier de Savoir","name_it":"Famiglio del Sapere","name_pl":"Chowaniec Wiedzy","points":30,"type":"arcane-item","onePerArmy":true,"name":"lore familiar","id":61},{"name_cn":"食法斧","name_de":"Magiefresserbeil","name_en":"Spelleater Axe","name_fr":"Hache Mange-sorts","name_it":"Ascia di Dispersione","name_pl":"Czarożerca","points":35,"type":"weapon","onePerArmy":true,"name":"spelleater axe","id":7},{"name_cn":"能量卷轴*","name_de":"Energiespruchrolle*","name_en":"Power Scroll*","name_fr":"Parchemin de Pouvoir*","name_it":"Pergamena del Potere*","name_pl":"Zwój Mocy*","points":20,"stackable":true,"type":"arcane-item","onePerArmy":false,"name":"power scroll","id":62}],"maxPoints":100},{"name_en":"Big Name","name_cn":"威名","name_de":"Großer Name","name_fr":"Grand Nom","types":["big-name"],"selected":[],"maxPoints":0}],"lores":["battle-magic","elementalism","illusion"],"specialRules":{"name_en":"Armour Bane (1), Fear, Impact Hits (2), Lore of the Great Maw {renegade}, Ogre Charge","name_cn":"碎甲攻击(1), 恐惧, 撞击(2), 大胃之神法系, 食人魔冲锋","name_fr":"Arme Perforante (1), Peur, Touches d’Impact (2), Domaine de La Gueule, Charge Ogre","name_de":"Rüstungsfluch (1), Angst, Aufpralltreffer (2), Lehre des Großen Schlundes, Ogerangriff"},"notes":{"name_en":"0-1 per 1000 points","name_cn":"每1000分0-1","name_fr":"0-1 par tranche de 1000 points","name_de":"0-1 pro 1.000 Punkte"}},{"name_en":"Bruiser","name_cn":"大汉","name_fr":"Cogneur","name_de":"Brecher","id":"bruiser.omzpkmr","points":110,"command":[{"name_en":"General","name_cn":"主将","name_de":"General","name_fr":"Général","name_es":"General","points":0,"id":0},{"name_en":"Battle Standard Bearer","name_cn":"战旗手","name_de":"Armeestandartenträger","name_fr":"Porteur de la Grande Bannière","points":25,"magic":{"types":["banner"],"maxPoints":0,"selected":[{"name_cn":"猎兽者织锦","name_de":"Gobelin des Monsterjägers","name_en":"Monster Hunter's Tapestry","name_fr":"Tapisserie du Chasseur de Monstres","name_it":"Monster Hunter's Tapestry","name_pl":"Monster Hunter's Tapestry","points":25,"type":"banner","onePerArmy":true,"name":"monster hunter's tapestry","id":41}]},"id":1,"active":true}],"equipment":[{"name_en":"Hand weapon","name_cn":"单手武器","name_fr":"Arme de base","name_de":"Handwaffe","points":0,"perModel":true,"active":true,"id":0},{"name_en":"Additional hand weapon","name_cn":"额外单手武器","name_fr":"Arme de base additionnelle","name_de":"Zusätzliche Handwaffe","points":4,"perModel":true,"id":1},{"name_en":"Ironfist","name_cn":"铁拳套","name_fr":"Poing d’Acier","name_de":"Eisenfaust","points":6,"perModel":true,"armyComposition":"ogre-kingdoms","id":2},{"name_en":"Ironfist {renegade}","name_cn":"铁拳套","name_fr":"Poing d’Acier","name_de":"Eisenfaust","points":6,"perModel":true,"armyComposition":"ok-renegade","id":3},{"name_en":"Great weapon","name_cn":"重型武器","name_fr":"Arme lourde","name_de":"Zweihandwaffe","points":5,"perModel":true,"id":4}],"armor":[{"name_en":"Light armour","name_cn":"轻甲","name_fr":"Armure légère","name_de":"Leichte Rüstung","points":0,"perModel":true,"active":true,"activeDefault":false,"id":0},{"name_en":"Heavy armour","name_cn":"重甲","name_fr":"Armure lourde","name_de":"Schwere Rüstung","points":3,"perModel":true,"id":1}],"options":[{"name_en":"Ogre pistol","name_cn":"食人魔手枪","name_fr":"Pistolet Ogre","name_de":"Ogerpistole","points":6,"exclusive":true,"id":0},{"name_en":"Brace of Ogre pistols","name_cn":"成对食人魔手枪","name_fr":"Paire de pistolets Ogres","name_de":"Ogerpistolenpaar","points":12,"exclusive":true,"id":1}],"mounts":[{"name_en":"On foot","name_cn":"步行","name_fr":"À Pied","name_de":"Zu Fuß","points":0,"active":true,"id":0},{"name_en":"Stonehorn","name_cn":"石角兽","name_fr":"Mastauroc","name_de":"Steinyak","points":195,"id":1},{"name_en":"Thundertusk","name_cn":"雷牙兽","name_fr":"Mégastodonte","name_de":"Donnerhorn","points":165,"id":2}],"items":[{"name_en":"Magic Items","name_cn":"魔法物品","name_fr":"Objets Magiques","name_de":"Magische Gegenstände","types":["weapon","armor","talisman","enchanted-item"],"selected":[{"name_cn":"银钢甲","name_de":"Silberstahlrüstung","name_en":"Armour of Silvered Steel","name_fr":"Armure de Fer-argent","name_it":"Armatura D'Acciaio Argentato","name_pl":"Zbroja z Posrebrzanej Stali","points":40,"type":"armor","onePerArmy":true,"name":"armour of silvered steel","id":19}],"maxPoints":50},{"name_en":"Big Name","name_cn":"威名","name_de":"Großer Name","name_fr":"Grand Nom","types":["big-name"],"selected":[{"name_de":"Todpreller","name_en":"Deathcheater","name_cn":"诈死者","name_fr":"Trompe-la-mort","name_it":"Deathcheater","points":5,"type":"big-name","onePerArmy":false,"name":"deathcheater","id":6}],"maxPoints":0}],"lores":[],"specialRules":{"name_en":"Armour Bane (1), Bull Charge, Fear, Impact Hits (2), Ogre Charge","name_cn":"碎甲攻击(1), 蛮牛冲锋, 恐惧, 撞击(2), 食人魔冲锋","name_fr":"Arme Perforante (1), Charge Buffle, Peur, Touches d’Impact (2), Charge Ogre","name_de":"Rüstungsfluch (1), Walze, Angst, Aufpralltreffer (2), Ogerangriff"},"notes":{"name_en":"","name_cn":"","name_fr":""},"magic":{"items":[]}}],"core":[{"name_en":"Ironguts","name_cn":"铁胃","name_de":"Eisenwänste","name_es":"Ironguts","name_fr":"Ventres-durs","name_it":"Ironguts","id":"ironguts.azjbuuwv","points":39,"minimum":3,"maximum":0,"regimentalUnit":false,"detachment":false,"armyComposition":{"ogre-kingdoms":{"category":"core"},"ok-renegade":{"category":"core","specialRules":{"name_en":"Close Order, Fear, Impact Hits (1), Ogre Charge, Monstrous Ranks {renegade}","name_cn":"紧密阵型, 恐惧, 撞击(1), 食人魔冲锋, Monstrous Ranks","name_de":"Angst, Aufpralltreffer (1), Geschlossene Ränge, Ogerangriff, Monstrous Ranks","name_es":"Close Order, Fear, Impact Hits (1), Ogre Charge, Monstrous Ranks","name_fr":"Ordre Serré, Peur, Touches d’Impact (1), Charge Ogre, Rangs Monstrueux","name_it":"Close Order, Fear, Impact Hits (1), Ogre Charge, Monstrous Ranks"}}},"command":[{"name_en":"Gutlord (champion)","name_cn":"大肚王(冠军)","points":7,"magic":{"types":["weapon","armor","talisman","enchanted-item"],"maxPoints":25,"selected":[{"name_cn":"陨铁甲","name_de":"Meteoreisenrüstung","name_en":"Armour of Meteoric Iron","name_fr":"Armure de Fer Météorique","name_it":"Armatura Di Ferro Meteoritico","name_pl":"Pancerz z Meteorytowego Żelaza","points":20,"type":"armor","onePerArmy":true,"name":"armour of meteoric iron","id":24}]},"name_de":"Stahlwanst (Champion)","name_es":"Gutlord","name_fr":"Ventre de fer (champion)","name_it":"Gutlord","id":0,"active":true},{"name_en":"Standard bearer","name_cn":"旗手","points":7,"magic":{"types":["banner"],"maxPoints":50,"selected":[{"name_de":"Kannibalentotem","name_en":"Cannibal Totem","name_cn":"食人者图腾","name_fr":"Totem Cannibale","name_it":"Cannibal Totem","points":30,"type":"banner","onePerArmy":true,"name":"cannibal totem","id":10}]},"name_de":"Standartenträger","name_es":"Standard bearer","name_fr":"Porte-étendard","name_it":"Standard bearer","id":1,"active":true},{"name_en":"Bellower (musician)","name_cn":"大嗓门(乐手)","name_de":"Brüller (Musiker)","name_es":"Bellower (musician)","name_fr":"Beugleur (musicien)","name_it":"Bellower (musician)","points":7,"id":2,"active":true}],"equipment":[{"name_en":"Hand weapons, Great weapons","name_cn":"单手武器, 重型武器","name_de":"Handwaffen, Zweihandwaffen","name_es":"Hand weapons, Great weapons","name_fr":"Armes de base, Armes lourdes","name_it":"Hand weapons, Great weapons","points":0,"perModel":false,"active":true,"id":0}],"armor":[{"name_en":"Heavy armour","name_cn":"重甲","name_de":"Schwere Rüstung","name_es":"Heavy armour","name_fr":"Armure lourde","name_it":"Heavy armour","points":0,"perModel":false,"active":true,"activeDefault":true,"id":0}],"options":[{"name_en":"Look-out Gnoblar (Standard bearer)","name_cn":"瞭望孬不拉(旗手)","name_de":"Spähgnoblar (Standartenträger)","name_es":"Look-out Gnoblar (Standard bearer)","name_fr":"Gnoblar Longue-vue (Porte-étendard)","name_it":"Look-out Gnoblar (Standard bearer)","points":5,"id":0,"active":true},{"name_en":"Veteran","name_cn":"老兵","name_de":"Veteranen","name_es":"Veteran","name_fr":"Vétérans","name_it":"Veteran","points":2,"perModel":true,"id":1,"active":true}],"mounts":[],"items":[{"name_en":"Magic Items","name_cn":"魔法物品","name_de":"Magische Gegenstände","name_es":"Objetos mágicos","name_fr":"Objets Magiques","name_it":"Oggetti magici","types":[],"selected":[],"maxPoints":0}],"lores":[],"specialRules":{"name_en":"Close Order, Fear, Impact Hits (1), Ogre Charge","name_cn":"紧密阵型, 恐惧, 撞击(1), 食人魔冲锋","name_de":"Angst, Aufpralltreffer (1), Geschlossene Ränge, Ogerangriff","name_es":"Close Order, Fear, Impact Hits (1), Ogre Charge","name_fr":"Ordre Serré, Peur, Touches d’Impact (1), Charge Ogre","name_it":"Close Order, Fear, Impact Hits (1), Ogre Charge"},"notes":{"name_en":"","name_cn":"","name_de":"","name_es":"","name_fr":"","name_it":""},"strength":10,"magic":{"items":[]}},{"name_en":"Gnoblar Fighters","name_cn":"孬不拉战士","name_de":"Gnoblarkrieger","name_es":"Gnoblar Fighters","name_fr":"Guerriers Gnoblars","name_it":"Gnoblar Fighters","id":"gnoblar-fighters.hivpg","points":2,"minimum":20,"maximum":0,"regimentalUnit":false,"detachment":false,"command":[{"name_en":"Groinbiter (champion)","name_cn":"孬不拉队长(冠军)","name_de":"Wadenbeißer (Champion)","name_es":"Groinbiter","name_fr":"Mord-nez (champion)","name_it":"Groinbiter","points":5,"id":0,"active":true}],"equipment":[{"name_en":"Hand weapons, Throwing weapons (Sharp stuff)","name_cn":"单手武器, 投掷武器(尖锐玩意)","name_de":"Handwaffen, Wurfwaffen (Spitzes Zeug)","name_es":"Hand weapons, Throwing weapons (Sharp stuff)","name_fr":"Armes de base, Armes de lancer (Trucs pointus)","name_it":"Hand weapons, Throwing weapons (Sharp stuff)","points":0,"perModel":false,"active":true,"id":0}],"armor":[],"options":[],"mounts":[],"items":[],"lores":[],"specialRules":{"name_en":"Close Order, Horde, Largely Insignificant","name_cn":"紧密阵型, 部群, 微不足道","name_de":"Geschlossene Ränge, Horde, Völlig Unbedeutend","name_es":"Close Order, Horde, Largely Insignificant","name_fr":"Ordre Serré, Horde, Complètement Insignifiant","name_it":"Close Order, Horde, Largely Insignificant"},"notes":{"name_en":"","name_cn":"","name_de":"","name_es":"","name_fr":"","name_it":""},"strength":22,"magic":{"items":[]}},{"name_en":"Gnoblar Fighters","name_cn":"孬不拉战士","name_de":"Gnoblarkrieger","name_es":"Gnoblar Fighters","name_fr":"Guerriers Gnoblars","name_it":"Gnoblar Fighters","id":"gnoblar-fighters.kkvfmtome","points":2,"minimum":20,"maximum":0,"regimentalUnit":false,"detachment":false,"command":[{"name_en":"Groinbiter (champion)","name_cn":"孬不拉队长(冠军)","name_de":"Wadenbeißer (Champion)","name_es":"Groinbiter","name_fr":"Mord-nez (champion)","name_it":"Groinbiter","points":5,"id":0,"active":true}],"equipment":[{"name_en":"Hand weapons, Throwing weapons (Sharp stuff)","name_cn":"单手武器, 投掷武器(尖锐玩意)","name_de":"Handwaffen, Wurfwaffen (Spitzes Zeug)","name_es":"Hand weapons, Throwing weapons (Sharp stuff)","name_fr":"Armes de base, Armes de lancer (Trucs pointus)","name_it":"Hand weapons, Throwing weapons (Sharp stuff)","points":0,"perModel":false,"active":true,"id":0}],"armor":[],"options":[],"mounts":[],"items":[],"lores":[],"specialRules":{"name_en":"Close Order, Horde, Largely Insignificant","name_cn":"紧密阵型, 部群, 微不足道","name_de":"Geschlossene Ränge, Horde, Völlig Unbedeutend","name_es":"Close Order, Horde, Largely Insignificant","name_fr":"Ordre Serré, Horde, Complètement Insignifiant","name_it":"Close Order, Horde, Largely Insignificant"},"notes":{"name_en":"","name_cn":"","name_de":"","name_es":"","name_fr":"","name_it":""},"strength":22,"magic":{"items":[]}},{"name_en":"Gnoblar Fighters","name_cn":"孬不拉战士","name_de":"Gnoblarkrieger","name_es":"Gnoblar Fighters","name_fr":"Guerriers Gnoblars","name_it":"Gnoblar Fighters","id":"gnoblar-fighters.uncoqnzgd","points":2,"minimum":20,"maximum":0,"regimentalUnit":false,"detachment":false,"command":[{"name_en":"Groinbiter (champion)","name_cn":"孬不拉队长(冠军)","name_de":"Wadenbeißer (Champion)","name_es":"Groinbiter","name_fr":"Mord-nez (champion)","name_it":"Groinbiter","points":5,"id":0,"active":true}],"equipment":[{"name_en":"Hand weapons, Throwing weapons (Sharp stuff)","name_cn":"单手武器, 投掷武器(尖锐玩意)","name_de":"Handwaffen, Wurfwaffen (Spitzes Zeug)","name_es":"Hand weapons, Throwing weapons (Sharp stuff)","name_fr":"Armes de base, Armes de lancer (Trucs pointus)","name_it":"Hand weapons, Throwing weapons (Sharp stuff)","points":0,"perModel":false,"active":true,"id":0}],"armor":[],"options":[],"mounts":[],"items":[],"lores":[],"specialRules":{"name_en":"Close Order, Horde, Largely Insignificant","name_cn":"紧密阵型, 部群, 微不足道","name_de":"Geschlossene Ränge, Horde, Völlig Unbedeutend","name_es":"Close Order, Horde, Largely Insignificant","name_fr":"Ordre Serré, Horde, Complètement Insignifiant","name_it":"Close Order, Horde, Largely Insignificant"},"notes":{"name_en":"","name_cn":"","name_de":"","name_es":"","name_fr":"","name_it":""},"strength":22,"magic":{"items":[]}},{"name_en":"Sabretusk Pack","name_cn":"霜齿兽兽群","name_de":"Säbelzahnrudel","name_es":"Sabretusk Pack","name_fr":"Meutes de Crocs de Sabre","name_it":"Sabretusk Pack","id":"sabretusk-packs.tklkuvvk","points":17,"minimum":2,"maximum":10,"regimentalUnit":false,"detachment":false,"command":[],"equipment":[{"name_en":"Hand weapons (Claws and fangs)","name_cn":"单手武器(尖牙利爪)","name_de":"Handwaffen (Klauen und Zähne)","name_es":"Hand weapons (Claws and fangs)","name_fr":"Armes de base (Griffes et crocs)","name_it":"Hand weapons (Claws and fangs)","points":0,"perModel":false,"active":true,"id":0}],"armor":[],"options":[{"name_en":"Ambushers","name_cn":"伏击","name_de":"Überfall","name_es":"Ambushers","name_fr":"Embusqueurs","name_it":"Ambushers","points":3,"perModel":true,"id":0},{"name_en":"Scouts","name_cn":"侦察","name_de":"Kundschafter","name_es":"Scouts","name_fr":"Éclaireurs","name_it":"Scouts","points":2,"perModel":true,"id":1},{"name_en":"Vanguard","name_cn":"先锋","name_de":"Vorhut","name_es":"Vanguard","name_fr":"Avant-garde","name_it":"Vanguard","points":1,"perModel":true,"id":2}],"mounts":[],"items":[],"lores":[],"specialRules":{"name_en":"Armour Bane (1), Fear, Impetuous, Loner, Move Through Cover, Open Order, Skirmishers, Swiftstride","name_cn":"碎甲攻击(1), 恐惧, 鲁莽, 独行, 穿行掩体, 开放阵型, 散兵, 快速行进","name_de":"Rüstungsfluch (1), Angst, Ungestüm, Einzelgänger, Durck Deckung bewegen, Offene Ränge, Plänkler, Schnelle Bewegung","name_es":"Armour Bane (1), Fear, Impetuous, Loner, Move Through Cover, Open Order, Skirmishers, Swiftstride","name_fr":"Arme Perforante (1), Peur, Impétueux, Solitaire, Mouvement à Couvert, Ordre Dispersé, Tirailleurs, Rapide","name_it":"Armour Bane (1), Fear, Impetuous, Loner, Move Through Cover, Open Order, Skirmishers, Swiftstride"},"notes":{"name_en":"","name_cn":"","name_de":"","name_es":"","name_fr":"","name_it":""},"strength":2},{"name_en":"Sabretusk Pack","name_cn":"霜齿兽兽群","name_de":"Säbelzahnrudel","name_es":"Sabretusk Pack","name_fr":"Meutes de Crocs de Sabre","name_it":"Sabretusk Pack","id":"sabretusk-packs.nqtdnnttda","points":17,"minimum":2,"maximum":10,"regimentalUnit":false,"detachment":false,"command":[],"equipment":[{"name_en":"Hand weapons (Claws and fangs)","name_cn":"单手武器(尖牙利爪)","name_de":"Handwaffen (Klauen und Zähne)","name_es":"Hand weapons (Claws and fangs)","name_fr":"Armes de base (Griffes et crocs)","name_it":"Hand weapons (Claws and fangs)","points":0,"perModel":false,"active":true,"id":0}],"armor":[],"options":[{"name_en":"Ambushers","name_cn":"伏击","name_de":"Überfall","name_es":"Ambushers","name_fr":"Embusqueurs","name_it":"Ambushers","points":3,"perModel":true,"id":0},{"name_en":"Scouts","name_cn":"侦察","name_de":"Kundschafter","name_es":"Scouts","name_fr":"Éclaireurs","name_it":"Scouts","points":2,"perModel":true,"id":1},{"name_en":"Vanguard","name_cn":"先锋","name_de":"Vorhut","name_es":"Vanguard","name_fr":"Avant-garde","name_it":"Vanguard","points":1,"perModel":true,"id":2}],"mounts":[],"items":[],"lores":[],"specialRules":{"name_en":"Armour Bane (1), Fear, Impetuous, Loner, Move Through Cover, Open Order, Skirmishers, Swiftstride","name_cn":"碎甲攻击(1), 恐惧, 鲁莽, 独行, 穿行掩体, 开放阵型, 散兵, 快速行进","name_de":"Rüstungsfluch (1), Angst, Ungestüm, Einzelgänger, Durck Deckung bewegen, Offene Ränge, Plänkler, Schnelle Bewegung","name_es":"Armour Bane (1), Fear, Impetuous, Loner, Move Through Cover, Open Order, Skirmishers, Swiftstride","name_fr":"Arme Perforante (1), Peur, Impétueux, Solitaire, Mouvement à Couvert, Ordre Dispersé, Tirailleurs, Rapide","name_it":"Armour Bane (1), Fear, Impetuous, Loner, Move Through Cover, Open Order, Skirmishers, Swiftstride"},"notes":{"name_en":"","name_cn":"","name_de":"","name_es":"","name_fr":"","name_it":""},"strength":2}],"special":[{"name_en":"Ironblaster","name_cn":"轰铁炮","name_de":"Eisenspeier","name_es":"Ironblaster","name_fr":"Boute-fer","name_it":"Ironblaster","id":"ironblaster.lswtxjcrqe","points":185,"regimentalUnit":false,"detachment":false,"armyComposition":{"ogre-kingdoms":{"category":"special","notes":{"name_en":"0-1 Ironblaster or Gnoblar Scraplauncher per 1000 points","name_cn":"每1000分0-1 Ironblaster或孬不拉废铁投射器","name_de":"0-1 Eisenspeier oder Gnoblar-Schrottschleuder pro 1.000 Punkte","name_es":"0-1 Ironblaster or Gnoblar Scraplauncher per 1000 points","name_fr":"0-1 Boute-fer ou Lance-ferraille Gnoblar par tranche de 1000 points","name_it":"0-1 Ironblaster or Gnoblar Scraplauncher per 1000 points","name_pl":"0-1 Ironblaster or Gnoblar Scraplauncher per 1000 points"}},"ok-renegade":{"category":"special","notes":{"name_en":"0-1 Ironblaster per 1000 points","name_cn":"每1000分0-1 Ironblaster","name_de":"0-1 Eisenspeier pro 1.000 Punkte","name_es":"0-1 Ironblaster per 1000 points","name_fr":"0-1 Boute-fer par tranche de 1000 points","name_it":"0-1 Ironblaster per 1000 points","name_pl":"0-1 Ironblaster per 1000 points"}}},"command":[],"equipment":[{"name_en":"Cannon of the Sky-titans {renegade}, Hand weapons","name_cn":"天空泰坦巨炮{renegade}, 单手武器","name_de":"Kanone der Himmelstitanen, Handwaffen","name_es":"Cannon of the Sky-titans","name_fr":"Canon des Titans Célestes, Armes de base","name_it":"Cannon of the Sky-titans","points":0,"perModel":false,"active":true,"id":0}],"armor":[],"options":[],"mounts":[],"items":[],"lores":[],"specialRules":{"name_en":"Armour Bane (2 - Rhinox only), Close Order, Fear, First Charge, Impact Hits (D6+1), Large Target","name_cn":"碎甲攻击(2 - 仅限披毛犀), 紧密阵型, 恐惧, 先行冲锋, 撞击(D6+1), 大型目标","name_de":"Rüstungsfluch (2 - Nur Rhinox), Geschlossene Ränge, Angst, Erster Angriff, Aufpralltreffer (W6+1), Großes Ziel","name_es":"Armour Bane (2 - Rhinox only), Close Order, Fear, First Charge, Impact Hits (D6+1), Large Target","name_fr":"Arme Perforante (2 - Rhinox uniquement), Ordre Serré, Peur, Première Charge, Touches d’Impact (D6+1), Grande Cible","name_it":"Armour Bane (2 - Rhinox only), Close Order, Fear, First Charge, Impact Hits (D6+1), Large Target"}},{"name_en":"Ironblaster","name_cn":"轰铁炮","name_de":"Eisenspeier","name_es":"Ironblaster","name_fr":"Boute-fer","name_it":"Ironblaster","id":"ironblaster.wlvcaegh","points":185,"regimentalUnit":false,"detachment":false,"armyComposition":{"ogre-kingdoms":{"category":"special","notes":{"name_en":"0-1 Ironblaster or Gnoblar Scraplauncher per 1000 points","name_cn":"每1000分0-1 Ironblaster或孬不拉废铁投射器","name_de":"0-1 Eisenspeier oder Gnoblar-Schrottschleuder pro 1.000 Punkte","name_es":"0-1 Ironblaster or Gnoblar Scraplauncher per 1000 points","name_fr":"0-1 Boute-fer ou Lance-ferraille Gnoblar par tranche de 1000 points","name_it":"0-1 Ironblaster or Gnoblar Scraplauncher per 1000 points","name_pl":"0-1 Ironblaster or Gnoblar Scraplauncher per 1000 points"}},"ok-renegade":{"category":"special","notes":{"name_en":"0-1 Ironblaster per 1000 points","name_cn":"每1000分0-1 Ironblaster","name_de":"0-1 Eisenspeier pro 1.000 Punkte","name_es":"0-1 Ironblaster per 1000 points","name_fr":"0-1 Boute-fer par tranche de 1000 points","name_it":"0-1 Ironblaster per 1000 points","name_pl":"0-1 Ironblaster per 1000 points"}}},"command":[],"equipment":[{"name_en":"Cannon of the Sky-titans {renegade}, Hand weapons","name_cn":"天空泰坦巨炮{renegade}, 单手武器","name_de":"Kanone der Himmelstitanen, Handwaffen","name_es":"Cannon of the Sky-titans","name_fr":"Canon des Titans Célestes, Armes de base","name_it":"Cannon of the Sky-titans","points":0,"perModel":false,"active":true,"id":0}],"armor":[],"options":[],"mounts":[],"items":[],"lores":[],"specialRules":{"name_en":"Armour Bane (2 - Rhinox only), Close Order, Fear, First Charge, Impact Hits (D6+1), Large Target","name_cn":"碎甲攻击(2 - 仅限披毛犀), 紧密阵型, 恐惧, 先行冲锋, 撞击(D6+1), 大型目标","name_de":"Rüstungsfluch (2 - Nur Rhinox), Geschlossene Ränge, Angst, Erster Angriff, Aufpralltreffer (W6+1), Großes Ziel","name_es":"Armour Bane (2 - Rhinox only), Close Order, Fear, First Charge, Impact Hits (D6+1), Large Target","name_fr":"Arme Perforante (2 - Rhinox uniquement), Ordre Serré, Peur, Première Charge, Touches d’Impact (D6+1), Grande Cible","name_it":"Armour Bane (2 - Rhinox only), Close Order, Fear, First Charge, Impact Hits (D6+1), Large Target"}}],"rare":[{"name_en":"Thundertusk Riders","name_cn":"雷牙兽骑兵","name_de":"Donnerhornreiter","name_es":"Thundertusk Riders","name_fr":"Chevaucheurs de Mégastodonte","name_it":"Thundertusk Riders","id":"thundertusk-riders.yrghwfo","points":215,"minimum":0,"maximum":0,"regimentalUnit":false,"detachment":false,"command":[],"equipment":[{"name_en":"Hand weapon, Great tusks (Thundertusk), Chill breath (Thundertusk), Harpoon launcher (Ogre Crew), Chaintrap (Ogre Beast Rider)","name_cn":"单手武器, 巨型长牙(雷牙兽), 寒意吐息(雷牙兽), 鱼叉发射器(食人魔组员), 投索陷阱(食人魔野兽骑手)","name_fr":"Arme de base, Grandes défenses (Mégastodonte), Souffle glacial (Mégastodonte), Lance-harpon (Servant Ogre), Croque-monsieur (Chevaucheur Ogre)","name_de":"Handwaffen, Gewalltige Hauer (Donnerhorn), Eisiger Atem (Donnerhorn), Harpunenschleuder (Oger-Besatzung), Ketten-Fangeisen (Ogerreiter)","points":0,"active":true,"id":0},{"name_en":"Hand weapon, Great tusks (Thundertusk), Chill breath (Thundertusk), Harpoon launcher (Ogre Crew), Blood vulture (Ogre Beast Rider)","name_cn":"单手武器, 巨型长牙(雷牙兽), 寒意吐息(雷牙兽), 鱼叉发射器(食人魔组员), 寻血秃鹫(食人魔野兽骑手)","name_fr":"Arme de base, Grandes défenses (Mégastodonte), Souffle glacial (Mégastodonte), Lance-harpon (Servant Ogre), Vautour de sang (Chevaucheur Ogre)","name_de":"Eisiger Atem (Donnerhorn), Gewaltige Hauer, Handwaffen, Harpunenschleuder (Oger-Besatzung), Ketten-Fangeisen (Ogerreiter)","points":5,"perModel":false,"id":1}],"armor":[],"options":[{"name_en":"Harpoon launcher (Ogre Beast Rider)","name_cn":"鱼叉发射器(食人魔野兽骑手)","name_de":"Harpunenschleuder (Ogerreiter)","name_es":"Harpoon launcher (Ogre Beast Rider)","name_fr":"Lance-harpon (Chevaucheur Ogre)","name_it":"Harpoon launcher (Ogre Beast Rider)","points":8,"perModel":false,"id":0}],"mounts":[],"items":[],"lores":[],"specialRules":{"name_en":"Close Order, First Charge, Howdah, Impact Hits (D3), Large Target, Numbing Chill, Stomp Attacks (3), Swiftstride, Terror","name_cn":"紧密阵型, 先行冲锋, 驼轿, 撞击(D3), 大型目标, 麻木寒意, 践踏攻击(3), 快速行进, 惊骇","name_de":"Geschlossene Ränge, Erster Angriff, Sänfte, Aufpralltreffer (W3), Großes Ziel, Lähmende Kälte, Stampfattacken (3), Schnelle Bewegung, Entsetzen","name_es":"Close Order, First Charge, Howdah, Impact Hits (D3), Large Target, Numbing Chill, Stomp Attacks (3), Swiftstride, Terror","name_fr":"Ordre Serré, Première Charge, Howdah, Touches d’Impact (D3), Grande Cible, Frisson Paralysant, Attaques de Piétinement (3), Rapide, Terreur","name_it":"Close Order, First Charge, Howdah, Impact Hits (D3), Large Target, Numbing Chill, Stomp Attacks (3), Swiftstride, Terror"},"notes":{"name_en":"0-1 Thundertusk Riders per 1000 points","name_cn":"每1000分0-1","name_fr":"0-1 Chevaucheurs de Mégastodonte par tranche de 1000 points","name_de":"0-1 Donnerhornreiter pro 1.000 Punkte"},"strength":0},{"name_en":"Stonehorn Riders","name_cn":"石角兽骑兵","name_de":"Steinyakreiter","name_es":"Stonehorn Riders","name_fr":"Chevaucheurs de Mastauroc","name_it":"Stonehorn Riders","id":"stonehorn-riders.pcyawfk","points":245,"regimentalUnit":false,"detachment":false,"command":[],"equipment":[{"name_en":"Hand weapon, Horns of stone (Stonehorn), Harpoon launcher (Ogre Crew), Chaintrap (Ogre Beast Rider)","name_cn":"单手武器, 石角(石角兽), 鱼叉发射器(食人魔组员), 投索陷阱(食人魔野兽骑手)","name_fr":"Arme de base, Cornes de pierre (Mastauroc), Lance-harpon (Servant Ogre), Croque-monsieur (Chevaucheur Ogre)","name_de":"Handwaffen, Steinerne Hörner (Steinyak), Harpunenschleuder (Oger-Besatzung), Ketten-Fangeisen (Ogerreiter)","points":0,"perModel":false,"active":true,"id":0},{"name_en":"Hand weapon, Horns of stone (Stonehorn), Harpoon launcher (Ogre Crew), Blood vulture (Ogre Beast Rider)","name_cn":"单手武器, 石角(石角兽), 鱼叉发射器(食人魔组员), 寻血秃鹫(食人魔野兽骑手)","name_fr":"Arme de base, Cornes de pierre (Mastauroc), Lance-harpon (Servant Ogre), Vautour de sang (Chevaucheur Ogre)","name_de":"Handwaffen, Steinerne Hörner (Steinyak), Harpunenschleuder (Oger-Besatzung), Blutgeier (Ogerreiter)","points":5,"perModel":false,"id":1}],"armor":[],"options":[{"name_en":"Harpoon launcher (Ogre Beast Rider)","name_cn":"鱼叉发射器(食人魔野兽骑手)","name_de":"Harpunenschleuder (Ogerreiter)","name_es":"Harpoon launcher (Ogre Beast Rider)","name_fr":"Lance-harpon (Chevaucheur Ogre)","name_it":"Harpoon launcher (Ogre Beast Rider)","points":8,"id":0}],"mounts":[],"items":[],"lores":[],"specialRules":{"name_en":"Armour Bane (2 - Stonehorn only), Close Order, First Charge, Howdah, Impact Hits (D6+1), Large Target, Stone Skeleton, Swiftstride, Terror, Thunderous Charge","name_cn":"碎甲攻击(2 - 仅限石角兽), 紧密阵型, 先行冲锋, 驼轿, 撞击(D6+1), 大型目标, 石化骨架, 快速行进, 惊骇, 雷霆冲锋","name_de":"Rüstungsfluch (2 - Nur Steinyak), Geschlossene Ränge, Erster Angriff, Sänfte, Aufpralltreffer (W6+1), Großes Ziel, Steinernes Skelett, Schnelle Bewegung, Entsetzen, Donnernder Angriff","name_es":"Armour Bane (2 - Stonehorn only), Close Order, First Charge, Howdah, Impact Hits (D6+1), Large Target, Stone Skeleton, Swiftstride, Terror, Thunderous Charge","name_fr":"Arme Perforante (2 - Mastauroc uniquement), Ordre Serré, Première Charge, Howdah, Touches d’Impact (D6+1), Grande Cible, Squelette de Pierre, Rapide, Terreur, Charge Tonnerre","name_it":"Armour Bane (2 - Stonehorn only), Close Order, First Charge, Howdah, Impact Hits (D6+1), Large Target, Stone Skeleton, Swiftstride, Terror, Thunderous Charge"},"notes":{"name_en":"0-1 Stonehorn Riders per 1000 points","name_cn":"每1000分0-1","name_fr":"0-1 Chevaucheurs de Mastauroc par tranche de 1000 points","name_de":"0-1 Steinyakreiter pro 1.000 Punkte"}}],"mercenaries":[],"allies":[],"id":"ccswq","armyComposition":"ok-renegade","compositionRule":"grand-melee-combined-arms","folder":"folder-xhsamrisl"}
+{
+  "name": "Renegade",
+  "description": "",
+  "game": "the-old-world",
+  "points": 2400,
+  "army": "ogre-kingdoms",
+  "characters": [
+    {
+      "name_en": "Tyrant",
+      "name_cn": "暴君",
+      "name_fr": "Tyran",
+      "name_de": "Tyrann",
+      "id": "tyrant.uplgazok",
+      "points": 185,
+      "command": [
+        {
+          "name_en": "General",
+          "name_cn": "主将",
+          "name_de": "General",
+          "name_fr": "Général",
+          "name_es": "General",
+          "points": 0,
+          "id": 0,
+          "active": true
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapon",
+          "name_cn": "单手武器",
+          "name_fr": "Arme de base",
+          "name_de": "Handwaffe",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Additional hand weapon",
+          "name_cn": "额外单手武器",
+          "name_fr": "Arme de base additionnelle",
+          "name_de": "Zusätzliche Handwaffe",
+          "points": 4,
+          "perModel": true,
+          "id": 1
+        },
+        {
+          "name_en": "Ironfist",
+          "name_cn": "铁拳套",
+          "name_fr": "Poing d’Acier",
+          "name_de": "Eisenfaust",
+          "points": 6,
+          "perModel": true,
+          "armyComposition": "ogre-kingdoms",
+          "id": 2
+        },
+        {
+          "name_en": "Ironfist {renegade}",
+          "name_cn": "铁拳套",
+          "name_fr": "Poing d’Acier",
+          "name_de": "Eisenfaust",
+          "points": 6,
+          "perModel": true,
+          "armyComposition": "ok-renegade",
+          "id": 3
+        },
+        {
+          "name_en": "Great weapon",
+          "name_cn": "重型武器",
+          "name_fr": "Arme lourde",
+          "name_de": "Zweihandwaffe",
+          "points": 5,
+          "perModel": true,
+          "id": 4
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_fr": "Armure légère",
+          "name_de": "Leichte Rüstung",
+          "points": 0,
+          "perModel": true,
+          "active": false,
+          "activeDefault": false,
+          "id": 0
+        },
+        {
+          "name_en": "Heavy armour",
+          "name_cn": "重甲",
+          "name_fr": "Armure lourde",
+          "name_de": "Schwere Rüstung",
+          "points": 3,
+          "perModel": true,
+          "id": 1,
+          "active": true
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Ogre pistol",
+          "name_cn": "食人魔手枪",
+          "name_fr": "Pistolet Ogre",
+          "name_de": "Ogerpistole",
+          "points": 6,
+          "exclusive": true,
+          "id": 0
+        },
+        {
+          "name_en": "Brace of Ogre pistols",
+          "name_cn": "成对食人魔手枪",
+          "name_fr": "Paire de pistolets Ogres",
+          "name_de": "Ogerpistolenpaar",
+          "points": 12,
+          "exclusive": true,
+          "id": 1
+        }
+      ],
+      "mounts": [
+        {
+          "name_en": "On foot",
+          "name_cn": "步行",
+          "name_fr": "À Pied",
+          "name_de": "Zu Fuß",
+          "points": 0,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Stonehorn",
+          "name_cn": "石角兽",
+          "name_fr": "Mastauroc",
+          "name_de": "Steinyak",
+          "points": 195,
+          "id": 1
+        },
+        {
+          "name_en": "Thundertusk",
+          "name_cn": "雷牙兽",
+          "name_fr": "Mégastodonte",
+          "name_de": "Donnerhorn",
+          "points": 165,
+          "id": 2
+        }
+      ],
+      "items": [
+        {
+          "name_en": "Magic Items",
+          "name_cn": "魔法物品",
+          "name_fr": "Objets Magiques",
+          "name_de": "Magische Gegenstände",
+          "types": ["weapon", "armor", "talisman", "enchanted-item"],
+          "selected": [
+            {
+              "name_cn": "絮语之刃",
+              "name_de": "Kichernde Klinge",
+              "name_en": "Cackling Blade",
+              "name_fr": "Lame Caquetante",
+              "name_it": "Cackling Blade",
+              "name_pl": "Cackling Blade",
+              "points": 65,
+              "type": "weapon",
+              "onePerArmy": true,
+              "name": "cackling blade",
+              "id": 1
+            },
+            {
+              "name_cn": "强韧圣符",
+              "name_de": "Ikone der Standhaftigkeit",
+              "name_en": "Icon of Fortitude",
+              "name_fr": "Icône d’Endurance",
+              "name_it": "Icon of Fortitude",
+              "name_pl": "Icon of Fortitude",
+              "points": 35,
+              "type": "talisman",
+              "onePerArmy": true,
+              "name": "icon of fortitude",
+              "id": 29
+            }
+          ],
+          "maxPoints": 100
+        },
+        {
+          "name_en": "Big Name",
+          "name_cn": "威名",
+          "name_de": "Großer Name",
+          "name_fr": "Grand Nom",
+          "types": ["big-name"],
+          "selected": [
+            {
+              "name_de": "Bergfresser",
+              "name_en": "Mountaineater",
+              "name_cn": "吞山者",
+              "name_fr": "Mange-montagne",
+              "name_it": "Mountaineater",
+              "points": 25,
+              "type": "big-name",
+              "onePerArmy": false,
+              "name": "mountaineater",
+              "id": 1
+            }
+          ],
+          "maxPoints": 0
+        }
+      ],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Armour Bane (1), Bull Charge, Fear, Impact Hits (2), Ogre Charge",
+        "name_cn": "碎甲攻击(1), 蛮牛冲锋, 恐惧, 撞击(2), 食人魔冲锋",
+        "name_fr": "Arme Perforante (1), Charge Buffle, Peur, Touches d’Impact (2), Charge Ogre",
+        "name_de": "Rüstungsfluch (1), Walze, Angst, Aufpralltreffer (2), Ogerangriff"
+      },
+      "notes": {
+        "name_en": "0-1 per 1000 points",
+        "name_cn": "每1000分0-1",
+        "name_fr": "0-1 par tranche de 1000 points",
+        "name_de": "0-1 pro 1.000 Punkte"
+      },
+      "magic": { "items": [] }
+    },
+    {
+      "name_en": "Slaughtermaster",
+      "name_cn": "屠宰大师",
+      "name_fr": "Désosseur",
+      "name_de": "Fleischermeister",
+      "id": "slaughtermaster.jgneag",
+      "points": 230,
+      "command": [
+        {
+          "name_en": "General",
+          "name_cn": "主将",
+          "name_de": "General",
+          "name_fr": "Général",
+          "name_es": "General",
+          "points": 0,
+          "id": 0
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapon",
+          "name_cn": "单手武器",
+          "name_fr": "Arme de base",
+          "name_de": "Handwaffe",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Additional hand weapon",
+          "name_cn": "额外单手武器",
+          "name_fr": "Arme de base additionnelle",
+          "name_de": "Zusätzliche Handwaffe",
+          "points": 4,
+          "perModel": true,
+          "id": 1
+        }
+      ],
+      "armor": [],
+      "options": [
+        {
+          "name_en": "Butcher's Cauldron",
+          "name_cn": "屠夫大锅",
+          "name_fr": "Chaudron de Boucher",
+          "name_de": "Fleischerkessel",
+          "points": 30,
+          "perModel": true,
+          "minimum": 0,
+          "maximum": 0,
+          "id": 0
+        },
+        {
+          "name_en": "Wizard",
+          "name_cn": "法师",
+          "name_de": "Wizard",
+          "name_fr": "Sorcier",
+          "name_es": "Hechicero",
+          "points": 0,
+          "active": true,
+          "alwaysActive": true,
+          "options": [
+            {
+              "name_en": "Level 3 Wizard",
+              "name_cn": "3级法师",
+              "name_de": "Level 3 Wizard",
+              "name_fr": "Sorcier de Niveau 3",
+              "name_es": "Hechicero de Nivel 3",
+              "points": 0,
+              "exclusive": true,
+              "active": false
+            },
+            {
+              "name_en": "Level 4 Wizard",
+              "name_cn": "4级法师",
+              "name_de": "Level 4 Wizard",
+              "name_fr": "Sorcier de Niveau 4",
+              "name_es": "Hechicero de Nivel 4",
+              "points": 35,
+              "exclusive": true,
+              "active": true
+            }
+          ],
+          "id": 1
+        }
+      ],
+      "mounts": [],
+      "items": [
+        {
+          "name_en": "Magic Items",
+          "name_cn": "魔法物品",
+          "name_fr": "Objets Magiques",
+          "name_de": "Magische Gegenstände",
+          "types": ["enchanted-item", "talisman", "weapon", "arcane-item"],
+          "selected": [
+            {
+              "name_cn": "法系仆从",
+              "name_de": "Gelehrsamer Homunkulus",
+              "name_en": "Lore Familiar",
+              "name_fr": "Familier de Savoir",
+              "name_it": "Famiglio del Sapere",
+              "name_pl": "Chowaniec Wiedzy",
+              "points": 30,
+              "type": "arcane-item",
+              "onePerArmy": true,
+              "name": "lore familiar",
+              "id": 61
+            },
+            {
+              "name_cn": "食法斧",
+              "name_de": "Magiefresserbeil",
+              "name_en": "Spelleater Axe",
+              "name_fr": "Hache Mange-sorts",
+              "name_it": "Ascia di Dispersione",
+              "name_pl": "Czarożerca",
+              "points": 35,
+              "type": "weapon",
+              "onePerArmy": true,
+              "name": "spelleater axe",
+              "id": 7
+            },
+            {
+              "name_cn": "能量卷轴*",
+              "name_de": "Energiespruchrolle*",
+              "name_en": "Power Scroll*",
+              "name_fr": "Parchemin de Pouvoir*",
+              "name_it": "Pergamena del Potere*",
+              "name_pl": "Zwój Mocy*",
+              "points": 20,
+              "stackable": true,
+              "type": "arcane-item",
+              "onePerArmy": false,
+              "name": "power scroll",
+              "id": 62
+            }
+          ],
+          "maxPoints": 100
+        },
+        {
+          "name_en": "Big Name",
+          "name_cn": "威名",
+          "name_de": "Großer Name",
+          "name_fr": "Grand Nom",
+          "types": ["big-name"],
+          "selected": [],
+          "maxPoints": 0
+        }
+      ],
+      "lores": ["battle-magic", "elementalism", "illusion"],
+      "specialRules": {
+        "name_en": "Armour Bane (1), Fear, Impact Hits (2), Lore of the Great Maw {renegade}, Ogre Charge",
+        "name_cn": "碎甲攻击(1), 恐惧, 撞击(2), 大胃之神法系, 食人魔冲锋",
+        "name_fr": "Arme Perforante (1), Peur, Touches d’Impact (2), Domaine de La Gueule, Charge Ogre",
+        "name_de": "Rüstungsfluch (1), Angst, Aufpralltreffer (2), Lehre des Großen Schlundes, Ogerangriff"
+      },
+      "notes": {
+        "name_en": "0-1 per 1000 points",
+        "name_cn": "每1000分0-1",
+        "name_fr": "0-1 par tranche de 1000 points",
+        "name_de": "0-1 pro 1.000 Punkte"
+      }
+    },
+    {
+      "name_en": "Bruiser",
+      "name_cn": "大汉",
+      "name_fr": "Cogneur",
+      "name_de": "Brecher",
+      "id": "bruiser.omzpkmr",
+      "points": 110,
+      "command": [
+        {
+          "name_en": "General",
+          "name_cn": "主将",
+          "name_de": "General",
+          "name_fr": "Général",
+          "name_es": "General",
+          "points": 0,
+          "id": 0
+        },
+        {
+          "name_en": "Battle Standard Bearer",
+          "name_cn": "战旗手",
+          "name_de": "Armeestandartenträger",
+          "name_fr": "Porteur de la Grande Bannière",
+          "points": 25,
+          "magic": {
+            "types": ["banner"],
+            "maxPoints": 0,
+            "selected": [
+              {
+                "name_cn": "猎兽者织锦",
+                "name_de": "Gobelin des Monsterjägers",
+                "name_en": "Monster Hunter's Tapestry",
+                "name_fr": "Tapisserie du Chasseur de Monstres",
+                "name_it": "Monster Hunter's Tapestry",
+                "name_pl": "Monster Hunter's Tapestry",
+                "points": 25,
+                "type": "banner",
+                "onePerArmy": true,
+                "name": "monster hunter's tapestry",
+                "id": 41
+              }
+            ]
+          },
+          "id": 1,
+          "active": true
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapon",
+          "name_cn": "单手武器",
+          "name_fr": "Arme de base",
+          "name_de": "Handwaffe",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Additional hand weapon",
+          "name_cn": "额外单手武器",
+          "name_fr": "Arme de base additionnelle",
+          "name_de": "Zusätzliche Handwaffe",
+          "points": 4,
+          "perModel": true,
+          "id": 1
+        },
+        {
+          "name_en": "Ironfist",
+          "name_cn": "铁拳套",
+          "name_fr": "Poing d’Acier",
+          "name_de": "Eisenfaust",
+          "points": 6,
+          "perModel": true,
+          "armyComposition": "ogre-kingdoms",
+          "id": 2
+        },
+        {
+          "name_en": "Ironfist {renegade}",
+          "name_cn": "铁拳套",
+          "name_fr": "Poing d’Acier",
+          "name_de": "Eisenfaust",
+          "points": 6,
+          "perModel": true,
+          "armyComposition": "ok-renegade",
+          "id": 3
+        },
+        {
+          "name_en": "Great weapon",
+          "name_cn": "重型武器",
+          "name_fr": "Arme lourde",
+          "name_de": "Zweihandwaffe",
+          "points": 5,
+          "perModel": true,
+          "id": 4
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_fr": "Armure légère",
+          "name_de": "Leichte Rüstung",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "activeDefault": false,
+          "id": 0
+        },
+        {
+          "name_en": "Heavy armour",
+          "name_cn": "重甲",
+          "name_fr": "Armure lourde",
+          "name_de": "Schwere Rüstung",
+          "points": 3,
+          "perModel": true,
+          "id": 1
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Ogre pistol",
+          "name_cn": "食人魔手枪",
+          "name_fr": "Pistolet Ogre",
+          "name_de": "Ogerpistole",
+          "points": 6,
+          "exclusive": true,
+          "id": 0
+        },
+        {
+          "name_en": "Brace of Ogre pistols",
+          "name_cn": "成对食人魔手枪",
+          "name_fr": "Paire de pistolets Ogres",
+          "name_de": "Ogerpistolenpaar",
+          "points": 12,
+          "exclusive": true,
+          "id": 1
+        }
+      ],
+      "mounts": [
+        {
+          "name_en": "On foot",
+          "name_cn": "步行",
+          "name_fr": "À Pied",
+          "name_de": "Zu Fuß",
+          "points": 0,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Stonehorn",
+          "name_cn": "石角兽",
+          "name_fr": "Mastauroc",
+          "name_de": "Steinyak",
+          "points": 195,
+          "id": 1
+        },
+        {
+          "name_en": "Thundertusk",
+          "name_cn": "雷牙兽",
+          "name_fr": "Mégastodonte",
+          "name_de": "Donnerhorn",
+          "points": 165,
+          "id": 2
+        }
+      ],
+      "items": [
+        {
+          "name_en": "Magic Items",
+          "name_cn": "魔法物品",
+          "name_fr": "Objets Magiques",
+          "name_de": "Magische Gegenstände",
+          "types": ["weapon", "armor", "talisman", "enchanted-item"],
+          "selected": [
+            {
+              "name_cn": "银钢甲",
+              "name_de": "Silberstahlrüstung",
+              "name_en": "Armour of Silvered Steel",
+              "name_fr": "Armure de Fer-argent",
+              "name_it": "Armatura D'Acciaio Argentato",
+              "name_pl": "Zbroja z Posrebrzanej Stali",
+              "points": 40,
+              "type": "armor",
+              "onePerArmy": true,
+              "name": "armour of silvered steel",
+              "id": 19
+            }
+          ],
+          "maxPoints": 50
+        },
+        {
+          "name_en": "Big Name",
+          "name_cn": "威名",
+          "name_de": "Großer Name",
+          "name_fr": "Grand Nom",
+          "types": ["big-name"],
+          "selected": [
+            {
+              "name_de": "Todpreller",
+              "name_en": "Deathcheater",
+              "name_cn": "诈死者",
+              "name_fr": "Trompe-la-mort",
+              "name_it": "Deathcheater",
+              "points": 5,
+              "type": "big-name",
+              "onePerArmy": false,
+              "name": "deathcheater",
+              "id": 6
+            }
+          ],
+          "maxPoints": 0
+        }
+      ],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Armour Bane (1), Bull Charge, Fear, Impact Hits (2), Ogre Charge",
+        "name_cn": "碎甲攻击(1), 蛮牛冲锋, 恐惧, 撞击(2), 食人魔冲锋",
+        "name_fr": "Arme Perforante (1), Charge Buffle, Peur, Touches d’Impact (2), Charge Ogre",
+        "name_de": "Rüstungsfluch (1), Walze, Angst, Aufpralltreffer (2), Ogerangriff"
+      },
+      "notes": { "name_en": "", "name_cn": "", "name_fr": "" },
+      "magic": { "items": [] }
+    }
+  ],
+  "core": [
+    {
+      "name_en": "Ironguts",
+      "name_cn": "铁胃",
+      "name_de": "Eisenwänste",
+      "name_es": "Ironguts",
+      "name_fr": "Ventres-durs",
+      "name_it": "Ironguts",
+      "id": "ironguts.azjbuuwv",
+      "points": 39,
+      "minimum": 3,
+      "maximum": 0,
+      "regimentalUnit": false,
+      "detachment": false,
+      "armyComposition": {
+        "ogre-kingdoms": { "category": "core" },
+        "ok-renegade": {
+          "category": "core",
+          "specialRules": {
+            "name_en": "Close Order, Fear, Impact Hits (1), Ogre Charge, Monstrous Ranks {renegade}",
+            "name_cn": "紧密阵型, 恐惧, 撞击(1), 食人魔冲锋, Monstrous Ranks",
+            "name_de": "Angst, Aufpralltreffer (1), Geschlossene Ränge, Ogerangriff, Monstrous Ranks",
+            "name_es": "Close Order, Fear, Impact Hits (1), Ogre Charge, Monstrous Ranks",
+            "name_fr": "Ordre Serré, Peur, Touches d’Impact (1), Charge Ogre, Rangs Monstrueux",
+            "name_it": "Close Order, Fear, Impact Hits (1), Ogre Charge, Monstrous Ranks"
+          }
+        }
+      },
+      "command": [
+        {
+          "name_en": "Gutlord (champion)",
+          "name_cn": "大肚王(冠军)",
+          "points": 7,
+          "magic": {
+            "types": ["weapon", "armor", "talisman", "enchanted-item"],
+            "maxPoints": 25,
+            "selected": [
+              {
+                "name_cn": "陨铁甲",
+                "name_de": "Meteoreisenrüstung",
+                "name_en": "Armour of Meteoric Iron",
+                "name_fr": "Armure de Fer Météorique",
+                "name_it": "Armatura Di Ferro Meteoritico",
+                "name_pl": "Pancerz z Meteorytowego Żelaza",
+                "points": 20,
+                "type": "armor",
+                "onePerArmy": true,
+                "name": "armour of meteoric iron",
+                "id": 24
+              }
+            ]
+          },
+          "name_de": "Stahlwanst (Champion)",
+          "name_es": "Gutlord",
+          "name_fr": "Ventre de fer (champion)",
+          "name_it": "Gutlord",
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Standard bearer",
+          "name_cn": "旗手",
+          "points": 7,
+          "magic": {
+            "types": ["banner"],
+            "maxPoints": 50,
+            "selected": [
+              {
+                "name_de": "Kannibalentotem",
+                "name_en": "Cannibal Totem",
+                "name_cn": "食人者图腾",
+                "name_fr": "Totem Cannibale",
+                "name_it": "Cannibal Totem",
+                "points": 30,
+                "type": "banner",
+                "onePerArmy": true,
+                "name": "cannibal totem",
+                "id": 10
+              }
+            ]
+          },
+          "name_de": "Standartenträger",
+          "name_es": "Standard bearer",
+          "name_fr": "Porte-étendard",
+          "name_it": "Standard bearer",
+          "id": 1,
+          "active": true
+        },
+        {
+          "name_en": "Bellower (musician)",
+          "name_cn": "大嗓门(乐手)",
+          "name_de": "Brüller (Musiker)",
+          "name_es": "Bellower (musician)",
+          "name_fr": "Beugleur (musicien)",
+          "name_it": "Bellower (musician)",
+          "points": 7,
+          "id": 2,
+          "active": true
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapons, Great weapons",
+          "name_cn": "单手武器, 重型武器",
+          "name_de": "Handwaffen, Zweihandwaffen",
+          "name_es": "Hand weapons, Great weapons",
+          "name_fr": "Armes de base, Armes lourdes",
+          "name_it": "Hand weapons, Great weapons",
+          "points": 0,
+          "perModel": false,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Heavy armour",
+          "name_cn": "重甲",
+          "name_de": "Schwere Rüstung",
+          "name_es": "Heavy armour",
+          "name_fr": "Armure lourde",
+          "name_it": "Heavy armour",
+          "points": 0,
+          "perModel": false,
+          "active": true,
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Look-out Gnoblar (Standard bearer)",
+          "name_cn": "瞭望孬不拉(旗手)",
+          "name_de": "Spähgnoblar (Standartenträger)",
+          "name_es": "Look-out Gnoblar (Standard bearer)",
+          "name_fr": "Gnoblar Longue-vue (Porte-étendard)",
+          "name_it": "Look-out Gnoblar (Standard bearer)",
+          "points": 5,
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Veteran",
+          "name_cn": "老兵",
+          "name_de": "Veteranen",
+          "name_es": "Veteran",
+          "name_fr": "Vétérans",
+          "name_it": "Veteran",
+          "points": 2,
+          "perModel": true,
+          "id": 1,
+          "active": true
+        }
+      ],
+      "mounts": [],
+      "items": [
+        {
+          "name_en": "Magic Items",
+          "name_cn": "魔法物品",
+          "name_de": "Magische Gegenstände",
+          "name_es": "Objetos mágicos",
+          "name_fr": "Objets Magiques",
+          "name_it": "Oggetti magici",
+          "types": [],
+          "selected": [],
+          "maxPoints": 0
+        }
+      ],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Close Order, Fear, Impact Hits (1), Ogre Charge",
+        "name_cn": "紧密阵型, 恐惧, 撞击(1), 食人魔冲锋",
+        "name_de": "Angst, Aufpralltreffer (1), Geschlossene Ränge, Ogerangriff",
+        "name_es": "Close Order, Fear, Impact Hits (1), Ogre Charge",
+        "name_fr": "Ordre Serré, Peur, Touches d’Impact (1), Charge Ogre",
+        "name_it": "Close Order, Fear, Impact Hits (1), Ogre Charge"
+      },
+      "notes": {
+        "name_en": "",
+        "name_cn": "",
+        "name_de": "",
+        "name_es": "",
+        "name_fr": "",
+        "name_it": ""
+      },
+      "strength": 10,
+      "magic": { "items": [] }
+    },
+    {
+      "name_en": "Gnoblar Fighters",
+      "name_cn": "孬不拉战士",
+      "name_de": "Gnoblarkrieger",
+      "name_es": "Gnoblar Fighters",
+      "name_fr": "Guerriers Gnoblars",
+      "name_it": "Gnoblar Fighters",
+      "id": "gnoblar-fighters.hivpg",
+      "points": 2,
+      "minimum": 20,
+      "maximum": 0,
+      "regimentalUnit": false,
+      "detachment": false,
+      "command": [
+        {
+          "name_en": "Groinbiter (champion)",
+          "name_cn": "孬不拉队长(冠军)",
+          "name_de": "Wadenbeißer (Champion)",
+          "name_es": "Groinbiter",
+          "name_fr": "Mord-nez (champion)",
+          "name_it": "Groinbiter",
+          "points": 5,
+          "id": 0,
+          "active": true
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapons, Throwing weapons (Sharp stuff)",
+          "name_cn": "单手武器, 投掷武器(尖锐玩意)",
+          "name_de": "Handwaffen, Wurfwaffen (Spitzes Zeug)",
+          "name_es": "Hand weapons, Throwing weapons (Sharp stuff)",
+          "name_fr": "Armes de base, Armes de lancer (Trucs pointus)",
+          "name_it": "Hand weapons, Throwing weapons (Sharp stuff)",
+          "points": 0,
+          "perModel": false,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [],
+      "options": [],
+      "mounts": [],
+      "items": [],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Close Order, Horde, Largely Insignificant",
+        "name_cn": "紧密阵型, 部群, 微不足道",
+        "name_de": "Geschlossene Ränge, Horde, Völlig Unbedeutend",
+        "name_es": "Close Order, Horde, Largely Insignificant",
+        "name_fr": "Ordre Serré, Horde, Complètement Insignifiant",
+        "name_it": "Close Order, Horde, Largely Insignificant"
+      },
+      "notes": {
+        "name_en": "",
+        "name_cn": "",
+        "name_de": "",
+        "name_es": "",
+        "name_fr": "",
+        "name_it": ""
+      },
+      "strength": 22,
+      "magic": { "items": [] }
+    },
+    {
+      "name_en": "Gnoblar Fighters",
+      "name_cn": "孬不拉战士",
+      "name_de": "Gnoblarkrieger",
+      "name_es": "Gnoblar Fighters",
+      "name_fr": "Guerriers Gnoblars",
+      "name_it": "Gnoblar Fighters",
+      "id": "gnoblar-fighters.kkvfmtome",
+      "points": 2,
+      "minimum": 20,
+      "maximum": 0,
+      "regimentalUnit": false,
+      "detachment": false,
+      "command": [
+        {
+          "name_en": "Groinbiter (champion)",
+          "name_cn": "孬不拉队长(冠军)",
+          "name_de": "Wadenbeißer (Champion)",
+          "name_es": "Groinbiter",
+          "name_fr": "Mord-nez (champion)",
+          "name_it": "Groinbiter",
+          "points": 5,
+          "id": 0,
+          "active": true
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapons, Throwing weapons (Sharp stuff)",
+          "name_cn": "单手武器, 投掷武器(尖锐玩意)",
+          "name_de": "Handwaffen, Wurfwaffen (Spitzes Zeug)",
+          "name_es": "Hand weapons, Throwing weapons (Sharp stuff)",
+          "name_fr": "Armes de base, Armes de lancer (Trucs pointus)",
+          "name_it": "Hand weapons, Throwing weapons (Sharp stuff)",
+          "points": 0,
+          "perModel": false,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [],
+      "options": [],
+      "mounts": [],
+      "items": [],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Close Order, Horde, Largely Insignificant",
+        "name_cn": "紧密阵型, 部群, 微不足道",
+        "name_de": "Geschlossene Ränge, Horde, Völlig Unbedeutend",
+        "name_es": "Close Order, Horde, Largely Insignificant",
+        "name_fr": "Ordre Serré, Horde, Complètement Insignifiant",
+        "name_it": "Close Order, Horde, Largely Insignificant"
+      },
+      "notes": {
+        "name_en": "",
+        "name_cn": "",
+        "name_de": "",
+        "name_es": "",
+        "name_fr": "",
+        "name_it": ""
+      },
+      "strength": 22,
+      "magic": { "items": [] }
+    },
+    {
+      "name_en": "Gnoblar Fighters",
+      "name_cn": "孬不拉战士",
+      "name_de": "Gnoblarkrieger",
+      "name_es": "Gnoblar Fighters",
+      "name_fr": "Guerriers Gnoblars",
+      "name_it": "Gnoblar Fighters",
+      "id": "gnoblar-fighters.uncoqnzgd",
+      "points": 2,
+      "minimum": 20,
+      "maximum": 0,
+      "regimentalUnit": false,
+      "detachment": false,
+      "command": [
+        {
+          "name_en": "Groinbiter (champion)",
+          "name_cn": "孬不拉队长(冠军)",
+          "name_de": "Wadenbeißer (Champion)",
+          "name_es": "Groinbiter",
+          "name_fr": "Mord-nez (champion)",
+          "name_it": "Groinbiter",
+          "points": 5,
+          "id": 0,
+          "active": true
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapons, Throwing weapons (Sharp stuff)",
+          "name_cn": "单手武器, 投掷武器(尖锐玩意)",
+          "name_de": "Handwaffen, Wurfwaffen (Spitzes Zeug)",
+          "name_es": "Hand weapons, Throwing weapons (Sharp stuff)",
+          "name_fr": "Armes de base, Armes de lancer (Trucs pointus)",
+          "name_it": "Hand weapons, Throwing weapons (Sharp stuff)",
+          "points": 0,
+          "perModel": false,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [],
+      "options": [],
+      "mounts": [],
+      "items": [],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Close Order, Horde, Largely Insignificant",
+        "name_cn": "紧密阵型, 部群, 微不足道",
+        "name_de": "Geschlossene Ränge, Horde, Völlig Unbedeutend",
+        "name_es": "Close Order, Horde, Largely Insignificant",
+        "name_fr": "Ordre Serré, Horde, Complètement Insignifiant",
+        "name_it": "Close Order, Horde, Largely Insignificant"
+      },
+      "notes": {
+        "name_en": "",
+        "name_cn": "",
+        "name_de": "",
+        "name_es": "",
+        "name_fr": "",
+        "name_it": ""
+      },
+      "strength": 22,
+      "magic": { "items": [] }
+    },
+    {
+      "name_en": "Sabretusk Pack",
+      "name_cn": "霜齿兽兽群",
+      "name_de": "Säbelzahnrudel",
+      "name_es": "Sabretusk Pack",
+      "name_fr": "Meutes de Crocs de Sabre",
+      "name_it": "Sabretusk Pack",
+      "id": "sabretusk-packs.tklkuvvk",
+      "points": 17,
+      "minimum": 2,
+      "maximum": 10,
+      "regimentalUnit": false,
+      "detachment": false,
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Hand weapons (Claws and fangs)",
+          "name_cn": "单手武器(尖牙利爪)",
+          "name_de": "Handwaffen (Klauen und Zähne)",
+          "name_es": "Hand weapons (Claws and fangs)",
+          "name_fr": "Armes de base (Griffes et crocs)",
+          "name_it": "Hand weapons (Claws and fangs)",
+          "points": 0,
+          "perModel": false,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [],
+      "options": [
+        {
+          "name_en": "Ambushers",
+          "name_cn": "伏击",
+          "name_de": "Überfall",
+          "name_es": "Ambushers",
+          "name_fr": "Embusqueurs",
+          "name_it": "Ambushers",
+          "points": 3,
+          "perModel": true,
+          "id": 0
+        },
+        {
+          "name_en": "Scouts",
+          "name_cn": "侦察",
+          "name_de": "Kundschafter",
+          "name_es": "Scouts",
+          "name_fr": "Éclaireurs",
+          "name_it": "Scouts",
+          "points": 2,
+          "perModel": true,
+          "id": 1
+        },
+        {
+          "name_en": "Vanguard",
+          "name_cn": "先锋",
+          "name_de": "Vorhut",
+          "name_es": "Vanguard",
+          "name_fr": "Avant-garde",
+          "name_it": "Vanguard",
+          "points": 1,
+          "perModel": true,
+          "id": 2
+        }
+      ],
+      "mounts": [],
+      "items": [],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Armour Bane (1), Fear, Impetuous, Loner, Move Through Cover, Open Order, Skirmishers, Swiftstride",
+        "name_cn": "碎甲攻击(1), 恐惧, 鲁莽, 独行, 穿行掩体, 开放阵型, 散兵, 快速行进",
+        "name_de": "Rüstungsfluch (1), Angst, Ungestüm, Einzelgänger, Durck Deckung bewegen, Offene Ränge, Plänkler, Schnelle Bewegung",
+        "name_es": "Armour Bane (1), Fear, Impetuous, Loner, Move Through Cover, Open Order, Skirmishers, Swiftstride",
+        "name_fr": "Arme Perforante (1), Peur, Impétueux, Solitaire, Mouvement à Couvert, Ordre Dispersé, Tirailleurs, Rapide",
+        "name_it": "Armour Bane (1), Fear, Impetuous, Loner, Move Through Cover, Open Order, Skirmishers, Swiftstride"
+      },
+      "notes": {
+        "name_en": "",
+        "name_cn": "",
+        "name_de": "",
+        "name_es": "",
+        "name_fr": "",
+        "name_it": ""
+      },
+      "strength": 2
+    },
+    {
+      "name_en": "Sabretusk Pack",
+      "name_cn": "霜齿兽兽群",
+      "name_de": "Säbelzahnrudel",
+      "name_es": "Sabretusk Pack",
+      "name_fr": "Meutes de Crocs de Sabre",
+      "name_it": "Sabretusk Pack",
+      "id": "sabretusk-packs.nqtdnnttda",
+      "points": 17,
+      "minimum": 2,
+      "maximum": 10,
+      "regimentalUnit": false,
+      "detachment": false,
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Hand weapons (Claws and fangs)",
+          "name_cn": "单手武器(尖牙利爪)",
+          "name_de": "Handwaffen (Klauen und Zähne)",
+          "name_es": "Hand weapons (Claws and fangs)",
+          "name_fr": "Armes de base (Griffes et crocs)",
+          "name_it": "Hand weapons (Claws and fangs)",
+          "points": 0,
+          "perModel": false,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [],
+      "options": [
+        {
+          "name_en": "Ambushers",
+          "name_cn": "伏击",
+          "name_de": "Überfall",
+          "name_es": "Ambushers",
+          "name_fr": "Embusqueurs",
+          "name_it": "Ambushers",
+          "points": 3,
+          "perModel": true,
+          "id": 0
+        },
+        {
+          "name_en": "Scouts",
+          "name_cn": "侦察",
+          "name_de": "Kundschafter",
+          "name_es": "Scouts",
+          "name_fr": "Éclaireurs",
+          "name_it": "Scouts",
+          "points": 2,
+          "perModel": true,
+          "id": 1
+        },
+        {
+          "name_en": "Vanguard",
+          "name_cn": "先锋",
+          "name_de": "Vorhut",
+          "name_es": "Vanguard",
+          "name_fr": "Avant-garde",
+          "name_it": "Vanguard",
+          "points": 1,
+          "perModel": true,
+          "id": 2
+        }
+      ],
+      "mounts": [],
+      "items": [],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Armour Bane (1), Fear, Impetuous, Loner, Move Through Cover, Open Order, Skirmishers, Swiftstride",
+        "name_cn": "碎甲攻击(1), 恐惧, 鲁莽, 独行, 穿行掩体, 开放阵型, 散兵, 快速行进",
+        "name_de": "Rüstungsfluch (1), Angst, Ungestüm, Einzelgänger, Durck Deckung bewegen, Offene Ränge, Plänkler, Schnelle Bewegung",
+        "name_es": "Armour Bane (1), Fear, Impetuous, Loner, Move Through Cover, Open Order, Skirmishers, Swiftstride",
+        "name_fr": "Arme Perforante (1), Peur, Impétueux, Solitaire, Mouvement à Couvert, Ordre Dispersé, Tirailleurs, Rapide",
+        "name_it": "Armour Bane (1), Fear, Impetuous, Loner, Move Through Cover, Open Order, Skirmishers, Swiftstride"
+      },
+      "notes": {
+        "name_en": "",
+        "name_cn": "",
+        "name_de": "",
+        "name_es": "",
+        "name_fr": "",
+        "name_it": ""
+      },
+      "strength": 2
+    }
+  ],
+  "special": [
+    {
+      "name_en": "Ironblaster",
+      "name_cn": "轰铁炮",
+      "name_de": "Eisenspeier",
+      "name_es": "Ironblaster",
+      "name_fr": "Boute-fer",
+      "name_it": "Ironblaster",
+      "id": "ironblaster.lswtxjcrqe",
+      "points": 185,
+      "regimentalUnit": false,
+      "detachment": false,
+      "armyComposition": {
+        "ogre-kingdoms": {
+          "category": "special",
+          "notes": {
+            "name_en": "0-1 Ironblaster or Gnoblar Scraplauncher per 1000 points",
+            "name_cn": "每1000分0-1 Ironblaster或孬不拉废铁投射器",
+            "name_de": "0-1 Eisenspeier oder Gnoblar-Schrottschleuder pro 1.000 Punkte",
+            "name_es": "0-1 Ironblaster or Gnoblar Scraplauncher per 1000 points",
+            "name_fr": "0-1 Boute-fer ou Lance-ferraille Gnoblar par tranche de 1000 points",
+            "name_it": "0-1 Ironblaster or Gnoblar Scraplauncher per 1000 points",
+            "name_pl": "0-1 Ironblaster or Gnoblar Scraplauncher per 1000 points"
+          }
+        },
+        "ok-renegade": {
+          "category": "special",
+          "notes": {
+            "name_en": "0-1 Ironblaster per 1000 points",
+            "name_cn": "每1000分0-1 Ironblaster",
+            "name_de": "0-1 Eisenspeier pro 1.000 Punkte",
+            "name_es": "0-1 Ironblaster per 1000 points",
+            "name_fr": "0-1 Boute-fer par tranche de 1000 points",
+            "name_it": "0-1 Ironblaster per 1000 points",
+            "name_pl": "0-1 Ironblaster per 1000 points"
+          }
+        }
+      },
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Cannon of the Sky-titans {renegade}, Hand weapons",
+          "name_cn": "天空泰坦巨炮{renegade}, 单手武器",
+          "name_de": "Kanone der Himmelstitanen, Handwaffen",
+          "name_es": "Cannon of the Sky-titans",
+          "name_fr": "Canon des Titans Célestes, Armes de base",
+          "name_it": "Cannon of the Sky-titans",
+          "points": 0,
+          "perModel": false,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [],
+      "options": [],
+      "mounts": [],
+      "items": [],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Armour Bane (2 - Rhinox only), Close Order, Fear, First Charge, Impact Hits (D6+1), Large Target",
+        "name_cn": "碎甲攻击(2 - 仅限披毛犀), 紧密阵型, 恐惧, 先行冲锋, 撞击(D6+1), 大型目标",
+        "name_de": "Rüstungsfluch (2 - Nur Rhinox), Geschlossene Ränge, Angst, Erster Angriff, Aufpralltreffer (W6+1), Großes Ziel",
+        "name_es": "Armour Bane (2 - Rhinox only), Close Order, Fear, First Charge, Impact Hits (D6+1), Large Target",
+        "name_fr": "Arme Perforante (2 - Rhinox uniquement), Ordre Serré, Peur, Première Charge, Touches d’Impact (D6+1), Grande Cible",
+        "name_it": "Armour Bane (2 - Rhinox only), Close Order, Fear, First Charge, Impact Hits (D6+1), Large Target"
+      }
+    },
+    {
+      "name_en": "Ironblaster",
+      "name_cn": "轰铁炮",
+      "name_de": "Eisenspeier",
+      "name_es": "Ironblaster",
+      "name_fr": "Boute-fer",
+      "name_it": "Ironblaster",
+      "id": "ironblaster.wlvcaegh",
+      "points": 185,
+      "regimentalUnit": false,
+      "detachment": false,
+      "armyComposition": {
+        "ogre-kingdoms": {
+          "category": "special",
+          "notes": {
+            "name_en": "0-1 Ironblaster or Gnoblar Scraplauncher per 1000 points",
+            "name_cn": "每1000分0-1 Ironblaster或孬不拉废铁投射器",
+            "name_de": "0-1 Eisenspeier oder Gnoblar-Schrottschleuder pro 1.000 Punkte",
+            "name_es": "0-1 Ironblaster or Gnoblar Scraplauncher per 1000 points",
+            "name_fr": "0-1 Boute-fer ou Lance-ferraille Gnoblar par tranche de 1000 points",
+            "name_it": "0-1 Ironblaster or Gnoblar Scraplauncher per 1000 points",
+            "name_pl": "0-1 Ironblaster or Gnoblar Scraplauncher per 1000 points"
+          }
+        },
+        "ok-renegade": {
+          "category": "special",
+          "notes": {
+            "name_en": "0-1 Ironblaster per 1000 points",
+            "name_cn": "每1000分0-1 Ironblaster",
+            "name_de": "0-1 Eisenspeier pro 1.000 Punkte",
+            "name_es": "0-1 Ironblaster per 1000 points",
+            "name_fr": "0-1 Boute-fer par tranche de 1000 points",
+            "name_it": "0-1 Ironblaster per 1000 points",
+            "name_pl": "0-1 Ironblaster per 1000 points"
+          }
+        }
+      },
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Cannon of the Sky-titans {renegade}, Hand weapons",
+          "name_cn": "天空泰坦巨炮{renegade}, 单手武器",
+          "name_de": "Kanone der Himmelstitanen, Handwaffen",
+          "name_es": "Cannon of the Sky-titans",
+          "name_fr": "Canon des Titans Célestes, Armes de base",
+          "name_it": "Cannon of the Sky-titans",
+          "points": 0,
+          "perModel": false,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [],
+      "options": [],
+      "mounts": [],
+      "items": [],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Armour Bane (2 - Rhinox only), Close Order, Fear, First Charge, Impact Hits (D6+1), Large Target",
+        "name_cn": "碎甲攻击(2 - 仅限披毛犀), 紧密阵型, 恐惧, 先行冲锋, 撞击(D6+1), 大型目标",
+        "name_de": "Rüstungsfluch (2 - Nur Rhinox), Geschlossene Ränge, Angst, Erster Angriff, Aufpralltreffer (W6+1), Großes Ziel",
+        "name_es": "Armour Bane (2 - Rhinox only), Close Order, Fear, First Charge, Impact Hits (D6+1), Large Target",
+        "name_fr": "Arme Perforante (2 - Rhinox uniquement), Ordre Serré, Peur, Première Charge, Touches d’Impact (D6+1), Grande Cible",
+        "name_it": "Armour Bane (2 - Rhinox only), Close Order, Fear, First Charge, Impact Hits (D6+1), Large Target"
+      }
+    }
+  ],
+  "rare": [
+    {
+      "name_en": "Thundertusk Riders",
+      "name_cn": "雷牙兽骑兵",
+      "name_de": "Donnerhornreiter",
+      "name_es": "Thundertusk Riders",
+      "name_fr": "Chevaucheurs de Mégastodonte",
+      "name_it": "Thundertusk Riders",
+      "id": "thundertusk-riders.yrghwfo",
+      "points": 215,
+      "minimum": 0,
+      "maximum": 0,
+      "regimentalUnit": false,
+      "detachment": false,
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Hand weapon, Great tusks (Thundertusk), Chill breath (Thundertusk), Harpoon launcher (Ogre Crew), Chaintrap (Ogre Beast Rider)",
+          "name_cn": "单手武器, 巨型长牙(雷牙兽), 寒意吐息(雷牙兽), 鱼叉发射器(食人魔组员), 投索陷阱(食人魔野兽骑手)",
+          "name_fr": "Arme de base, Grandes défenses (Mégastodonte), Souffle glacial (Mégastodonte), Lance-harpon (Servant Ogre), Croque-monsieur (Chevaucheur Ogre)",
+          "name_de": "Handwaffen, Gewalltige Hauer (Donnerhorn), Eisiger Atem (Donnerhorn), Harpunenschleuder (Oger-Besatzung), Ketten-Fangeisen (Ogerreiter)",
+          "points": 0,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Hand weapon, Great tusks (Thundertusk), Chill breath (Thundertusk), Harpoon launcher (Ogre Crew), Blood vulture (Ogre Beast Rider)",
+          "name_cn": "单手武器, 巨型长牙(雷牙兽), 寒意吐息(雷牙兽), 鱼叉发射器(食人魔组员), 寻血秃鹫(食人魔野兽骑手)",
+          "name_fr": "Arme de base, Grandes défenses (Mégastodonte), Souffle glacial (Mégastodonte), Lance-harpon (Servant Ogre), Vautour de sang (Chevaucheur Ogre)",
+          "name_de": "Eisiger Atem (Donnerhorn), Gewaltige Hauer, Handwaffen, Harpunenschleuder (Oger-Besatzung), Ketten-Fangeisen (Ogerreiter)",
+          "points": 5,
+          "perModel": false,
+          "id": 1
+        }
+      ],
+      "armor": [],
+      "options": [
+        {
+          "name_en": "Harpoon launcher (Ogre Beast Rider)",
+          "name_cn": "鱼叉发射器(食人魔野兽骑手)",
+          "name_de": "Harpunenschleuder (Ogerreiter)",
+          "name_es": "Harpoon launcher (Ogre Beast Rider)",
+          "name_fr": "Lance-harpon (Chevaucheur Ogre)",
+          "name_it": "Harpoon launcher (Ogre Beast Rider)",
+          "points": 8,
+          "perModel": false,
+          "id": 0
+        }
+      ],
+      "mounts": [],
+      "items": [],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Close Order, First Charge, Howdah, Impact Hits (D3), Large Target, Numbing Chill, Stomp Attacks (3), Swiftstride, Terror",
+        "name_cn": "紧密阵型, 先行冲锋, 驼轿, 撞击(D3), 大型目标, 麻木寒意, 践踏攻击(3), 快速行进, 惊骇",
+        "name_de": "Geschlossene Ränge, Erster Angriff, Sänfte, Aufpralltreffer (W3), Großes Ziel, Lähmende Kälte, Stampfattacken (3), Schnelle Bewegung, Entsetzen",
+        "name_es": "Close Order, First Charge, Howdah, Impact Hits (D3), Large Target, Numbing Chill, Stomp Attacks (3), Swiftstride, Terror",
+        "name_fr": "Ordre Serré, Première Charge, Howdah, Touches d’Impact (D3), Grande Cible, Frisson Paralysant, Attaques de Piétinement (3), Rapide, Terreur",
+        "name_it": "Close Order, First Charge, Howdah, Impact Hits (D3), Large Target, Numbing Chill, Stomp Attacks (3), Swiftstride, Terror"
+      },
+      "notes": {
+        "name_en": "0-1 Thundertusk Riders per 1000 points",
+        "name_cn": "每1000分0-1",
+        "name_fr": "0-1 Chevaucheurs de Mégastodonte par tranche de 1000 points",
+        "name_de": "0-1 Donnerhornreiter pro 1.000 Punkte"
+      },
+      "strength": 0
+    },
+    {
+      "name_en": "Stonehorn Riders",
+      "name_cn": "石角兽骑兵",
+      "name_de": "Steinyakreiter",
+      "name_es": "Stonehorn Riders",
+      "name_fr": "Chevaucheurs de Mastauroc",
+      "name_it": "Stonehorn Riders",
+      "id": "stonehorn-riders.pcyawfk",
+      "points": 245,
+      "regimentalUnit": false,
+      "detachment": false,
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Hand weapon, Horns of stone (Stonehorn), Harpoon launcher (Ogre Crew), Chaintrap (Ogre Beast Rider)",
+          "name_cn": "单手武器, 石角(石角兽), 鱼叉发射器(食人魔组员), 投索陷阱(食人魔野兽骑手)",
+          "name_fr": "Arme de base, Cornes de pierre (Mastauroc), Lance-harpon (Servant Ogre), Croque-monsieur (Chevaucheur Ogre)",
+          "name_de": "Handwaffen, Steinerne Hörner (Steinyak), Harpunenschleuder (Oger-Besatzung), Ketten-Fangeisen (Ogerreiter)",
+          "points": 0,
+          "perModel": false,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Hand weapon, Horns of stone (Stonehorn), Harpoon launcher (Ogre Crew), Blood vulture (Ogre Beast Rider)",
+          "name_cn": "单手武器, 石角(石角兽), 鱼叉发射器(食人魔组员), 寻血秃鹫(食人魔野兽骑手)",
+          "name_fr": "Arme de base, Cornes de pierre (Mastauroc), Lance-harpon (Servant Ogre), Vautour de sang (Chevaucheur Ogre)",
+          "name_de": "Handwaffen, Steinerne Hörner (Steinyak), Harpunenschleuder (Oger-Besatzung), Blutgeier (Ogerreiter)",
+          "points": 5,
+          "perModel": false,
+          "id": 1
+        }
+      ],
+      "armor": [],
+      "options": [
+        {
+          "name_en": "Harpoon launcher (Ogre Beast Rider)",
+          "name_cn": "鱼叉发射器(食人魔野兽骑手)",
+          "name_de": "Harpunenschleuder (Ogerreiter)",
+          "name_es": "Harpoon launcher (Ogre Beast Rider)",
+          "name_fr": "Lance-harpon (Chevaucheur Ogre)",
+          "name_it": "Harpoon launcher (Ogre Beast Rider)",
+          "points": 8,
+          "id": 0
+        }
+      ],
+      "mounts": [],
+      "items": [],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Armour Bane (2 - Stonehorn only), Close Order, First Charge, Howdah, Impact Hits (D6+1), Large Target, Stone Skeleton, Swiftstride, Terror, Thunderous Charge",
+        "name_cn": "碎甲攻击(2 - 仅限石角兽), 紧密阵型, 先行冲锋, 驼轿, 撞击(D6+1), 大型目标, 石化骨架, 快速行进, 惊骇, 雷霆冲锋",
+        "name_de": "Rüstungsfluch (2 - Nur Steinyak), Geschlossene Ränge, Erster Angriff, Sänfte, Aufpralltreffer (W6+1), Großes Ziel, Steinernes Skelett, Schnelle Bewegung, Entsetzen, Donnernder Angriff",
+        "name_es": "Armour Bane (2 - Stonehorn only), Close Order, First Charge, Howdah, Impact Hits (D6+1), Large Target, Stone Skeleton, Swiftstride, Terror, Thunderous Charge",
+        "name_fr": "Arme Perforante (2 - Mastauroc uniquement), Ordre Serré, Première Charge, Howdah, Touches d’Impact (D6+1), Grande Cible, Squelette de Pierre, Rapide, Terreur, Charge Tonnerre",
+        "name_it": "Armour Bane (2 - Stonehorn only), Close Order, First Charge, Howdah, Impact Hits (D6+1), Large Target, Stone Skeleton, Swiftstride, Terror, Thunderous Charge"
+      },
+      "notes": {
+        "name_en": "0-1 Stonehorn Riders per 1000 points",
+        "name_cn": "每1000分0-1",
+        "name_fr": "0-1 Chevaucheurs de Mastauroc par tranche de 1000 points",
+        "name_de": "0-1 Steinyakreiter pro 1.000 Punkte"
+      }
+    }
+  ],
+  "mercenaries": [],
+  "allies": [],
+  "id": "ccswq",
+  "armyComposition": "ok-renegade",
+  "compositionRule": "grand-melee-combined-arms",
+  "folder": "folder-xhsamrisl"
+}

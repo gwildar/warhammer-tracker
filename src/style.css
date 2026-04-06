@@ -23,14 +23,29 @@
 body {
   background-color: var(--color-wh-bg);
   color: var(--color-wh-text);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
   margin: 0;
   min-height: 100dvh;
 }
 
-.spell-type-assailment { color: #ef4444; }
-.spell-type-conveyance { color: #3b82f6; }
-.spell-type-enchantment { color: #22c55e; }
-.spell-type-hex { color: #a855f7; }
-.spell-type-magic-missile { color: #f59e0b; }
-.spell-type-magical-vortex { color: #ec4899; }
+.spell-type-assailment {
+  color: #ef4444;
+}
+.spell-type-conveyance {
+  color: #3b82f6;
+}
+.spell-type-enchantment {
+  color: #22c55e;
+}
+.spell-type-hex {
+  color: #a855f7;
+}
+.spell-type-magic-missile {
+  color: #f59e0b;
+}
+.spell-type-magical-vortex {
+  color: #ec4899;
+}

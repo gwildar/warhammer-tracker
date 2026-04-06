@@ -1,7 +1,7 @@
-import { saveFirstTurn, saveIsOpponentTurn, savePhaseIndex } from '../state.js'
-import { navigate } from '../navigate.js'
+import { saveFirstTurn, saveIsOpponentTurn, savePhaseIndex } from "../state.js";
+import { navigate } from "../navigate.js";
 
-const app = document.getElementById('app')
+const app = document.getElementById("app");
 
 export function renderFirstTurnScreen(army) {
   app.innerHTML = `
@@ -31,19 +31,21 @@ export function renderFirstTurnScreen(army) {
         </div>
       </main>
     </div>
-  `
+  `;
 
-  document.getElementById('first-you-btn').addEventListener('click', () => {
-    saveFirstTurn('you')
-    saveIsOpponentTurn(false)
-    savePhaseIndex(0)
-    navigate('gameScreen', army)
-  })
+  document.getElementById("first-you-btn").addEventListener("click", () => {
+    saveFirstTurn("you");
+    saveIsOpponentTurn(false);
+    savePhaseIndex(0);
+    navigate("gameScreen", army);
+  });
 
-  document.getElementById('first-opponent-btn').addEventListener('click', () => {
-    saveFirstTurn('opponent')
-    saveIsOpponentTurn(true)
-    savePhaseIndex(0)
-    navigate('opponentTurnScreen', army)
-  })
+  document
+    .getElementById("first-opponent-btn")
+    .addEventListener("click", () => {
+      saveFirstTurn("opponent");
+      saveIsOpponentTurn(true);
+      savePhaseIndex(0);
+      navigate("opponentTurnScreen", army);
+    });
 }

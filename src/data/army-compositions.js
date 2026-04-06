@@ -13,24 +13,24 @@
  */
 
 export const ARMY_COMPOSITIONS = {
-  'errantry-crusades': {
-    name: 'Errantry Crusade',
+  "errantry-crusades": {
+    name: "Errantry Crusade",
     rules: [
       {
         rule: "Crusader's Zeal",
         unitIds: [
-          'baron',
-          'paladin',
-          'knights-of-the-realm',
-          'knights-of-the-realm-on-foot',
-          'battle-pilgrims',
-          'knights-errant',
-          'questing-knights',
-          'grail-knights',
-          'pegasus-knights',
-          'mounted-yeomen',
+          "baron",
+          "paladin",
+          "knights-of-the-realm",
+          "knights-of-the-realm-on-foot",
+          "battle-pilgrims",
+          "knights-errant",
+          "questing-knights",
+          "grail-knights",
+          "pegasus-knights",
+          "mounted-yeomen",
         ],
       },
     ],
   },
-}
+};

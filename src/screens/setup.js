@@ -1,14 +1,22 @@
-import { version } from '../../package.json'
-import { parseArmyList, getCasters } from '../army.js'
-import { getArmy, saveArmy, clearArmy, saveSpellSelections, resetGame, getFirstTurn, getIsOpponentTurn } from '../state.js'
-import { formatSlug } from '../helpers.js'
-import { renderSpellSelection, bindSpellSelectors } from './spell-selection.js'
-import { navigate } from '../navigate.js'
+import { version } from "../../package.json";
+import { parseArmyList, getCasters } from "../army.js";
+import {
+  getArmy,
+  saveArmy,
+  clearArmy,
+  saveSpellSelections,
+  resetGame,
+  getFirstTurn,
+  getIsOpponentTurn,
+} from "../state.js";
+import { formatSlug } from "../helpers.js";
+import { renderSpellSelection, bindSpellSelectors } from "./spell-selection.js";
+import { navigate } from "../navigate.js";
 
-const app = document.getElementById('app')
+const app = document.getElementById("app");
 
 export function renderSetupScreen() {
-  const army = getArmy()
+  const army = getArmy();
 
   app.innerHTML = `
     <div class="min-h-dvh flex flex-col">
@@ -24,18 +32,18 @@ export function renderSetupScreen() {
         ${army ? renderArmySummary(army) : renderUploadSection()}
       </main>
     </div>
-  `
+  `;
 
   if (army) {
-    bindArmyActions()
-    bindSpellSelectors(army)
+    bindArmyActions();
+    bindSpellSelectors(army);
   } else {
-    bindUpload()
+    bindUpload();
   }
 
-  document.getElementById('about-btn')?.addEventListener('click', () => {
-    navigate('aboutScreen')
-  })
+  document.getElementById("about-btn")?.addEventListener("click", () => {
+    navigate("aboutScreen");
+  });
 }
 
 function renderUploadSection() {
@@ -70,12 +78,12 @@ function renderUploadSection() {
         <p class="text-xs text-wh-muted">Stats, rules and item effects may be incomplete or incorrect. Tested armies: Dark Elves, Kingdom of Bretonnia, Lizardmen, Ogre Kingdoms, Vampire Counts.</p>
       </div>
     </div>
-  `
+  `;
 }
 
 function renderArmySummary(army) {
-  const casters = getCasters(army)
-  const totalPts = army.units.reduce((sum, u) => sum + u.points, 0)
+  const casters = getCasters(army);
+  const totalPts = army.units.reduce((sum, u) => sum + u.points, 0);
 
   return `
     <div class="mt-4">
@@ -83,7 +91,7 @@ function renderArmySummary(army) {
         <div class="flex justify-between items-start mb-3">
           <div>
             <h2 class="text-xl font-bold text-wh-accent">${army.name}</h2>
-            <p class="text-wh-muted text-sm">${army.faction}${army.composition ? ' — ' + formatSlug(army.composition) : ''}</p>
+            <p class="text-wh-muted text-sm">${army.faction}${army.composition ? " — " + formatSlug(army.composition) : ""}</p>
           </div>
           <span class="text-wh-accent font-mono text-lg">${totalPts} pts</span>
         </div>
@@ -106,111 +114,124 @@ function renderArmySummary(army) {
         </div>
       </div>
 
-      ${casters.length > 0 ? renderSpellSelection(army, casters) : ''}
+      ${casters.length > 0 ? renderSpellSelection(army, casters) : ""}
     </div>
-  `
+  `;
 }
 
 function renderUnitList(army) {
-  const categories = ['characters', 'lords', 'heroes', 'core', 'special', 'rare', 'mercenaries', 'allies']
-  let html = ''
+  const categories = [
+    "characters",
+    "lords",
+    "heroes",
+    "core",
+    "special",
+    "rare",
+    "mercenaries",
+    "allies",
+  ];
+  let html = "";
 
   for (const cat of categories) {
-    const units = army.units.filter(u => u.category === cat)
-    if (units.length === 0) continue
+    const units = army.units.filter((u) => u.category === cat);
+    if (units.length === 0) continue;
 
     html += `<div class="mt-3 first:mt-0">
       <h3 class="text-xs uppercase tracking-wider text-wh-muted mb-1">${cat}</h3>
-      ${units.map(u => `
+      ${units
+        .map(
+          (u) => `
         <div class="flex justify-between items-center py-1 px-2 rounded hover:bg-wh-card text-sm">
           <div>
             <span class="text-wh-text">${u.name}</span>
-            ${u.strength > 1 ? `<span class="text-wh-muted ml-1">x${u.strength}</span>` : ''}
-            ${u.mount ? `<span class="text-wh-muted ml-1">(${u.mount})</span>` : ''}
-            ${u.isGeneral ? '<span class="text-wh-phase-combat ml-1 text-xs">GENERAL</span>' : ''}
-            ${u.isBSB ? '<span class="text-wh-phase-combat ml-1 text-xs">BSB</span>' : ''}
-            ${u.isCaster ? '<span class="text-wh-purple ml-1 text-xs">WIZARD</span>' : ''}
-            ${u.magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${u.magicWeapons.join(', ')}</span>` : ''}
-            ${u.banners.length > 0 ? `<span class="text-wh-muted ml-1 text-xs">${u.banners.map(b => `${b.name} (${b.points}pts)`).join(', ')}</span>` : ''}
+            ${u.strength > 1 ? `<span class="text-wh-muted ml-1">x${u.strength}</span>` : ""}
+            ${u.mount ? `<span class="text-wh-muted ml-1">(${u.mount})</span>` : ""}
+            ${u.isGeneral ? '<span class="text-wh-phase-combat ml-1 text-xs">GENERAL</span>' : ""}
+            ${u.isBSB ? '<span class="text-wh-phase-combat ml-1 text-xs">BSB</span>' : ""}
+            ${u.isCaster ? '<span class="text-wh-purple ml-1 text-xs">WIZARD</span>' : ""}
+            ${u.magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${u.magicWeapons.join(", ")}</span>` : ""}
+            ${u.banners.length > 0 ? `<span class="text-wh-muted ml-1 text-xs">${u.banners.map((b) => `${b.name} (${b.points}pts)`).join(", ")}</span>` : ""}
           </div>
           <span class="text-wh-muted font-mono text-xs">${u.points}pts</span>
         </div>
-      `).join('')}
-    </div>`
+      `,
+        )
+        .join("")}
+    </div>`;
   }
 
-  return html
+  return html;
 }
 
 function bindUpload() {
-  const dropZone = document.getElementById('drop-zone')
-  const fileInput = document.getElementById('file-input')
-  const browseBtn = document.getElementById('browse-btn')
-  const errorEl = document.getElementById('upload-error')
+  const dropZone = document.getElementById("drop-zone");
+  const fileInput = document.getElementById("file-input");
+  const browseBtn = document.getElementById("browse-btn");
+  const errorEl = document.getElementById("upload-error");
 
-  browseBtn.addEventListener('click', (e) => {
-    e.stopPropagation()
-    fileInput.click()
-  })
-  dropZone.addEventListener('click', () => fileInput.click())
+  browseBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    fileInput.click();
+  });
+  dropZone.addEventListener("click", () => fileInput.click());
 
-  dropZone.addEventListener('dragover', (e) => {
-    e.preventDefault()
-    dropZone.classList.add('border-wh-accent', 'bg-wh-card')
-  })
-  dropZone.addEventListener('dragleave', () => {
-    dropZone.classList.remove('border-wh-accent', 'bg-wh-card')
-  })
-  dropZone.addEventListener('drop', (e) => {
-    e.preventDefault()
-    dropZone.classList.remove('border-wh-accent', 'bg-wh-card')
-    const file = e.dataTransfer.files[0]
-    if (file) handleFile(file, errorEl)
-  })
+  dropZone.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    dropZone.classList.add("border-wh-accent", "bg-wh-card");
+  });
+  dropZone.addEventListener("dragleave", () => {
+    dropZone.classList.remove("border-wh-accent", "bg-wh-card");
+  });
+  dropZone.addEventListener("drop", (e) => {
+    e.preventDefault();
+    dropZone.classList.remove("border-wh-accent", "bg-wh-card");
+    const file = e.dataTransfer.files[0];
+    if (file) handleFile(file, errorEl);
+  });
 
-  fileInput.addEventListener('change', () => {
-    const file = fileInput.files[0]
-    if (file) handleFile(file, errorEl)
-  })
+  fileInput.addEventListener("change", () => {
+    const file = fileInput.files[0];
+    if (file) handleFile(file, errorEl);
+  });
 }
 
 function handleFile(file, errorEl) {
-  const reader = new FileReader()
+  const reader = new FileReader();
   reader.onload = () => {
     try {
-      const json = JSON.parse(reader.result)
-      const army = parseArmyList(json)
-      saveArmy(army)
-      const casters = getCasters(army)
-      const selections = {}
+      const json = JSON.parse(reader.result);
+      const army = parseArmyList(json);
+      saveArmy(army);
+      const casters = getCasters(army);
+      const selections = {};
       for (const c of casters) {
-        selections[c.id] = {}
+        selections[c.id] = {};
       }
-      saveSpellSelections(selections)
-      resetGame()
-      navigate('render')
+      saveSpellSelections(selections);
+      resetGame();
+      navigate("render");
     } catch (err) {
-      errorEl.textContent = `Failed to parse file: ${err.message}`
-      errorEl.classList.remove('hidden')
+      errorEl.textContent = `Failed to parse file: ${err.message}`;
+      errorEl.classList.remove("hidden");
     }
-  }
-  reader.readAsText(file)
+  };
+  reader.readAsText(file);
 }
 
 function bindArmyActions() {
-  document.getElementById('start-game-btn').addEventListener('click', () => {
-    const firstTurn = getFirstTurn()
+  document.getElementById("start-game-btn").addEventListener("click", () => {
+    const firstTurn = getFirstTurn();
     if (!firstTurn) {
-      navigate('firstTurnScreen', getArmy())
+      navigate("firstTurnScreen", getArmy());
     } else if (getIsOpponentTurn()) {
-      navigate('opponentTurnScreen', getArmy())
+      navigate("opponentTurnScreen", getArmy());
     } else {
-      navigate('gameScreen', getArmy())
+      navigate("gameScreen", getArmy());
     }
-  })
+  });
 
-  document.getElementById('replace-army-btn').addEventListener('click', () => {
-    clearArmy()
-    navigate('render')
-  })
+  document.getElementById("replace-army-btn").addEventListener("click", () => {
+    clearArmy();
+    navigate("render");
+  });
 }

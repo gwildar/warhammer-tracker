@@ -1,25 +1,39 @@
-import { PHASES, getAllSubPhases } from '../phases.js'
-import { getPhaseIndex, savePhaseIndex, getRound, saveRound, saveIsOpponentTurn, getFirstTurn, saveFirstTurn, resetGame, canGoBackToPreviousTurn } from '../state.js'
-import { PHASE_BG, PHASE_TEXT } from '../helpers.js'
-import { renderCasterContext } from '../context/caster.js'
-import { renderShootingContext } from '../context/shooting.js'
-import { renderCombatWeaponsContext, renderCombatResultContext, renderCombatLeadershipContext } from '../context/combat-weapons.js'
-import { renderChargeContext } from '../context/charge.js'
-import { renderMagicItemsContext } from '../context/items.js'
-import { renderVirtuesContext } from '../context/virtues.js'
-import { renderSpecialRulesContext } from '../context/special-rules-context.js'
-import { renderScoringUI, bindScoringEvents } from './scoring.js'
-import { navigate } from '../navigate.js'
+import { PHASES, getAllSubPhases } from "../phases.js";
+import {
+  getPhaseIndex,
+  savePhaseIndex,
+  getRound,
+  saveRound,
+  saveIsOpponentTurn,
+  getFirstTurn,
+  saveFirstTurn,
+  resetGame,
+  canGoBackToPreviousTurn,
+} from "../state.js";
+import { PHASE_BG, PHASE_TEXT } from "../helpers.js";
+import { renderCasterContext } from "../context/caster.js";
+import { renderShootingContext } from "../context/shooting.js";
+import {
+  renderCombatWeaponsContext,
+  renderCombatResultContext,
+  renderCombatLeadershipContext,
+} from "../context/combat-weapons.js";
+import { renderChargeContext } from "../context/charge.js";
+import { renderMagicItemsContext } from "../context/items.js";
+import { renderVirtuesContext } from "../context/virtues.js";
+import { renderSpecialRulesContext } from "../context/special-rules-context.js";
+import { renderScoringUI, bindScoringEvents } from "./scoring.js";
+import { navigate } from "../navigate.js";
 
-const app = document.getElementById('app')
-const allSubPhases = getAllSubPhases()
+const app = document.getElementById("app");
+const allSubPhases = getAllSubPhases();
 
 export function renderGameScreen(army) {
-  const phaseIdx = getPhaseIndex()
-  const round = getRound()
-  const { phase, subPhase } = allSubPhases[phaseIdx]
-  const isFirst = phaseIdx === 0
-  const isLast = phaseIdx === allSubPhases.length - 1
+  const phaseIdx = getPhaseIndex();
+  const round = getRound();
+  const { phase, subPhase } = allSubPhases[phaseIdx];
+  const isFirst = phaseIdx === 0;
+  const isLast = phaseIdx === allSubPhases.length - 1;
 
   app.innerHTML = `
     <div class="min-h-dvh flex flex-col">
@@ -45,20 +59,22 @@ export function renderGameScreen(army) {
         <!-- Phase progress -->
         <div class="flex gap-1">
           ${PHASES.map((p) => {
-            const startIdx = allSubPhases.findIndex(s => s.phase.id === p.id)
-            const endIdx = startIdx + p.subPhases.length - 1
-            const isCurrent = phaseIdx >= startIdx && phaseIdx <= endIdx
-            const isPast = phaseIdx > endIdx
+            const startIdx = allSubPhases.findIndex((s) => s.phase.id === p.id);
+            const endIdx = startIdx + p.subPhases.length - 1;
+            const isCurrent = phaseIdx >= startIdx && phaseIdx <= endIdx;
+            const isPast = phaseIdx > endIdx;
 
             return `<div class="flex-1 text-center">
               <div class="h-1.5 rounded-full mb-1 transition-all ${
-                isCurrent ? `${PHASE_BG[p.colour]}` :
-                isPast ? `${PHASE_BG[p.colour]} opacity-40` :
-                'bg-wh-border'
+                isCurrent
+                  ? `${PHASE_BG[p.colour]}`
+                  : isPast
+                    ? `${PHASE_BG[p.colour]} opacity-40`
+                    : "bg-wh-border"
               }"></div>
-              <span class="text-[10px] ${isCurrent ? 'text-wh-text font-semibold' : 'text-wh-muted'}">${p.name.replace(' Phase', '')}</span>
-            </div>`
-          }).join('')}
+              <span class="text-[10px] ${isCurrent ? "text-wh-text font-semibold" : "text-wh-muted"}">${p.name.replace(" Phase", "")}</span>
+            </div>`;
+          }).join("")}
         </div>
       </header>
 
@@ -75,18 +91,20 @@ export function renderGameScreen(army) {
           <!-- Rules -->
           <div class="bg-wh-surface rounded-lg border border-wh-border p-4 mb-4">
             <ul class="space-y-2">
-              ${subPhase.rules.map(rule => {
-                if (rule.startsWith('•')) {
-                  return `<li class="flex gap-2 text-sm ml-5">
+              ${subPhase.rules
+                .map((rule) => {
+                  if (rule.startsWith("•")) {
+                    return `<li class="flex gap-2 text-sm ml-5">
                     <span class="text-wh-muted mt-0.5 shrink-0">•</span>
                     <span>${rule.slice(1).trim()}</span>
-                  </li>`
-                }
-                return `<li class="flex gap-2 text-sm">
+                  </li>`;
+                  }
+                  return `<li class="flex gap-2 text-sm">
                   <span class="${PHASE_TEXT[phase.colour]} mt-0.5 shrink-0">&#9654;</span>
                   <span>${rule}</span>
-                </li>`
-              }).join('')}
+                </li>`;
+                })
+                .join("")}
             </ul>
           </div>
 
@@ -101,95 +119,106 @@ export function renderGameScreen(army) {
         <div class="max-w-2xl mx-auto flex gap-3">
           <button id="prev-btn"
             class="flex-1 py-3 rounded-lg font-semibold text-lg transition-colors
-            ${isFirst && !canGoBackToPreviousTurn()
-              ? 'bg-wh-card text-wh-muted cursor-not-allowed opacity-50'
-              : 'bg-wh-card text-wh-text hover:bg-wh-border'}"
-            ${isFirst && !canGoBackToPreviousTurn() ? 'disabled' : ''}>
-            ${isFirst && canGoBackToPreviousTurn() ? '&#8592; Opponent Turn' : '&#8592; Previous'}
+            ${
+              isFirst && !canGoBackToPreviousTurn()
+                ? "bg-wh-card text-wh-muted cursor-not-allowed opacity-50"
+                : "bg-wh-card text-wh-text hover:bg-wh-border"
+            }"
+            ${isFirst && !canGoBackToPreviousTurn() ? "disabled" : ""}>
+            ${isFirst && canGoBackToPreviousTurn() ? "&#8592; Opponent Turn" : "&#8592; Previous"}
           </button>
           <button id="next-btn"
             class="flex-1 py-3 rounded-lg font-bold text-lg transition-colors
             bg-wh-accent text-wh-bg hover:bg-wh-accent-dim">
-            ${isLast ? 'End Turn &#10226;' : 'Next &#8594;'}
+            ${isLast ? "End Turn &#10226;" : "Next &#8594;"}
           </button>
         </div>
       </footer>
     </div>
-  `
+  `;
 
-  bindGameActions(army)
+  bindGameActions(army);
 }
 
 function renderPhaseContext(army, phase, subPhase) {
-  let html = ''
+  let html = "";
 
-  if (subPhase.showCasters) html += renderCasterContext(army, ['enchantment', 'hex'])
-  if (subPhase.showShooting) html += renderShootingContext(army)
+  if (subPhase.showCasters)
+    html += renderCasterContext(army, ["enchantment", "hex"]);
+  if (subPhase.showShooting) html += renderShootingContext(army);
 
-  if (subPhase.id === 'rally') html += renderCombatLeadershipContext(army, 'Rally Leadership')
-  if (subPhase.id === 'declare-charges') html += renderChargeContext(army)
+  if (subPhase.id === "rally")
+    html += renderCombatLeadershipContext(army, "Rally Leadership");
+  if (subPhase.id === "declare-charges") html += renderChargeContext(army);
 
-  if (subPhase.id === 'shoot') html += renderCasterContext(army, ['magic-missile', 'magical-vortex'])
-  if (subPhase.id === 'remaining-moves') html += renderCasterContext(army, ['conveyance'])
-  if (subPhase.id === 'choose-fight') {
-    html += renderCombatWeaponsContext(army)
-    html += renderCasterContext(army, ['assailment'])
+  if (subPhase.id === "shoot")
+    html += renderCasterContext(army, ["magic-missile", "magical-vortex"]);
+  if (subPhase.id === "remaining-moves")
+    html += renderCasterContext(army, ["conveyance"]);
+  if (subPhase.id === "choose-fight") {
+    html += renderCombatWeaponsContext(army);
+    html += renderCasterContext(army, ["assailment"]);
   }
-  if (subPhase.id === 'combat-result') html += renderCombatResultContext(army)
-  if (subPhase.id === 'break-test') html += renderCombatLeadershipContext(army)
+  if (subPhase.id === "combat-result") html += renderCombatResultContext(army);
+  if (subPhase.id === "break-test") html += renderCombatLeadershipContext(army);
 
-  if (subPhase.id !== 'remove-casualties' && subPhase.id !== 'scoring') {
-    html += renderMagicItemsContext(army, phase.id, subPhase.id)
-    html += renderVirtuesContext(army, phase.id, subPhase.id)
+  if (subPhase.id !== "remove-casualties" && subPhase.id !== "scoring") {
+    html += renderMagicItemsContext(army, phase.id, subPhase.id);
+    html += renderVirtuesContext(army, phase.id, subPhase.id);
   }
-  if (subPhase.id === 'scoring') {
+  if (subPhase.id === "scoring") {
     html += renderScoringUI();
   }
-  html += renderSpecialRulesContext(army, subPhase)
-  if (subPhase.id === 'command' && army.units.some(u => u.specialRules?.toLowerCase().includes('rallying cry'))) html += renderCombatLeadershipContext(army, 'Rally Leadership')
- 
- 
-  return html
+  html += renderSpecialRulesContext(army, subPhase);
+  if (
+    subPhase.id === "command" &&
+    army.units.some((u) =>
+      u.specialRules?.toLowerCase().includes("rallying cry"),
+    )
+  )
+    html += renderCombatLeadershipContext(army, "Rally Leadership");
+
+  return html;
 }
 
 function bindGameActions(army) {
-  bindScoringEvents(army, renderGameScreen)
+  bindScoringEvents(army, renderGameScreen);
 
-  document.getElementById('prev-btn')?.addEventListener('click', () => {
-    const idx = getPhaseIndex()
+  document.getElementById("prev-btn")?.addEventListener("click", () => {
+    const idx = getPhaseIndex();
     if (idx > 0) {
-      savePhaseIndex(idx - 1)
-      renderGameScreen(army)
+      savePhaseIndex(idx - 1);
+      renderGameScreen(army);
     } else if (canGoBackToPreviousTurn()) {
-      saveIsOpponentTurn(true)
-      savePhaseIndex(PHASES.length - 1)
-      if (getFirstTurn() === 'you') saveRound(getRound() - 1)
-      navigate('opponentTurnScreen', army)
+      saveIsOpponentTurn(true);
+      savePhaseIndex(PHASES.length - 1);
+      if (getFirstTurn() === "you") saveRound(getRound() - 1);
+      navigate("opponentTurnScreen", army);
     }
-  })
+  });
 
-  document.getElementById('next-btn')?.addEventListener('click', () => {
-    const idx = getPhaseIndex()
+  document.getElementById("next-btn")?.addEventListener("click", () => {
+    const idx = getPhaseIndex();
     if (idx < allSubPhases.length - 1) {
-      savePhaseIndex(idx + 1)
-      renderGameScreen(army)
+      savePhaseIndex(idx + 1);
+      renderGameScreen(army);
     } else {
-      savePhaseIndex(0)
-      saveIsOpponentTurn(true)
-      if (getFirstTurn() === 'opponent') saveRound(getRound() + 1)
-      navigate('opponentTurnScreen', army)
+      savePhaseIndex(0);
+      saveIsOpponentTurn(true);
+      if (getFirstTurn() === "opponent") saveRound(getRound() + 1);
+      navigate("opponentTurnScreen", army);
     }
-  })
+  });
 
-  document.getElementById('manage-army-btn')?.addEventListener('click', () => {
-    navigate('setupScreen')
-  })
+  document.getElementById("manage-army-btn")?.addEventListener("click", () => {
+    navigate("setupScreen");
+  });
 
-  document.getElementById('new-game-btn')?.addEventListener('click', () => {
-    if (confirm('Start a new game? This will reset the round counter.')) {
-      resetGame()
-      saveFirstTurn(null)
-      navigate('render')
+  document.getElementById("new-game-btn")?.addEventListener("click", () => {
+    if (confirm("Start a new game? This will reset the round counter.")) {
+      resetGame();
+      saveFirstTurn(null);
+      navigate("render");
     }
-  })
+  });
 }

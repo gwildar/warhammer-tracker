@@ -1,6 +1,6 @@
-import { navigate } from '../navigate.js'
+import { navigate } from "../navigate.js";
 
-const app = document.getElementById('app')
+const app = document.getElementById("app");
 
 export function renderAboutScreen() {
   app.innerHTML = `
@@ -56,9 +56,9 @@ export function renderAboutScreen() {
         </div>
       </main>
     </div>
-  `
+  `;
 
-  document.getElementById('back-btn').addEventListener('click', () => {
-    navigate('render')
-  })
+  document.getElementById("back-btn").addEventListener("click", () => {
+    navigate("render");
+  });
 }
