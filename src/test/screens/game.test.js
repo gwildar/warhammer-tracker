@@ -353,6 +353,26 @@ describe("Combat phase with Dark Elves", () => {
   });
 });
 
+describe("Combat phase with Bretonnian Exiles", () => {
+  let army;
+
+  beforeEach(() => {
+    army = loadArmy("bretonnian-exiles");
+    startGame(army);
+    savePhaseIndex(10); // choose-fight
+  });
+
+  it("shows Frontier Axe on Baron combat card", () => {
+    renderGameScreen(army);
+    const combatPanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    const baronCard = [...combatPanel.querySelectorAll(".bg-wh-card")].find(
+      (el) => el.textContent.includes("Baron"),
+    );
+    expect(baronCard).toBeTruthy();
+    expect(baronCard.textContent).toContain("Frontier Axe");
+  });
+});
+
 describe("Vampire Counts army", () => {
   let army;
 

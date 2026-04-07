@@ -145,12 +145,23 @@ function parseUnit(raw, category) {
       if (cmdName === "general") unit.isGeneral = true;
       if (cmdName.includes("standard bearer")) unit.hasStandard = true;
       if (cmdName.includes("musician")) unit.hasMusician = true;
-      if (cmdName.includes("battle standard bearer")) unit.isBSB = true;
+      if (cmdName === "battle standard bearer") unit.isBSB = true;
+
+      // Magic items from command group
       if (cmd.magic?.selected) {
         for (const item of cmd.magic.selected) {
           unit.magicItems.push(`${item.name_en} (${cmd.name_en})`);
           if (item.type === "banner") {
             unit.banners.push({ name: item.name_en, points: item.points || 0 });
+          }
+        }
+      }
+
+      // Options from command group (e.g. Grail Monk's Blessed Triptych)
+      if (Array.isArray(cmd.options)) {
+        for (const opt of cmd.options) {
+          if (opt.active) {
+            unit.magicItems.push(`${opt.name_en} (${cmd.name_en})`);
           }
         }
       }

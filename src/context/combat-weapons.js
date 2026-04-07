@@ -445,38 +445,52 @@ function buildItemNames(unit) {
   return names;
 }
 
-function findChampion(unit) {
-  if (!unit.stats || unit.stats.length < 2) return null;
+function findChampions(unit) {
+  if (!unit.stats || unit.stats.length < 2) return [];
   // Champion is a non-mount stat line (T is a real number, not "-" or "(+N)")
+  const champions = [];
   for (let idx = 1; idx < unit.stats.length; idx++) {
     const s = unit.stats[idx];
     if (s.Ld !== "-" && s.T !== "-" && !s.T?.startsWith("(+")) {
-      return s;
+      champions.push(s);
     }
   }
-  return null;
+  return champions;
 }
 
-function getChampionWeapons(unit) {
+function getChampionWeapons(unit, championName) {
+  const weapons = [];
   // Check if champion has a magic weapon from command group items
   // Format in magicItems: "Spelleater Axe (Dread Knight (champion))"
   for (const itemName of unit.magicItems) {
     if (!itemName.includes("(champion)")) continue;
+
+    // Match specific champion name if it's in the string, or fall back to generic
+    if (
+      championName &&
+      !itemName
+        .toLowerCase()
+        .includes(`(${championName.toLowerCase()} (champion))`)
+    ) {
+      // If there's multiple champions, only match if it specifies the name.
+      // If there's only one, then a generic (champion) is fine.
+      const champions = findChampions(unit);
+      if (champions.length > 1) continue;
+    }
+
     const baseName = itemName.replace(/\s*\(.*$/, "");
     const mi = MAGIC_ITEM_MAP[normaliseItemName(baseName)];
     if (mi?.type === "weapon") {
-      return [
-        {
-          name: mi.name,
-          s: mi.s || "S",
-          ap: mi.ap || "—",
-          rules: mi.effect || "",
-          attacks: mi.attacks || null,
-        },
-      ];
+      weapons.push({
+        name: mi.name,
+        s: mi.s || "S",
+        ap: mi.ap || "—",
+        rules: mi.effect || "",
+        attacks: mi.attacks || null,
+      });
     }
   }
-  return null;
+  return weapons.length > 0 ? weapons : null;
 }
 
 function findCrewProfiles(unit) {
@@ -647,8 +661,7 @@ export function renderCombatWeaponsContext(army) {
       embedded && embedded.statLine.A && embedded.statLine.A !== "-";
 
     // Check for champion profile (non-character units only)
-    const champion = u.category !== "characters" ? findChampion(u) : null;
-    const championWeapons = champion ? getChampionWeapons(u) : null;
+    const champions = u.category !== "characters" ? findChampions(u) : [];
 
     // Check for crew profiles (crewed units like chariots)
     const crew = findCrewProfiles(u);
@@ -836,22 +849,23 @@ export function renderCombatWeaponsContext(army) {
             .filter(Boolean),
         })),
       ],
-      champion: champion
-        ? {
-            name: champion.Name,
-            i: champion.I || riderI,
-            ws: champion.WS || riderWS,
-            s: champion.S || riderS,
-            a: champion.A || "?",
-            weapons: championWeapons || riderWeapons,
-            tags: championWeapons
-              ? championWeapons.some((w) => isWeaponMagical(w))
-                ? '<span class="text-wh-phase-combat font-mono ml-1">\u2728 Magical</span>'
-                : ""
-              : null,
-          }
-        : null,
-      riderName: champion ? stats.Name : null,
+      champions: champions.map((champion) => {
+        const championWeapons = getChampionWeapons(u, champion.Name);
+        return {
+          name: champion.Name,
+          i: champion.I || riderI,
+          ws: champion.WS || riderWS,
+          s: champion.S || riderS,
+          a: champion.A || "?",
+          weapons: championWeapons || riderWeapons,
+          tags: championWeapons
+            ? championWeapons.some((w) => isWeaponMagical(w))
+              ? '<span class="text-wh-phase-combat font-mono ml-1">\u2728 Magical</span>'
+              : ""
+            : null,
+        };
+      }),
+      riderName: champions.length > 0 ? stats.Name : null,
     });
   }
 
@@ -907,7 +921,7 @@ export function renderCombatWeaponsContext(army) {
                   : ""
               }
               <div class="mt-1">
-                ${r.champion ? r.champion.weapons.map((w) => renderWeaponLine(r.champion.i, r.champion.ws, r.champion.s, r.champion.a, w, r.champion.name, r.champion.tags !== null ? r.champion.tags : r.riderTags)).join("") : ""}
+                ${r.champions.map((champ) => champ.weapons.map((w) => renderWeaponLine(champ.i, champ.ws, champ.s, champ.a, w, champ.name, champ.tags !== null ? champ.tags : r.riderTags)).join("")).join("")}
                 ${r.riderWeapons.map((w) => renderWeaponLine(r.riderI, r.riderWS, r.riderS, r.riderA, w, r.riderName, r.riderTags)).join("")}
                 ${r.crew
                   .map((c) =>
@@ -1019,7 +1033,6 @@ export function renderCombatResultContext(army) {
             <div class="flex items-start gap-2">
               <div class="flex flex-col">
                 <span class="text-wh-text">${r.name}${!r.merged && r.strength > 1 ? ` x${r.strength}` : ""}</span>
-                <span class="text-wh-muted text-[10px] font-mono">${r.points}pts</span>
               </div>
               <span class="text-wh-phase-combat font-mono text-xs ml-auto">+${r.total}</span>
             </div>
@@ -1109,7 +1122,6 @@ export function renderCombatLeadershipContext(army, title = "Break Test") {
           <div class="flex items-start gap-2 p-2 rounded bg-wh-card text-sm">
             <div class="flex flex-col">
               <span class="text-wh-text">${r.name}</span>
-              <span class="text-wh-muted text-[10px] font-mono">${r.points}pts</span>
             </div>
             <span class="text-wh-phase-combat font-mono text-xs ml-auto">Ld${r.ld}</span>
           </div>
