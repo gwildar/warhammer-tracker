@@ -53,7 +53,8 @@ function renderUploadSection() {
         class="border-2 border-dashed border-wh-border rounded-xl p-12 text-center
                hover:border-wh-accent transition-colors cursor-pointer">
         <div class="text-4xl mb-4">&#128193;</div>
-        <p class="text-lg mb-2">Drop your <span class="text-wh-accent font-mono">.owb.json</span> file here</p>
+        <p class="text-lg mb-2">Drop your army file here</p>
+        <p class="text-wh-muted text-sm mb-2"><span class="text-wh-accent font-mono">.owb.json</span> or <span class="text-wh-accent font-mono">newrecruit_file.json</span></p>
         <p class="text-wh-muted text-sm mb-4">or click to browse</p>
         <input type="file" id="file-input" accept=".json,.owb" class="hidden" />
         <button id="browse-btn"
@@ -65,10 +66,17 @@ function renderUploadSection() {
 
       <div class="mt-8 p-4 bg-wh-surface rounded-lg border border-wh-border">
         <h3 class="font-semibold text-wh-accent mb-2">How to get your army file</h3>
-        <ol class="text-sm text-wh-muted space-y-1 list-decimal list-inside">
+        <p class="text-xs text-wh-muted mb-2 font-semibold uppercase tracking-wide">Old World Builder</p>
+        <ol class="text-sm text-wh-muted space-y-1 list-decimal list-inside mb-3">
           <li>Go to <span class="text-wh-text">Old World Builder</span> (oldworldbuilder.com)</li>
           <li>Create or open your army list</li>
           <li>Export as <span class="font-mono text-wh-text">.owb.json</span></li>
+          <li>Upload the file here</li>
+        </ol>
+        <p class="text-xs text-wh-muted mb-2 font-semibold uppercase tracking-wide">New Recruit</p>
+        <ol class="text-sm text-wh-muted space-y-1 list-decimal list-inside">
+          <li>Open your army in <span class="text-wh-text">New Recruit</span></li>
+          <li>Export / share as <span class="font-mono text-wh-text">.json</span></li>
           <li>Upload the file here</li>
         </ol>
       </div>
@@ -139,23 +147,30 @@ function renderUnitList(army) {
     html += `<div class="mt-3 first:mt-0">
       <h3 class="text-xs uppercase tracking-wider text-wh-muted mb-1">${cat}</h3>
       ${units
-        .map(
-          (u) => `
+        .map((u) => {
+          const magicWeapons = u.magicItems
+            .filter((item) => item.type === "weapon")
+            .map((item) => item.name);
+          const banners = u.magicItems.filter(
+            (item) => item.type === "banner" || item.type === "standard",
+          );
+
+          return `
         <div class="flex justify-between items-center py-1 px-2 rounded hover:bg-wh-card text-sm">
           <div>
             <span class="text-wh-text">${u.name}</span>
             ${u.strength > 1 ? `<span class="text-wh-muted ml-1">x${u.strength}</span>` : ""}
-            ${u.mount ? `<span class="text-wh-muted ml-1">(${u.mount})</span>` : ""}
+            ${u.mount ? `<span class="text-wh-muted ml-1">(${u.mount.name})</span>` : ""}
             ${u.isGeneral ? '<span class="text-wh-phase-combat ml-1 text-xs">GENERAL</span>' : ""}
             ${u.isBSB ? '<span class="text-wh-phase-combat ml-1 text-xs">BSB</span>' : ""}
             ${u.isCaster ? '<span class="text-wh-purple ml-1 text-xs">WIZARD</span>' : ""}
-            ${u.magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${u.magicWeapons.join(", ")}</span>` : ""}
-            ${u.banners.length > 0 ? `<span class="text-wh-muted ml-1 text-xs">${u.banners.map((b) => `${b.name} (${b.points}pts)`).join(", ")}</span>` : ""}
+            ${magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${magicWeapons.join(", ")}</span>` : ""}
+            ${banners.length > 0 ? `<span class="text-wh-muted ml-1 text-xs">${banners.map((b) => `${b.name} (${b.points || 0}pts)`).join(", ")}</span>` : ""}
           </div>
           <span class="text-wh-muted font-mono text-xs">${u.points}pts</span>
         </div>
-      `,
-        )
+      `;
+        })
         .join("")}
     </div>`;
   }

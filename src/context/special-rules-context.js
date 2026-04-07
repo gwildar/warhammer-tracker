@@ -5,7 +5,9 @@ import { parseUnitRules, normaliseRuleName, ruleMatches } from "../helpers.js";
 
 function injectMountRules(unitRules, unit) {
   if (!unit.mount) return;
-  const mount = findMount(unit.mount);
+  // In canonical schema, mount is already a resolved object
+  const mount =
+    typeof unit.mount === "string" ? findMount(unit.mount) : unit.mount;
   if (!mount) return;
 
   if (
@@ -50,15 +52,37 @@ function injectTerrorFear(unitRules) {
 }
 
 function buildUnitRules(unit) {
-  const unitRules = [
-    ...parseUnitRules(unit.specialRules),
-    ...unit.equipment.flatMap((e) =>
-      e
-        .split(",")
-        .map((s) => s.trim())
-        .filter(Boolean),
-    ),
-  ];
+  const unitRules = [];
+
+  // In canonical schema, specialRules are already resolved objects
+  if (Array.isArray(unit.specialRules)) {
+    for (const rule of unit.specialRules) {
+      if (rule.displayName) {
+        unitRules.push(rule.displayName);
+      }
+    }
+  } else if (typeof unit.specialRules === "string") {
+    // Legacy support for string format
+    unitRules.push(...parseUnitRules(unit.specialRules));
+  }
+
+  // Add weapon names from resolved weapons
+  if (Array.isArray(unit.weapons)) {
+    for (const weapon of unit.weapons) {
+      if (weapon.name) {
+        unitRules.push(weapon.name);
+      }
+    }
+  }
+
+  if (Array.isArray(unit.shootingWeapons)) {
+    for (const weapon of unit.shootingWeapons) {
+      if (weapon.name) {
+        unitRules.push(weapon.name);
+      }
+    }
+  }
+
   injectMountRules(unitRules, unit);
   injectTerrorFear(unitRules);
   return unitRules;

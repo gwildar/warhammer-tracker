@@ -1,0 +1,80 @@
+{
+  "unitName": "Cold One Knight",
+  "points": 360,
+  "strength": 5,
+  "mount": "Cold One",
+  "riderI": "4",
+  "riderWS": "4",
+  "riderS": "4",
+  "t": "5",
+  "w": "2",
+  "as": "4+",
+  "mr": "-2",
+  "ward": null,
+  "regen": null,
+  "iNum": 4,
+  "riderWeapons": [
+    {
+      "name": "Lance",
+      "s": "S",
+      "ap": "—",
+      "rules": "Charge bonus, Furious Charge (Cold One)",
+      "attacks": null,
+      "reservedAttacks": null
+    },
+    {
+      "name": "Bite",
+      "s": "S+1",
+      "ap": "-1",
+      "rules": "",
+      "attacks": "1",
+      "reservedAttacks": null
+    }
+  ],
+  "riderA": "2",
+  "mountWeapons": [
+    {
+      "name": "Bite",
+      "s": "S+1",
+      "ap": "-1",
+      "rules": "",
+      "attacks": null,
+      "reservedAttacks": 1
+    }
+  ],
+  "mountA": 1,
+  "mountS": "4",
+  "mountI": 4,
+  "mountWS": null,
+  "mountName": "Cold One",
+  "mountArmourBane": null,
+  "stomp": null,
+  "impactHits": null,
+  "singleUseItems": [],
+  "itemNames": ["Spelleater Axe (Dread Knight)"],
+  "riderTags": "<span class=\"text-wh-phase-combat font-mono ml-1\">✨ Magical</span>",
+  "combatRules": ["Killing Blow", "Monster Slayer"],
+  "crew": [],
+  "champions": [
+    {
+      "name": "Dread Knight",
+      "i": "5",
+      "ws": "6",
+      "s": "4",
+      "a": "3",
+      "weapons": [
+        {
+          "name": "Spelleater Axe",
+          "s": "S+1",
+          "ap": "-2",
+          "rules": "Armour Bane (2), Furious Charge",
+          "attacks": null,
+          "reservedAttacks": null
+        }
+      ],
+      "tags": "<span class=\"text-wh-phase-combat font-mono ml-1\">✨ Magical</span>"
+    }
+  ],
+  "riderName": "Cold One Knight",
+  "merged": false
+}

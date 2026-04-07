@@ -1,0 +1,304 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/gwildar/warhammer-tracker/schema/combat-entry",
+  "title": "CombatEntry",
+  "description": "A unit entry in the combat weapons context, representing a single selectable unit for battle",
+  "type": "object",
+  "required": [
+    "unitName",
+    "points",
+    "strength",
+    "riderI",
+    "riderWS",
+    "riderS",
+    "t",
+    "w",
+    "iNum",
+    "riderWeapons",
+    "riderA",
+    "mountWeapons",
+    "stomp",
+    "impactHits",
+    "singleUseItems",
+    "itemNames",
+    "riderTags",
+    "combatRules",
+    "crew"
+  ],
+  "properties": {
+    "unitName": {
+      "type": "string",
+      "description": "Display name of the unit"
+    },
+    "points": {
+      "type": "integer",
+      "description": "Total point cost for this unit"
+    },
+    "strength": {
+      "type": "integer",
+      "description": "Unit strength (number of models or multiplier)"
+    },
+    "mount": {
+      "type": ["string", "null"],
+      "description": "Mount name if the rider is mounted on a ridden monster, otherwise null"
+    },
+    "riderI": {
+      "type": "string",
+      "description": "Rider's Initiative stat, e.g. '4' or '?' if unknown"
+    },
+    "riderWS": {
+      "type": "string",
+      "description": "Rider's Weapon Skill stat"
+    },
+    "riderS": {
+      "type": "string",
+      "description": "Rider's Strength stat"
+    },
+    "t": {
+      "type": "string",
+      "description": "Unit Toughness, adjusted for ridden monsters (baseT + mount.tBonus)"
+    },
+    "w": {
+      "type": "string",
+      "description": "Unit Wounds, adjusted for ridden monsters (baseW + mount.wBonus)"
+    },
+    "as": {
+      "type": ["string", "null"],
+      "description": "Armour Save value, e.g. '4+', '6+', or null if no save"
+    },
+    "mr": {
+      "type": ["string", "null"],
+      "description": "Magic Resistance value, e.g. '1', '2', or null"
+    },
+    "ward": {
+      "type": ["string", "null"],
+      "description": "Ward Save value, e.g. '5+' or '6+ (5+ vs S5+)', or null"
+    },
+    "regen": {
+      "type": ["string", "null"],
+      "description": "Regeneration value, e.g. '5+', or null"
+    },
+    "iNum": {
+      "type": "integer",
+      "description": "Numeric Initiative for sorting (max of rider and mount)"
+    },
+    "riderWeapons": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Weapon"
+      },
+      "description": "Weapons available to the rider/unit"
+    },
+    "riderA": {
+      "type": "string",
+      "description": "Rider's Attacks value, e.g. '1', '2', or '?'"
+    },
+    "mountWeapons": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Weapon"
+      },
+      "description": "Natural weapons from the mount"
+    },
+    "mountA": {
+      "type": ["integer", "string", "null"],
+      "description": "Mount's Attack value, e.g. 3, 'D3', or null if no mount"
+    },
+    "mountS": {
+      "type": ["integer", "string", "null"],
+      "description": "Mount's Strength value"
+    },
+    "mountI": {
+      "type": ["integer", "null"],
+      "description": "Mount's Initiative"
+    },
+    "mountWS": {
+      "type": ["integer", "null"],
+      "description": "Mount's Weapon Skill"
+    },
+    "mountName": {
+      "type": ["string", "null"],
+      "description": "Mount name, e.g. 'Barded Warhorse', 'Gryphon'"
+    },
+    "mountArmourBane": {
+      "type": ["integer", "null"],
+      "description": "Armour Bane value from mount, or null. (Note: absent in units without stat blocks)"
+    },
+    "stomp": {
+      "type": ["string", "null"],
+      "description": "Stomp Attacks value, e.g. 'D3', 'D6', or null"
+    },
+    "impactHits": {
+      "type": ["string", "null"],
+      "description": "Impact Hits value, e.g. 'D6', or null"
+    },
+    "singleUseItems": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/MagicItem"
+      },
+      "description": "Single-use defensive magic items"
+    },
+    "itemNames": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Filtered list of magic item names for display"
+    },
+    "riderTags": {
+      "type": "string",
+      "description": "HTML string of inline badges, e.g. 'Magical', 'Furious Charge', 'Poison', 'AB(1)', 'S+1'"
+    },
+    "combatRules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Combat-relevant special rules, e.g. ['Killing Blow', 'Hatred (Elves)']"
+    },
+    "crew": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Crew"
+      },
+      "description": "Crew members (for chariots and similar crewed units)"
+    },
+    "champions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Champion"
+      },
+      "description": "Champion profiles within this unit. (Note: absent in units without stat blocks, and empty for characters)"
+    },
+    "riderName": {
+      "type": ["string", "null"],
+      "description": "Name of the rider for display when champions exist, otherwise null. (Note: absent in units without stat blocks)"
+    },
+    "merged": {
+      "type": "boolean",
+      "description": "True if this entry was merged with duplicate entries during deduplication (added post-creation)"
+    }
+  },
+  "$defs": {
+    "Weapon": {
+      "type": "object",
+      "required": ["name", "s", "ap", "rules"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Weapon name, e.g. 'Lance', 'Great Weapon', 'Spelleater Axe'"
+        },
+        "s": {
+          "type": "string",
+          "description": "Strength modifier, e.g. 'S', 'S+1', 'S+2', 'S-1', or fixed number like '4'"
+        },
+        "ap": {
+          "type": "string",
+          "description": "Armour Penetration, e.g. '—', '-1', '-2', '-3'"
+        },
+        "rules": {
+          "type": "string",
+          "description": "Rule text, may be empty string or e.g. 'Armour Bane (1), Strike Last, Multiple Wounds (2)'"
+        },
+        "attacks": {
+          "type": ["string", "null"],
+          "description": "Extra attacks modifier, e.g. '+1', '+D6', or null if not applicable"
+        },
+        "reservedAttacks": {
+          "type": "integer",
+          "description": "Reserved attacks (rare; for mount natural weapons), optional"
+        }
+      }
+    },
+    "Crew": {
+      "type": "object",
+      "required": ["name", "i", "ws", "s", "a", "weapons"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Crew member name, e.g. 'Orc Crew', from stat line"
+        },
+        "i": {
+          "type": "string",
+          "description": "Initiative"
+        },
+        "ws": {
+          "type": "string",
+          "description": "Weapon Skill"
+        },
+        "s": {
+          "type": "string",
+          "description": "Strength"
+        },
+        "a": {
+          "type": "string",
+          "description": "Attacks"
+        },
+        "weapons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Weapon"
+          },
+          "description": "Weapons for this crew member"
+        }
+      }
+    },
+    "Champion": {
+      "type": "object",
+      "required": ["name", "i", "ws", "s", "a", "weapons"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Champion name from stat line, e.g. 'Dread Knight'"
+        },
+        "i": {
+          "type": "string",
+          "description": "Initiative (from champion stat or fallback to rider)"
+        },
+        "ws": {
+          "type": "string",
+          "description": "Weapon Skill"
+        },
+        "s": {
+          "type": "string",
+          "description": "Strength"
+        },
+        "a": {
+          "type": "string",
+          "description": "Attacks"
+        },
+        "weapons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Weapon"
+          },
+          "description": "Weapons for this champion"
+        },
+        "tags": {
+          "type": ["string", "null"],
+          "description": "HTML tag string if champion has a magic weapon, null if using riderWeapons"
+        }
+      }
+    },
+    "MagicItem": {
+      "type": "object",
+      "required": ["name", "type", "effect"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Item name, e.g. 'Talisman of Protection'"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["armour", "talisman"],
+          "description": "Item type (single-use items are always armour or talisman)"
+        },
+        "effect": {
+          "type": "string",
+          "description": "Rule text, must contain 'single use' (case-insensitive)"
+        }
+      }
+    }
+  }
+}

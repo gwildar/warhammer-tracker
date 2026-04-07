@@ -1,0 +1,302 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/gwildar/warhammer-tracker/schema/army-list",
+  "title": "ArmyList",
+  "description": "Canonical army list schema — the source of truth for a loaded army. All references are pre-resolved at import time from the data files.",
+  "type": "object",
+  "required": ["name", "armySlug", "faction", "points", "units"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Army name"
+    },
+    "armySlug": {
+      "type": "string",
+      "description": "Army identifier, e.g. 'kingdom-of-bretonnia'"
+    },
+    "faction": {
+      "type": "string",
+      "description": "Display name of the faction, e.g. 'Kingdom of Bretonnia'"
+    },
+    "points": {
+      "type": "integer",
+      "description": "Total army points"
+    },
+    "composition": {
+      "type": ["string", "null"],
+      "description": "Army composition variant, e.g. 'errantry-crusades' for special bonuses"
+    },
+    "units": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Unit"
+      },
+      "description": "Array of all units in the army"
+    }
+  },
+  "$defs": {
+    "Unit": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "category",
+        "strength",
+        "points",
+        "stats",
+        "weapons",
+        "shootingWeapons",
+        "magicItems",
+        "specialRules",
+        "armourSave",
+        "ward",
+        "regen",
+        "magicResistance",
+        "isGeneral",
+        "isBSB",
+        "hasStandard",
+        "hasMusician",
+        "isCaster",
+        "lores"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique unit ID from the source export, e.g. 'duke.mivgfpn'"
+        },
+        "name": {
+          "type": "string",
+          "description": "Display name"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "characters",
+            "core",
+            "special",
+            "rare",
+            "mercenaries",
+            "allies"
+          ]
+        },
+        "strength": {
+          "type": "integer",
+          "description": "Unit size / model count"
+        },
+        "points": {
+          "type": "integer",
+          "description": "Total point cost"
+        },
+        "stats": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/StatBlock"
+          },
+          "description": "Unit stat lines (one per model profile, e.g. mount and crew as separate lines)"
+        },
+        "weapons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ResolvedWeapon"
+          },
+          "description": "Combat weapons"
+        },
+        "shootingWeapons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ResolvedWeapon"
+          },
+          "description": "Ranged weapons"
+        },
+        "magicItems": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "Magic items — each is a full item object from MAGIC_ITEMS with all stat fields"
+        },
+        "specialRules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ResolvedRule"
+          },
+          "description": "Special rules — resolved from unit text against SPECIAL_RULES"
+        },
+        "mount": {
+          "type": ["object", "null"],
+          "description": "Resolved mount object from MOUNTS, or null"
+        },
+        "armourSave": {
+          "type": ["string", "null"],
+          "description": "Pre-computed armour save, e.g. '4+' or null"
+        },
+        "ward": {
+          "type": ["string", "null"],
+          "description": "Pre-computed ward save, e.g. '5+' or null"
+        },
+        "regen": {
+          "type": ["string", "null"],
+          "description": "Pre-computed regeneration, e.g. '5+' or null"
+        },
+        "magicResistance": {
+          "type": ["string", "null"],
+          "description": "Pre-computed magic resistance, e.g. '2' or null"
+        },
+        "champions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Champion"
+          },
+          "description": "Champion profiles from this unit"
+        },
+        "crew": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/CrewMember"
+          },
+          "description": "Crew members (for chariots, war machines, etc.)"
+        },
+        "isGeneral": {
+          "type": "boolean"
+        },
+        "isBSB": {
+          "type": "boolean",
+          "description": "Battle Standard Bearer"
+        },
+        "hasStandard": {
+          "type": "boolean",
+          "description": "Standard bearer present"
+        },
+        "hasMusician": {
+          "type": "boolean"
+        },
+        "isCaster": {
+          "type": "boolean"
+        },
+        "lores": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Lore keys, e.g. ['high-magic', 'battle-magic']"
+        },
+        "activeLore": {
+          "type": ["string", "null"],
+          "description": "Currently selected lore (if caster)"
+        }
+      }
+    },
+    "StatBlock": {
+      "type": "object",
+      "properties": {
+        "M": { "type": "string" },
+        "WS": { "type": "string" },
+        "BS": { "type": "string" },
+        "S": { "type": "string" },
+        "T": { "type": "string" },
+        "W": { "type": "string" },
+        "I": { "type": "string" },
+        "A": { "type": "string" },
+        "Ld": { "type": "string" },
+        "Name": {
+          "type": "string",
+          "description": "Profile name, e.g. 'Gryphon' for an embedded mount"
+        },
+        "crewed": {
+          "type": "boolean",
+          "description": "Optional: unit is crewed (multiple stat profiles)"
+        },
+        "weapons": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optional: combat weapon keys for this profile"
+        },
+        "AS": {
+          "type": "string",
+          "description": "Optional: natural armour save"
+        }
+      }
+    },
+    "ResolvedWeapon": {
+      "type": "object",
+      "required": ["name", "s", "ap", "rules"],
+      "properties": {
+        "name": { "type": "string" },
+        "s": {
+          "type": "string",
+          "description": "Strength modifier, e.g. 'S', 'S+1', 'S+2'"
+        },
+        "ap": {
+          "type": "string",
+          "description": "Armour Penetration, e.g. '—', '-1', '-2'"
+        },
+        "rules": { "type": "string", "description": "Rule text, may be empty" },
+        "magical": {
+          "type": "boolean",
+          "description": "True if a magic weapon"
+        },
+        "attacks": {
+          "type": ["string", "null"],
+          "description": "Extra attacks modifier, e.g. '+1', '+D6'"
+        },
+        "reservedAttacks": {
+          "type": ["integer", "null"],
+          "description": "Reserved attacks (rare, for mount natural weapons)"
+        }
+      }
+    },
+    "ResolvedRule": {
+      "type": "object",
+      "required": ["displayName"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Rule ID from SPECIAL_RULES, if matched"
+        },
+        "displayName": { "type": "string" },
+        "phases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "phaseId": { "type": "string" },
+              "subPhaseId": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          },
+          "description": "Phase triggers, empty if unrecognised rule"
+        }
+      }
+    },
+    "Champion": {
+      "type": "object",
+      "required": ["name", "i", "ws", "s", "a", "weapons"],
+      "properties": {
+        "name": { "type": "string" },
+        "i": { "type": "string" },
+        "ws": { "type": "string" },
+        "s": { "type": "string" },
+        "a": { "type": "string" },
+        "weapons": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/ResolvedWeapon" }
+        }
+      }
+    },
+    "CrewMember": {
+      "type": "object",
+      "required": ["name", "i", "ws", "s", "a", "weapons"],
+      "properties": {
+        "name": { "type": "string" },
+        "i": { "type": "string" },
+        "ws": { "type": "string" },
+        "s": { "type": "string" },
+        "a": { "type": "string" },
+        "weapons": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/ResolvedWeapon" }
+        }
+      }
+    }
+  }
+}

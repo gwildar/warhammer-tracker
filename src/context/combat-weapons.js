@@ -1,226 +1,37 @@
 import { COMBAT_WEAPONS } from "../data/weapons.js";
 import { findMount } from "../data/mounts.js";
-import { MAGIC_ITEMS } from "../data/magic-items.js";
-import { SPECIAL_RULES } from "../data/special-rules.js";
-import { parseUnitRules, normaliseRuleName } from "../helpers.js";
-
-const ARMOUR_BASE = {
-  "light armour": 6,
-  "heavy armour": 5,
-  "full plate armour": 4,
-  "full plate": 4,
-  "chaos armour": 4,
-  "gromril armour": 4,
-};
-
-// Build a lookup from magic item name (lowercase) → item data
-const MAGIC_ITEM_MAP = {};
-for (const item of MAGIC_ITEMS) {
-  MAGIC_ITEM_MAP[item.name.toLowerCase()] = item;
-}
-
-// Single-use defensive items worth calling out in combat
-const SINGLE_USE_ITEMS = {};
-for (const item of MAGIC_ITEMS) {
-  if (
-    (item.type === "armour" || item.type === "talisman") &&
-    item.effect?.toLowerCase().includes("single use")
-  ) {
-    SINGLE_USE_ITEMS[item.name.toLowerCase()] = item;
-  }
-}
-
-function normaliseItemName(name) {
-  return name
-    .replace(/\s*\(.*$/, "")
-    .toLowerCase()
-    .replace(/\*$/, "");
-}
-
-// Items whose effect is fully represented by MR on the header
-const MR_ITEM_NAMES = new Set(
-  MAGIC_ITEMS.filter(
-    (i) => i.mr && !i.ward && !i.regen && !i.armourBase && !i.armourMod,
-  ).map((i) => i.name.toLowerCase()),
-);
 
 const HAND_WEAPON = { name: "Hand Weapon", s: "S", ap: "—", rules: "" };
 
-// Build lookup for special rules that modify armour save
-const ARMOUR_MOD_RULES = {};
-for (const rule of SPECIAL_RULES) {
-  if (rule.armourMod) {
-    ARMOUR_MOD_RULES[rule.id] = rule.armourMod;
-    if (rule.aliases) {
-      for (const alias of rule.aliases) {
-        ARMOUR_MOD_RULES[alias.toLowerCase()] = rule.armourMod;
-      }
-    }
-  }
-}
-
-function calculateArmourSave(unit) {
-  let best = null;
-  let mod = 0;
-
-  // Base armour from armour list — strip (Scaly skin), *, etc. before matching
-  for (const a of unit.armour) {
-    for (const part of a.split(",").map((s) =>
-      s
-        .trim()
-        .toLowerCase()
-        .replace(/\s*\([^)]*\)/g, "")
-        .replace(/\*$/, "")
-        .trim(),
-    )) {
-      if (ARMOUR_BASE[part] !== undefined) {
-        const val = ARMOUR_BASE[part];
-        if (best === null || val < best) best = val;
-      }
-    }
-  }
-
-  // Magic item armour (base or modifier)
-  for (const itemName of unit.magicItems) {
-    const mi = MAGIC_ITEM_MAP[normaliseItemName(itemName)];
-    if (!mi) continue;
-    if (mi.armourBase !== undefined) {
-      if (best === null || mi.armourBase < best) best = mi.armourBase;
-    }
-    if (mi.armourMod !== undefined) {
-      mod += mi.armourMod;
-    }
-  }
-
-  // Armoured Hide stacks with armour as a modifier; without armour it gives a base save of 7-X
-  const armouredHide = detectArmouredHide(unit);
-  if (armouredHide > 0) {
-    if (best === null) {
-      best = 7 - armouredHide;
-    } else {
-      best -= armouredHide;
-    }
-  }
-
-  // Natural armour save from unit profile (e.g. Bastiladon 3+, Stegadon 4+)
-  const naturalAS = unit.stats?.[0]?.AS;
-  if (naturalAS) {
-    const val = parseInt(naturalAS);
-    if (best === null || val < best) best = val;
-  }
-
-  // Shield, barding, and modifiers only apply to the rider's own armour
-  if (best !== null) {
-    const allGear = [...unit.equipment, ...unit.armour].map((g) =>
-      g.toLowerCase(),
-    );
-    const hasMundaneShield = allGear.some((g) =>
-      g.split(",").some((p) => p.trim() === "shield" || p.trim() === "shields"),
-    );
-    const hasMagicShield = unit.magicItems.some((itemName) => {
-      const mi = MAGIC_ITEM_MAP[normaliseItemName(itemName)];
-      return mi?.type === "armour" && mi.effect?.startsWith("Shield.");
-    });
-    const hasShield = hasMundaneShield || hasMagicShield;
-    if (hasShield) best -= 1;
-    if (unit.hasBarding) best -= 1;
-    // Apply armour modifiers from special rules (e.g. Lion Cloak)
-    if (unit.specialRules) {
-      const rules = parseUnitRules(unit.specialRules);
-      for (const rule of rules) {
-        const normId = normaliseRuleName(rule).toLowerCase();
-        if (ARMOUR_MOD_RULES[normId]) best += ARMOUR_MOD_RULES[normId];
-      }
-    }
-    best += mod;
-  }
-
-  // Ridden monster mount's natural armour save — use if better than rider's
-  if (unit.mount) {
-    const mount = findMount(unit.mount);
-    if (mount?.as) {
-      if (best === null || mount.as < best) best = mount.as;
-    }
-  }
-
-  if (best === null) return null;
-  if (best < 2) best = 2;
-
-  return `${best}+`;
-}
-
-function detectWard(unit) {
-  // Check magic items
-  for (const itemName of unit.magicItems) {
-    const mi = MAGIC_ITEM_MAP[normaliseItemName(itemName)];
-    if (mi?.ward) return mi.ward;
-  }
-  // Check special rules for Blessings of the Lady
-  if (unit.specialRules?.toLowerCase().includes("blessings of the lady")) {
-    return "6+ (5+ vs S5+)";
-  }
-  return null;
-}
-
-function detectRegen(unit) {
-  // Check magic items
-  for (const itemName of unit.magicItems) {
-    const mi = MAGIC_ITEM_MAP[normaliseItemName(itemName)];
-    if (mi?.regen) return mi.regen;
-  }
-  // Check special rules for Regeneration
-  const regenMatch = unit.specialRules?.match(/Regeneration\s*\((\d\+)\)/i);
-  if (regenMatch) return regenMatch[1];
-  return null;
-}
-
-function isChampionItem(name) {
-  return name.includes("(champion)") || name.includes("(Champion)");
-}
-
 function findVirtueAttacks(unit) {
-  // Check unit's magic items for a virtue with attack bonus
-  for (const itemName of unit.magicItems) {
-    const mi = MAGIC_ITEM_MAP[normaliseItemName(itemName)];
-    if (mi?.type === "virtue" && mi.attacks && mi.phases?.includes("combat")) {
-      return mi.attacks;
-    }
-  }
-  return null;
-}
-
-function findMagicWeaponProfiles(unit) {
-  // Check unit's magic items for a multi-profile weapon
-  for (const itemName of unit.magicItems) {
-    if (isChampionItem(itemName)) continue;
-    const mi = MAGIC_ITEM_MAP[normaliseItemName(itemName)];
-    if (mi?.type === "weapon" && mi.profiles && mi.phases?.includes("combat")) {
-      return mi.profiles.map((p) => ({
-        name: p.name,
-        s: p.s,
-        ap: p.ap || "—",
-        rules: p.rules || "",
-        attacks: p.attacks || null,
-      }));
+  for (const item of unit.magicItems || []) {
+    if (
+      item.type === "virtue" &&
+      item.attacks &&
+      item.phases?.includes("combat")
+    ) {
+      return item.attacks;
     }
   }
   return null;
 }
 
 function findMagicWeapon(unit) {
-  // Check unit's magic items for a combat magic weapon with s/ap fields
   const virtueAttacks = findVirtueAttacks(unit);
-  for (const itemName of unit.magicItems) {
-    // Skip champion weapons (handled separately)
-    if (isChampionItem(itemName)) continue;
-    const mi = MAGIC_ITEM_MAP[normaliseItemName(itemName)];
-    if (mi?.type === "weapon" && mi.s && mi.phases?.includes("combat")) {
+  for (const item of unit.magicItems || []) {
+    if (item.championOnly) continue;
+    if (
+      item.type === "weapon" &&
+      (item.s || item.profiles) &&
+      item.phases?.includes("combat")
+    ) {
       return {
-        name: mi.name,
-        s: mi.s,
-        ap: mi.ap || "—",
-        rules: mi.effect || "",
-        attacks: mi.attacks || virtueAttacks || null,
+        name: item.name,
+        s: item.s,
+        ap: item.ap || "—",
+        rules: item.effect || "",
+        attacks: item.attacks || virtueAttacks || null,
+        profiles: item.profiles || null,
       };
     }
   }
@@ -231,38 +42,34 @@ function matchRiderWeapons(unit) {
   const weapons = [];
   const matched = new Set();
 
-  // Multi-profile magic weapons (e.g. The Dolorous Blade)
-  const magicProfiles = findMagicWeaponProfiles(unit);
-  if (magicProfiles) {
-    for (const w of magicProfiles) matched.add(w.name);
-    return { weapons: magicProfiles, matched };
-  }
-
-  // Single magic weapon replaces mundane weapons
+  // Magic weapon replaces mundane weapons; multi-profile weapons expand into separate entries
   const magicWeapon = findMagicWeapon(unit);
   if (magicWeapon) {
+    if (magicWeapon.profiles) {
+      for (const p of magicWeapon.profiles) matched.add(p.name);
+      return { weapons: magicWeapon.profiles, matched };
+    }
     weapons.push(magicWeapon);
     matched.add(magicWeapon.name);
     return { weapons, matched };
   }
 
-  const parts = unit.equipment.flatMap((g) =>
-    g.split(",").map((s) => s.trim()),
-  );
-  for (const part of parts) {
-    const lower = part.toLowerCase();
-    for (const [key, weapon] of Object.entries(COMBAT_WEAPONS)) {
-      if (lower.includes(key) && !matched.has(weapon.name)) {
+  // In canonical schema, weapons are already resolved
+  if (Array.isArray(unit.weapons)) {
+    for (const weapon of unit.weapons) {
+      if (weapon && !matched.has(weapon.name)) {
         matched.add(weapon.name);
-        weapons.push(weapon);
+        // Convert resolved weapon to format expected by rest of code
+        weapons.push({
+          name: weapon.name,
+          s: weapon.s || null,
+          ap: weapon.ap || "—",
+          effect: weapon.rules || "",
+          attacks: weapon.attacks || null,
+        });
       }
     }
-  }
-
-  // Apply virtue attacks to first mundane weapon
-  const virtueAttacks = findVirtueAttacks(unit);
-  if (virtueAttacks && weapons.length > 0) {
-    weapons[0] = { ...weapons[0], attacks: virtueAttacks };
+    return { weapons, matched };
   }
 
   return { weapons, matched };
@@ -272,7 +79,7 @@ function matchMountWeapons(unit, alreadyMatched) {
   const weapons = [];
   if (!unit.mount) return weapons;
 
-  const mount = findMount(unit.mount);
+  const mount = unit.mount;
   if (!mount?.weapons) return weapons;
 
   for (const wKey of mount.weapons) {
@@ -364,73 +171,43 @@ function renderWeaponLine(initiative, ws, s, attacks, w, label, tags) {
 }
 
 function detectSingleUseItems(unit) {
-  const items = [];
-  for (const itemName of unit.magicItems) {
-    const mi = SINGLE_USE_ITEMS[normaliseItemName(itemName)];
-    if (mi) items.push(mi);
-  }
-  return items;
+  return (unit.magicItems || []).filter(
+    (item) =>
+      (item.type === "armour" || item.type === "talisman") &&
+      item.effect?.toLowerCase().includes("single use"),
+  );
 }
 
 function hasRiderMagicalAttacks(unit) {
-  for (const itemName of unit.magicItems) {
-    // Champion items only apply to the champion, not the unit
-    if (isChampionItem(itemName)) continue;
-    const mi = MAGIC_ITEM_MAP[normaliseItemName(itemName)];
-    if (mi?.type === "weapon" && mi.phases?.includes("combat")) return true;
-    if (mi?.type !== "weapon" && mi?.effect?.includes("Magical Attacks"))
+  for (const item of unit.magicItems || []) {
+    if (item.championOnly) continue;
+    if (item.type === "weapon" && item.phases?.includes("combat")) return true;
+    if (item.type !== "weapon" && item.effect?.includes("Magical Attacks"))
       return true;
   }
-  // Special rules or equipment
-  if (unit.specialRules?.includes("Magical Attacks")) return true;
-  // Grail Vow grants Magical Attacks to rider
-  const allText = [unit.specialRules || "", ...unit.equipment]
-    .join(",")
-    .toLowerCase();
-  if (allText.includes("grail vow")) return true;
+  const rules = unit.specialRules || [];
+  if (
+    rules.some((r) => r.displayName?.toLowerCase().includes("magical attacks"))
+  )
+    return true;
+  if (rules.some((r) => r.displayName?.toLowerCase().includes("grail vow")))
+    return true;
   return false;
 }
 
 function hasFuriousCharge(unit) {
-  const allText = [unit.specialRules || "", ...unit.equipment]
-    .join(",")
-    .toLowerCase();
-  return allText.includes("furious charge");
-}
-
-const RANGED_WEAPON_NAMES = [
-  "javelin",
-  "bow",
-  "crossbow",
-  "handgun",
-  "pistol",
-  "sling",
-  "throwing",
-  "bolt thrower",
-  "cannon",
-  "mortar",
-  "catapult",
-  "harpoon",
-  "breath",
-];
-
-function hasPoisonedAttacks(unit) {
-  if (!unit.specialRules) return false;
-  const match = unit.specialRules.match(/Poisoned Attacks(?:\s*\(([^)]+)\))?/i);
-  if (!match) return false;
-  if (!match[1]) return true;
-  // Conditional — skip if it's a ranged weapon qualifier
-  const qualifier = match[1].toLowerCase();
-  return !RANGED_WEAPON_NAMES.some((w) => qualifier.includes(w));
+  return (unit.specialRules || []).some((r) =>
+    r.displayName?.toLowerCase().includes("furious charge"),
+  );
 }
 
 function detectItemBonuses(unit) {
   let armourBane = 0;
   const strengthMods = [];
-  for (const itemName of unit.magicItems) {
-    const mi = MAGIC_ITEM_MAP[normaliseItemName(itemName)];
-    if (mi?.armourBane) armourBane += mi.armourBane;
-    if (mi?.strengthMod) strengthMods.push(mi.strengthMod);
+  for (const item of unit.magicItems || []) {
+    if (item.championOnly) continue;
+    if (item.armourBane) armourBane += item.armourBane;
+    if (item.strengthMod) strengthMods.push(item.strengthMod);
   }
   return { armourBane, strengthMods };
 }
@@ -445,7 +222,7 @@ function buildRiderTags(unit) {
     tags.push(
       '<span class="text-wh-phase-combat font-mono ml-1">\u{1F4A5} +1A furious</span>',
     );
-  if (hasPoisonedAttacks(unit))
+  if (unit.poisonedAttacks ?? false)
     tags.push(
       '<span class="text-wh-phase-combat font-mono ml-1">\u2620\uFE0F Poison</span>',
     );
@@ -474,32 +251,18 @@ function buildMountWeaponTags(w) {
 const COMBAT_VOWS = ["the grail vow", "the questing vow"];
 
 function buildItemNames(unit) {
-  const names = unit.magicItems.map((n) => n.replace(/\*$/, ""));
-  const parts = [
-    ...unit.equipment,
-    ...(unit.specialRules ? unit.specialRules.split(",") : []),
-  ].flatMap((e) => e.split(",").map((s) => s.trim()));
-  for (const part of parts) {
+  const names = (unit.magicItems || []).map((item) => item.name);
+  for (const rule of unit.specialRules || []) {
+    const lower = rule.displayName?.toLowerCase();
     if (
-      COMBAT_VOWS.includes(part.toLowerCase()) &&
-      !names.some((n) => n.toLowerCase() === part.toLowerCase())
+      lower &&
+      COMBAT_VOWS.includes(lower) &&
+      !names.some((n) => n.toLowerCase() === lower)
     ) {
-      names.push(part);
+      names.push(rule.displayName);
     }
   }
   return names;
-}
-
-function filterItemNames(unit, suItems) {
-  const suNames = new Set(suItems.map((i) => i.name.toLowerCase()));
-  return buildItemNames(unit).filter((n) => {
-    if (suNames.has(n.toLowerCase()) || MR_ITEM_NAMES.has(n.toLowerCase()))
-      return false;
-    const mi = MAGIC_ITEM_MAP[normaliseItemName(n)];
-    if (mi?.type === "weapon" && mi.phases && !mi.phases.includes("combat"))
-      return false;
-    return true;
-  });
 }
 
 function findChampions(unit) {
@@ -515,39 +278,22 @@ function findChampions(unit) {
   return champions;
 }
 
-function getChampionWeapons(unit, championName) {
-  const weapons = [];
-  // Check if champion has a magic weapon from command group items
-  // Format in magicItems: "Spelleater Axe (Dread Knight (champion))"
-  for (const itemName of unit.magicItems) {
-    if (!itemName.includes("(champion)")) continue;
-
-    // Match specific champion name if it's in the string, or fall back to generic
-    if (
-      championName &&
-      !itemName
-        .toLowerCase()
-        .includes(`(${championName.toLowerCase()} (champion))`)
-    ) {
-      // If there's multiple champions, only match if it specifies the name.
-      // If there's only one, then a generic (champion) is fine.
-      const champions = findChampions(unit);
-      if (champions.length > 1) continue;
-    }
-
-    const baseName = itemName.replace(/\s*\(.*$/, "");
-    const mi = MAGIC_ITEM_MAP[normaliseItemName(baseName)];
-    if (mi?.type === "weapon") {
-      weapons.push({
-        name: mi.name,
-        s: mi.s || "S",
-        ap: mi.ap || "—",
-        rules: mi.effect || "",
-        attacks: mi.attacks || null,
-      });
+function getChampionWeapons(unit) {
+  for (const item of unit.magicItems || []) {
+    if (!item.championOnly) continue;
+    if (item.type === "weapon") {
+      return [
+        {
+          name: item.name,
+          s: item.s || "S",
+          ap: item.ap || "—",
+          rules: item.effect || "",
+          attacks: item.attacks || null,
+        },
+      ];
     }
   }
-  return weapons.length > 0 ? weapons : null;
+  return null;
 }
 
 function findCrewProfiles(unit) {
@@ -598,75 +344,18 @@ const COMBAT_RELEVANT_RULES = [
 ];
 
 function extractCombatRules(unit) {
-  if (!unit.specialRules) return [];
-  const parts = unit.specialRules
-    .split(",")
-    .map((s) => s.trim())
-    .filter(Boolean);
   const results = [];
-  for (const rule of parts) {
-    const lower = rule
+  for (const rule of unit.specialRules || []) {
+    const lower = (rule.displayName || "")
       .toLowerCase()
       .replace(/\s*\([^)]*\)/g, "")
       .replace(/\s*\{[^}]*\}/g, "")
       .trim();
     if (COMBAT_RELEVANT_RULES.some((cr) => lower.includes(cr))) {
-      // Clean: strip {renegade} etc, keep (X) params
-      results.push(rule.replace(/\s*\{[^}]*\}/g, "").trim());
+      results.push(rule.displayName.replace(/\s*\{[^}]*\}/g, "").trim());
     }
   }
   return results;
-}
-
-function detectMagicResistance(unit) {
-  let total = 0;
-  // From special rules
-  const match = unit.specialRules?.match(/Magic Resistance\s*\((-?\d+)\)/i);
-  if (match) total += parseInt(match[1]);
-  // From magic items
-  for (const itemName of unit.magicItems) {
-    const mi = MAGIC_ITEM_MAP[normaliseItemName(itemName)];
-    if (mi?.mr) total += mi.mr;
-  }
-  return total !== 0 ? `${total}` : null;
-}
-
-function detectArmouredHide(unit) {
-  if (!unit.specialRules) return 0;
-  const match = unit.specialRules.match(/Armoured Hide\s*\((\d+)\)/i);
-  return match ? parseInt(match[1]) : 0;
-}
-
-function detectStompFromRules(unit) {
-  if (!unit.specialRules) return null;
-  const match = unit.specialRules.match(/Stomp Attacks\s*\(([^)]+)\)/i);
-  return match ? match[1] : null;
-}
-
-function detectImpactHitsFromRules(unit) {
-  if (!unit.specialRules) return null;
-  const match = unit.specialRules.match(/Impact Hits\s*\(([^)]+)\)/i);
-  return match ? match[1] : null;
-}
-
-function dedupe(entries, keyFn) {
-  const seen = {};
-  for (const e of entries) {
-    const key = keyFn(e);
-    if (!seen[key]) {
-      seen[key] = { ...e };
-    } else {
-      seen[key].merged = true;
-    }
-  }
-  return Object.values(seen);
-}
-
-function extractLd(unit) {
-  for (const profile of unit.stats || []) {
-    if (profile.Ld && profile.Ld !== "-") return profile.Ld;
-  }
-  return "?";
 }
 
 export function renderCombatWeaponsContext(army) {
@@ -678,6 +367,7 @@ export function renderCombatWeaponsContext(army) {
     const stats = u.stats?.[0];
     if (!stats) {
       const suItems = detectSingleUseItems(u);
+      const suNames = new Set(suItems.map((i) => i.name.toLowerCase()));
       entries.push({
         unitName: u.name,
         points: u.points,
@@ -688,10 +378,10 @@ export function renderCombatWeaponsContext(army) {
         riderS: "?",
         t: "?",
         w: "?",
-        as: calculateArmourSave(u),
-        mr: detectMagicResistance(u),
-        ward: detectWard(u),
-        regen: detectRegen(u),
+        as: u.armourSave ?? null,
+        mr: u.magicResistance ?? null,
+        ward: u.ward ?? null,
+        regen: u.regen ?? null,
         iNum: 0,
         riderWeapons: [HAND_WEAPON],
         riderA: "?",
@@ -701,10 +391,29 @@ export function renderCombatWeaponsContext(army) {
         mountI: null,
         mountWS: null,
         mountName: null,
-        stomp: detectStompFromRules(u),
-        impactHits: detectImpactHitsFromRules(u),
+        stomp: u.stomp ?? null,
+        impactHits: u.impactHits ?? null,
         singleUseItems: suItems,
-        itemNames: filterItemNames(u, suItems),
+        itemNames: buildItemNames(u).filter((n) => {
+          if (suNames.has(n.toLowerCase())) return false;
+          const item = (u.magicItems || []).find((i) => i.name === n);
+          if (!item) return true; // vow entries — always show
+          if (
+            item.mr &&
+            !item.ward &&
+            !item.regen &&
+            !item.armourBase &&
+            !item.armourMod
+          )
+            return false;
+          if (
+            item.type === "weapon" &&
+            item.phases &&
+            !item.phases.includes("combat")
+          )
+            return false;
+          return true;
+        }),
         riderTags: buildRiderTags(u),
         combatRules: extractCombatRules(u),
         crew: [],
@@ -712,7 +421,7 @@ export function renderCombatWeaponsContext(army) {
       continue;
     }
 
-    const mount = u.mount ? findMount(u.mount) : null;
+    const mount = u.mount ?? null;
     const isRiddenMonster = mount && mount.wBonus > 0;
 
     // Check for embedded mount profile in unit stats (e.g. Knights Errant, Pegasus Knights)
@@ -722,7 +431,7 @@ export function renderCombatWeaponsContext(army) {
     const hasEmbeddedMount =
       embedded && embedded.statLine.A && embedded.statLine.A !== "-";
 
-    // Check for champion profile (non-character units only)
+    // Check for champion profiles (non-character units only)
     const champions = u.category !== "characters" ? findChampions(u) : [];
 
     // Check for crew profiles (crewed units like chariots)
@@ -797,7 +506,7 @@ export function renderCombatWeaponsContext(army) {
       mountWS = mount.ws;
       mountA = mount.a;
       mountS = mount.s;
-      mountName = u.mount;
+      mountName = mount.name;
       mountStomp = mount.stomp;
       mountArmourBane = mount.armourBane || null;
     } else if (mount && mount.a) {
@@ -806,7 +515,7 @@ export function renderCombatWeaponsContext(army) {
       mountWS = mount.ws;
       mountA = mount.a;
       mountS = mount.s;
-      mountName = u.mount;
+      mountName = mount.name;
       mountStomp = mount.stomp;
       mountArmourBane = mount.armourBane || null;
     } else if (stats.crewed && stats.A && stats.A !== "-" && !stats.weapons) {
@@ -831,21 +540,20 @@ export function renderCombatWeaponsContext(army) {
       mountArmourBane = embedded.mountData?.armourBane || null;
     }
 
-    const suItems = detectSingleUseItems(u);
     entries.push({
       unitName: u.name,
       points: u.points,
       strength: u.strength,
-      mount: isRiddenMonster || (mount && mount.a) ? u.mount : null,
+      mount: isRiddenMonster || (mount && mount.a) ? mount.name : null,
       riderI,
       riderWS,
       riderS,
       t: isRiddenMonster ? `${baseT + mount.tBonus}` : stats.T || "?",
       w: isRiddenMonster ? `${baseW + mount.wBonus}` : stats.W || "?",
-      as: calculateArmourSave(u),
-      mr: detectMagicResistance(u),
-      ward: detectWard(u),
-      regen: detectRegen(u),
+      as: u.armourSave ?? null,
+      mr: u.magicResistance ?? null,
+      ward: u.ward ?? null,
+      regen: u.regen ?? null,
       iNum: Math.max(parseInt(riderI) || 0, mountI || 0),
       riderWeapons,
       riderA: stats.A || "?",
@@ -856,13 +564,36 @@ export function renderCombatWeaponsContext(army) {
       mountWS,
       mountName,
       mountArmourBane,
-      stomp: mount?.stomp || mountStomp || detectStompFromRules(u),
+      stomp: mount?.stomp || mountStomp || (u.stomp ?? null),
       impactHits:
         mount?.impactHits ||
         embedded?.mountData?.impactHits ||
-        detectImpactHitsFromRules(u),
-      singleUseItems: suItems,
-      itemNames: filterItemNames(u, suItems),
+        (u.impactHits ?? null),
+      singleUseItems: detectSingleUseItems(u),
+      itemNames: (() => {
+        const suItems = detectSingleUseItems(u);
+        const suNames = new Set(suItems.map((i) => i.name.toLowerCase()));
+        return buildItemNames(u).filter((n) => {
+          if (suNames.has(n.toLowerCase())) return false;
+          const item = (u.magicItems || []).find((i) => i.name === n);
+          if (!item) return true; // vow entries — always show
+          if (
+            item.mr &&
+            !item.ward &&
+            !item.regen &&
+            !item.armourBase &&
+            !item.armourMod
+          )
+            return false;
+          if (
+            item.type === "weapon" &&
+            item.phases &&
+            !item.phases.includes("combat")
+          )
+            return false;
+          return true;
+        });
+      })(),
       riderTags: buildRiderTags(u),
       combatRules: extractCombatRules(u),
       crew: [
@@ -892,7 +623,7 @@ export function renderCombatWeaponsContext(army) {
         })),
       ],
       champions: champions.map((champion) => {
-        const championWeapons = getChampionWeapons(u, champion.Name);
+        const championWeapons = getChampionWeapons(u);
         return {
           name: champion.Name,
           i: champion.I || riderI,
@@ -912,7 +643,8 @@ export function renderCombatWeaponsContext(army) {
   }
 
   // Deduplicate
-  const rows = dedupe(entries, (e) => {
+  const deduped = {};
+  for (const e of entries) {
     const riderWKey = e.riderWeapons
       .map((w) => w.name)
       .sort()
@@ -921,8 +653,15 @@ export function renderCombatWeaponsContext(army) {
       .map((w) => w.name)
       .sort()
       .join(",");
-    return `${e.unitName}||${e.riderI}||${e.riderA}||${e.t}||${e.w}||${e.as}||${riderWKey}||${mountWKey}`;
-  }).sort((a, b) => b.iNum - a.iNum);
+    const key = `${e.unitName}||${e.riderI}||${e.riderA}||${e.t}||${e.w}||${e.as}||${riderWKey}||${mountWKey}`;
+    if (!deduped[key]) {
+      deduped[key] = { ...e, merged: false };
+    } else {
+      deduped[key].merged = true;
+    }
+  }
+
+  const rows = Object.values(deduped).sort((a, b) => b.iNum - a.iNum);
   if (rows.length === 0) return "";
 
   return `
@@ -938,8 +677,8 @@ export function renderCombatWeaponsContext(army) {
               <div class="text-wh-muted text-[10px] font-mono shrink-0 ml-2">${r.points}pts</div>
             </div>
             <div class="flex items-center gap-2 flex-wrap mt-0.5">
-              <span class="text-fuchsia-300 font-mono text-xs">T:${r.t}</span>
-              <span class="text-fuchsia-300 font-mono text-xs">W:${r.w}</span>
+              <span class="text-wh-muted font-mono text-xs">T:${r.t}</span>
+              <span class="text-wh-muted font-mono text-xs">W:${r.w}</span>
               ${r.as ? `<span class="text-blue-400 font-mono text-xs">\u{1F6E1}\uFE0FAS:${r.as}</span>` : ""}
               ${r.mr ? `<span class="text-wh-phase-combat font-mono text-xs">\u2728MR:${r.mr}</span>` : ""}
               ${r.ward ? `<span class="text-purple-400 font-mono text-xs">\u{1F52E}Ward:${r.ward}</span>` : ""}
@@ -955,7 +694,7 @@ export function renderCombatWeaponsContext(army) {
                   : ""
               }
               <div class="mt-1">
-                ${r.champions.map((champ) => champ.weapons.map((w) => renderWeaponLine(champ.i, champ.ws, champ.s, champ.a, w, champ.name, champ.tags !== null ? champ.tags : r.riderTags)).join("")).join("")}
+                ${(r.champions || []).flatMap((ch) => ch.weapons.map((w) => renderWeaponLine(ch.i, ch.ws, ch.s, ch.a, w, ch.name, ch.tags !== null ? ch.tags : r.riderTags))).join("")}
                 ${r.riderWeapons.map((w) => renderWeaponLine(r.riderI, r.riderWS, r.riderS, r.riderA, w, r.riderName, r.riderTags)).join("")}
                 ${r.crew
                   .map((c) =>
@@ -1022,7 +761,9 @@ export function renderCombatResultContext(army) {
     const bonuses = [];
     let total = 0;
 
-    const hasCloseOrder = u.specialRules?.toLowerCase().includes("close order");
+    const hasCloseOrder = (u.specialRules || []).some((r) =>
+      r.displayName?.toLowerCase().includes("close order"),
+    );
     if (hasCloseOrder) {
       bonuses.push("Close Order +1");
       total += 1;
@@ -1039,17 +780,20 @@ export function renderCombatResultContext(army) {
 
     entries.push({
       name: u.name,
-      points: u.points,
       strength: u.strength,
       total,
       bonuses,
     });
   }
 
-  const rows = dedupe(
-    entries,
-    (e) => `${e.name}||${e.total}||${e.bonuses.join(",")}`,
-  ).sort((a, b) => b.total - a.total);
+  const deduped = {};
+  for (const e of entries) {
+    const key = `${e.name}||${e.total}||${e.bonuses.join(",")}`;
+    if (!deduped[key]) deduped[key] = { ...e, merged: false };
+    else deduped[key].merged = true;
+  }
+
+  const rows = Object.values(deduped).sort((a, b) => b.total - a.total);
   if (rows.length === 0) return "";
 
   return `
@@ -1060,10 +804,8 @@ export function renderCombatResultContext(army) {
           .map(
             (r) => `
           <div class="p-2 rounded bg-wh-card text-sm">
-            <div class="flex items-start gap-2">
-              <div class="flex flex-col">
-                <span class="text-wh-text">${r.name}${!r.merged && r.strength > 1 ? ` x${r.strength}` : ""}</span>
-              </div>
+            <div class="flex items-center gap-2">
+              <span class="text-wh-text">${r.name}${!r.merged && r.strength > 1 ? ` x${r.strength}` : ""}</span>
               <span class="text-wh-phase-combat font-mono text-xs ml-auto">+${r.total}</span>
             </div>
             ${r.bonuses.length > 0 ? `<p class="text-xs text-wh-muted mt-0.5">${r.bonuses.join(", ")}</p>` : ""}
@@ -1081,15 +823,18 @@ export function renderCombatLeadershipContext(army, title = "Break Test") {
 
   const deduped = {};
   for (const u of army.units) {
-    const ld = extractLd(u);
+    let ld = "?";
+    if (u.stats) {
+      for (const profile of u.stats) {
+        if (profile.Ld && profile.Ld !== "-") {
+          ld = profile.Ld;
+          break;
+        }
+      }
+    }
     const key = `${u.name}||${ld}`;
     if (!deduped[key])
-      deduped[key] = {
-        name: u.name,
-        points: u.points,
-        ld,
-        ldNum: parseInt(ld) || 0,
-      };
+      deduped[key] = { name: u.name, ld, ldNum: parseInt(ld) || 0 };
   }
 
   const rows = Object.values(deduped).sort((a, b) => b.ldNum - a.ldNum);
@@ -1111,16 +856,18 @@ export function renderCombatLeadershipContext(army, title = "Break Test") {
       }
     }
     const hasLargeTarget =
-      general.specialRules?.toLowerCase().includes("large target") ||
-      (general.mount && findMount(general.mount)?.largeTarget);
+      (general.specialRules || []).some((r) =>
+        r.displayName?.toLowerCase().includes("large target"),
+      ) || !!general.mount?.largeTarget;
     if (hasLargeTarget) generalRange = 18;
   }
 
   let bsbRange = 12;
   if (bsb) {
     const hasLargeTarget =
-      bsb.specialRules?.toLowerCase().includes("large target") ||
-      (bsb.mount && findMount(bsb.mount)?.largeTarget);
+      (bsb.specialRules || []).some((r) =>
+        r.displayName?.toLowerCase().includes("large target"),
+      ) || !!bsb.mount?.largeTarget;
     if (hasLargeTarget) bsbRange = 18;
   }
 
@@ -1141,10 +888,8 @@ export function renderCombatLeadershipContext(army, title = "Break Test") {
         ${rows
           .map(
             (r) => `
-          <div class="flex items-start gap-2 p-2 rounded bg-wh-card text-sm">
-            <div class="flex flex-col">
-              <span class="text-wh-text">${r.name}</span>
-            </div>
+          <div class="flex items-center gap-2 p-2 rounded bg-wh-card text-sm">
+            <span class="text-wh-text">${r.name}</span>
             <span class="text-wh-phase-combat font-mono text-xs ml-auto">Ld${r.ld}</span>
           </div>
         `,
@@ -1161,29 +906,37 @@ export function renderDefensiveStatsContext(army) {
   const deduped = {};
   for (const u of army.units) {
     const stats = u.stats?.[0];
-    const mount = u.mount ? findMount(u.mount) : null;
+    const mount = u.mount ?? null;
     const isRiddenMonster = mount && mount.wBonus > 0;
 
     const baseT = parseInt(stats?.T) || 0;
     const baseW = parseInt(stats?.W) || 0;
     const t = isRiddenMonster ? `${baseT + mount.tBonus}` : stats?.T || "?";
     const w = isRiddenMonster ? `${baseW + mount.wBonus}` : stats?.W || "?";
-    const as = calculateArmourSave(u);
-    const ward = detectWard(u);
-    const regen = detectRegen(u);
+    const as = u.armourSave ?? null;
+    const ward = u.ward ?? null;
+    const regen = u.regen ?? null;
 
-    const ld = extractLd(u);
+    let ld = "?";
+    if (u.stats) {
+      for (const profile of u.stats) {
+        if (profile.Ld && profile.Ld !== "-") {
+          ld = profile.Ld;
+          break;
+        }
+      }
+    }
 
-    const hasEvasive =
-      u.specialRules?.toLowerCase().includes("evasive") || false;
+    const hasEvasive = (u.specialRules || []).some((r) =>
+      r.displayName?.toLowerCase().includes("evasive"),
+    );
 
     const key = `${u.name}||${t}||${w}||${as}`;
     if (!deduped[key]) {
       deduped[key] = {
         name: u.name,
-        points: u.points,
         strength: u.strength,
-        mount: isRiddenMonster ? u.mount : null,
+        mount: isRiddenMonster ? mount.name : null,
         t,
         w,
         as,
@@ -1210,19 +963,14 @@ export function renderDefensiveStatsContext(army) {
           .map(
             (r) => `
           <div class="p-2 rounded bg-wh-card">
-            <div class="flex items-start gap-2 flex-wrap text-sm">
-              <div class="flex flex-col">
-                <span class="text-wh-text font-semibold">${r.name}${r.mount ? ` <span class="font-normal text-xs">(${r.mount})</span>` : ""}${!r.merged && r.strength > 1 ? ` <span class="text-wh-muted font-normal">x${r.strength}</span>` : ""}</span>
-                <span class="text-wh-muted text-[10px] font-mono">${r.points}pts</span>
-              </div>
-              <div class="flex items-center gap-2 flex-wrap mt-0.5">
-                <span class="text-wh-muted font-mono text-xs">T:${r.t}</span>
-                <span class="text-wh-muted font-mono text-xs">W:${r.w}</span>
-                ${r.as ? `<span class="text-blue-400 font-mono text-xs">\u{1F6E1}\uFE0FAS:${r.as}</span>` : ""}
-                ${r.ward ? `<span class="text-purple-400 font-mono text-xs">\u{1F52E}Ward:${r.ward}</span>` : ""}
-                ${r.regen ? `<span class="text-green-400 font-mono text-xs">\u{1F49A}Regen:${r.regen}</span>` : ""}
-                ${r.hasEvasive ? '<span class="text-green-400 font-mono text-xs">\u{1F3C3}\u200D\u2640\uFE0FEvasive</span>' : ""}
-              </div>
+            <div class="flex items-center gap-2 flex-wrap text-sm">
+              <span class="text-wh-text font-semibold">${r.name}${r.mount ? ` (${r.mount})` : ""}${!r.merged && r.strength > 1 ? ` <span class="text-wh-muted font-normal">x${r.strength}</span>` : ""}</span>
+              <span class="text-wh-muted font-mono text-xs">T:${r.t}</span>
+              <span class="text-wh-muted font-mono text-xs">W:${r.w}</span>
+              ${r.as ? `<span class="text-blue-400 font-mono text-xs">\u{1F6E1}\uFE0FAS:${r.as}</span>` : ""}
+              ${r.ward ? `<span class="text-purple-400 font-mono text-xs">\u{1F52E}Ward:${r.ward}</span>` : ""}
+              ${r.regen ? `<span class="text-green-400 font-mono text-xs">\u{1F49A}Regen:${r.regen}</span>` : ""}
+              ${r.hasEvasive ? '<span class="text-green-400 font-mono text-xs">\u{1F3C3}\u200D\u2640\uFE0FEvasive</span>' : ""}
               <span class="text-wh-muted font-mono text-xs ml-auto">Ld${r.ld}</span>
             </div>
           </div>

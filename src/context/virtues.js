@@ -1,17 +1,11 @@
-import { findMagicItem } from "../data/magic-items.js";
-
 export function renderVirtuesContext(army, phaseId, subPhaseId) {
   const grouped = {};
 
   for (const unit of army.units) {
-    for (const itemName of unit.magicItems) {
-      const cleanName = itemName
-        .replace(/\s*\([^)]*\)\s*$/, "")
-        .replace(/\*$/, "")
-        .trim();
-      const item = findMagicItem(cleanName);
+    // In canonical schema, magicItems are already resolved objects
+    for (const item of unit.magicItems || []) {
       if (!item || item.type !== "virtue") continue;
-      if (!item.phases.includes(phaseId)) continue;
+      if (!item.phases?.includes(phaseId)) continue;
       if (subPhaseId && item.subPhases && !item.subPhases.includes(subPhaseId))
         continue;
       if (subPhaseId && item.opponentOnly) continue;

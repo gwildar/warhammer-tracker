@@ -50,12 +50,22 @@ export function renderShootingContext(army) {
     const unitS = getS(u);
     const champBS = getChampionBS(u);
     const championBS = champBS && champBS !== bs ? champBS : null;
+
+    // Get special rules as string for compatibility with resolved schema
+    let specialRulesStr = "";
+    if (Array.isArray(u.specialRules)) {
+      specialRulesStr = u.specialRules
+        .map((r) => r.displayName || "")
+        .join(" ");
+    } else if (typeof u.specialRules === "string") {
+      specialRulesStr = u.specialRules;
+    }
     const hasArrowsOfIsha =
-      u.specialRules?.toLowerCase().includes("arrows of isha") || false;
+      specialRulesStr?.toLowerCase().includes("arrows of isha") || false;
 
     // Check mount breath weapon
     if (u.mount) {
-      const mount = findMount(u.mount);
+      const mount = typeof u.mount === "string" ? findMount(u.mount) : u.mount;
       if (mount?.breath) {
         const breathKey = mount.breath.toLowerCase();
         const weapon = RANGED_WEAPONS[breathKey];
@@ -74,49 +84,84 @@ export function renderShootingContext(army) {
       }
     }
 
-    // Check equipment and special rules — split comma-separated strings and match all weapons
+    // Check shooting weapons from canonical schema or equipment array
     const matchedWeapons = new Set();
-    const allParts = [...u.equipment, u.specialRules || ""].flatMap((g) =>
-      g.split(",").map((s) => s.trim().toLowerCase()),
-    );
-    for (const part of allParts) {
-      // Find the longest matching key for this part to avoid substring false positives
-      let bestKey = null;
-      let bestWeapon = null;
-      for (const [key, weapon] of Object.entries(RANGED_WEAPONS)) {
-        if (part.includes(key) && (!bestKey || key.length > bestKey.length)) {
-          bestKey = key;
-          bestWeapon = weapon;
+
+    // In canonical schema, shootingWeapons are already resolved
+    if (Array.isArray(u.shootingWeapons) && u.shootingWeapons.length > 0) {
+      for (const weapon of u.shootingWeapons) {
+        if (weapon && !matchedWeapons.has(weapon.name)) {
+          matchedWeapons.add(weapon.name);
+          // Find corresponding RANGED_WEAPONS entry
+          let rangedWeapon = null;
+          for (const rw of Object.values(RANGED_WEAPONS)) {
+            if (rw.name === weapon.name) {
+              rangedWeapon = rw;
+              break;
+            }
+          }
+          if (!rangedWeapon && weapon.name) {
+            // Fallback: create a simple weapon object
+            rangedWeapon = { name: weapon.name };
+          }
+          if (rangedWeapon) {
+            entries.push({
+              unitName: u.name,
+              strength: u.strength,
+              bs,
+              unitS,
+              championBS,
+              hasArrowsOfIsha,
+              weapon: rangedWeapon,
+            });
+            matched = true;
+          }
         }
       }
-      if (bestWeapon && !matchedWeapons.has(bestWeapon.name)) {
-        matchedWeapons.add(bestWeapon.name);
-        entries.push({
-          unitName: u.name,
-          strength: u.strength,
-          bs,
-          unitS,
-          championBS,
-          hasArrowsOfIsha,
-          weapon: bestWeapon,
-        });
-        matched = true;
+    } else {
+      // Legacy support for string-based equipment
+      const allParts = [...(u.equipment || []), specialRulesStr || ""].flatMap(
+        (g) => g.split(",").map((s) => s.trim().toLowerCase()),
+      );
+      for (const part of allParts) {
+        // Find the longest matching key for this part to avoid substring false positives
+        let bestKey = null;
+        let bestWeapon = null;
+        for (const [key, weapon] of Object.entries(RANGED_WEAPONS)) {
+          if (part.includes(key) && (!bestKey || key.length > bestKey.length)) {
+            bestKey = key;
+            bestWeapon = weapon;
+          }
+        }
+        if (bestWeapon && !matchedWeapons.has(bestWeapon.name)) {
+          matchedWeapons.add(bestWeapon.name);
+          entries.push({
+            unitName: u.name,
+            strength: u.strength,
+            bs,
+            unitS,
+            championBS,
+            hasArrowsOfIsha,
+            weapon: bestWeapon,
+          });
+          matched = true;
 
-        // Include alternate profiles (e.g. scatter shot)
-        if (bestWeapon.altProfiles) {
-          for (const altKey of bestWeapon.altProfiles) {
-            const altWeapon = RANGED_WEAPONS[altKey];
-            if (altWeapon && !matchedWeapons.has(altWeapon.name)) {
-              matchedWeapons.add(altWeapon.name);
-              entries.push({
-                unitName: u.name,
-                strength: u.strength,
-                bs,
-                unitS,
-                championBS,
-                hasArrowsOfIsha,
-                weapon: altWeapon,
-              });
+          // Include alternate profiles (e.g. scatter shot)
+          if (bestWeapon.altProfiles) {
+            for (const altKey of bestWeapon.altProfiles) {
+              const altWeapon = RANGED_WEAPONS[altKey];
+              if (altWeapon && !matchedWeapons.has(altWeapon.name)) {
+                matchedWeapons.add(altWeapon.name);
+                entries.push({
+                  unitName: u.name,
+                  strength: u.strength,
+                  bs,
+                  unitS,
+                  championBS,
+                  hasArrowsOfIsha,
+                  weapon: altWeapon,
+                });
+              }
             }
           }
         }

@@ -71,7 +71,7 @@ describe("Setup Screen", () => {
       const mountedUnits = army.units.filter((u) => u.mount);
       expect(mountedUnits.length).toBeGreaterThan(0);
       for (const unit of mountedUnits) {
-        expect(text).toContain(unit.mount);
+        expect(text).toContain(unit.mount.name);
       }
     });
 
@@ -115,7 +115,7 @@ describe("Setup Screen", () => {
     });
 
     it("includes mount option points in unit total (barding)", () => {
-      const baron = army.units.find((u) => u.mount === "Hippogryph");
+      const baron = army.units.find((u) => u.mount?.name === "Hippogryph");
       expect(baron).toBeTruthy();
       expect(baron.points).toBe(346);
     });
