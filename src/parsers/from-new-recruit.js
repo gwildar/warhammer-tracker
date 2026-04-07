@@ -156,19 +156,15 @@ function findProfile(selection, typeName) {
 function findMountName(selections) {
   if (!Array.isArray(selections)) return null;
 
-  for (const selection of selections) {
-    if (selection.profiles) {
-      const mountProfile = selection.profiles.find(
-        (p) => p.typeName === "Mount",
-      );
+  // Find the first selection representing the main unit model (has a Model profile)
+  for (const sel of selections) {
+    if (!sel.profiles?.some((p) => p.typeName === "Model")) continue;
+    // Look for a nested Model within it — that is the mount
+    for (const nested of sel.selections || []) {
+      const mountProfile = nested.profiles?.find((p) => p.typeName === "Model");
       if (mountProfile) return mountProfile.name;
     }
-
-    // Check nested selections
-    if (selection.selections) {
-      const mountName = findMountName(selection.selections);
-      if (mountName) return mountName;
-    }
+    break; // Only inspect the first Model selection
   }
 
   return null;

@@ -161,7 +161,8 @@ function renderPhaseContext(army, phase, subPhase) {
   if (subPhase.id === "rally")
     html += renderCombatLeadershipContext(army, "Rally Leadership");
   if (subPhase.id === "declare-charges") html += renderChargeContext(army);
-  if (subPhase.id === "compulsory-moves") html += renderRandomMoverContext(army);
+  if (subPhase.id === "compulsory-moves")
+    html += renderRandomMoverContext(army);
 
   if (subPhase.id === "shoot")
     html += renderCasterContext(army, ["magic-missile", "magical-vortex"]);

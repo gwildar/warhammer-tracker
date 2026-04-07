@@ -36,4 +36,11 @@ describe("New Recruit import", () => {
     );
     expect(sorceress.activeLore).toBe("daemonology");
   });
+
+  it("resolves mount for Dark Riders (Dark Steed, M9)", () => {
+    const army = parseArmyList(fixture);
+    const darkRiders = army.units.find((u) => u.name === "Dark Riders");
+    expect(darkRiders.mount).not.toBeNull();
+    expect(darkRiders.mount.m).toBe(9);
+  });
 });
