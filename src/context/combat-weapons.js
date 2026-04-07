@@ -885,8 +885,8 @@ export function renderCombatWeaponsContext(army) {
           <div class="p-2 rounded bg-wh-card">
             <div class="text-wh-text font-semibold text-sm">${r.unitName}${r.mount ? ` (${r.mount})` : ""}${!r.merged && r.strength > 1 ? ` x${r.strength}` : ""}</div>
             <div class="flex items-center gap-2 flex-wrap mt-0.5">
-              <span class="text-wh-muted font-mono text-xs">T:${r.t}</span>
-              <span class="text-wh-muted font-mono text-xs">W:${r.w}</span>
+              <span class="text-fuchsia-300 font-mono text-xs">T:${r.t}</span>
+              <span class="text-fuchsia-300 font-mono text-xs">W:${r.w}</span>
               ${r.as ? `<span class="text-blue-400 font-mono text-xs">\u{1F6E1}\uFE0FAS:${r.as}</span>` : ""}
               ${r.mr ? `<span class="text-wh-phase-combat font-mono text-xs">\u2728MR:${r.mr}</span>` : ""}
               ${r.ward ? `<span class="text-purple-400 font-mono text-xs">\u{1F52E}Ward:${r.ward}</span>` : ""}

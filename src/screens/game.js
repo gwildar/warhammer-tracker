@@ -48,7 +48,7 @@ export function renderGameScreen(army) {
             <span class="text-sm text-wh-accent hidden sm:inline">${army.name}</span>
           </div>
           <div class="flex items-center gap-3">
-            <span class="font-mono text-wh-accent">Round ${round}</span>
+            <span class="font-mono font-black text-wh-accent">Round ${round}</span>
             <button id="new-game-btn"
               class="text-xs text-wh-muted hover:text-wh-red border border-wh-border px-2 py-1 rounded transition-colors">
               New Game
