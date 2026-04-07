@@ -22,6 +22,8 @@ import {
   renderCombatLeadershipContext,
 } from "../context/combat-weapons.js";
 import { renderChargeContext } from "../context/charge.js";
+import { renderMovementStatsContext } from "../context/movement.js";
+import { renderRandomMoverContext } from "../context/random-mover.js";
 import { renderMagicItemsContext } from "../context/items.js";
 import { renderVirtuesContext } from "../context/virtues.js";
 import { renderSpecialRulesContext } from "../context/special-rules-context.js";
@@ -159,11 +161,14 @@ function renderPhaseContext(army, phase, subPhase) {
   if (subPhase.id === "rally")
     html += renderCombatLeadershipContext(army, "Rally Leadership");
   if (subPhase.id === "declare-charges") html += renderChargeContext(army);
+  if (subPhase.id === "compulsory-moves") html += renderRandomMoverContext(army);
 
   if (subPhase.id === "shoot")
     html += renderCasterContext(army, ["magic-missile", "magical-vortex"]);
   if (subPhase.id === "remaining-moves")
     html += renderCasterContext(army, ["conveyance"]);
+  if (subPhase.id === "remaining-moves")
+    html += renderMovementStatsContext(army);
   if (subPhase.id === "choose-fight") {
     html += renderCombatWeaponsContext(army);
     html += renderCasterContext(army, ["assailment"]);

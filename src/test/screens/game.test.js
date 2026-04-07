@@ -583,6 +583,30 @@ describe("Scoring UI", () => {
   });
 });
 
+describe("Movement phase", () => {
+  let army;
+
+  beforeEach(() => {
+    army = loadArmy("dark-elves");
+    startGame(army);
+  });
+
+  it("shows movement stats table with march values on remaining-moves", () => {
+    savePhaseIndex(7); // remaining-moves
+    renderGameScreen(army);
+    const panel = getApp().querySelector(".border-wh-phase-movement\\/30");
+    expect(panel).toBeTruthy();
+    expect(panel.textContent).toContain("Movement");
+    expect(panel.textContent).toContain("March");
+  });
+
+  it("does not show random movers panel when army has no random movers", () => {
+    savePhaseIndex(6); // compulsory-moves
+    renderGameScreen(army);
+    expect(getApp().textContent).not.toContain("Random Movers");
+  });
+});
+
 describe("Movement phase with Bretonnia charge army", () => {
   let army;
 
