@@ -371,6 +371,16 @@ describe("Combat phase with Bretonnian Exiles", () => {
     expect(baronCard).toBeTruthy();
     expect(baronCard.textContent).toContain("Frontier Axe");
   });
+
+  it("shows +D3 attacks from Virtue of Knightly Temper on Baron combat card", () => {
+    renderGameScreen(army);
+    const combatPanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    const baronCard = [...combatPanel.querySelectorAll(".bg-wh-card")].find(
+      (el) => el.textContent.includes("Baron"),
+    );
+    expect(baronCard).toBeTruthy();
+    expect(baronCard.textContent).toContain("+D3");
+  });
 });
 
 describe("Vampire Counts army", () => {
