@@ -900,7 +900,7 @@ export function renderCombatWeaponsContext(army) {
               ${
                 r.singleUseItems.length > 0
                   ? `
-                <div class="mt-1 ml-2">
+                <div class="mt-1">
                   ${r.singleUseItems.map((item) => `<div class="text-xs"><span class="text-wh-accent">\u{1F6E1} ${item.name}</span> <span class="text-wh-muted">(single use)</span></div>`).join("")}
                 </div>
               `

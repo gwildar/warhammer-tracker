@@ -13,6 +13,7 @@ import darkElvesJson from "./fixtures/dark-elves.owb.json";
 import lizardmenJson from "./fixtures/lizardmen.owb.json";
 import bretonniaJson from "./fixtures/bretonnia.owb.json";
 import bretonniaChargeJson from "./fixtures/bretonnia-charge.owb.json";
+import bretonnianExilesJson from "./fixtures/bretonnian-exiles.owb.json";
 import vampireCountsJson from "./fixtures/vampire-counts.owb.json";
 import ogreKingdomsJson from "./fixtures/ogre-kingdoms.owb.json";
 
@@ -22,6 +23,7 @@ export function loadArmy(fixture) {
     lizardmen: lizardmenJson,
     bretonnia: bretonniaJson,
     "bretonnia-charge": bretonniaChargeJson,
+    "bretonnian-exiles": bretonnianExilesJson,
     "vampire-counts": vampireCountsJson,
     "ogre-kingdoms": ogreKingdomsJson,
   };
