@@ -141,6 +141,19 @@ export function resetStartTime() {
   saveStartTime(Date.now());
 }
 
+export function recordCurrentPhaseTime(isOpponentTurn) {
+  const startTime = getStartTime();
+  if (startTime) {
+    recordTiming(
+      getRound(),
+      isOpponentTurn,
+      getPhaseIndex(),
+      Date.now() - startTime,
+    );
+  }
+  resetStartTime();
+}
+
 // Can we go back to the previous turn?
 export function canGoBackToPreviousTurn() {
   const round = getRound();

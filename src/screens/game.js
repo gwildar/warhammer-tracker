@@ -11,7 +11,7 @@ import {
   canGoBackToPreviousTurn,
   getStartTime,
   resetStartTime,
-  recordTiming,
+  recordCurrentPhaseTime,
 } from "../state.js";
 import { PHASE_BG, PHASE_TEXT } from "../helpers.js";
 import { renderCasterContext } from "../context/caster.js";
@@ -193,20 +193,7 @@ function renderPhaseContext(army, phase, subPhase) {
 }
 
 function recordAndNavigate(army, newPhaseIdx, isOpponentTurn, isPrev) {
-  const currentIdx = getPhaseIndex();
-  const currentRound = getRound();
-  const currentIsOpponentTurn = false; // in gameScreen, it's always false for current state
-  const startTime = getStartTime();
-
-  if (startTime) {
-    recordTiming(
-      currentRound,
-      currentIsOpponentTurn,
-      currentIdx,
-      Date.now() - startTime,
-    );
-  }
-  resetStartTime();
+  recordCurrentPhaseTime(false);
 
   if (isOpponentTurn) {
     savePhaseIndex(newPhaseIdx);

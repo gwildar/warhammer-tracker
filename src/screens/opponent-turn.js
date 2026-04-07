@@ -12,7 +12,7 @@ import {
   canGoBackToPreviousTurn,
   getStartTime,
   resetStartTime,
-  recordTiming,
+  recordCurrentPhaseTime,
 } from "../state.js";
 import { PHASE_BG } from "../helpers.js";
 import { renderChargeContext } from "../context/charge.js";
@@ -137,20 +137,7 @@ function renderOpponentPhaseContext(army, phase) {
 }
 
 function recordAndNavigate(army, newPhaseIdx, isOpponentTurn, isPrev) {
-  const currentIdx = getPhaseIndex();
-  const currentRound = getRound();
-  const currentIsOpponentTurn = true; // in opponentTurnScreen, it's always true for current state
-  const startTime = getStartTime();
-
-  if (startTime) {
-    recordTiming(
-      currentRound,
-      currentIsOpponentTurn,
-      currentIdx,
-      Date.now() - startTime,
-    );
-  }
-  resetStartTime();
+  recordCurrentPhaseTime(true);
 
   if (!isOpponentTurn) {
     savePhaseIndex(newPhaseIdx);

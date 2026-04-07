@@ -52,13 +52,3 @@ export function getShootingUnits(army) {
     return false;
   });
 }
-
-export function getMovementUnits(army) {
-  if (!army) return [];
-  return army.units;
-}
-
-export function getCombatUnits(army) {
-  if (!army) return [];
-  return army.units;
-}
