@@ -1,0 +1,151 @@
+{
+  "name": "Chaarrrge!!",
+  "armySlug": "kingdom-of-bretonnia",
+  "faction": "Kingdom of Bretonnia",
+  "points": 2200,
+  "composition": "errantry-crusades",
+  "units": [
+    {
+      "id": "duke.mivgfpn",
+      "name": "Duke Gerard Mondidier",
+      "category": "characters",
+      "strength": 1,
+      "points": 450,
+      "stats": [
+        {
+          "M": "8",
+          "WS": "6",
+          "BS": "3",
+          "S": "4",
+          "T": "3",
+          "W": "3",
+          "I": "5",
+          "A": "3",
+          "Ld": "9",
+          "Name": "Duke"
+        },
+        {
+          "M": "8",
+          "WS": "4",
+          "BS": "-",
+          "S": "4",
+          "T": "4",
+          "W": "2",
+          "I": "5",
+          "A": "2",
+          "Ld": "-",
+          "Name": "Royal Pegasus"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Lance",
+          "s": "S",
+          "ap": "—",
+          "rules": "Charge bonus, Furious Charge",
+          "magical": false,
+          "attacks": null,
+          "reservedAttacks": null
+        },
+        {
+          "name": "Talons",
+          "s": "S",
+          "ap": "—",
+          "rules": "",
+          "magical": false,
+          "attacks": null,
+          "reservedAttacks": 2
+        }
+      ],
+      "shootingWeapons": [],
+      "magicItems": [
+        {
+          "name": "Gromril Great Helm",
+          "type": "armour",
+          "effect": "Gives the wearer an armour value of 3+ which cannot be improved.",
+          "points": 40,
+          "phases": ["combat", "shooting"],
+          "armourBase": 3,
+          "onePerArmy": true
+        },
+        {
+          "name": "Virtue of Heroism",
+          "type": "virtue",
+          "effect": "Unless using a magic weapon, gains Killing Blow and Monster Slayer.",
+          "points": 60,
+          "phases": ["combat"]
+        }
+      ],
+      "specialRules": [
+        {
+          "id": "blessings-of-the-lady",
+          "displayName": "Blessings of the Lady",
+          "phases": [
+            {
+              "phaseId": "combat",
+              "subPhaseId": "declare-charges",
+              "description": "Friendly Bretonnian units within 12\" may re-roll failed to-hit rolls in the turn they charge."
+            }
+          ]
+        },
+        {
+          "id": "rallying-cry",
+          "displayName": "Rallying Cry",
+          "phases": [
+            {
+              "phaseId": "combat",
+              "subPhaseId": "break-test",
+              "description": "Friendly units within 12\" may re-roll failed Break tests."
+            }
+          ]
+        },
+        {
+          "id": "grail-vow",
+          "displayName": "The Grail Vow",
+          "phases": [
+            {
+              "phaseId": "combat",
+              "description": "Grants Magical Attacks and +1 to hit rolls."
+            }
+          ]
+        }
+      ],
+      "mount": {
+        "name": "Royal Pegasus",
+        "m": 8,
+        "fly": 9,
+        "ws": 4,
+        "s": 4,
+        "i": 5,
+        "a": 2,
+        "tBonus": 1,
+        "wBonus": 2,
+        "weapons": [
+          {
+            "name": "Talons",
+            "s": "S",
+            "ap": "—",
+            "rules": ""
+          }
+        ],
+        "stomp": null,
+        "impactHits": null,
+        "armourBane": null,
+        "troopType": "MCr"
+      },
+      "armourSave": "3+",
+      "ward": null,
+      "regen": null,
+      "magicResistance": null,
+      "champions": [],
+      "crew": [],
+      "isGeneral": true,
+      "isBSB": false,
+      "hasStandard": false,
+      "hasMusician": false,
+      "isCaster": false,
+      "lores": [],
+      "activeLore": null
+    }
+  ]
+}

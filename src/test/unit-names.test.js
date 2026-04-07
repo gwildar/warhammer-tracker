@@ -7,7 +7,7 @@ import lizardmenJson from "./fixtures/lizardmen.owb.json";
 describe("Unit name resolution", () => {
   it("uses custom name for named characters", () => {
     const army = parseArmyList(bretonniaChargeJson);
-    const baron = army.units.find((u) => u.mount === "Hippogryph");
+    const baron = army.units.find((u) => u.mount?.name === "Hippogryph");
     expect(baron.name).toBe("Baron Guy de Bastille");
   });
 

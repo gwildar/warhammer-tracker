@@ -140,21 +140,26 @@ function renderUnitList(army) {
       <h3 class="text-xs uppercase tracking-wider text-wh-muted mb-1">${cat}</h3>
       ${units
         .map(
-          (u) => `
+          (u) => {
+            const magicWeapons = u.magicItems.filter((item) => item.type === "weapon").map((item) => item.name);
+            const banners = u.magicItems.filter((item) => item.type === "banner" || item.type === "standard");
+
+            return `
         <div class="flex justify-between items-center py-1 px-2 rounded hover:bg-wh-card text-sm">
           <div>
             <span class="text-wh-text">${u.name}</span>
             ${u.strength > 1 ? `<span class="text-wh-muted ml-1">x${u.strength}</span>` : ""}
-            ${u.mount ? `<span class="text-wh-muted ml-1">(${u.mount})</span>` : ""}
+            ${u.mount ? `<span class="text-wh-muted ml-1">(${u.mount.name})</span>` : ""}
             ${u.isGeneral ? '<span class="text-wh-phase-combat ml-1 text-xs">GENERAL</span>' : ""}
             ${u.isBSB ? '<span class="text-wh-phase-combat ml-1 text-xs">BSB</span>' : ""}
             ${u.isCaster ? '<span class="text-wh-purple ml-1 text-xs">WIZARD</span>' : ""}
-            ${u.magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${u.magicWeapons.join(", ")}</span>` : ""}
-            ${u.banners.length > 0 ? `<span class="text-wh-muted ml-1 text-xs">${u.banners.map((b) => `${b.name} (${b.points}pts)`).join(", ")}</span>` : ""}
+            ${magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${magicWeapons.join(", ")}</span>` : ""}
+            ${banners.length > 0 ? `<span class="text-wh-muted ml-1 text-xs">${banners.map((b) => `${b.name} (${b.points || 0}pts)`).join(", ")}</span>` : ""}
           </div>
           <span class="text-wh-muted font-mono text-xs">${u.points}pts</span>
         </div>
-      `,
+      `;
+          },
         )
         .join("")}
     </div>`;

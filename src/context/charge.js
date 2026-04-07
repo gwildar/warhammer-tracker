@@ -1,11 +1,5 @@
-import { findMount } from "../data/mounts.js";
-import { findMagicItem } from "../data/magic-items.js";
 import { SPECIAL_RULES } from "../data/special-rules.js";
-import {
-  resolveMovement,
-  parseUnitRules,
-  normaliseRuleName,
-} from "../helpers.js";
+import { resolveMovement, normaliseRuleName } from "../helpers.js";
 
 // Build lookup: normalised rule name → chargeMod object
 const CHARGE_MOD_RULES = new Map();
@@ -19,26 +13,21 @@ for (const rule of SPECIAL_RULES) {
   }
 }
 
-function normaliseItemName(name) {
-  return name.replace(/\s*\(.*$/, "").trim();
-}
-
 function detectChargeMods(unit, mountData) {
   const mods = [];
   const seen = new Set();
 
-  // From special rules
-  const rules = parseUnitRules(unit.specialRules);
-  for (const r of rules) {
-    const norm = normaliseRuleName(r).toLowerCase();
-    const mod = CHARGE_MOD_RULES.get(norm);
+  // From special rules (resolved array of objects)
+  for (const rule of unit.specialRules || []) {
+    const norm = normaliseRuleName(rule.displayName || "").toLowerCase();
+    const mod = CHARGE_MOD_RULES.get(rule.id) ?? CHARGE_MOD_RULES.get(norm);
     if (mod && !seen.has(mod.tag)) {
       seen.add(mod.tag);
       mods.push(mod);
     }
   }
 
-  // From mount (e.g. Swiftstride on mount)
+  // From mount
   if (mountData?.swiftstride && !seen.has("Swift")) {
     const mod = CHARGE_MOD_RULES.get("swiftstride");
     if (mod) {
@@ -47,13 +36,11 @@ function detectChargeMods(unit, mountData) {
     }
   }
 
-  // From magic items and banners
-  const itemNames = [...unit.magicItems, ...unit.banners.map((b) => b.name)];
-  for (const name of itemNames) {
-    const mi = findMagicItem(normaliseItemName(name));
-    if (mi?.chargeMod && !seen.has(mi.chargeMod.tag)) {
-      seen.add(mi.chargeMod.tag);
-      mods.push(mi.chargeMod);
+  // From magic items (already resolved objects; includes banner chargeMods)
+  for (const item of unit.magicItems || []) {
+    if (item.chargeMod && !seen.has(item.chargeMod.tag)) {
+      seen.add(item.chargeMod.tag);
+      mods.push(item.chargeMod);
     }
   }
 
@@ -67,12 +54,14 @@ export function renderChargeContext(army) {
 
   const rows = units.map((u) => {
     const mv = resolveMovement(u);
-    const allRules = [...parseUnitRules(u.specialRules), ...u.equipment];
+    const mountData = u.mount ?? null;
 
-    const flyRule = allRules.find((r) => /^fly\s*\(/i.test(r.trim()));
-    const flyMatch = flyRule ? flyRule.match(/\((\d+)\)/) : null;
-    const mountData = u.mount ? findMount(u.mount) : null;
-    const flyMv = flyMatch ? Number(flyMatch[1]) : (mountData?.f ?? null);
+    // Fly: check specialRules array for "Fly (N)", then mount.fly
+    const flyRuleStr = (u.specialRules || [])
+      .map((r) => r.displayName || "")
+      .find((d) => /^fly\s*\(/i.test(d.trim()));
+    const flyMatch = flyRuleStr ? flyRuleStr.match(/\((\d+)\)/) : null;
+    const flyMv = flyMatch ? Number(flyMatch[1]) : (mountData?.fly ?? null);
     const hasFly = flyMv != null;
 
     const chargeMods = detectChargeMods(u, mountData);

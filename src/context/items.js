@@ -1,69 +1,50 @@
-import { findMagicItem } from "../data/magic-items.js";
 
 export function renderMagicItemsContext(army, phaseId, subPhaseId) {
   const grouped = {};
 
   for (const unit of army.units) {
-    for (const itemName of unit.magicItems) {
-      // Strip "(Standard bearer)" etc. before matching
-      const cleanName = itemName
-        .replace(/\s*\([^)]*\)\s*$/, "")
-        .replace(/\*$/, "")
-        .trim();
-      const item = findMagicItem(cleanName);
-      if (item) {
-        if (item.type === "virtue") continue;
-        if (!item.phases.includes(phaseId)) continue;
-        if (
-          subPhaseId &&
-          item.subPhases &&
-          !item.subPhases.includes(subPhaseId)
-        )
-          continue;
-        if (subPhaseId && item.opponentOnly) continue;
-        if (!subPhaseId && item.yourTurnOnly) continue;
-        // Your shooting phase: show weapons, banners, bound spells
-        // Opponent shooting phase (subPhaseId null): only show defensive items (banners, talismans, etc.)
-        if (
-          phaseId === "shooting" &&
-          !subPhaseId &&
-          (item.type === "weapon" ||
-            item.effect?.toLowerCase().includes("poisoned attacks"))
-        )
-          continue;
-        if (
-          phaseId === "shooting" &&
-          subPhaseId &&
-          item.type !== "weapon" &&
-          item.type !== "banner" &&
-          !item.effect?.toLowerCase().includes("bound spell")
-        )
-          continue;
-        if (subPhaseId === "combat-result" && item.type !== "banner") continue;
-        if (subPhaseId === "break-test" && item.type !== "banner") continue;
-        if (subPhaseId === "pursuit" && !item.subPhases?.includes("pursuit"))
-          continue;
-        const key = item.name;
-        if (!grouped[key]) grouped[key] = { item, units: [] };
-        if (!grouped[key].units.includes(unit.name))
-          grouped[key].units.push(unit.name);
-      } else if (phaseId === "combat" && unit.magicWeapons.includes(itemName)) {
-        // Unrecognised magic weapons still show in combat phase
-        const key = cleanName;
-        if (!grouped[key])
-          grouped[key] = {
-            item: {
-              name: cleanName,
-              type: "weapon",
-              effect: "",
-              phases: ["combat"],
-            },
-            units: [],
-          };
-        if (!grouped[key].units.includes(unit.name))
-          grouped[key].units.push(unit.name);
-      }
+    // In canonical schema, magicItems are already resolved objects
+    for (const item of unit.magicItems) {
+      if (!item) continue;
+      if (item.type === "virtue") continue;
+      if (!item.phases?.includes(phaseId)) continue;
+      if (
+        subPhaseId &&
+        item.subPhases &&
+        !item.subPhases.includes(subPhaseId)
+      )
+        continue;
+      if (subPhaseId && item.opponentOnly) continue;
+      if (!subPhaseId && item.yourTurnOnly) continue;
+      // Your shooting phase: show weapons, banners, bound spells
+      // Opponent shooting phase (subPhaseId null): only show defensive items (banners, talismans, etc.)
+      if (
+        phaseId === "shooting" &&
+        !subPhaseId &&
+        (item.type === "weapon" ||
+          item.effect?.toLowerCase().includes("poisoned attacks"))
+      )
+        continue;
+      if (
+        phaseId === "shooting" &&
+        subPhaseId &&
+        item.type !== "weapon" &&
+        item.type !== "banner" &&
+        !item.effect?.toLowerCase().includes("bound spell")
+      )
+        continue;
+      if (subPhaseId === "combat-result" && item.type !== "banner") continue;
+      if (subPhaseId === "break-test" && item.type !== "banner") continue;
+      if (subPhaseId === "pursuit" && !item.subPhases?.includes("pursuit"))
+        continue;
+      const key = item.name;
+      if (!grouped[key]) grouped[key] = { item, units: [] };
+      if (!grouped[key].units.includes(unit.name))
+        grouped[key].units.push(unit.name);
     }
+
+    // In canonical schema, weapons are already resolved and magical ones are in magicItems
+    // So no additional processing needed here
   }
 
   const entries = Object.values(grouped);

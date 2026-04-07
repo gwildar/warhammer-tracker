@@ -875,6 +875,8 @@ export const TROOP_TYPE_RULES = {
 
 export function findMount(name) {
   if (!name) return null;
+  // In canonical schema, mount may already be a resolved object
+  if (typeof name === "object") return name;
   const lower = name.toLowerCase();
   return MOUNTS.find((m) => m.name.toLowerCase() === lower) ?? null;
 }

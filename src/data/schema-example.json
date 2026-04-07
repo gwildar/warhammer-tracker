@@ -1,101 +1,18 @@
 {
   "name": "Chaarrrge!!",
   "description": "",
-  "game": "the-old-world",
   "points": 2200,
   "army": "kingdom-of-bretonnia",
   "characters": [
     {
-      "name_en": "Lady Élisse Duchaard",
-      "name_cn": "艾莉丝·杜莎尔德女士",
-      "name_de": "Lady Élisse Duchaard",
-      "name_es": "Lady Élisse Duchaard",
-      "name_fr": "Dame Élisse Duchaard",
-      "id": "lady-élisse-duachaard.xji",
+      "id": "lady-elisse-duachaard",
       "points": 225,
-      "named": true,
-      "maxSignatureSpells": 2,
-      "command": [
-        {
-          "name_en": "General",
-          "name_cn": "主将",
-          "name_de": "General",
-          "name_fr": "Général",
-          "name_es": "General",
-          "points": 0,
-          "id": 0
-        }
-      ],
-      "equipment": [
-        {
-          "name_en": "Hand weapon, Chalice of Brionne, The Staff of the Elements",
-          "name_cn": "单手武器, 布理奥涅圣杯, 元素法杖",
-          "name_de": "Handwaffe, Kelch von Brionne, Stab der Elemente",
-          "active": true,
-          "points": 0,
-          "name_fr": "Arme de base, Calice de Brionne, Le Bâton des Éléments",
-          "id": 0
-        }
-      ],
-      "armor": [],
-      "options": [
-        {
-          "name_en": "Wizard",
-          "name_cn": "法师",
-          "name_de": "Wizard",
-          "name_fr": "Sorcier",
-          "name_es": "Hechicero",
-          "points": 0,
-          "active": true,
-          "alwaysActive": true,
-          "options": [
-            {
-              "name_en": "Level 3 Wizard",
-              "name_cn": "3级法师",
-              "name_de": "Level 3 Wizard",
-              "name_fr": "Sorcier de Niveau 3",
-              "name_es": "Hechicero de Nivel 3",
-              "points": 0,
-              "active": true,
-              "alwaysActive": true
-            }
-          ],
-          "id": 0
-        }
-      ],
-      "mounts": [],
-      "items": [],
-      "lores": ["elementalism"],
-      "specialRules": {
-        "name_en": "Arcane Backlash, Armour Bane (2 - Ariandir only), Armoured Hide (1), Aura of the Lady, Beguiling Aura, Blessings of the Lady, Counter Charge, Lore of the Lady, Magical Attacks, Magic Resistance (-2), Shield of the Lady, Stomp Attacks (1), Swiftstride",
-        "name_cn": "奥术反制, 碎甲攻击(2 - Ariandir only), 坚硬皮肤(1), 女神光辉, 迷人光环, 女神祝福, 反制冲锋, 女神法系, 魔法攻击, 魔法抗性(-2), 女神之盾, 践踏攻击(1), 快速行进",
-        "name_de": "Arcane Backlash, Armour Bane (2 - Ariandir only), Armoured Hide (1), Aura of the Lady, Beguiling Aura, Blessings of the Lady, Counter Charge, Lore of the Lady, Magical Attacks, Magic Resistance (-2), Shield of the Lady, Stomp Attacks (1), Swiftstride",
-        "name_fr": "Contrecoup Arcanique, Arme Perforante (2 - Ariandir uniquement), Peau Blindée (1), Aura de la Dame, Aura Envoûtante, Bénédiction de la Dame, Contre-charge, Domaine de la Dame, Attaques Magiques, Résistance à la Magie (-2), Bouclier de la Dame, Attaques de Piétinement (1), Rapide"
-      },
-      "armyComposition": {
-        "kingdom-of-bretonnia": { "category": "characters" },
-        "errantry-crusades": { "category": "characters" }
-      }
+      "named": true
     },
     {
-      "name_en": "Duke",
-      "name_cn": "公爵",
-      "name_de": "Herzog",
-      "name_fr": "Duc",
-      "id": "duke.mivgfpn",
+      "id": "duke",
       "points": 175,
-      "command": [
-        {
-          "name_en": "General",
-          "name_cn": "主将",
-          "name_de": "General",
-          "name_fr": "Général",
-          "name_es": "General",
-          "points": 0,
-          "id": 0,
-          "active": true
-        }
-      ],
+      "general": true,
       "equipment": [
         {
           "name_de": "Handwaffe",
@@ -549,7 +466,7 @@
         }
       ],
       "specialRules": {
-        "name_en": "Blessings of the Lady, Rallying Cry, The Grail Vow",
+        "name_en": "Blessings of the Lady, Rallying Cry, The Knight's Vow",
         "name_cn": "女神祝福, 集结战吼, 骑士誓言",
         "name_de": "Segen der Herrin, Sammelruf, Rittertugend",
         "name_fr": "Bénédiction de la Dame, Cri de Ralliement, Le Vœu du Chevalier"

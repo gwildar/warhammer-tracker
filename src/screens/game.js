@@ -182,7 +182,7 @@ function renderPhaseContext(army, phase, subPhase) {
   if (
     subPhase.id === "command" &&
     army.units.some((u) =>
-      u.specialRules?.toLowerCase().includes("rallying cry"),
+      (u.specialRules || []).some((r) => r.displayName?.toLowerCase().includes("rallying cry")),
     )
   )
     html += renderCombatLeadershipContext(army, "Rally Leadership");
