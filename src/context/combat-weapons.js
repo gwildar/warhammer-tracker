@@ -590,6 +590,7 @@ export function renderCombatWeaponsContext(army) {
       const suNames = new Set(suItems.map((i) => i.name.toLowerCase()));
       entries.push({
         unitName: u.name,
+        points: u.points,
         strength: u.strength,
         mount: null,
         riderI: "?",
@@ -757,6 +758,7 @@ export function renderCombatWeaponsContext(army) {
 
     entries.push({
       unitName: u.name,
+      points: u.points,
       strength: u.strength,
       mount: isRiddenMonster || (mount && mount.a) ? u.mount : null,
       riderI,
@@ -883,7 +885,10 @@ export function renderCombatWeaponsContext(army) {
           .map(
             (r) => `
           <div class="p-2 rounded bg-wh-card">
-            <div class="text-wh-text font-semibold text-sm">${r.unitName}${r.mount ? ` (${r.mount})` : ""}${!r.merged && r.strength > 1 ? ` x${r.strength}` : ""}</div>
+            <div class="flex justify-between items-start">
+              <div class="text-wh-text font-semibold text-sm">${r.unitName}${r.mount ? ` (${r.mount})` : ""}${!r.merged && r.strength > 1 ? ` x${r.strength}` : ""}</div>
+              <div class="text-wh-muted text-[10px] font-mono shrink-0 ml-2">${r.points}pts</div>
+            </div>
             <div class="flex items-center gap-2 flex-wrap mt-0.5">
               <span class="text-fuchsia-300 font-mono text-xs">T:${r.t}</span>
               <span class="text-fuchsia-300 font-mono text-xs">W:${r.w}</span>
@@ -986,6 +991,7 @@ export function renderCombatResultContext(army) {
 
     entries.push({
       name: u.name,
+      points: u.points,
       strength: u.strength,
       total,
       bonuses,
@@ -1010,8 +1016,11 @@ export function renderCombatResultContext(army) {
           .map(
             (r) => `
           <div class="p-2 rounded bg-wh-card text-sm">
-            <div class="flex items-center gap-2">
-              <span class="text-wh-text">${r.name}${!r.merged && r.strength > 1 ? ` x${r.strength}` : ""}</span>
+            <div class="flex items-start gap-2">
+              <div class="flex flex-col">
+                <span class="text-wh-text">${r.name}${!r.merged && r.strength > 1 ? ` x${r.strength}` : ""}</span>
+                <span class="text-wh-muted text-[10px] font-mono">${r.points}pts</span>
+              </div>
               <span class="text-wh-phase-combat font-mono text-xs ml-auto">+${r.total}</span>
             </div>
             ${r.bonuses.length > 0 ? `<p class="text-xs text-wh-muted mt-0.5">${r.bonuses.join(", ")}</p>` : ""}
@@ -1040,7 +1049,12 @@ export function renderCombatLeadershipContext(army, title = "Break Test") {
     }
     const key = `${u.name}||${ld}`;
     if (!deduped[key])
-      deduped[key] = { name: u.name, ld, ldNum: parseInt(ld) || 0 };
+      deduped[key] = {
+        name: u.name,
+        points: u.points,
+        ld,
+        ldNum: parseInt(ld) || 0,
+      };
   }
 
   const rows = Object.values(deduped).sort((a, b) => b.ldNum - a.ldNum);
@@ -1092,8 +1106,11 @@ export function renderCombatLeadershipContext(army, title = "Break Test") {
         ${rows
           .map(
             (r) => `
-          <div class="flex items-center gap-2 p-2 rounded bg-wh-card text-sm">
-            <span class="text-wh-text">${r.name}</span>
+          <div class="flex items-start gap-2 p-2 rounded bg-wh-card text-sm">
+            <div class="flex flex-col">
+              <span class="text-wh-text">${r.name}</span>
+              <span class="text-wh-muted text-[10px] font-mono">${r.points}pts</span>
+            </div>
             <span class="text-wh-phase-combat font-mono text-xs ml-auto">Ld${r.ld}</span>
           </div>
         `,
@@ -1138,6 +1155,7 @@ export function renderDefensiveStatsContext(army) {
     if (!deduped[key]) {
       deduped[key] = {
         name: u.name,
+        points: u.points,
         strength: u.strength,
         mount: isRiddenMonster ? u.mount : null,
         t,
@@ -1166,14 +1184,19 @@ export function renderDefensiveStatsContext(army) {
           .map(
             (r) => `
           <div class="p-2 rounded bg-wh-card">
-            <div class="flex items-center gap-2 flex-wrap text-sm">
-              <span class="text-wh-text font-semibold">${r.name}${r.mount ? ` (${r.mount})` : ""}${!r.merged && r.strength > 1 ? ` <span class="text-wh-muted font-normal">x${r.strength}</span>` : ""}</span>
-              <span class="text-wh-muted font-mono text-xs">T:${r.t}</span>
-              <span class="text-wh-muted font-mono text-xs">W:${r.w}</span>
-              ${r.as ? `<span class="text-blue-400 font-mono text-xs">\u{1F6E1}\uFE0FAS:${r.as}</span>` : ""}
-              ${r.ward ? `<span class="text-purple-400 font-mono text-xs">\u{1F52E}Ward:${r.ward}</span>` : ""}
-              ${r.regen ? `<span class="text-green-400 font-mono text-xs">\u{1F49A}Regen:${r.regen}</span>` : ""}
-              ${r.hasEvasive ? '<span class="text-green-400 font-mono text-xs">\u{1F3C3}\u200D\u2640\uFE0FEvasive</span>' : ""}
+            <div class="flex items-start gap-2 flex-wrap text-sm">
+              <div class="flex flex-col">
+                <span class="text-wh-text font-semibold">${r.name}${r.mount ? ` (${r.mount})` : ""}${!r.merged && r.strength > 1 ? ` <span class="text-wh-muted font-normal">x${r.strength}</span>` : ""}</span>
+                <span class="text-wh-muted text-[10px] font-mono">${r.points}pts</span>
+              </div>
+              <div class="flex items-center gap-2 flex-wrap mt-0.5">
+                <span class="text-wh-muted font-mono text-xs">T:${r.t}</span>
+                <span class="text-wh-muted font-mono text-xs">W:${r.w}</span>
+                ${r.as ? `<span class="text-blue-400 font-mono text-xs">\u{1F6E1}\uFE0FAS:${r.as}</span>` : ""}
+                ${r.ward ? `<span class="text-purple-400 font-mono text-xs">\u{1F52E}Ward:${r.ward}</span>` : ""}
+                ${r.regen ? `<span class="text-green-400 font-mono text-xs">\u{1F49A}Regen:${r.regen}</span>` : ""}
+                ${r.hasEvasive ? '<span class="text-green-400 font-mono text-xs">\u{1F3C3}\u200D\u2640\uFE0FEvasive</span>' : ""}
+              </div>
               <span class="text-wh-muted font-mono text-xs ml-auto">Ld${r.ld}</span>
             </div>
           </div>
