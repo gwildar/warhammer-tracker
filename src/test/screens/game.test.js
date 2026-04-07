@@ -92,6 +92,12 @@ describe("Game Screen", () => {
       expect(getApp().textContent).toContain("Combat");
     });
 
+    it("shows unit points on combat card", () => {
+      savePhaseIndex(10); // choose-fight
+      renderGameScreen(army);
+      expect(getApp().textContent).toMatch(/\d+pts/);
+    });
+
     it("shows Close Order in Special Rules on combat-result step", () => {
       savePhaseIndex(11); // combat-result
       renderGameScreen(army);
@@ -574,5 +580,22 @@ describe("Scoring UI", () => {
     expect(getApp().textContent).toContain("Strategic Objectives");
     // Should NOT contain any magic items (e.g. Spelleater Axe)
     expect(getApp().textContent).not.toContain("Spelleater Axe");
+  });
+});
+
+describe("Movement phase with Bretonnia charge army", () => {
+  let army;
+
+  beforeEach(() => {
+    army = loadArmy("bretonnia-charge");
+    startGame(army);
+    savePhaseIndex(4); // declare-charges
+    renderGameScreen(army);
+  });
+
+  it("shows fly charge distance for Baron on Hippogryph", () => {
+    // Hippogryph: f=9, swiftstride (+3) → fly charge = 9 + 6 + 3 = 18"
+    expect(getApp().textContent).toContain("Fly");
+    expect(getApp().textContent).toContain('18"');
   });
 });

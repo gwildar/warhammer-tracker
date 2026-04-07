@@ -61,7 +61,7 @@ export function renderChargeContext(army) {
       .map((r) => r.displayName || "")
       .find((d) => /^fly\s*\(/i.test(d.trim()));
     const flyMatch = flyRuleStr ? flyRuleStr.match(/\((\d+)\)/) : null;
-    const flyMv = flyMatch ? Number(flyMatch[1]) : (mountData?.fly ?? null);
+    const flyMv = flyMatch ? Number(flyMatch[1]) : (mountData?.f ?? null);
     const hasFly = flyMv != null;
 
     const chargeMods = detectChargeMods(u, mountData);

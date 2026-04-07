@@ -1,13342 +1,34094 @@
 export const UNIT_STATS = {
   "abyssal-terror": [
     {
-      A: "3",
-      I: "2",
-      M: "6",
-      S: "5",
-      T: "(+1)",
-      W: "(+4)",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "Abyssal Terror",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "6",
+      "S": "5",
+      "T": "(+1)",
+      "W": "(+4)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "Abyssal Terror",
+      "as": 5,
+      "Stomps": "D3",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Fly (9)",
+        "Large Target",
+        "Necromantic Undead",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "poisonous tail",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "ancient-stegadon": [
     {
-      crewed: true,
-      A: "3",
-      I: "1",
-      M: "6",
-      S: "6",
-      T: "6",
-      W: "5",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      AS: "4",
-      Name: "Ancient Stegadon",
+      "crewed": true,
+      "A": "3",
+      "I": "1",
+      "M": "6",
+      "S": "6",
+      "T": "6",
+      "W": "5",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "AS": "4",
+      "Name": "Ancient Stegadon",
+      "Stomps": "D3+2",
+      "Impact-Hits": "D3+1",
+      "rules": [
+        "Close Order",
+        "Cold Blooded",
+        "Howdah",
+        "Immune to Psychology",
+        "Impact Hits (D3+1)",
+        "Large Target",
+        "Poisoned Attacks (javelins only)",
+        "Stomp Attacks (D3+2)",
+        "Stubborn",
+        "Terror"
+      ],
+      "equipment": [
+        "Great horns",
+        "giant bow",
+        "Hand weapons",
+        "javelins"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Giant Blowpipes",
+        "Engine of the Gods"
+      ]
     },
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "6",
-      WS: "2",
-      Name: "Skink Crew (x5)",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "2",
+      "Name": "Skink Crew (x5)",
+      "rules": [
+        "Close Order",
+        "Cold Blooded",
+        "Howdah",
+        "Immune to Psychology",
+        "Impact Hits (D3+1)",
+        "Large Target",
+        "Poisoned Attacks (javelins only)",
+        "Stomp Attacks (D3+2)",
+        "Stubborn",
+        "Terror"
+      ],
+      "equipment": [
+        "Great horns",
+        "giant bow",
+        "Hand weapons",
+        "javelins"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Giant Blowpipes",
+        "Engine of the Gods"
+      ]
+    }
   ],
   "anvil-of-doom": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "7",
-      W: "5",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Anvil of Doom",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "7",
+      "W": "5",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Anvil of Doom",
+      "as": 3,
+      "Magic-Res": "-3",
+      "rules": [
+        "Ancestral Shield",
+        "Gromril Armour",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Immune to Psychology",
+        "Immovable Object",
+        "Magic Resistance (-3)",
+        "Resolute",
+        "Rune Lore",
+        "Skirmishers",
+        "Strike the Runes",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields"
+      ],
+      "troopType": [
+        "War MachineCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "5",
-      I: "3",
-      M: "3",
-      S: "4",
-      T: "5",
-      W: "4",
-      BS: "4",
-      Ld: "9",
-      WS: "6",
-      Name: "Forgefather & Anvil Guard",
-    },
+      "A": "5",
+      "I": "3",
+      "M": "3",
+      "S": "4",
+      "T": "5",
+      "W": "4",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Forgefather & Anvil Guard",
+      "as": 3,
+      "Magic-Res": "-3",
+      "rules": [
+        "Ancestral Shield",
+        "Gromril Armour",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Immune to Psychology",
+        "Immovable Object",
+        "Magic Resistance (-3)",
+        "Resolute",
+        "Rune Lore",
+        "Skirmishers",
+        "Strike the Runes",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields"
+      ],
+      "troopType": [
+        "War MachineCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "arachnarok-spider": [
     {
-      crewed: true,
-      A: "6",
-      I: "4",
-      M: "7",
-      S: "5",
-      T: "6",
-      W: "7",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "Arachnarok Spider",
+      "crewed": true,
+      "A": "6",
+      "I": "4",
+      "M": "7",
+      "S": "5",
+      "T": "6",
+      "W": "7",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "Arachnarok Spider",
+      "Stomps": "D6",
+      "rules": [
+        "Close Order",
+        "Howdah",
+        "Immune to Psychology",
+        "Large Target",
+        "Move Through Cover",
+        "Poisoned Attacks",
+        "Stomp Attacks (D6)",
+        "Stubborn",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "hand weapon",
+        "venom surge",
+        "Hand weapons",
+        "cavalry spears",
+        "shortbows"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Spidersilk Lobber"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "2",
-      Name: "Goblin Crew (x8)",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "2",
+      "Name": "Goblin Crew (x8)",
+      "rules": [
+        "Close Order",
+        "Howdah",
+        "Immune to Psychology",
+        "Large Target",
+        "Move Through Cover",
+        "Poisoned Attacks",
+        "Stomp Attacks (D6)",
+        "Stubborn",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "hand weapon",
+        "venom surge",
+        "Hand weapons",
+        "cavalry spears",
+        "shortbows"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Spidersilk Lobber"
+      ]
+    }
   ],
   "araloth,-lord-of-talsyn": [
     {
-      A: "4",
-      I: "8",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "3",
-      BS: "7",
-      Ld: "10",
-      WS: "8",
-      Name: "Araloth, Lord of Talsyn",
-    },
+      "A": "4",
+      "I": "8",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "3",
+      "BS": "7",
+      "Ld": "10",
+      "WS": "8",
+      "Name": "Araloth, Lord of Talsyn",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "arch-necrotect": [
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Arch Necrotect",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Arch Necrotect",
+      "as": 6,
+      "Regen": "5+",
+      "rules": [
+        "Dry as Dust",
+        "Flammable",
+        "Immortal Overseer",
+        "Khopesh",
+        "Nehekharan Undead",
+        "Regeneration (5+)",
+        "Stone Shaper"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "whip",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  archmage: [
+  "archmage": [
     {
-      A: "2",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Archmage",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Archmage",
+      "rules": [
+        "Elven Reflexes",
+        "Ithilmar Weapons",
+        "Lileath's Blessing",
+        "Lore of Saphery",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "high magic",
+        "illusion"
+      ],
+      "optionalRules": []
+    }
   ],
   "aspiring-champion": [
     {
-      A: "3",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Aspiring Champion",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Aspiring Champion",
+      "as": 4,
+      "rules": [
+        "Chaos Armour (5+)",
+        "Ensorcelled Weapons",
+        "Gaze of the Gods",
+        "Mark of Chaos Undivided",
+        "Rallying Cry"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
+    }
   ],
-  astromancer: [
+  "astromancer": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "3",
-      Ld: "8",
-      WS: "3",
-      Name: "Astromancer",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "Astromancer",
+      "Magic-Res": "-1",
+      "rules": [
+        "Magical Attacks",
+        "Magic Resistance (-1)",
+        "Mastery of the Elemental Winds"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "illusion",
+        "high magic"
+      ],
+      "optionalRules": []
+    }
   ],
   "badlands-ogre-bulls": [
     {
-      A: "3",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "2",
-      Ld: "7",
-      WS: "3",
-      Name: "Ogre",
+      "A": "3",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Ogre",
+      "as": 6,
+      "Impact-Hits": "1",
+      "rules": [
+        "Armour Bane (1)",
+        "Close Order",
+        "Fear",
+        "Impact Hits (1)",
+        "Mercenaries",
+        "Motley Crew",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ironfist"
+      ]
     },
     {
-      A: "4",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "2",
-      Ld: "7",
-      WS: "3",
-      Name: "Crusher",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Crusher",
+      "as": 6,
+      "rules": [
+        "Armour Bane (1)",
+        "Close Order",
+        "Fear",
+        "Impact Hits (1)",
+        "Mercenaries",
+        "Motley Crew",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ironfist"
+      ]
+    }
   ],
   "bale-taurus": [
     {
-      A: "4",
-      I: "3",
-      M: "6",
-      S: "6",
-      T: "(+1)",
-      W: "(+4)",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Bale Taurus",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "6",
+      "S": "6",
+      "T": "(+1)",
+      "W": "(+4)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Bale Taurus",
+      "Stomps": "D3+1",
+      "Fly": "9",
+      "rules": [
+        "Blazing Body",
+        "Born of Fire",
+        "Close Order",
+        "Fly (9)",
+        "Furious Charge",
+        "Large Target",
+        "Stomp Attacks (D3+1)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Trampling hooves",
+        "goring horns"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "barded-elven-steed": [
     {
-      A: "1",
-      I: "4",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Barded Elven Steed",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Barded Elven Steed",
+      "armourMod": 1,
+      "rules": [
+        "Counter Charge",
+        "First Charge",
+        "Ithilmar Barding",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "barded-pegasus": [
     {
-      A: "2",
-      I: "4",
-      M: "7",
-      S: "4",
-      T: "-",
-      W: "(+1)",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Barded Pegasus",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "7",
+      "S": "4",
+      "T": "-",
+      "W": "(+1)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Barded Pegasus",
+      "Fly": "10",
+      "armourMod": 1,
+      "rules": [
+        "Counter Charge",
+        "First Charge",
+        "Fly (10)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "barded-skeletal-steed": [
     {
-      A: "1",
-      I: "2",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "2",
-      Name: "Barded Skeletal Steed",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "2",
+      "Name": "Barded Skeletal Steed",
+      "armourMod": 1,
+      "rules": [
+        "Nehekharan Undead",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "barded-warhorse": [
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Barded Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Barded Warhorse",
+      "armourMod": 1,
+      "rules": [
+        "Counter Charge",
+        "First Charge",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  baron: [
+  "baron": [
     {
-      A: "4",
-      I: "5",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "6",
-      Name: "Baron",
-    },
+      "A": "4",
+      "I": "5",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Baron",
+      "as": 5,
+      "rules": [
+        "Blessings of the Lady",
+        "Rallying Cry",
+        "The Knight's Vow"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  bastiladon: [
+  "bastiladon": [
     {
-      crewed: true,
-      A: "3",
-      I: "1",
-      M: "4",
-      S: "4",
-      T: "5",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      AS: "3",
-      Name: "Bastiladon",
+      "crewed": true,
+      "A": "3",
+      "I": "1",
+      "M": "4",
+      "S": "4",
+      "T": "5",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "AS": "3",
+      "Name": "Bastiladon",
+      "Stomps": "D3+1",
+      "Impact-Hits": "D3",
+      "rules": [
+        "Close Order",
+        "Cold Blooded",
+        "Immune to Psychology",
+        "Impact Hits (D3)",
+        "Impervious Defence",
+        "Large Target",
+        "Poisoned Attacks (javelins only)",
+        "Stomp Attacks (D3+1)",
+        "Stubborn",
+        "Terror"
+      ],
+      "equipment": [
+        "Thunderous bludgeon",
+        "Ark of Sotek",
+        "Hand weapons",
+        "javelins"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Solar Engine"
+      ]
     },
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "6",
-      WS: "2",
-      Name: "Skink Crew (x3)",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "2",
+      "Name": "Skink Crew (x3)",
+      "rules": [
+        "Close Order",
+        "Cold Blooded",
+        "Immune to Psychology",
+        "Impact Hits (D3)",
+        "Impervious Defence",
+        "Large Target",
+        "Poisoned Attacks (javelins only)",
+        "Stomp Attacks (D3+1)",
+        "Stubborn",
+        "Terror"
+      ],
+      "equipment": [
+        "Thunderous bludgeon",
+        "Ark of Sotek",
+        "Hand weapons",
+        "javelins"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Solar Engine"
+      ]
+    }
   ],
   "bat-swarms": [
     {
-      A: "5",
-      I: "4",
-      M: "1",
-      S: "2",
-      T: "2",
-      W: "5",
-      BS: "0",
-      Ld: "3",
-      WS: "3",
-      Name: "Bat Swarm",
-    },
+      "A": "5",
+      "I": "4",
+      "M": "1",
+      "S": "2",
+      "T": "2",
+      "W": "5",
+      "BS": "0",
+      "Ld": "3",
+      "WS": "3",
+      "Name": "Bat Swarm",
+      "Regen": "6+",
+      "Fly": "7",
+      "rules": [
+        "Fly (7)",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "Swarm"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "battle-pilgrims": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "8",
-      WS: "2",
-      Name: "Battle Pilgrim",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "2",
+      "Name": "Battle Pilgrim",
+      "as": 5,
+      "rules": [
+        "Blessings of the Lady (Grail Reliquae)",
+        "Close Order",
+        "Grail Reliquae",
+        "Hatred (all enemies)",
+        "Levies",
+        "Peasantry",
+        "Retinue of the Saints (Grail Reliquae)",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Grail Reliquae"
+      ]
     },
     {
-      A: "6",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "6",
-      BS: "2",
-      Ld: "8",
-      WS: "2",
-      Name: "Grail Reliquae",
-    },
+      "A": "6",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "6",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "2",
+      "Name": "Grail Reliquae",
+      "as": 5,
+      "rules": [
+        "Blessings of the Lady (Grail Reliquae)",
+        "Close Order",
+        "Grail Reliquae",
+        "Hatred (all enemies)",
+        "Levies",
+        "Peasantry",
+        "Retinue of the Saints (Grail Reliquae)",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Grail Reliquae"
+      ]
+    }
   ],
   "bear-of-loren": [
     {
-      A: "2",
-      I: "3",
-      M: "5",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "-",
-      Ld: "6",
-      WS: "4",
-      Name: "Bear of Loren",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "5",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "-",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Bear of Loren",
+      "rules": [
+        "Armoured Hide (1)",
+        "Cleaving Blow",
+        "Fear",
+        "Motley Crew",
+        "Run with the Pack",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "beast-keeper": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Beast Keeper",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Beast Keeper",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Motley Crew",
+        "Move Through Cover",
+        "Run with the Pack",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  beastlord: [
+  "beastlord": [
     {
-      A: "4",
-      I: "5",
-      M: "5",
-      S: "5",
-      T: "5",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "6",
-      Name: "Beastlord",
-    },
+      "A": "4",
+      "I": "5",
+      "M": "5",
+      "S": "5",
+      "T": "5",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Beastlord",
+      "rules": [
+        "Blood Rage",
+        "Brayhorn (General only)",
+        "Foe Render",
+        "Gaze of the Gods",
+        "Mark of Chaos Undivided",
+        "Primal Fury",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
+    }
   ],
   "beasts-of-nurgle": [
     {
-      A: "D6+1",
-      I: "2",
-      M: "5",
-      S: "4",
-      T: "5",
-      W: "4",
-      BS: "0",
-      Ld: "7",
-      WS: "3",
-      Name: "Beast of Nurgle",
-    },
+      "A": "D6+1",
+      "I": "2",
+      "M": "5",
+      "S": "4",
+      "T": "5",
+      "W": "4",
+      "BS": "0",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Beast of Nurgle",
+      "Regen": "5+",
+      "rules": [
+        "Attention Seeker",
+        "Close Order",
+        "Daemonic",
+        "Daemons of Nurgle",
+        "Impetuous",
+        "Infernal Favour (1)",
+        "Loner",
+        "Poisoned Attacks",
+        "Random Attacks",
+        "Regeneration (5+)",
+        "Slime Trail"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "writhing tentacles"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "bestigor-herd": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Bestigor",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Bestigor",
+      "as": 5,
+      "rules": [
+        "Blood Rage",
+        "Close Order",
+        "Mark of Chaos Undivided",
+        "Primal Fury",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Stubborn",
+        "Veteran"
+      ]
     },
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Gourge-horn",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Gourge-horn",
+      "as": 5,
+      "rules": [
+        "Blood Rage",
+        "Close Order",
+        "Mark of Chaos Undivided",
+        "Primal Fury",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Stubborn",
+        "Veteran"
+      ]
+    }
   ],
   "black-ark-corsairs": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Corsair",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Corsair",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Hatred (High Elves)",
+        "Move Through Cover",
+        "Open Order",
+        "Sea Dragon Cloak"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Reaver",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Reaver",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Hatred (High Elves)",
+        "Move Through Cover",
+        "Open Order",
+        "Sea Dragon Cloak"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "black-coach": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "6",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Black Coach",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "6",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Black Coach",
+      "Regen": "6+",
+      "Impact-Hits": "D6+2",
+      "rules": [
+        "Close Order",
+        "First Charge",
+        "Impact Hits (D6+2)",
+        "Indomitable (1)",
+        "Magical Attacks",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Spectral Coach",
+        "Terror"
+      ],
+      "equipment": [
+        "Spectral scythe",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "2",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "0",
-      Ld: "5",
-      WS: "3",
-      Name: "Wraith (x1)",
+      "A": "2",
+      "I": "2",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "0",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Wraith (x1)",
+      "Regen": "6+",
+      "rules": [
+        "Close Order",
+        "First Charge",
+        "Impact Hits (D6+2)",
+        "Indomitable (1)",
+        "Magical Attacks",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Spectral Coach",
+        "Terror"
+      ],
+      "equipment": [
+        "Spectral scythe",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "2",
-      M: "8",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Nightmares (x2)",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "8",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Nightmares (x2)",
+      "Regen": "6+",
+      "rules": [
+        "Close Order",
+        "First Charge",
+        "Impact Hits (D6+2)",
+        "Indomitable (1)",
+        "Magical Attacks",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Spectral Coach",
+        "Terror"
+      ],
+      "equipment": [
+        "Spectral scythe",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "black-coach-renegade": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "6",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Black Coach",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "6",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Black Coach",
+      "Regen": "6+",
+      "Impact-Hits": "D6+2",
+      "rules": [
+        "Close Order",
+        "First Charge",
+        "Impact Hits (D6+2)",
+        "Indomitable (1)",
+        "Magical Attacks",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Spectral Coach",
+        "Terror"
+      ],
+      "equipment": [
+        "Spectral scythe",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "2",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "0",
-      Ld: "5",
-      WS: "3",
-      Name: "Wraith (x1)",
+      "A": "2",
+      "I": "2",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "0",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Wraith (x1)",
+      "Regen": "6+",
+      "rules": [
+        "Close Order",
+        "First Charge",
+        "Impact Hits (D6+2)",
+        "Indomitable (1)",
+        "Magical Attacks",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Spectral Coach",
+        "Terror"
+      ],
+      "equipment": [
+        "Spectral scythe",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "2",
-      M: "8",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Nightmares (x2)",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "8",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Nightmares (x2)",
+      "Regen": "6+",
+      "rules": [
+        "Close Order",
+        "First Charge",
+        "Impact Hits (D6+2)",
+        "Indomitable (1)",
+        "Magical Attacks",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Spectral Coach",
+        "Terror"
+      ],
+      "equipment": [
+        "Spectral scythe",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "black-dragon": [
     {
-      A: "6",
-      I: "4",
-      M: "6",
-      S: "7",
-      T: "(+3)",
-      W: "(+6)",
-      BS: "-",
-      Ld: "-",
-      WS: "6",
-      Name: "Black Dragon",
-    },
+      "A": "6",
+      "I": "4",
+      "M": "6",
+      "S": "7",
+      "T": "(+3)",
+      "W": "(+6)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "6",
+      "Name": "Black Dragon",
+      "as": 4,
+      "Stomps": "D6",
+      "Fly": "10",
+      "rules": [
+        "Close Order",
+        "Fly (10)",
+        "Hatred (High Elves)",
+        "Large Target",
+        "Stomp Attacks (D6)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "serrated maw",
+        "noxious breath",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "black-guard-of-naggarond": [
     {
-      A: "1",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Black Guard",
+      "A": "1",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Black Guard",
+      "as": 4,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Eternal Hatred",
+        "Hatred (High Elves)",
+        "Immune to Psychology",
+        "Martial Prowess",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "dread halberds",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
     },
     {
-      A: "2",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Tower Master",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Tower Master",
+      "as": 4,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Eternal Hatred",
+        "Hatred (High Elves)",
+        "Immune to Psychology",
+        "Martial Prowess",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "dread halberds",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
+    }
   ],
   "black-knights": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "0",
-      Ld: "6",
-      WS: "3",
-      Name: "Black Knight",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "0",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Black Knight",
+      "as": 4,
+      "Regen": "6+",
+      "rules": [
+        "Cleaving Blow (Riders only)",
+        "Close Order",
+        "First Charge",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "0",
-      Ld: "6",
-      WS: "3",
-      Name: "Hell Knight",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "0",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Hell Knight",
+      "as": 4,
+      "Regen": "6+",
+      "rules": [
+        "Cleaving Blow (Riders only)",
+        "Close Order",
+        "First Charge",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "2",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "2",
-      Name: "Skeletal Steed",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "2",
+      "Name": "Skeletal Steed",
+      "as": 4,
+      "Regen": "6+",
+      "rules": [
+        "Cleaving Blow (Riders only)",
+        "Close Order",
+        "First Charge",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "black-orc-bigboss": [
     {
-      A: "3",
-      I: "5",
-      M: "4",
-      S: "4",
-      T: "5",
-      W: "2",
-      BS: "3",
-      Ld: "8",
-      WS: "6",
-      Name: "Black Orc Bigboss",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "4",
+      "S": "4",
+      "T": "5",
+      "W": "2",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Black Orc Bigboss",
+      "as": 4,
+      "rules": [
+        "Choppas",
+        "Da Boyz",
+        "Furious Charge",
+        "Ignore Panic",
+        "Quell Impetuosity",
+        "Rallying Cry",
+        "Waaagh!"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "black-orc-boar-chariot": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Chariot",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Chariot",
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Choppas",
+        "Close Order",
+        "First Charge",
+        "Furious Charge (Black Orc Crew only)",
+        "Ignore Panic",
+        "Impact Hits (D6+1)",
+        "Tusker Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "-",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Black Orc Crew (x2)",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "-",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Black Orc Crew (x2)",
+      "rules": [
+        "Choppas",
+        "Close Order",
+        "First Charge",
+        "Furious Charge (Black Orc Crew only)",
+        "Ignore Panic",
+        "Impact Hits (D6+1)",
+        "Tusker Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "War Boars (x2)",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "War Boars (x2)",
+      "rules": [
+        "Choppas",
+        "Close Order",
+        "First Charge",
+        "Furious Charge (Black Orc Crew only)",
+        "Ignore Panic",
+        "Impact Hits (D6+1)",
+        "Tusker Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "black-orc-mob": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Black Orc",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Black Orc",
+      "as": 4,
+      "rules": [
+        "Choppas",
+        "Close Order",
+        "Da Boyz",
+        "Furious Charge",
+        "Ignore Panic",
+        "Motley Crew",
+        "Quell Impetuosity"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Stubborn",
+        "Veteran"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Black Orc Boss",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Black Orc Boss",
+      "as": 4,
+      "rules": [
+        "Choppas",
+        "Close Order",
+        "Da Boyz",
+        "Furious Charge",
+        "Ignore Panic",
+        "Motley Crew",
+        "Quell Impetuosity"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Stubborn",
+        "Veteran"
+      ]
+    }
   ],
   "black-orc-warboss": [
     {
-      A: "4",
-      I: "6",
-      M: "4",
-      S: "5",
-      T: "5",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "7",
-      Name: "Black Orc Warboss",
-    },
+      "A": "4",
+      "I": "6",
+      "M": "4",
+      "S": "5",
+      "T": "5",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "7",
+      "Name": "Black Orc Warboss",
+      "as": 4,
+      "rules": [
+        "Choppas",
+        "Da Boyz",
+        "Furious Charge",
+        "Ignore Panic",
+        "Quell Impetuosity",
+        "Rallying Cry",
+        "Waaagh!"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "blood-knights": [
     {
-      A: "2",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "5",
-      Name: "Blood Knight",
+      "A": "2",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Blood Knight",
+      "as": 4,
+      "Regen": "6+",
+      "armourMod": 1,
+      "rules": [
+        "Accursed Weapons",
+        "Close Order",
+        "Counter Charge",
+        "Dark Vitality",
+        "First Charge",
+        "Flammable",
+        "Indomitable (1)",
+        "Martial Pride",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapons",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
     },
     {
-      A: "3",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "5",
-      Name: "Kastellan",
+      "A": "3",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Kastellan",
+      "as": 4,
+      "Regen": "6+",
+      "armourMod": 1,
+      "rules": [
+        "Accursed Weapons",
+        "Close Order",
+        "Counter Charge",
+        "Dark Vitality",
+        "First Charge",
+        "Flammable",
+        "Indomitable (1)",
+        "Martial Pride",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapons",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
     },
     {
-      A: "1",
-      I: "2",
-      M: "7",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Nightmare",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "7",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Nightmare",
+      "as": 4,
+      "Regen": "6+",
+      "armourMod": 1,
+      "rules": [
+        "Accursed Weapons",
+        "Close Order",
+        "Counter Charge",
+        "Dark Vitality",
+        "First Charge",
+        "Flammable",
+        "Indomitable (1)",
+        "Martial Pride",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapons",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
+    }
   ],
   "blood-throne-of-khorne": [
     {
-      crewed: true,
-      A: "3",
-      I: "2",
-      M: "7",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Blood Throne",
+      "crewed": true,
+      "A": "3",
+      "I": "2",
+      "M": "7",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Blood Throne",
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemons of Khorne",
+        "First Charge",
+        "Gorefeast",
+        "Impact Hits (D6+1)",
+        "Impetuous",
+        "Totem of Endless Bloodletting"
+      ],
+      "equipment": [
+        "hand weapon",
+        "Hellblades"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "5",
-      Name: "Bloodletter Crew (x2)",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Bloodletter Crew (x2)",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemons of Khorne",
+        "First Charge",
+        "Gorefeast",
+        "Impact Hits (D6+1)",
+        "Impetuous",
+        "Totem of Endless Bloodletting"
+      ],
+      "equipment": [
+        "hand weapon",
+        "Hellblades"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "bloodcrushers-of-khorne": [
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "5",
-      Name: "Bloodletter",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Bloodletter",
+      "as": 6,
+      "Magic-Res": "-1",
+      "Impact-Hits": "2",
+      "armourMod": 1,
+      "rules": [
+        "Armoured Hide (1)",
+        "Close Order",
+        "Daemonic",
+        "Daemons of Khorne",
+        "Impact Hits (2)",
+        "Impetuous",
+        "Magic Resistance (-1)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hellblades",
+        "light armour",
+        "Brass bound hooves",
+        "barding"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "5",
-      Name: "Bloodreaper",
+      "A": "2",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Bloodreaper",
+      "as": 6,
+      "Magic-Res": "-1",
+      "armourMod": 1,
+      "rules": [
+        "Armoured Hide (1)",
+        "Close Order",
+        "Daemonic",
+        "Daemons of Khorne",
+        "Impact Hits (2)",
+        "Impetuous",
+        "Magic Resistance (-1)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hellblades",
+        "light armour",
+        "Brass bound hooves",
+        "barding"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "2",
-      M: "7",
-      S: "5",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "Juggernaut of Khorne",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "7",
+      "S": "5",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "Juggernaut of Khorne",
+      "as": 6,
+      "Magic-Res": "-1",
+      "armourMod": 1,
+      "rules": [
+        "Armoured Hide (1)",
+        "Close Order",
+        "Daemonic",
+        "Daemons of Khorne",
+        "Impact Hits (2)",
+        "Impetuous",
+        "Magic Resistance (-1)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hellblades",
+        "light armour",
+        "Brass bound hooves",
+        "barding"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "bloodletters-of-khorne": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "5",
-      Name: "Bloodletter",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Bloodletter",
+      "as": 6,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemons of Khorne",
+        "Impetuous",
+        "Magic Resistance (-1)"
+      ],
+      "equipment": [
+        "Hellblades",
+        "light armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "5",
-      Name: "Bloodreaper",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Bloodreaper",
+      "as": 6,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemons of Khorne",
+        "Impetuous",
+        "Magic Resistance (-1)"
+      ],
+      "equipment": [
+        "Hellblades",
+        "light armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  bloodthirster: [
+  "bloodthirster": [
     {
-      A: "6",
-      I: "7",
-      M: "8",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "5",
-      Ld: "9",
-      WS: "10",
-      Name: "Bloodthirster",
-    },
+      "A": "6",
+      "I": "7",
+      "M": "8",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "5",
+      "Ld": "9",
+      "WS": "10",
+      "Name": "Bloodthirster",
+      "as": 5,
+      "Magic-Res": "-2",
+      "Impact-Hits": "D3",
+      "Fly": "10",
+      "rules": [
+        "Daemonic",
+        "Daemonic Charge",
+        "Daemons of Khorne",
+        "Fly (10)",
+        "Furious Charge",
+        "Impact Hits (D3)",
+        "Impetuous",
+        "Infernal Favour (2)",
+        "Large Target",
+        "Magic Resistance (-2)",
+        "Terror"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "BehemothCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Bloodflail",
+        "Great Axe",
+        "Lash of Khorne"
+      ]
+    }
   ],
   "bloodthirster-renegade": [
     {
-      A: "6",
-      I: "7",
-      M: "8",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "5",
-      Ld: "9",
-      WS: "10",
-      Name: "Bloodthirster",
-    },
+      "A": "6",
+      "I": "7",
+      "M": "8",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "5",
+      "Ld": "9",
+      "WS": "10",
+      "Name": "Bloodthirster",
+      "as": 5,
+      "Magic-Res": "-2",
+      "Impact-Hits": "D3",
+      "Fly": "10",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemonic Charge",
+        "Daemons of Khorne",
+        "Fly (10)",
+        "Furious Charge",
+        "Impact Hits (D3)",
+        "Impetuous",
+        "Infernal Favour (2)",
+        "Large Target",
+        "Magic Resistance (-2)",
+        "Terror"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "BehemothCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Bloodflail",
+        "Great Axe",
+        "Lash of Khorne"
+      ]
+    }
   ],
   "bloodwrack-medusa": [
     {
-      A: "3",
-      I: "5",
-      M: "7",
-      S: "4",
-      T: "4",
-      W: "4",
-      BS: "5",
-      Ld: "7",
-      WS: "5",
-      Name: "Bloodwrack Medusa",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "7",
+      "S": "4",
+      "T": "4",
+      "W": "4",
+      "BS": "5",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Bloodwrack Medusa",
+      "as": 6,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Fear",
+        "Frenzy",
+        "Hatred (High Elves)",
+        "Magic Resistance (-1)",
+        "Murderous",
+        "Poisoned Attacks",
+        "Stony Stare"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "petrifying gaze",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "bloodwrack-shrine": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "2",
-      S: "5",
-      T: "5",
-      W: "5",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Bloodwrack Shrine",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "2",
+      "S": "5",
+      "T": "5",
+      "W": "5",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Bloodwrack Shrine",
+      "Magic-Res": "-1",
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Close Order",
+        "Dragged Along",
+        "Elven Reflexes",
+        "Frenzy",
+        "Hatred (High Elves)",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Magic Resistance (-1)",
+        "Murderous",
+        "Poisoned Attacks",
+        "Stony Stare",
+        "Terror"
+      ],
+      "equipment": [
+        "Cavalry spears",
+        "Cavalry spear",
+        "petrifying gaze"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "5",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Shrinekeeper (x2)",
+      "A": "1",
+      "I": "5",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Shrinekeeper (x2)",
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Dragged Along",
+        "Elven Reflexes",
+        "Frenzy",
+        "Hatred (High Elves)",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Magic Resistance (-1)",
+        "Murderous",
+        "Poisoned Attacks",
+        "Stony Stare",
+        "Terror"
+      ],
+      "equipment": [
+        "Cavalry spears",
+        "Cavalry spear",
+        "petrifying gaze"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "5",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "5",
-      Ld: "-",
-      WS: "5",
-      Name: "Bloodwrack Medusa",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "5",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Bloodwrack Medusa",
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Dragged Along",
+        "Elven Reflexes",
+        "Frenzy",
+        "Hatred (High Elves)",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Magic Resistance (-1)",
+        "Murderous",
+        "Poisoned Attacks",
+        "Stony Stare",
+        "Terror"
+      ],
+      "equipment": [
+        "Cavalry spears",
+        "Cavalry spear",
+        "petrifying gaze"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "blue-horrors-of-tzeentch": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "2",
-      Name: "Blue Horror",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "2",
+      "Name": "Blue Horror",
+      "rules": [
+        "Daemonic",
+        "Daemons of Tzeentch",
+        "Move Through Cover",
+        "Open Order"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "flames of Tzeentch"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "2",
-      Name: "Ectoplasmic Horror",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "2",
+      "Name": "Ectoplasmic Horror",
+      "rules": [
+        "Daemonic",
+        "Daemons of Tzeentch",
+        "Move Through Cover",
+        "Open Order"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "flames of Tzeentch"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "blue-horrors-of-tzeentch-renegade": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "2",
-      Name: "Blue Horror",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "2",
+      "Name": "Blue Horror",
+      "rules": [
+        "Daemonic",
+        "Daemons of Tzeentch",
+        "Move Through Cover",
+        "Open Order",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "flames of Tzeentch"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "2",
-      Name: "Ectoplasmic Horror",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "2",
+      "Name": "Ectoplasmic Horror",
+      "rules": [
+        "Daemonic",
+        "Daemons of Tzeentch",
+        "Move Through Cover",
+        "Open Order",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "flames of Tzeentch"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "bolt-thrower-dwarfs": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Bolt Thrower",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Bolt Thrower",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "3",
-      Name: "Dwarf Crew",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "3",
+      "Name": "Dwarf Crew",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "bonegrinder-giant": [
     {
-      A: "*",
-      I: "3",
-      M: "6",
-      S: "7",
-      T: "6",
-      W: "8",
-      BS: "1",
-      Ld: "10",
-      WS: "3",
-      Name: "Bonegrinder Giant",
-    },
+      "A": "*",
+      "I": "3",
+      "M": "6",
+      "S": "7",
+      "T": "6",
+      "W": "8",
+      "BS": "1",
+      "Ld": "10",
+      "WS": "3",
+      "Name": "Bonegrinder Giant",
+      "as": 6,
+      "Stomps": "D6+1",
+      "rules": [
+        "Bonegrinder Giant Attacks",
+        "Close Order",
+        "Immune to Psychology",
+        "Large Target",
+        "Mercenaries",
+        "Stomp Attacks (D6+1)",
+        "Terror",
+        "Timmm-berrr!",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Bonegrinder Giant's club",
+        "light armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "border-princes-bombard": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "7",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Bombard",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "7",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Bombard",
+      "as": 6,
+      "rules": [
+        "Levies",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Bombard",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Crew",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Crew",
+      "as": 6,
+      "rules": [
+        "Levies",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Bombard",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "border-princes-brigands": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Brigand",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Brigand",
+      "as": 6,
+      "rules": [
+        "Horde",
+        "Impetuous",
+        "Levies",
+        "Motley Crew",
+        "Open Order",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Blunderbuss",
+        "Close Order",
+        "Skirmishers",
+        "Ambushers",
+        "Scouts"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Desperado",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Desperado",
+      "as": 6,
+      "rules": [
+        "Horde",
+        "Impetuous",
+        "Levies",
+        "Motley Crew",
+        "Open Order",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Blunderbuss",
+        "Close Order",
+        "Skirmishers",
+        "Ambushers",
+        "Scouts"
+      ]
+    }
   ],
   "border-princes-mortar": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "7",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Mortar",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "7",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Mortar",
+      "rules": [
+        "Levies",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Mortar",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Gun Crew",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Gun Crew",
+      "rules": [
+        "Levies",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Mortar",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "border-princes-organ-gun": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "7",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Organ Gun",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "7",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Organ Gun",
+      "rules": [
+        "Levies",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Organ gun",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Gun Crew",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Gun Crew",
+      "rules": [
+        "Levies",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Organ gun",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  branchwraith: [
+  "branchwraith": [
     {
-      A: "2",
-      I: "6",
-      M: "5",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "6",
-      Ld: "8",
-      WS: "6",
-      Name: "Branchwraith",
-    },
+      "A": "2",
+      "I": "6",
+      "M": "5",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "6",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Branchwraith",
+      "as": 6,
+      "Regen": "6+",
+      "rules": [
+        "Fear",
+        "Flammable",
+        "Immune to Psychology",
+        "Lore of Athel Loren",
+        "Magical Attacks",
+        "Move Through Cover",
+        "Regeneration (6+)",
+        "Tree Spirit"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": []
+    }
   ],
   "bray-shaman": [
     {
-      A: "1",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "4",
-      W: "2",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Bray-Shaman",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "4",
+      "W": "2",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Bray-Shaman",
+      "rules": [
+        "Gaze of the Gods",
+        "Lore of Beasts",
+        "Mark of Chaos Undivided",
+        "Primal Fury",
+        "Warband"
+      ],
+      "equipment": [
+        "Braystaff"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "daemonology",
+        "dark magic",
+        "elementalism"
+      ],
+      "optionalRules": [
+        "Ambushers"
+      ]
+    }
   ],
   "bretonnian-warhorse": [
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Bretonnian Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Bretonnian Warhorse",
+      "armourMod": 1,
+      "rules": [
+        "Counter Charge",
+        "Finest Warhorses",
+        "First Charge",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "brimstone-horrors-of-tzeentch": [
     {
-      A: "4",
-      I: "2",
-      M: "5",
-      S: "2",
-      T: "3",
-      W: "6",
-      BS: "2",
-      Ld: "5",
-      WS: "2",
-      Name: "Brimstone Horrors",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "5",
+      "S": "2",
+      "T": "3",
+      "W": "6",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Brimstone Horrors",
+      "rules": [
+        "Daemonic",
+        "Daemons of Tzeentch",
+        "Flaming Attacks",
+        "Loner",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Swarm"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "brotherhood-of-grimnir": [
     {
-      A: "2",
-      I: "3",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "10",
-      WS: "5",
-      Name: "Shrine Guards",
+      "A": "2",
+      "I": "3",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "10",
+      "WS": "5",
+      "Name": "Shrine Guards",
+      "Magic-Res": "-2",
+      "rules": [
+        "Blessings of Grimnir (Shrine Keeper only)",
+        "Close Order",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Immune to Psychology",
+        "Loner",
+        "Magic Resistance (-2)",
+        "Motley Crew",
+        "Open Order",
+        "Resolute",
+        "Slayer",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "3",
-      Ld: "10",
-      WS: "6",
-      Name: "Shrine Keeper",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "3",
+      "Ld": "10",
+      "WS": "6",
+      "Name": "Shrine Keeper",
+      "Magic-Res": "-2",
+      "rules": [
+        "Blessings of Grimnir (Shrine Keeper only)",
+        "Close Order",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Immune to Psychology",
+        "Loner",
+        "Magic Resistance (-2)",
+        "Motley Crew",
+        "Open Order",
+        "Resolute",
+        "Slayer",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  bruiser: [
+  "bruiser": [
     {
-      A: "4",
-      I: "4",
-      M: "6",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      AS: "6",
-      Name: "Bruiser",
-    },
+      "A": "4",
+      "I": "4",
+      "M": "6",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "AS": "6",
+      "Name": "Bruiser",
+      "as": 6,
+      "Impact-Hits": "2",
+      "rules": [
+        "Armour Bane (1)",
+        "Bull Charge",
+        "Fear",
+        "Impact Hits (2)",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ironfist",
+        "Ogre Pistol",
+        "Brace of Ogre Pistols"
+      ]
+    }
   ],
   "bull-centaur-renders": [
     {
-      A: "2",
-      I: "3",
-      M: "7",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "2",
-      Ld: "8",
-      WS: "4",
-      Name: "Bull Centaur Render",
+      "A": "2",
+      "I": "3",
+      "M": "7",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Bull Centaur Render",
+      "as": 6,
+      "Impact-Hits": "D3",
+      "rules": [
+        "Armoured Hide (1)",
+        "Blackshard Armour",
+        "Close Order",
+        "Ensorcelled Weapons",
+        "Fear",
+        "First Charge",
+        "Impact Hits (D3)",
+        "Loner",
+        "Stampede",
+        "Stubborn",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "7",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "2",
-      Ld: "8",
-      WS: "4",
-      Name: "Bull Centaur Ba'hal",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "7",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Bull Centaur Ba'hal",
+      "as": 6,
+      "rules": [
+        "Armoured Hide (1)",
+        "Blackshard Armour",
+        "Close Order",
+        "Ensorcelled Weapons",
+        "Fear",
+        "First Charge",
+        "Impact Hits (D3)",
+        "Loner",
+        "Stampede",
+        "Stubborn",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "bull-centaur-taur'ruk": [
     {
-      A: "4",
-      I: "4",
-      M: "7",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "2",
-      Ld: "9",
-      WS: "5",
-      Name: "Taur'ruk",
-    },
+      "A": "4",
+      "I": "4",
+      "M": "7",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "2",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Taur'ruk",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "burlok-damminson": [
     {
-      A: "3",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "5",
-      Ld: "10",
-      WS: "5",
-      Name: "Burlok Damminson",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "5",
+      "Ld": "10",
+      "WS": "5",
+      "Name": "Burlok Damminson",
+      "as": 4,
+      "Magic-Res": "-1",
+      "rules": [
+        "Dwarf Crafted",
+        "Gromril Armour",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Prepared Positions",
+        "Range Finding Optics",
+        "Resolute",
+        "\"Stand Back Chief\"",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Furnace hammer",
+        "rivet gun",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy InfantryNamed Character"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "burning-chariot-of-tzeentch": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Burning Chariot of Tzeentch",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Burning Chariot of Tzeentch",
+      "Impact-Hits": "D6+1",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemons of Tzeentch",
+        "Fly (9)",
+        "Impact Hits (D6+1)",
+        "Lore of Daemons",
+        "Slashing Attack (Screamers only)"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "warpflame",
+        "Hand weapons",
+        "flames of Tzeentch",
+        "Lamprey's bite"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [
+        "daemonology",
+        "dark magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "5",
-      Ld: "7",
-      WS: "2",
-      Name: "Exalted Flamer",
+      "A": "2",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "5",
+      "Ld": "7",
+      "WS": "2",
+      "Name": "Exalted Flamer",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemons of Tzeentch",
+        "Fly (9)",
+        "Impact Hits (D6+1)",
+        "Lore of Daemons",
+        "Slashing Attack (Screamers only)"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "warpflame",
+        "Hand weapons",
+        "flames of Tzeentch",
+        "Lamprey's bite"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [
+        "daemonology",
+        "dark magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "2",
-      Name: "Blue Horror Crew (x3)",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "2",
+      "Name": "Blue Horror Crew (x3)",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemons of Tzeentch",
+        "Fly (9)",
+        "Impact Hits (D6+1)",
+        "Lore of Daemons",
+        "Slashing Attack (Screamers only)"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "warpflame",
+        "Hand weapons",
+        "flames of Tzeentch",
+        "Lamprey's bite"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [
+        "daemonology",
+        "dark magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "1",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Screamer (x2)",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "1",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Screamer (x2)",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemons of Tzeentch",
+        "Fly (9)",
+        "Impact Hits (D6+1)",
+        "Lore of Daemons",
+        "Slashing Attack (Screamers only)"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "warpflame",
+        "Hand weapons",
+        "flames of Tzeentch",
+        "Lamprey's bite"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [
+        "daemonology",
+        "dark magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": []
+    }
   ],
-  butcher: [
+  "butcher": [
     {
-      A: "3",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "5",
-      W: "4",
-      BS: "2",
-      Ld: "7",
-      WS: "3",
-      Name: "Butcher",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "5",
+      "W": "4",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Butcher",
+      "Impact-Hits": "2",
+      "rules": [
+        "Armour Bane (1)",
+        "Fear",
+        "Impact Hits (2)",
+        "Lore of the Great Maw",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Monstrous InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": [
+        "Butcher's Cauldron"
+      ]
+    }
   ],
   "cairn-wraith": [
     {
-      A: "2",
-      I: "2",
-      M: "6",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "0",
-      Ld: "6",
-      WS: "4",
-      Name: "Cairn Wraith",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "6",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "0",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Cairn Wraith",
+      "Regen": "6+",
+      "rules": [
+        "Ethereal",
+        "Indomitable (1)",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Terror"
+      ],
+      "equipment": [
+        "Spectral scythe"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "cannon-dwarfs": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "7",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Cannon",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "7",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Cannon",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "3",
-      Name: "Dwarf Crew",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "3",
+      "Name": "Dwarf Crew",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "captain-of-the-empire": [
     {
-      A: "2",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "5",
-      Ld: "9",
-      WS: "5",
-      Name: "Captain of the Empire",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "5",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Captain of the Empire",
+      "as": 6,
+      "rules": [
+        "\"Hold the Line!\"",
+        "Rallying Cry"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  carnosaur: [
+  "carnosaur": [
     {
-      A: "4",
-      I: "2",
-      M: "7",
-      S: "7",
-      T: "(+1)",
-      W: "(+4)",
-      BS: "0",
-      Ld: "-",
-      WS: "3",
-      Name: "Carnosaur",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "7",
+      "S": "7",
+      "T": "(+1)",
+      "W": "(+4)",
+      "BS": "0",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Carnosaur",
+      "as": 5,
+      "Stomps": "2",
+      "rules": [
+        "Blood Frenzy",
+        "Close Order",
+        "Cold Blooded",
+        "Large Target",
+        "Stomp Attacks (2)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Slashing talons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  carrion: [
+  "carrion": [
     {
-      A: "3",
-      I: "3",
-      M: "2",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "0",
-      Ld: "4",
-      WS: "3",
-      Name: "Carrion",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "2",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "0",
+      "Ld": "4",
+      "WS": "3",
+      "Name": "Carrion",
+      "Regen": "6+",
+      "Fly": "10",
+      "rules": [
+        "Fly (10)",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "casket-of-souls": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Casket of Souls",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Casket of Souls",
+      "as": 6,
+      "Regen": "5+",
+      "rules": [
+        "Cleaving Blow",
+        "Covenant of Power",
+        "Dry as Dust",
+        "Immovable Object",
+        "Indomitable (2)",
+        "Nehekharan Undead",
+        "Regeneration (5+)",
+        "Skirmishers",
+        "Unbound Spirits",
+        "Vortex of Souls"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "4",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "4",
-      BS: "3",
-      Ld: "8",
-      WS: "3",
-      Name: "Casket Guardians",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "4",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "Casket Guardians",
+      "as": 6,
+      "Regen": "5+",
+      "rules": [
+        "Cleaving Blow",
+        "Covenant of Power",
+        "Dry as Dust",
+        "Immovable Object",
+        "Indomitable (2)",
+        "Nehekharan Undead",
+        "Regeneration (5+)",
+        "Skirmishers",
+        "Unbound Spirits",
+        "Vortex of Souls"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "cathayan-grand-cannon": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Grand Cannon",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Grand Cannon",
+      "as": 6,
+      "rules": [
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Grand cannon",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ogre Loader"
+      ]
     },
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Cathayan Artillery Crew (x3)",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Cathayan Artillery Crew (x3)",
+      "as": 6,
+      "rules": [
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Grand cannon",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ogre Loader"
+      ]
+    }
   ],
   "cathayan-horse": [
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Cathayan Horse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Cathayan Horse",
+      "armourMod": 1,
+      "rules": [
+        "Counter Charge",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "cathayan-sentinel": [
     {
-      A: "3",
-      I: "3",
-      M: "6",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "1",
-      Ld: "10",
-      WS: "5",
-      Name: "Cathayan Sentinel",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "6",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "1",
+      "Ld": "10",
+      "WS": "5",
+      "Name": "Cathayan Sentinel",
+      "as": 5,
+      "Stomps": "D3+1",
+      "rules": [
+        "Close Order",
+        "Immune to Psychology",
+        "Implacable",
+        "Large Target",
+        "Stomp Attacks (D3+1)",
+        "Terror",
+        "Timmm-berrr!",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "great blade",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Terracotta Sentinel",
+        "Jade Sentinel",
+        "Obsidian Sentinel",
+        "Granite Sentinel",
+        "Warpstone Sentinel"
+      ]
+    }
   ],
   "cathayan-warhorse": [
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Cathayan Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Cathayan Warhorse",
+      "armourMod": 1,
+      "rules": [
+        "Cathayan Cataphracts",
+        "Counter Charge",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "cauldron-of-blood": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "2",
-      S: "5",
-      T: "5",
-      W: "5",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Cauldron of Blood",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "2",
+      "S": "5",
+      "T": "5",
+      "W": "5",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Cauldron of Blood",
+      "Magic-Res": "-1",
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Blessings of Khaine",
+        "Close Order",
+        "Dragged Along",
+        "Elven Reflexes",
+        "Frenzy",
+        "Hatred (High Elves)",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Magic Resistance (-1)",
+        "Murderous",
+        "Poisoned Attacks",
+        "Terror"
+      ],
+      "equipment": [
+        "Two hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "5",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "4",
-      Ld: "9",
-      WS: "4",
-      Name: "Witch Elf Crew (x2)",
-    },
+      "A": "1",
+      "I": "5",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Witch Elf Crew (x2)",
+      "Magic-Res": "-1",
+      "rules": [
+        "Blessings of Khaine",
+        "Close Order",
+        "Dragged Along",
+        "Elven Reflexes",
+        "Frenzy",
+        "Hatred (High Elves)",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Magic Resistance (-1)",
+        "Murderous",
+        "Poisoned Attacks",
+        "Terror"
+      ],
+      "equipment": [
+        "Two hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "cauldron-of-blood-renegade": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "2",
-      S: "5",
-      T: "5",
-      W: "5",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Cauldron of Blood",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "2",
+      "S": "5",
+      "T": "5",
+      "W": "5",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Cauldron of Blood",
+      "Magic-Res": "-1",
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Blessings of Khaine",
+        "Close Order",
+        "Dragged Along",
+        "Elven Reflexes",
+        "Frenzy",
+        "Hatred (High Elves)",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Magic Resistance (-1)",
+        "Murderous",
+        "Poisoned Attacks",
+        "Terror"
+      ],
+      "equipment": [
+        "Two hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "5",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "4",
-      Ld: "9",
-      WS: "4",
-      Name: "Witch Elf Crew (x2)",
-    },
+      "A": "1",
+      "I": "5",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Witch Elf Crew (x2)",
+      "Magic-Res": "-1",
+      "rules": [
+        "Blessings of Khaine",
+        "Close Order",
+        "Dragged Along",
+        "Elven Reflexes",
+        "Frenzy",
+        "Hatred (High Elves)",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Magic Resistance (-1)",
+        "Murderous",
+        "Poisoned Attacks",
+        "Terror"
+      ],
+      "equipment": [
+        "Two hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "centigor-herd": [
     {
-      A: "1",
-      I: "2",
-      M: "8",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "4",
-      Name: "Centigor",
+      "A": "1",
+      "I": "2",
+      "M": "8",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Centigor",
+      "as": 6,
+      "Stomps": "1",
+      "rules": [
+        "Drunken",
+        "Fast Cavalry",
+        "Horde",
+        "Mark of Chaos Undivided",
+        "Move Through Cover",
+        "Open Order",
+        "Primal Fury",
+        "Skirmishers",
+        "Stomp Attacks (1)",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
     },
     {
-      A: "2",
-      I: "2",
-      M: "8",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Gorehoof",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "8",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Gorehoof",
+      "as": 6,
+      "rules": [
+        "Drunken",
+        "Fast Cavalry",
+        "Horde",
+        "Mark of Chaos Undivided",
+        "Move Through Cover",
+        "Open Order",
+        "Primal Fury",
+        "Skirmishers",
+        "Stomp Attacks (1)",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
+    }
   ],
   "chameleon-skinks": [
     {
-      A: "1",
-      I: "4",
-      M: "6",
-      S: "3",
-      T: "2",
-      W: "1",
-      BS: "4",
-      Ld: "6",
-      WS: "2",
-      Name: "Chameleon Skink",
+      "A": "1",
+      "I": "4",
+      "M": "6",
+      "S": "3",
+      "T": "2",
+      "W": "1",
+      "BS": "4",
+      "Ld": "6",
+      "WS": "2",
+      "Name": "Chameleon Skink",
+      "as": 6,
+      "rules": [
+        "Cold Blooded",
+        "Evasive",
+        "Move Through Cover",
+        "Scouts",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "blowpipes",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "6",
-      S: "3",
-      T: "2",
-      W: "1",
-      BS: "5",
-      Ld: "6",
-      WS: "2",
-      Name: "Patrol Leader",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "6",
+      "S": "3",
+      "T": "2",
+      "W": "1",
+      "BS": "5",
+      "Ld": "6",
+      "WS": "2",
+      "Name": "Patrol Leader",
+      "as": 6,
+      "rules": [
+        "Cold Blooded",
+        "Evasive",
+        "Move Through Cover",
+        "Scouts",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "blowpipes",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "chaos-chariot": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Chariot",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Chariot",
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Close Order",
+        "Ensorcelled Weapons",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Mark of Chaos Undivided"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
     },
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Chaos Charioteer (x2)",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Chaos Charioteer (x2)",
+      "rules": [
+        "Close Order",
+        "Ensorcelled Weapons",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Mark of Chaos Undivided"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Chaos Steed (x2)",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Chaos Steed (x2)",
+      "rules": [
+        "Close Order",
+        "Ensorcelled Weapons",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Mark of Chaos Undivided"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
+    }
   ],
   "chaos-dragon": [
     {
-      A: "6",
-      I: "4",
-      M: "6",
-      S: "7",
-      T: "(+1)",
-      W: "(+6)",
-      BS: "-",
-      Ld: "-",
-      WS: "6",
-      Name: "Chaos Dragon",
-    },
+      "A": "6",
+      "I": "4",
+      "M": "6",
+      "S": "7",
+      "T": "(+1)",
+      "W": "(+6)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "6",
+      "Name": "Chaos Dragon",
+      "as": 4,
+      "Stomps": "D6",
+      "Fly": "10",
+      "rules": [
+        "Close Order",
+        "Fly (10)",
+        "Impetuous",
+        "Large Target",
+        "Stomp Attacks (D6)",
+        "Swiftstride",
+        "Terror",
+        "Two-headed Dragon"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "Dark Fire of Chaos",
+        "Fumes of Contagion",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "chaos-furies": [
     {
-      A: "1",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "0",
-      Ld: "5",
-      WS: "3",
-      Name: "Chaos Fury",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "0",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Chaos Fury",
+      "Fly": "8",
+      "rules": [
+        "Daemonic",
+        "Fly (8)",
+        "Furious Charge",
+        "Skirmishers",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Daemonic talons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Daemons of Khorne",
+        "Daemons of Nurgle",
+        "Daemons of Slaanesh",
+        "Daemons of Tzeentch"
+      ]
+    }
   ],
   "chaos-giant": [
     {
-      A: "*",
-      I: "2",
-      M: "6",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "1",
-      Ld: "10",
-      WS: "3",
-      Name: "Giant",
-    },
+      "A": "*",
+      "I": "2",
+      "M": "6",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "1",
+      "Ld": "10",
+      "WS": "3",
+      "Name": "Giant",
+      "as": 6,
+      "Stomps": "D6",
+      "rules": [
+        "Close Order",
+        "Giant Attacks",
+        "Immune to Psychology",
+        "Large Target",
+        "Pick Up And…",
+        "Stomp Attacks (D6)",
+        "Terror",
+        "Timmm-berrr!",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Giant's club",
+        "light armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Regeneration (6+)"
+      ]
+    }
   ],
   "chaos-knights": [
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Chaos Knight",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Chaos Knight",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "Ensorcelled Weapons",
+        "First Charge",
+        "Mark of Chaos Undivided",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
     },
     {
-      A: "2",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Champion",
+      "A": "2",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Champion",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "Ensorcelled Weapons",
+        "First Charge",
+        "Mark of Chaos Undivided",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Chaos Steed",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Chaos Steed",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "Ensorcelled Weapons",
+        "First Charge",
+        "Mark of Chaos Undivided",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
+    }
   ],
   "chaos-lord": [
     {
-      A: "5",
-      I: "6",
-      M: "4",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "3",
-      Ld: "9",
-      WS: "7",
-      Name: "Chaos Lord",
-    },
+      "A": "5",
+      "I": "6",
+      "M": "4",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "7",
+      "Name": "Chaos Lord",
+      "as": 4,
+      "rules": [
+        "Chaos Armour (5+)",
+        "Ensorcelled Weapons",
+        "Gaze of the Gods",
+        "Mark of Chaos Undivided",
+        "Rallying Cry"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
+    }
   ],
   "chaos-marauders": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "4",
-      Name: "Chaos Marauder",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Chaos Marauder",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Mark of Chaos Undivided",
+        "Shieldwall",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Cult of the Bloodied Hound",
+        "Cult of the Carrion Crow",
+        "Cult of the Slithering Serpent",
+        "Cult of the Fell Raptor",
+        "Ambushers",
+        "Skirmishers",
+        "Open Order"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Marauder Headman",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Marauder Headman",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Mark of Chaos Undivided",
+        "Shieldwall",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Cult of the Bloodied Hound",
+        "Cult of the Carrion Crow",
+        "Cult of the Slithering Serpent",
+        "Cult of the Fell Raptor",
+        "Ambushers",
+        "Skirmishers",
+        "Open Order"
+      ]
+    }
   ],
   "chaos-ogres": [
     {
-      A: "3",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "2",
-      Ld: "7",
-      WS: "3",
-      Name: "Chaos Ogre",
+      "A": "3",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Chaos Ogre",
+      "as": 5,
+      "Impact-Hits": "1",
+      "rules": [
+        "Armour Bane (1)",
+        "Close Order",
+        "Fear",
+        "Impact Hits (1)",
+        "Mark of Chaos Undivided",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
     },
     {
-      A: "4",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "2",
-      Ld: "7",
-      WS: "3",
-      Name: "Champion",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Champion",
+      "as": 5,
+      "rules": [
+        "Armour Bane (1)",
+        "Close Order",
+        "Fear",
+        "Impact Hits (1)",
+        "Mark of Chaos Undivided",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
+    }
   ],
   "chaos-spawn": [
     {
-      A: "D6",
-      I: "3",
-      M: "2D6+1",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "0",
-      Ld: "10",
-      WS: "3",
-      Name: "Chaos Spawn",
-    },
+      "A": "D6",
+      "I": "3",
+      "M": "2D6+1",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "0",
+      "Ld": "10",
+      "WS": "3",
+      "Name": "Chaos Spawn",
+      "as": 5,
+      "Stomps": "1",
+      "rules": [
+        "Armour Bane (2)",
+        "Fear",
+        "Immune to Psychology",
+        "Open Order",
+        "Random Attacks",
+        "Random Movement",
+        "Stomp Attacks (1)",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Spawn of Khorne",
+        "Spawn of Nurgle",
+        "Spawn of Slaanesh",
+        "Spawn of Tzeentch"
+      ]
+    }
   ],
   "chaos-steed": [
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Chaos Steed",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Chaos Steed",
+      "armourMod": 1,
+      "rules": [
+        "Counter Charge",
+        "First Charge",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "chaos-trolls": [
     {
-      A: "3",
-      I: "2",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "1",
-      Ld: "4",
-      WS: "3",
-      Name: "Chaos Troll",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "1",
+      "Ld": "4",
+      "WS": "3",
+      "Name": "Chaos Troll",
+      "as": 6,
+      "Regen": "5+",
+      "rules": [
+        "Armour Bane (1)",
+        "Close Order",
+        "Fear",
+        "Flammable",
+        "Motley Crew",
+        "Regeneration (5+)",
+        "Stupidity"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Troll vomit",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "chaos-warhound-handler": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Chaos Warhound Handler",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Chaos Warhound Handler",
+      "as": 5,
+      "rules": [
+        "Handler",
+        "Loner",
+        "Mark of Chaos Undivided",
+        "Move Through Cover",
+        "Vanguard",
+        "Open Order",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter",
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Armoured Hide (1)",
+        "Poisoned Attacks",
+        "Vanguard"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "0",
-      Ld: "6",
-      WS: "4",
-      Name: "Chaos Warhound",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "0",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Chaos Warhound",
+      "as": 5,
+      "rules": [
+        "Handler",
+        "Loner",
+        "Mark of Chaos Undivided",
+        "Move Through Cover",
+        "Vanguard",
+        "Open Order",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter",
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Armoured Hide (1)",
+        "Poisoned Attacks",
+        "Vanguard"
+      ]
+    }
   ],
   "chaos-warhounds": [
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "0",
-      Ld: "6",
-      WS: "4",
-      Name: "Chaos Warhound",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "0",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Chaos Warhound",
+      "rules": [
+        "Loner",
+        "Move Through Cover",
+        "Open Order",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Armoured Hide (1)",
+        "Poisoned Attacks",
+        "Vanguard"
+      ]
+    }
   ],
   "chaos-warhounds-warriors-of-chaos": [
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "0",
-      Ld: "6",
-      WS: "4",
-      Name: "Chaos Warhound",
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "0",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Chaos Warhound",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Chaos Warhound Handler",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Chaos Warhound Handler",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "chaos-warriors": [
     {
-      A: "1",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Chaos Warrior",
+      "A": "1",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Chaos Warrior",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Ensorcelled Weapons",
+        "Mark of Chaos Undivided"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
     },
     {
-      A: "2",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Champion",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Champion",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Ensorcelled Weapons",
+        "Mark of Chaos Undivided"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
+    }
   ],
   "chapter-master": [
     {
-      A: "3",
-      I: "5",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Chapter Master",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Chapter Master",
+      "as": 5,
+      "rules": [
+        "Counter Charge",
+        "First Charge",
+        "Immune to Psychology",
+        "Master of Battle",
+        "Rallying Cry",
+        "Stubborn",
+        "Swiftstride",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy CavalryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "chariot-of-tzeentch": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Chariot of Tzeentch",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Chariot of Tzeentch",
+      "Impact-Hits": "D6+1",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemons of Tzeentch",
+        "Fly (9)",
+        "Impact Hits (D6+1)",
+        "Slashing Attack (Screamers only)"
+      ],
+      "equipment": [
+        "Lamprey's bite"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "1",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Screamer (x2)",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "1",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Screamer (x2)",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemons of Tzeentch",
+        "Fly (9)",
+        "Impact Hits (D6+1)",
+        "Slashing Attack (Screamers only)"
+      ],
+      "equipment": [
+        "Lamprey's bite"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "chieftain's-chariot": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Chieftain's Chariot",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Chieftain's Chariot",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "4",
-      Ld: "-",
-      WS: "5",
-      Name: "Charioteer (x1)",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "4",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Charioteer (x1)",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "8",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Chracian Lion (x2)",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "8",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Chracian Lion (x2)",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  chimera: [
+  "chimera": [
     {
-      A: "6",
-      I: "3",
-      M: "6",
-      S: "6",
-      T: "5",
-      W: "4",
-      BS: "0",
-      Ld: "5",
-      WS: "4",
-      Name: "Chimera",
-    },
+      "A": "6",
+      "I": "3",
+      "M": "6",
+      "S": "6",
+      "T": "5",
+      "W": "4",
+      "BS": "0",
+      "Ld": "5",
+      "WS": "4",
+      "Name": "Chimera",
+      "as": 5,
+      "Stomps": "1",
+      "Fly": "10",
+      "rules": [
+        "Armour Bane (2, claws and fangs only)",
+        "Close Order",
+        "Fly (10)",
+        "Large Target",
+        "Stomp Attacks (1)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Regeneration (5+)",
+        "Flaming Breath",
+        "Poisoned Attacks",
+        "Fiend Tail"
+      ]
+    }
   ],
   "chosen-chaos-chariot": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Chariot",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Chariot",
+      "Impact-Hits": "D6+1, Chariot only",
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "Ensorcelled Weapons",
+        "First Charge",
+        "Impact Hits (D6+1, Chariot only)",
+        "Mark of Chaos Undivided"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
     },
     {
-      A: "2",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "9",
-      WS: "5",
-      Name: "Chosen Charioteer (x2)",
+      "A": "2",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Chosen Charioteer (x2)",
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "Ensorcelled Weapons",
+        "First Charge",
+        "Impact Hits (D6+1, Chariot only)",
+        "Mark of Chaos Undivided"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Chaos Steed (x2)",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Chaos Steed (x2)",
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "Ensorcelled Weapons",
+        "First Charge",
+        "Impact Hits (D6+1, Chariot only)",
+        "Mark of Chaos Undivided"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
+    }
   ],
   "chosen-chaos-knights": [
     {
-      A: "2",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "5",
-      Name: "Chosen Chaos Knight",
+      "A": "2",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Chosen Chaos Knight",
+      "as": 3,
+      "armourMod": 1,
+      "rules": [
+        "Chaos Armour (6+)",
+        "Close Order",
+        "Counter Charge",
+        "Ensorcelled Weapons",
+        "First Charge",
+        "Mark of Chaos Undivided",
+        "Stubborn",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch",
+        "Drilled"
+      ]
     },
     {
-      A: "3",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "5",
-      Name: "Champion",
+      "A": "3",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Champion",
+      "as": 3,
+      "armourMod": 1,
+      "rules": [
+        "Chaos Armour (6+)",
+        "Close Order",
+        "Counter Charge",
+        "Ensorcelled Weapons",
+        "First Charge",
+        "Mark of Chaos Undivided",
+        "Stubborn",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch",
+        "Drilled"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Chaos Steed",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Chaos Steed",
+      "as": 3,
+      "armourMod": 1,
+      "rules": [
+        "Chaos Armour (6+)",
+        "Close Order",
+        "Counter Charge",
+        "Ensorcelled Weapons",
+        "First Charge",
+        "Mark of Chaos Undivided",
+        "Stubborn",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch",
+        "Drilled"
+      ]
+    }
   ],
   "chosen-chaos-warriors": [
     {
-      A: "2",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "5",
-      Name: "Chosen Chaos Warrior",
+      "A": "2",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Chosen Chaos Warrior",
+      "as": 4,
+      "rules": [
+        "Chaos Armour (6+)",
+        "Close Order",
+        "Ensorcelled Weapons",
+        "Mark of Chaos Undivided",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch",
+        "Drilled"
+      ]
     },
     {
-      A: "3",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "5",
-      Name: "Champion",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Champion",
+      "as": 4,
+      "rules": [
+        "Chaos Armour (6+)",
+        "Close Order",
+        "Ensorcelled Weapons",
+        "Mark of Chaos Undivided",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch",
+        "Drilled"
+      ]
+    }
   ],
   "chracian-chieftain": [
     {
-      A: "3",
-      I: "5",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "3",
-      BS: "4",
-      Ld: "9",
-      WS: "6",
-      Name: "Chracian Chieftain",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "3",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Chracian Chieftain",
+      "as": 5,
+      "rules": [
+        "Furious Charge",
+        "Ithilmar Weapons",
+        "Lion Cloak",
+        "Move Through Cover",
+        "Strike First",
+        "Stubborn",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Chracian Great Blade"
+      ]
+    }
   ],
   "chracian-woodsmen": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Chracian Woodsman",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Chracian Woodsman",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Move Through Cover",
+        "Skirmishers",
+        "Valour of Ages",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Chracian great blades",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Lion Cloak",
+        "Ambushers",
+        "Scouts"
+      ]
     },
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Chracian Captain",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Chracian Captain",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Move Through Cover",
+        "Skirmishers",
+        "Valour of Ages",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Chracian great blades",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Lion Cloak",
+        "Ambushers",
+        "Scouts"
+      ]
+    }
   ],
-  clanrats: [
+  "clanrats": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "4",
-      WS: "3",
-      Name: "Clanrat",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "4",
+      "WS": "3",
+      "Name": "Clanrat",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Scurry Away",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "3",
-      Name: "Clawleader",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Clawleader",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Scurry Away",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "clanrats-renegade": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "4",
-      WS: "3",
-      Name: "Clanrat",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "4",
+      "WS": "3",
+      "Name": "Clanrat",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Regimental Unit",
+        "Scurry Away",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "3",
-      Name: "Clawleader",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Clawleader",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Regimental Unit",
+        "Scurry Away",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  cockatrice: [
+  "cockatrice": [
     {
-      A: "6",
-      I: "6",
-      M: "4",
-      S: "4",
-      T: "5",
-      W: "4",
-      BS: "5",
-      Ld: "6",
-      WS: "4",
-      Name: "Cockatrice",
-    },
+      "A": "6",
+      "I": "6",
+      "M": "4",
+      "S": "4",
+      "T": "5",
+      "W": "4",
+      "BS": "5",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Cockatrice",
+      "as": 5,
+      "Stomps": "1",
+      "Fly": "10",
+      "rules": [
+        "Close Order",
+        "Fly (10)",
+        "Large Target",
+        "Stomp Attacks (1)",
+        "Stony Stare",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "hand weapon",
+        "petrifying gaze",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "cold-one-chariot": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Chariot",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Chariot",
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Armour Bane (1, Cold One only)",
+        "Close Order",
+        "Elven Reflexes",
+        "Fear",
+        "First Charge",
+        "Hatred (High Elves)",
+        "Impact Hits (D6+1)",
+        "Stupidity"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "repeater crossbows",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "5",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Knight Charioteer (x2)",
+      "A": "1",
+      "I": "5",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Knight Charioteer (x2)",
+      "rules": [
+        "Armour Bane (1, Cold One only)",
+        "Close Order",
+        "Elven Reflexes",
+        "Fear",
+        "First Charge",
+        "Hatred (High Elves)",
+        "Impact Hits (D6+1)",
+        "Stupidity"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "repeater crossbows",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "2",
-      M: "7",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Cold One (x2)",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "7",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Cold One (x2)",
+      "rules": [
+        "Armour Bane (1, Cold One only)",
+        "Close Order",
+        "Elven Reflexes",
+        "Fear",
+        "First Charge",
+        "Hatred (High Elves)",
+        "Impact Hits (D6+1)",
+        "Stupidity"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "repeater crossbows",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "cold-one-dark-elves": [
     {
-      A: "2",
-      I: "2",
-      M: "7",
-      S: "4",
-      T: "(+1)",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Cold One",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "7",
+      "S": "4",
+      "T": "(+1)",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Cold One",
+      "rules": [
+        "Armour Bane (1, Cold One only)",
+        "Armoured Hide (1)",
+        "Fear",
+        "First Charge",
+        "Stupidity",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "cold-one-knights": [
     {
-      A: "1",
-      I: "5",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Cold One Knight",
+      "A": "1",
+      "I": "5",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Cold One Knight",
+      "as": 4,
+      "rules": [
+        "Armour Bane (1, Cold One only)",
+        "Armoured Hide (1)",
+        "Close Order",
+        "Elven Reflexes",
+        "Fear",
+        "First Charge",
+        "Hatred (High Elves)",
+        "Stupidity",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "5",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Dread Knight",
+      "A": "2",
+      "I": "5",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Dread Knight",
+      "as": 4,
+      "rules": [
+        "Armour Bane (1, Cold One only)",
+        "Armoured Hide (1)",
+        "Close Order",
+        "Elven Reflexes",
+        "Fear",
+        "First Charge",
+        "Hatred (High Elves)",
+        "Stupidity",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "2",
-      M: "7",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Cold One",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "7",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Cold One",
+      "as": 4,
+      "rules": [
+        "Armour Bane (1, Cold One only)",
+        "Armoured Hide (1)",
+        "Close Order",
+        "Elven Reflexes",
+        "Fear",
+        "First Charge",
+        "Hatred (High Elves)",
+        "Stupidity",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "cold-one-lizardmen": [
     {
-      A: "2",
-      I: "2",
-      M: "7",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Cold One",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "7",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Cold One",
+      "rules": [
+        "Armour Bane (1, Cold One only)",
+        "Armoured Hide (1)",
+        "Fear",
+        "Stupidity",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "cold-one-riders": [
     {
-      A: "2",
-      I: "2",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "0",
-      Ld: "8",
-      WS: "4",
-      Name: "Cold One Rider",
+      "A": "2",
+      "I": "2",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Cold One Rider",
+      "as": 4,
+      "rules": [
+        "Armour Bane (1, Cold One only)",
+        "Armoured Hide (1)",
+        "Close Order",
+        "Cold Blooded",
+        "Fear",
+        "Obsidian Blades",
+        "Stupidity",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
     },
     {
-      A: "3",
-      I: "2",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "0",
-      Ld: "8",
-      WS: "4",
-      Name: "Pack Leader",
+      "A": "3",
+      "I": "2",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Pack Leader",
+      "as": 4,
+      "rules": [
+        "Armour Bane (1, Cold One only)",
+        "Armoured Hide (1)",
+        "Close Order",
+        "Cold Blooded",
+        "Fear",
+        "Obsidian Blades",
+        "Stupidity",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
     },
     {
-      A: "2",
-      I: "2",
-      M: "7",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Cold One",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "7",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Cold One",
+      "as": 4,
+      "rules": [
+        "Armour Bane (1, Cold One only)",
+        "Armoured Hide (1)",
+        "Close Order",
+        "Cold Blooded",
+        "Fear",
+        "Obsidian Blades",
+        "Stupidity",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
+    }
   ],
   "common-troll-mob": [
     {
-      A: "3",
-      I: "2",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "1",
-      Ld: "4",
-      WS: "3",
-      Name: "Common Troll",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "1",
+      "Ld": "4",
+      "WS": "3",
+      "Name": "Common Troll",
+      "as": 6,
+      "Regen": "5+",
+      "rules": [
+        "Armour Bane (1)",
+        "Close Order",
+        "Fear",
+        "Flammable",
+        "Motley Crew",
+        "Regeneration (5+)",
+        "Stupidity"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Troll vomit",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "corpse-cart": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Corpse Cart",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Corpse Cart",
+      "Regen": "6+",
+      "Impact-Hits": "D3+1",
+      "rules": [
+        "Close Order",
+        "Dark Vitality",
+        "First Charge",
+        "Impact Hits (D3+1)",
+        "Indomitable (1)",
+        "Lore of Undeath",
+        "Necromantic Undead",
+        "Random Attacks (The Restless Dead only)",
+        "Regeneration (6+)"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [
+        "necromancy"
+      ],
+      "optionalRules": [
+        "Balefire Brazier",
+        "Warped Tintinnabulation"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "0",
-      Ld: "5",
-      WS: "3",
-      Name: "Corpsemaster (x1)",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "0",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Corpsemaster (x1)",
+      "Regen": "6+",
+      "rules": [
+        "Close Order",
+        "Dark Vitality",
+        "First Charge",
+        "Impact Hits (D3+1)",
+        "Indomitable (1)",
+        "Lore of Undeath",
+        "Necromantic Undead",
+        "Random Attacks (The Restless Dead only)",
+        "Regeneration (6+)"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [
+        "necromancy"
+      ],
+      "optionalRules": [
+        "Balefire Brazier",
+        "Warped Tintinnabulation"
+      ]
     },
     {
-      A: "2D6",
-      I: "1",
-      M: "4",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "0",
-      Ld: "-",
-      WS: "1",
-      Name: "The Restless Dead",
-    },
+      "A": "2D6",
+      "I": "1",
+      "M": "4",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "0",
+      "Ld": "-",
+      "WS": "1",
+      "Name": "The Restless Dead",
+      "Regen": "6+",
+      "rules": [
+        "Close Order",
+        "Dark Vitality",
+        "First Charge",
+        "Impact Hits (D3+1)",
+        "Indomitable (1)",
+        "Lore of Undeath",
+        "Necromantic Undead",
+        "Random Attacks (The Restless Dead only)",
+        "Regeneration (6+)"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [
+        "necromancy"
+      ],
+      "optionalRules": [
+        "Balefire Brazier",
+        "Warped Tintinnabulation"
+      ]
+    }
   ],
   "coven-throne": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "5",
-      W: "5",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Coven Throne",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "5",
+      "W": "5",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Coven Throne",
+      "Regen": "6+",
+      "Impact-Hits": "D6+1",
+      "Fly": "8",
+      "rules": [
+        "Close Order",
+        "Dark Vitality",
+        "First Charge",
+        "Fly (8)",
+        "Ghoulish Glamour",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Necromantic Undead",
+        "Random Attacks (Spirit Horde only)",
+        "Regeneration (6+)",
+        "Scrying Pool"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "5",
-      M: "-",
-      S: "5",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "5",
-      Name: "Pallid Handmaidens (x2)",
+      "A": "2",
+      "I": "5",
+      "M": "-",
+      "S": "5",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Pallid Handmaidens (x2)",
+      "Regen": "6+",
+      "Fly": "8",
+      "rules": [
+        "Close Order",
+        "Dark Vitality",
+        "First Charge",
+        "Fly (8)",
+        "Ghoulish Glamour",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Necromantic Undead",
+        "Random Attacks (Spirit Horde only)",
+        "Regeneration (6+)",
+        "Scrying Pool"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "D6",
-      I: "1",
-      M: "6",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "0",
-      Ld: "-",
-      WS: "3",
-      Name: "Spirit Horde",
-    },
+      "A": "D6",
+      "I": "1",
+      "M": "6",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "0",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Spirit Horde",
+      "Regen": "6+",
+      "Fly": "8",
+      "rules": [
+        "Close Order",
+        "Dark Vitality",
+        "First Charge",
+        "Fly (8)",
+        "Ghoulish Glamour",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Necromantic Undead",
+        "Random Attacks (Spirit Horde only)",
+        "Regeneration (6+)",
+        "Scrying Pool"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "crane-gunner-teams": [
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Crane Gunner Team",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Crane Gunner Team",
+      "as": 6,
+      "rules": [
+        "Open Order"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "crane guns",
+        "light armour",
+        "tower shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers",
+        "Reserve Move"
+      ]
+    }
   ],
   "crypt-ghouls": [
     {
-      A: "2",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "3",
-      Name: "Crypt Ghoul",
+      "A": "2",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Crypt Ghoul",
+      "Regen": "6+",
+      "rules": [
+        "Move Through Cover",
+        "Necromantic Undead",
+        "Open Order",
+        "Poisoned Attacks",
+        "Regeneration (6+)",
+        "Reserve Move",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "3",
-      Name: "Crypt Ghast",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Crypt Ghast",
+      "Regen": "6+",
+      "rules": [
+        "Move Through Cover",
+        "Necromantic Undead",
+        "Open Order",
+        "Poisoned Attacks",
+        "Regeneration (6+)",
+        "Reserve Move",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "crypt-horrors": [
     {
-      A: "3",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "0",
-      Ld: "5",
-      WS: "3",
-      Name: "Crypt Horror",
+      "A": "3",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "0",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Crypt Horror",
+      "Regen": "6+",
+      "Stomps": "1",
+      "rules": [
+        "Indomitable (1)",
+        "Move Through Cover",
+        "Necromantic Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Stomp Attacks (1)"
+      ],
+      "equipment": [
+        "Filth-encrusted claws"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "4",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "0",
-      Ld: "5",
-      WS: "3",
-      Name: "Crypt Haunter",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "0",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Crypt Haunter",
+      "Regen": "6+",
+      "rules": [
+        "Indomitable (1)",
+        "Move Through Cover",
+        "Necromantic Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Stomp Attacks (1)"
+      ],
+      "equipment": [
+        "Filth-encrusted claws"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  cygor: [
+  "cygor": [
     {
-      A: "4",
-      I: "3",
-      M: "7",
-      S: "6",
-      T: "5",
-      W: "6",
-      BS: "1",
-      Ld: "8",
-      WS: "2",
-      Name: "Cygor",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "7",
+      "S": "6",
+      "T": "5",
+      "W": "6",
+      "BS": "1",
+      "Ld": "8",
+      "WS": "2",
+      "Name": "Cygor",
+      "as": 6,
+      "Stomps": "D3",
+      "rules": [
+        "Close Order",
+        "Ghostsight",
+        "Immune to Psychology",
+        "Large Target",
+        "Soul-eater",
+        "Stomp Attacks (D3)",
+        "Stubborn",
+        "Terror",
+        "Timmm-berrr!"
+      ],
+      "equipment": [
+        "hand weapon",
+        "hurl attack",
+        "light armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "daemon-prince-daemons-of-chaos": [
     {
-      A: "5",
-      I: "7",
-      M: "6",
-      S: "6",
-      T: "5",
-      W: "4",
-      BS: "5",
-      Ld: "9",
-      WS: "7",
-      Name: "Daemon Prince",
-    },
+      "A": "5",
+      "I": "7",
+      "M": "6",
+      "S": "6",
+      "T": "5",
+      "W": "4",
+      "BS": "5",
+      "Ld": "9",
+      "WS": "7",
+      "Name": "Daemon Prince",
+      "as": 4,
+      "rules": [
+        "Chaos Armour",
+        "Daemonic",
+        "Infernal Favour (2)",
+        "Lore of Daemons"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "ensorcelled weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic"
+      ],
+      "optionalRules": [
+        "Daemon of Khorne",
+        "Daemon of Nurgle",
+        "Daemon of Slaanesh",
+        "Daemon of Tzeentch"
+      ]
+    }
   ],
   "daemon-prince-renegade": [
     {
-      A: "5",
-      I: "7",
-      M: "6",
-      S: "6",
-      T: "5",
-      W: "4",
-      BS: "5",
-      Ld: "9",
-      WS: "7",
-      Name: "Daemon Prince",
-    },
+      "A": "5",
+      "I": "7",
+      "M": "6",
+      "S": "6",
+      "T": "5",
+      "W": "4",
+      "BS": "5",
+      "Ld": "9",
+      "WS": "7",
+      "Name": "Daemon Prince",
+      "as": 4,
+      "Regen": "5+",
+      "rules": [
+        "Chaos Armour",
+        "Daemonic",
+        "Infernal Favour (2)",
+        "Lore of Daemons",
+        "Regeneration (5+)"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "ensorcelled weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic"
+      ],
+      "optionalRules": [
+        "Daemon of Khorne",
+        "Daemon of Nurgle",
+        "Daemon of Slaanesh",
+        "Daemon of Tzeentch"
+      ]
+    }
   ],
   "daemon-prince-warriors-of-chaos": [
     {
-      A: "5",
-      I: "7",
-      M: "6",
-      S: "6",
-      T: "5",
-      W: "4",
-      BS: "5",
-      Ld: "9",
-      WS: "7",
-      Name: "Daemon Prince",
-    },
+      "A": "5",
+      "I": "7",
+      "M": "6",
+      "S": "6",
+      "T": "5",
+      "W": "4",
+      "BS": "5",
+      "Ld": "9",
+      "WS": "7",
+      "Name": "Daemon Prince",
+      "as": 4,
+      "Regen": "5+",
+      "rules": [
+        "Chaos Armour (4+)",
+        "Ensorcelled Weapons",
+        "Fear",
+        "Gaze of the Gods",
+        "Immune to Psychology",
+        "Lore of Chaos",
+        "Mark of Chaos Undivided",
+        "Regeneration (5+)",
+        "Unbreakable",
+        "Unstable",
+        "Warp-spawned"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic"
+      ],
+      "optionalRules": [
+        "Fly (9)",
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
+    }
   ],
   "daemon-slayer": [
     {
-      A: "4",
-      I: "5",
-      M: "3",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "3",
-      Ld: "10",
-      WS: "7",
-      Name: "Daemon Slayer",
-    },
+      "A": "4",
+      "I": "5",
+      "M": "3",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "3",
+      "Ld": "10",
+      "WS": "7",
+      "Name": "Daemon Slayer",
+      "Magic-Res": "-2",
+      "rules": [
+        "Deathblow",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Immune to Psychology",
+        "Killing Blow",
+        "Loner",
+        "Magic Resistance (-2)",
+        "Resolute",
+        "Slayer of Daemons",
+        "Unbreakable",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "daemonettes-of-slaanesh": [
     {
-      A: "1",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Daemonette",
+      "A": "1",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Daemonette",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemons of Slaanesh"
+      ],
+      "equipment": [
+        "Piercing claws"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Alluress",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Alluress",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemons of Slaanesh"
+      ],
+      "equipment": [
+        "Piercing claws"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "daemonic-herald-of-khorne": [
     {
-      A: "3",
-      I: "6",
-      M: "5",
-      S: "5",
-      T: "4",
-      W: "2",
-      BS: "4",
-      Ld: "8",
-      WS: "7",
-      Name: "Herald of Khorne",
-    },
+      "A": "3",
+      "I": "6",
+      "M": "5",
+      "S": "5",
+      "T": "4",
+      "W": "2",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "7",
+      "Name": "Herald of Khorne",
+      "as": 6,
+      "Magic-Res": "-1",
+      "rules": [
+        "Daemonic",
+        "Daemons of Khorne",
+        "Furious Charge",
+        "Impetuous",
+        "Infernal Favour (1)",
+        "Magic Resistance (-1)"
+      ],
+      "equipment": [
+        "Hellblade",
+        "light armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "daemonic-herald-of-nurgle": [
     {
-      A: "3",
-      I: "4",
-      M: "4",
-      S: "5",
-      T: "5",
-      W: "2",
-      BS: "5",
-      Ld: "8",
-      WS: "5",
-      Name: "Herald of Nurgle",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "4",
+      "S": "5",
+      "T": "5",
+      "W": "2",
+      "BS": "5",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Herald of Nurgle",
+      "Regen": "6+",
+      "rules": [
+        "Daemonic",
+        "Daemon of Nurgle",
+        "Infernal Favour (1)",
+        "Lore of Daemons",
+        "Poisoned Attacks",
+        "Regeneration (6+)"
+      ],
+      "equipment": [
+        "Plaguesword"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic"
+      ],
+      "optionalRules": [
+        "Death's Heads"
+      ]
+    }
   ],
   "daemonic-herald-of-slaanesh": [
     {
-      A: "3",
-      I: "6",
-      M: "6",
-      S: "4",
-      T: "3",
-      W: "2",
-      BS: "4",
-      Ld: "8",
-      WS: "6",
-      Name: "Herald of Slaanesh",
-    },
+      "A": "3",
+      "I": "6",
+      "M": "6",
+      "S": "4",
+      "T": "3",
+      "W": "2",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Herald of Slaanesh",
+      "rules": [
+        "Daemonic",
+        "Daemon of Slaanesh",
+        "Infernal Favour (1)",
+        "Lore of Daemons"
+      ],
+      "equipment": [
+        "Piercing claws"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "daemonology",
+        "dark magic",
+        "illusion"
+      ],
+      "optionalRules": []
+    }
   ],
   "daemonic-herald-of-tzeentch": [
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "4",
-      Ld: "8",
-      WS: "3",
-      Name: "Herald of Tzeentch",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "Herald of Tzeentch",
+      "rules": [
+        "Daemonic",
+        "Daemon of Tzeentch",
+        "Infernal Favour (1)",
+        "Lore of Daemons"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "flames of Tzeentch"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": []
+    }
   ],
   "daemonic-mount": [
     {
-      A: "2",
-      I: "3",
-      M: "8",
-      S: "5",
-      T: "-",
-      W: "(+1)",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "Daemonic Mount",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "8",
+      "S": "5",
+      "T": "-",
+      "W": "(+1)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "Daemonic Mount",
+      "Stomps": "1",
+      "rules": [
+        "Armour Bane (1, Daemonic Mount only)",
+        "Fear",
+        "Magical Attacks",
+        "Mark of Chaos (as rider)",
+        "Stomp Attacks (1)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "daemonsmith-sorcerer": [
     {
-      A: "2",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "4",
-      Ld: "9",
-      WS: "4",
-      Name: "Daemonsmith Sorcerer",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Daemonsmith Sorcerer",
+      "as": 5,
+      "rules": [
+        "Blackshard Armour",
+        "Ensorcelled Weapons",
+        "Infernal Engineer",
+        "Lore of Hashut",
+        "Resolute",
+        "Sorcerer's Curse",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [
+        "daemonology",
+        "dark magic",
+        "elementalism"
+      ],
+      "optionalRules": [
+        "Darkforged Weapon",
+        "Naptha Bombs",
+        "Blood of Hashut"
+      ]
+    }
   ],
-  damsel: [
+  "damsel": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Damsel",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Damsel",
+      "Magic-Res": "-2",
+      "rules": [
+        "Aura of the Lady",
+        "Blessings of the Lady",
+        "Lore of the Lady",
+        "Magical Attacks",
+        "Magic Resistance (-2)",
+        "Shield of the Lady"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": []
+    }
   ],
   "dark-elf-dreadlord": [
     {
-      A: "4",
-      I: "6",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "3",
-      BS: "7",
-      Ld: "10",
-      WS: "7",
-      Name: "Dark Elf Dreadlord",
-    },
+      "A": "4",
+      "I": "6",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "3",
+      "BS": "7",
+      "Ld": "10",
+      "WS": "7",
+      "Name": "Dark Elf Dreadlord",
+      "as": 6,
+      "rules": [
+        "Eternal Hatred",
+        "Hatred (High Elves)",
+        "Murderous",
+        "Strike First"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Sea Dragon Cloak"
+      ]
+    }
   ],
   "dark-elf-master": [
     {
-      A: "3",
-      I: "5",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "2",
-      BS: "6",
-      Ld: "9",
-      WS: "6",
-      Name: "Dark Elf Master",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "2",
+      "BS": "6",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Dark Elf Master",
+      "as": 6,
+      "rules": [
+        "Eternal Hatred",
+        "Hatred (High Elves)",
+        "Murderous",
+        "Strike First"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Sea Dragon Cloak"
+      ]
+    }
   ],
   "dark-elf-shades": [
     {
-      A: "1",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "5",
-      Ld: "8",
-      WS: "5",
-      Name: "Shade",
+      "A": "1",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "5",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Shade",
+      "rules": [
+        "Elven Reflexes",
+        "Evasive",
+        "Hatred (High Elves)",
+        "Move Through Cover",
+        "Scouts",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "repeater crossbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers",
+        "Chariot Runners",
+        "Veteran"
+      ]
     },
     {
-      A: "1",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "6",
-      Ld: "8",
-      WS: "5",
-      Name: "Bloodshade",
-    },
+      "A": "1",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "6",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Bloodshade",
+      "rules": [
+        "Elven Reflexes",
+        "Evasive",
+        "Hatred (High Elves)",
+        "Move Through Cover",
+        "Scouts",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "repeater crossbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers",
+        "Chariot Runners",
+        "Veteran"
+      ]
+    }
   ],
   "dark-elf-warriors": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Dark Elf Warrior",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Dark Elf Warrior",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Hatred (High Elves)",
+        "Martial Prowess"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Veteran"
+      ]
     },
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Lordling",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Lordling",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Hatred (High Elves)",
+        "Martial Prowess"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Veteran"
+      ]
+    }
   ],
   "dark-pegasus": [
     {
-      A: "3",
-      I: "4",
-      M: "8",
-      S: "4",
-      T: "-",
-      W: "(+1)",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Dark Pegasus",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "8",
+      "S": "4",
+      "T": "-",
+      "W": "(+1)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Dark Pegasus",
+      "Fly": "10",
+      "rules": [
+        "Armour Bane (1, Dark Pegasus only)",
+        "Counter Charge",
+        "First Charge",
+        "Fly (10)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "dark-riders": [
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Dark Rider",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Dark Rider",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Hatred (High Elves)",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "light armour",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Fire & Flee",
+        "Scouts"
+      ]
     },
     {
-      A: "2",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Herald",
+      "A": "2",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Herald",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Hatred (High Elves)",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "light armour",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Fire & Flee",
+        "Scouts"
+      ]
     },
     {
-      A: "1",
-      I: "4",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Dark Steed",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Dark Steed",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Hatred (High Elves)",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "light armour",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Fire & Flee",
+        "Scouts"
+      ]
+    }
   ],
   "dark-steed": [
     {
-      A: "1",
-      I: "4",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Dark Steed",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Dark Steed",
+      "rules": [
+        "Fast Cavalry",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "death-hag": [
     {
-      A: "3",
-      I: "7",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "2",
-      BS: "6",
-      Ld: "8",
-      WS: "6",
-      Name: "Death Hag",
-    },
+      "A": "3",
+      "I": "7",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "2",
+      "BS": "6",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Death Hag",
+      "rules": [
+        "Eternal Hatred",
+        "Frenzy",
+        "Hatred (all enemies)",
+        "Loner",
+        "Murderous",
+        "Poisoned Attacks",
+        "Strike First"
+      ],
+      "equipment": [
+        "Two hand weapons"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Cry of War",
+        "Rune of Khaine",
+        "Witchbrew"
+      ]
+    }
   ],
   "deathshrieker-rocket-launcher": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Deathshrieker Rocket Launcher",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Deathshrieker Rocket Launcher",
+      "as": 5,
+      "rules": [
+        "Blackshard Armour",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Demolition Rockets",
+        "Infernal Incendiaries",
+        "hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Hellbound",
+        "Steam Carriage"
+      ]
     },
     {
-      A: "3",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "3",
-      Name: "Chaos Dwarf Crew",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "3",
+      "Name": "Chaos Dwarf Crew",
+      "as": 5,
+      "rules": [
+        "Blackshard Armour",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Demolition Rockets",
+        "Infernal Incendiaries",
+        "hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Hellbound",
+        "Steam Carriage"
+      ]
+    }
   ],
   "deepwood-hound": [
     {
-      A: "1",
-      I: "3",
-      M: "9",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "-",
-      Ld: "5",
-      WS: "4",
-      Name: "Deepwood Hound",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "9",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "-",
+      "Ld": "5",
+      "WS": "4",
+      "Name": "Deepwood Hound",
+      "rules": [
+        "Motley Crew",
+        "Run with the Pack",
+        "Skirmishers",
+        "Warband"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "deepwood-scouts": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Deepwood Scout",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Deepwood Scout",
+      "rules": [
+        "Elven Reflexes",
+        "Evasive",
+        "Fire & Flee",
+        "Move Through Cover",
+        "Open Order",
+        "Scouts",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Asrai longbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Arcane Bodkins",
+        "Hagbane Tips",
+        "Moonfire Shot",
+        "Swiftshiver Shards",
+        "Trueflight Arrows"
+      ]
     },
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "5",
-      Ld: "8",
-      WS: "4",
-      Name: "Lord's Bowman",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "5",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Lord's Bowman",
+      "rules": [
+        "Elven Reflexes",
+        "Evasive",
+        "Fire & Flee",
+        "Move Through Cover",
+        "Open Order",
+        "Scouts",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Asrai longbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Arcane Bodkins",
+        "Hagbane Tips",
+        "Moonfire Shot",
+        "Swiftshiver Shards",
+        "Trueflight Arrows"
+      ]
+    }
   ],
-  demigryph: [
+  "demigryph": [
     {
-      A: "3",
-      I: "4",
-      M: "7",
-      S: "5",
-      T: "-",
-      W: "(+1)",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "Demigryph",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "7",
+      "S": "5",
+      "T": "-",
+      "W": "(+1)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "Demigryph",
+      "armourMod": 1,
+      "rules": [
+        "Counter Charge",
+        "First Charge",
+        "Fear",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "barding"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "demigryph-knights": [
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Demigryph Knight",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Demigryph Knight",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "First Charge",
+        "Fear",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "Wicked claws",
+        "barding"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Demigryph Preceptor",
+      "A": "2",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Demigryph Preceptor",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "First Charge",
+        "Fear",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "Wicked claws",
+        "barding"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "4",
-      M: "7",
-      S: "5",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "Demigryph",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "7",
+      "S": "5",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "Demigryph",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "First Charge",
+        "Fear",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "Wicked claws",
+        "barding"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "dire-wolves": [
     {
-      A: "1",
-      I: "3",
-      M: "9",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "0",
-      Ld: "3",
-      WS: "3",
-      Name: "Dire Wolf",
+      "A": "1",
+      "I": "3",
+      "M": "9",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "0",
+      "Ld": "3",
+      "WS": "3",
+      "Name": "Dire Wolf",
+      "Regen": "6+",
+      "rules": [
+        "Necromantic Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Reserve Move",
+        "Slavering Charge",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "9",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "0",
-      Ld: "3",
-      WS: "3",
-      Name: "Doom Wolf",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "9",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "0",
+      "Ld": "3",
+      "WS": "3",
+      "Name": "Doom Wolf",
+      "Regen": "6+",
+      "rules": [
+        "Necromantic Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Reserve Move",
+        "Slavering Charge",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "disc-of-tzeentch": [
     {
-      A: "3",
-      I: "4",
-      M: "1",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Disc of Tzeentch",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "1",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Disc of Tzeentch",
+      "Fly": "10",
+      "rules": [
+        "Daemonic",
+        "Daemon of Tzeentch",
+        "Fly (10)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "doom-diver-catapult": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "5",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Doom Diver Catapult",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "5",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Doom Diver Catapult",
+      "rules": [
+        "Doom Diver",
+        "Fear of Elves",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "stone thrower",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "3",
-      Ld: "4",
-      WS: "2",
-      Name: "Goblin Crew",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "3",
+      "Ld": "4",
+      "WS": "2",
+      "Name": "Goblin Crew",
+      "rules": [
+        "Doom Diver",
+        "Fear of Elves",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "stone thrower",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  doombull: [
+  "doombull": [
     {
-      A: "5",
-      I: "5",
-      M: "6",
-      S: "6",
-      T: "5",
-      W: "5",
-      BS: "3",
-      Ld: "8",
-      WS: "6",
-      Name: "Doombull",
-    },
+      "A": "5",
+      "I": "5",
+      "M": "6",
+      "S": "6",
+      "T": "5",
+      "W": "5",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Doombull",
+      "Impact-Hits": "1",
+      "rules": [
+        "Armour Bane (1)",
+        "Blood Greed",
+        "Blood Rage",
+        "Bull-gors",
+        "Fear",
+        "Foe Render",
+        "Gaze of the Gods",
+        "Impact Hits (1)",
+        "Mark of Chaos Undivided",
+        "Primal Fury",
+        "Slaughterer's Call",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Monstrous InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "doomfire-warlocks": [
     {
-      A: "1",
-      I: "5",
-      M: "-",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Doomfire Warlock",
+      "A": "1",
+      "I": "5",
+      "M": "-",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Doomfire Warlock",
+      "rules": [
+        "Cursed Coven",
+        "Dark Runes",
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Hatred (High Elves)",
+        "Open Order",
+        "Poisoned Attacks (Riders only)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "5",
-      M: "-",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Master",
+      "A": "2",
+      "I": "5",
+      "M": "-",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Master",
+      "rules": [
+        "Cursed Coven",
+        "Dark Runes",
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Hatred (High Elves)",
+        "Open Order",
+        "Poisoned Attacks (Riders only)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Dark Steed",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Dark Steed",
+      "rules": [
+        "Cursed Coven",
+        "Dark Runes",
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Hatred (High Elves)",
+        "Open Order",
+        "Poisoned Attacks (Riders only)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  doomseeker: [
+  "doomseeker": [
     {
-      A: "2D3",
-      I: "3",
-      M: "3",
-      S: "5",
-      T: "4",
-      W: "2",
-      BS: "0",
-      Ld: "10",
-      WS: "5",
-      Name: "Doomseeker",
-    },
+      "A": "2D3",
+      "I": "3",
+      "M": "3",
+      "S": "5",
+      "T": "4",
+      "W": "2",
+      "BS": "0",
+      "Ld": "10",
+      "WS": "5",
+      "Name": "Doomseeker",
+      "Magic-Res": "-2",
+      "Impact-Hits": "D3+1",
+      "rules": [
+        "Deathblow",
+        "Doomseeker",
+        "First to the Fray",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Immune to Psychology",
+        "Impact Hits (D3+1)",
+        "Loner",
+        "Magic Resistance (-2)",
+        "Random Attacks",
+        "Resolute",
+        "Skirmishers",
+        "Unbreakable",
+        "Vanguard",
+        "Whirlwind of Death"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  doomwheel: [
+  "doomwheel": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "3D6",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Doomwheel",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "3D6",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Doomwheel",
+      "Stomps": "2",
+      "Impact-Hits": "D3+1",
+      "rules": [
+        "Close Order",
+        "Crushing Bulk",
+        "Immune to Psychology",
+        "Impact Hits (D3+1)",
+        "Large Target",
+        "Random Attacks (Rats only)",
+        "Random Movement",
+        "Stomp Attacks (2)",
+        "Zzzzap!"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Warlock (x1)",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Warlock (x1)",
+      "rules": [
+        "Close Order",
+        "Crushing Bulk",
+        "Immune to Psychology",
+        "Impact Hits (D3+1)",
+        "Large Target",
+        "Random Attacks (Rats only)",
+        "Random Movement",
+        "Stomp Attacks (2)",
+        "Zzzzap!"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2D6",
-      I: "4",
-      M: "-",
-      S: "2",
-      T: "-",
-      W: "-",
-      BS: "0",
-      Ld: "5",
-      WS: "2",
-      Name: "Rats",
-    },
+      "A": "2D6",
+      "I": "4",
+      "M": "-",
+      "S": "2",
+      "T": "-",
+      "W": "-",
+      "BS": "0",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Rats",
+      "rules": [
+        "Close Order",
+        "Crushing Bulk",
+        "Immune to Psychology",
+        "Impact Hits (D3+1)",
+        "Large Target",
+        "Random Attacks (Rats only)",
+        "Random Movement",
+        "Stomp Attacks (2)",
+        "Zzzzap!"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "dragon-mage": [
     {
-      A: "2",
-      I: "5",
-      M: "-",
-      S: "3",
-      T: "5",
-      W: "6",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Dragon Mage",
+      "A": "2",
+      "I": "5",
+      "M": "-",
+      "S": "3",
+      "T": "5",
+      "W": "6",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Dragon Mage",
+      "as": 4,
+      "Stomps": "D6",
+      "Fly": "10",
+      "rules": [
+        "Blessings of Asuryan",
+        "Close Order",
+        "Dragon Armour",
+        "Elven Reflexes",
+        "Fly (10)",
+        "Impetuous",
+        "Ithilmar Weapons",
+        "Large Target",
+        "Lileath's Blessing",
+        "Lore of Saphery",
+        "Stomp Attacks (D6)",
+        "Swiftstride",
+        "Terror",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour",
+        "Wicked claws",
+        "dragon fire",
+        "full plate armour"
+      ],
+      "troopType": [
+        "BehemothCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism"
+      ],
+      "optionalRules": []
     },
     {
-      A: "4",
-      I: "4",
-      M: "6",
-      S: "5",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Sun Dragon",
-    },
+      "A": "4",
+      "I": "4",
+      "M": "6",
+      "S": "5",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Sun Dragon",
+      "as": 4,
+      "Fly": "10",
+      "rules": [
+        "Blessings of Asuryan",
+        "Close Order",
+        "Dragon Armour",
+        "Elven Reflexes",
+        "Fly (10)",
+        "Impetuous",
+        "Ithilmar Weapons",
+        "Large Target",
+        "Lileath's Blessing",
+        "Lore of Saphery",
+        "Stomp Attacks (D6)",
+        "Swiftstride",
+        "Terror",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour",
+        "Wicked claws",
+        "dragon fire",
+        "full plate armour"
+      ],
+      "troopType": [
+        "BehemothCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism"
+      ],
+      "optionalRules": []
+    }
   ],
   "dragon-ogre-shaggoth": [
     {
-      A: "5",
-      I: "4",
-      M: "7",
-      S: "6",
-      T: "5",
-      W: "6",
-      BS: "2",
-      Ld: "9",
-      WS: "6",
-      Name: "Shaggoth",
-    },
+      "A": "5",
+      "I": "4",
+      "M": "7",
+      "S": "6",
+      "T": "5",
+      "W": "6",
+      "BS": "2",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Shaggoth",
+      "as": 6,
+      "Stomps": "D3+1",
+      "rules": [
+        "Armour Bane (2)",
+        "Armoured Hide (2)",
+        "Close Order",
+        "Ensorcelled Weapons",
+        "Immune to Psychology",
+        "Large Target",
+        "Stomp Attacks (D3+1)",
+        "Storm Call",
+        "Terror",
+        "The Quickening Storm"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "dragon-ogres": [
     {
-      A: "3",
-      I: "2",
-      M: "7",
-      S: "5",
-      T: "4",
-      W: "4",
-      BS: "2",
-      Ld: "8",
-      WS: "4",
-      Name: "Dragon Ogre",
+      "A": "3",
+      "I": "2",
+      "M": "7",
+      "S": "5",
+      "T": "4",
+      "W": "4",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Dragon Ogre",
+      "as": 6,
+      "Stomps": "2",
+      "rules": [
+        "Armour Bane (1)",
+        "Armoured Hide (2)",
+        "Close Order",
+        "Fear",
+        "Ensorcelled Weapons",
+        "Immune to Psychology",
+        "Stomp Attacks (2)",
+        "The Quickening Storm"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "4",
-      I: "2",
-      M: "7",
-      S: "5",
-      T: "4",
-      W: "4",
-      BS: "2",
-      Ld: "8",
-      WS: "4",
-      Name: "Shartak",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "7",
+      "S": "5",
+      "T": "4",
+      "W": "4",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Shartak",
+      "as": 6,
+      "rules": [
+        "Armour Bane (1)",
+        "Armoured Hide (2)",
+        "Close Order",
+        "Fear",
+        "Ensorcelled Weapons",
+        "Immune to Psychology",
+        "Stomp Attacks (2)",
+        "The Quickening Storm"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "dragon-princes": [
     {
-      A: "2",
-      I: "5",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Dragon Prince",
+      "A": "2",
+      "I": "5",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Dragon Prince",
+      "as": 3,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "Dragon Armour",
+        "Drilled",
+        "Elven Reflexes",
+        "First Charge",
+        "Impetuous",
+        "Ithilmar Barding",
+        "Ithilmar Weapons",
+        "Sons of Caledor",
+        "Swiftstride",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "full plate armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "5",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Drakemaster",
+      "A": "3",
+      "I": "5",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Drakemaster",
+      "as": 3,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "Dragon Armour",
+        "Drilled",
+        "Elven Reflexes",
+        "First Charge",
+        "Impetuous",
+        "Ithilmar Barding",
+        "Ithilmar Weapons",
+        "Sons of Caledor",
+        "Swiftstride",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "full plate armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Barded Elven Steed",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Barded Elven Steed",
+      "as": 3,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "Dragon Armour",
+        "Drilled",
+        "Elven Reflexes",
+        "First Charge",
+        "Impetuous",
+        "Ithilmar Barding",
+        "Ithilmar Weapons",
+        "Sons of Caledor",
+        "Swiftstride",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "full plate armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "dragon-slayer": [
     {
-      A: "3",
-      I: "4",
-      M: "3",
-      S: "4",
-      T: "5",
-      W: "2",
-      BS: "3",
-      Ld: "10",
-      WS: "6",
-      Name: "Dragon Slayer",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "3",
+      "S": "4",
+      "T": "5",
+      "W": "2",
+      "BS": "3",
+      "Ld": "10",
+      "WS": "6",
+      "Name": "Dragon Slayer",
+      "Magic-Res": "-2",
+      "rules": [
+        "Deathblow",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Immune to Psychology",
+        "Killing Blow",
+        "Loner",
+        "Magic Resistance (-2)",
+        "Resolute",
+        "Slayer of Dragons",
+        "Unbreakable",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "dreadquake-mortar": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "7",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Dreadquake Mortar",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "7",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Dreadquake Mortar",
+      "as": 5,
+      "rules": [
+        "Blackshard Armour",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Dreadquake Mortar",
+        "hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Hellbound",
+        "Steam Carriage"
+      ]
     },
     {
-      A: "3",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "3",
-      Name: "Chaos Dwarf Crew",
+      "A": "3",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "3",
+      "Name": "Chaos Dwarf Crew",
+      "as": 5,
+      "rules": [
+        "Blackshard Armour",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Dreadquake Mortar",
+        "hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Hellbound",
+        "Steam Carriage"
+      ]
     },
     {
-      A: "(+2)",
-      I: "2",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "(+2)",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Ogre Loader",
-    },
+      "A": "(+2)",
+      "I": "2",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "(+2)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Ogre Loader",
+      "as": 5,
+      "rules": [
+        "Blackshard Armour",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Dreadquake Mortar",
+        "hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Hellbound",
+        "Steam Carriage"
+      ]
+    }
   ],
-  dryads: [
+  "dryads": [
     {
-      A: "2",
-      I: "4",
-      M: "6",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Dryad",
+      "A": "2",
+      "I": "4",
+      "M": "6",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Dryad",
+      "as": 6,
+      "Regen": "6+",
+      "rules": [
+        "Armour Bane (1)",
+        "Fear",
+        "Flammable",
+        "Immune to Psychology",
+        "Magical Attacks",
+        "Move Through Cover",
+        "Open Order",
+        "Regeneration (6+)",
+        "Skirmishers",
+        "Stubborn",
+        "Tree Spirit"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "4",
-      M: "6",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Nymph",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "6",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Nymph",
+      "as": 6,
+      "Regen": "6+",
+      "rules": [
+        "Armour Bane (1)",
+        "Fear",
+        "Flammable",
+        "Immune to Psychology",
+        "Magical Attacks",
+        "Move Through Cover",
+        "Open Order",
+        "Regeneration (6+)",
+        "Skirmishers",
+        "Stubborn",
+        "Tree Spirit"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  duke: [
+  "duke": [
     {
-      A: "5",
-      I: "5",
-      M: "4",
-      S: "5",
-      T: "4",
-      W: "4",
-      BS: "3",
-      Ld: "9",
-      WS: "7",
-      Name: "Duke",
-    },
+      "A": "5",
+      "I": "5",
+      "M": "4",
+      "S": "5",
+      "T": "4",
+      "W": "4",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "7",
+      "Name": "Duke",
+      "as": 5,
+      "rules": [
+        "Blessings of the Lady",
+        "Rallying Cry",
+        "The Grail Vow"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "dwarf-cart": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Dwarf Cart",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Dwarf Cart",
+      "Magic-Res": "-1",
+      "Impact-Hits": "D3",
+      "rules": [
+        "Hatred (Orcs & Goblins)",
+        "Impact Hits (D3)",
+        "Magic Resistance (-1)",
+        "Open Order",
+        "Resolute"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "2",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Dwarf Crew (x1)",
+      "A": "1",
+      "I": "2",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Dwarf Crew (x1)",
+      "Magic-Res": "-1",
+      "rules": [
+        "Hatred (Orcs & Goblins)",
+        "Impact Hits (D3)",
+        "Magic Resistance (-1)",
+        "Open Order",
+        "Resolute"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "6",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Draft Pony",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "6",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Draft Pony",
+      "Magic-Res": "-1",
+      "rules": [
+        "Hatred (Orcs & Goblins)",
+        "Impact Hits (D3)",
+        "Magic Resistance (-1)",
+        "Open Order",
+        "Resolute"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "dwarf-warriors": [
     {
-      A: "1",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "4",
-      Name: "Dwarf Warrior",
+      "A": "1",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Dwarf Warrior",
+      "as": 5,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute",
+        "Shieldwall"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Veteran"
+      ]
     },
     {
-      A: "2",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "4",
-      Name: "Veteran",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Veteran",
+      "as": 5,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute",
+        "Shieldwall"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Veteran"
+      ]
+    }
   ],
   "eagle-claw-bolt-thrower": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "2",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Eagle-Claw Bolt Thrower",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "2",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Eagle-Claw Bolt Thrower",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Skirmishers",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Repeater bolt thrower",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Sea Guard Crew",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Sea Guard Crew",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Skirmishers",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Repeater bolt thrower",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "ellyrian-reavers": [
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Ellyrian Reaver",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Ellyrian Reaver",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Open Order",
+        "Swiftstride",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "light armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Scouts",
+        "Skirmishers"
+      ]
     },
     {
-      A: "2",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "5",
-      Ld: "8",
-      WS: "4",
-      Name: "Harbinger",
+      "A": "2",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "5",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Harbinger",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Open Order",
+        "Swiftstride",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "light armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Scouts",
+        "Skirmishers"
+      ]
     },
     {
-      A: "1",
-      I: "4",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Elven Steed",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Elven Steed",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Open Order",
+        "Swiftstride",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "light armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Scouts",
+        "Skirmishers"
+      ]
+    }
   ],
   "elven-archers": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Elven Archer",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Elven Archer"
     },
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "5",
-      Ld: "8",
-      WS: "4",
-      Name: "Sentinel",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "5",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Sentinel"
+    }
   ],
   "elven-spearmen": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Elven Spearman",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Elven Spearman",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Martial Prowess",
+        "Regimental Unit",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "thrusting spears",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Shieldwall",
+        "Veteran"
+      ]
     },
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Sentinel",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Sentinel",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Martial Prowess",
+        "Regimental Unit",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "thrusting spears",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Shieldwall",
+        "Veteran"
+      ]
+    }
   ],
   "elven-steed": [
     {
-      A: "1",
-      I: "4",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Elven Steed",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Elven Steed",
+      "rules": [
+        "Fast Cavalry",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "empire-archers": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Archer",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Archer",
+      "rules": [
+        "Detachment",
+        "Move Through Cover",
+        "Open Order",
+        "Skirmishers",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "warbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Fire & Flee",
+        "Scouts"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "7",
-      WS: "3",
-      Name: "Marksman",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Marksman",
+      "rules": [
+        "Detachment",
+        "Move Through Cover",
+        "Open Order",
+        "Skirmishers",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "warbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Fire & Flee",
+        "Scouts"
+      ]
+    }
   ],
   "empire-engineer": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "4",
-      Ld: "7",
-      WS: "3",
-      Name: "Empire Engineer",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Empire Engineer",
+      "rules": [
+        "Clouds of Soot & Smoke",
+        "Master of Ballistics"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Grenade Launching Blunderbuss",
+        "Hochland Long Rifle",
+        "Pigeon Bombs"
+      ]
+    }
   ],
   "empire-greatswords": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Greatsword",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Greatsword",
+      "as": 4,
+      "rules": [
+        "Close Order",
+        "Regimental Unit",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great weapons",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Veteran"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Count's Champion",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Count's Champion",
+      "as": 4,
+      "rules": [
+        "Close Order",
+        "Regimental Unit",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great weapons",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Veteran"
+      ]
+    }
   ],
   "empire-knights": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Empire Knight",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Empire Knight",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "First Charge",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Stubborn"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Preceptor",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Preceptor",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "First Charge",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Stubborn"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Barded Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Barded Warhorse",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "First Charge",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Stubborn"
+      ]
+    }
   ],
   "empire-road-wardens": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "7",
-      WS: "3",
-      Name: "Road Warden",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Road Warden",
+      "as": 5,
+      "rules": [
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "crossbows",
+        "heavy armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Feigned Flight",
+        "Ambushers",
+        "Scouts"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "5",
-      Ld: "7",
-      WS: "3",
-      Name: "Captain",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "5",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Captain",
+      "as": 5,
+      "rules": [
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "crossbows",
+        "heavy armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Feigned Flight",
+        "Ambushers",
+        "Scouts"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Warhorse",
+      "as": 5,
+      "rules": [
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "crossbows",
+        "heavy armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Feigned Flight",
+        "Ambushers",
+        "Scouts"
+      ]
+    }
   ],
   "empire-steam-tank": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "4",
-      S: "6",
-      T: "7",
-      W: "10",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Steam Tank",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "4",
+      "S": "6",
+      "T": "7",
+      "W": "10",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Steam Tank",
+      "Stomps": "D3+1",
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Close Order",
+        "Grinding Wheels",
+        "Immune to Psychology",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Steam Power",
+        "Stomp Attacks (D3+1)",
+        "Temperamental",
+        "Terror",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Steam Cannon",
+        "steam gun",
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Hochland Long Rifle",
+        "Pigeon Bombs"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "4",
-      Ld: "8",
-      WS: "3",
-      Name: "Engineer Commander (x1)",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "Engineer Commander (x1)",
+      "rules": [
+        "Close Order",
+        "Grinding Wheels",
+        "Immune to Psychology",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Steam Power",
+        "Stomp Attacks (D3+1)",
+        "Temperamental",
+        "Terror",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Steam Cannon",
+        "steam gun",
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Hochland Long Rifle",
+        "Pigeon Bombs"
+      ]
+    }
   ],
   "empire-war-wagon": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "5",
-      W: "6",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "War Wagon",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "5",
+      "W": "6",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "War Wagon",
+      "Stomps": "D3+1",
+      "Impact-Hits": "D6+1, War Wagon only",
+      "rules": [
+        "Close Order",
+        "Crushing Weight",
+        "Impact Hits (D6+1, War Wagon only)",
+        "Large Target",
+        "Stable Firing Platform",
+        "Stomp Attacks (D3+1)"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "assorted weapons",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "8",
-      WS: "3",
-      Name: "War Wagon Crew (x6)",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "War Wagon Crew (x6)",
+      "rules": [
+        "Close Order",
+        "Crushing Weight",
+        "Impact Hits (D6+1, War Wagon only)",
+        "Large Target",
+        "Stable Firing Platform",
+        "Stomp Attacks (D3+1)"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "assorted weapons",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Barded Warhorse (x2)",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Barded Warhorse (x2)",
+      "rules": [
+        "Close Order",
+        "Crushing Weight",
+        "Impact Hits (D6+1, War Wagon only)",
+        "Large Target",
+        "Stable Firing Platform",
+        "Stomp Attacks (D3+1)"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "assorted weapons",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "empire-warhorse": [
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Empire Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Empire Warhorse",
+      "rules": [
+        "Fast Cavalry",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  engineer: [
+  "engineer": [
     {
-      A: "2",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "5",
-      Ld: "9",
-      WS: "4",
-      Name: "Engineer",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "5",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Engineer",
+      "as": 4,
+      "Magic-Res": "-1",
+      "rules": [
+        "Artillery Master",
+        "Dwarf Crafted",
+        "Entrenchment",
+        "Gromril Armour",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute",
+        "\"Stand Back Chief\"",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "engineer-sapper": [
     {
-      A: "2",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "5",
-      Ld: "9",
-      WS: "4",
-      Name: "Engineer Sapper",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "5",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Engineer Sapper",
+      "as": 4,
+      "Magic-Res": "-1",
+      "rules": [
+        "\"Dig In!\"",
+        "Dwarf Crafted",
+        "Gromril Armour",
+        "Hatred (Orcs & Goblins)",
+        "Hostile Terrain",
+        "Magic Resistance (-1)",
+        "Resolute",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "eternal-guard": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Eternal Guard",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Eternal Guard",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Martial Prowess",
+        "Move Through Cover",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Asrai spears",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Veteran"
+      ]
     },
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Eternal Warden",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Eternal Warden",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Martial Prowess",
+        "Move Through Cover",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Asrai spears",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Veteran"
+      ]
+    }
   ],
   "exalted-champion": [
     {
-      A: "4",
-      I: "5",
-      M: "4",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "6",
-      Name: "Exalted Champion",
-    },
+      "A": "4",
+      "I": "5",
+      "M": "4",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Exalted Champion",
+      "as": 4,
+      "rules": [
+        "Chaos Armour (5+)",
+        "Ensorcelled Weapons",
+        "Gaze of the Gods",
+        "Mark of Chaos Undivided",
+        "Rallying Cry"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
+    }
   ],
   "exalted-seeker-chariot-of-slaanesh": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "6",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Exalted Seeker Chariot",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "6",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Exalted Seeker Chariot",
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Close Order",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Poisoned Attacks (Steed of Slaanesh only)"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "5",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Daemonette Crew (x3)",
+      "A": "1",
+      "I": "5",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Daemonette Crew (x3)",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Close Order",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Poisoned Attacks (Steed of Slaanesh only)"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "5",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Steed of Slaanesh (x4)",
-    },
+      "A": "1",
+      "I": "5",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Steed of Slaanesh (x4)",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Close Order",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Poisoned Attacks (Steed of Slaanesh only)"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "exalted-sorcerer": [
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Exalted Sorcerer",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Exalted Sorcerer",
+      "as": 4,
+      "rules": [
+        "Chaos Armour (5+)",
+        "Ensorcelled Weapons",
+        "Gaze of the Gods",
+        "Lore of Chaos",
+        "Mark of Chaos Undivided"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic",
+        "lore of the shadowlands"
+      ],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
+    }
   ],
-  fanatic: [
+  "fanatic": [
     {
-      A: "*",
-      I: "5",
-      M: "*",
-      S: "5",
-      T: "3",
-      W: "1",
-      BS: "*",
-      Ld: "10",
-      WS: "*",
-      Name: "Fanatic",
-    },
+      "A": "*",
+      "I": "5",
+      "M": "*",
+      "S": "5",
+      "T": "3",
+      "W": "1",
+      "BS": "*",
+      "Ld": "10",
+      "WS": "*",
+      "Name": "Fanatic",
+      "rules": [
+        "Immune to Psychology",
+        "Release the Fanatics!"
+      ],
+      "equipment": [
+        "Fanatic ball & chain"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "fell-bats": [
     {
-      A: "2",
-      I: "3",
-      M: "1",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "0",
-      Ld: "3",
-      WS: "3",
-      Name: "Fell Bat",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "1",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "0",
+      "Ld": "3",
+      "WS": "3",
+      "Name": "Fell Bat",
+      "Regen": "6+",
+      "Fly": "10",
+      "rules": [
+        "Fly (10)",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "field-trebuchet": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "7",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Field Trebuchet",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "7",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Field Trebuchet",
+      "rules": [
+        "Levies",
+        "Peasantry",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Field trebuchet",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "4",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "4",
-      BS: "2",
-      Ld: "6",
-      WS: "2",
-      Name: "Peasant Crew",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "4",
+      "BS": "2",
+      "Ld": "6",
+      "WS": "2",
+      "Name": "Peasant Crew",
+      "rules": [
+        "Levies",
+        "Peasantry",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Field trebuchet",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "fiends-of-slaanesh": [
     {
-      A: "3",
-      I: "6",
-      M: "8",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "0",
-      Ld: "7",
-      WS: "4",
-      Name: "Fiend of Slaanesh",
-    },
+      "A": "3",
+      "I": "6",
+      "M": "8",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "0",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Fiend of Slaanesh",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "Soporific Musk",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "venomous tail"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "fire-rain-rocket-battery": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Fire Rain Rocket",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Fire Rain Rocket",
+      "as": 6,
+      "rules": [
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Fire rain rocket",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ogre Loader"
+      ]
     },
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Cathayan Artillery Crew (x3)",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Cathayan Artillery Crew (x3)",
+      "as": 6,
+      "rules": [
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Fire rain rocket",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ogre Loader"
+      ]
+    }
   ],
-  firebelly: [
+  "firebelly": [
     {
-      A: "3",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "5",
-      W: "4",
-      BS: "2",
-      Ld: "7",
-      WS: "3",
-      Name: "Firebelly",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "5",
+      "W": "4",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Firebelly",
+      "Impact-Hits": "1",
+      "rules": [
+        "Armour Bane (1)",
+        "Blessings of the Volcano God",
+        "Fear",
+        "Flaming Attacks",
+        "Impact Hits (1)",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "flaming breath"
+      ],
+      "troopType": [
+        "Monstrous InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism"
+      ],
+      "optionalRules": []
+    }
   ],
-  flagellants: [
+  "flagellants": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "2",
-      Ld: "5",
-      WS: "3",
-      Name: "Flagellant",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Flagellant",
+      "rules": [
+        "Close Order",
+        "Fanatical Zeal",
+        "Feel No Pain",
+        "Furious Charge",
+        "Immune to Psychology",
+        "Impetuous",
+        "Hatred (all enemies)",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "flails"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "2",
-      Ld: "5",
-      WS: "3",
-      Name: "Prophet of Doom",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Prophet of Doom",
+      "rules": [
+        "Close Order",
+        "Fanatical Zeal",
+        "Feel No Pain",
+        "Furious Charge",
+        "Immune to Psychology",
+        "Impetuous",
+        "Hatred (all enemies)",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "flails"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "flame-cannon": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Flame Cannon",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Flame Cannon",
+      "as": 6,
+      "Magic-Res": "-1",
+      "rules": [
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Skirmishers",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Fire thrower",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "3",
-      Name: "Dwarf Crew",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "3",
+      "Name": "Dwarf Crew",
+      "as": 6,
+      "Magic-Res": "-1",
+      "rules": [
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Skirmishers",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Fire thrower",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "flamers-of-tzeentch": [
     {
-      A: "2",
-      I: "4",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "4",
-      Ld: "7",
-      WS: "2",
-      Name: "Flamer",
+      "A": "2",
+      "I": "4",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "2",
+      "Name": "Flamer",
+      "rules": [
+        "Daemonic",
+        "Daemons of Tzeentch",
+        "Flaming Attacks",
+        "Infernal Favour (1, Exalted Flamer only)",
+        "Lore of Daemons (Exalted Flamer only)",
+        "Move Through Cover",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "warpflame"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [
+        "daemonology",
+        "dark magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "5",
-      Ld: "7",
-      WS: "2",
-      Name: "Pyroclaster",
+      "A": "2",
+      "I": "4",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "5",
+      "Ld": "7",
+      "WS": "2",
+      "Name": "Pyroclaster",
+      "rules": [
+        "Daemonic",
+        "Daemons of Tzeentch",
+        "Flaming Attacks",
+        "Infernal Favour (1, Exalted Flamer only)",
+        "Lore of Daemons (Exalted Flamer only)",
+        "Move Through Cover",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "warpflame"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [
+        "daemonology",
+        "dark magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "5",
-      Ld: "7",
-      WS: "2",
-      Name: "Exalted Flamer",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "5",
+      "Ld": "7",
+      "WS": "2",
+      "Name": "Exalted Flamer",
+      "rules": [
+        "Daemonic",
+        "Daemons of Tzeentch",
+        "Flaming Attacks",
+        "Infernal Favour (1, Exalted Flamer only)",
+        "Lore of Daemons (Exalted Flamer only)",
+        "Move Through Cover",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "warpflame"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [
+        "daemonology",
+        "dark magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": []
+    }
   ],
   "flamespyre-phoenix": [
     {
-      A: "3",
-      I: "4",
-      M: "2",
-      S: "5",
-      T: "5",
-      W: "5",
-      BS: "0",
-      Ld: "7",
-      WS: "5",
-      Name: "Flamespyre Phoenix",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "2",
+      "S": "5",
+      "T": "5",
+      "W": "5",
+      "BS": "0",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Flamespyre Phoenix",
+      "as": 5,
+      "Stomps": "2",
+      "Fly": "10",
+      "rules": [
+        "Blessings of Asuryan",
+        "Close Order",
+        "Fear",
+        "Flaming Attacks",
+        "Fly (10)",
+        "From the Ashes",
+        "Large Target",
+        "Stomp Attacks (2)",
+        "Swiftstride",
+        "Wake of Fire"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "flamespyre-phoenix-mount": [
     {
-      A: "3",
-      I: "4",
-      M: "2",
-      S: "5",
-      T: "(+2)",
-      W: "(+3)",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Flamespyre Phoenix (Mount)",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "2",
+      "S": "5",
+      "T": "(+2)",
+      "W": "(+3)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Flamespyre Phoenix (Mount)",
+      "as": 5,
+      "Stomps": "2",
+      "Fly": "10",
+      "rules": [
+        "Blessings of Asuryan",
+        "Close Order",
+        "Fear",
+        "Flaming Attacks",
+        "Fly (10)",
+        "From the Ashes",
+        "Large Target",
+        "Stomp Attacks (2)",
+        "Swiftstride",
+        "Wake of Fire"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "flesh-hounds-of-khorne": [
     {
-      A: "2",
-      I: "4",
-      M: "8",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "0",
-      Ld: "7",
-      WS: "5",
-      Name: "Flesh Hound",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "8",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "0",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Flesh Hound",
+      "as": 6,
+      "Magic-Res": "-2",
+      "rules": [
+        "Armour Bane (1)",
+        "Close Order",
+        "Counter Charge",
+        "Daemonic",
+        "Daemons of Khorne",
+        "Impetuous",
+        "Magic Resistance (-2)"
+      ],
+      "equipment": [
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers",
+        "Vanguard"
+      ]
+    }
   ],
   "flesh-hounds-of-khorne-renegade": [
     {
-      A: "2",
-      I: "4",
-      M: "8",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "0",
-      Ld: "7",
-      WS: "5",
-      Name: "Flesh Hound",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "8",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "0",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Flesh Hound",
+      "as": 6,
+      "Magic-Res": "-2",
+      "rules": [
+        "Armour Bane (1)",
+        "Close Order",
+        "Counter Charge",
+        "Daemonic",
+        "Daemons of Khorne",
+        "Impetuous",
+        "Magic Resistance (-2)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers",
+        "Vanguard"
+      ]
+    }
   ],
   "forest-cat": [
     {
-      A: "1",
-      I: "4",
-      M: "7",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "-",
-      Ld: "5",
-      WS: "4",
-      Name: "Forest Cat",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "7",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "-",
+      "Ld": "5",
+      "WS": "4",
+      "Name": "Forest Cat",
+      "rules": [
+        "Armour Bane (1)",
+        "Motley Crew",
+        "Run with the Pack",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "forest-dragon": [
     {
-      A: "6",
-      I: "4",
-      M: "6",
-      S: "7",
-      T: "(+3)",
-      W: "(+6)",
-      BS: "-",
-      Ld: "-",
-      WS: "6",
-      Name: "Forest Dragons",
-    },
+      "A": "6",
+      "I": "4",
+      "M": "6",
+      "S": "7",
+      "T": "(+3)",
+      "W": "(+6)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "6",
+      "Name": "Forest Dragons",
+      "as": 4,
+      "Stomps": "D6",
+      "Fly": "10",
+      "rules": [
+        "Close Order",
+        "Fly (10)",
+        "Large Target",
+        "Stomp Attacks (D6)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "serrated maw",
+        "soporific breath",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  forsaken: [
+  "forsaken": [
     {
-      A: "D3",
-      I: "3",
-      M: "5",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "0",
-      Ld: "8",
-      WS: "4",
-      Name: "Forsaken",
-    },
+      "A": "D3",
+      "I": "3",
+      "M": "5",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Forsaken",
+      "as": 4,
+      "rules": [
+        "Chaos Armour (5+)",
+        "Ensorcelled Weapons",
+        "Furious Charge",
+        "Immune to Psychology",
+        "Impetuous",
+        "Loner",
+        "Open Order",
+        "Rampant Mutation",
+        "Random Attacks",
+        "Stubborn"
+      ],
+      "equipment": [
+        "hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Forsaken by Khorne",
+        "Forsaken by Nurgle",
+        "Forsaken by Slaanesh",
+        "Forsaken by Tzeentch"
+      ]
+    }
   ],
   "free-company-militia": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Militia Fighter",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Militia Fighter",
+      "rules": [
+        "Detachment",
+        "Horde",
+        "Impetuous",
+        "Levies",
+        "Open Order",
+        "Warband"
+      ],
+      "equipment": [
+        "two hand weapons",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Militia Leader",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Militia Leader",
+      "rules": [
+        "Detachment",
+        "Horde",
+        "Impetuous",
+        "Levies",
+        "Open Order",
+        "Warband"
+      ],
+      "equipment": [
+        "two hand weapons",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "freeblade-knights": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Freeblade Knight",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Freeblade Knight",
+      "as": 5,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "First Charge",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "hand weapons",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Commander",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Commander",
+      "as": 5,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "First Charge",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "hand weapons",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Warhorse",
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Warhorse",
+      "as": 5,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "First Charge",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "hand weapons",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Barded Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Barded Warhorse",
+      "as": 5,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "First Charge",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "hand weapons",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "frostheart-phoenix": [
     {
-      A: "4",
-      I: "3",
-      M: "2",
-      S: "6",
-      T: "6",
-      W: "5",
-      BS: "0",
-      Ld: "8",
-      WS: "6",
-      Name: "Frostheart Phoenix",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "2",
+      "S": "6",
+      "T": "6",
+      "W": "5",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Frostheart Phoenix",
+      "as": 4,
+      "Stomps": "2",
+      "Fly": "9",
+      "rules": [
+        "Blizzard Aura",
+        "Close Order",
+        "Fear",
+        "Fly (9)",
+        "Large Target",
+        "Stomp Attacks (2)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "frostheart-phoenix-mount": [
     {
-      A: "4",
-      I: "3",
-      M: "2",
-      S: "6",
-      T: "(+3)",
-      W: "(+3)",
-      BS: "-",
-      Ld: "-",
-      WS: "6",
-      Name: "Frostheart Phoenix (Mount)",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "2",
+      "S": "6",
+      "T": "(+3)",
+      "W": "(+3)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "6",
+      "Name": "Frostheart Phoenix (Mount)",
+      "as": 4,
+      "Stomps": "2",
+      "Fly": "9",
+      "rules": [
+        "Blizzard Aura",
+        "Close Order",
+        "Fear",
+        "Fly (9)",
+        "Large Target",
+        "Stomp Attacks (2)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "frydaal-the-chainmaker": [
     {
-      A: "4",
-      I: "5",
-      M: "4",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "6",
-      Name: "Frydaal The Chainmaker",
-    },
+      "A": "4",
+      "I": "5",
+      "M": "4",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Frydaal The Chainmaker",
+      "as": 3,
+      "Impact-Hits": "1",
+      "rules": [
+        "Ambushers",
+        "Chainmaker",
+        "Chaos Armour (5+)",
+        "Commander & Captain",
+        "Ensorcelled Weapons",
+        "Gaze of the Gods",
+        "Impact Hits (1)",
+        "Mark of Chaos Undivided",
+        "Peerless Raider",
+        "Rallying Cry"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Storm's Wrath",
+        "full plate armour",
+        "shield"
+      ],
+      "troopType": [
+        "Heavy InfantryNamed Character"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  galrauch: [
+  "galrauch": [
     {
-      A: "6",
-      I: "4",
-      M: "6",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "3",
-      Ld: "9",
-      WS: "6",
-      Name: "Galrauch",
-    },
+      "A": "6",
+      "I": "4",
+      "M": "6",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Galrauch",
+      "as": 4,
+      "Regen": "5+",
+      "Stomps": "D6",
+      "Fly": "10",
+      "rules": [
+        "Armoured Hide (1)",
+        "Breath of Change",
+        "Close Order",
+        "Fly (10)",
+        "Large Target",
+        "Mark of Tzeentch",
+        "Regeneration (5+)",
+        "Spirit of Galrauch",
+        "Stomp Attacks (D6)",
+        "Swiftstride",
+        "Terror",
+        "Two-headed Dragon"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "Dark Fire of Chaos",
+        "Fumes of Contagion",
+        "full plate armour"
+      ],
+      "troopType": [
+        "BehemothNamed Character"
+      ],
+      "magic": [
+        "dark magic"
+      ],
+      "optionalRules": []
+    }
   ],
   "gate-keeper": [
     {
-      A: "2",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "4",
-      Ld: "8",
-      WS: "6",
-      Name: "Gate Keeper",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Gate Keeper",
+      "as": 4,
+      "rules": [
+        "Harmony of Stone & Steel",
+        "Will of the Dragons"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour",
+        "shield"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Celestial Blade",
+        "Cathayan Lance"
+      ]
+    }
   ],
   "gate-master": [
     {
-      A: "3",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "4",
-      Ld: "9",
-      WS: "7",
-      Name: "Gate Master",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "7",
+      "Name": "Gate Master",
+      "as": 4,
+      "rules": [
+        "Harmony of Stone & Steel",
+        "Will of the Dragons"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour",
+        "shield"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Celestial Blade",
+        "Cathayan Lance"
+      ]
+    }
   ],
   "general-hans-von-löwenhacke": [
     {
-      A: "4",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "5",
-      Ld: "10",
-      WS: "6",
-      Name: "General Hans von L\u00f6wenhacke",
-    },
+      "A": "4",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "5",
+      "Ld": "10",
+      "WS": "6",
+      "Name": "General Hans von Löwenhacke",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "general-of-the-empire": [
     {
-      A: "3",
-      I: "5",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "5",
-      Ld: "10",
-      WS: "5",
-      Name: "General of the Empire",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "5",
+      "Ld": "10",
+      "WS": "5",
+      "Name": "General of the Empire",
+      "as": 6,
+      "rules": [
+        "\"Hold the Line!\"",
+        "Rallying Cry"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  ghorgon: [
+  "ghorgon": [
     {
-      A: "5",
-      I: "4",
-      M: "7",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "0",
-      Ld: "9",
-      WS: "4",
-      Name: "Ghorgon",
-    },
+      "A": "5",
+      "I": "4",
+      "M": "7",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "0",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Ghorgon",
+      "as": 6,
+      "Regen": "6+",
+      "Stomps": "D3",
+      "rules": [
+        "Blood Greed",
+        "Close Order",
+        "Frenzy",
+        "Large Target",
+        "Primal Fury",
+        "Regeneration (6+)",
+        "Stomp Attacks (D3)",
+        "Stubborn",
+        "Swallow Whole",
+        "Terror",
+        "Timmm-berrr!"
+      ],
+      "equipment": [
+        "Cleaver-limbs",
+        "light armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "ghorros-warhoof": [
     {
-      A: "4",
-      I: "4",
-      M: "8",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Ghorros Warhoof",
-    },
+      "A": "4",
+      "I": "4",
+      "M": "8",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Ghorros Warhoof",
+      "Stomps": "D3",
+      "rules": [
+        "Drunken",
+        "Father of Beasts",
+        "Gaze of the Gods",
+        "Mark of Chaos Undivided",
+        "Move Through Cover",
+        "Primal Fury",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "The Sons of Ghorros",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Mansmasher",
+        "Skull of the Unicorn Lord"
+      ],
+      "troopType": [
+        "Heavy CavalryNamed Character"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  giant: [
+  "giant": [
     {
-      A: "*",
-      I: "2",
-      M: "6",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "1",
-      Ld: "10",
-      WS: "3",
-      Name: "Giant",
-    },
+      "A": "*",
+      "I": "2",
+      "M": "6",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "1",
+      "Ld": "10",
+      "WS": "3",
+      "Name": "Giant",
+      "as": 6,
+      "Stomps": "D6",
+      "rules": [
+        "Close Order",
+        "Giant Attacks",
+        "Immune to Psychology",
+        "Large Target",
+        "Pick Up And…",
+        "Stomp Attacks (D6)",
+        "Terror",
+        "Timmm-berrr!",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Giant's club",
+        "light armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "giant-cave-squig": [
     {
-      A: "3",
-      I: "3",
-      M: "3D6",
-      S: "5",
-      T: "-",
-      W: "(+1)",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "Giant Cave Squig",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "3D6",
+      "S": "5",
+      "T": "-",
+      "W": "(+1)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "Giant Cave Squig",
+      "Impact-Hits": "D3",
+      "rules": [
+        "Armoured Hide (1)",
+        "Hatred (Dwarfs)",
+        "Impact Hits (D3)",
+        "Loner",
+        "Random Movement"
+      ],
+      "equipment": [
+        "Massive Gob"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "giant-rats": [
     {
-      A: "1",
-      I: "4",
-      M: "6",
-      S: "2",
-      T: "3",
-      W: "1",
-      BS: "0",
-      Ld: "3",
-      WS: "2",
-      Name: "Giant Rat",
+      "A": "1",
+      "I": "4",
+      "M": "6",
+      "S": "2",
+      "T": "3",
+      "W": "1",
+      "BS": "0",
+      "Ld": "3",
+      "WS": "2",
+      "Name": "Giant Rat",
+      "rules": [
+        "Close Order",
+        "Fight in Extra Rank",
+        "Horde",
+        "Scurry Away",
+        "Warband"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "6",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Packmaster",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "6",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Packmaster",
+      "rules": [
+        "Close Order",
+        "Fight in Extra Rank",
+        "Horde",
+        "Scurry Away",
+        "Warband"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "giant-wolf": [
     {
-      A: "1",
-      I: "3",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Giant Wolf",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Giant Wolf",
+      "rules": [
+        "Chariot Runners",
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "gigantic-spawn-of-chaos": [
     {
-      A: "D6+1",
-      I: "3",
-      M: "3D6",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "0",
-      Ld: "10",
-      WS: "3",
-      Name: "Gigantic Spawn",
-    },
+      "A": "D6+1",
+      "I": "3",
+      "M": "3D6",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "0",
+      "Ld": "10",
+      "WS": "3",
+      "Name": "Gigantic Spawn",
+      "as": 5,
+      "Stomps": "D6",
+      "rules": [
+        "Armour Bane (2)",
+        "Close Order",
+        "First Charge",
+        "Immune to Psychology",
+        "Large Target",
+        "Random Attacks",
+        "Random Movement",
+        "Stomp Attacks (D6)",
+        "Terror",
+        "Timmm-berrr!",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Slashing talons",
+        "gnashing maws",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Curse by the Gods",
+        "Gigantic Spawn of Khorne",
+        "Gigantic Spawn of Nurgle",
+        "Gigantic Spawn of Slaanesh",
+        "Gigantic Spawn of Tzeentch"
+      ]
+    }
   ],
   "gigantic-spider": [
     {
-      A: "3",
-      I: "4",
-      M: "7",
-      S: "4",
-      T: "-",
-      W: "(+1)",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "Gigantic Spider",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "7",
+      "S": "4",
+      "T": "-",
+      "W": "(+1)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "Gigantic Spider",
+      "rules": [
+        "Armoured Hide (1)",
+        "Fast Cavalry",
+        "Move Through Cover",
+        "Poisoned Attacks",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "glade-captain": [
     {
-      A: "3",
-      I: "5",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "2",
-      BS: "6",
-      Ld: "9",
-      WS: "6",
-      Name: "Glade Captain",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "2",
+      "BS": "6",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Glade Captain",
+      "as": 6,
+      "rules": [
+        "The Arrow of Kurnous",
+        "Evasive",
+        "Fire & Flee",
+        "Ignores Cover",
+        "Move Through Cover",
+        "Rallying Cry",
+        "Strike First"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Asrai longbow",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Arcane Bodkins",
+        "Hagbane Tips",
+        "Moonfire Shot",
+        "Swiftshiver Shards",
+        "Trueflight Arrows"
+      ]
+    }
   ],
   "glade-guard": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Glade Guard",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Glade Guard",
+      "rules": [
+        "Elven Reflexes",
+        "Move Through Cover",
+        "Open Order"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Asrai longbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Arcane Bodkins",
+        "Hagbane Tips",
+        "Moonfire Shot",
+        "Swiftshiver Shards",
+        "Trueflight Arrows",
+        "Fire & Flee",
+        "Vanguard"
+      ]
     },
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "5",
-      Ld: "8",
-      WS: "4",
-      Name: "Lord's Bowman",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "5",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Lord's Bowman",
+      "rules": [
+        "Elven Reflexes",
+        "Move Through Cover",
+        "Open Order"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Asrai longbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Arcane Bodkins",
+        "Hagbane Tips",
+        "Moonfire Shot",
+        "Swiftshiver Shards",
+        "Trueflight Arrows",
+        "Fire & Flee",
+        "Vanguard"
+      ]
+    }
   ],
   "glade-lord": [
     {
-      A: "4",
-      I: "6",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "3",
-      BS: "7",
-      Ld: "10",
-      WS: "7",
-      Name: "Glade Lord",
-    },
+      "A": "4",
+      "I": "6",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "3",
+      "BS": "7",
+      "Ld": "10",
+      "WS": "7",
+      "Name": "Glade Lord",
+      "as": 6,
+      "rules": [
+        "The Arrow of Kurnous",
+        "Evasive",
+        "Fire & Flee",
+        "Ignores Cover",
+        "Move Through Cover",
+        "Rallying Cry",
+        "Strike First"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Asrai longbow",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Arcane Bodkins",
+        "Hagbane Tips",
+        "Moonfire Shot",
+        "Swiftshiver Shards",
+        "Trueflight Arrows"
+      ]
+    }
   ],
   "glade-riders": [
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Glade Rider",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Glade Rider",
+      "rules": [
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "Asrai longbows",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Arcane Bodkins",
+        "Hagbane Tips",
+        "Moonfire Shot",
+        "Swiftshiver Shards",
+        "Trueflight Arrows",
+        "Ambushers",
+        "Drilled",
+        "Reserve Move"
+      ]
     },
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "5",
-      Ld: "8",
-      WS: "4",
-      Name: "Glade Knight",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "5",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Glade Knight",
+      "rules": [
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "Asrai longbows",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Arcane Bodkins",
+        "Hagbane Tips",
+        "Moonfire Shot",
+        "Swiftshiver Shards",
+        "Trueflight Arrows",
+        "Ambushers",
+        "Drilled",
+        "Reserve Move"
+      ]
     },
     {
-      A: "1",
-      I: "4",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Elven Steed",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Elven Steed",
+      "rules": [
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "Asrai longbows",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Arcane Bodkins",
+        "Hagbane Tips",
+        "Moonfire Shot",
+        "Swiftshiver Shards",
+        "Trueflight Arrows",
+        "Ambushers",
+        "Drilled",
+        "Reserve Move"
+      ]
+    }
   ],
   "gnoblar-fighters": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "2",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Gnoblar Fighter",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "2",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Gnoblar Fighter",
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Largely Insignificant"
+      ],
+      "equipment": [
+        "hand weapons",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "2",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Groinbiter",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "2",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Groinbiter",
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Largely Insignificant"
+      ],
+      "equipment": [
+        "hand weapons",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "gnoblar-scraplauncher": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "5",
-      W: "5",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Scraplauncher",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "5",
+      "W": "5",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Scraplauncher",
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Armour Bane (2, Rhinox only)",
+        "Close Order",
+        "Fear",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Large Target"
+      ],
+      "equipment": [
+        "Scraplauncher catapult",
+        "hand weapon",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "2",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Gnoblar Scrapper (x7)",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "2",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Gnoblar Scrapper (x7)",
+      "rules": [
+        "Armour Bane (2, Rhinox only)",
+        "Close Order",
+        "Fear",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Large Target"
+      ],
+      "equipment": [
+        "Scraplauncher catapult",
+        "hand weapon",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "2",
-      M: "6",
-      S: "5",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Rhinox (x1)",
-      weapons: ["monstrous tusks"],
-    },
+      "A": "3",
+      "I": "2",
+      "M": "6",
+      "S": "5",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Rhinox (x1)",
+      "weapons": [
+        "monstrous tusks"
+      ],
+      "rules": [
+        "Armour Bane (2, Rhinox only)",
+        "Close Order",
+        "Fear",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Large Target"
+      ],
+      "equipment": [
+        "Scraplauncher catapult",
+        "hand weapon",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "gnoblar-trappers": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "2",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Gnoblar Trapper",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "2",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Gnoblar Trapper",
+      "rules": [
+        "Largely Insignificant",
+        "Move Through Cover",
+        "Scouts",
+        "Skirmishers",
+        "Traps & Snares"
+      ],
+      "equipment": [
+        "hand weapons",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "2",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "5",
-      WS: "2",
-      Name: "Snarefinger",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "2",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Snarefinger",
+      "rules": [
+        "Largely Insignificant",
+        "Move Through Cover",
+        "Scouts",
+        "Skirmishers",
+        "Traps & Snares"
+      ],
+      "equipment": [
+        "hand weapons",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "goblin-bigboss": [
     {
-      A: "3",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "3",
-      Ld: "6",
-      WS: "4",
-      Name: "Goblin Bigboss",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Goblin Bigboss",
+      "rules": [
+        "Fear of Elves",
+        "Impetuous",
+        "Rallying Cry",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "goblin-bolt-throwa": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "5",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Bolt Throwa",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "5",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Bolt Throwa",
+      "rules": [
+        "Fear of Elves",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Bolt thrower",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "3",
-      Ld: "4",
-      WS: "2",
-      Name: "Goblin Crew",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "3",
+      "Ld": "4",
+      "WS": "2",
+      "Name": "Goblin Crew",
+      "rules": [
+        "Fear of Elves",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Bolt thrower",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "goblin-hewer": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Goblin-Hewer",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Goblin-Hewer",
+      "Magic-Res": "-1",
+      "rules": [
+        "Hatred (Orcs & Goblins)",
+        "Immune to Psychology",
+        "Magic Resistance (-1)",
+        "Skirmishers",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Goblin-Hewer",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "2",
-      BS: "3",
-      Ld: "10",
-      WS: "4",
-      Name: "Slayer Crew",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "2",
+      "BS": "3",
+      "Ld": "10",
+      "WS": "4",
+      "Name": "Slayer Crew",
+      "Magic-Res": "-1",
+      "rules": [
+        "Hatred (Orcs & Goblins)",
+        "Immune to Psychology",
+        "Magic Resistance (-1)",
+        "Skirmishers",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Goblin-Hewer",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "goblin-mob": [
     {
-      A: "1",
-      I: "2",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Goblin",
+      "A": "1",
+      "I": "2",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Goblin",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Fear of Elves",
+        "Horde",
+        "Impetuous",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Skirmishers"
+      ]
     },
     {
-      A: "2",
-      I: "2",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "2",
-      Name: "Boss",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "2",
+      "Name": "Boss",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Fear of Elves",
+        "Horde",
+        "Impetuous",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Skirmishers"
+      ]
+    }
   ],
   "goblin-oddgit": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Goblin Oddgit",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Goblin Oddgit",
+      "rules": [
+        "Fear of Elves",
+        "Lore of Mork",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "elementalism",
+        "waaagh! magic"
+      ],
+      "optionalRules": []
+    }
   ],
   "goblin-oddnob": [
     {
-      A: "2",
-      I: "4",
-      M: "4",
-      S: "3",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Goblin Oddnob",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "4",
+      "S": "3",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Goblin Oddnob",
+      "rules": [
+        "Fear of Elves",
+        "Lore of Mork",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "elementalism",
+        "waaagh! magic"
+      ],
+      "optionalRules": []
+    }
   ],
   "goblin-rock-lobber": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Rock Lobber",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Rock Lobber",
+      "rules": [
+        "Fear of Elves",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Stone thrower",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "4",
-      BS: "3",
-      Ld: "4",
-      WS: "2",
-      Name: "Goblin Crew",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "4",
+      "BS": "3",
+      "Ld": "4",
+      "WS": "2",
+      "Name": "Goblin Crew",
+      "rules": [
+        "Fear of Elves",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Stone thrower",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "goblin-spider-rider-mob": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Spider Rider",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Spider Rider",
+      "as": 6,
+      "rules": [
+        "Fast Cavalry",
+        "Fear of Elves",
+        "Impetuous",
+        "Move Through Cover",
+        "Open Order",
+        "Poisoned Attacks",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "2",
-      Name: "Boss",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "2",
+      "Name": "Boss",
+      "as": 6,
+      "rules": [
+        "Fast Cavalry",
+        "Fear of Elves",
+        "Impetuous",
+        "Move Through Cover",
+        "Open Order",
+        "Poisoned Attacks",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Giant Spider",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Giant Spider",
+      "as": 6,
+      "rules": [
+        "Fast Cavalry",
+        "Fear of Elves",
+        "Impetuous",
+        "Move Through Cover",
+        "Open Order",
+        "Poisoned Attacks",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "goblin-warboss": [
     {
-      A: "4",
-      I: "5",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "5",
-      Name: "Goblin Warboss",
-    },
+      "A": "4",
+      "I": "5",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Goblin Warboss",
+      "rules": [
+        "Fear of Elves",
+        "Impetuous",
+        "Rallying Cry",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "goblin-wolf-chariot": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Chariot",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Chariot",
+      "Impact-Hits": "D3+1",
+      "rules": [
+        "Fear of Elves",
+        "Impact Hits (D3+1)",
+        "Impetuous",
+        "Open Order",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "shortbows",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "6",
-      WS: "2",
-      Name: "Goblin Crew (x3)",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "2",
+      "Name": "Goblin Crew (x3)",
+      "rules": [
+        "Fear of Elves",
+        "Impact Hits (D3+1)",
+        "Impetuous",
+        "Open Order",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "shortbows",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Giant Wolves (x2)",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Giant Wolves (x2)",
+      "rules": [
+        "Fear of Elves",
+        "Impact Hits (D3+1)",
+        "Impetuous",
+        "Open Order",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "shortbows",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "goblin-wolf-rider-mob": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Wolf Rider",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Wolf Rider",
+      "as": 6,
+      "rules": [
+        "Chariot Runners",
+        "Fast Cavalry",
+        "Fear of Elves",
+        "Fire & Flee",
+        "Impetuous",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "2",
-      Name: "Boss",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "2",
+      "Name": "Boss",
+      "as": 6,
+      "rules": [
+        "Chariot Runners",
+        "Fast Cavalry",
+        "Fear of Elves",
+        "Fire & Flee",
+        "Impetuous",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Giant Wolf",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Giant Wolf",
+      "as": 6,
+      "rules": [
+        "Chariot Runners",
+        "Fast Cavalry",
+        "Fear of Elves",
+        "Fire & Flee",
+        "Impetuous",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "gor-herd": [
     {
-      A: "1",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "2",
-      Ld: "6",
-      WS: "4",
-      Name: "Gor",
+      "A": "1",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "2",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Gor",
+      "rules": [
+        "Bestial Charge",
+        "Blood Rage",
+        "Horde",
+        "Mark of Chaos Undivided",
+        "Move Through Cover",
+        "Open Order",
+        "Primal Fury",
+        "Skirmishers",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "2",
-      Ld: "7",
-      WS: "4",
-      Name: "True-horn",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "True-horn",
+      "rules": [
+        "Bestial Charge",
+        "Blood Rage",
+        "Horde",
+        "Mark of Chaos Undivided",
+        "Move Through Cover",
+        "Open Order",
+        "Primal Fury",
+        "Skirmishers",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
+    }
   ],
   "gorebeast-chariot": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Chariot",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Chariot",
+      "Impact-Hits": "D6+2",
+      "rules": [
+        "Armour Bane (1, Gorebeast only)",
+        "Close Order",
+        "Ensorcelled Weapons",
+        "First Charge",
+        "Impact Hits (D6+2)",
+        "Killing Blow (Gorebeast only)",
+        "Mark of Chaos Undivided"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
     },
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Chaos Charioteer (x2)",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Chaos Charioteer (x2)",
+      "rules": [
+        "Armour Bane (1, Gorebeast only)",
+        "Close Order",
+        "Ensorcelled Weapons",
+        "First Charge",
+        "Impact Hits (D6+2)",
+        "Killing Blow (Gorebeast only)",
+        "Mark of Chaos Undivided"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
     },
     {
-      A: "3",
-      I: "2",
-      M: "6",
-      S: "5",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "Gorebeast (x1)",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "6",
+      "S": "5",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "Gorebeast (x1)",
+      "rules": [
+        "Armour Bane (1, Gorebeast only)",
+        "Close Order",
+        "Ensorcelled Weapons",
+        "First Charge",
+        "Impact Hits (D6+2)",
+        "Killing Blow (Gorebeast only)",
+        "Mark of Chaos Undivided"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
+    }
   ],
-  gorebull: [
+  "gorebull": [
     {
-      A: "4",
-      I: "4",
-      M: "6",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "3",
-      Ld: "7",
-      WS: "5",
-      Name: "Gorebull",
-    },
+      "A": "4",
+      "I": "4",
+      "M": "6",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Gorebull",
+      "Impact-Hits": "1",
+      "rules": [
+        "Armour Bane (1)",
+        "Blood Greed",
+        "Blood Rage",
+        "Bull-gors",
+        "Fear",
+        "Foe Render",
+        "Gaze of the Gods",
+        "Impact Hits (1)",
+        "Mark of Chaos Undivided",
+        "Primal Fury",
+        "Slaughterer's Call",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Monstrous InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  gorger: [
+  "gorger": [
     {
-      A: "4",
-      I: "2",
-      M: "6",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "0",
-      Ld: "8",
-      WS: "3",
-      AS: "6",
-      Name: "Gorger",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "6",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "3",
+      "AS": "6",
+      "Name": "Gorger",
+      "as": 6,
+      "Regen": "6+",
+      "rules": [
+        "Ambushers",
+        "Close Order",
+        "Fear",
+        "Frenzy",
+        "Ravenous Hunger",
+        "Regeneration (6+)",
+        "Swiftstride",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "distensible jaw",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Scouts",
+        "Vanguard"
+      ]
+    }
   ],
   "grail-knights": [
     {
-      A: "2",
-      I: "5",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "2",
-      Ld: "9",
-      WS: "6",
-      Name: "Grail Knight",
+      "A": "2",
+      "I": "5",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "2",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Grail Knight",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Blessings of the Lady",
+        "Close Order",
+        "Counter Charge",
+        "Finest Warhorses",
+        "First Charge",
+        "Lance Formation",
+        "Living Saints",
+        "Swiftstride",
+        "The Grail Vow"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "5",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "2",
-      Ld: "9",
-      WS: "6",
-      Name: "Grail Guardian",
+      "A": "3",
+      "I": "5",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "2",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Grail Guardian",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Blessings of the Lady",
+        "Close Order",
+        "Counter Charge",
+        "Finest Warhorses",
+        "First Charge",
+        "Lance Formation",
+        "Living Saints",
+        "Swiftstride",
+        "The Grail Vow"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Bretonnian Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Bretonnian Warhorse",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Blessings of the Lady",
+        "Close Order",
+        "Counter Charge",
+        "Finest Warhorses",
+        "First Charge",
+        "Lance Formation",
+        "Living Saints",
+        "Swiftstride",
+        "The Grail Vow"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "grand-master": [
     {
-      A: "4",
-      I: "6",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "6",
-      Name: "Grand Master",
-    },
+      "A": "4",
+      "I": "6",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Grand Master",
+      "as": 5,
+      "rules": [
+        "Counter Charge",
+        "First Charge",
+        "Immune to Psychology",
+        "Master of Battle",
+        "Rallying Cry",
+        "Stubborn",
+        "Swiftstride",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy CavalryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "grave-guard": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Grave Guard",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Grave Guard",
+      "as": 4,
+      "Regen": "6+",
+      "rules": [
+        "Cleaving Blow",
+        "Close Order",
+        "Indomitable (1)",
+        "Necromantic Undead",
+        "Regeneration (6+)"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Implacable Defence"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Seneschal",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Seneschal",
+      "as": 4,
+      "Regen": "6+",
+      "rules": [
+        "Cleaving Blow",
+        "Close Order",
+        "Indomitable (1)",
+        "Necromantic Undead",
+        "Regeneration (6+)"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Implacable Defence"
+      ]
+    }
   ],
   "great-bray-shaman": [
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Great Bray-Shaman",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Great Bray-Shaman",
+      "rules": [
+        "Gaze of the Gods",
+        "Lore of Beasts",
+        "Mark of Chaos Undivided",
+        "Primal Fury",
+        "Warband"
+      ],
+      "equipment": [
+        "Braystaff"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "daemonology",
+        "dark magic",
+        "elementalism"
+      ],
+      "optionalRules": [
+        "Ambushers"
+      ]
+    }
   ],
   "great-cannon-empire": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Great Cannon",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Great Cannon",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Gun Crew",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Gun Crew",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "great-eagle": [
     {
-      A: "3",
-      I: "4",
-      M: "2",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "0",
-      Ld: "6",
-      WS: "5",
-      Name: "Great Eagle",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "2",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "0",
+      "Ld": "6",
+      "WS": "5",
+      "Name": "Great Eagle",
+      "Stomps": "1",
+      "Fly": "10",
+      "rules": [
+        "Close Order",
+        "Fear",
+        "Fly (10)",
+        "Stomp Attacks (1)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "serrated maw"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "great-eagle-mount": [
     {
-      A: "3",
-      I: "4",
-      M: "2",
-      S: "4",
-      T: "(+1)",
-      W: "(+1)",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Great Eagle (Mount)",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "2",
+      "S": "4",
+      "T": "(+1)",
+      "W": "(+1)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Great Eagle (Mount)",
+      "Stomps": "1",
+      "Fly": "10",
+      "rules": [
+        "Close Order",
+        "Fear",
+        "Fly (10)",
+        "Stomp Attacks (1)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "serrated maw"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "great-stag": [
     {
-      A: "2",
-      I: "4",
-      M: "8",
-      S: "5",
-      T: "(+1)",
-      W: "(+1)",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "Great Stag",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "8",
+      "S": "5",
+      "T": "(+1)",
+      "W": "(+1)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "Great Stag",
+      "Stomps": "1",
+      "Impact-Hits": "1",
+      "rules": [
+        "Armoured Hide (2)",
+        "Crown of Antlers",
+        "Fear",
+        "First Charge",
+        "Impact Hits (1)",
+        "Move Through Cover",
+        "Stomp Attacks (1)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Mighty antlers"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "great-taurus": [
     {
-      A: "3",
-      I: "3",
-      M: "6",
-      S: "5",
-      T: "-",
-      W: "(+4)",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Great Taurus",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "6",
+      "S": "5",
+      "T": "-",
+      "W": "(+4)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Great Taurus",
+      "Stomps": "D3",
+      "Fly": "9",
+      "rules": [
+        "Blazing Body",
+        "Born of Fire",
+        "Close Order",
+        "Fly (9)",
+        "Furious Charge",
+        "Large Target",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Trampling hooves",
+        "goring horns"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "great-taurus-renegade": [
     {
-      A: "3",
-      I: "3",
-      M: "6",
-      S: "5",
-      T: "-",
-      W: "(+4)",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Great Taurus",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "6",
+      "S": "5",
+      "T": "-",
+      "W": "(+4)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Great Taurus",
+      "Stomps": "D3",
+      "Fly": "9",
+      "rules": [
+        "Blazing Body",
+        "Born of Fire",
+        "Close Order",
+        "Fly (9)",
+        "Furious Charge",
+        "Large Target",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Trampling hooves",
+        "goring horns"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "great-unclean-one": [
     {
-      A: "5",
-      I: "4",
-      M: "5",
-      S: "6",
-      T: "7",
-      W: "7",
-      BS: "3",
-      Ld: "9",
-      WS: "6",
-      Name: "Great Unclean One",
-    },
+      "A": "5",
+      "I": "4",
+      "M": "5",
+      "S": "6",
+      "T": "7",
+      "W": "7",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Great Unclean One",
+      "Regen": "5+",
+      "Stomps": "D3+1",
+      "rules": [
+        "Daemonic",
+        "Daemon of Nurgle",
+        "Infernal Favour (2)",
+        "Large Target",
+        "Lore of Daemons",
+        "Poisoned Attacks",
+        "Regeneration (5+)",
+        "Stomp Attacks (D3+1)",
+        "Terror"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "BehemothCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic"
+      ],
+      "optionalRules": [
+        "Bilesword",
+        "Plagueflail"
+      ]
+    }
   ],
   "great-unclean-one-renegade": [
     {
-      A: "5",
-      I: "4",
-      M: "5",
-      S: "6",
-      T: "7",
-      W: "7",
-      BS: "3",
-      Ld: "9",
-      WS: "6",
-      Name: "Great Unclean One",
-    },
+      "A": "5",
+      "I": "4",
+      "M": "5",
+      "S": "6",
+      "T": "7",
+      "W": "7",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Great Unclean One",
+      "Regen": "5+",
+      "Stomps": "D3+1",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemon of Nurgle",
+        "Infernal Favour (2)",
+        "Large Target",
+        "Lore of Daemons",
+        "Poisoned Attacks",
+        "Regeneration (5+)",
+        "Stomp Attacks (D3+1)",
+        "Terror"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "BehemothCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic"
+      ],
+      "optionalRules": [
+        "Bilesword",
+        "Plagueflail"
+      ]
+    }
   ],
   "grey-seer": [
     {
-      A: "2",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Grey Seer",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Grey Seer",
+      "Magic-Res": "-1",
+      "rules": [
+        "Lore of the Horned Rat",
+        "Magical Attacks",
+        "Magic Resistance (-1)",
+        "Scurry Away",
+        "Verminous Valour",
+        "Warband",
+        "Warpstone Weapons"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Warpstone Tokens"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": []
+    }
   ],
   "griffon-empire": [
     {
-      A: "4",
-      I: "5",
-      M: "6",
-      S: "5",
-      T: "(+1)",
-      W: "(+3)",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Griffon",
-    },
+      "A": "4",
+      "I": "5",
+      "M": "6",
+      "S": "5",
+      "T": "(+1)",
+      "W": "(+3)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Griffon",
+      "as": 5,
+      "Stomps": "D3",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Fly (9)",
+        "Large Target",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "serrated maw",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "griffon-high-elves": [
     {
-      A: "4",
-      I: "5",
-      M: "6",
-      S: "5",
-      T: "(+2)",
-      W: "(+3)",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Griffon",
-    },
+      "A": "4",
+      "I": "5",
+      "M": "6",
+      "S": "5",
+      "T": "(+2)",
+      "W": "(+3)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Griffon",
+      "as": 5,
+      "Stomps": "D3",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Fly (9)",
+        "Large Target",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "serrated maw",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "grudge-thrower": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "7",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Grudge Thrower",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "7",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Grudge Thrower",
+      "as": 6,
+      "Magic-Res": "-1",
+      "rules": [
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Skirmishers",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Stone thrower",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "3",
-      Name: "Dwarf Crew",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "3",
+      "Name": "Dwarf Crew",
+      "as": 6,
+      "Magic-Res": "-1",
+      "rules": [
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Skirmishers",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Stone thrower",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "guardians-of-talsyn": [
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Guardian of Talsyn",
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Guardian of Talsyn",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Drilled",
+        "Elven Reflexes",
+        "Martial Prowess",
+        "Move Through Cover",
+        "Parry",
+        "Stubborn",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Asrai spear",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Watchmaster",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Watchmaster",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Drilled",
+        "Elven Reflexes",
+        "Martial Prowess",
+        "Move Through Cover",
+        "Parry",
+        "Stubborn",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Asrai spear",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "gutter-runners": [
     {
-      A: "1",
-      I: "5",
-      M: "6",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "7",
-      WS: "4",
-      Name: "Gutter Runner",
+      "A": "1",
+      "I": "5",
+      "M": "6",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Gutter Runner",
+      "rules": [
+        "Evasive",
+        "Feigned Flight",
+        "Fire & Flee",
+        "Move Through Cover",
+        "Scouts",
+        "Scurry Away",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Two hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers",
+        "Poisoned Attacks"
+      ]
     },
     {
-      A: "2",
-      I: "5",
-      M: "6",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "7",
-      WS: "4",
-      Name: "Assassin",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "6",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Assassin",
+      "rules": [
+        "Evasive",
+        "Feigned Flight",
+        "Fire & Flee",
+        "Move Through Cover",
+        "Scouts",
+        "Scurry Away",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Two hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers",
+        "Poisoned Attacks"
+      ]
+    }
   ],
-  gyrobomber: [
+  "gyrobomber": [
     {
-      A: "2",
-      I: "2",
-      M: "1",
-      S: "4",
-      T: "5",
-      W: "4",
-      BS: "3",
-      Ld: "9",
-      WS: "4",
-      Name: "Gyrobomber",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "1",
+      "S": "4",
+      "T": "5",
+      "W": "4",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Gyrobomber",
+      "as": 4,
+      "Magic-Res": "-1",
+      "Impact-Hits": "D3+1",
+      "Fly": "8",
+      "rules": [
+        "Bombing Run",
+        "Close Order",
+        "Fly (8)",
+        "Hatred (Orcs & Goblins)",
+        "Impact Hits (D3+1)",
+        "Magic Resistance (-1)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "steam gun",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Brimstone Gun",
+        "Clattergun"
+      ]
+    }
   ],
-  gyrocopter: [
+  "gyrocopter": [
     {
-      A: "2",
-      I: "2",
-      M: "1",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "4",
-      Name: "Gyrocopter",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "1",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Gyrocopter",
+      "as": 4,
+      "Magic-Res": "-1",
+      "Impact-Hits": "D3",
+      "Fly": "9",
+      "rules": [
+        "Dive Bomb",
+        "Fire & Flee",
+        "Fly (9)",
+        "Hatred (Orcs & Goblins)",
+        "Impact Hits (D3)",
+        "Magic Resistance (-1)",
+        "Skirmishers",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "steam gun",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Brimstone Gun",
+        "Clattergun"
+      ]
+    }
   ],
-  hammerers: [
+  "hammerers": [
     {
-      A: "1",
-      I: "3",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "5",
-      Name: "Hammerer",
+      "A": "1",
+      "I": "3",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Hammerer",
+      "as": 4,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Gromril Armour",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute",
+        "Royal Guard",
+        "Shieldwall",
+        "Stoic Defenders",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great hammers",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Veteran"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "5",
-      Name: "Royal Champion",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Royal Champion",
+      "as": 4,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Gromril Armour",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute",
+        "Royal Guard",
+        "Shieldwall",
+        "Stoic Defenders",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great hammers",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Veteran"
+      ]
+    }
   ],
   "handmaiden-of-the-everqueen": [
     {
-      A: "2",
-      I: "6",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "2",
-      BS: "7",
-      Ld: "8",
-      WS: "6",
-      Name: "Handmaiden of the Everqueen",
-    },
+      "A": "2",
+      "I": "6",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "2",
+      "BS": "7",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Handmaiden of the Everqueen",
+      "as": 6,
+      "rules": [
+        "Arrows of Isha",
+        "Evasive",
+        "Ignores Cover",
+        "Immune to Psychology",
+        "Ithilmar Armour",
+        "Ithilmar Weapons",
+        "Strike First"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Handmaiden's spear",
+        "Bow of Avelorn",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Horn of Isha"
+      ]
+    }
   ],
   "har-ganeth-executioners": [
     {
-      A: "1",
-      I: "5",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Executioner",
+      "A": "1",
+      "I": "5",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Executioner",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Hatred (High Elves)",
+        "Murderous",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Har Ganeth greatswords",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
     },
     {
-      A: "2",
-      I: "5",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Draich Master",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Draich Master",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Hatred (High Elves)",
+        "Murderous",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Har Ganeth greatswords",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
+    }
   ],
   "harald-gemunsen": [
     {
-      A: "4",
-      I: "6",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "7",
-      Name: "Harald Gemunsen",
+      "A": "4",
+      "I": "6",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "7",
+      "Name": "Harald Gemunsen",
+      "as": 4,
+      "Magic-Res": "-1",
+      "armourMod": 1,
+      "rules": [
+        "Counter Charge",
+        "First Charge",
+        "Grand Master of the Knights Panther",
+        "Hatred (Warriors of Chaos, Beastmen Brayherds & Daemonic models)",
+        "Immune to Psychology",
+        "Magic Resistance (-1)",
+        "Master of Battle",
+        "Rallying Cry",
+        "Skilled Duellist",
+        "Stubborn",
+        "Swiftstride",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Beast Reaver",
+        "full plate armour",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy CavalryNamed Character"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Barded Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Barded Warhorse",
+      "as": 4,
+      "Magic-Res": "-1",
+      "armourMod": 1,
+      "rules": [
+        "Counter Charge",
+        "First Charge",
+        "Grand Master of the Knights Panther",
+        "Hatred (Warriors of Chaos, Beastmen Brayherds & Daemonic models)",
+        "Immune to Psychology",
+        "Magic Resistance (-1)",
+        "Master of Battle",
+        "Rallying Cry",
+        "Skilled Duellist",
+        "Stubborn",
+        "Swiftstride",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Beast Reaver",
+        "full plate armour",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy CavalryNamed Character"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "harbinger-of-doom": [
     {
-      A: "3",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "2",
-      Ld: "8",
-      WS: "5",
-      Name: "Harbinger of Doom",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Harbinger of Doom",
+      "rules": [
+        "Feel No Pain",
+        "Furious Charge",
+        "Immune to Psychology",
+        "Impetuous",
+        "Hatred (all enemies)",
+        "Prayer of the Damned",
+        "Unbreakable",
+        "Zealot"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  harpies: [
+  "harpies": [
     {
-      A: "2",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "0",
-      Ld: "6",
-      WS: "3",
-      Name: "Harpy",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "0",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Harpy",
+      "Fly": "10",
+      "rules": [
+        "Fly (10)",
+        "Move Through Cover",
+        "Scouts",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "helblaster-volley-gun": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Helblaster Volley Gun",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Helblaster Volley Gun",
+      "rules": [
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Helblaster Volley Gun",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Gun Crew",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Gun Crew",
+      "rules": [
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Helblaster Volley Gun",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "hell-pit-abomination": [
     {
-      A: "D6+1",
-      I: "4",
-      M: "3D6",
-      S: "6",
-      T: "5",
-      W: "6",
-      BS: "1",
-      Ld: "8",
-      WS: "3",
-      Name: "Hell Pit Abomination",
-    },
+      "A": "D6+1",
+      "I": "4",
+      "M": "3D6",
+      "S": "6",
+      "T": "5",
+      "W": "6",
+      "BS": "1",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "Hell Pit Abomination",
+      "Regen": "5+",
+      "Magic-Res": "-1",
+      "Stomps": "D3+1",
+      "rules": [
+        "Abominable Attacks",
+        "Close Order",
+        "Immune to Psychology",
+        "Large Target",
+        "Magic Resistance (-1)",
+        "Random Attacks",
+        "Random Movement",
+        "Regeneration (5+)",
+        "Stomp Attacks (D3+1)",
+        "Terror",
+        "Timmm-berrr!",
+        "Too Horrible to Die",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Warpstone claws"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "hell-pit-abomination-renegade": [
     {
-      A: "D6+1",
-      I: "4",
-      M: "3D6",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "1",
-      Ld: "8",
-      WS: "3",
-      Name: "Hell Pit Abomination",
-    },
+      "A": "D6+1",
+      "I": "4",
+      "M": "3D6",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "1",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "Hell Pit Abomination",
+      "Regen": "5+",
+      "Magic-Res": "-1",
+      "Stomps": "D3+1",
+      "Impact-Hits": "D3+1",
+      "rules": [
+        "Abominable Attacks",
+        "Close Order",
+        "Immune to Psychology",
+        "Impact Hits (D3+1)",
+        "Large Target",
+        "Magic Resistance (-1)",
+        "Random Attacks",
+        "Random Movement",
+        "Regeneration (5+)",
+        "Stomp Attacks (D3+1)",
+        "Terror",
+        "Timmm-berrr!",
+        "Too Horrible to Die",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Warpstone claws"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  hellcannon: [
+  "hellcannon": [
     {
-      crewed: true,
-      A: "5",
-      I: "1",
-      M: "3",
-      S: "5",
-      T: "6",
-      W: "5",
-      BS: "3",
-      Ld: "4",
-      WS: "4",
-      Name: "Hellcannon",
+      "crewed": true,
+      "A": "5",
+      "I": "1",
+      "M": "3",
+      "S": "5",
+      "T": "6",
+      "W": "5",
+      "BS": "3",
+      "Ld": "4",
+      "WS": "4",
+      "Name": "Hellcannon",
+      "Regen": "6+",
+      "Impact-Hits": "D6",
+      "rules": [
+        "Armour Bane (1)",
+        "Caged Fury",
+        "Close Order",
+        "Ensorcelled Weapons",
+        "Immune to Psychology",
+        "Impact Hits (D6)",
+        "Large Target",
+        "Monster Handlers",
+        "Regeneration (6+)",
+        "Terror",
+        "Unbreakable",
+        "Warp-spawned"
+      ],
+      "equipment": [
+        "Doomfire",
+        "hand weapons",
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "9",
-      WS: "4",
-      Name: "Chaos Dwarf Handlers (x3)",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Chaos Dwarf Handlers (x3)",
+      "Regen": "6+",
+      "rules": [
+        "Armour Bane (1)",
+        "Caged Fury",
+        "Close Order",
+        "Ensorcelled Weapons",
+        "Immune to Psychology",
+        "Impact Hits (D6)",
+        "Large Target",
+        "Monster Handlers",
+        "Regeneration (6+)",
+        "Terror",
+        "Unbreakable",
+        "Warp-spawned"
+      ],
+      "equipment": [
+        "Doomfire",
+        "hand weapons",
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "hellflayer-of-slaanesh": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Hellflayer",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Hellflayer",
+      "Impact-Hits": "2D6+1",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Close Order",
+        "Counter Charge",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "First Charge",
+        "Impact Hits (2D6+1)",
+        "Poisoned Attacks (Steed of Slaanesh only)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "5",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "5",
-      Name: "Exalted Alluress",
+      "A": "2",
+      "I": "5",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Exalted Alluress",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Close Order",
+        "Counter Charge",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "First Charge",
+        "Impact Hits (2D6+1)",
+        "Poisoned Attacks (Steed of Slaanesh only)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "5",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Daemonette Crew (x2)",
+      "A": "1",
+      "I": "5",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Daemonette Crew (x2)",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Close Order",
+        "Counter Charge",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "First Charge",
+        "Impact Hits (2D6+1)",
+        "Poisoned Attacks (Steed of Slaanesh only)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "5",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Steed of Slaanesh (x2)",
-    },
+      "A": "1",
+      "I": "5",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Steed of Slaanesh (x2)",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Close Order",
+        "Counter Charge",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "First Charge",
+        "Impact Hits (2D6+1)",
+        "Poisoned Attacks (Steed of Slaanesh only)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "hellflayer-of-slaanesh-renegade": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Hellflayer",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Hellflayer",
+      "Impact-Hits": "2D6+1",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Armour Piercing (-1) (Impact Hits only)",
+        "Close Order",
+        "Counter Charge",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "First Charge",
+        "Impact Hits (2D6+1)",
+        "Poisoned Attacks (Steed of Slaanesh only)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "5",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "5",
-      Name: "Exalted Alluress",
+      "A": "2",
+      "I": "5",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Exalted Alluress",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Armour Piercing (-1) (Impact Hits only)",
+        "Close Order",
+        "Counter Charge",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "First Charge",
+        "Impact Hits (2D6+1)",
+        "Poisoned Attacks (Steed of Slaanesh only)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "5",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Daemonette Crew (x2)",
+      "A": "1",
+      "I": "5",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Daemonette Crew (x2)",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Armour Piercing (-1) (Impact Hits only)",
+        "Close Order",
+        "Counter Charge",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "First Charge",
+        "Impact Hits (2D6+1)",
+        "Poisoned Attacks (Steed of Slaanesh only)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "5",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Steed of Slaanesh (x2)",
-    },
+      "A": "1",
+      "I": "5",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Steed of Slaanesh (x2)",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Armour Piercing (-1) (Impact Hits only)",
+        "Close Order",
+        "Counter Charge",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "First Charge",
+        "Impact Hits (2D6+1)",
+        "Poisoned Attacks (Steed of Slaanesh only)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "helstorm-rocket-battery": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Helstorm Rocket Battery",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Helstorm Rocket Battery",
+      "rules": [
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Helstorm Rocket Battery",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Gun Crew",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Gun Crew",
+      "rules": [
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Helstorm Rocket Battery",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  herdstone: [
+  "herdstone": [
     {
-      Name: "Herdstone",
-      M: "-",
-      WS: "-",
-      BS: "-",
-      S: "-",
-      T: "-",
-      W: "-",
-      I: "-",
-      A: "-",
-      Ld: "-",
-    },
+      "Name": "Herdstone",
+      "M": "-",
+      "WS": "-",
+      "BS": "-",
+      "S": "-",
+      "T": "-",
+      "W": "-",
+      "I": "-",
+      "A": "-",
+      "Ld": "-",
+      "rules": [
+        "Herdstones"
+      ],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  hexwraiths: [
+  "hexwraiths": [
     {
-      A: "1",
-      I: "2",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "0",
-      Ld: "5",
-      WS: "3",
-      Name: "Hexwraith",
+      "A": "1",
+      "I": "2",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "0",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Hexwraith",
+      "Regen": "6+",
+      "Fly": "8",
+      "rules": [
+        "Ethereal",
+        "Flaming Attacks",
+        "Fly (8)",
+        "Magical Attacks",
+        "Necromantic Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Spectral Reapers",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great weapons",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      Name: "Hellwraith",
-      M: "-",
-      WS: "3",
-      BS: "0",
-      S: "3",
-      T: "3",
-      W: "1",
-      I: "2",
-      A: "2",
-      Ld: "5",
+      "Name": "Hellwraith",
+      "M": "-",
+      "WS": "3",
+      "BS": "0",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "I": "2",
+      "A": "2",
+      "Ld": "5",
+      "Regen": "6+",
+      "Fly": "8",
+      "rules": [
+        "Ethereal",
+        "Flaming Attacks",
+        "Fly (8)",
+        "Magical Attacks",
+        "Necromantic Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Spectral Reapers",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great weapons",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      Name: "Spectral Steed",
-      M: "8",
-      WS: "2",
-      BS: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      I: "2",
-      A: "1",
-      Ld: "-",
-    },
+      "Name": "Spectral Steed",
+      "M": "8",
+      "WS": "2",
+      "BS": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "I": "2",
+      "A": "1",
+      "Ld": "-",
+      "Regen": "6+",
+      "Fly": "8",
+      "rules": [
+        "Ethereal",
+        "Flaming Attacks",
+        "Fly (8)",
+        "Magical Attacks",
+        "Necromantic Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Spectral Reapers",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great weapons",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "high-beastmaster": [
     {
-      A: "3",
-      I: "5",
-      M: "-",
-      S: "4",
-      T: "3",
-      W: "3",
-      BS: "7",
-      Ld: "9",
-      WS: "7",
-      Name: "High Beastmaster",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "-",
+      "S": "4",
+      "T": "3",
+      "W": "3",
+      "BS": "7",
+      "Ld": "9",
+      "WS": "7",
+      "Name": "High Beastmaster",
+      "as": 6,
+      "rules": [
+        "Eternal Hatred",
+        "Goad Beast",
+        "Hatred (High Elves)",
+        "Murderous",
+        "Strike First"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "whip",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "high-priest": [
     {
-      A: "2",
-      I: "2",
-      M: "4",
-      S: "3",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "3",
-      Name: "High Priest",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "4",
+      "S": "3",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "High Priest",
+      "Regen": "5+",
+      "rules": [
+        "Arise!",
+        "Curse of the Necropolis",
+        "Indomitable (1)",
+        "Khopesh",
+        "Lore of Nehekhara",
+        "Nehekharan Undead",
+        "Regeneration (5+)",
+        "From Beneath the Sands"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "elementalism",
+        "illusion",
+        "necromancy"
+      ],
+      "optionalRules": []
+    }
   ],
   "high-priest-of-ulric": [
     {
-      A: "3",
-      I: "5",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "5",
-      Name: "High Priest of Ulric",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "High Priest of Ulric",
+      "as": 6,
+      "Magic-Res": "-1",
+      "rules": [
+        "Magical Attacks",
+        "Magic Resistance (-1)",
+        "Prayers of Ulric"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  hippogryph: [
+  "hippogryph": [
     {
-      A: "4",
-      I: "5",
-      M: "7",
-      S: "5",
-      T: "(+1)",
-      W: "(+3)",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Hippogryph",
-    },
+      "A": "4",
+      "I": "5",
+      "M": "7",
+      "S": "5",
+      "T": "(+1)",
+      "W": "(+3)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Hippogryph",
+      "as": 5,
+      "Stomps": "D3",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "Fly (9)",
+        "Large Target",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "serrated maw",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "hireling-outriders": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Hireling Outrider",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Hireling Outrider",
+      "rules": [
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Feigned Flight",
+        "Reserve Move",
+        "Vanguard"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "7",
-      WS: "3",
-      Name: "Captain",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Captain",
+      "rules": [
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Feigned Flight",
+        "Reserve Move",
+        "Vanguard"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Warhorse",
+      "rules": [
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Feigned Flight",
+        "Reserve Move",
+        "Vanguard"
+      ]
+    }
   ],
   "hobgoblin-bolt-thrower": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "4",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Bolt Thrower",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "4",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Bolt Thrower",
+      "as": 6,
+      "rules": [
+        "Levies",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Bolt thrower",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Hobgoblin Crew",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Hobgoblin Crew",
+      "as": 6,
+      "rules": [
+        "Levies",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Bolt thrower",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "hobgoblin-cutthroats": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "4",
-      WS: "3",
-      Name: "Cutthroat",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "4",
+      "WS": "3",
+      "Name": "Cutthroat",
+      "as": 6,
+      "rules": [
+        "Backstab",
+        "Close Order",
+        "Horde",
+        "Levies",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "3",
-      Name: "Boss",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Boss",
+      "as": 6,
+      "rules": [
+        "Backstab",
+        "Close Order",
+        "Horde",
+        "Levies",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "hobgoblin-khan": [
     {
-      A: "3",
-      I: "5",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "4",
-      Ld: "7",
-      WS: "5",
-      Name: "Hobgoblin Khan",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Hobgoblin Khan",
+      "rules": [
+        "Backstab",
+        "Evasive",
+        "Levies",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "hobgoblin-wolf-riders": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Hobgoblin Wolf Rider",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Hobgoblin Wolf Rider",
+      "as": 5,
+      "rules": [
+        "Backstab",
+        "Evasive",
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Levies",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Feigned Flight",
+        "Reserve Move"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "6",
-      WS: "3",
-      Name: "Boss",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Boss",
+      "as": 5,
+      "rules": [
+        "Backstab",
+        "Evasive",
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Levies",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Feigned Flight",
+        "Reserve Move"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Giant Wolf",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Giant Wolf",
+      "as": 5,
+      "rules": [
+        "Backstab",
+        "Evasive",
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Levies",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Feigned Flight",
+        "Reserve Move"
+      ]
+    }
   ],
   "hounds-of-orion": [
     {
-      A: "1",
-      I: "4",
-      M: "9",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "0",
-      Ld: "6",
-      WS: "4",
-      Name: "Hound of Orion",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "9",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "0",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Hound of Orion",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  hunter: [
+  "hunter": [
     {
-      A: "4",
-      I: "3",
-      M: "6",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      AS: "6",
-      Name: "Hunter",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "6",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "AS": "6",
+      "Name": "Hunter",
+      "as": 6,
+      "Impact-Hits": "1",
+      "rules": [
+        "Armour Bane (1)",
+        "Fear",
+        "Impact Hits (1)",
+        "Loner",
+        "Move Through Cover",
+        "Ogre Charge",
+        "Running with the Pack"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "great throwing spear",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Harpoon Launcher",
+        "Ambushers",
+        "Scouts",
+        "Vanguard"
+      ]
+    }
   ],
   "imperial-dwarf-mercenaries": [
     {
-      A: "1",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "4",
-      Name: "Warrior",
+      "A": "1",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Warrior",
+      "as": 6,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute",
+        "Shieldwall"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Veteran"
+      ]
     },
     {
-      A: "2",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "4",
-      Name: "Veteran",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Veteran",
+      "as": 6,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute",
+        "Shieldwall"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Veteran"
+      ]
+    }
   ],
   "imperial-griffon": [
     {
-      A: "4",
-      I: "4",
-      M: "6",
-      S: "6",
-      T: "(+1)",
-      W: "(+4)",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Imperial Griffon",
-    },
+      "A": "4",
+      "I": "4",
+      "M": "6",
+      "S": "6",
+      "T": "(+1)",
+      "W": "(+4)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Imperial Griffon",
+      "as": 5,
+      "Stomps": "D3+1",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Fly (9)",
+        "Large Target",
+        "Stomp Attacks (D3+1)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "serrated maw",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Two Heads"
+      ]
+    }
   ],
   "imperial-ogres": [
     {
-      A: "3",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      AS: "6",
-      Name: "Imperial Ogre",
+      "A": "3",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "AS": "6",
+      "Name": "Imperial Ogre",
+      "as": 6,
+      "Impact-Hits": "1",
+      "rules": [
+        "Armour Bane (1)",
+        "Close Order",
+        "Fear",
+        "Impact Hits (1)",
+        "Mercenaries",
+        "Motley Crew",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Light Cannon",
+        "Ogre Pistol"
+      ]
     },
     {
-      A: "4",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "4",
-      Ld: "7",
-      WS: "3",
-      AS: "6",
-      Name: "Ogre Captain",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "3",
+      "AS": "6",
+      "Name": "Ogre Captain",
+      "as": 6,
+      "rules": [
+        "Armour Bane (1)",
+        "Close Order",
+        "Fear",
+        "Impact Hits (1)",
+        "Mercenaries",
+        "Motley Crew",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Light Cannon",
+        "Ogre Pistol"
+      ]
+    }
   ],
   "infernal-castellan": [
     {
-      A: "4",
-      I: "3",
-      M: "3",
-      S: "5",
-      T: "5",
-      W: "3",
-      BS: "4",
-      Ld: "10",
-      WS: "6",
-      Name: "Infernal Castellan",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "3",
+      "S": "5",
+      "T": "5",
+      "W": "3",
+      "BS": "4",
+      "Ld": "10",
+      "WS": "6",
+      "Name": "Infernal Castellan",
+      "as": 5,
+      "rules": [
+        "Blackshard Armour",
+        "Ensorcelled Weapons",
+        "Rallying Cry",
+        "Resolute",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Darkforged Weapon",
+        "Fireglaive",
+        "Hailshot Blunderbuss",
+        "Naptha Bombs"
+      ]
+    }
   ],
   "infernal-guard": [
     {
-      A: "1",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "4",
-      Name: "Infernal Guard",
+      "A": "1",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Infernal Guard",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Regimental Unit",
+        "Resolute",
+        "Shieldwall",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Fireglaive",
+        "Hailshot Blunderbuss",
+        "Naptha Bombs",
+        "Drilled",
+        "Blackshard Armour"
+      ]
     },
     {
-      A: "2",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "4",
-      Name: "Deathmask",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Deathmask",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Regimental Unit",
+        "Resolute",
+        "Shieldwall",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Fireglaive",
+        "Hailshot Blunderbuss",
+        "Naptha Bombs",
+        "Drilled",
+        "Blackshard Armour"
+      ]
+    }
   ],
   "infernal-ironsworn": [
     {
-      A: "2",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "5",
-      Name: "Infernal Ironsworn",
+      "A": "2",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Infernal Ironsworn",
+      "as": 4,
+      "rules": [
+        "Blackshard Armour",
+        "Close Order",
+        "Drilled",
+        "Ensorcelled Weapons",
+        "Quell Panic",
+        "Regimental Unit",
+        "Resolute",
+        "Shieldwall",
+        "Stubborn",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Naptha Bombs"
+      ]
     },
     {
-      A: "3",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "5",
-      Name: "Overseer",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Overseer",
+      "as": 4,
+      "rules": [
+        "Blackshard Armour",
+        "Close Order",
+        "Drilled",
+        "Ensorcelled Weapons",
+        "Quell Panic",
+        "Regimental Unit",
+        "Resolute",
+        "Shieldwall",
+        "Stubborn",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Naptha Bombs"
+      ]
+    }
   ],
   "infernal-seneschal": [
     {
-      A: "3",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "5",
-      W: "2",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Infernal Seneschal",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "5",
+      "W": "2",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Infernal Seneschal",
+      "as": 5,
+      "rules": [
+        "Blackshard Armour",
+        "Ensorcelled Weapons",
+        "Rallying Cry",
+        "Resolute",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Darkforged Weapon",
+        "Fireglaive",
+        "Hailshot Blunderbuss",
+        "Naptha Bombs"
+      ]
+    }
   ],
   "inner-circle-knights": [
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "4",
-      Name: "Inner Circle Knight",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Inner Circle Knight",
+      "as": 3,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "Drilled",
+        "First Charge",
+        "Inner Circle",
+        "Swiftstride",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "full plate armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Stubborn"
+      ]
     },
     {
-      A: "2",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "4",
-      Name: "Inner Circle Preceptor",
+      "A": "2",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Inner Circle Preceptor",
+      "as": 3,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "Drilled",
+        "First Charge",
+        "Inner Circle",
+        "Swiftstride",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "full plate armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Stubborn"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Barded Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Barded Warhorse",
+      "as": 3,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "Drilled",
+        "First Charge",
+        "Inner Circle",
+        "Swiftstride",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "full plate armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Stubborn"
+      ]
+    }
   ],
   "iron-daemon": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "5",
-      S: "8",
-      T: "7",
-      W: "7",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Iron Daemon",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "5",
+      "S": "8",
+      "T": "7",
+      "W": "7",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Iron Daemon",
+      "Stomps": "D3+1",
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Carriage Hauler",
+        "Close Order",
+        "Fear",
+        "Grinding Wheels",
+        "Immune to Psychology",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Lumbering Destruction",
+        "Stomp Attacks (D3+1)",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Steam Cannonade",
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Hellbound",
+        "Skullcracker"
+      ]
     },
     {
-      A: "1",
-      I: "2",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "4",
-      Ld: "9",
-      WS: "4",
-      Name: "Chaos Dwarf Crew (x3)",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Chaos Dwarf Crew (x3)",
+      "rules": [
+        "Carriage Hauler",
+        "Close Order",
+        "Fear",
+        "Grinding Wheels",
+        "Immune to Psychology",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Lumbering Destruction",
+        "Stomp Attacks (D3+1)",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Steam Cannonade",
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Hellbound",
+        "Skullcracker"
+      ]
+    }
   ],
   "iron-hail-gunners": [
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Iron Hail Gunner",
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Iron Hail Gunner",
+      "as": 6,
+      "rules": [
+        "Open Order",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "iron hail guns",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Gunpowder Bombs"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "7",
-      WS: "3",
-      Name: "Marksman",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Marksman",
+      "as": 6,
+      "rules": [
+        "Open Order",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "iron hail guns",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Gunpowder Bombs"
+      ]
+    }
   ],
-  ironblaster: [
+  "ironblaster": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "6",
-      W: "5",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      AS: "4",
-      Name: "Ironblaster",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "6",
+      "W": "5",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "AS": "4",
+      "Name": "Ironblaster",
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Armour Bane (2, Rhinox only)",
+        "Close Order",
+        "Fear",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Large Target"
+      ],
+      "equipment": [
+        "Cannon of the Sky-titans",
+        "Hand weapon",
+        "hand weapon",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "2",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Leadbelcher (x1)",
+      "A": "3",
+      "I": "2",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Leadbelcher (x1)",
+      "rules": [
+        "Armour Bane (2, Rhinox only)",
+        "Close Order",
+        "Fear",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Large Target"
+      ],
+      "equipment": [
+        "Cannon of the Sky-titans",
+        "Hand weapon",
+        "hand weapon",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "2",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Gnoblar Scrapper (x1)",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "2",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Gnoblar Scrapper (x1)",
+      "rules": [
+        "Armour Bane (2, Rhinox only)",
+        "Close Order",
+        "Fear",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Large Target"
+      ],
+      "equipment": [
+        "Cannon of the Sky-titans",
+        "Hand weapon",
+        "hand weapon",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "2",
-      M: "6",
-      S: "5",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Rhinox (x1)",
-      weapons: ["monstrous tusks"],
-    },
+      "A": "3",
+      "I": "2",
+      "M": "6",
+      "S": "5",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Rhinox (x1)",
+      "weapons": [
+        "monstrous tusks"
+      ],
+      "rules": [
+        "Armour Bane (2, Rhinox only)",
+        "Close Order",
+        "Fear",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Large Target"
+      ],
+      "equipment": [
+        "Cannon of the Sky-titans",
+        "Hand weapon",
+        "hand weapon",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  ironbreakers: [
+  "ironbreakers": [
     {
-      A: "1",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "5",
-      Name: "Ironbreaker",
+      "A": "1",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Ironbreaker",
+      "as": 3,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Gromril Armour",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Regimental Unit",
+        "Resolute",
+        "Runes of Protection",
+        "Shieldwall",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "full plate armour",
+        "shields"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Brace of Drakefire Pistols",
+        "Drakegun",
+        "Cinderblast Bombs"
+      ]
     },
     {
-      A: "2",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "5",
-      Name: "Ironbeard",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Ironbeard",
+      "as": 3,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Gromril Armour",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Regimental Unit",
+        "Resolute",
+        "Runes of Protection",
+        "Shieldwall",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "full plate armour",
+        "shields"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Brace of Drakefire Pistols",
+        "Drakegun",
+        "Cinderblast Bombs"
+      ]
+    }
   ],
-  irondrakes: [
+  "irondrakes": [
     {
-      A: "1",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "4",
-      Name: "Irondrake",
+      "A": "1",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Irondrake",
+      "as": 4,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Gromril Armour",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute",
+        "Runes of Warding",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "drakeguns",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Brace of Drakefire Pistols",
+        "Trollhammer Torpedo",
+        "Cinderblast Bombs"
+      ]
     },
     {
-      A: "1",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "5",
-      Ld: "9",
-      WS: "4",
-      Name: "Ironwarden",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "5",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Ironwarden",
+      "as": 4,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Gromril Armour",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute",
+        "Runes of Warding",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "drakeguns",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Brace of Drakefire Pistols",
+        "Trollhammer Torpedo",
+        "Cinderblast Bombs"
+      ]
+    }
   ],
-  ironguts: [
+  "ironguts": [
     {
-      A: "3",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "2",
-      Ld: "8",
-      WS: "3",
-      AS: "5",
-      Name: "Irongut",
+      "A": "3",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "3",
+      "AS": "5",
+      "Name": "Irongut",
+      "as": 5,
+      "Impact-Hits": "1",
+      "rules": [
+        "Close Order",
+        "Fear",
+        "Impact Hits (1)",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Look-out Gnoblar",
+        "Veteran"
+      ]
     },
     {
-      A: "4",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "2",
-      Ld: "8",
-      WS: "3",
-      AS: "5",
-      Name: "Gutlord",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "3",
+      "AS": "5",
+      "Name": "Gutlord",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Fear",
+        "Impact Hits (1)",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Look-out Gnoblar",
+        "Veteran"
+      ]
+    }
   ],
   "ishaya-vess": [
     {
-      A: "3",
-      I: "7",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "3",
-      BS: "7",
-      Ld: "9",
-      WS: "7",
-      Name: "Ishaya Vess",
-    },
+      "A": "3",
+      "I": "7",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "3",
+      "BS": "7",
+      "Ld": "9",
+      "WS": "7",
+      "Name": "Ishaya Vess",
+      "as": 4,
+      "rules": [
+        "Commanding Voice",
+        "Ithilmar Weapons",
+        "Naval Discipline",
+        "Rallying Cry",
+        "Strike First",
+        "Precision Strikes",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour",
+        "shield",
+        "Mathlann's Ire",
+        "warbow"
+      ],
+      "troopType": [
+        "Named CharacterRegular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  jabberslythe: [
+  "jabberslythe": [
     {
-      A: "5",
-      I: "3",
-      M: "6",
-      S: "5",
-      T: "5",
-      W: "5",
-      BS: "4",
-      Ld: "9",
-      WS: "4",
-      Name: "Jabberslythe",
-    },
+      "A": "5",
+      "I": "3",
+      "M": "6",
+      "S": "5",
+      "T": "5",
+      "W": "5",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Jabberslythe",
+      "as": 5,
+      "Stomps": "D3",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Fly (9)",
+        "Large Target",
+        "Maddening Aura",
+        "Poisoned Attacks",
+        "Spurting Bile Blood",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "slythey tongue",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "jade-lancers": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Jade Lancer",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Jade Lancer",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Cathayan Cataphracts",
+        "Close Order",
+        "Counter Charge",
+        "Horde",
+        "Swiftstride",
+        "Will of the Dragons"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Cathayan lances",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers",
+        "Drilled",
+        "Stubborn"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Jade Lancer Officer",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Jade Lancer Officer",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Cathayan Cataphracts",
+        "Close Order",
+        "Counter Charge",
+        "Horde",
+        "Swiftstride",
+        "Will of the Dragons"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Cathayan lances",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers",
+        "Drilled",
+        "Stubborn"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Cathayan Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Cathayan Warhorse",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Cathayan Cataphracts",
+        "Close Order",
+        "Counter Charge",
+        "Horde",
+        "Swiftstride",
+        "Will of the Dragons"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Cathayan lances",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers",
+        "Drilled",
+        "Stubborn"
+      ]
+    }
   ],
   "jade-warriors": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Jade Warrior",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Jade Warrior",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Defensive Stance",
+        "Detachment",
+        "Regimental Unit",
+        "Will of the Dragons"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Stubborn"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Jade Officer",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Jade Officer",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Defensive Stance",
+        "Detachment",
+        "Regimental Unit",
+        "Will of the Dragons"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Stubborn"
+      ]
+    }
   ],
   "juggernaut-of-khorne": [
     {
-      A: "2",
-      I: "2",
-      M: "7",
-      S: "5",
-      T: "(+1)",
-      W: "(+1)",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "Juggernaut of Khorne",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "7",
+      "S": "5",
+      "T": "(+1)",
+      "W": "(+1)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "Juggernaut of Khorne",
+      "Impact-Hits": "2",
+      "armourMod": 1,
+      "rules": [
+        "Armoured Hide (1)",
+        "Daemonic",
+        "Daemon of Khorne",
+        "First Charge",
+        "Impact Hits (2)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Brass bound hooves",
+        "barding"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "jungle-swarms": [
     {
-      A: "5",
-      I: "1",
-      M: "5",
-      S: "2",
-      T: "2",
-      W: "5",
-      BS: "0",
-      Ld: "5",
-      WS: "3",
-      Name: "Jungle Swarm",
-    },
+      "A": "5",
+      "I": "1",
+      "M": "5",
+      "S": "2",
+      "T": "2",
+      "W": "5",
+      "BS": "0",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Jungle Swarm",
+      "rules": [
+        "Cold Blooded",
+        "Immune to Psychology",
+        "Loner",
+        "Move Through Cover",
+        "Poisoned Attacks",
+        "Skirmishers",
+        "Unbreakable",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Swarm"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "k'daai-fireborn": [
     {
-      A: "3",
-      I: "4",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "2",
-      BS: "2",
-      Ld: "7",
-      WS: "4",
-      Name: "K'daai Fireborn",
+      "A": "3",
+      "I": "4",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "2",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "K'daai Fireborn",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "4",
-      I: "4",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "2",
-      BS: "2",
-      Ld: "8",
-      WS: "4",
-      Name: "Manburner",
-    },
+      "A": "4",
+      "I": "4",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "2",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Manburner",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "k'daai-fireborn-renegade": [
     {
-      A: "3",
-      I: "4",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "2",
-      Ld: "7",
-      WS: "4",
-      Name: "K'daai Fireborn",
+      "A": "3",
+      "I": "4",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "K'daai Fireborn",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "4",
-      I: "4",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "2",
-      Ld: "8",
-      WS: "4",
-      Name: "Manburner",
-    },
+      "A": "4",
+      "I": "4",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Manburner",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "keeper-of-secrets": [
     {
-      A: "6",
-      I: "7",
-      M: "8",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "6",
-      Ld: "9",
-      WS: "7",
-      Name: "Keeper of Secrets",
-    },
+      "A": "6",
+      "I": "7",
+      "M": "8",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "6",
+      "Ld": "9",
+      "WS": "7",
+      "Name": "Keeper of Secrets",
+      "Stomps": "D3",
+      "rules": [
+        "Daemonic",
+        "Daemon of Slaanesh",
+        "Infernal Favour (2)",
+        "Large Target",
+        "Lore of Daemons",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Impaling claws"
+      ],
+      "troopType": [
+        "BehemothCharacter"
+      ],
+      "magic": [
+        "daemonology",
+        "dark magic",
+        "illusion"
+      ],
+      "optionalRules": []
+    }
   ],
   "keeper-of-secrets-renegade": [
     {
-      A: "6",
-      I: "7",
-      M: "8",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "6",
-      Ld: "9",
-      WS: "7",
-      Name: "Keeper of Secrets",
-    },
+      "A": "6",
+      "I": "7",
+      "M": "8",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "6",
+      "Ld": "9",
+      "WS": "7",
+      "Name": "Keeper of Secrets",
+      "Stomps": "D3",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemon of Slaanesh",
+        "Infernal Favour (2)",
+        "Large Target",
+        "Lore of Daemons",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Impaling claws"
+      ],
+      "troopType": [
+        "BehemothCharacter"
+      ],
+      "magic": [
+        "daemonology",
+        "dark magic",
+        "illusion"
+      ],
+      "optionalRules": []
+    }
   ],
   "khainite-assassin": [
     {
-      A: "3",
-      I: "7",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "2",
-      BS: "7",
-      Ld: "8",
-      WS: "8",
-      Name: "Khainite Assassin",
-    },
+      "A": "3",
+      "I": "7",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "2",
+      "BS": "7",
+      "Ld": "8",
+      "WS": "8",
+      "Name": "Khainite Assassin",
+      "rules": [
+        "Eternal Hatred",
+        "Hatred (all enemies)",
+        "Hidden",
+        "Immune to Psychology",
+        "Murderous",
+        "Strike First"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Black Lotus",
+        "Dark Venom",
+        "Manbane"
+      ]
+    }
   ],
-  kharibdyss: [
+  "kharibdyss": [
     {
-      crewed: true,
-      A: "5",
-      I: "3",
-      M: "6",
-      S: "7",
-      T: "5",
-      W: "5",
-      BS: "0",
-      Ld: "6",
-      WS: "5",
-      Name: "Kharibdyss",
+      "crewed": true,
+      "A": "5",
+      "I": "3",
+      "M": "6",
+      "S": "7",
+      "T": "5",
+      "W": "5",
+      "BS": "0",
+      "Ld": "6",
+      "WS": "5",
+      "Name": "Kharibdyss",
+      "Stomps": "D3+1",
+      "rules": [
+        "Abyssal Howl",
+        "Close Order",
+        "Immune to Psychology",
+        "Large Target",
+        "Monster Handlers",
+        "Stomp Attacks (D3+1)",
+        "Terror"
+      ],
+      "equipment": [
+        "Cavernous maw",
+        "writhing tentacles",
+        "Hand weapons",
+        "whips"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "6",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "8",
-      WS: "4",
-      Name: "Beastmaster Handlers (x2)",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "6",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Beastmaster Handlers (x2)",
+      "rules": [
+        "Abyssal Howl",
+        "Close Order",
+        "Immune to Psychology",
+        "Large Target",
+        "Monster Handlers",
+        "Stomp Attacks (D3+1)",
+        "Terror"
+      ],
+      "equipment": [
+        "Cavernous maw",
+        "writhing tentacles",
+        "Hand weapons",
+        "whips"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "khemrian-warsphinx": [
     {
-      crewed: true,
-      A: "4",
-      I: "1",
-      M: "6",
-      S: "5",
-      T: "6",
-      W: "5",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "Khemrian Warsphinx",
+      "crewed": true,
+      "A": "4",
+      "I": "1",
+      "M": "6",
+      "S": "5",
+      "T": "6",
+      "W": "5",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "Khemrian Warsphinx",
+      "Regen": "6+",
+      "Stomps": "D3",
+      "rules": [
+        "Arrows of Asaph",
+        "Cleaving Blow (Tomb Guard Crew only)",
+        "Close Order",
+        "Howdah",
+        "Indomitable (2)",
+        "Khopesh (Tomb Guard Crew only)",
+        "Large Target",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Stomp Attacks (D3)",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "Hand weapons",
+        "cavalry spears",
+        "shortbows"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Envenomed Sting",
+        "Fiery Roar"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "8",
-      WS: "3",
-      Name: "Tomb Guard Crew (x2)",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "Tomb Guard Crew (x2)",
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Cleaving Blow (Tomb Guard Crew only)",
+        "Close Order",
+        "Howdah",
+        "Indomitable (2)",
+        "Khopesh (Tomb Guard Crew only)",
+        "Large Target",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Stomp Attacks (D3)",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "Hand weapons",
+        "cavalry spears",
+        "shortbows"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Envenomed Sting",
+        "Fiery Roar"
+      ]
+    }
   ],
   "kiknik-toofsnatcha": [
     {
-      A: "4",
-      I: "5",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Kiknik Toofsnatcha",
+      "A": "4",
+      "I": "5",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Kiknik Toofsnatcha",
+      "as": 5,
+      "rules": [
+        "All Sneaky Like",
+        "Ambushers",
+        "Armour Bane (1, Chompa only)",
+        "Armoured Hide (1)",
+        "Chariot Runners",
+        "Fast Cavalry",
+        "Fear of Elves",
+        "Impetuous",
+        "'It & Run",
+        "Rallying Cry",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Da Boss's Trophy Rack",
+        "Da Skull Smasha",
+        "cavalry spear",
+        "shield",
+        "light armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light CavalryNamed Character"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "9",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Chompa",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "9",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Chompa",
+      "as": 5,
+      "rules": [
+        "All Sneaky Like",
+        "Ambushers",
+        "Armour Bane (1, Chompa only)",
+        "Armoured Hide (1)",
+        "Chariot Runners",
+        "Fast Cavalry",
+        "Fear of Elves",
+        "Impetuous",
+        "'It & Run",
+        "Rallying Cry",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Da Boss's Trophy Rack",
+        "Da Skull Smasha",
+        "cavalry spear",
+        "shield",
+        "light armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light CavalryNamed Character"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  king: [
+  "king": [
     {
-      A: "4",
-      I: "4",
-      M: "3",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "4",
-      Ld: "10",
-      WS: "7",
-      Name: "King",
-    },
+      "A": "4",
+      "I": "4",
+      "M": "3",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "4",
+      "Ld": "10",
+      "WS": "7",
+      "Name": "King",
+      "as": 4,
+      "Magic-Res": "-1",
+      "rules": [
+        "Ancestral Grudge",
+        "Dwarf Crafted",
+        "Gromril Armour",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Rallying Cry",
+        "Resolute",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Oathstone"
+      ]
+    }
   ],
   "knights-errant": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "7",
-      WS: "3",
-      Name: "Knight Errant",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Knight Errant",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Blessings of the Lady",
+        "Close Order",
+        "Finest Warhorses",
+        "First Charge",
+        "Impetuous",
+        "Lance Formation",
+        "Swiftstride",
+        "The Knight's Vow"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "7",
-      WS: "3",
-      Name: "Gallant",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Gallant",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Blessings of the Lady",
+        "Close Order",
+        "Finest Warhorses",
+        "First Charge",
+        "Impetuous",
+        "Lance Formation",
+        "Swiftstride",
+        "The Knight's Vow"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Bretonnian Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Bretonnian Warhorse",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Blessings of the Lady",
+        "Close Order",
+        "Finest Warhorses",
+        "First Charge",
+        "Impetuous",
+        "Lance Formation",
+        "Swiftstride",
+        "The Knight's Vow"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "knights-of-the-realm-on-foot": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "8",
-      WS: "4",
-      Name: "Knight of the Realm",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Knight of the Realm",
+      "as": 4,
+      "rules": [
+        "Blessings of the Lady",
+        "Close Order",
+        "Furious Charge",
+        "The Knight's Vow"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "8",
-      WS: "4",
-      Name: "First Knight",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "First Knight",
+      "as": 4,
+      "rules": [
+        "Blessings of the Lady",
+        "Close Order",
+        "Furious Charge",
+        "The Knight's Vow"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "korhil-lionmane": [
     {
-      A: "4",
-      I: "6",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "3",
-      BS: "5",
-      Ld: "9",
-      WS: "7",
-      Name: "Korhil Lionmane",
-    },
+      "A": "4",
+      "I": "6",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "3",
+      "BS": "5",
+      "Ld": "9",
+      "WS": "7",
+      "Name": "Korhil Lionmane",
+      "as": 5,
+      "rules": [
+        "Elven Reflexes",
+        "Furious Charge",
+        "Mighty Constitution",
+        "Move Through Cover",
+        "Stubborn",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Chayal",
+        "Pelt of Charandis",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Named CharacterHeavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "kralmaw,-the-prophet-of-ruin": [
     {
-      A: "2",
-      I: "3",
-      M: "5",
-      S: "4",
-      T: "5",
-      W: "4",
-      BS: "3",
-      Ld: "8",
-      WS: "3",
-      Name: "Kralmaw, the Prophet of Ruin",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "5",
+      "S": "4",
+      "T": "5",
+      "W": "4",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "Kralmaw, the Prophet of Ruin",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  kroxigor: [
+  "kroxigor": [
     {
-      A: "3",
-      I: "3",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "0",
-      Ld: "7",
-      WS: "3",
-      Name: "Kroxigor",
+      "A": "3",
+      "I": "3",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "0",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Kroxigor",
+      "as": 5,
+      "rules": [
+        "Aquatic",
+        "Close Order",
+        "Cold Blooded",
+        "Fear",
+        "Skirmish Screen"
+      ],
+      "equipment": [
+        "Great weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "4",
-      I: "3",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "0",
-      Ld: "7",
-      WS: "3",
-      Name: "Ancient",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "0",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Ancient",
+      "as": 5,
+      "rules": [
+        "Aquatic",
+        "Close Order",
+        "Cold Blooded",
+        "Fear",
+        "Skirmish Screen"
+      ],
+      "equipment": [
+        "Great weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "lady-élisse-duchaard": [
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "4",
-      W: "5",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Lady \u00c9lisse Duchaard",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "4",
+      "W": "5",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Lady Élisse Duchaard",
+      "Magic-Res": "-2",
+      "Stomps": "1",
+      "rules": [
+        "Arcane Backlash",
+        "Armour Bane (2, Ariandir only)",
+        "Armoured Hide (1)",
+        "Aura of the Lady",
+        "Beguiling Aura",
+        "Blessings of the Lady",
+        "Counter Charge",
+        "Lore of the Lady",
+        "Magical Attacks",
+        "Magic Resistance (-2)",
+        "Shield of the Lady",
+        "Stomp Attacks (1)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Chalice of Brionne",
+        "Staff of the Elements",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous CavalryNamed Character"
+      ],
+      "magic": [
+        "elementalism"
+      ],
+      "optionalRules": []
     },
     {
-      Name: "Ariandir",
-      M: "10",
-      WS: "4",
-      BS: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      I: "5",
-      A: "2",
-      Ld: "-",
-    },
+      "Name": "Ariandir",
+      "M": "10",
+      "WS": "4",
+      "BS": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "I": "5",
+      "A": "2",
+      "Ld": "-",
+      "Magic-Res": "-2",
+      "rules": [
+        "Arcane Backlash",
+        "Armour Bane (2, Ariandir only)",
+        "Armoured Hide (1)",
+        "Aura of the Lady",
+        "Beguiling Aura",
+        "Blessings of the Lady",
+        "Counter Charge",
+        "Lore of the Lady",
+        "Magical Attacks",
+        "Magic Resistance (-2)",
+        "Shield of the Lady",
+        "Stomp Attacks (1)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Chalice of Brionne",
+        "Staff of the Elements",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous CavalryNamed Character"
+      ],
+      "magic": [
+        "elementalism"
+      ],
+      "optionalRules": []
+    }
   ],
-  lammasu: [
+  "lammasu": [
     {
-      A: "2",
-      I: "2",
-      M: "6",
-      S: "5",
-      T: "-",
-      W: "(+3)",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "Lammasu",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "6",
+      "S": "5",
+      "T": "-",
+      "W": "(+3)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "Lammasu",
+      "Magic-Res": "-3",
+      "Stomps": "D3",
+      "Fly": "9",
+      "rules": [
+        "Armour Bane (2)",
+        "Close Order",
+        "Fly (9)",
+        "Furious Charge",
+        "Large Target",
+        "Magic Resistance (-3)",
+        "Sorcerous Miasma",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mace Tail",
+        "Sorcerous Exhalation"
+      ]
+    }
   ],
-  leadbelchers: [
+  "leadbelchers": [
     {
-      A: "3",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      AS: "6",
-      Name: "Leadbelcher",
+      "A": "3",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "AS": "6",
+      "Name": "Leadbelcher",
+      "as": 6,
+      "Impact-Hits": "1",
+      "rules": [
+        "Close Order",
+        "Fear",
+        "Impact Hits (1)",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "leadbelcher guns",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Veteran"
+      ]
     },
     {
-      A: "4",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "4",
-      Ld: "7",
-      WS: "3",
-      AS: "6",
-      Name: "Thunderfist",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "3",
+      "AS": "6",
+      "Name": "Thunderfist",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Fear",
+        "Impact Hits (1)",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "leadbelcher guns",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Veteran"
+      ]
+    }
   ],
   "leadbelchers-renegade": [
     {
-      A: "3",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Leadbelcher",
+      "A": "3",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Leadbelcher",
+      "as": 6,
+      "Impact-Hits": "1",
+      "rules": [
+        "Close Order",
+        "Fear",
+        "Impact Hits (1)",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "leadbelcher guns",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Veteran"
+      ]
     },
     {
-      A: "4",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "4",
-      Ld: "7",
-      WS: "3",
-      Name: "Thunderfist",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Thunderfist",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Fear",
+        "Impact Hits (1)",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "leadbelcher guns",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Veteran"
+      ]
+    }
   ],
   "lector-of-sigmar": [
     {
-      A: "3",
-      I: "5",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "5",
-      Name: "Lector of Sigmar",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Lector of Sigmar",
+      "as": 6,
+      "Magic-Res": "-1",
+      "rules": [
+        "Magical Attacks",
+        "Magic Resistance (-1)",
+        "Prayers of Sigmar"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "lion-chariot-of-chrace": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "4",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Lion Chariot",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "4",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Lion Chariot",
+      "Impact-Hits": "D6",
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Fear",
+        "First Charge",
+        "Impact Hits (D6)",
+        "Lion Cloak",
+        "Stubborn",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Chracian great blades",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "4",
-      Ld: "8",
-      WS: "5",
-      Name: "Lion Charioteer (x2)",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Lion Charioteer (x2)",
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Fear",
+        "First Charge",
+        "Impact Hits (D6)",
+        "Lion Cloak",
+        "Stubborn",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Chracian great blades",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "8",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "War Lion (x2)",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "8",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "War Lion (x2)",
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Fear",
+        "First Charge",
+        "Impact Hits (D6)",
+        "Lion Cloak",
+        "Stubborn",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Chracian great blades",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "lion-guard": [
     {
-      A: "1",
-      I: "5",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "6",
-      Name: "Lion Guard",
+      "A": "1",
+      "I": "5",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Lion Guard",
+      "as": 5,
+      "rules": [
+        "Champions of Chrace",
+        "Close Order",
+        "Elven Reflexes",
+        "Furious Charge",
+        "Lion Cloak",
+        "Stubborn",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Chracian great blades",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "5",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "6",
-      Name: "Lion Guard Captain",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Lion Guard Captain",
+      "as": 5,
+      "rules": [
+        "Champions of Chrace",
+        "Close Order",
+        "Elven Reflexes",
+        "Furious Charge",
+        "Lion Cloak",
+        "Stubborn",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Chracian great blades",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  longbeards: [
+  "longbeards": [
     {
-      A: "1",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "5",
-      Name: "Longbeard",
+      "A": "1",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Longbeard",
+      "as": 5,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute",
+        "Shieldwall",
+        "Venerable",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
     },
     {
-      A: "2",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "5",
-      Name: "Elder",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Elder",
+      "as": 5,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute",
+        "Shieldwall",
+        "Venerable",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
+    }
   ],
   "lord-magistrate": [
     {
-      A: "2",
-      I: "4",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Lord Magistrate",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Lord Magistrate",
+      "as": 6,
+      "rules": [
+        "Grand Strategist",
+        "Harmony of Stone & Steel",
+        "Will of the Dragons"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Gunpowder Bombs",
+        "Dragon Fire Bombs"
+      ]
+    }
   ],
   "lord-of-change": [
     {
-      A: "4",
-      I: "6",
-      M: "6",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "6",
-      Ld: "9",
-      WS: "6",
-      Name: "Lord of Change",
-    },
+      "A": "4",
+      "I": "6",
+      "M": "6",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "6",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Lord of Change",
+      "Stomps": "D3",
+      "Fly": "9",
+      "rules": [
+        "Daemonic",
+        "Daemon of Tzeentch",
+        "Flaming Attacks",
+        "Fly (9)",
+        "Infernal Favour (2)",
+        "Large Target",
+        "Lore of Daemons",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "great weapon"
+      ],
+      "troopType": [
+        "BehemothCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": [
+        "Tzeentchian Wand"
+      ]
+    }
   ],
   "lord-of-change-renegade": [
     {
-      A: "4",
-      I: "6",
-      M: "6",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "6",
-      Ld: "9",
-      WS: "6",
-      Name: "Lord of Change",
-    },
+      "A": "4",
+      "I": "6",
+      "M": "6",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "6",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Lord of Change",
+      "Stomps": "D3",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemon of Tzeentch",
+        "Flaming Attacks",
+        "Fly (9)",
+        "Infernal Favour (2)",
+        "Large Target",
+        "Lore of Daemons",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "great weapon"
+      ],
+      "troopType": [
+        "BehemothCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": [
+        "Tzeentchian Wand"
+      ]
+    }
   ],
   "lothern-sea-guard": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Sea Guard",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Sea Guard",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Martial Prowess",
+        "Naval Discipline",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "thrusting spears",
+        "warbows",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Veteran"
+      ]
     },
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "5",
-      Ld: "8",
-      WS: "4",
-      Name: "Sea Master",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "5",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Sea Master",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Martial Prowess",
+        "Naval Discipline",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "thrusting spears",
+        "warbows",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Veteran"
+      ]
+    }
   ],
   "lothern-skycutter": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "4",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Lothern Skycutter",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "4",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Lothern Skycutter",
+      "Impact-Hits": "D3+1",
+      "Fly": "10",
+      "rules": [
+        "Close Order",
+        "Elven Reflexes (Crew only)",
+        "Fear",
+        "Fly (10)",
+        "Impact Hits (D3+1)",
+        "Swiftstride",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "shortbows",
+        "Wicked claws"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Eagle-eye Bolt Thrower"
+      ]
     },
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Sea Guard Crew (x3)",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Sea Guard Crew (x3)",
+      "Fly": "10",
+      "rules": [
+        "Close Order",
+        "Elven Reflexes (Crew only)",
+        "Fear",
+        "Fly (10)",
+        "Impact Hits (D3+1)",
+        "Swiftstride",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "shortbows",
+        "Wicked claws"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Eagle-eye Bolt Thrower"
+      ]
     },
     {
-      A: "2",
-      I: "4",
-      M: "2",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Swiftfeather Roc (x1)",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "2",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Swiftfeather Roc (x1)",
+      "Fly": "10",
+      "rules": [
+        "Close Order",
+        "Elven Reflexes (Crew only)",
+        "Fear",
+        "Fly (10)",
+        "Impact Hits (D3+1)",
+        "Swiftstride",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "shortbows",
+        "Wicked claws"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Eagle-eye Bolt Thrower"
+      ]
+    }
   ],
-  mage: [
+  "mage": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Mage",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Mage",
+      "rules": [
+        "Elven Reflexes",
+        "Ithilmar Weapons",
+        "Lileath's Blessing",
+        "Lore of Saphery",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "high magic",
+        "illusion"
+      ],
+      "optionalRules": []
+    }
   ],
   "magma-cannon": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Magma Cannon",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Magma Cannon",
+      "as": 5,
+      "rules": [
+        "Blackshard Armour",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Fire thrower",
+        "hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Hellbound",
+        "Steam Carriage"
+      ]
     },
     {
-      A: "3",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "3",
-      Name: "Chaos Dwarf Crew",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "3",
+      "Name": "Chaos Dwarf Crew",
+      "as": 5,
+      "rules": [
+        "Blackshard Armour",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Fire thrower",
+        "hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Hellbound",
+        "Steam Carriage"
+      ]
+    }
   ],
-  maneaters: [
+  "maneaters": [
     {
-      A: "4",
-      I: "3",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      AS: "6",
-      Name: "Maneater",
+      "A": "4",
+      "I": "3",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "AS": "6",
+      "Name": "Maneater",
+      "as": 6,
+      "Impact-Hits": "1",
+      "rules": [
+        "Close Order",
+        "Fear",
+        "Impact Hits (1)",
+        "Motley Crew",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ironfist",
+        "Ogre Pistol",
+        "Brace of Ogre Pistols",
+        "Look-out Gnoblar",
+        "Immune to Psychology",
+        "Poisoned Attacks",
+        "Stubborn",
+        "Vanguard"
+      ]
     },
     {
-      A: "5",
-      I: "3",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      AS: "6",
-      Name: "Maneater Captain",
-    },
+      "A": "5",
+      "I": "3",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "AS": "6",
+      "Name": "Maneater Captain",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Fear",
+        "Impact Hits (1)",
+        "Motley Crew",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ironfist",
+        "Ogre Pistol",
+        "Brace of Ogre Pistols",
+        "Look-out Gnoblar",
+        "Immune to Psychology",
+        "Poisoned Attacks",
+        "Stubborn",
+        "Vanguard"
+      ]
+    }
   ],
   "mangler-squigs": [
     {
-      A: "D6",
-      I: "3",
-      M: "3D6",
-      S: "6",
-      T: "5",
-      W: "4",
-      BS: "0",
-      Ld: "4",
-      WS: "4",
-      Name: "Mangler Squig",
-    },
+      "A": "D6",
+      "I": "3",
+      "M": "3D6",
+      "S": "6",
+      "T": "5",
+      "W": "4",
+      "BS": "0",
+      "Ld": "4",
+      "WS": "4",
+      "Name": "Mangler Squig",
+      "as": 5,
+      "Stomps": "D3",
+      "Impact-Hits": "D6",
+      "rules": [
+        "Close Order",
+        "Hatred (Dwarfs)",
+        "Immune to Psychology",
+        "Impact Hits (D6)",
+        "Ker-splat",
+        "Large Target",
+        "Random Attacks",
+        "Random Movement",
+        "Spiked Ball & Chains",
+        "Stomp Attacks (D3)",
+        "Timmm-berrr!"
+      ],
+      "equipment": [
+        "Colossal fang-filled gob",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "manticore-dark-elves": [
     {
-      A: "4",
-      I: "5",
-      M: "6",
-      S: "5",
-      T: "(+1)",
-      W: "(+4)",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Manticore",
-    },
+      "A": "4",
+      "I": "5",
+      "M": "6",
+      "S": "5",
+      "T": "(+1)",
+      "W": "(+4)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Manticore",
+      "as": 5,
+      "Stomps": "D3",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Fly (9)",
+        "Large Target",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Terror",
+        "Wilful Beast"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Venomous Tail"
+      ]
+    }
   ],
   "manticore-renegade": [
     {
-      A: "4",
-      I: "5",
-      M: "6",
-      S: "5",
-      T: "(+2)",
-      W: "(+4)",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Manticore",
-    },
+      "A": "4",
+      "I": "5",
+      "M": "6",
+      "S": "5",
+      "T": "(+2)",
+      "W": "(+4)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Manticore",
+      "as": 5,
+      "Stomps": "D3",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Fly (9)",
+        "Large Target",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Terror",
+        "Wilful Beast"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Venomous Tail"
+      ]
+    }
   ],
   "manticore-warriors-of-chaos": [
     {
-      A: "4",
-      I: "5",
-      M: "6",
-      S: "5",
-      T: "-",
-      W: "(+4)",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Manticore",
-    },
+      "A": "4",
+      "I": "5",
+      "M": "6",
+      "S": "5",
+      "T": "-",
+      "W": "(+4)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Manticore",
+      "as": 5,
+      "Stomps": "D3",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Fly (9)",
+        "Large Target",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Terror",
+        "Wilful Beast"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Venomous Tail"
+      ]
+    }
   ],
   "marauder-horsemen": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "4",
-      Name: "Marauder Horseman",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Marauder Horseman",
+      "as": 5,
+      "rules": [
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Mark of Chaos Undivided",
+        "Open Order",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Cult of the Bloodied Hound",
+        "Cult of the Carrion Crow",
+        "Cult of the Slithering Serpent",
+        "Cult of the Fell Raptor",
+        "Ambushers",
+        "Skirmishers"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Marauder Horsemaster",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Marauder Horsemaster",
+      "as": 5,
+      "rules": [
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Mark of Chaos Undivided",
+        "Open Order",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Cult of the Bloodied Hound",
+        "Cult of the Carrion Crow",
+        "Cult of the Slithering Serpent",
+        "Cult of the Fell Raptor",
+        "Ambushers",
+        "Skirmishers"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Warhorse",
+      "as": 5,
+      "rules": [
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Mark of Chaos Undivided",
+        "Open Order",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Cult of the Bloodied Hound",
+        "Cult of the Carrion Crow",
+        "Cult of the Slithering Serpent",
+        "Cult of the Fell Raptor",
+        "Ambushers",
+        "Skirmishers"
+      ]
+    }
   ],
   "marauder-tribe-berserkers": [
     {
-      A: "1",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Marauder Tribe Berserker",
+      "A": "1",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Marauder Tribe Berserker",
+      "as": 6,
+      "rules": [
+        "Frenzy",
+        "Mark of Chaos Undivided",
+        "Move Through Cover",
+        "Open Order",
+        "Relentless Warriors",
+        "Skirmishers",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Headtaker",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Headtaker",
+      "as": 6,
+      "rules": [
+        "Frenzy",
+        "Mark of Chaos Undivided",
+        "Move Through Cover",
+        "Open Order",
+        "Relentless Warriors",
+        "Skirmishers",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
+    }
   ],
   "marauder-tribe-chieftain": [
     {
-      A: "3",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Marauder Tribe Chieftains",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Marauder Tribe Chieftains",
+      "as": 4,
+      "rules": [
+        "Ambushers",
+        "Chaos Armour (6+)",
+        "Gaze of the Gods",
+        "Mark of Chaos Undivided",
+        "Rallying Cry",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
+    }
   ],
   "marauder-tribe-huscarls": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Marauder Tribe Huscarl",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Marauder Tribe Huscarl",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "Furious Charge",
+        "Mark of Chaos Undivided",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "First Sword",
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "First Sword",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "Furious Charge",
+        "Mark of Chaos Undivided",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Warhorse",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "Furious Charge",
+        "Mark of Chaos Undivided",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
+    }
   ],
   "master-assassin": [
     {
-      A: "3",
-      I: "8",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "7",
-      Ld: "7",
-      WS: "8",
-      Name: "Master Assassin",
-    },
+      "A": "3",
+      "I": "8",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "7",
+      "Ld": "7",
+      "WS": "8",
+      "Name": "Master Assassin",
+      "rules": [
+        "Ambushers",
+        "Eshin Infiltration",
+        "Evasive",
+        "Feigned Flight",
+        "Fire & Flee",
+        "Hidden",
+        "Move Through Cover",
+        "Poisoned Attacks",
+        "Scurry Away",
+        "Verminous Valour",
+        "Warpstone Weapons"
+      ],
+      "equipment": [
+        "Two hand weapons",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "master-mage": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Master Mage",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Master Mage",
+      "Magic-Res": "-1",
+      "rules": [
+        "Magical Attacks",
+        "Magic Resistance (-1)"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic",
+        "elementalism",
+        "illusion",
+        "necromancy"
+      ],
+      "optionalRules": []
+    }
   ],
   "master-moulder": [
     {
-      A: "2",
-      I: "4",
-      M: "6",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Master Moulder",
+      "A": "2",
+      "I": "4",
+      "M": "6",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Master Moulder",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Leader of the Pack",
+        "Motley Crew",
+        "Scurry Away",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Things-Catcher"
+      ]
     },
     {
-      A: "1",
-      I: "4",
-      M: "6",
-      S: "2",
-      T: "3",
-      W: "1",
-      BS: "0",
-      Ld: "3",
-      WS: "2",
-      Name: "Giant Rat",
+      "A": "1",
+      "I": "4",
+      "M": "6",
+      "S": "2",
+      "T": "3",
+      "W": "1",
+      "BS": "0",
+      "Ld": "3",
+      "WS": "2",
+      "Name": "Giant Rat",
+      "rules": [
+        "Close Order",
+        "Fight in Extra Rank",
+        "Horde",
+        "Scurry Away",
+        "Warband"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "4",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "1",
-      Ld: "5",
-      WS: "4",
-      Name: "Rat Ogre",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "1",
+      "Ld": "5",
+      "WS": "4",
+      "Name": "Rat Ogre",
+      "as": 5,
+      "rules": [
+        "Armour Bane (2)",
+        "Close Order",
+        "Fear",
+        "Frenzy",
+        "Horde",
+        "Safe from Harm",
+        "Scurry Away",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "master-necromancer": [
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "3",
-      Name: "Master Necromancer",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "Master Necromancer",
+      "Regen": "5+",
+      "rules": [
+        "Dark Vitality",
+        "Indomitable (1)",
+        "Invocation of Nehek",
+        "Lore of Undeath",
+        "Necromantic Undead",
+        "Regeneration (5+)"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "dark magic",
+        "illusion",
+        "necromancy"
+      ],
+      "optionalRules": []
+    }
   ],
   "men-at-arms": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "5",
-      WS: "2",
-      Name: "Man-at-Arms",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Man-at-Arms",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Levies",
+        "Peasantry",
+        "Shieldwall",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "polearms",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Grail Monk",
+        "Blessed Triptych"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "6",
-      WS: "2",
-      Name: "Yeoman",
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "6",
+      "WS": "2",
+      "Name": "Yeoman",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Levies",
+        "Peasantry",
+        "Shieldwall",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "polearms",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Grail Monk",
+        "Blessed Triptych"
+      ]
     },
     {
-      A: "2",
-      I: "2",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "6",
-      WS: "2",
-      Name: "Grail Monk",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "6",
+      "WS": "2",
+      "Name": "Grail Monk",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Levies",
+        "Peasantry",
+        "Shieldwall",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "polearms",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Grail Monk",
+        "Blessed Triptych"
+      ]
+    }
   ],
-  merwyrm: [
+  "merwyrm": [
     {
-      A: "4",
-      I: "3",
-      M: "6",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "0",
-      Ld: "8",
-      WS: "6",
-      Name: "Merwyrm",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "6",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Merwyrm",
+      "as": 5,
+      "Stomps": "D3+1",
+      "Impact-Hits": "D3",
+      "rules": [
+        "Abyssal Cloak",
+        "Close Order",
+        "Enfeebling Cold",
+        "Impact Hits (D3)",
+        "Large Target",
+        "Stomp Attacks (D3+1)",
+        "Terror"
+      ],
+      "equipment": [
+        "Lashing talons",
+        "serpentine tail",
+        "briny breath",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "miao-ying": [
     {
-      A: "4",
-      I: "7",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "7",
-      BS: "5",
-      Ld: "10",
-      WS: "7",
-      Name: "Human Form",
+      "A": "4",
+      "I": "7",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "7",
+      "BS": "5",
+      "Ld": "10",
+      "WS": "7",
+      "Name": "Human Form",
+      "as": 4,
+      "Magic-Res": "-1",
+      "Stomps": "D6",
+      "Fly": "9",
+      "rules": [
+        "Celestial Forged Armour (5+)",
+        "Disdain of the Dragons",
+        "Hatred (Warriors of Chaos & Daemonic models)",
+        "Fly (9) (Dragon Form only)",
+        "Large Target (Dragon Form only)",
+        "Magic Resistance (-1)",
+        "Mastery of the Storm Winds",
+        "Mastery of the Elemental Winds",
+        "Rallying Cry (Human Form only)",
+        "Stomp Attacks (D6) (Dragon Form only)",
+        "Stubborn",
+        "Supreme Matriarch of Nan-Gau",
+        "Swiftstride (Dragon Form only)",
+        "Terror (Dragon Form only)",
+        "Transformation of the Dragon",
+        "Will of the Dragons",
+        "Wrath of the Storm"
+      ],
+      "equipment": [
+        "Talons of the Storm",
+        "heavy armour",
+        "Dragon fire",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Heavy InfantryBehemothNamed Character"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "high magic"
+      ],
+      "optionalRules": []
     },
     {
-      A: "6",
-      I: "6",
-      M: "8",
-      S: "7",
-      T: "6",
-      W: "7",
-      BS: "3",
-      Ld: "10",
-      WS: "8",
-      Name: "Dragon Form",
-    },
+      "A": "6",
+      "I": "6",
+      "M": "8",
+      "S": "7",
+      "T": "6",
+      "W": "7",
+      "BS": "3",
+      "Ld": "10",
+      "WS": "8",
+      "Name": "Dragon Form",
+      "as": 4,
+      "Magic-Res": "-1",
+      "Fly": "9",
+      "rules": [
+        "Celestial Forged Armour (5+)",
+        "Disdain of the Dragons",
+        "Hatred (Warriors of Chaos & Daemonic models)",
+        "Fly (9) (Dragon Form only)",
+        "Large Target (Dragon Form only)",
+        "Magic Resistance (-1)",
+        "Mastery of the Storm Winds",
+        "Mastery of the Elemental Winds",
+        "Rallying Cry (Human Form only)",
+        "Stomp Attacks (D6) (Dragon Form only)",
+        "Stubborn",
+        "Supreme Matriarch of Nan-Gau",
+        "Swiftstride (Dragon Form only)",
+        "Terror (Dragon Form only)",
+        "Transformation of the Dragon",
+        "Will of the Dragons",
+        "Wrath of the Storm"
+      ],
+      "equipment": [
+        "Talons of the Storm",
+        "heavy armour",
+        "Dragon fire",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Heavy InfantryBehemothNamed Character"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "high magic"
+      ],
+      "optionalRules": []
+    }
   ],
-  miners: [
+  "miners": [
     {
-      A: "1",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "4",
-      Name: "Miner",
+      "A": "1",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Miner",
+      "as": 5,
+      "Magic-Res": "-1",
+      "rules": [
+        "Ambushers",
+        "Close Order",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Blasting Charges",
+        "Steam Drill",
+        "Veteran",
+        "Open Order"
+      ]
     },
     {
-      A: "2",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "4",
-      Name: "Prospector",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Prospector",
+      "as": 5,
+      "Magic-Res": "-1",
+      "rules": [
+        "Ambushers",
+        "Close Order",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Blasting Charges",
+        "Steam Drill",
+        "Veteran",
+        "Open Order"
+      ]
+    }
   ],
   "minotaur-herd": [
     {
-      A: "3",
-      I: "3",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Minotaur",
+      "A": "3",
+      "I": "3",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Minotaur",
+      "as": 6,
+      "Impact-Hits": "1",
+      "rules": [
+        "Blood Greed",
+        "Blood Rage",
+        "Bull-gors",
+        "Close Order",
+        "Fear",
+        "Foe Render",
+        "Impact Hits (1)",
+        "Mark of Chaos Undivided",
+        "Motley Crew",
+        "Primal Fury",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
     },
     {
-      A: "4",
-      I: "3",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Bloodkine",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Bloodkine",
+      "as": 6,
+      "rules": [
+        "Blood Greed",
+        "Blood Rage",
+        "Bull-gors",
+        "Close Order",
+        "Fear",
+        "Foe Render",
+        "Impact Hits (1)",
+        "Mark of Chaos Undivided",
+        "Motley Crew",
+        "Primal Fury",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
+    }
   ],
   "moon-dragon": [
     {
-      A: "5",
-      I: "3",
-      M: "6",
-      S: "6",
-      T: "(+2)",
-      W: "(+5)",
-      BS: "-",
-      Ld: "-",
-      WS: "6",
-      Name: "Moon Dragon",
-    },
+      "A": "5",
+      "I": "3",
+      "M": "6",
+      "S": "6",
+      "T": "(+2)",
+      "W": "(+5)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "6",
+      "Name": "Moon Dragon",
+      "as": 4,
+      "Stomps": "D6",
+      "Fly": "10",
+      "rules": [
+        "Close Order",
+        "Fly (10)",
+        "Large Target",
+        "Stomp Attacks (D6)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "dragon fire",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "mortar-empire": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Mortar",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Mortar",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Gun Crew",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Gun Crew",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "mortis-engine": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "5",
-      W: "5",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Mortis Engine",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "5",
+      "W": "5",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Mortis Engine",
+      "Regen": "6+",
+      "Impact-Hits": "D6+1",
+      "Fly": "8",
+      "rules": [
+        "Accursed Reliquary",
+        "Blasphemous Tome",
+        "Close Order",
+        "Dark Vitality",
+        "First Charge",
+        "Fly (8)",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Necromantic Undead",
+        "Random Attacks (Spirit Horde only)",
+        "Regeneration (6+)",
+        "Wailing Dirge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "0",
-      Ld: "5",
-      WS: "3",
-      Name: "Banshees (x3)",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "0",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Banshees (x3)",
+      "Regen": "6+",
+      "Fly": "8",
+      "rules": [
+        "Accursed Reliquary",
+        "Blasphemous Tome",
+        "Close Order",
+        "Dark Vitality",
+        "First Charge",
+        "Fly (8)",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Necromantic Undead",
+        "Random Attacks (Spirit Horde only)",
+        "Regeneration (6+)",
+        "Wailing Dirge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "D6",
-      I: "1",
-      M: "6",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "0",
-      Ld: "-",
-      WS: "3",
-      Name: "Spirit Horde",
-    },
+      "A": "D6",
+      "I": "1",
+      "M": "6",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "0",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Spirit Horde",
+      "Regen": "6+",
+      "Fly": "8",
+      "rules": [
+        "Accursed Reliquary",
+        "Blasphemous Tome",
+        "Close Order",
+        "Dark Vitality",
+        "First Charge",
+        "Fly (8)",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Necromantic Undead",
+        "Random Attacks (Spirit Horde only)",
+        "Regeneration (6+)",
+        "Wailing Dirge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "mortuary-priest": [
     {
-      A: "1",
-      I: "2",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Mortuary Priest",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Mortuary Priest",
+      "Regen": "5+",
+      "rules": [
+        "Arise!",
+        "Curse of the Necropolis",
+        "Indomitable (1)",
+        "Khopesh",
+        "Lore of Nehekhara",
+        "Nehekharan Undead",
+        "Regeneration (5+)",
+        "From Beneath the Sands"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "elementalism",
+        "illusion",
+        "necromancy"
+      ],
+      "optionalRules": []
+    }
   ],
   "mounted-knights-of-the-realm": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "8",
-      WS: "4",
-      Name: "Knight of the Realm",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Knight of the Realm",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Blessings of the Lady",
+        "Close Order",
+        "Counter Charge",
+        "Finest Warhorses",
+        "First Charge",
+        "Lance Formation",
+        "Swiftstride",
+        "The Knight's Vow"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "8",
-      WS: "4",
-      Name: "First Knight",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "First Knight",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Blessings of the Lady",
+        "Close Order",
+        "Counter Charge",
+        "Finest Warhorses",
+        "First Charge",
+        "Lance Formation",
+        "Swiftstride",
+        "The Knight's Vow"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Bretonnian Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Bretonnian Warhorse",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Blessings of the Lady",
+        "Close Order",
+        "Counter Charge",
+        "Finest Warhorses",
+        "First Charge",
+        "Lance Formation",
+        "Swiftstride",
+        "The Knight's Vow"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "mounted-yeomen": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Mounted Yeoman",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Mounted Yeoman",
+      "rules": [
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Levies",
+        "Open Order",
+        "Peasantry",
+        "Reserve Move",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "shortbows",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Feigned Flight"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Warden",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Warden",
+      "rules": [
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Levies",
+        "Open Order",
+        "Peasantry",
+        "Reserve Move",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "shortbows",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Feigned Flight"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Warhorse",
+      "rules": [
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Levies",
+        "Open Order",
+        "Peasantry",
+        "Reserve Move",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "shortbows",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Feigned Flight"
+      ]
+    }
   ],
   "mournfang-cavalry": [
     {
-      A: "3",
-      I: "2",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "4",
-      BS: "2",
-      Ld: "7",
-      WS: "3",
-      AS: "6",
-      Name: "Ogre",
+      "A": "3",
+      "I": "2",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "4",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "3",
+      "AS": "6",
+      "Name": "Ogre",
+      "as": 6,
+      "Impact-Hits": "D3",
+      "rules": [
+        "Armoured Hide (1)",
+        "Close Order",
+        "Fear",
+        "Impact Hits (D3)",
+        "Mournfang Charge",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "Monstrous tusks"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ironfists",
+        "Brace of Ogre Pistols"
+      ]
     },
     {
-      A: "4",
-      I: "2",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "4",
-      BS: "2",
-      Ld: "7",
-      WS: "3",
-      AS: "6",
-      Name: "Crusher",
+      "A": "4",
+      "I": "2",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "4",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "3",
+      "AS": "6",
+      "Name": "Crusher",
+      "as": 6,
+      "rules": [
+        "Armoured Hide (1)",
+        "Close Order",
+        "Fear",
+        "Impact Hits (D3)",
+        "Mournfang Charge",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "Monstrous tusks"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ironfists",
+        "Brace of Ogre Pistols"
+      ]
     },
     {
-      A: "3",
-      I: "2",
-      M: "8",
-      S: "5",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Mournfang",
-      weapons: ["monstrous tusks"],
-    },
+      "A": "3",
+      "I": "2",
+      "M": "8",
+      "S": "5",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Mournfang",
+      "weapons": [
+        "monstrous tusks"
+      ],
+      "as": 6,
+      "rules": [
+        "Armoured Hide (1)",
+        "Close Order",
+        "Fear",
+        "Impact Hits (D3)",
+        "Mournfang Charge",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "Monstrous tusks"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ironfists",
+        "Brace of Ogre Pistols"
+      ]
+    }
   ],
   "nasty-skulker": [
     {
-      A: "2",
-      I: "4",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "4",
-      Name: "Nasty Skulker",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Nasty Skulker",
+      "as": 6,
+      "rules": [
+        "Armour Bane (2)",
+        "Fear of Elves",
+        "Horde",
+        "Skulking Menace",
+        "Strike First"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "necrolith-bone-dragon": [
     {
-      A: "5",
-      I: "2",
-      M: "6",
-      S: "6",
-      T: "(+1)",
-      W: "(+5)",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "Necrolith Bone Dragon",
-    },
+      "A": "5",
+      "I": "2",
+      "M": "6",
+      "S": "6",
+      "T": "(+1)",
+      "W": "(+5)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "Necrolith Bone Dragon",
+      "as": 4,
+      "Stomps": "D6",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Cloud of Dust",
+        "Dry as Dust",
+        "Fly (9)",
+        "Indomitable (2)",
+        "Large Target",
+        "Nehekharan Undead",
+        "Stomp Attacks (D6)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "breath of desiccation",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "necrolith-colossus": [
     {
-      A: "4",
-      I: "1",
-      M: "6",
-      S: "6",
-      T: "6",
-      W: "5",
-      BS: "2",
-      Ld: "8",
-      WS: "3",
-      Name: "Necrolith Colossus",
-    },
+      "A": "4",
+      "I": "1",
+      "M": "6",
+      "S": "6",
+      "T": "6",
+      "W": "5",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "Necrolith Colossus",
+      "as": 5,
+      "Regen": "6+",
+      "Stomps": "D3",
+      "rules": [
+        "Close Order",
+        "Indomitable (2)",
+        "Large Target",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Stomp Attacks (D3)",
+        "Terror",
+        "Timmm-berrr!",
+        "Unstoppable Assault"
+      ],
+      "equipment": [
+        "Paired great khopeshes",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "necromantic-acolyte": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Necromantic Acolyte",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Necromantic Acolyte",
+      "Regen": "5+",
+      "rules": [
+        "Dark Vitality",
+        "Indomitable (1)",
+        "Invocation of Nehek",
+        "Lore of Undeath",
+        "Necromantic Undead",
+        "Regeneration (5+)"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "dark magic",
+        "illusion",
+        "necromancy"
+      ],
+      "optionalRules": []
+    }
   ],
   "necropolis-knights": [
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Necropolis Knight",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Necropolis Knight",
+      "as": 5,
+      "Regen": "6+",
+      "Impact-Hits": "1",
+      "rules": [
+        "Armoured Hide (1)",
+        "Cleaving Blow (Riders only)",
+        "Close Order",
+        "Impact Hits (1)",
+        "Indomitable (1)",
+        "Khopesh",
+        "Nehekharan Undead",
+        "Poisoned Attacks (Necroserpent only)",
+        "Regeneration (6+)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "light armour",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Necropolis Captain",
+      "A": "3",
+      "I": "3",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Necropolis Captain",
+      "as": 5,
+      "Regen": "6+",
+      "rules": [
+        "Armoured Hide (1)",
+        "Cleaving Blow (Riders only)",
+        "Close Order",
+        "Impact Hits (1)",
+        "Indomitable (1)",
+        "Khopesh",
+        "Nehekharan Undead",
+        "Poisoned Attacks (Necroserpent only)",
+        "Regeneration (6+)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "light armour",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "7",
-      S: "5",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Necroserpent",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "7",
+      "S": "5",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Necroserpent",
+      "as": 5,
+      "Regen": "6+",
+      "rules": [
+        "Armoured Hide (1)",
+        "Cleaving Blow (Riders only)",
+        "Close Order",
+        "Impact Hits (1)",
+        "Indomitable (1)",
+        "Khopesh",
+        "Nehekharan Undead",
+        "Poisoned Attacks (Necroserpent only)",
+        "Regeneration (6+)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "light armour",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  necroserpents: [
+  "necroserpents": [
     {
-      A: "3",
-      I: "3",
-      M: "7",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "0",
-      Ld: "7",
-      WS: "3",
-      Name: "Necroserpent",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "7",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "0",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Necroserpent",
+      "Regen": "6+",
+      "Impact-Hits": "1",
+      "rules": [
+        "Ambushers",
+        "Armoured Hide (1)",
+        "Impact Hits (1)",
+        "Indomitable (1)",
+        "Move Through Cover",
+        "Nehekharan Undead",
+        "Open Order",
+        "Poisoned Attacks",
+        "Regeneration (6+)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  necrosphinx: [
+  "necrosphinx": [
     {
-      A: "5",
-      I: "1",
-      M: "6",
-      S: "5",
-      T: "6",
-      W: "6",
-      BS: "0",
-      Ld: "8",
-      WS: "4",
-      Name: "Necrosphinx",
-    },
+      "A": "5",
+      "I": "1",
+      "M": "6",
+      "S": "5",
+      "T": "6",
+      "W": "6",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Necrosphinx",
+      "as": 5,
+      "Regen": "5+",
+      "Stomps": "D3+2",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Fly (9)",
+        "Indomitable (2)",
+        "Large Target",
+        "Nehekharan Undead",
+        "Regeneration (5+)",
+        "Stomp Attacks (D3+2)",
+        "Swiftstride",
+        "Terror",
+        "Soul Reaper"
+      ],
+      "equipment": [
+        "Cleaving blades",
+        "decapitating strike",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Envenomed Sting"
+      ]
+    }
   ],
-  necrotect: [
+  "necrotect": [
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Necrotect",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Necrotect",
+      "as": 6,
+      "Regen": "6+",
+      "rules": [
+        "Dry as Dust",
+        "Eternal Taskmaster",
+        "Flammable",
+        "Khopesh",
+        "Nehekharan Undead",
+        "Regeneration (6+)"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "whip",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  nekaph: [
+  "nekaph": [
     {
-      A: "3",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Nekaph",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Nekaph",
+      "as": 6,
+      "Regen": "5+",
+      "rules": [
+        "Dry as Dust",
+        "Flammable",
+        "Herald of Despair",
+        "Indomitable (2)",
+        "Killing Blow",
+        "Nehekharan Undead",
+        "Regeneration (5+)",
+        "Settra's Champion",
+        "Sworn Protector"
+      ],
+      "equipment": [
+        "The Flail of Conquered Kings",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryNamed Character"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "night-goblin-bigboss": [
     {
-      A: "3",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "3",
-      Ld: "5",
-      WS: "4",
-      Name: "Night Goblin Bigboss",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "4",
+      "Name": "Night Goblin Bigboss",
+      "rules": [
+        "Fear of Elves",
+        "Hatred (Dwarfs)",
+        "Rallying Cry",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "night-goblin-mob": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "4",
-      WS: "2",
-      Name: "Night Goblin",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "4",
+      "WS": "2",
+      "Name": "Night Goblin",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Fear of Elves",
+        "Hatred (Dwarfs)",
+        "Horde",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Netters"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Boss",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Boss",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Fear of Elves",
+        "Hatred (Dwarfs)",
+        "Horde",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Netters"
+      ]
+    }
   ],
   "night-goblin-oddgit": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "3",
-      Ld: "5",
-      WS: "3",
-      Name: "Night Goblin Oddgit",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Night Goblin Oddgit",
+      "rules": [
+        "Fear of Elves",
+        "Hatred (Dwarfs)",
+        "Lore of Mork",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "illusion",
+        "waaagh! magic"
+      ],
+      "optionalRules": []
+    }
   ],
   "night-goblin-oddnob": [
     {
-      A: "2",
-      I: "4",
-      M: "4",
-      S: "3",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "6",
-      WS: "4",
-      Name: "Night Goblin Oddnob",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "4",
+      "S": "3",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Night Goblin Oddnob",
+      "rules": [
+        "Fear of Elves",
+        "Hatred (Dwarfs)",
+        "Lore of Mork",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "illusion",
+        "waaagh! magic"
+      ],
+      "optionalRules": []
+    }
   ],
   "night-goblin-squig-herd": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "2",
-      Name: "Squig Herder",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "2",
+      "Name": "Squig Herder",
+      "rules": [
+        "Hatred (Dwarfs)",
+        "Immune to Psychology",
+        "Impetuous",
+        "Loner",
+        "Motley Crew",
+        "Open Order",
+        "Skirmishers",
+        "Squigs Go Wild",
+        "Warband"
+      ],
+      "equipment": [
+        "hand weapons",
+        "Huge gobs"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "4",
-      S: "5",
-      T: "3",
-      W: "1",
-      BS: "-",
-      Ld: "3",
-      WS: "4",
-      Name: "Cave Squig",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "4",
+      "S": "5",
+      "T": "3",
+      "W": "1",
+      "BS": "-",
+      "Ld": "3",
+      "WS": "4",
+      "Name": "Cave Squig",
+      "rules": [
+        "Hatred (Dwarfs)",
+        "Immune to Psychology",
+        "Impetuous",
+        "Loner",
+        "Motley Crew",
+        "Open Order",
+        "Skirmishers",
+        "Squigs Go Wild",
+        "Warband"
+      ],
+      "equipment": [
+        "hand weapons",
+        "Huge gobs"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "night-goblin-squig-hopper-mob": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Squig Hopper",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Squig Hopper",
+      "Impact-Hits": "1",
+      "rules": [
+        "Hatred (Dwarfs)",
+        "Immune to Psychology",
+        "Impact Hits (1)",
+        "Loner",
+        "Open Order",
+        "Random Movement",
+        "Skirmishers",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Huge gobs"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "2",
-      Name: "Boss",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "2",
+      "Name": "Boss",
+      "rules": [
+        "Hatred (Dwarfs)",
+        "Immune to Psychology",
+        "Impact Hits (1)",
+        "Loner",
+        "Open Order",
+        "Random Movement",
+        "Skirmishers",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Huge gobs"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "3D6",
-      S: "5",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: " Bounder Squig",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "3D6",
+      "S": "5",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": " Bounder Squig",
+      "rules": [
+        "Hatred (Dwarfs)",
+        "Immune to Psychology",
+        "Impact Hits (1)",
+        "Loner",
+        "Open Order",
+        "Random Movement",
+        "Skirmishers",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Huge gobs"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "night-goblin-warboss": [
     {
-      A: "4",
-      I: "5",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "6",
-      WS: "5",
-      Name: "Night Goblin Warboss",
-    },
+      "A": "4",
+      "I": "5",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "5",
+      "Name": "Night Goblin Warboss",
+      "rules": [
+        "Fear of Elves",
+        "Hatred (Dwarfs)",
+        "Rallying Cry",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "night-runners": [
     {
-      A: "1",
-      I: "5",
-      M: "6",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "3",
-      Name: "Night Runner",
+      "A": "1",
+      "I": "5",
+      "M": "6",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Night Runner",
+      "rules": [
+        "Evasive",
+        "Fire & Flee",
+        "Scurry Away",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "5",
-      M: "6",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "3",
-      Name: "Nightleader",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "6",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Nightleader",
+      "rules": [
+        "Evasive",
+        "Fire & Flee",
+        "Scurry Away",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  nightmare: [
+  "nightmare": [
     {
-      A: "1",
-      I: "2",
-      M: "7",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Nightmare",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "7",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Nightmare",
+      "armourMod": 1,
+      "rules": [
+        "Counter Charge",
+        "First Charge",
+        "Necromantic Undead",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  noble: [
+  "noble": [
     {
-      A: "3",
-      I: "5",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "2",
-      BS: "6",
-      Ld: "9",
-      WS: "6",
-      Name: "Noble",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "2",
+      "BS": "6",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Noble",
+      "as": 6,
+      "rules": [
+        "Ithilmar Weapons",
+        "Strike First",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Bow of Avelorn"
+      ]
+    }
   ],
   "nuln-state-missile-troops": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "State Missile Trooper",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "State Missile Trooper",
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Nuln State Troops"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "handguns"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "7",
-      WS: "3",
-      Name: "Sergeant",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Sergeant",
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Nuln State Troops"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "handguns"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
+    }
   ],
   "nuln-state-troops": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "State Trooper",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "State Trooper",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Nuln State Troops",
+        "Regimental Unit"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Sergeant",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Sergeant",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Nuln State Troops",
+        "Regimental Unit"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "nuln-swordsmen": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Swordsman",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Swordsman",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Horde",
+        "Nuln State Troops"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Sergeant",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Sergeant",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Horde",
+        "Nuln State Troops"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "nuln-veteran-state-troops": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Veteran State Trooper",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Veteran State Trooper",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Nuln State Troops",
+        "Regimental Unit",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Veteran Sergeant",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Veteran Sergeant",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Nuln State Troops",
+        "Regimental Unit",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
+    }
   ],
-  nurglings: [
+  "nurglings": [
     {
-      A: "D3+1",
-      I: "2",
-      M: "4",
-      S: "2",
-      T: "3",
-      W: "7",
-      BS: "0",
-      Ld: "5",
-      WS: "2",
-      Name: "Nurglings",
-    },
+      "A": "D3+1",
+      "I": "2",
+      "M": "4",
+      "S": "2",
+      "T": "3",
+      "W": "7",
+      "BS": "0",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Nurglings",
+      "Regen": "6+",
+      "rules": [
+        "Daemonic",
+        "Daemons of Nurgle",
+        "Loner",
+        "Poisoned Attacks",
+        "Random Attacks",
+        "Regeneration (6+)",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Swarm"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "ogdruz-swampdigga": [
     {
-      A: "2",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "2",
-      Ld: "8",
-      WS: "4",
-      Name: "Ogdruz Swampdigga",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Ogdruz Swampdigga",
+      "rules": [
+        "Choppas",
+        "Da Troll Calla",
+        "Ignore Goblin Panic",
+        "Protect Da Boss",
+        "Syphoned Strength",
+        "Warband"
+      ],
+      "equipment": [
+        "Bog-wood Staff",
+        "Trollhide Shawl",
+        "Lore Familiar"
+      ],
+      "troopType": [
+        "Regular InfantryNamed Character"
+      ],
+      "magic": [
+        "elementalism",
+        "troll magic"
+      ],
+      "optionalRules": []
+    }
   ],
   "ogre-bulls": [
     {
-      A: "3",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "2",
-      Ld: "7",
-      WS: "3",
-      AS: "6",
-      Name: "Ogre",
+      "A": "3",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "3",
+      "AS": "6",
+      "Name": "Ogre",
+      "as": 6,
+      "Impact-Hits": "1",
+      "rules": [
+        "Armour Bane (1)",
+        "Close Order",
+        "Fear",
+        "Impact Hits (1)",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Look-out Gnoblar"
+      ]
     },
     {
-      A: "4",
-      I: "2",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "2",
-      Ld: "7",
-      WS: "3",
-      AS: "6",
-      Name: "Crusher",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "3",
+      "AS": "6",
+      "Name": "Crusher",
+      "as": 6,
+      "rules": [
+        "Armour Bane (1)",
+        "Close Order",
+        "Fear",
+        "Impact Hits (1)",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Look-out Gnoblar"
+      ]
+    }
   ],
   "ogre-loader": [
     {
-      A: "3",
-      I: "2",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "3",
-      Name: "Ogre Loader",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "Ogre Loader",
+      "as": 6,
+      "rules": [
+        "Enough for Everyone",
+        "Mercenary Crew"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "orc-bigboss": [
     {
-      A: "3",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "5",
-      W: "2",
-      BS: "2",
-      Ld: "7",
-      WS: "5",
-      Name: "Orc Bigboss",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "5",
+      "W": "2",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Orc Bigboss",
+      "as": 6,
+      "rules": [
+        "Choppas",
+        "Furious Charge",
+        "Ignore Goblin Panic",
+        "Impetuous",
+        "Rallying Cry",
+        "Waaagh!",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Frenzy",
+        "Warpaint"
+      ]
+    }
   ],
   "orc-boar-boy-mob": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Boar Boy",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Boar Boy",
+      "as": 6,
+      "rules": [
+        "Armoured Hide (1)",
+        "Choppas",
+        "Close Order",
+        "Counter Charge",
+        "Furious Charge (Riders only)",
+        "Ignore Goblin Panic",
+        "Impetuous",
+        "Swiftstride",
+        "Tusker Charge",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Frenzy",
+        "Warpaint",
+        "Big Stabbas",
+        "Big 'Uns",
+        "Skirmishers"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Boss",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Boss",
+      "as": 6,
+      "rules": [
+        "Armoured Hide (1)",
+        "Choppas",
+        "Close Order",
+        "Counter Charge",
+        "Furious Charge (Riders only)",
+        "Ignore Goblin Panic",
+        "Impetuous",
+        "Swiftstride",
+        "Tusker Charge",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Frenzy",
+        "Warpaint",
+        "Big Stabbas",
+        "Big 'Uns",
+        "Skirmishers"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "War Boar",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "War Boar",
+      "as": 6,
+      "rules": [
+        "Armoured Hide (1)",
+        "Choppas",
+        "Close Order",
+        "Counter Charge",
+        "Furious Charge (Riders only)",
+        "Ignore Goblin Panic",
+        "Impetuous",
+        "Swiftstride",
+        "Tusker Charge",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Frenzy",
+        "Warpaint",
+        "Big Stabbas",
+        "Big 'Uns",
+        "Skirmishers"
+      ]
+    }
   ],
   "orc-boar-chariot": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Chariot",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Chariot",
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Choppas",
+        "Close Order",
+        "First Charge",
+        "Ignore Goblin Panic",
+        "Impact Hits (D6+1)",
+        "Impetuous",
+        "Tusker Charge",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Frenzy",
+        "Warpaint"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Orc Crew (x2)",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Orc Crew (x2)",
+      "rules": [
+        "Choppas",
+        "Close Order",
+        "First Charge",
+        "Ignore Goblin Panic",
+        "Impact Hits (D6+1)",
+        "Impetuous",
+        "Tusker Charge",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Frenzy",
+        "Warpaint"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "War Boars (x2)",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "War Boars (x2)",
+      "rules": [
+        "Choppas",
+        "Close Order",
+        "First Charge",
+        "Ignore Goblin Panic",
+        "Impact Hits (D6+1)",
+        "Impetuous",
+        "Tusker Charge",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Frenzy",
+        "Warpaint"
+      ]
+    }
   ],
   "orc-bully": [
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Orc Bully",
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Orc Bully",
+      "rules": [
+        "Bully",
+        "Choppas"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "whip"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "5",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Doom Diver Catapult",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "5",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Doom Diver Catapult",
+      "rules": [
+        "Doom Diver",
+        "Fear of Elves",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "stone thrower",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "3",
-      Ld: "4",
-      WS: "2",
-      Name: "Goblin Crew",
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "3",
+      "Ld": "4",
+      "WS": "2",
+      "Name": "Goblin Crew",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "5",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Bolt Throwa",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "5",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Bolt Throwa",
+      "rules": [
+        "Fear of Elves",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Bolt thrower",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "3",
-      Ld: "4",
-      WS: "2",
-      Name: "Goblin Crew",
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "3",
+      "Ld": "4",
+      "WS": "2",
+      "Name": "Goblin Crew",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Rock Lobber",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Rock Lobber",
+      "rules": [
+        "Fear of Elves",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Stone thrower",
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "4",
-      BS: "3",
-      Ld: "4",
-      WS: "2",
-      Name: "Goblin Crew",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "4",
+      "BS": "3",
+      "Ld": "4",
+      "WS": "2",
+      "Name": "Goblin Crew",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "orc-mob": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Orc Boy",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Orc Boy",
+      "as": 6,
+      "rules": [
+        "Choppas",
+        "Close Order",
+        "Ignore Goblin Panic",
+        "Impetuous",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Frenzy",
+        "Warpaint",
+        "Big Stabbas",
+        "Big 'Uns",
+        "Skirmishers"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Boss",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Boss",
+      "as": 6,
+      "rules": [
+        "Choppas",
+        "Close Order",
+        "Ignore Goblin Panic",
+        "Impetuous",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Frenzy",
+        "Warpaint",
+        "Big Stabbas",
+        "Big 'Uns",
+        "Skirmishers"
+      ]
+    }
   ],
   "orc-warboss": [
     {
-      A: "4",
-      I: "5",
-      M: "4",
-      S: "5",
-      T: "5",
-      W: "3",
-      BS: "2",
-      Ld: "8",
-      WS: "6",
-      Name: "Orc Warboss",
-    },
+      "A": "4",
+      "I": "5",
+      "M": "4",
+      "S": "5",
+      "T": "5",
+      "W": "3",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Orc Warboss",
+      "as": 6,
+      "rules": [
+        "Choppas",
+        "Furious Charge",
+        "Ignore Goblin Panic",
+        "Impetuous",
+        "Rallying Cry",
+        "Waaagh!",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Frenzy",
+        "Warpaint"
+      ]
+    }
   ],
   "orc-weirdboy": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "4",
-      W: "2",
-      BS: "2",
-      Ld: "7",
-      WS: "3",
-      Name: "Orc Weirdboy",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "4",
+      "W": "2",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Orc Weirdboy",
+      "rules": [
+        "Choppas",
+        "Ignore Goblin Panic",
+        "Lore of Gork",
+        "Mob Rule",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "waaagh! magic"
+      ],
+      "optionalRules": []
+    }
   ],
   "orc-weirdnob": [
     {
-      A: "2",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "2",
-      Ld: "8",
-      WS: "4",
-      Name: "Orc Weirdnob",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Orc Weirdnob",
+      "rules": [
+        "Choppas",
+        "Ignore Goblin Panic",
+        "Lore of Gork",
+        "Mob Rule",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "waaagh! magic"
+      ],
+      "optionalRules": []
+    }
   ],
   "organ-gun": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "7",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Organ Gun",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "7",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Organ Gun",
+      "as": 6,
+      "Magic-Res": "-1",
+      "rules": [
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Skirmishers",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Organ gun",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "3",
-      Name: "Dwarf Crew",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "3",
+      "Name": "Dwarf Crew",
+      "as": 6,
+      "Magic-Res": "-1",
+      "rules": [
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Skirmishers",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Organ gun",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "orion,-the-king-in-the-woods": [
     {
-      A: "5",
-      I: "8",
-      M: "9",
-      S: "5",
-      T: "5",
-      W: "5",
-      BS: "6",
-      Ld: "10",
-      WS: "8",
-      Name: "Orion, the King in the Woods",
+      "A": "5",
+      "I": "8",
+      "M": "9",
+      "S": "5",
+      "T": "5",
+      "W": "5",
+      "BS": "6",
+      "Ld": "10",
+      "WS": "8",
+      "Name": "Orion, the King in the Woods",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "9",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "0",
-      Ld: "6",
-      WS: "4",
-      Name: "Hound of Orion",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "9",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "0",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Hound of Orion",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "outcast-wizard": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Outcast Wizards",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Outcast Wizards",
+      "Magic-Res": "-1",
+      "rules": [
+        "Magical Attacks",
+        "Magic Resistance (-1)",
+        "Untutored Arcanist"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic",
+        "elementalism",
+        "illusion",
+        "necromancy"
+      ],
+      "optionalRules": []
+    }
   ],
-  outriders: [
+  "outriders": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "7",
-      WS: "3",
-      Name: "Outrider",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Outrider",
+      "as": 5,
+      "rules": [
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "pistols",
+        "repeater handguns",
+        "heavy armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Grenade Launching Blunderbuss"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "5",
-      Ld: "7",
-      WS: "3",
-      Name: "Sharpshooter",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "5",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Sharpshooter",
+      "as": 5,
+      "rules": [
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "pistols",
+        "repeater handguns",
+        "heavy armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Grenade Launching Blunderbuss"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Empire Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Empire Warhorse",
+      "as": 5,
+      "rules": [
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "pistols",
+        "repeater handguns",
+        "heavy armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Grenade Launching Blunderbuss"
+      ]
+    }
   ],
-  packmaster: [
+  "packmaster": [
     {
-      A: "1",
-      I: "4",
-      M: "6",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Packmaster",
+      "A": "1",
+      "I": "4",
+      "M": "6",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Packmaster",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Leader of the Pack",
+        "Motley Crew",
+        "Scurry Away",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Things-Catcher"
+      ]
     },
     {
-      A: "1",
-      I: "4",
-      M: "6",
-      S: "2",
-      T: "3",
-      W: "1",
-      BS: "0",
-      Ld: "3",
-      WS: "2",
-      Name: "Giant Rat",
+      "A": "1",
+      "I": "4",
+      "M": "6",
+      "S": "2",
+      "T": "3",
+      "W": "1",
+      "BS": "0",
+      "Ld": "3",
+      "WS": "2",
+      "Name": "Giant Rat",
+      "rules": [
+        "Close Order",
+        "Fight in Extra Rank",
+        "Horde",
+        "Scurry Away",
+        "Warband"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "4",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "1",
-      Ld: "5",
-      WS: "4",
-      Name: "Rat Ogre",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "1",
+      "Ld": "5",
+      "WS": "4",
+      "Name": "Rat Ogre",
+      "as": 5,
+      "rules": [
+        "Armour Bane (2)",
+        "Close Order",
+        "Fear",
+        "Frenzy",
+        "Horde",
+        "Safe from Harm",
+        "Scurry Away",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  paladin: [
+  "paladin": [
     {
-      A: "3",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "3",
-      Ld: "8",
-      WS: "6",
-      Name: "Paladin",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Paladin",
+      "as": 5,
+      "rules": [
+        "Blessings of the Lady",
+        "Rallying Cry",
+        "The Knight's Vow"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "palanquin-of-nurgle": [
     {
-      A: "D6+1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "-",
-      W: "(+4)",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Palanquin of Nurgle",
-    },
+      "A": "D6+1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "-",
+      "W": "(+4)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Palanquin of Nurgle",
+      "rules": [
+        "Daemonic",
+        "Daemon of Nurgle",
+        "Poisoned Attacks",
+        "Random Attacks"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "palanquin-of-nurgle-renegade": [
     {
-      A: "D6+1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "-",
-      W: "(+4)",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Palanquin of Nurgle",
-    },
+      "A": "D6+1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "-",
+      "W": "(+4)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Palanquin of Nurgle",
+      "rules": [
+        "Daemonic",
+        "Daemon of Nurgle",
+        "Poisoned Attacks",
+        "Random Attacks"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "peasant-bowmen": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "2",
-      Name: "Peasant Bowman",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "2",
+      "Name": "Peasant Bowman",
+      "rules": [
+        "Close Order",
+        "Levies",
+        "Peasantry"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "longbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Defensive Stakes",
+        "Burning Braziers",
+        "Skirmishers"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "7",
-      WS: "2",
-      Name: "Villein",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "2",
+      "Name": "Villein",
+      "rules": [
+        "Close Order",
+        "Levies",
+        "Peasantry"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "longbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Defensive Stakes",
+        "Burning Braziers",
+        "Skirmishers"
+      ]
+    }
   ],
   "peasant-levy": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Peasant Soldier",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Peasant Soldier",
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Long Spears",
+        "Skirmishers",
+        "Ambushers"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "6",
-      WS: "2",
-      Name: "Peasant Elder",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "6",
+      "WS": "2",
+      "Name": "Peasant Elder",
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Long Spears",
+        "Skirmishers",
+        "Ambushers"
+      ]
+    }
   ],
-  pegasus: [
+  "pegasus": [
     {
-      A: "2",
-      I: "4",
-      M: "8",
-      S: "4",
-      T: "-",
-      W: "(+1)",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Pegasus",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "8",
+      "S": "4",
+      "T": "-",
+      "W": "(+1)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Pegasus",
+      "Fly": "10",
+      "rules": [
+        "Counter Charge",
+        "First Charge",
+        "Fly (10)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "pegasus-knights": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "2",
-      Ld: "8",
-      WS: "4",
-      Name: "Pegasus Knight",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Pegasus Knight",
+      "as": 4,
+      "Fly": "10",
+      "armourMod": 1,
+      "rules": [
+        "Blessings of the Lady",
+        "Counter Charge",
+        "Dispersed Formation",
+        "First Charge",
+        "Fly (10)",
+        "Furious Charge (Riders only)",
+        "Skirmishers",
+        "Swiftstride",
+        "The Knight's Vow"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "2",
-      Ld: "8",
-      WS: "4",
-      Name: "First Knight",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "First Knight",
+      "as": 4,
+      "Fly": "10",
+      "armourMod": 1,
+      "rules": [
+        "Blessings of the Lady",
+        "Counter Charge",
+        "Dispersed Formation",
+        "First Charge",
+        "Fly (10)",
+        "Furious Charge (Riders only)",
+        "Skirmishers",
+        "Swiftstride",
+        "The Knight's Vow"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "7",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Barded Pegasus",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "7",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Barded Pegasus",
+      "as": 4,
+      "Fly": "10",
+      "armourMod": 1,
+      "rules": [
+        "Blessings of the Lady",
+        "Counter Charge",
+        "Dispersed Formation",
+        "First Charge",
+        "Fly (10)",
+        "Furious Charge (Riders only)",
+        "Skirmishers",
+        "Swiftstride",
+        "The Knight's Vow"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "phoenix-guard": [
     {
-      A: "1",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Phoenix Guard",
+      "A": "1",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Phoenix Guard",
+      "as": 4,
+      "rules": [
+        "Blessings of Asuryan",
+        "Close Order",
+        "Elven Reflexes",
+        "Fear",
+        "Martial Prowess",
+        "Veteran",
+        "Witness to Destiny"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "ceremonial halberds",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
     },
     {
-      A: "2",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Keeper of the Flame",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Keeper of the Flame",
+      "as": 4,
+      "rules": [
+        "Blessings of Asuryan",
+        "Close Order",
+        "Elven Reflexes",
+        "Fear",
+        "Martial Prowess",
+        "Veteran",
+        "Witness to Destiny"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "ceremonial halberds",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
+    }
   ],
   "pink-horrors-of-tzeentch": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Pink Horror",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Pink Horror",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemons of Tzeentch",
+        "Scintillating Sorcery"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "flames of Tzeentch"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Iridescent Horror",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Iridescent Horror",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemons of Tzeentch",
+        "Scintillating Sorcery"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "flames of Tzeentch"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  pistoliers: [
+  "pistoliers": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Pistolier",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Pistolier",
+      "as": 5,
+      "rules": [
+        "Counter Charge",
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Impetuous",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "brace of pistols",
+        "heavy armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Grenade Launching Blunderbuss"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "7",
-      WS: "3",
-      Name: "Veteran",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Veteran",
+      "as": 5,
+      "rules": [
+        "Counter Charge",
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Impetuous",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "brace of pistols",
+        "heavy armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Grenade Launching Blunderbuss"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Empire Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Empire Warhorse",
+      "as": 5,
+      "rules": [
+        "Counter Charge",
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Impetuous",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "brace of pistols",
+        "heavy armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Grenade Launching Blunderbuss"
+      ]
+    }
   ],
   "plague-censer-bearers": [
     {
-      A: "1",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "3",
-      Name: "Plague Censer Bearer",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Plague Censer Bearer",
+      "rules": [
+        "Frenzy",
+        "Scurry Away",
+        "Skirmishers",
+        "Stubborn",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "plague censers"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "plague-drones-of-nurgle": [
     {
-      A: "1",
-      I: "2",
-      M: "-",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Plaguebearer",
+      "A": "1",
+      "I": "2",
+      "M": "-",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Plaguebearer",
+      "Regen": "6+",
+      "Fly": "9",
+      "rules": [
+        "Armour Bane (2, Rot Fly only)",
+        "Daemonic",
+        "Daemons of Nurgle",
+        "Fly (9)",
+        "Poisoned Attacks",
+        "Regeneration (6+)",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Plagueswords",
+        "death's heads",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Plague Proboscis",
+        "Venom Sting"
+      ]
     },
     {
-      A: "2",
-      I: "2",
-      M: "-",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Plagueridden",
+      "A": "2",
+      "I": "2",
+      "M": "-",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Plagueridden",
+      "Regen": "6+",
+      "Fly": "9",
+      "rules": [
+        "Armour Bane (2, Rot Fly only)",
+        "Daemonic",
+        "Daemons of Nurgle",
+        "Fly (9)",
+        "Poisoned Attacks",
+        "Regeneration (6+)",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Plagueswords",
+        "death's heads",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Plague Proboscis",
+        "Venom Sting"
+      ]
     },
     {
-      A: "3",
-      I: "2",
-      M: "1",
-      S: "5",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Rot Fly",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "1",
+      "S": "5",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Rot Fly",
+      "Regen": "6+",
+      "Fly": "9",
+      "rules": [
+        "Armour Bane (2, Rot Fly only)",
+        "Daemonic",
+        "Daemons of Nurgle",
+        "Fly (9)",
+        "Poisoned Attacks",
+        "Regeneration (6+)",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Plagueswords",
+        "death's heads",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Plague Proboscis",
+        "Venom Sting"
+      ]
+    }
   ],
   "plague-furnace": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "2",
-      S: "5",
-      T: "6",
-      W: "5",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Plague Furnace",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "2",
+      "S": "5",
+      "T": "6",
+      "W": "5",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Plague Furnace",
+      "Magic-Res": "-1",
+      "Stomps": "D3+1",
+      "Impact-Hits": "D3+1",
+      "rules": [
+        "Dragged Along",
+        "Fear",
+        "Frenzy",
+        "Great Censer",
+        "Impact Hits (D3+1)",
+        "Large Target",
+        "Magic Resistance (-1)",
+        "Poisoned Attacks",
+        "Scurrying Masses",
+        "Stomp Attacks (D3+1)"
+      ],
+      "equipment": [
+        "Billowing Death",
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "0",
-      Ld: "5",
-      WS: "3",
-      Name: "Plague Monk Crew (x3)",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "0",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Plague Monk Crew (x3)",
+      "Magic-Res": "-1",
+      "rules": [
+        "Dragged Along",
+        "Fear",
+        "Frenzy",
+        "Great Censer",
+        "Impact Hits (D3+1)",
+        "Large Target",
+        "Magic Resistance (-1)",
+        "Poisoned Attacks",
+        "Scurrying Masses",
+        "Stomp Attacks (D3+1)"
+      ],
+      "equipment": [
+        "Billowing Death",
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "plague-furnace-renegade": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "2",
-      S: "5",
-      T: "6",
-      W: "5",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Plague Furnace",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "2",
+      "S": "5",
+      "T": "6",
+      "W": "5",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Plague Furnace",
+      "Magic-Res": "-1",
+      "Stomps": "D3+1",
+      "Impact-Hits": "D3+1",
+      "rules": [
+        "Dragged Along",
+        "Fear",
+        "Frenzy",
+        "Great Censer",
+        "Impact Hits (D3+1)",
+        "Large Target",
+        "Magic Resistance (-1)",
+        "Poisoned Attacks",
+        "Scurrying Masses",
+        "Stomp Attacks (D3+1)"
+      ],
+      "equipment": [
+        "Billowing Death",
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "0",
-      Ld: "5",
-      WS: "3",
-      Name: "Plague Monk Crew (x3)",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "0",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Plague Monk Crew (x3)",
+      "Magic-Res": "-1",
+      "rules": [
+        "Dragged Along",
+        "Fear",
+        "Frenzy",
+        "Great Censer",
+        "Impact Hits (D3+1)",
+        "Large Target",
+        "Magic Resistance (-1)",
+        "Poisoned Attacks",
+        "Scurrying Masses",
+        "Stomp Attacks (D3+1)"
+      ],
+      "equipment": [
+        "Billowing Death",
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "plague-monks": [
     {
-      A: "1",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "3",
-      Name: "Plague Monk",
+      "A": "1",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Plague Monk",
+      "rules": [
+        "Close Order",
+        "Frenzy",
+        "Horde",
+        "Scurry Away",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "3",
-      Name: "Plague Deacon",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Plague Deacon",
+      "rules": [
+        "Close Order",
+        "Frenzy",
+        "Horde",
+        "Scurry Away",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "plague-priest": [
     {
-      A: "3",
-      I: "5",
-      M: "5",
-      S: "4",
-      T: "5",
-      W: "2",
-      BS: "3",
-      Ld: "6",
-      WS: "5",
-      Name: "Plague Priest",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "5",
+      "S": "4",
+      "T": "5",
+      "W": "2",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "5",
+      "Name": "Plague Priest",
+      "rules": [
+        "Cloud of Flies",
+        "Frenzy",
+        "Lore of the Horned Rat",
+        "Magical Attacks",
+        "Scurry Away",
+        "Verminous Valour",
+        "Warband",
+        "Warpstone Weapons"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic"
+      ],
+      "optionalRules": []
+    }
   ],
   "plaguebearers-of-nurgle": [
     {
-      A: "1",
-      I: "2",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Plaguebearer",
+      "A": "1",
+      "I": "2",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Plaguebearer",
+      "Regen": "6+",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemons of Nurgle",
+        "Poisoned Attacks",
+        "Regeneration (6+)"
+      ],
+      "equipment": [
+        "Plagueswords"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "2",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Plagueridden",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Plagueridden",
+      "Regen": "6+",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Daemons of Nurgle",
+        "Poisoned Attacks",
+        "Regeneration (6+)"
+      ],
+      "equipment": [
+        "Plagueswords"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "plagueclaw-catapult": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Plagueclaw Catapult",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Plagueclaw Catapult",
+      "as": 6,
+      "rules": [
+        "Random Attacks",
+        "Skirmishers",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Plagueclaw Catapult",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "D3+3",
-      I: "2",
-      M: "5",
-      S: "3",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Plague Monk Crew",
-    },
+      "A": "D3+3",
+      "I": "2",
+      "M": "5",
+      "S": "3",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Plague Monk Crew",
+      "as": 6,
+      "rules": [
+        "Random Attacks",
+        "Skirmishers",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Plagueclaw Catapult",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "poisoned-wind-globadiers": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "3",
-      Name: "Globadier",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Globadier",
+      "as": 6,
+      "rules": [
+        "Scurry Away",
+        "Skirmishers",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Poisoned Wind globes",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  preyton: [
+  "preyton": [
     {
-      A: "4",
-      I: "5",
-      M: "6",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "0",
-      Ld: "6",
-      WS: "5",
-      Name: "Preyton",
-    },
+      "A": "4",
+      "I": "5",
+      "M": "6",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "0",
+      "Ld": "6",
+      "WS": "5",
+      "Name": "Preyton",
+      "as": 5,
+      "Impact-Hits": "D3",
+      "Fly": "10",
+      "rules": [
+        "Close Order",
+        "Crown of Antlers",
+        "Endless Malice",
+        "Fly (10)",
+        "Impact Hits (D3)",
+        "Large Target",
+        "Terror"
+      ],
+      "equipment": [
+        "hand weapon",
+        "twisted antlers",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers",
+        "Frenzy"
+      ]
+    }
   ],
   "priest-of-sigmar": [
     {
-      A: "2",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Priest of Sigmar",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Priest of Sigmar",
+      "as": 6,
+      "Magic-Res": "-1",
+      "rules": [
+        "Magical Attacks",
+        "Magic Resistance (-1)",
+        "Prayers of Sigmar"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "priest-of-ulric": [
     {
-      A: "2",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Priest of Ulric",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Priest of Ulric",
+      "as": 6,
+      "Magic-Res": "-1",
+      "rules": [
+        "Magical Attacks",
+        "Magic Resistance (-1)",
+        "Prayers of Ulric"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "primal-warherd": [
     {
-      A: "1",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "2",
-      Ld: "6",
-      WS: "4",
-      Name: "Gor",
+      "A": "1",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "2",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Gor",
+      "as": 6,
+      "rules": [
+        "Bestial Charge (Gors only)",
+        "Blood Rage",
+        "Close Order",
+        "Horde",
+        "Impetuous",
+        "Mark of Chaos Undivided",
+        "Mixed Unit",
+        "Motley Crew*",
+        "Move Through Cover",
+        "Primal Fury",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "3",
-      Name: "Ungor",
+      "A": "1",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Ungor",
+      "as": 6,
+      "rules": [
+        "Bestial Charge (Gors only)",
+        "Blood Rage",
+        "Close Order",
+        "Horde",
+        "Impetuous",
+        "Mark of Chaos Undivided",
+        "Mixed Unit",
+        "Motley Crew*",
+        "Move Through Cover",
+        "Primal Fury",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "2",
-      Ld: "7",
-      WS: "4",
-      Name: "Foe-render",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Foe-render",
+      "as": 6,
+      "rules": [
+        "Bestial Charge (Gors only)",
+        "Blood Rage",
+        "Close Order",
+        "Horde",
+        "Impetuous",
+        "Mark of Chaos Undivided",
+        "Mixed Unit",
+        "Motley Crew*",
+        "Move Through Cover",
+        "Primal Fury",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "primal-warhounds": [
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "0",
-      Ld: "5",
-      WS: "4",
-      Name: "Primal Warhound",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "0",
+      "Ld": "5",
+      "WS": "4",
+      "Name": "Primal Warhound",
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Motley Crew",
+        "Move Through Cover",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Armoured Hide (1)",
+        "Poisoned Attacks"
+      ]
+    }
   ],
-  prince: [
+  "prince": [
     {
-      A: "4",
-      I: "6",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "3",
-      BS: "7",
-      Ld: "10",
-      WS: "7",
-      Name: "Prince",
-    },
+      "A": "4",
+      "I": "6",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "3",
+      "BS": "7",
+      "Ld": "10",
+      "WS": "7",
+      "Name": "Prince",
+      "as": 6,
+      "rules": [
+        "Ithilmar Weapons",
+        "Strike First",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Bow of Avelorn"
+      ]
+    }
   ],
   "prince-apophas": [
     {
-      A: "5",
-      I: "1",
-      M: "4",
-      S: "4",
-      T: "3",
-      W: "4",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Prince Apophas",
-    },
+      "A": "5",
+      "I": "1",
+      "M": "4",
+      "S": "4",
+      "T": "3",
+      "W": "4",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Prince Apophas",
+      "as": 6,
+      "Regen": "5+",
+      "Fly": "9",
+      "rules": [
+        "Ambushers",
+        "Fly (9)",
+        "Indomitable (2)",
+        "Khopesh",
+        "Loner",
+        "Nehekharan Undead",
+        "Regeneration (5+)",
+        "Scarab Prince",
+        "Usirian's Reaper",
+        "Terror"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "swarming mass",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryNamed Character"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "prince-ulther's-dragon-company": [
     {
-      A: "3",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "5",
-      W: "2",
-      BS: "5",
-      Ld: "10",
-      WS: "5",
-      Name: "Prince Ulther Stonehammer",
+      "A": "3",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "5",
+      "W": "2",
+      "BS": "5",
+      "Ld": "10",
+      "WS": "5",
+      "Name": "Prince Ulther Stonehammer",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "4",
-      Name: "Borri Forkbeard (champion)",
+      "A": "2",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Borri Forkbeard (champion)",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "4",
-      Name: "Dragon Company trooper",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Dragon Company trooper",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  prophetess: [
+  "prophetess": [
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Prophetess",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Prophetess",
+      "Magic-Res": "-2",
+      "rules": [
+        "Aura of the Lady",
+        "Blessings of the Lady",
+        "Lore of the Lady",
+        "Magical Attacks",
+        "Magic Resistance (-2)",
+        "Shield of the Lady"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": []
+    }
   ],
-  quarrellers: [
+  "quarrellers": [
     {
-      A: "1",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "3",
-      Name: "Quarreller",
+      "A": "1",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "3",
+      "Name": "Quarreller",
+      "as": 5,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Dwarf Crafted",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "crossbows",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "3",
-      Name: "Veteran",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "3",
+      "Name": "Veteran",
+      "as": 5,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Dwarf Crafted",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "crossbows",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "questing-knights": [
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "8",
-      WS: "5",
-      Name: "Questing Knight",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Questing Knight",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Blessings of the Lady",
+        "Close Order",
+        "Finest Warhorses",
+        "First Charge",
+        "Lance Formation",
+        "Swiftstride",
+        "The Questing Vow"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great weapons",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "8",
-      WS: "5",
-      Name: "Paragon",
+      "A": "2",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Paragon",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Blessings of the Lady",
+        "Close Order",
+        "Finest Warhorses",
+        "First Charge",
+        "Lance Formation",
+        "Swiftstride",
+        "The Questing Vow"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great weapons",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Bretonnian Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Bretonnian Warhorse",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Blessings of the Lady",
+        "Close Order",
+        "Finest Warhorses",
+        "First Charge",
+        "Lance Formation",
+        "Swiftstride",
+        "The Questing Vow"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "great weapons",
+        "heavy armour",
+        "shields",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  rangers: [
+  "rangers": [
     {
-      A: "1",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "4",
-      Name: "Ranger",
+      "A": "1",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Ranger",
+      "as": 5,
+      "Magic-Res": "-1",
+      "rules": [
+        "Dwarf Crafted",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Move Through Cover",
+        "Open Order",
+        "Resolute",
+        "Scouts",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "crossbows",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "4",
-      Name: "Ol' Deadeye",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Ol' Deadeye",
+      "as": 5,
+      "Magic-Res": "-1",
+      "rules": [
+        "Dwarf Crafted",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Move Through Cover",
+        "Open Order",
+        "Resolute",
+        "Scouts",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "crossbows",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "rat-ogres": [
     {
-      A: "3",
-      I: "4",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "1",
-      Ld: "5",
-      WS: "4",
-      Name: "Rat Ogre",
+      "A": "3",
+      "I": "4",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "1",
+      "Ld": "5",
+      "WS": "4",
+      "Name": "Rat Ogre",
+      "as": 5,
+      "rules": [
+        "Armour Bane (2)",
+        "Close Order",
+        "Fear",
+        "Frenzy",
+        "Horde",
+        "Safe from Harm",
+        "Scurry Away",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "6",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Packmaster",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "6",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Packmaster",
+      "as": 5,
+      "rules": [
+        "Armour Bane (2)",
+        "Close Order",
+        "Fear",
+        "Frenzy",
+        "Horde",
+        "Safe from Harm",
+        "Scurry Away",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "rat-swarms": [
     {
-      A: "5",
-      I: "4",
-      M: "6",
-      S: "2",
-      T: "2",
-      W: "5",
-      BS: "0",
-      Ld: "4",
-      WS: "2",
-      Name: "Rat Swarm",
-    },
+      "A": "5",
+      "I": "4",
+      "M": "6",
+      "S": "2",
+      "T": "2",
+      "W": "5",
+      "BS": "0",
+      "Ld": "4",
+      "WS": "2",
+      "Name": "Rat Swarm",
+      "rules": [
+        "Immune to Psychology",
+        "Loner",
+        "Skirmishers",
+        "Unbreakable",
+        "Vanguard"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "Swarm"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "razordon-pack": [
     {
-      A: "1",
-      I: "4",
-      M: "6",
-      S: "3",
-      T: "2",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Skink Handler",
+      "A": "1",
+      "I": "4",
+      "M": "6",
+      "S": "3",
+      "T": "2",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Skink Handler",
+      "as": 5,
+      "rules": [
+        "Aquatic",
+        "Beast Handlers",
+        "Cold Blooded",
+        "Fear",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "Wicked claws",
+        "razor barbs",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular InfantryWar Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "4",
-      Ld: "4",
-      WS: "3",
-      Name: "Razordon",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "4",
+      "Ld": "4",
+      "WS": "3",
+      "Name": "Razordon",
+      "as": 5,
+      "rules": [
+        "Aquatic",
+        "Beast Handlers",
+        "Cold Blooded",
+        "Fear",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "Wicked claws",
+        "razor barbs",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular InfantryWar Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "razorgor-chariot": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Chariot",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Chariot",
+      "Impact-Hits": "D6+2",
+      "rules": [
+        "Armour Bane (1 Razorgor only)",
+        "Close Order",
+        "Fear",
+        "First Charge",
+        "Foe Render (Razorgor only)",
+        "Impact Hits (D6+2)",
+        "Mark of Chaos Undivided",
+        "Primal Fury",
+        "Razor Tusks"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "great weapon",
+        "cavalry spear",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Bestigor Crew (x1)",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Bestigor Crew (x1)",
+      "rules": [
+        "Armour Bane (1 Razorgor only)",
+        "Close Order",
+        "Fear",
+        "First Charge",
+        "Foe Render (Razorgor only)",
+        "Impact Hits (D6+2)",
+        "Mark of Chaos Undivided",
+        "Primal Fury",
+        "Razor Tusks"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "great weapon",
+        "cavalry spear",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Gor Crew (x1)",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Gor Crew (x1)",
+      "rules": [
+        "Armour Bane (1 Razorgor only)",
+        "Close Order",
+        "Fear",
+        "First Charge",
+        "Foe Render (Razorgor only)",
+        "Impact Hits (D6+2)",
+        "Mark of Chaos Undivided",
+        "Primal Fury",
+        "Razor Tusks"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "great weapon",
+        "cavalry spear",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "4",
-      I: "2",
-      M: "7",
-      S: "5",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Razorgor (x1)",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "7",
+      "S": "5",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Razorgor (x1)",
+      "rules": [
+        "Armour Bane (1 Razorgor only)",
+        "Close Order",
+        "Fear",
+        "First Charge",
+        "Foe Render (Razorgor only)",
+        "Impact Hits (D6+2)",
+        "Mark of Chaos Undivided",
+        "Primal Fury",
+        "Razor Tusks"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "great weapon",
+        "cavalry spear",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "razorgor-herd": [
     {
-      A: "4",
-      I: "2",
-      M: "7",
-      S: "5",
-      T: "5",
-      W: "3",
-      BS: "0",
-      Ld: "6",
-      WS: "3",
-      Name: "Razorgor",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "7",
+      "S": "5",
+      "T": "5",
+      "W": "3",
+      "BS": "0",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Razorgor",
+      "as": 6,
+      "Impact-Hits": "D3",
+      "rules": [
+        "Armour Bane (1)",
+        "Fear",
+        "Foe Render",
+        "Impact Hits (D3)",
+        "Loner",
+        "Open Order",
+        "Primal Fury",
+        "Razor Tusks",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "reaper-bolt-thrower": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "2",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Reaper Bolt Thrower",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "2",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Reaper Bolt Thrower",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Hatred (High Elves)",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Repeater bolt thrower",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      Name: "Dark Elf Crew",
-      M: "5",
-      WS: "4",
-      BS: "4",
-      S: "3",
-      T: "3",
-      W: "2",
-      I: "4",
-      A: "2",
-      Ld: "8",
-    },
+      "Name": "Dark Elf Crew",
+      "M": "5",
+      "WS": "4",
+      "BS": "4",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "I": "4",
+      "A": "2",
+      "Ld": "8",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Hatred (High Elves)",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Repeater bolt thrower",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "renegade-captain": [
     {
-      A: "2",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "4",
-      Ld: "7",
-      WS: "5",
-      Name: "Renegade Captain",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Renegade Captain",
+      "as": 6,
+      "rules": [
+        "Rallying Cry",
+        "Veteran",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "renegade-prince": [
     {
-      A: "3",
-      I: "5",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "4",
-      Ld: "8",
-      WS: "6",
-      Name: "Renegade Prince",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Renegade Prince",
+      "as": 6,
+      "rules": [
+        "Rallying Cry",
+        "Veteran",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "repeater-crossbowmen": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Repeater Crossbowman",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Repeater Crossbowman",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Hatred (High Elves)",
+        "Martial Prowess"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "repeater crossbows",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Veteran"
+      ]
     },
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "5",
-      Ld: "8",
-      WS: "4",
-      Name: "Lordling",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "5",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Lordling",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Hatred (High Elves)",
+        "Martial Prowess"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "repeater crossbows",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Veteran"
+      ]
+    }
   ],
-  ripperdactyl: [
+  "ripperdactyl": [
     {
-      A: "2",
-      I: "2",
-      M: "2",
-      S: "4",
-      T: "(+1)",
-      W: "(+1)",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Ripperdactyl",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "2",
+      "S": "4",
+      "T": "(+1)",
+      "W": "(+1)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Ripperdactyl",
+      "Fly": "9",
+      "rules": [
+        "Armoured Hide (1)",
+        "Cleaving Blow (Ripperdactyl only)",
+        "Fear",
+        "Fly (9)",
+        "Furious Charge (Ripperdactyl only)",
+        "Impetuous",
+        "Swiftstride",
+        "Toad Rage"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "ripperdactyl-riders": [
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Ripperdactyl Rider",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Ripperdactyl Rider",
+      "as": 5,
+      "Fly": "9",
+      "rules": [
+        "Armoured Hide (1)",
+        "Cleaving Blow (Ripperdactyl only)",
+        "Cold Blooded",
+        "Fear",
+        "Fly (9)",
+        "Furious Charge (Ripperdactyl only)",
+        "Impetuous",
+        "Skirmishers",
+        "Swiftstride",
+        "Toad Rage"
+      ],
+      "equipment": [
+        "Cavalry spears",
+        "light armour",
+        "shields",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Ripperdactyl Champion",
+      "A": "2",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Ripperdactyl Champion",
+      "as": 5,
+      "Fly": "9",
+      "rules": [
+        "Armoured Hide (1)",
+        "Cleaving Blow (Ripperdactyl only)",
+        "Cold Blooded",
+        "Fear",
+        "Fly (9)",
+        "Furious Charge (Ripperdactyl only)",
+        "Impetuous",
+        "Skirmishers",
+        "Swiftstride",
+        "Toad Rage"
+      ],
+      "equipment": [
+        "Cavalry spears",
+        "light armour",
+        "shields",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "2",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Ripperdactyl",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "2",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Ripperdactyl",
+      "as": 5,
+      "Fly": "9",
+      "rules": [
+        "Armoured Hide (1)",
+        "Cleaving Blow (Ripperdactyl only)",
+        "Cold Blooded",
+        "Fear",
+        "Fly (9)",
+        "Furious Charge (Ripperdactyl only)",
+        "Impetuous",
+        "Skirmishers",
+        "Swiftstride",
+        "Toad Rage"
+      ],
+      "equipment": [
+        "Cavalry spears",
+        "light armour",
+        "shields",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "river-troll-mob": [
     {
-      A: "3",
-      I: "1",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "4",
-      BS: "1",
-      Ld: "4",
-      WS: "3",
-      Name: "River Troll",
-    },
+      "A": "3",
+      "I": "1",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "4",
+      "BS": "1",
+      "Ld": "4",
+      "WS": "3",
+      "Name": "River Troll",
+      "as": 6,
+      "Regen": "5+",
+      "rules": [
+        "Armour Bane (1)",
+        "Close Order",
+        "Fear",
+        "Flammable",
+        "Motley Crew",
+        "Regeneration (5+)",
+        "Stupidity"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Troll vomit",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "royal-clan-warriors": [
     {
-      A: "1",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "4",
-      Name: "Royal Clan Warrior",
+      "A": "1",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Royal Clan Warrior",
+      "as": 3,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Gromril Armour",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute",
+        "Shieldwall"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Gromril Great Axe",
+        "Drilled",
+        "Stubborn",
+        "Veteran"
+      ]
     },
     {
-      A: "2",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "4",
-      Name: "Royal Clan Veteran",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Royal Clan Veteran",
+      "as": 3,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Gromril Armour",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute",
+        "Shieldwall"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Gromril Great Axe",
+        "Drilled",
+        "Stubborn",
+        "Veteran"
+      ]
+    }
   ],
   "royal-herald": [
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Royal Herald",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Royal Herald",
+      "as": 6,
+      "Regen": "5+",
+      "rules": [
+        "Banner of the King",
+        "Dry as Dust",
+        "Flammable",
+        "Indomitable (1)",
+        "Khopesh",
+        "Nehekharan Undead",
+        "Regeneration (5+)",
+        "Sworn Protector"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "royal-pegasus": [
     {
-      A: "3",
-      I: "5",
-      M: "8",
-      S: "5",
-      T: "(+1)",
-      W: "(+1)",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "Royal Pegasus",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "8",
+      "S": "5",
+      "T": "(+1)",
+      "W": "(+1)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "Royal Pegasus",
+      "Stomps": "2",
+      "Fly": "10",
+      "armourMod": 1,
+      "rules": [
+        "Armour Bane (1, Royal Pegasus only)",
+        "Counter Charge",
+        "First Charge",
+        "Fly (10)",
+        "Stomp Attacks (2)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  runelord: [
+  "runelord": [
     {
-      A: "3",
-      I: "3",
-      M: "3",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "4",
-      Ld: "9",
-      WS: "6",
-      Name: "Runelord",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "3",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Runelord",
+      "as": 4,
+      "Magic-Res": "-2",
+      "rules": [
+        "Armour Bane (1)",
+        "Forgefire",
+        "Gromril Armour",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-2)",
+        "Resolute",
+        "Rune Lore",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Oathstone"
+      ]
+    }
   ],
-  runesmith: [
+  "runesmith": [
     {
-      A: "2",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Runesmith",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Runesmith",
+      "as": 4,
+      "Magic-Res": "-2",
+      "rules": [
+        "Armour Bane (1)",
+        "Forgefire",
+        "Gromril Armour",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-2)",
+        "Resolute",
+        "Rune Lore",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Oathstone"
+      ]
+    }
   ],
   "sabretusk-pack": [
     {
-      A: "2",
-      I: "4",
-      M: "8",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "0",
-      Ld: "6",
-      WS: "4",
-      Name: "Sabretusk",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "8",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "0",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Sabretusk",
+      "rules": [
+        "Armour Bane (1)",
+        "Fear",
+        "Impetuous",
+        "Loner",
+        "Move Through Cover",
+        "Open Order",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers",
+        "Scouts",
+        "Vanguard"
+      ]
+    }
   ],
   "salamander-pack": [
     {
-      A: "1",
-      I: "4",
-      M: "6",
-      S: "3",
-      T: "2",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Skink Handler",
+      "A": "1",
+      "I": "4",
+      "M": "6",
+      "S": "3",
+      "T": "2",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Skink Handler",
+      "as": 5,
+      "rules": [
+        "Aquatic",
+        "Beast Handlers",
+        "Cold Blooded",
+        "Fear",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "Wicked claws",
+        "fiery breath",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular InfantryWar Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "4",
-      WS: "3",
-      Name: "Salamander",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "4",
+      "WS": "3",
+      "Name": "Salamander",
+      "as": 5,
+      "rules": [
+        "Aquatic",
+        "Beast Handlers",
+        "Cold Blooded",
+        "Fear",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "Wicked claws",
+        "fiery breath",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular InfantryWar Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "saurus-oldblood": [
     {
-      A: "5",
-      I: "3",
-      M: "4",
-      S: "5",
-      T: "5",
-      W: "3",
-      BS: "0",
-      Ld: "8",
-      WS: "6",
-      Name: "Saurus Oldblood",
-    },
+      "A": "5",
+      "I": "3",
+      "M": "4",
+      "S": "5",
+      "T": "5",
+      "W": "3",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Saurus Oldblood",
+      "as": 5,
+      "rules": [
+        "Cold Blooded",
+        "Furious Charge",
+        "Obsidian Blades",
+        "Rallying Cry"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "saurus-scar-veteran": [
     {
-      A: "4",
-      I: "3",
-      M: "4",
-      S: "5",
-      T: "5",
-      W: "2",
-      BS: "0",
-      Ld: "8",
-      WS: "5",
-      Name: "Saurus Scar-Veteran",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "4",
+      "S": "5",
+      "T": "5",
+      "W": "2",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Saurus Scar-Veteran",
+      "as": 5,
+      "rules": [
+        "Cold Blooded",
+        "Furious Charge",
+        "Obsidian Blades",
+        "Rallying Cry"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "saurus-warriors": [
     {
-      A: "2",
-      I: "1",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "0",
-      Ld: "8",
-      WS: "3",
-      Name: "Saurus Warrior",
+      "A": "2",
+      "I": "1",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "Saurus Warrior",
+      "as": 4,
+      "rules": [
+        "Close Order",
+        "Cold Blooded",
+        "Obsidian Blades"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Shieldwall"
+      ]
     },
     {
-      A: "3",
-      I: "1",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "0",
-      Ld: "8",
-      WS: "3",
-      Name: "Spawn Leader",
-    },
+      "A": "3",
+      "I": "1",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "Spawn Leader",
+      "as": 4,
+      "rules": [
+        "Close Order",
+        "Cold Blooded",
+        "Obsidian Blades"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "shields"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Shieldwall"
+      ]
+    }
   ],
   "scourgerunner-chariot": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Chariot",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Chariot",
+      "Impact-Hits": "D6",
+      "rules": [
+        "Elven Reflexes",
+        "Hatred (High Elves)",
+        "Impact Hits (D6)",
+        "Open Order",
+        "Sea Dragon Cloak",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Ravager harpoon",
+        "Hand weapons",
+        "cavalry spears",
+        "repeater crossbows",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Beastmaster Crew (x2)",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Beastmaster Crew (x2)",
+      "rules": [
+        "Elven Reflexes",
+        "Hatred (High Elves)",
+        "Impact Hits (D6)",
+        "Open Order",
+        "Sea Dragon Cloak",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Ravager harpoon",
+        "Hand weapons",
+        "cavalry spears",
+        "repeater crossbows",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Dark Steed (x2)",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Dark Steed (x2)",
+      "rules": [
+        "Elven Reflexes",
+        "Hatred (High Elves)",
+        "Impact Hits (D6)",
+        "Open Order",
+        "Sea Dragon Cloak",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Ravager harpoon",
+        "Hand weapons",
+        "cavalry spears",
+        "repeater crossbows",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "scout-gyrocopter": [
     {
-      A: "2",
-      I: "2",
-      M: "1",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "4",
-      Ld: "9",
-      WS: "4",
-      Name: "Scout Gyrocopters",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "1",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Scout Gyrocopters",
+      "as": 5,
+      "Magic-Res": "-1",
+      "Impact-Hits": "D3",
+      "Fly": "10",
+      "rules": [
+        "Extended Formation",
+        "Fire & Flee",
+        "Fly (10)",
+        "Hatred (Orcs & Goblins)",
+        "Hit & Run",
+        "Impact Hits (D3)",
+        "Magic Resistance (-1)",
+        "Skirmishers",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "clattergun",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "screamers-of-tzeentch": [
     {
-      A: "2",
-      I: "4",
-      M: "1",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "0",
-      Ld: "7",
-      WS: "3",
-      Name: "Screamer",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "1",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "0",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Screamer",
+      "Fly": "9",
+      "rules": [
+        "Daemonic",
+        "Daemons of Tzeentch",
+        "Fly (9)",
+        "Loner",
+        "Skirmishers",
+        "Slashing Attack"
+      ],
+      "equipment": [
+        "Lamprey's bite"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "screaming-bell": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "2",
-      S: "5",
-      T: "6",
-      W: "5",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Screaming Bell",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "2",
+      "S": "5",
+      "T": "6",
+      "W": "5",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Screaming Bell",
+      "Magic-Res": "-3",
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Armour Bane (2, Rat Ogre only)",
+        "Blessings of the Horned Rat",
+        "Dragged Along",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Magic Resistance (-3)",
+        "Scurrying Masses",
+        "Stubborn",
+        "Terror",
+        "Tolling the Bell"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "4",
-      M: "-",
-      S: "5",
-      T: "-",
-      W: "-",
-      BS: "0",
-      Ld: "5",
-      WS: "3",
-      Name: "Rat Ogre Crew (x1)",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "-",
+      "S": "5",
+      "T": "-",
+      "W": "-",
+      "BS": "0",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Rat Ogre Crew (x1)",
+      "Magic-Res": "-3",
+      "rules": [
+        "Armour Bane (2, Rat Ogre only)",
+        "Blessings of the Horned Rat",
+        "Dragged Along",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Magic Resistance (-3)",
+        "Scurrying Masses",
+        "Stubborn",
+        "Terror",
+        "Tolling the Bell"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "screaming-bell-renegade": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "2",
-      S: "5",
-      T: "6",
-      W: "5",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Screaming Bell",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "2",
+      "S": "5",
+      "T": "6",
+      "W": "5",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Screaming Bell",
+      "Magic-Res": "-3",
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Armour Bane (2, Rat Ogre only)",
+        "Blessings of the Horned Rat",
+        "Dragged Along",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Magic Resistance (-3)",
+        "Scurrying Masses",
+        "Stubborn",
+        "Terror",
+        "Tolling the Bell"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "4",
-      M: "-",
-      S: "5",
-      T: "-",
-      W: "-",
-      BS: "0",
-      Ld: "5",
-      WS: "3",
-      Name: "Rat Ogre Crew (x1)",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "-",
+      "S": "5",
+      "T": "-",
+      "W": "-",
+      "BS": "0",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Rat Ogre Crew (x1)",
+      "Magic-Res": "-3",
+      "rules": [
+        "Armour Bane (2, Rat Ogre only)",
+        "Blessings of the Horned Rat",
+        "Dragged Along",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Magic Resistance (-3)",
+        "Scurrying Masses",
+        "Stubborn",
+        "Terror",
+        "Tolling the Bell"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "screaming-skull-catapult": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Screaming Skull Catapult",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Screaming Skull Catapult",
+      "as": 6,
+      "Regen": "6+",
+      "rules": [
+        "Dry as Dust",
+        "Indomitable (1)",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Screaming skull catapult",
+        "hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Skulls of the Foe"
+      ]
     },
     {
-      A: "3",
-      I: "2",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "2",
-      Ld: "5",
-      WS: "2",
-      Name: "Skeleton Crew",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Skeleton Crew",
+      "as": 6,
+      "Regen": "6+",
+      "rules": [
+        "Dry as Dust",
+        "Indomitable (1)",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Screaming skull catapult",
+        "hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Skulls of the Foe"
+      ]
+    }
   ],
   "sea-guard-garrison-commander": [
     {
-      A: "3",
-      I: "5",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "2",
-      BS: "7",
-      Ld: "9",
-      WS: "6",
-      Name: "Sea Guard Garrison Commander",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "2",
+      "BS": "7",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Sea Guard Garrison Commander",
+      "as": 6,
+      "rules": [
+        "Accomplished Archers",
+        "Ithilmar Weapons",
+        "Naval Discipline",
+        "Strike First",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "warbow",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "seeker-chariot-of-slaanesh": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Seeker Chariot",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Seeker Chariot",
+      "Impact-Hits": "D3+1",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Counter Charge",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "First Charge",
+        "Impact Hits (D3+1)",
+        "Open Order",
+        "Poisoned Attacks (Steed of Slaanesh only)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "5",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Daemonette Crew (x2)",
+      "A": "1",
+      "I": "5",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Daemonette Crew (x2)",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Counter Charge",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "First Charge",
+        "Impact Hits (D3+1)",
+        "Open Order",
+        "Poisoned Attacks (Steed of Slaanesh only)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "5",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Steed of Slaanesh (x2)",
-    },
+      "A": "1",
+      "I": "5",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Steed of Slaanesh (x2)",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Counter Charge",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "First Charge",
+        "Impact Hits (D3+1)",
+        "Open Order",
+        "Poisoned Attacks (Steed of Slaanesh only)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "seekers-of-slaanesh": [
     {
-      A: "1",
-      I: "5",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Seeker",
+      "A": "1",
+      "I": "5",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Seeker",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Counter Charge",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "Fast Cavalry",
+        "Open Order",
+        "Poisoned Attacks (Steed of Slaanesh only)",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "5",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Heartseeker",
+      "A": "2",
+      "I": "5",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Heartseeker",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Counter Charge",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "Fast Cavalry",
+        "Open Order",
+        "Poisoned Attacks (Steed of Slaanesh only)",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "5",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Steed of Slaanesh",
-    },
+      "A": "1",
+      "I": "5",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Steed of Slaanesh",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Counter Charge",
+        "Daemonic",
+        "Daemons of Slaanesh",
+        "Fast Cavalry",
+        "Open Order",
+        "Poisoned Attacks (Steed of Slaanesh only)",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Piercing claws",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "sellsword-infantry": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "3",
-      Name: "Sellsword",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Sellsword",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Horde",
+        "Regimental Unit",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Officer",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Officer",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Horde",
+        "Regimental Unit",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "sepulchral-stalkers": [
     {
-      A: "2",
-      I: "3",
-      M: "7",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "3",
-      Name: "Sepulchral Stalkers",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "7",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "Sepulchral Stalkers",
+      "as": 5,
+      "Regen": "6+",
+      "rules": [
+        "Close Order",
+        "Indomitable (1)",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "writhing tails",
+        "halberds",
+        "petrifying gaze",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
+    }
   ],
   "sergeant-at-arms": [
     {
-      A: "2",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "3",
-      W: "2",
-      BS: "2",
-      Ld: "7",
-      WS: "4",
-      Name: "Sergeant-at-Arms",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "3",
+      "W": "2",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Sergeant-at-Arms",
+      "as": 6,
+      "rules": [
+        "Levies",
+        "Peasant's Duty",
+        "Peasantry",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "settra-the-imperishable": [
     {
-      A: "5",
-      I: "3",
-      M: "-",
-      S: "6",
-      T: "5",
-      W: "-",
-      BS: "3",
-      Ld: "10",
-      WS: "7",
-      Name: "Settra the Imperishable",
+      "A": "5",
+      "I": "3",
+      "M": "-",
+      "S": "6",
+      "T": "5",
+      "W": "-",
+      "BS": "3",
+      "Ld": "10",
+      "WS": "7",
+      "Name": "Settra the Imperishable",
+      "Regen": "5+",
+      "Impact-Hits": "2D3",
+      "rules": [
+        "Commander of Legions",
+        "Curse of the Necropolis",
+        "Dry as Dust",
+        "Flammable",
+        "Impact Hits (2D3)",
+        "Indomitable (3)",
+        "Lore of Nehekhara",
+        "My Will Be Done",
+        "Nehekharan Undead",
+        "Regeneration (5+)",
+        "Settra Does Not Kneel!",
+        "Settra the Great"
+      ],
+      "equipment": [
+        "The Blessed Blade of Ptra",
+        "the Chariot of the Gods",
+        "the Crown of Nehekhara",
+        "the Scarab Brooch of Usirian",
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Heavy ChariotNamed Character"
+      ],
+      "magic": [
+        "necromancy"
+      ],
+      "optionalRules": []
     },
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "5",
-      W: "8",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Chariot of the Gods",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "5",
+      "W": "8",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Chariot of the Gods",
+      "Regen": "5+",
+      "rules": [
+        "Commander of Legions",
+        "Curse of the Necropolis",
+        "Dry as Dust",
+        "Flammable",
+        "Impact Hits (2D3)",
+        "Indomitable (3)",
+        "Lore of Nehekhara",
+        "My Will Be Done",
+        "Nehekharan Undead",
+        "Regeneration (5+)",
+        "Settra Does Not Kneel!",
+        "Settra the Great"
+      ],
+      "equipment": [
+        "The Blessed Blade of Ptra",
+        "the Chariot of the Gods",
+        "the Crown of Nehekhara",
+        "the Scarab Brooch of Usirian",
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Heavy ChariotNamed Character"
+      ],
+      "magic": [
+        "necromancy"
+      ],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "2",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "2",
-      Name: "Skeletal Steed (x4)",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "2",
+      "Name": "Skeletal Steed (x4)",
+      "Regen": "5+",
+      "rules": [
+        "Commander of Legions",
+        "Curse of the Necropolis",
+        "Dry as Dust",
+        "Flammable",
+        "Impact Hits (2D3)",
+        "Indomitable (3)",
+        "Lore of Nehekhara",
+        "My Will Be Done",
+        "Nehekharan Undead",
+        "Regeneration (5+)",
+        "Settra Does Not Kneel!",
+        "Settra the Great"
+      ],
+      "equipment": [
+        "The Blessed Blade of Ptra",
+        "the Chariot of the Gods",
+        "the Crown of Nehekhara",
+        "the Scarab Brooch of Usirian",
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Heavy ChariotNamed Character"
+      ],
+      "magic": [
+        "necromancy"
+      ],
+      "optionalRules": []
+    }
   ],
   "shadow-warriors": [
     {
-      A: "1",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "5",
-      Ld: "8",
-      WS: "5",
-      Name: "Shadow Warrior",
+      "A": "1",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "5",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Shadow Warrior",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Evasive",
+        "Fire & Flee",
+        "Ithilmar Weapons",
+        "Move Through Cover",
+        "Scouts",
+        "Skirmishers",
+        "Veteran",
+        "Warriors of Nagarythe"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "longbows",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers",
+        "Chariot Runners",
+        "Feigned Flight"
+      ]
     },
     {
-      A: "1",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "6",
-      Ld: "8",
-      WS: "5",
-      Name: "Shadow-walker",
-    },
+      "A": "1",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "6",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Shadow-walker",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Evasive",
+        "Fire & Flee",
+        "Ithilmar Weapons",
+        "Move Through Cover",
+        "Scouts",
+        "Skirmishers",
+        "Veteran",
+        "Warriors of Nagarythe"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "longbows",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers",
+        "Chariot Runners",
+        "Feigned Flight"
+      ]
+    }
   ],
-  shadowdancer: [
+  "shadowdancer": [
     {
-      A: "3",
-      I: "7",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "2",
-      BS: "6",
-      Ld: "8",
-      WS: "8",
-      Name: "Shadowdancer",
-    },
+      "A": "3",
+      "I": "7",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "2",
+      "BS": "6",
+      "Ld": "8",
+      "WS": "8",
+      "Name": "Shadowdancer",
+      "rules": [
+        "Evasive",
+        "Furious Charge",
+        "Immune to Psychology",
+        "Loner",
+        "Move Through Cover",
+        "Strike First",
+        "Talismanic Tattoos",
+        "Troubadour of Loec"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "illusion"
+      ],
+      "optionalRules": [
+        "Spear of Loec",
+        "Trickster's Blades"
+      ]
+    }
   ],
-  shieldbearers: [
+  "shieldbearers": [
     {
-      A: "3",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "-",
-      W: "(+3)",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Shieldbearers",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "-",
+      "W": "(+3)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Shieldbearers",
+      "rules": [
+        "Borne Aloft",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Resolute"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "ship's-company": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Ship's Company",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Ship's Company",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "5",
-      Ld: "8",
-      WS: "4",
-      Name: "Midshipman",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "5",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Midshipman",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Bosun",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Bosun",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "shugengan-general": [
     {
-      A: "3",
-      I: "5",
-      M: "-",
-      S: "4",
-      T: "5",
-      W: "6",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Shugengan General",
+      "A": "3",
+      "I": "5",
+      "M": "-",
+      "S": "4",
+      "T": "5",
+      "W": "6",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Shugengan General",
+      "as": 6,
+      "Impact-Hits": "D3+1",
+      "Fly": "9",
+      "rules": [
+        "Armoured Hide (2)",
+        "Celestial Forged Armour (5+)",
+        "Counter Charge",
+        "Fear",
+        "Fly (9)",
+        "Impact Hits (D3+1)",
+        "Mastery of the Elemental Winds",
+        "Swiftstride",
+        "Will of the Dragons"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "iron talons",
+        "light armour",
+        "Crown of horns"
+      ],
+      "troopType": [
+        "Monstrous CreatureCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "illusion",
+        "high magic"
+      ],
+      "optionalRules": [
+        "Celestial Blade",
+        "Cathayan Lance",
+        "Dragon Fire Pistol"
+      ]
     },
     {
-      A: "3",
-      I: "4",
-      M: "8",
-      S: "5",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Great Spirit Longma",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "8",
+      "S": "5",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Great Spirit Longma",
+      "as": 6,
+      "Fly": "9",
+      "rules": [
+        "Armoured Hide (2)",
+        "Celestial Forged Armour (5+)",
+        "Counter Charge",
+        "Fear",
+        "Fly (9)",
+        "Impact Hits (D3+1)",
+        "Mastery of the Elemental Winds",
+        "Swiftstride",
+        "Will of the Dragons"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "iron talons",
+        "light armour",
+        "Crown of horns"
+      ],
+      "troopType": [
+        "Monstrous CreatureCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "illusion",
+        "high magic"
+      ],
+      "optionalRules": [
+        "Celestial Blade",
+        "Cathayan Lance",
+        "Dragon Fire Pistol"
+      ]
+    }
   ],
   "shugengan-lord": [
     {
-      A: "4",
-      I: "6",
-      M: "-",
-      S: "4",
-      T: "5",
-      W: "7",
-      BS: "3",
-      Ld: "9",
-      WS: "6",
-      Name: "Shugengan Lord",
+      "A": "4",
+      "I": "6",
+      "M": "-",
+      "S": "4",
+      "T": "5",
+      "W": "7",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Shugengan Lord",
+      "as": 6,
+      "Impact-Hits": "D3+1",
+      "Fly": "9",
+      "rules": [
+        "Armoured Hide (2)",
+        "Celestial Forged Armour (5+)",
+        "Counter Charge",
+        "Fear",
+        "Fly (9)",
+        "Impact Hits (D3+1)",
+        "Mastery of the Elemental Winds",
+        "Swiftstride",
+        "Will of the Dragons"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "iron talons",
+        "light armour",
+        "Crown of horns"
+      ],
+      "troopType": [
+        "Monstrous CreatureCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "illusion",
+        "high magic"
+      ],
+      "optionalRules": [
+        "Celestial Blade",
+        "Cathayan Lance",
+        "Dragon Fire Pistol"
+      ]
     },
     {
-      A: "3",
-      I: "4",
-      M: "8",
-      S: "5",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Great Spirit Longma",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "8",
+      "S": "5",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Great Spirit Longma",
+      "as": 6,
+      "Fly": "9",
+      "rules": [
+        "Armoured Hide (2)",
+        "Celestial Forged Armour (5+)",
+        "Counter Charge",
+        "Fear",
+        "Fly (9)",
+        "Impact Hits (D3+1)",
+        "Mastery of the Elemental Winds",
+        "Swiftstride",
+        "Will of the Dragons"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "iron talons",
+        "light armour",
+        "Crown of horns"
+      ],
+      "troopType": [
+        "Monstrous CreatureCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "illusion",
+        "high magic"
+      ],
+      "optionalRules": [
+        "Celestial Blade",
+        "Cathayan Lance",
+        "Dragon Fire Pistol"
+      ]
+    }
   ],
   "silver-helms": [
     {
-      A: "1",
-      I: "5",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Silver Helm",
+      "A": "1",
+      "I": "5",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Silver Helm",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "First Charge",
+        "Ithilmar Barding",
+        "Swiftstride",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "5",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "High Helm",
+      "A": "2",
+      "I": "5",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "High Helm",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "First Charge",
+        "Ithilmar Barding",
+        "Swiftstride",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Barded Elven Steed",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Barded Elven Steed",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "First Charge",
+        "Ithilmar Barding",
+        "Swiftstride",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lances",
+        "heavy armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "sir-cecil-gastonne": [
     {
-      A: "4",
-      I: "5",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "7",
-      Name: "Sir Cecil Gastonne",
-    },
+      "A": "4",
+      "I": "5",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "7",
+      "Name": "Sir Cecil Gastonne",
+      "as": 4,
+      "rules": [
+        "Blessings of the Lady",
+        "Rallying Cry",
+        "The Wyrm Slayer",
+        "The Exile's Vow"
+      ],
+      "equipment": [
+        "Sorrow's End",
+        "Dragonhide Cloak",
+        "heavy armour",
+        "shield"
+      ],
+      "troopType": [
+        "Regular InfantryNamed Character"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "sisters-of-avelorn": [
     {
-      A: "1",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "5",
-      Ld: "8",
-      WS: "5",
-      Name: "Sister of Avelorn",
+      "A": "1",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "5",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Sister of Avelorn",
+      "as": 6,
+      "rules": [
+        "Arrows of Isha",
+        "Evasive",
+        "Ignores Cover",
+        "Immune to Psychology",
+        "Ithilmar Armour",
+        "Ithilmar Weapons",
+        "Open Order",
+        "Skirmishers",
+        "Strike First"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "bows of Avelorn",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers",
+        "Stubborn"
+      ]
     },
     {
-      A: "1",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "6",
-      Ld: "8",
-      WS: "5",
-      Name: "High Sister",
-    },
+      "A": "1",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "6",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "High Sister",
+      "as": 6,
+      "rules": [
+        "Arrows of Isha",
+        "Evasive",
+        "Ignores Cover",
+        "Immune to Psychology",
+        "Ithilmar Armour",
+        "Ithilmar Weapons",
+        "Open Order",
+        "Skirmishers",
+        "Strike First"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "bows of Avelorn",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers",
+        "Stubborn"
+      ]
+    }
   ],
   "sisters-of-slaughter": [
     {
-      A: "2",
-      I: "6",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Sister of Slaughter",
+      "A": "2",
+      "I": "6",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Sister of Slaughter",
+      "rules": [
+        "Dance of Death",
+        "Elven Reflexes",
+        "Hatred (High Elves)",
+        "Impetuous",
+        "Loner",
+        "Murderous",
+        "Open Order"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lash & buckler"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "6",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "5",
-      Name: "Hag",
-    },
+      "A": "3",
+      "I": "6",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Hag",
+      "rules": [
+        "Dance of Death",
+        "Elven Reflexes",
+        "Hatred (High Elves)",
+        "Impetuous",
+        "Loner",
+        "Murderous",
+        "Open Order"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "lash & buckler"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "sisters-of-the-thorn": [
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "5",
-      Ld: "9",
-      WS: "4",
-      Name: "Sister of the Thorn",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "5",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Sister of the Thorn",
+      "rules": [
+        "Daughters of Eternity",
+        "Deepwood Coven",
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Move Through Cover",
+        "Open Order",
+        "Poisoned Attacks",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "blackbriar javelins",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "6",
-      Ld: "9",
-      WS: "4",
-      Name: "Handmaiden of the Thorn",
+      "A": "2",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "6",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Handmaiden of the Thorn",
+      "rules": [
+        "Daughters of Eternity",
+        "Deepwood Coven",
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Move Through Cover",
+        "Open Order",
+        "Poisoned Attacks",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "blackbriar javelins",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "8",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Steed of Isha",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "8",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Steed of Isha",
+      "rules": [
+        "Daughters of Eternity",
+        "Deepwood Coven",
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Fire & Flee",
+        "Move Through Cover",
+        "Open Order",
+        "Poisoned Attacks",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "blackbriar javelins",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "skaven-chieftain": [
     {
-      A: "3",
-      I: "6",
-      M: "5",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "4",
-      Ld: "6",
-      WS: "5",
-      Name: "Skaven Chieftain",
-    },
+      "A": "3",
+      "I": "6",
+      "M": "5",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "4",
+      "Ld": "6",
+      "WS": "5",
+      "Name": "Skaven Chieftain",
+      "as": 6,
+      "rules": [
+        "Scurry Away",
+        "Verminous Valour",
+        "Warband",
+        "Warpstone Weapons"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "skaven-warlord": [
     {
-      A: "4",
-      I: "7",
-      M: "5",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "4",
-      Ld: "7",
-      WS: "6",
-      Name: "Skaven Warlord",
-    },
+      "A": "4",
+      "I": "7",
+      "M": "5",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "6",
+      "Name": "Skaven Warlord",
+      "as": 6,
+      "rules": [
+        "Scurry Away",
+        "Verminous Valour",
+        "Warband",
+        "Warpstone Weapons"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "skeletal-steed-tomb-kings": [
     {
-      A: "1",
-      I: "2",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "2",
-      Name: "Skeletal Steed",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "2",
+      "Name": "Skeletal Steed",
+      "rules": [
+        "Nehekharan Undead",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "skeletal-steed-vampire-counts": [
     {
-      A: "1",
-      I: "2",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "2",
-      Name: "Skeletal Steed",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "2",
+      "Name": "Skeletal Steed",
+      "armourMod": 1,
+      "rules": [
+        "First Charge",
+        "Necromantic Undead",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "skeleton-archers": [
     {
-      A: "1",
-      I: "2",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "5",
-      WS: "2",
-      Name: "Skeleton Archer",
+      "A": "1",
+      "I": "2",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Skeleton Archer",
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Detachment",
+        "Nehekharan Undead",
+        "Open Order",
+        "Regeneration (6+)"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "warbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "2",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Master of Arrows",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Master of Arrows",
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Detachment",
+        "Nehekharan Undead",
+        "Open Order",
+        "Regeneration (6+)"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "warbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "skeleton-cavalry-cohort": [
     {
-      A: "1",
-      I: "2",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "5",
-      WS: "2",
-      Name: "Royal Host Horseman",
+      "A": "1",
+      "I": "2",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Royal Host Horseman",
+      "as": 5,
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Close Order",
+        "Horde",
+        "Motley Crew",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Steadfast Discipline",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "light armour",
+        "shields",
+        "warbows",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Counter Charge"
+      ]
     },
     {
-      A: "1",
-      I: "2",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Royal Host Horse Archer",
+      "A": "1",
+      "I": "2",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Royal Host Horse Archer",
+      "as": 5,
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Close Order",
+        "Horde",
+        "Motley Crew",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Steadfast Discipline",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "light armour",
+        "shields",
+        "warbows",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Counter Charge"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "5",
-      WS: "2",
-      Name: "Master of Horse",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Master of Horse",
+      "as": 5,
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Close Order",
+        "Horde",
+        "Motley Crew",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Steadfast Discipline",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "light armour",
+        "shields",
+        "warbows",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Counter Charge"
+      ]
     },
     {
-      A: "1",
-      I: "2",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "2",
-      Name: "Skeletal Steed",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "2",
+      "Name": "Skeletal Steed",
+      "as": 5,
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Close Order",
+        "Horde",
+        "Motley Crew",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Steadfast Discipline",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "light armour",
+        "shields",
+        "warbows",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Counter Charge"
+      ]
+    }
   ],
   "skeleton-chariot": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Chariot",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Chariot",
+      "Impact-Hits": "D3",
+      "rules": [
+        "Dry as Dust",
+        "Impact Hits (D3)",
+        "Nehekharan Undead",
+        "Open Order",
+        "Reserve Move",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "2",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "2",
-      Name: "Skeletal Steed (x2)",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "2",
+      "Name": "Skeletal Steed (x2)",
+      "rules": [
+        "Dry as Dust",
+        "Impact Hits (D3)",
+        "Nehekharan Undead",
+        "Open Order",
+        "Reserve Move",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "skeleton-chariots": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Chariot",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Chariot",
+      "Regen": "6+",
+      "Impact-Hits": "D3",
+      "rules": [
+        "Arrows of Asaph",
+        "Dry as Dust",
+        "Horde",
+        "Impact Hits (D3)",
+        "Nehekharan Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Reserve Move",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "warbows",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "2",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "2",
-      Ld: "7",
-      WS: "3",
-      Name: "Skeletal Crew (x2)",
+      "A": "1",
+      "I": "2",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Skeletal Crew (x2)",
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Dry as Dust",
+        "Horde",
+        "Impact Hits (D3)",
+        "Nehekharan Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Reserve Move",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "warbows",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "2",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "2",
-      Ld: "7",
-      WS: "3",
-      Name: "Master Charioteer",
+      "A": "2",
+      "I": "2",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Master Charioteer",
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Dry as Dust",
+        "Horde",
+        "Impact Hits (D3)",
+        "Nehekharan Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Reserve Move",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "warbows",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "2",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "2",
-      Name: "Skeletal Steed (x2)",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "2",
+      "Name": "Skeletal Steed (x2)",
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Dry as Dust",
+        "Horde",
+        "Impact Hits (D3)",
+        "Nehekharan Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Reserve Move",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "warbows",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "skeleton-horse-archers": [
     {
-      A: "1",
-      I: "2",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "5",
-      WS: "2",
-      Name: "Skeleton Horse Archer",
+      "A": "1",
+      "I": "2",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Skeleton Horse Archer",
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Nehekharan Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Reserve Move",
+        "Scouts",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "warbows",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Chariot Runners"
+      ]
     },
     {
-      A: "1",
-      I: "2",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Master of Horse",
+      "A": "1",
+      "I": "2",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Master of Horse",
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Nehekharan Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Reserve Move",
+        "Scouts",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "warbows",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Chariot Runners"
+      ]
     },
     {
-      A: "1",
-      I: "2",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "2",
-      Name: "Skeletal Steed",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "2",
+      "Name": "Skeletal Steed",
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Nehekharan Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Reserve Move",
+        "Scouts",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "warbows",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Chariot Runners"
+      ]
+    }
   ],
   "skeleton-horsemen": [
     {
-      A: "1",
-      I: "2",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "5",
-      WS: "2",
-      Name: "Skeleton Horseman",
+      "A": "1",
+      "I": "2",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Skeleton Horseman",
+      "as": 6,
+      "Regen": "6+",
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Counter Charge"
+      ]
     },
     {
-      A: "2",
-      I: "2",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "5",
-      WS: "2",
-      Name: "Master of Horse",
+      "A": "2",
+      "I": "2",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Master of Horse",
+      "as": 6,
+      "Regen": "6+",
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Counter Charge"
+      ]
     },
     {
-      A: "1",
-      I: "2",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "2",
-      Name: "Skeletal Steed",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "2",
+      "Name": "Skeletal Steed",
+      "as": 6,
+      "Regen": "6+",
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Counter Charge"
+      ]
+    }
   ],
   "skeleton-infantry-cohort": [
     {
-      A: "1",
-      I: "2",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "5",
-      WS: "2",
-      Name: "Royal Host Warrior",
+      "A": "1",
+      "I": "2",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Royal Host Warrior",
+      "as": 5,
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Close Order",
+        "Horde",
+        "Motley Crew",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Regimental Unit",
+        "Steadfast Discipline"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "thrusting spears",
+        "light armour",
+        "shields",
+        "warbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Nehekharan Phalanx"
+      ]
     },
     {
-      A: "1",
-      I: "2",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "5",
-      WS: "2",
-      Name: "Royal Host Archer",
+      "A": "1",
+      "I": "2",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Royal Host Archer",
+      "as": 5,
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Close Order",
+        "Horde",
+        "Motley Crew",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Regimental Unit",
+        "Steadfast Discipline"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "thrusting spears",
+        "light armour",
+        "shields",
+        "warbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Nehekharan Phalanx"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "5",
-      WS: "2",
-      Name: "Master of Arms",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Master of Arms",
+      "as": 5,
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Close Order",
+        "Horde",
+        "Motley Crew",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Regimental Unit",
+        "Steadfast Discipline"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "thrusting spears",
+        "light armour",
+        "shields",
+        "warbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Nehekharan Phalanx"
+      ]
+    }
   ],
   "skeleton-skirmishers": [
     {
-      A: "1",
-      I: "2",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "4",
-      WS: "2",
-      Name: "Skeleton Skirmisher",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "4",
+      "WS": "2",
+      "Name": "Skeleton Skirmisher",
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Chariot Runners",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Skirmishers",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "skeleton-warriors-tomb-kings": [
     {
-      A: "1",
-      I: "2",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "5",
-      WS: "2",
-      Name: "Skeleton Warrior",
+      "A": "1",
+      "I": "2",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Skeleton Warrior",
+      "as": 6,
+      "Regen": "6+",
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Regimental Unit"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Nehekharan Phalanx"
+      ]
     },
     {
-      A: "2",
-      I: "2",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "5",
-      WS: "2",
-      Name: "Master of Arms",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Master of Arms",
+      "as": 6,
+      "Regen": "6+",
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Regimental Unit"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Nehekharan Phalanx"
+      ]
+    }
   ],
   "skeleton-warriors-vampire-counts": [
     {
-      A: "1",
-      I: "2",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "5",
-      WS: "2",
-      Name: "Skeleton Warrior",
+      "A": "1",
+      "I": "2",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Skeleton Warrior",
+      "as": 5,
+      "Regen": "6+",
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Necromantic Undead",
+        "Regeneration (6+)"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "2",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "5",
-      WS: "2",
-      Name: "Skeleton Champion",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Skeleton Champion",
+      "as": 5,
+      "Regen": "6+",
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Necromantic Undead",
+        "Regeneration (6+)"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "skin-wolves": [
     {
-      A: "3",
-      I: "4",
-      M: "7",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "-",
-      Ld: "7",
-      WS: "5",
-      Name: "Skin Wolf",
+      "A": "3",
+      "I": "4",
+      "M": "7",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "-",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Skin Wolf",
+      "Regen": "5+",
+      "rules": [
+        "Blood Rage",
+        "Fear",
+        "Mark of Chaos Undivided",
+        "Open Order",
+        "Primal Fury",
+        "Regeneration (5+)",
+        "Skirmishers",
+        "Swiftstride",
+        "Warped Form"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "4",
-      I: "4",
-      M: "7",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "-",
-      Ld: "7",
-      WS: "5",
-      Name: "Skin Wolf Jarl",
-    },
+      "A": "4",
+      "I": "4",
+      "M": "7",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "-",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Skin Wolf Jarl",
+      "Regen": "5+",
+      "rules": [
+        "Blood Rage",
+        "Fear",
+        "Mark of Chaos Undivided",
+        "Open Order",
+        "Primal Fury",
+        "Regeneration (5+)",
+        "Skirmishers",
+        "Swiftstride",
+        "Warped Form"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "skink-chief": [
     {
-      A: "3",
-      I: "6",
-      M: "6",
-      S: "4",
-      T: "3",
-      W: "2",
-      BS: "5",
-      Ld: "6",
-      WS: "4",
-      Name: "Skink Chief",
-    },
+      "A": "3",
+      "I": "6",
+      "M": "6",
+      "S": "4",
+      "T": "3",
+      "W": "2",
+      "BS": "5",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Skink Chief",
+      "as": 6,
+      "rules": [
+        "Aquatic",
+        "Cold Blooded",
+        "Poisoned Attacks"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Blowpipe"
+      ]
+    }
   ],
   "skink-priest": [
     {
-      A: "1",
-      I: "4",
-      M: "6",
-      S: "3",
-      T: "2",
-      W: "2",
-      BS: "3",
-      Ld: "6",
-      WS: "2",
-      Name: "Skink Priest",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "6",
+      "S": "3",
+      "T": "2",
+      "W": "2",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "2",
+      "Name": "Skink Priest",
+      "as": 6,
+      "rules": [
+        "Arcane Vassal",
+        "Aquatic",
+        "Cold Blooded",
+        "Lore of Lustria"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": []
+    }
   ],
   "skink-skirmishers": [
     {
-      A: "1",
-      I: "4",
-      M: "6",
-      S: "3",
-      T: "2",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Skink",
+      "A": "1",
+      "I": "4",
+      "M": "6",
+      "S": "3",
+      "T": "2",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Skink",
+      "as": 6,
+      "rules": [
+        "Cold Blooded",
+        "Move Through Cover",
+        "Poisoned Attacks (javelins only)",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Blowpipes",
+        "Scouts",
+        "Vanguard"
+      ]
     },
     {
-      A: "1",
-      I: "4",
-      M: "6",
-      S: "3",
-      T: "2",
-      W: "1",
-      BS: "4",
-      Ld: "5",
-      WS: "2",
-      Name: "Patrol Leader",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "6",
+      "S": "3",
+      "T": "2",
+      "W": "1",
+      "BS": "4",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Patrol Leader",
+      "as": 6,
+      "rules": [
+        "Cold Blooded",
+        "Move Through Cover",
+        "Poisoned Attacks (javelins only)",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Blowpipes",
+        "Scouts",
+        "Vanguard"
+      ]
+    }
   ],
   "skull-cannon-of-khorne": [
     {
-      crewed: true,
-      A: "3",
-      I: "2",
-      M: "7",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Skull Cannon",
+      "crewed": true,
+      "A": "3",
+      "I": "2",
+      "M": "7",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Skull Cannon",
+      "Stomps": "D3",
+      "Impact-Hits": "D3+1",
+      "rules": [
+        "Brazen Wheels",
+        "Close Order",
+        "Daemonic",
+        "Daemons of Khorne",
+        "First Charge",
+        "Impact Hits (D3+1)",
+        "Impetuous",
+        "Stomp Attacks (D3)"
+      ],
+      "equipment": [
+        "hand weapon",
+        "cannon of Khorne",
+        "Hellblades"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "5",
-      Name: "Bloodletter Crew (2x)",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Bloodletter Crew (2x)",
+      "rules": [
+        "Brazen Wheels",
+        "Close Order",
+        "Daemonic",
+        "Daemons of Khorne",
+        "First Charge",
+        "Impact Hits (D3+1)",
+        "Impetuous",
+        "Stomp Attacks (D3)"
+      ],
+      "equipment": [
+        "hand weapon",
+        "cannon of Khorne",
+        "Hellblades"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "sky-lantern": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "1",
-      S: "5",
-      T: "4",
-      W: "7",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Sky Lantern",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "1",
+      "S": "5",
+      "T": "4",
+      "W": "7",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Sky Lantern",
+      "Impact-Hits": "D3+1, Sky Lantern only",
+      "Fly": "8",
+      "rules": [
+        "Close Order",
+        "Disengage",
+        "Eye of the Dragon",
+        "Feigned Flight",
+        "Fire & Flee",
+        "Flammable",
+        "Fly (8)",
+        "Heavenly Beacon",
+        "Impact Hits (D3+1, Sky Lantern only)",
+        "Large Target",
+        "Reserve Move",
+        "Scouts"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Sky Lantern Crane Gun",
+        "Iron Hail Gun",
+        "Gunpowder Bombs",
+        "Dragon Fire Bombs"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "4",
-      Ld: "8",
-      WS: "3",
-      Name: "Lantern Gunners (x4)",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "Lantern Gunners (x4)",
+      "Fly": "8",
+      "rules": [
+        "Close Order",
+        "Disengage",
+        "Eye of the Dragon",
+        "Feigned Flight",
+        "Fire & Flee",
+        "Flammable",
+        "Fly (8)",
+        "Heavenly Beacon",
+        "Impact Hits (D3+1, Sky Lantern only)",
+        "Large Target",
+        "Reserve Move",
+        "Scouts"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Sky Lantern Crane Gun",
+        "Iron Hail Gun",
+        "Gunpowder Bombs",
+        "Dragon Fire Bombs"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "5",
-      Ld: "8",
-      WS: "3",
-      Name: "Commander (x1)",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "5",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "Commander (x1)",
+      "Fly": "8",
+      "rules": [
+        "Close Order",
+        "Disengage",
+        "Eye of the Dragon",
+        "Feigned Flight",
+        "Fire & Flee",
+        "Flammable",
+        "Fly (8)",
+        "Heavenly Beacon",
+        "Impact Hits (D3+1, Sky Lantern only)",
+        "Large Target",
+        "Reserve Move",
+        "Scouts"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Sky Lantern Crane Gun",
+        "Iron Hail Gun",
+        "Gunpowder Bombs",
+        "Dragon Fire Bombs"
+      ]
+    }
   ],
   "slann-mage-priest": [
     {
-      A: "1",
-      I: "2",
-      M: "2",
-      S: "3",
-      T: "4",
-      W: "5",
-      BS: "3",
-      Ld: "9",
-      WS: "2",
-      Name: "Slann Mage-Priest",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "2",
+      "S": "3",
+      "T": "4",
+      "W": "5",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "2",
+      "Name": "Slann Mage-Priest",
+      "Fly": "8",
+      "rules": [
+        "Arcane Shield",
+        "Close Order",
+        "Cold Blooded",
+        "Fly (8)",
+        "Large Target",
+        "Lore of Lustria"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Monstrous CreatureCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "high magic",
+        "illusion",
+        "necromancy"
+      ],
+      "optionalRules": []
+    }
   ],
   "slann-mage-priest-renegade": [
     {
-      A: "1",
-      I: "2",
-      M: "4",
-      S: "3",
-      T: "4",
-      W: "5",
-      BS: "3",
-      Ld: "9",
-      WS: "2",
-      Name: "Slann Mage-Priest",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "4",
+      "S": "3",
+      "T": "4",
+      "W": "5",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "2",
+      "Name": "Slann Mage-Priest",
+      "Fly": "8",
+      "rules": [
+        "Arcane Shield",
+        "Cold Blooded",
+        "Fly (8)",
+        "Lore of Lustria",
+        "Palanquin",
+        "Wisdom of the Old Ones"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Monstrous InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "high magic",
+        "illusion",
+        "necromancy"
+      ],
+      "optionalRules": []
+    }
   ],
-  slaughtermaster: [
+  "slaughtermaster": [
     {
-      A: "4",
-      I: "3",
-      M: "6",
-      S: "4",
-      T: "5",
-      W: "5",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Slaughtermaster",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "6",
+      "S": "4",
+      "T": "5",
+      "W": "5",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Slaughtermaster",
+      "Impact-Hits": "2",
+      "rules": [
+        "Armour Bane (1)",
+        "Fear",
+        "Impact Hits (2)",
+        "Lore of the Great Maw",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Monstrous InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": [
+        "Butcher's Cauldron"
+      ]
+    }
   ],
-  slayers: [
+  "slayers": [
     {
-      A: "1",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "10",
-      WS: "4",
-      Name: "Troll Slayer",
+      "A": "1",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "10",
+      "WS": "4",
+      "Name": "Troll Slayer",
+      "Magic-Res": "-2",
+      "rules": [
+        "Deathblow",
+        "\"Fight Me!\" (Giant Slayers only)",
+        "Hatred (Orcs & Goblins)",
+        "Immune to Psychology",
+        "Loner",
+        "Magic Resistance (-2)",
+        "Motley Crew",
+        "Open Order",
+        "Resolute",
+        "Slayer",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "3",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "10",
-      WS: "5",
-      Name: "Giant Slayer",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "3",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "10",
+      "WS": "5",
+      "Name": "Giant Slayer",
+      "Magic-Res": "-2",
+      "rules": [
+        "Deathblow",
+        "\"Fight Me!\" (Giant Slayers only)",
+        "Hatred (Orcs & Goblins)",
+        "Immune to Psychology",
+        "Loner",
+        "Magic Resistance (-2)",
+        "Motley Crew",
+        "Open Order",
+        "Resolute",
+        "Slayer",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "sneaky-gits": [
     {
-      A: "1",
-      I: "4",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "5",
-      WS: "4",
-      Name: "Sneaking Git",
+      "A": "1",
+      "I": "4",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "5",
+      "WS": "4",
+      "Name": "Sneaking Git",
+      "rules": [
+        "Ambushers",
+        "Backstab",
+        "Evasive",
+        "Levies",
+        "Move Through Cover",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Two hand weapons",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "5",
-      WS: "4",
-      Name: "Murder Boss",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "5",
+      "WS": "4",
+      "Name": "Murder Boss",
+      "rules": [
+        "Ambushers",
+        "Backstab",
+        "Evasive",
+        "Levies",
+        "Move Through Cover",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Two hand weapons",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "snotling-mob": [
     {
-      A: "5",
-      I: "3",
-      M: "5",
-      S: "2",
-      T: "2",
-      W: "6",
-      BS: "2",
-      Ld: "4",
-      WS: "2",
-      Name: "Snotlings",
-    },
+      "A": "5",
+      "I": "3",
+      "M": "5",
+      "S": "2",
+      "T": "2",
+      "W": "6",
+      "BS": "2",
+      "Ld": "4",
+      "WS": "2",
+      "Name": "Snotlings",
+      "rules": [
+        "Immune to Psychology",
+        "Impetuous",
+        "Loner",
+        "Open Order",
+        "Skirmishers",
+        "Unbreakable",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Swarm"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "snotling-pump-wagon": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "2D6",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Pump Wagon",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "2D6",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Pump Wagon",
+      "Impact-Hits": "D3+1",
+      "rules": [
+        "Armour Bane (3, Pump Wagon Impact Hits only)",
+        "Immune to Psychology",
+        "Impact Hits (D3+1)",
+        "Loner",
+        "Open Order",
+        "Random Movement"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "2",
-      T: "-",
-      W: "-",
-      BS: "2",
-      Ld: "4",
-      WS: "2",
-      Name: "Snotling Crew (x6)",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "2",
+      "T": "-",
+      "W": "-",
+      "BS": "2",
+      "Ld": "4",
+      "WS": "2",
+      "Name": "Snotling Crew (x6)",
+      "rules": [
+        "Armour Bane (3, Pump Wagon Impact Hits only)",
+        "Immune to Psychology",
+        "Impact Hits (D3+1)",
+        "Loner",
+        "Open Order",
+        "Random Movement"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "throwing weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "sorcerer-lord": [
     {
-      A: "3",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Sorcerer Lord",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Sorcerer Lord",
+      "as": 4,
+      "rules": [
+        "Chaos Armour (5+)",
+        "Ensorcelled Weapons",
+        "Gaze of the Gods",
+        "Lore of Chaos",
+        "Mark of Chaos Undivided"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic",
+        "lore of the shadowlands"
+      ],
+      "optionalRules": [
+        "Mark of Khorne",
+        "Mark of Nurgle",
+        "Mark of Slaanesh",
+        "Mark of Tzeentch"
+      ]
+    }
   ],
   "sorcerer-prophet": [
     {
-      A: "3",
-      I: "2",
-      M: "3",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "4",
-      Ld: "10",
-      WS: "5",
-      Name: "Sorcerer-Prophet",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "3",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "4",
+      "Ld": "10",
+      "WS": "5",
+      "Name": "Sorcerer-Prophet",
+      "as": 5,
+      "rules": [
+        "Blackshard Armour",
+        "Ensorcelled Weapons",
+        "Infernal Engineer",
+        "Lore of Hashut",
+        "Resolute",
+        "Sorcerer's Curse",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [
+        "daemonology",
+        "dark magic",
+        "elementalism"
+      ],
+      "optionalRules": [
+        "Darkforged Weapon",
+        "Naptha Bombs",
+        "Blood of Hashut"
+      ]
+    }
   ],
-  sorceress: [
+  "sorceress": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Sorceress",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Sorceress",
+      "rules": [
+        "Elven Reflexes",
+        "Eternal Hatred",
+        "Hatred (High Elves)",
+        "Hekarti's Blessing",
+        "Lore of Naggaroth",
+        "Murderous"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": []
+    }
   ],
   "soul-grinder": [
     {
-      A: "4",
-      I: "3",
-      M: "8",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Soul Grinder",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "8",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Soul Grinder",
+      "as": 5,
+      "Stomps": "D6+1",
+      "rules": [
+        "Close Order",
+        "Daemonic",
+        "Furious Charge",
+        "Large Target",
+        "Reserve Move",
+        "Stomp Attacks (D6+1)",
+        "Terror"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "iron claw",
+        "harvester cannon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Daemon of Khorne",
+        "Daemon of Nurgle",
+        "Daemon of Slaanesh",
+        "Daemon of Tzeentch",
+        "Baleful Torrent",
+        "Warp Gaze"
+      ]
+    }
   ],
-  spellsinger: [
+  "spellsinger": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Spellsinger",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Spellsinger",
+      "rules": [
+        "Elven Reflexes",
+        "Lore of Athel Loren",
+        "Magical Attacks",
+        "Move Through Cover"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "high magic",
+        "illusion"
+      ],
+      "optionalRules": [
+        "Talismanic Tattoos"
+      ]
+    }
   ],
-  spellweaver: [
+  "spellweaver": [
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Spellweaver",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Spellweaver",
+      "rules": [
+        "Elven Reflexes",
+        "Lore of Athel Loren",
+        "Magical Attacks",
+        "Move Through Cover"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "high magic",
+        "illusion"
+      ],
+      "optionalRules": [
+        "Talismanic Tattoos"
+      ]
+    }
   ],
   "spirit-hosts": [
     {
-      A: "4",
-      I: "1",
-      M: "6",
-      S: "3",
-      T: "3",
-      W: "4",
-      BS: "0",
-      Ld: "4",
-      WS: "3",
-      Name: "Spirit Host",
-    },
+      "A": "4",
+      "I": "1",
+      "M": "6",
+      "S": "3",
+      "T": "3",
+      "W": "4",
+      "BS": "0",
+      "Ld": "4",
+      "WS": "3",
+      "Name": "Spirit Host",
+      "Regen": "6+",
+      "rules": [
+        "Bound Spirits",
+        "Ethereal",
+        "Magical Attacks",
+        "Necromantic Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Reserve Move"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Swarm"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  squires: [
+  "squires": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Squire",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Squire",
+      "rules": [
+        "Move Through Cover",
+        "Open Order",
+        "Peasantry",
+        "Skirmishers",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "longbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Fire & Flee",
+        "Scouts"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "7",
-      WS: "3",
-      Name: "Esquire",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Esquire",
+      "rules": [
+        "Move Through Cover",
+        "Open Order",
+        "Peasantry",
+        "Skirmishers",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "longbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Fire & Flee",
+        "Scouts"
+      ]
+    }
   ],
   "star-dragon": [
     {
-      A: "6",
-      I: "2",
-      M: "6",
-      S: "7",
-      T: "(+3)",
-      W: "(+6)",
-      BS: "-",
-      Ld: "-",
-      WS: "7",
-      Name: "Star Dragon",
-    },
+      "A": "6",
+      "I": "2",
+      "M": "6",
+      "S": "7",
+      "T": "(+3)",
+      "W": "(+6)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "7",
+      "Name": "Star Dragon",
+      "as": 4,
+      "Stomps": "D6+1",
+      "Fly": "10",
+      "rules": [
+        "Close Order",
+        "Fly (10)",
+        "Large Target",
+        "Stomp Attacks (D6+1)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "dragon fire",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "state-missile-troops": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "State Missile Trooper",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "State Missile Trooper",
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Regimental Unit"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "crossbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
     },
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "7",
-      WS: "3",
-      Name: "Sergeant",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Sergeant",
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Regimental Unit"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "crossbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
+    }
   ],
   "state-troops": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "State Trooper",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "State Trooper",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Horde",
+        "Regimental Unit"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Sergeant",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Sergeant",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Horde",
+        "Regimental Unit"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "steed-of-slaanesh": [
     {
-      A: "1",
-      I: "5",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Steed of Slaanesh",
-    },
+      "A": "1",
+      "I": "5",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Steed of Slaanesh",
+      "rules": [
+        "Armour Bane (1, Steed of Slaanesh only)",
+        "Counter Charge",
+        "Daemonic",
+        "Daemon of Slaanesh",
+        "Fast Cavalry",
+        "Poisoned Attacks (Steed of Slaanesh only)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  stegadon: [
+  "stegadon": [
     {
-      crewed: true,
-      A: "4",
-      I: "2",
-      M: "6",
-      S: "5",
-      T: "6",
-      W: "5",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      AS: "4",
-      Name: "Stegadon",
+      "crewed": true,
+      "A": "4",
+      "I": "2",
+      "M": "6",
+      "S": "5",
+      "T": "6",
+      "W": "5",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "AS": "4",
+      "Name": "Stegadon",
+      "Stomps": "D3+2",
+      "Impact-Hits": "D3+1",
+      "rules": [
+        "Close Order",
+        "Cold Blooded",
+        "Howdah",
+        "Immune to Psychology",
+        "Impact Hits (D3+1)",
+        "Large Target",
+        "Poisoned Attacks (javelins only)",
+        "Stomp Attacks (D3+2)",
+        "Stubborn",
+        "Terror"
+      ],
+      "equipment": [
+        "Great horns",
+        "giant bow",
+        "Hand weapons",
+        "javelins"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Giant Blowpipes"
+      ]
     },
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "6",
-      WS: "2",
-      Name: "Skink Crew (x5)",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "2",
+      "Name": "Skink Crew (x5)",
+      "rules": [
+        "Close Order",
+        "Cold Blooded",
+        "Howdah",
+        "Immune to Psychology",
+        "Impact Hits (D3+1)",
+        "Large Target",
+        "Poisoned Attacks (javelins only)",
+        "Stomp Attacks (D3+2)",
+        "Stubborn",
+        "Terror"
+      ],
+      "equipment": [
+        "Great horns",
+        "giant bow",
+        "Hand weapons",
+        "javelins"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Giant Blowpipes"
+      ]
+    }
   ],
   "stone-troll-mob": [
     {
-      A: "3",
-      I: "1",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "1",
-      Ld: "5",
-      WS: "3",
-      Name: "Stone Troll",
-    },
+      "A": "3",
+      "I": "1",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "1",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Stone Troll",
+      "as": 6,
+      "Regen": "5+",
+      "Magic-Res": "-1",
+      "rules": [
+        "Armour Bane (1)",
+        "Armoured Hide (1)",
+        "Close Order",
+        "Fear",
+        "Flammable",
+        "Magic Resistance (-1)",
+        "Motley Crew",
+        "Regeneration (5+)",
+        "Stupidity"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Troll vomit",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  stonehorn: [
+  "stonehorn": [
     {
-      A: "4",
-      I: "2",
-      M: "7",
-      S: "6",
-      T: "(+1)",
-      W: "(+4)",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Stonehorn",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "7",
+      "S": "6",
+      "T": "(+1)",
+      "W": "(+4)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Stonehorn",
+      "as": 4,
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Armour Bane (2, Stonehorn only)",
+        "Close Order",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Stone Skeleton",
+        "Swiftstride",
+        "Terror",
+        "Thunderous Charge"
+      ],
+      "equipment": [
+        "Horns of stone",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "stonehorn-riders": [
     {
-      crewed: true,
-      A: "4",
-      I: "2",
-      M: "7",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      AS: "4",
-      Name: "Stonehorn",
-      weapons: ["horns of stone"],
+      "crewed": true,
+      "A": "4",
+      "I": "2",
+      "M": "7",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "AS": "4",
+      "Name": "Stonehorn",
+      "weapons": [
+        "horns of stone"
+      ],
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Armour Bane (2, Stonehorn only)",
+        "Close Order",
+        "First Charge",
+        "Howdah",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Stone Skeleton",
+        "Swiftstride",
+        "Terror",
+        "Thunderous Charge"
+      ],
+      "equipment": [
+        "Horns of stone",
+        "Hand weapon",
+        "chaintrap",
+        "harpoon launcher"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "2",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Ogre Beast Rider (x1)",
+      "A": "3",
+      "I": "2",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Ogre Beast Rider (x1)",
+      "rules": [
+        "Armour Bane (2, Stonehorn only)",
+        "Close Order",
+        "First Charge",
+        "Howdah",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Stone Skeleton",
+        "Swiftstride",
+        "Terror",
+        "Thunderous Charge"
+      ],
+      "equipment": [
+        "Horns of stone",
+        "Hand weapon",
+        "chaintrap",
+        "harpoon launcher"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "2",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Ogre Crew (x1)",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Ogre Crew (x1)",
+      "rules": [
+        "Armour Bane (2, Stonehorn only)",
+        "Close Order",
+        "First Charge",
+        "Howdah",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Stone Skeleton",
+        "Swiftstride",
+        "Terror",
+        "Thunderous Charge"
+      ],
+      "equipment": [
+        "Horns of stone",
+        "Hand weapon",
+        "chaintrap",
+        "harpoon launcher"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "storm-weaver": [
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "4",
-      Ld: "9",
-      WS: "4",
-      Name: "Storm Weaver",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Storm Weaver",
+      "rules": [
+        "Elven Reflexes",
+        "Ithilmar Weapons",
+        "Lore of Saphery",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "dark magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": []
+    }
   ],
-  stormvermin: [
+  "stormvermin": [
     {
-      A: "1",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "4",
-      Name: "Stormvermin",
+      "A": "1",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "4",
+      "Name": "Stormvermin",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Scurry Away",
+        "Warband",
+        "Warpstone Weapons"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "4",
-      Name: "Fangleader",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Fangleader",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Scurry Away",
+        "Warband",
+        "Warpstone Weapons"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "stormvermin-renegade": [
     {
-      A: "1",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "4",
-      Name: "Stormvermin",
+      "A": "1",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "4",
+      "Name": "Stormvermin",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Regimental Unit",
+        "Scurry Away",
+        "Warband",
+        "Warpstone Weapons"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "4",
-      Name: "Fangleader",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Fangleader",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Regimental Unit",
+        "Scurry Away",
+        "Warband",
+        "Warpstone Weapons"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  strategist: [
+  "strategist": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "4",
-      Ld: "9",
-      WS: "4",
-      Name: "Strategist",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "4",
+      "Name": "Strategist",
+      "as": 6,
+      "rules": [
+        "Grand Strategist",
+        "Harmony of Stone & Steel",
+        "Will of the Dragons"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Gunpowder Bombs",
+        "Dragon Fire Bombs"
+      ]
+    }
   ],
   "strigoi-ghoul-king": [
     {
-      A: "5",
-      I: "7",
-      M: "6",
-      S: "5",
-      T: "5",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "6",
-      Name: "Strigoi Ghoul King",
-    },
+      "A": "5",
+      "I": "7",
+      "M": "6",
+      "S": "5",
+      "T": "5",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Strigoi Ghoul King",
+      "Regen": "5+",
+      "rules": [
+        "Dark Vitality",
+        "Flammable",
+        "Hatred (all enemies)",
+        "Indomitable (1)",
+        "Lore of Undeath",
+        "Necromantic Undead",
+        "Poisoned Attacks",
+        "Regeneration (5+)",
+        "The Hunger"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "dark magic",
+        "necromancy"
+      ],
+      "optionalRules": []
+    }
   ],
   "sun-dragon": [
     {
-      A: "4",
-      I: "4",
-      M: "6",
-      S: "5",
-      T: "(+2)",
-      W: "(+4)",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Sun Dragon",
-    },
+      "A": "4",
+      "I": "4",
+      "M": "6",
+      "S": "5",
+      "T": "(+2)",
+      "W": "(+4)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Sun Dragon",
+      "as": 4,
+      "Stomps": "D6",
+      "Fly": "10",
+      "rules": [
+        "Close Order",
+        "Fly (10)",
+        "Impetuous",
+        "Large Target",
+        "Stomp Attacks (D6)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "dragon fire",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "supreme-astromancer": [
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "3",
-      Name: "Supreme Astromancer",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "3",
+      "Name": "Supreme Astromancer",
+      "Magic-Res": "-1",
+      "rules": [
+        "Magical Attacks",
+        "Magic Resistance (-1)",
+        "Mastery of the Elemental Winds"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism",
+        "illusion",
+        "high magic"
+      ],
+      "optionalRules": []
+    }
   ],
   "supreme-sorceress": [
     {
-      A: "2",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Supreme Sorceress",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Supreme Sorceress",
+      "rules": [
+        "Elven Reflexes",
+        "Eternal Hatred",
+        "Hatred (High Elves)",
+        "Hekarti's Blessing",
+        "Lore of Naggaroth",
+        "Murderous"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic",
+        "elementalism",
+        "illusion"
+      ],
+      "optionalRules": []
+    }
   ],
   "swordmasters-of-hoeth": [
     {
-      A: "1",
-      I: "6",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "6",
-      Name: "Swordmaster",
+      "A": "1",
+      "I": "6",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Swordmaster",
+      "as": 5,
+      "Magic-Res": "-1",
+      "rules": [
+        "Cleaving Blow",
+        "Close Order",
+        "Deflect Shots",
+        "Elven Reflexes",
+        "Ithilmar Armour",
+        "Magic Resistance (-1)",
+        "Valour of Ages",
+        "Warriors of the White Tower"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "swords of Hoeth",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
     },
     {
-      A: "2",
-      I: "6",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "6",
-      Name: "Bladelord",
-    },
+      "A": "2",
+      "I": "6",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Bladelord",
+      "as": 5,
+      "Magic-Res": "-1",
+      "rules": [
+        "Cleaving Blow",
+        "Close Order",
+        "Deflect Shots",
+        "Elven Reflexes",
+        "Ithilmar Armour",
+        "Magic Resistance (-1)",
+        "Valour of Ages",
+        "Warriors of the White Tower"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "swords of Hoeth",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
+    }
   ],
   "sylvan-boar": [
     {
-      A: "1",
-      I: "3",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "-",
-      Ld: "5",
-      WS: "3",
-      Name: "Sylvan Boar",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "-",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Sylvan Boar",
+      "rules": [
+        "Furious Charge",
+        "Motley Crew",
+        "Razor Tusks",
+        "Run with the Pack",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "temple-guard": [
     {
-      A: "2",
-      I: "1",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "0",
-      Ld: "8",
-      WS: "4",
-      Name: "Temple Guard",
+      "A": "2",
+      "I": "1",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Temple Guard",
+      "as": 4,
+      "rules": [
+        "Close Order",
+        "Cold Blooded",
+        "Guardians",
+        "Obsidian Blades",
+        "Shieldwall",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "heavy armour",
+        "shields"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "1",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "0",
-      Ld: "8",
-      WS: "4",
-      Name: "Revered Guardian",
-    },
+      "A": "3",
+      "I": "1",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Revered Guardian",
+      "as": 4,
+      "rules": [
+        "Close Order",
+        "Cold Blooded",
+        "Guardians",
+        "Obsidian Blades",
+        "Shieldwall",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "heavy armour",
+        "shields"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "temple-guard-renegade": [
     {
-      A: "2",
-      I: "2",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "0",
-      Ld: "8",
-      WS: "4",
-      Name: "Temple Guard",
+      "A": "2",
+      "I": "2",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Temple Guard",
+      "as": 4,
+      "rules": [
+        "Close Order",
+        "Cold Blooded",
+        "Guardians",
+        "Obsidian Blades",
+        "Shieldwall",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "heavy armour",
+        "shields"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "2",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "0",
-      Ld: "8",
-      WS: "4",
-      Name: "Revered Guardian",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Revered Guardian",
+      "as": 4,
+      "rules": [
+        "Close Order",
+        "Cold Blooded",
+        "Guardians",
+        "Obsidian Blades",
+        "Shieldwall",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "heavy armour",
+        "shields"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  terradon: [
+  "terradon": [
     {
-      A: "1",
-      I: "2",
-      M: "2",
-      S: "4",
-      T: "(+1)",
-      W: "(+1)",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Terradon",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "2",
+      "S": "4",
+      "T": "(+1)",
+      "W": "(+1)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Terradon",
+      "Fly": "10",
+      "rules": [
+        "Armoured Hide (1)",
+        "Drop Rocks",
+        "Fear",
+        "Fly (10)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "terradon-riders": [
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "3",
-      Ld: "5",
-      WS: "2",
-      Name: "Terradon Rider",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Terradon Rider",
+      "as": 6,
+      "Fly": "10",
+      "rules": [
+        "Armoured Hide (1)",
+        "Cold Blooded",
+        "Drop Rocks",
+        "Fear",
+        "Fly (10)",
+        "Poisoned Attacks (javelins only)",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "javelins",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Fireleech Bolas"
+      ]
     },
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "4",
-      Ld: "5",
-      WS: "2",
-      Name: "Sky Leader",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "4",
+      "Ld": "5",
+      "WS": "2",
+      "Name": "Sky Leader",
+      "as": 6,
+      "Fly": "10",
+      "rules": [
+        "Armoured Hide (1)",
+        "Cold Blooded",
+        "Drop Rocks",
+        "Fear",
+        "Fly (10)",
+        "Poisoned Attacks (javelins only)",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "javelins",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Fireleech Bolas"
+      ]
     },
     {
-      A: "1",
-      I: "2",
-      M: "2",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Terradon",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "2",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Terradon",
+      "as": 6,
+      "Fly": "10",
+      "rules": [
+        "Armoured Hide (1)",
+        "Cold Blooded",
+        "Drop Rocks",
+        "Fear",
+        "Fly (10)",
+        "Poisoned Attacks (javelins only)",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "javelins",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Fireleech Bolas"
+      ]
+    }
   ],
-  terrorgheist: [
+  "terrorgheist": [
     {
-      A: "4",
-      I: "3",
-      M: "6",
-      S: "5",
-      T: "6",
-      W: "6",
-      BS: "0",
-      Ld: "4",
-      WS: "3",
-      Name: "Terrorgheist",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "6",
+      "S": "5",
+      "T": "6",
+      "W": "6",
+      "BS": "0",
+      "Ld": "4",
+      "WS": "3",
+      "Name": "Terrorgheist",
+      "as": 6,
+      "Regen": "5+",
+      "Stomps": "D6",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Fly (9)",
+        "Indomitable (1)",
+        "Infested",
+        "Large Target",
+        "Necromantic Undead",
+        "Regeneration (5+)",
+        "Stomp Attacks (D6)",
+        "Swiftstride",
+        "Terror",
+        "Wailing Dirge"
+      ],
+      "equipment": [
+        "Filth-encrusted talons",
+        "rancid maw",
+        "light armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "terrorgheist-mount": [
     {
-      A: "4",
-      I: "3",
-      M: "6",
-      S: "5",
-      T: "(+1)",
-      W: "(+5)",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Terrorgheist (Mount)",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "6",
+      "S": "5",
+      "T": "(+1)",
+      "W": "(+5)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Terrorgheist (Mount)",
+      "as": 6,
+      "Regen": "5+",
+      "Stomps": "D6",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Fly (9)",
+        "Indomitable (1)",
+        "Infested",
+        "Large Target",
+        "Necromantic Undead",
+        "Regeneration (5+)",
+        "Stomp Attacks (D6)",
+        "Swiftstride",
+        "Terror",
+        "Wailing Dirge"
+      ],
+      "equipment": [
+        "Filth-encrusted talons",
+        "rancid maw",
+        "light armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "teutogen-guard": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Teutogen Guard",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Teutogen Guard",
+      "as": 4,
+      "rules": [
+        "Blessings of Ulric",
+        "Close Order",
+        "Drilled",
+        "Stubborn",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "wolf hammers",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Guardians of the Temple"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "First Knight",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "First Knight",
+      "as": 4,
+      "rules": [
+        "Blessings of Ulric",
+        "Close Order",
+        "Drilled",
+        "Stubborn",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "wolf hammers",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Guardians of the Temple"
+      ]
+    }
   ],
-  thane: [
+  "thane": [
     {
-      A: "3",
-      I: "3",
-      M: "3",
-      S: "4",
-      T: "5",
-      W: "2",
-      BS: "4",
-      Ld: "9",
-      WS: "6",
-      Name: "Thane",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "3",
+      "S": "4",
+      "T": "5",
+      "W": "2",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Thane",
+      "as": 4,
+      "Magic-Res": "-1",
+      "rules": [
+        "Ancestral Grudge",
+        "Dwarf Crafted",
+        "Gromril Armour",
+        "Gromril Weapons",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Rallying Cry",
+        "Resolute",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Oathstone"
+      ]
+    }
   ],
   "the-green-knight": [
     {
-      A: "4",
-      I: "6",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "4",
-      BS: "3",
-      Ld: "9",
-      WS: "7",
-      Name: "The Green Knight",
+      "A": "4",
+      "I": "6",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "4",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "7",
+      "Name": "The Green Knight",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Aura of the Fay",
+        "Blessed Knight",
+        "Ethereal",
+        "Guardian of the Sacred Sites",
+        "Immune to Psychology",
+        "Loner",
+        "Move Through Cover",
+        "Rallying Cry",
+        "Terror",
+        "Unbreakable",
+        "Unstable"
+      ],
+      "equipment": [
+        "The Dolorous Blade",
+        "heavy armour",
+        "shield",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy CavalryNamed Character"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "8",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "The Shadow Steed",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "8",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "The Shadow Steed",
+      "as": 4,
+      "armourMod": 1,
+      "rules": [
+        "Aura of the Fay",
+        "Blessed Knight",
+        "Ethereal",
+        "Guardian of the Sacred Sites",
+        "Immune to Psychology",
+        "Loner",
+        "Move Through Cover",
+        "Rallying Cry",
+        "Terror",
+        "Unbreakable",
+        "Unstable"
+      ],
+      "equipment": [
+        "The Dolorous Blade",
+        "heavy armour",
+        "shield",
+        "hand weapon",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy CavalryNamed Character"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "thorgrim-ulleksson": [
     {
-      A: "3",
-      I: "3",
-      M: "3",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "4",
-      Ld: "10",
-      WS: "6",
-      Name: "Thorgrim Ulleksson",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "3",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "4",
+      "Ld": "10",
+      "WS": "6",
+      "Name": "Thorgrim Ulleksson",
+      "as": 3,
+      "Magic-Res": "-1",
+      "rules": [
+        "Gromril Armour",
+        "Grudgelore",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Rallying Cry",
+        "Resolute",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Grudge-Settler",
+        "Grudgestone",
+        "Armour of Skaldour",
+        "shield"
+      ],
+      "troopType": [
+        "Heavy InfantryNamed Character"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  thunderers: [
+  "thunderers": [
     {
-      A: "1",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "9",
-      WS: "3",
-      Name: "Thunderer",
+      "A": "1",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "3",
+      "Name": "Thunderer",
+      "as": 5,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Dwarf Crafted",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "handguns",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "2",
-      M: "3",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "3",
-      Name: "Veteran",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "3",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "3",
+      "Name": "Veteran",
+      "as": 5,
+      "Magic-Res": "-1",
+      "rules": [
+        "Close Order",
+        "Dwarf Crafted",
+        "Hatred (Orcs & Goblins)",
+        "Magic Resistance (-1)",
+        "Resolute"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "handguns",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Heavy Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  thundertusk: [
+  "thundertusk": [
     {
-      A: "4",
-      I: "2",
-      M: "6",
-      S: "6",
-      T: "(+1)",
-      W: "(+4)",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Thundertusk",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "6",
+      "S": "6",
+      "T": "(+1)",
+      "W": "(+4)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Thundertusk",
+      "as": 5,
+      "Stomps": "3",
+      "Impact-Hits": "D3",
+      "rules": [
+        "Close Order",
+        "First Charge",
+        "Impact Hits (D3)",
+        "Large Target",
+        "Numbing Chill",
+        "Stomp Attacks (3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Great tusks",
+        "chill breath",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "thundertusk-riders": [
     {
-      crewed: true,
-      A: "4",
-      I: "2",
-      M: "6",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      AS: "5",
-      Name: "Thundertusk",
-      weapons: ["great tusks"],
+      "crewed": true,
+      "A": "4",
+      "I": "2",
+      "M": "6",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "AS": "5",
+      "Name": "Thundertusk",
+      "weapons": [
+        "great tusks"
+      ],
+      "Stomps": "3",
+      "Impact-Hits": "D3",
+      "rules": [
+        "Close Order",
+        "First Charge",
+        "Howdah",
+        "Impact Hits (D3)",
+        "Large Target",
+        "Numbing Chill",
+        "Stomp Attacks (3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Great tusks",
+        "chill breath",
+        "Hand weapon",
+        "chaintrap",
+        "harpoon launcher"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "2",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Ogre Beast Rider (x1)",
+      "A": "3",
+      "I": "2",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Ogre Beast Rider (x1)",
+      "rules": [
+        "Close Order",
+        "First Charge",
+        "Howdah",
+        "Impact Hits (D3)",
+        "Large Target",
+        "Numbing Chill",
+        "Stomp Attacks (3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Great tusks",
+        "chill breath",
+        "Hand weapon",
+        "chaintrap",
+        "harpoon launcher"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "2",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Ogre Crew (x1)",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Ogre Crew (x1)",
+      "rules": [
+        "Close Order",
+        "First Charge",
+        "Howdah",
+        "Impact Hits (D3)",
+        "Large Target",
+        "Numbing Chill",
+        "Stomp Attacks (3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Great tusks",
+        "chill breath",
+        "Hand weapon",
+        "chaintrap",
+        "harpoon launcher"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "tiranoc-chariot": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "4",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Tiranoc Chariot",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "4",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Tiranoc Chariot",
+      "Impact-Hits": "D6",
+      "rules": [
+        "Elven Reflexes",
+        "Impact Hits (D6)",
+        "Open Order",
+        "Quick Shot",
+        "Swiftstride",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "longbows",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Tiranoc Charioteer (x2)",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Tiranoc Charioteer (x2)",
+      "rules": [
+        "Elven Reflexes",
+        "Impact Hits (D6)",
+        "Open Order",
+        "Quick Shot",
+        "Swiftstride",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "longbows",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "9",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Elven Steed (x2)",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "9",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Elven Steed (x2)",
+      "rules": [
+        "Elven Reflexes",
+        "Impact Hits (D6)",
+        "Open Order",
+        "Quick Shot",
+        "Swiftstride",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "longbows",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "tomb-banshee": [
     {
-      A: "1",
-      I: "3",
-      M: "6",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "0",
-      Ld: "6",
-      WS: "3",
-      Name: "Tomb Banshee",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "6",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "0",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Tomb Banshee",
+      "Regen": "6+",
+      "rules": [
+        "Ethereal",
+        "Indomitable (1)",
+        "Magical Attacks",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Terror",
+        "Wailing Dirge"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "tomb-guard": [
     {
-      A: "1",
-      I: "2",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Tomb Guard",
+      "A": "1",
+      "I": "2",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Tomb Guard",
+      "as": 5,
+      "Regen": "6+",
+      "rules": [
+        "Cleaving Blow",
+        "Close Order",
+        "Indomitable (1)",
+        "Khopesh",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Regimental Unit"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Nehekharan Phalanx"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Tomb Captain",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Tomb Captain",
+      "as": 5,
+      "Regen": "6+",
+      "rules": [
+        "Cleaving Blow",
+        "Close Order",
+        "Indomitable (1)",
+        "Khopesh",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Regimental Unit"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled",
+        "Nehekharan Phalanx"
+      ]
+    }
   ],
   "tomb-guard-chariots": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Chariot",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Chariot",
+      "as": 6,
+      "Regen": "6+",
+      "Impact-Hits": "D3+1",
+      "rules": [
+        "Cleaving Blow (Tomb Guard Crew only)",
+        "Dry as Dust",
+        "Impact Hits (D3+1)",
+        "Indomitable (2)",
+        "Khopesh",
+        "Nehekharan Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Reserve Move",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "2",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Tomb Guard Crew (x2)",
+      "A": "1",
+      "I": "2",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Tomb Guard Crew (x2)",
+      "as": 6,
+      "Regen": "6+",
+      "rules": [
+        "Cleaving Blow (Tomb Guard Crew only)",
+        "Dry as Dust",
+        "Impact Hits (D3+1)",
+        "Indomitable (2)",
+        "Khopesh",
+        "Nehekharan Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Reserve Move",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "2",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Tomb Captain",
+      "A": "2",
+      "I": "2",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Tomb Captain",
+      "as": 6,
+      "Regen": "6+",
+      "rules": [
+        "Cleaving Blow (Tomb Guard Crew only)",
+        "Dry as Dust",
+        "Impact Hits (D3+1)",
+        "Indomitable (2)",
+        "Khopesh",
+        "Nehekharan Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Reserve Move",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "2",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "2",
-      Name: "Skeletal Steed (x2)",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "2",
+      "Name": "Skeletal Steed (x2)",
+      "as": 6,
+      "Regen": "6+",
+      "rules": [
+        "Cleaving Blow (Tomb Guard Crew only)",
+        "Dry as Dust",
+        "Impact Hits (D3+1)",
+        "Indomitable (2)",
+        "Khopesh",
+        "Nehekharan Undead",
+        "Open Order",
+        "Regeneration (6+)",
+        "Reserve Move",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "halberds",
+        "shields",
+        "hand weapons"
+      ],
+      "troopType": [
+        "Light Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "tomb-king": [
     {
-      A: "4",
-      I: "4",
-      M: "4",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "3",
-      Ld: "10",
-      WS: "6",
-      Name: "Tomb King",
-    },
+      "A": "4",
+      "I": "4",
+      "M": "4",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "3",
+      "Ld": "10",
+      "WS": "6",
+      "Name": "Tomb King",
+      "as": 5,
+      "Regen": "5+",
+      "rules": [
+        "Curse of the Necropolis",
+        "Dry as Dust",
+        "Flammable",
+        "Indomitable (2)",
+        "Khopesh",
+        "My Will Be Done",
+        "Nehekharan Undead",
+        "Regeneration (5+)"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "tomb-prince": [
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "3",
-      Ld: "9",
-      WS: "5",
-      Name: "Tomb Prince",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "3",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Tomb Prince",
+      "as": 6,
+      "Regen": "5+",
+      "rules": [
+        "Curse of the Necropolis",
+        "Dry as Dust",
+        "Flammable",
+        "Indomitable (2)",
+        "Khopesh",
+        "My Will Be Done",
+        "Nehekharan Undead",
+        "Regeneration (5+)"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "tomb-scorpion": [
     {
-      A: "4",
-      I: "3",
-      M: "7",
-      S: "5",
-      T: "5",
-      W: "3",
-      BS: "0",
-      Ld: "8",
-      WS: "4",
-      Name: "Tomb Scorpion",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "7",
+      "S": "5",
+      "T": "5",
+      "W": "3",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Tomb Scorpion",
+      "as": 5,
+      "Regen": "6+",
+      "Magic-Res": "-1",
+      "Stomps": "D3",
+      "rules": [
+        "Close Order",
+        "Indomitable (1)",
+        "Magic Resistance (-1)",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "Decapitating claws",
+        "envenomed sting",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
+    }
   ],
   "tomb-swarms": [
     {
-      A: "5",
-      I: "1",
-      M: "5",
-      S: "2",
-      T: "2",
-      W: "5",
-      BS: "0",
-      Ld: "10",
-      WS: "3",
-      Name: "Tomb Swarm",
-    },
+      "A": "5",
+      "I": "1",
+      "M": "5",
+      "S": "2",
+      "T": "2",
+      "W": "5",
+      "BS": "0",
+      "Ld": "10",
+      "WS": "3",
+      "Name": "Tomb Swarm",
+      "Regen": "6+",
+      "rules": [
+        "Dry as Dust",
+        "Nehekharan Undead",
+        "Poisoned Attacks",
+        "Regeneration (6+)",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "Swarm"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
+    }
   ],
   "tree-kin": [
     {
-      A: "3",
-      I: "3",
-      M: "5",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Tree Kin",
+      "A": "3",
+      "I": "3",
+      "M": "5",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Tree Kin",
+      "as": 5,
+      "Regen": "5+",
+      "Stomps": "1",
+      "rules": [
+        "Armour Bane (2)",
+        "Close Order",
+        "Fear",
+        "Flammable",
+        "Immune to Psychology",
+        "Magical Attacks",
+        "Move Through Cover",
+        "Regeneration (5+)",
+        "Stomp Attacks (1)",
+        "Stubborn",
+        "Tree Spirit",
+        "Tree Whack"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "4",
-      I: "3",
-      M: "5",
-      S: "4",
-      T: "5",
-      W: "3",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Elder",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "5",
+      "S": "4",
+      "T": "5",
+      "W": "3",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Elder",
+      "as": 5,
+      "Regen": "5+",
+      "rules": [
+        "Armour Bane (2)",
+        "Close Order",
+        "Fear",
+        "Flammable",
+        "Immune to Psychology",
+        "Magical Attacks",
+        "Move Through Cover",
+        "Regeneration (5+)",
+        "Stomp Attacks (1)",
+        "Stubborn",
+        "Tree Spirit",
+        "Tree Whack"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  treeman: [
+  "treeman": [
     {
-      A: "5",
-      I: "2",
-      M: "5",
-      S: "5",
-      T: "6",
-      W: "5",
-      BS: "4",
-      Ld: "9",
-      WS: "6",
-      Name: "Treeman",
-    },
+      "A": "5",
+      "I": "2",
+      "M": "5",
+      "S": "5",
+      "T": "6",
+      "W": "5",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "6",
+      "Name": "Treeman",
+      "as": 4,
+      "Regen": "5+",
+      "Stomps": "D3",
+      "rules": [
+        "Armour Bane (1)",
+        "Close Order",
+        "Flammable",
+        "Immune to Psychology",
+        "Large Target",
+        "Magical Attacks",
+        "Move Through Cover",
+        "Regeneration (5+)",
+        "Stomp Attacks (D3)",
+        "Stubborn",
+        "Terror",
+        "Timmm-berrr!",
+        "Tree Spirit",
+        "Tree Whack"
+      ],
+      "equipment": [
+        "Oaken fists",
+        "Strangleroots",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "treeman-ancient": [
     {
-      A: "3",
-      I: "2",
-      M: "5",
-      S: "5",
-      T: "6",
-      W: "6",
-      BS: "5",
-      Ld: "10",
-      WS: "5",
-      Name: "Treeman Ancient",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "5",
+      "S": "5",
+      "T": "6",
+      "W": "6",
+      "BS": "5",
+      "Ld": "10",
+      "WS": "5",
+      "Name": "Treeman Ancient",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  troglodon: [
+  "troglodon": [
     {
-      crewed: true,
-      A: "3",
-      I: "2",
-      M: "7",
-      S: "5",
-      T: "5",
-      W: "5",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Troglodon",
+      "crewed": true,
+      "A": "3",
+      "I": "2",
+      "M": "7",
+      "S": "5",
+      "T": "5",
+      "W": "5",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Troglodon",
+      "as": 5,
+      "Stomps": "2",
+      "rules": [
+        "Arcane Vassal",
+        "Aquatic",
+        "Close Order",
+        "Cold Blooded",
+        "Immune to Psychology",
+        "Large Target",
+        "Lore of Lustria",
+        "Primeval Roar",
+        "Stomp Attacks (2)",
+        "Stubborn",
+        "Terror"
+      ],
+      "equipment": [
+        "Venomous talons",
+        "venom spray",
+        "heavy armour",
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [
+        "battle magic",
+        "illusion"
+      ],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "8",
-      WS: "2",
-      Name: "Skink Oracle",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "2",
+      "Name": "Skink Oracle",
+      "as": 5,
+      "rules": [
+        "Arcane Vassal",
+        "Aquatic",
+        "Close Order",
+        "Cold Blooded",
+        "Immune to Psychology",
+        "Large Target",
+        "Lore of Lustria",
+        "Primeval Roar",
+        "Stomp Attacks (2)",
+        "Stubborn",
+        "Terror"
+      ],
+      "equipment": [
+        "Venomous talons",
+        "venom spray",
+        "heavy armour",
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [
+        "battle magic",
+        "illusion"
+      ],
+      "optionalRules": []
+    }
   ],
   "troll-hag": [
     {
-      A: "3",
-      I: "2",
-      M: "5",
-      S: "6",
-      T: "5",
-      W: "6",
-      BS: "2",
-      Ld: "8",
-      WS: "2",
-      Name: "Troll Hag",
-    },
+      "A": "3",
+      "I": "2",
+      "M": "5",
+      "S": "6",
+      "T": "5",
+      "W": "6",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "2",
+      "Name": "Troll Hag",
+      "as": 5,
+      "Regen": "5+",
+      "Stomps": "D6",
+      "rules": [
+        "Close Order",
+        "Flammable",
+        "Immune to Psychology",
+        "Indiscriminate Hunger",
+        "Large Target",
+        "Motherly Love",
+        "Regeneration (5+)",
+        "Slimy Shanks",
+        "Stomp Attacks (D6)",
+        "Stupidity",
+        "Terror",
+        "Timmm-berrr!",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "hand weapon",
+        "Troll vomit",
+        "swamp breath",
+        "heavy armour"
+      ],
+      "troopType": [
+        "BehemothCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "lore of troll magic"
+      ],
+      "optionalRules": []
+    }
   ],
   "tuskgor-chariot": [
     {
-      crewed: true,
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "4",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Chariot",
+      "crewed": true,
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "4",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Chariot",
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Close Order",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Mark of Chaos Undivided",
+        "Primal Fury",
+        "Razor Tusks",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "great weapon",
+        "cavalry spear",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Bestigor Crew (x1)",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Bestigor Crew (x1)",
+      "rules": [
+        "Close Order",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Mark of Chaos Undivided",
+        "Primal Fury",
+        "Razor Tusks",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "great weapon",
+        "cavalry spear",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Gor Crew (x1)",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Gor Crew (x1)",
+      "rules": [
+        "Close Order",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Mark of Chaos Undivided",
+        "Primal Fury",
+        "Razor Tusks",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "great weapon",
+        "cavalry spear",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "2",
-      M: "7",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Tuskgor (x2)",
-    },
+      "A": "1",
+      "I": "2",
+      "M": "7",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Tuskgor (x2)",
+      "rules": [
+        "Close Order",
+        "First Charge",
+        "Impact Hits (D6+1)",
+        "Mark of Chaos Undivided",
+        "Primal Fury",
+        "Razor Tusks",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "great weapon",
+        "cavalry spear",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  tyrant: [
+  "tyrant": [
     {
-      A: "5",
-      I: "5",
-      M: "6",
-      S: "5",
-      T: "5",
-      W: "5",
-      BS: "4",
-      Ld: "9",
-      WS: "6",
-      AS: "6",
-      Name: "Tyrant",
-    },
+      "A": "5",
+      "I": "5",
+      "M": "6",
+      "S": "5",
+      "T": "5",
+      "W": "5",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "6",
+      "AS": "6",
+      "Name": "Tyrant",
+      "as": 6,
+      "Impact-Hits": "2",
+      "rules": [
+        "Armour Bane (1)",
+        "Bull Charge",
+        "Fear",
+        "Impact Hits (2)",
+        "Ogre Charge"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ironfist",
+        "Ogre Pistol",
+        "Brace of Ogre Pistols"
+      ]
+    }
   ],
   "ungor-herd": [
     {
-      A: "1",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "3",
-      Name: "Ungor",
+      "A": "1",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Ungor",
+      "as": 6,
+      "rules": [
+        "Chariot Runners",
+        "Horde",
+        "Mark of Chaos Undivided",
+        "Move Through Cover",
+        "Open Order",
+        "Primal Fury",
+        "Skirmishers",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Half-horn",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Half-horn",
+      "as": 6,
+      "rules": [
+        "Chariot Runners",
+        "Horde",
+        "Mark of Chaos Undivided",
+        "Move Through Cover",
+        "Open Order",
+        "Primal Fury",
+        "Skirmishers",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
+    }
   ],
   "ungor-ravagers": [
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "3",
-      Name: "Ungor Ravager",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Ungor Ravager",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Leader of the Pack",
+        "Move Through Cover",
+        "Primal Fury",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "throwing spears",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "ungrim-ironfist": [
     {
-      A: "4",
-      I: "5",
-      M: "3",
-      S: "4",
-      T: "6",
-      W: "3",
-      BS: "4",
-      Ld: "10",
-      WS: "9",
-      Name: "Ungrim Ironfist",
-    },
+      "A": "4",
+      "I": "5",
+      "M": "3",
+      "S": "4",
+      "T": "6",
+      "W": "3",
+      "BS": "4",
+      "Ld": "10",
+      "WS": "9",
+      "Name": "Ungrim Ironfist",
+      "as": 4,
+      "Magic-Res": "-2",
+      "rules": [
+        "Deathblow",
+        "Gromril Armour",
+        "Hatred (Orcs & Goblins)",
+        "Immune to Psychology",
+        "King of the Slayer Hold",
+        "Magic Resistance (-2)",
+        "Rallying Cry",
+        "Resolute",
+        "Slayer",
+        "Unbreakable"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Axe of Dargo",
+        "Slayer Crown",
+        "light armour"
+      ],
+      "troopType": [
+        "Heavy InfantryNamed Character"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  unicorn: [
+  "unicorn": [
     {
-      A: "2",
-      I: "5",
-      M: "10",
-      S: "4",
-      T: "-",
-      W: "(+1)",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "Unicorn",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "10",
+      "S": "4",
+      "T": "-",
+      "W": "(+1)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "Unicorn",
+      "Stomps": "1",
+      "rules": [
+        "Armour Bane (2, Unicorn only)",
+        "Armoured Hide (1)",
+        "Beguiling Aura",
+        "Counter Charge",
+        "Magical Attacks",
+        "Stomp Attacks (1)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  ushabti: [
+  "ushabti": [
     {
-      A: "3",
-      I: "2",
-      M: "5",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Ushabti",
+      "A": "3",
+      "I": "2",
+      "M": "5",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Ushabti",
+      "as": 5,
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Close Order",
+        "Indomitable (1)",
+        "Khopesh",
+        "Nehekharan Undead",
+        "Regeneration (6+)"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "ritual blades",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Greatbow"
+      ]
     },
     {
-      A: "4",
-      I: "2",
-      M: "5",
-      S: "4",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Ancient",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "5",
+      "S": "4",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Ancient",
+      "as": 5,
+      "Regen": "6+",
+      "rules": [
+        "Arrows of Asaph",
+        "Close Order",
+        "Indomitable (1)",
+        "Khopesh",
+        "Nehekharan Undead",
+        "Regeneration (6+)"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "ritual blades",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Greatbow"
+      ]
+    }
   ],
   "vampire-count": [
     {
-      A: "4",
-      I: "6",
-      M: "6",
-      S: "5",
-      T: "5",
-      W: "3",
-      BS: "5",
-      Ld: "8",
-      WS: "7",
-      Name: "Vampire Count",
-    },
+      "A": "4",
+      "I": "6",
+      "M": "6",
+      "S": "5",
+      "T": "5",
+      "W": "3",
+      "BS": "5",
+      "Ld": "8",
+      "WS": "7",
+      "Name": "Vampire Count",
+      "Regen": "5+",
+      "rules": [
+        "Dark Vitality",
+        "Flammable",
+        "Indomitable (2)",
+        "Lore of Undeath",
+        "Necromantic Undead",
+        "Regeneration (5+)"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "dark magic",
+        "illusion",
+        "necromancy"
+      ],
+      "optionalRules": []
+    }
   ],
   "vampire-count-renegade": [
     {
-      A: "4",
-      I: "6",
-      M: "6",
-      S: "5",
-      T: "5",
-      W: "3",
-      BS: "5",
-      Ld: "9",
-      WS: "7",
-      Name: "Vampire Count",
-    },
+      "A": "4",
+      "I": "6",
+      "M": "6",
+      "S": "5",
+      "T": "5",
+      "W": "3",
+      "BS": "5",
+      "Ld": "9",
+      "WS": "7",
+      "Name": "Vampire Count",
+      "Regen": "5+",
+      "rules": [
+        "Dark Vitality",
+        "Flammable",
+        "Indomitable (2)",
+        "Lore of Undeath",
+        "Necromantic Undead",
+        "Regeneration (5+)"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "dark magic",
+        "illusion",
+        "necromancy"
+      ],
+      "optionalRules": []
+    }
   ],
   "vampire-thrall": [
     {
-      A: "3",
-      I: "5",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "2",
-      BS: "4",
-      Ld: "7",
-      WS: "6",
-      Name: "Vampire Thrall",
-    },
+      "A": "3",
+      "I": "5",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "2",
+      "BS": "4",
+      "Ld": "7",
+      "WS": "6",
+      "Name": "Vampire Thrall",
+      "Regen": "5+",
+      "rules": [
+        "Banner of the Count",
+        "Dark Vitality",
+        "Flammable",
+        "Indomitable (1)",
+        "Lore of Undeath",
+        "Necromantic Undead",
+        "Regeneration (5+)"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "dark magic",
+        "illusion",
+        "necromancy"
+      ],
+      "optionalRules": []
+    }
   ],
-  vargheists: [
+  "vargheists": [
     {
-      A: "3",
-      I: "4",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "0",
-      Ld: "7",
-      WS: "4",
-      Name: "Vargheist",
+      "A": "3",
+      "I": "4",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "0",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Vargheist",
+      "Regen": "6+",
+      "Fly": "9",
+      "rules": [
+        "Armour Bane (2)",
+        "Dark Vitality",
+        "Flammable",
+        "Fly (9)",
+        "Frenzy",
+        "Indomitable (1)",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Wicked claws"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "4",
-      I: "4",
-      M: "6",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "0",
-      Ld: "7",
-      WS: "4",
-      Name: "Vargoyle",
-    },
+      "A": "4",
+      "I": "4",
+      "M": "6",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "0",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Vargoyle",
+      "Regen": "6+",
+      "Fly": "9",
+      "rules": [
+        "Armour Bane (2)",
+        "Dark Vitality",
+        "Flammable",
+        "Fly (9)",
+        "Frenzy",
+        "Indomitable (1)",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Wicked claws"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  varghulf: [
+  "varghulf": [
     {
-      A: "4",
-      I: "4",
-      M: "8",
-      S: "5",
-      T: "5",
-      W: "4",
-      BS: "0",
-      Ld: "4",
-      WS: "5",
-      Name: "Varghulf",
-    },
+      "A": "4",
+      "I": "4",
+      "M": "8",
+      "S": "5",
+      "T": "5",
+      "W": "4",
+      "BS": "0",
+      "Ld": "4",
+      "WS": "5",
+      "Name": "Varghulf",
+      "as": 6,
+      "Regen": "5+",
+      "rules": [
+        "Bestial Fury",
+        "Close Order",
+        "Counter Charge",
+        "Dark Vitality",
+        "Flammable",
+        "Frenzy",
+        "Indomitable (1)",
+        "Necromantic Undead",
+        "Regeneration (5+)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "light armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "venerable-ushabti": [
     {
-      A: "3",
-      I: "2",
-      M: "4",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Venerable Ushabti",
+      "A": "3",
+      "I": "2",
+      "M": "4",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Venerable Ushabti",
+      "as": 5,
+      "Regen": "6+",
+      "Magic-Res": "-2",
+      "rules": [
+        "Close Order",
+        "Indomitable (1)",
+        "Khopesh",
+        "Magic Resistance (-2)",
+        "Nehekharan Undead",
+        "Regeneration (6+)"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "ritual blades",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "4",
-      I: "2",
-      M: "4",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "5",
-      Name: "Venerable Ancient",
-    },
+      "A": "4",
+      "I": "2",
+      "M": "4",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Venerable Ancient",
+      "as": 5,
+      "Regen": "6+",
+      "Magic-Res": "-2",
+      "rules": [
+        "Close Order",
+        "Indomitable (1)",
+        "Khopesh",
+        "Magic Resistance (-2)",
+        "Nehekharan Undead",
+        "Regeneration (6+)"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "ritual blades",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "veteran-freeblades": [
     {
-      A: "1",
-      I: "3",
-      M: "-",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Veteran Freeblade",
+      "A": "1",
+      "I": "3",
+      "M": "-",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Veteran Freeblade",
+      "as": 5,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "First Charge",
+        "Swiftstride",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "hand weapons",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "-",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Commander",
+      "A": "2",
+      "I": "3",
+      "M": "-",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Commander",
+      "as": 5,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "First Charge",
+        "Swiftstride",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "hand weapons",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Warhorse",
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Warhorse",
+      "as": 5,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "First Charge",
+        "Swiftstride",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "hand weapons",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Barded Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Barded Warhorse",
+      "as": 5,
+      "armourMod": 1,
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "First Charge",
+        "Swiftstride",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "heavy armour",
+        "hand weapons",
+        "barding"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "veteran-sellswords": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "5",
-      WS: "4",
-      Name: "Veteran Sellsword",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "4",
+      "Name": "Veteran Sellsword",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Horde",
+        "Regimental Unit",
+        "Warband",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "4",
-      Name: "Veteran Officer",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Veteran Officer",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Horde",
+        "Regimental Unit",
+        "Warband",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
+    }
   ],
   "veteran-state-troops": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Veteran State Trooper",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Veteran State Trooper",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Horde",
+        "Regimental Unit",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "7",
-      WS: "4",
-      Name: "Veteran Sergeant",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Veteran Sergeant",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Detachment",
+        "Horde",
+        "Regimental Unit",
+        "Veteran"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Drilled"
+      ]
+    }
   ],
   "war-altar-of-sigmar": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "5",
-      T: "5",
-      W: "5",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "War Altar",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "5",
+      "T": "5",
+      "W": "5",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "War Altar",
+      "Magic-Res": "-2",
+      "Impact-Hits": "D6+1",
+      "rules": [
+        "Close Order",
+        "First Charge",
+        "Holy Fervour",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Magic Resistance (-2)",
+        "Stubborn",
+        "Symbol of Might",
+        "Terror",
+        "Witch Bane"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Barded Warhorse (x2)",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Barded Warhorse (x2)",
+      "Magic-Res": "-2",
+      "rules": [
+        "Close Order",
+        "First Charge",
+        "Holy Fervour",
+        "Impact Hits (D6+1)",
+        "Large Target",
+        "Magic Resistance (-2)",
+        "Stubborn",
+        "Symbol of Might",
+        "Terror",
+        "Witch Bane"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Chariot"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "war-boar": [
     {
-      A: "1",
-      I: "3",
-      M: "7",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "War Boar",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "7",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "War Boar",
+      "rules": [
+        "Armoured Hide (1)",
+        "Counter Charge",
+        "Swiftstride",
+        "Tusker Charge"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Heavy Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "war-hydra": [
     {
-      crewed: true,
-      A: "2",
-      I: "3",
-      M: "6",
-      S: "5",
-      T: "5",
-      W: "5",
-      BS: "0",
-      Ld: "6",
-      WS: "4",
-      Name: "War Hydra",
+      "crewed": true,
+      "A": "2",
+      "I": "3",
+      "M": "6",
+      "S": "5",
+      "T": "5",
+      "W": "5",
+      "BS": "0",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "War Hydra",
+      "Regen": "5+",
+      "Stomps": "D3",
+      "rules": [
+        "Close Order",
+        "Extra Attacks (+remaining Wounds)",
+        "Immune to Psychology",
+        "Large Target",
+        "Monster Handlers",
+        "Regeneration (5+)",
+        "Stomp Attacks (D3)",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "serrated maws",
+        "fiery breath",
+        "Hand weapons",
+        "whips"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "6",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "8",
-      WS: "4",
-      Name: "Beastmaster Handlers (x2)",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "6",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Beastmaster Handlers (x2)",
+      "Regen": "5+",
+      "rules": [
+        "Close Order",
+        "Extra Attacks (+remaining Wounds)",
+        "Immune to Psychology",
+        "Large Target",
+        "Monster Handlers",
+        "Regeneration (5+)",
+        "Stomp Attacks (D3)",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "serrated maws",
+        "fiery breath",
+        "Hand weapons",
+        "whips"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "war-lions": [
     {
-      A: "2",
-      I: "4",
-      M: "8",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "0",
-      Ld: "7",
-      WS: "5",
-      Name: "War Lion",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "8",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "0",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "War Lion",
+      "rules": [
+        "Cleaving Blow",
+        "Fear",
+        "Move Through Cover",
+        "Open Order",
+        "Swiftstride",
+        "Vanguard"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  wardancers: [
+  "wardancers": [
     {
-      A: "1",
-      I: "6",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "6",
-      Name: "Wardancer",
+      "A": "1",
+      "I": "6",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Wardancer",
+      "rules": [
+        "Dances of Loec",
+        "Evasive",
+        "Furious Charge",
+        "Immune to Psychology",
+        "Loner",
+        "Motley Crew",
+        "Move Through Cover",
+        "Open Order",
+        "Skirmishers",
+        "Strike First",
+        "Talismanic Tattoos"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "6",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "6",
-      Name: "Bladesinger",
-    },
+      "A": "2",
+      "I": "6",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Bladesinger",
+      "rules": [
+        "Dances of Loec",
+        "Evasive",
+        "Furious Charge",
+        "Immune to Psychology",
+        "Loner",
+        "Motley Crew",
+        "Move Through Cover",
+        "Open Order",
+        "Skirmishers",
+        "Strike First",
+        "Talismanic Tattoos"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "warden-of-talsyn": [
     {
-      A: "4",
-      I: "6",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "3",
-      BS: "4",
-      Ld: "9",
-      WS: "7",
-      Name: "Warden of Talsyn",
-    },
+      "A": "4",
+      "I": "6",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "3",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "7",
+      "Name": "Warden of Talsyn",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Courage Beyond Compare",
+        "Drilled",
+        "Elven Reflexes",
+        "Immune to Psychology",
+        "Move Through Cover",
+        "Parry",
+        "Strike First",
+        "Stubborn"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Asrai spear",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  wargor: [
+  "wargor": [
     {
-      A: "3",
-      I: "4",
-      M: "5",
-      S: "4",
-      T: "5",
-      W: "2",
-      BS: "3",
-      Ld: "7",
-      WS: "5",
-      Name: "Wargor",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "5",
+      "S": "4",
+      "T": "5",
+      "W": "2",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Wargor",
+      "rules": [
+        "Blood Rage",
+        "Brayhorn (General only)",
+        "Foe Render",
+        "Gaze of the Gods",
+        "Mark of Chaos Undivided",
+        "Primal Fury",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Heavy InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
+    }
   ],
-  warhawk: [
+  "warhawk": [
     {
-      A: "2",
-      I: "4",
-      M: "2",
-      S: "4",
-      T: "(+1)",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Warhawk",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "2",
+      "S": "4",
+      "T": "(+1)",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Warhawk",
+      "Fly": "10",
+      "rules": [
+        "Evasive",
+        "Fear",
+        "Feigned Flight",
+        "Fly (10)",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Wicked claws"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "warhawk-riders": [
     {
-      A: "1",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "4",
-      W: "2",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Warhawk Rider",
+      "A": "1",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "4",
+      "W": "2",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Warhawk Rider",
+      "Fly": "10",
+      "rules": [
+        "Elven Reflexes",
+        "Evasive",
+        "Fear",
+        "Feigned Flight",
+        "Fire & Flee",
+        "Fly (10)",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "Asrai longbows",
+        "Wicked claws"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Arcane Bodkins",
+        "Hagbane Tips",
+        "Moonfire Shot",
+        "Swiftshiver Shards",
+        "Trueflight Arrows"
+      ]
     },
     {
-      A: "2",
-      I: "4",
-      M: "-",
-      S: "3",
-      T: "4",
-      W: "2",
-      BS: "5",
-      Ld: "8",
-      WS: "4",
-      Name: "Wind Rider",
+      "A": "2",
+      "I": "4",
+      "M": "-",
+      "S": "3",
+      "T": "4",
+      "W": "2",
+      "BS": "5",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Wind Rider",
+      "Fly": "10",
+      "rules": [
+        "Elven Reflexes",
+        "Evasive",
+        "Fear",
+        "Feigned Flight",
+        "Fire & Flee",
+        "Fly (10)",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "Asrai longbows",
+        "Wicked claws"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Arcane Bodkins",
+        "Hagbane Tips",
+        "Moonfire Shot",
+        "Swiftshiver Shards",
+        "Trueflight Arrows"
+      ]
     },
     {
-      A: "2",
-      I: "4",
-      M: "2",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Warhawk",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "2",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Warhawk",
+      "Fly": "10",
+      "rules": [
+        "Elven Reflexes",
+        "Evasive",
+        "Fear",
+        "Feigned Flight",
+        "Fire & Flee",
+        "Fly (10)",
+        "Skirmishers",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "cavalry spears",
+        "Asrai longbows",
+        "Wicked claws"
+      ],
+      "troopType": [
+        "Monstrous Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Arcane Bodkins",
+        "Hagbane Tips",
+        "Moonfire Shot",
+        "Swiftshiver Shards",
+        "Trueflight Arrows"
+      ]
+    }
   ],
-  warhoof: [
+  "warhoof": [
     {
-      A: "4",
-      I: "3",
-      M: "8",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "7",
-      WS: "5",
-      Name: "Warhoof",
-    },
+      "A": "4",
+      "I": "3",
+      "M": "8",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "7",
+      "WS": "5",
+      "Name": "Warhoof",
+      "Stomps": "1",
+      "rules": [
+        "Drunken",
+        "Fast Cavalry",
+        "Gaze of the Gods",
+        "Mark of Chaos Undivided",
+        "Move Through Cover",
+        "Primal Fury",
+        "Stomp Attacks (1)",
+        "Swiftstride",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Light CavalryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
+    }
   ],
-  warhorse: [
+  "warhorse": [
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Warhorse",
+      "rules": [],
+      "equipment": [],
+      "troopType": [],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "warhorse-bretonnia": [
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Warhorse",
+      "rules": [
+        "Fast Cavalry",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "warhorse-warriors-of-chaos": [
     {
-      A: "1",
-      I: "3",
-      M: "8",
-      S: "3",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Warhorse",
-    },
+      "A": "1",
+      "I": "3",
+      "M": "8",
+      "S": "3",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Warhorse",
+      "rules": [
+        "Counter Charge",
+        "Fast Cavalry",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "warlock-engineer": [
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "3",
-      Ld: "5",
-      WS: "3",
-      Name: "Warlock Engineer",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Warlock Engineer",
+      "rules": [
+        "Lore of the Horned Rat",
+        "Magical Attacks",
+        "Scurry Away",
+        "Verminous Valour",
+        "Warband",
+        "Warpstone Weapons"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Warpstone Tokens"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "elementalism"
+      ],
+      "optionalRules": [
+        "Warplock Musket",
+        "Warplock Pistol"
+      ]
+    }
   ],
   "warp-lightning-cannon": [
     {
-      A: "-",
-      I: "-",
-      M: "-",
-      S: "-",
-      T: "6",
-      W: "4",
-      BS: "-",
-      Ld: "-",
-      WS: "-",
-      Name: "Warp Lightning Cannon",
+      "A": "-",
+      "I": "-",
+      "M": "-",
+      "S": "-",
+      "T": "6",
+      "W": "4",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "-",
+      "Name": "Warp Lightning Cannon",
+      "as": 6,
+      "rules": [
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Warp Lightning Cannon",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "3",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "3",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Engineer & Crew",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "3",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Engineer & Crew",
+      "as": 6,
+      "rules": [
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Warp Lightning Cannon",
+        "hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "War Machine"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "warped-gors": [
     {
-      A: "D3",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "2",
-      Ld: "7",
-      WS: "4",
-      Name: "Warped Gor",
+      "A": "D3",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "2",
+      "Ld": "7",
+      "WS": "4",
+      "Name": "Warped Gor",
+      "rules": [
+        "Armoured Hide (1)",
+        "Blessing of Chaos",
+        "Blood Rage",
+        "Mark of Chaos Undivided",
+        "Move Through Cover",
+        "Open Order",
+        "Primal Fury",
+        "Random Attacks",
+        "Stubborn",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
     },
     {
-      A: "D3",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "4",
-      W: "1",
-      BS: "2",
-      Ld: "8",
-      WS: "4",
-      Name: "Splice-horn",
-    },
+      "A": "D3",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "4",
+      "W": "1",
+      "BS": "2",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Splice-horn",
+      "rules": [
+        "Armoured Hide (1)",
+        "Blessing of Chaos",
+        "Blood Rage",
+        "Mark of Chaos Undivided",
+        "Move Through Cover",
+        "Open Order",
+        "Primal Fury",
+        "Random Attacks",
+        "Stubborn",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Ambushers"
+      ]
+    }
   ],
   "warpfire-dragon": [
     {
-      A: "5",
-      I: "3",
-      M: "6",
-      S: "6",
-      T: "6",
-      W: "6",
-      BS: "0",
-      Ld: "8",
-      WS: "6",
-      Name: "Warpfire Dragon",
-    },
+      "A": "5",
+      "I": "3",
+      "M": "6",
+      "S": "6",
+      "T": "6",
+      "W": "6",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Warpfire Dragon",
+      "as": 4,
+      "Regen": "5+",
+      "Magic-Res": "-2",
+      "Stomps": "D6",
+      "Fly": "10",
+      "rules": [
+        "Close Order",
+        "Explosive Demise",
+        "Fire & Chaos",
+        "Fly (10)",
+        "Large Target",
+        "Lore of Chaos",
+        "Magical Attacks",
+        "Magic Resistance (-2)",
+        "Mark of Chaos Undivided",
+        "Regeneration (5+)",
+        "Stomp Attacks (D6)",
+        "Swiftstride",
+        "Terror",
+        "Warpfire Aura"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "Warpfire Blast",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic"
+      ],
+      "optionalRules": []
+    }
   ],
   "warplock-jezzails": [
     {
-      A: "2",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "3",
-      Ld: "5",
-      WS: "3",
-      Name: "Jezzail Team",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "3",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Jezzail Team",
+      "rules": [
+        "Open Order",
+        "Scurry Away",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "warplock jezzails",
+        "pavise"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  waystalker: [
+  "waystalker": [
     {
-      A: "2",
-      I: "5",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "2",
-      BS: "7",
-      Ld: "8",
-      WS: "6",
-      Name: "Waystalker",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "2",
+      "BS": "7",
+      "Ld": "8",
+      "WS": "6",
+      "Name": "Waystalker",
+      "rules": [
+        "Elven Reflexes",
+        "Evasive",
+        "Feigned Flight",
+        "Fire & Flee",
+        "Hawk-eyed Archer",
+        "Ignores Cover",
+        "Move Through Cover",
+        "Scouts"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "Asrai longbow"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Arcane Bodkins",
+        "Hagbane Tips",
+        "Moonfire Shot",
+        "Swiftshiver Shards",
+        "Trueflight Arrows",
+        "Ambushers"
+      ]
+    }
   ],
-  waywatchers: [
+  "waywatchers": [
     {
-      A: "1",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "5",
-      Ld: "8",
-      WS: "4",
-      Name: "Waywatcher",
+      "A": "1",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "5",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Waywatcher",
+      "rules": [
+        "Elven Reflexes",
+        "Evasive",
+        "Feigned Flight",
+        "Fire & Flee",
+        "Ignores Cover",
+        "Move Through Cover",
+        "Scouts",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Asrai longbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Arcane Bodkins",
+        "Hagbane Tips",
+        "Moonfire Shot",
+        "Swiftshiver Shards",
+        "Trueflight Arrows",
+        "Ambushers",
+        "Vanguard",
+        "Veteran"
+      ]
     },
     {
-      A: "1",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "6",
-      Ld: "8",
-      WS: "4",
-      Name: "Sentinel",
-    },
+      "A": "1",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "6",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Sentinel",
+      "rules": [
+        "Elven Reflexes",
+        "Evasive",
+        "Feigned Flight",
+        "Fire & Flee",
+        "Ignores Cover",
+        "Move Through Cover",
+        "Scouts",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Asrai longbows"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Arcane Bodkins",
+        "Hagbane Tips",
+        "Moonfire Shot",
+        "Swiftshiver Shards",
+        "Trueflight Arrows",
+        "Ambushers",
+        "Vanguard",
+        "Veteran"
+      ]
+    }
   ],
   "weapon-team": [
     {
-      A: "2",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "3",
-      Ld: "4",
-      WS: "3",
-      Name: "Weapon Team Crew",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "3",
+      "Ld": "4",
+      "WS": "3",
+      "Name": "Weapon Team Crew",
+      "as": 6,
+      "rules": [
+        "Loner",
+        "Open Order",
+        "Scurry Away",
+        "Deploying Weapon Teams",
+        "Weapon Team Leadership",
+        "Targeting Weapon Teams"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Doom-Flayer",
+        "Poisoned Wind Mortar",
+        "Ratling Gun",
+        "Warpfire Thrower",
+        "Warp Grinder"
+      ]
+    }
   ],
   "weapon-team-renegade": [
     {
-      A: "2",
-      I: "3",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "2",
-      BS: "3",
-      Ld: "4",
-      WS: "3",
-      Name: "Weapon Team Crew",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "2",
+      "BS": "3",
+      "Ld": "4",
+      "WS": "3",
+      "Name": "Weapon Team Crew",
+      "as": 6,
+      "rules": [
+        "Detachment",
+        "Loner",
+        "Open Order",
+        "Scurry Away",
+        "Targeting Weapon Teams"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Doom-Flayer",
+        "Poisoned Wind Mortar",
+        "Ratling Gun",
+        "Warpfire Thrower",
+        "Warp Grinder"
+      ]
+    }
   ],
   "white-lions-of-chrace": [
     {
-      A: "1",
-      I: "5",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "5",
-      Name: "White Lion",
+      "A": "1",
+      "I": "5",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "White Lion",
+      "as": 5,
+      "rules": [
+        "Chracian Warriors",
+        "Elven Reflexes",
+        "Furious Charge",
+        "King's Guard",
+        "Lion Cloak",
+        "Move Through Cover",
+        "Open Order",
+        "Stubborn",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Chracian great blades",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Veteran"
+      ]
     },
     {
-      A: "2",
-      I: "5",
-      M: "5",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "5",
-      Name: "Guardian",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "5",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "5",
+      "Name": "Guardian",
+      "as": 5,
+      "rules": [
+        "Chracian Warriors",
+        "Elven Reflexes",
+        "Furious Charge",
+        "King's Guard",
+        "Lion Cloak",
+        "Move Through Cover",
+        "Open Order",
+        "Stubborn",
+        "Valour of Ages"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "Chracian great blades",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Veteran"
+      ]
+    }
   ],
   "wight-king": [
     {
-      A: "3",
-      I: "4",
-      M: "4",
-      S: "5",
-      T: "5",
-      W: "3",
-      BS: "0",
-      Ld: "9",
-      WS: "5",
-      Name: "Wight King",
-    },
+      "A": "3",
+      "I": "4",
+      "M": "4",
+      "S": "5",
+      "T": "5",
+      "W": "3",
+      "BS": "0",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Wight King",
+      "as": 5,
+      "Regen": "5+",
+      "rules": [
+        "Indomitable (1)",
+        "Killing Blow",
+        "Necromantic Undead",
+        "Regeneration (5+)"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "wight-lord": [
     {
-      A: "2",
-      I: "4",
-      M: "4",
-      S: "4",
-      T: "5",
-      W: "2",
-      BS: "0",
-      Ld: "8",
-      WS: "4",
-      Name: "Wight Lord",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "4",
+      "S": "4",
+      "T": "5",
+      "W": "2",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Wight Lord",
+      "as": 5,
+      "Regen": "6+",
+      "rules": [
+        "Killing Blow",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "Wight Banner"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "wild-riders": [
     {
-      A: "1",
-      I: "5",
-      M: "-",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Wild Rider",
+      "A": "1",
+      "I": "5",
+      "M": "-",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Wild Rider",
+      "as": 6,
+      "rules": [
+        "Counter Charge",
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Fear",
+        "Frenzy",
+        "Furious Charge (Riders only)",
+        "Move Through Cover",
+        "Open Order",
+        "Swiftstride",
+        "Talismanic Tattoos"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "hunting spears",
+        "light armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "5",
-      M: "-",
-      S: "4",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Wild Hunter",
+      "A": "2",
+      "I": "5",
+      "M": "-",
+      "S": "4",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Wild Hunter",
+      "as": 6,
+      "rules": [
+        "Counter Charge",
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Fear",
+        "Frenzy",
+        "Furious Charge (Riders only)",
+        "Move Through Cover",
+        "Open Order",
+        "Swiftstride",
+        "Talismanic Tattoos"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "hunting spears",
+        "light armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "9",
-      S: "4",
-      T: "-",
-      W: "-",
-      BS: "-",
-      Ld: "-",
-      WS: "3",
-      Name: "Steed of Kurnous",
-    },
+      "A": "1",
+      "I": "4",
+      "M": "9",
+      "S": "4",
+      "T": "-",
+      "W": "-",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "3",
+      "Name": "Steed of Kurnous",
+      "as": 6,
+      "rules": [
+        "Counter Charge",
+        "Elven Reflexes",
+        "Fast Cavalry",
+        "Fear",
+        "Frenzy",
+        "Furious Charge (Riders only)",
+        "Move Through Cover",
+        "Open Order",
+        "Swiftstride",
+        "Talismanic Tattoos"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "hunting spears",
+        "light armour",
+        "hand weapon"
+      ],
+      "troopType": [
+        "Light Cavalry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "wildwood-rangers": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Wildwood Ranger",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Wildwood Ranger",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Guardians of the Wildwood",
+        "Immune to Psychology",
+        "Move Through Cover"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "ranger's glaives",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "9",
-      WS: "5",
-      Name: "Wildwood Warden",
-    },
+      "A": "2",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "9",
+      "WS": "5",
+      "Name": "Wildwood Warden",
+      "as": 6,
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Guardians of the Wildwood",
+        "Immune to Psychology",
+        "Move Through Cover"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "ranger's glaives",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "winged-warsphinx": [
     {
-      A: "4",
-      I: "1",
-      M: "6",
-      S: "5",
-      T: "6",
-      W: "5",
-      BS: "0",
-      Ld: "8",
-      WS: "4",
-      Name: "Winged Warsphinx",
-    },
+      "A": "4",
+      "I": "1",
+      "M": "6",
+      "S": "5",
+      "T": "6",
+      "W": "5",
+      "BS": "0",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Winged Warsphinx",
+      "as": 5,
+      "Regen": "6+",
+      "Stomps": "D3",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Counter Charge",
+        "Fly (9)",
+        "Indomitable (2)",
+        "Large Target",
+        "Nehekharan Undead",
+        "Regeneration (6+)",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Envenomed Sting",
+        "Fiery Roar"
+      ]
+    }
   ],
   "witch-elves": [
     {
-      A: "1",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Witch Elf",
+      "A": "1",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Witch Elf",
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Frenzy",
+        "Hatred (High Elves)",
+        "Horde",
+        "Loner",
+        "Murderous",
+        "Poisoned Attacks"
+      ],
+      "equipment": [
+        "Two hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "5",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Hag",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Hag",
+      "rules": [
+        "Close Order",
+        "Elven Reflexes",
+        "Frenzy",
+        "Hatred (High Elves)",
+        "Horde",
+        "Loner",
+        "Murderous",
+        "Poisoned Attacks"
+      ],
+      "equipment": [
+        "Two hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "witch-hunter": [
     {
-      A: "2",
-      I: "5",
-      M: "4",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Witch Hunter",
-    },
+      "A": "2",
+      "I": "5",
+      "M": "4",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Witch Hunter",
+      "as": 6,
+      "rules": [
+        "Immune to Psychology",
+        "Killing Blow",
+        "Suffer Not..."
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "wizard-lord": [
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "4",
-      W: "3",
-      BS: "3",
-      Ld: "8",
-      WS: "4",
-      Name: "Wizard Lord",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "4",
+      "W": "3",
+      "BS": "3",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Wizard Lord",
+      "Magic-Res": "-1",
+      "rules": [
+        "Magical Attacks",
+        "Magic Resistance (-1)"
+      ],
+      "equipment": [
+        "Hand weapon"
+      ],
+      "troopType": [
+        "Regular InfantryCharacter"
+      ],
+      "magic": [
+        "battle magic",
+        "daemonology",
+        "dark magic",
+        "elementalism",
+        "illusion",
+        "necromancy"
+      ],
+      "optionalRules": []
+    }
   ],
   "wood-elf-beast-pack": [
     {
-      A: "1",
-      I: "4",
-      M: "5",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "4",
-      Ld: "8",
-      WS: "4",
-      Name: "Beast Keeper",
+      "A": "1",
+      "I": "4",
+      "M": "5",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "4",
+      "Ld": "8",
+      "WS": "4",
+      "Name": "Beast Keeper",
+      "as": 6,
+      "rules": [
+        "Elven Reflexes",
+        "Motley Crew",
+        "Move Through Cover",
+        "Run with the Pack",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "Hand weapon",
+        "light armour"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "9",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "-",
-      Ld: "5",
-      WS: "4",
-      Name: "Deepwood Hound",
+      "A": "1",
+      "I": "3",
+      "M": "9",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "-",
+      "Ld": "5",
+      "WS": "4",
+      "Name": "Deepwood Hound",
+      "rules": [
+        "Motley Crew",
+        "Run with the Pack",
+        "Skirmishers",
+        "Warband"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "4",
-      M: "7",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "-",
-      Ld: "5",
-      WS: "4",
-      Name: "Forest Cat",
+      "A": "1",
+      "I": "4",
+      "M": "7",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "-",
+      "Ld": "5",
+      "WS": "4",
+      "Name": "Forest Cat",
+      "rules": [
+        "Armour Bane (1)",
+        "Motley Crew",
+        "Run with the Pack",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "1",
-      I: "3",
-      M: "6",
-      S: "4",
-      T: "4",
-      W: "1",
-      BS: "-",
-      Ld: "5",
-      WS: "3",
-      Name: "Sylvan Boar",
+      "A": "1",
+      "I": "3",
+      "M": "6",
+      "S": "4",
+      "T": "4",
+      "W": "1",
+      "BS": "-",
+      "Ld": "5",
+      "WS": "3",
+      "Name": "Sylvan Boar",
+      "rules": [
+        "Furious Charge",
+        "Motley Crew",
+        "Razor Tusks",
+        "Run with the Pack",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
     },
     {
-      A: "2",
-      I: "3",
-      M: "5",
-      S: "4",
-      T: "4",
-      W: "2",
-      BS: "-",
-      Ld: "6",
-      WS: "4",
-      Name: "Bear of Loren",
-    },
+      "A": "2",
+      "I": "3",
+      "M": "5",
+      "S": "4",
+      "T": "4",
+      "W": "2",
+      "BS": "-",
+      "Ld": "6",
+      "WS": "4",
+      "Name": "Bear of Loren",
+      "rules": [
+        "Armoured Hide (1)",
+        "Cleaving Blow",
+        "Fear",
+        "Motley Crew",
+        "Run with the Pack",
+        "Skirmishers"
+      ],
+      "equipment": [
+        "hand weapons"
+      ],
+      "troopType": [
+        "War Beast"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  wyvern: [
+  "wyvern": [
     {
-      A: "3",
-      I: "3",
-      M: "4",
-      S: "6",
-      T: "(+1)",
-      W: "(+4)",
-      BS: "-",
-      Ld: "-",
-      WS: "5",
-      Name: "Wyvern",
-    },
+      "A": "3",
+      "I": "3",
+      "M": "4",
+      "S": "6",
+      "T": "(+1)",
+      "W": "(+4)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "5",
+      "Name": "Wyvern",
+      "as": 5,
+      "Stomps": "D3",
+      "Fly": "9",
+      "rules": [
+        "Close Order",
+        "Fly (9)",
+        "Large Target",
+        "Stomp Attacks (D3)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "venomous tail",
+        "heavy armour"
+      ],
+      "troopType": [
+        "Monstrous Creature"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
   "yeomen-guard": [
     {
-      A: "1",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Yeoman Guard",
+      "A": "1",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Yeoman Guard",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Peasantry",
+        "Shieldwall",
+        "Veteran",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Grail Monk",
+        "Blessed Triptych"
+      ]
     },
     {
-      A: "2",
-      I: "3",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "3",
-      Ld: "6",
-      WS: "3",
-      Name: "Warden",
+      "A": "2",
+      "I": "3",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "3",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Warden",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Peasantry",
+        "Shieldwall",
+        "Veteran",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Grail Monk",
+        "Blessed Triptych"
+      ]
     },
     {
-      A: "2",
-      I: "2",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "2",
-      Ld: "6",
-      WS: "3",
-      Name: "Grail Monk",
-    },
+      "A": "2",
+      "I": "2",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "2",
+      "Ld": "6",
+      "WS": "3",
+      "Name": "Grail Monk",
+      "as": 5,
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Peasantry",
+        "Shieldwall",
+        "Veteran",
+        "Warband"
+      ],
+      "equipment": [
+        "Hand weapons",
+        "light armour",
+        "shields"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Grail Monk",
+        "Blessed Triptych"
+      ]
+    }
   ],
-  yhetees: [
+  "yhetees": [
     {
-      A: "3",
-      I: "4",
-      M: "7",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "0",
-      Ld: "7",
-      WS: "3",
-      Name: "Yhetee",
+      "A": "3",
+      "I": "4",
+      "M": "7",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "0",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Yhetee",
+      "rules": [
+        "Armoured Hide (1)",
+        "Fear",
+        "Flammable",
+        "Loner",
+        "Move Through Cover",
+        "Numbing Chill",
+        "Open Order",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Grimfrost weapons"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Scouts",
+        "Vanguard"
+      ]
     },
     {
-      A: "4",
-      I: "4",
-      M: "7",
-      S: "5",
-      T: "4",
-      W: "3",
-      BS: "0",
-      Ld: "7",
-      WS: "3",
-      Name: "Greyback",
-    },
+      "A": "4",
+      "I": "4",
+      "M": "7",
+      "S": "5",
+      "T": "4",
+      "W": "3",
+      "BS": "0",
+      "Ld": "7",
+      "WS": "3",
+      "Name": "Greyback",
+      "rules": [
+        "Armoured Hide (1)",
+        "Fear",
+        "Flammable",
+        "Loner",
+        "Move Through Cover",
+        "Numbing Chill",
+        "Open Order",
+        "Swiftstride"
+      ],
+      "equipment": [
+        "Grimfrost weapons"
+      ],
+      "troopType": [
+        "Monstrous Infantry"
+      ],
+      "magic": [],
+      "optionalRules": [
+        "Scouts",
+        "Vanguard"
+      ]
+    }
   ],
   "zombie-dragon": [
     {
-      A: "5",
-      I: "2",
-      M: "6",
-      S: "6",
-      T: "(+1)",
-      W: "(+5)",
-      BS: "-",
-      Ld: "-",
-      WS: "4",
-      Name: "Zombie Dragon",
-    },
+      "A": "5",
+      "I": "2",
+      "M": "6",
+      "S": "6",
+      "T": "(+1)",
+      "W": "(+5)",
+      "BS": "-",
+      "Ld": "-",
+      "WS": "4",
+      "Name": "Zombie Dragon",
+      "as": 4,
+      "Stomps": "D6",
+      "Fly": "9",
+      "rules": [
+        "Carrion Feeders",
+        "Close Order",
+        "Fly (9)",
+        "Large Target",
+        "Necromantic Undead",
+        "Stomp Attacks (D6)",
+        "Swiftstride",
+        "Terror"
+      ],
+      "equipment": [
+        "Wicked claws",
+        "pestilential breath",
+        "full plate armour"
+      ],
+      "troopType": [
+        "Behemoth"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
   ],
-  zombies: [
+  "zombies": [
     {
-      A: "1",
-      I: "1",
-      M: "4",
-      S: "3",
-      T: "3",
-      W: "1",
-      BS: "0",
-      Ld: "2",
-      WS: "2",
-      Name: "Zombies",
-    },
-  ],
+      "A": "1",
+      "I": "1",
+      "M": "4",
+      "S": "3",
+      "T": "3",
+      "W": "1",
+      "BS": "0",
+      "Ld": "2",
+      "WS": "2",
+      "Name": "Zombies",
+      "Regen": "6+",
+      "rules": [
+        "Close Order",
+        "Horde",
+        "Necromantic Undead",
+        "Regeneration (6+)",
+        "The Newly Dead"
+      ],
+      "equipment": [
+        "Hand weapons"
+      ],
+      "troopType": [
+        "Regular Infantry"
+      ],
+      "magic": [],
+      "optionalRules": []
+    }
+  ]
 };

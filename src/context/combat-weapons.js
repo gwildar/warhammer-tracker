@@ -3,18 +3,6 @@ import { findMount } from "../data/mounts.js";
 
 const HAND_WEAPON = { name: "Hand Weapon", s: "S", ap: "—", rules: "" };
 
-function calculateArmourSave(unit) {
-  return unit.armourSave ?? null;
-}
-
-function detectWard(unit) {
-  return unit.ward ?? null;
-}
-
-function detectRegen(unit) {
-  return unit.regen ?? null;
-}
-
 function findVirtueAttacks(unit) {
   for (const item of unit.magicItems || []) {
     if (item.type === "virtue" && item.attacks && item.phases?.includes("combat")) {
@@ -74,21 +62,6 @@ function matchRiderWeapons(unit) {
       }
     }
     return { weapons, matched };
-  }
-
-  // Legacy support for string-based equipment
-  const equipment = unit.equipment || [];
-  const parts = equipment.flatMap((g) =>
-    g.split(",").map((s) => s.trim()),
-  );
-  for (const part of parts) {
-    const lower = part.toLowerCase();
-    for (const [key, weapon] of Object.entries(COMBAT_WEAPONS)) {
-      if (lower.includes(key) && !matched.has(weapon.name)) {
-        matched.add(weapon.name);
-        weapons.push(weapon);
-      }
-    }
   }
 
   return { weapons, matched };
@@ -215,10 +188,6 @@ function hasFuriousCharge(unit) {
   );
 }
 
-function hasPoisonedAttacks(unit) {
-  return unit.poisonedAttacks ?? false;
-}
-
 function detectItemBonuses(unit) {
   let armourBane = 0;
   const strengthMods = [];
@@ -240,7 +209,7 @@ function buildRiderTags(unit) {
     tags.push(
       '<span class="text-wh-phase-combat font-mono ml-1">\u{1F4A5} +1A furious</span>',
     );
-  if (hasPoisonedAttacks(unit))
+  if (unit.poisonedAttacks ?? false)
     tags.push(
       '<span class="text-wh-phase-combat font-mono ml-1">\u2620\uFE0F Poison</span>',
     );
@@ -372,18 +341,6 @@ function extractCombatRules(unit) {
   return results;
 }
 
-function detectMagicResistance(unit) {
-  return unit.magicResistance ?? null;
-}
-
-function detectStompFromRules(unit) {
-  return unit.stomp ?? null;
-}
-
-function detectImpactHitsFromRules(unit) {
-  return unit.impactHits ?? null;
-}
-
 export function renderCombatWeaponsContext(army) {
   if (army.units.length === 0) return "";
 
@@ -396,6 +353,7 @@ export function renderCombatWeaponsContext(army) {
       const suNames = new Set(suItems.map((i) => i.name.toLowerCase()));
       entries.push({
         unitName: u.name,
+        points: u.points,
         strength: u.strength,
         mount: null,
         riderI: "?",
@@ -403,10 +361,10 @@ export function renderCombatWeaponsContext(army) {
         riderS: "?",
         t: "?",
         w: "?",
-        as: calculateArmourSave(u),
-        mr: detectMagicResistance(u),
-        ward: detectWard(u),
-        regen: detectRegen(u),
+        as: u.armourSave ?? null,
+        mr: u.magicResistance ?? null,
+        ward: u.ward ?? null,
+        regen: u.regen ?? null,
         iNum: 0,
         riderWeapons: [HAND_WEAPON],
         riderA: "?",
@@ -416,8 +374,8 @@ export function renderCombatWeaponsContext(army) {
         mountI: null,
         mountWS: null,
         mountName: null,
-        stomp: detectStompFromRules(u),
-        impactHits: detectImpactHitsFromRules(u),
+        stomp: u.stomp ?? null,
+        impactHits: u.impactHits ?? null,
         singleUseItems: suItems,
         itemNames: buildItemNames(u).filter((n) => {
           if (suNames.has(n.toLowerCase())) return false;
@@ -555,6 +513,7 @@ export function renderCombatWeaponsContext(army) {
 
     entries.push({
       unitName: u.name,
+      points: u.points,
       strength: u.strength,
       mount: isRiddenMonster || (mount && mount.a) ? mount.name : null,
       riderI,
@@ -562,10 +521,10 @@ export function renderCombatWeaponsContext(army) {
       riderS,
       t: isRiddenMonster ? `${baseT + mount.tBonus}` : stats.T || "?",
       w: isRiddenMonster ? `${baseW + mount.wBonus}` : stats.W || "?",
-      as: calculateArmourSave(u),
-      mr: detectMagicResistance(u),
-      ward: detectWard(u),
-      regen: detectRegen(u),
+      as: u.armourSave ?? null,
+      mr: u.magicResistance ?? null,
+      ward: u.ward ?? null,
+      regen: u.regen ?? null,
       iNum: Math.max(parseInt(riderI) || 0, mountI || 0),
       riderWeapons,
       riderA: stats.A || "?",
@@ -576,11 +535,11 @@ export function renderCombatWeaponsContext(army) {
       mountWS,
       mountName,
       mountArmourBane,
-      stomp: mount?.stomp || mountStomp || detectStompFromRules(u),
+      stomp: mount?.stomp || mountStomp || (u.stomp ?? null),
       impactHits:
         mount?.impactHits ||
         embedded?.mountData?.impactHits ||
-        detectImpactHitsFromRules(u),
+        (u.impactHits ?? null),
       singleUseItems: detectSingleUseItems(u),
       itemNames: (() => {
         const suItems = detectSingleUseItems(u);
@@ -672,7 +631,10 @@ export function renderCombatWeaponsContext(army) {
           .map(
             (r) => `
           <div class="p-2 rounded bg-wh-card">
-            <div class="text-wh-text font-semibold text-sm">${r.unitName}${r.mount ? ` (${r.mount})` : ""}${!r.merged && r.strength > 1 ? ` x${r.strength}` : ""}</div>
+            <div class="flex justify-between items-start">
+              <div class="text-wh-text font-semibold text-sm">${r.unitName}${r.mount ? ` (${r.mount})` : ""}${!r.merged && r.strength > 1 ? ` x${r.strength}` : ""}</div>
+              <div class="text-wh-muted text-[10px] font-mono shrink-0 ml-2">${r.points}pts</div>
+            </div>
             <div class="flex items-center gap-2 flex-wrap mt-0.5">
               <span class="text-wh-muted font-mono text-xs">T:${r.t}</span>
               <span class="text-wh-muted font-mono text-xs">W:${r.w}</span>
@@ -684,7 +646,7 @@ export function renderCombatWeaponsContext(army) {
               ${
                 r.singleUseItems.length > 0
                   ? `
-                <div class="mt-1 ml-2">
+                <div class="mt-1">
                   ${r.singleUseItems.map((item) => `<div class="text-xs"><span class="text-wh-accent">\u{1F6E1} ${item.name}</span> <span class="text-wh-muted">(single use)</span></div>`).join("")}
                 </div>
               `
@@ -906,9 +868,9 @@ export function renderDefensiveStatsContext(army) {
     const baseW = parseInt(stats?.W) || 0;
     const t = isRiddenMonster ? `${baseT + mount.tBonus}` : stats?.T || "?";
     const w = isRiddenMonster ? `${baseW + mount.wBonus}` : stats?.W || "?";
-    const as = calculateArmourSave(u);
-    const ward = detectWard(u);
-    const regen = detectRegen(u);
+    const as = u.armourSave ?? null;
+    const ward = u.ward ?? null;
+    const regen = u.regen ?? null;
 
     let ld = "?";
     if (u.stats) {

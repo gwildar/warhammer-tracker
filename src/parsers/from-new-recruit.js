@@ -25,6 +25,22 @@ import {
   computeImpactHits,
 } from "./resolve.js";
 /**
+ * Sum all "pts" costs recursively through a selection tree
+ */
+function sumSelectionCosts(sel) {
+  let total = 0;
+  if (Array.isArray(sel.costs)) {
+    for (const c of sel.costs) {
+      if (c.name === "pts") total += c.value || 0;
+    }
+  }
+  if (Array.isArray(sel.selections)) {
+    for (const child of sel.selections) total += sumSelectionCosts(child);
+  }
+  return total;
+}
+
+/**
  * Extract characteristics from a profile by name
  */
 function getCharacteristic(profile, charName) {
@@ -229,20 +245,26 @@ function parseCanonicalUnit(selection, category) {
   const hasStandard = rulesText.some((r) => r.toLowerCase().includes("standard bearer"));
   const hasMusician = rulesText.some((r) => r.toLowerCase().includes("musician"));
 
-  // Check for caster and extract faction lores
-  const spells = [];
+  // Check for caster and extract lore keys from "Lores of Magic" group selections
+  const lores = [];
+  let isCaster = false;
   const factionLores = [];
-  if (selection.selections) {
-    for (const sel of selection.selections) {
-      if (sel.profiles) {
-        for (const profile of sel.profiles) {
-          if (profile.typeName === "Spell") {
-            spells.push(profile.name);
-          }
-        }
+
+  function walkSelectionsForLores(selections) {
+    if (!Array.isArray(selections)) return;
+    for (const sel of selections) {
+      if (sel.group === "Wizard Level") {
+        isCaster = true;
       }
+      if (sel.group === "Lores of Magic" && sel.name) {
+        const key = LORE_NAME_TO_KEY[sel.name.toLowerCase()];
+        if (key && !lores.includes(key)) lores.push(key);
+      }
+      if (sel.selections) walkSelectionsForLores(sel.selections);
     }
   }
+  walkSelectionsForLores(selection.selections);
+  if (lores.length > 0) isCaster = true;
 
   // Extract faction lores from special rules
   if (allRulesText) {
@@ -259,15 +281,13 @@ function parseCanonicalUnit(selection, category) {
     }
   }
 
-  const isCaster = spells.length > 0;
-
   // Build canonical unit
   const unit = {
     id,
     name: unitName,
     category,
     strength,
-    points: selection.costs?.[0]?.value || 0,
+    points: sumSelectionCosts(selection),
     stats: modelProfiles,
     weapons,
     shootingWeapons,
@@ -288,8 +308,8 @@ function parseCanonicalUnit(selection, category) {
     hasStandard,
     hasMusician,
     isCaster,
-    lores: spells,
-    activeLore: null,
+    lores,
+    activeLore: lores[0] || null,
     factionLores,
   };
 

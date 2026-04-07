@@ -1,0 +1,1075 @@
+{
+  "roster": {
+    "costs": [
+      {
+        "name": "pts",
+        "typeId": "points",
+        "value": 2398
+      }
+    ],
+    "costLimits": [],
+    "forces": [
+      {
+        "selections": [
+          {
+            "profiles": [
+              {
+                "characteristics": [
+                  {
+                    "$text": "Regular infantry (character)",
+                    "name": "Troop Type",
+                    "typeId": "5d94-6b94-bd89-1944"
+                  },
+                  {
+                    "$text": "1",
+                    "name": "Unit Size",
+                    "typeId": "80a1-bb6f-66e4-4a5b"
+                  }
+                ],
+                "id": "d017544e-719c5258",
+                "name": "Supreme Sorceress",
+                "hidden": false,
+                "typeId": "2878-9a1f-dd74-48e3",
+                "typeName": "Unit",
+                "from": "entry"
+              },
+              {
+                "characteristics": [
+                  {
+                    "$text": "A model with this special rule (but not its mount) has a +1 modifier to its Initiative characteristic (to a maximum of 10) during the first round of any combat.",
+                    "name": "Description",
+                    "typeId": "9f84-4221-785a-db50"
+                  }
+                ],
+                "id": "cf6b-ab6d-f5a1-e20c",
+                "name": "Elven Reflexes",
+                "hidden": false,
+                "typeId": "c1ac-c1c8-f9d5-9673",
+                "typeName": "Special Rule",
+                "from": "entry"
+              },
+              {
+                "characteristics": [
+                  {
+                    "$text": "Against High Elves, this model’s Hatred applies in every round of close combat, not just the first.\n\nNote that this special rule does not apply to this model’s mount (should it have one).",
+                    "name": "Description",
+                    "typeId": "9f84-4221-785a-db50"
+                  }
+                ],
+                "id": "fab5-2714-1dd-4ed8",
+                "name": "Eternal Hatred",
+                "hidden": false,
+                "typeId": "c1ac-c1c8-f9d5-9673",
+                "typeName": "Special Rule",
+                "from": "entry"
+              },
+              {
+                "characteristics": [
+                  {
+                    "$text": "A model with this special rule may re-roll any failed rolls To Hit made against a hatred enemy during the first round of combat.\n\n Which enemies are hated varies from model to model and will be shown in brackets after the name of this special rule. Some models hate 'all enemies' meaning they hate all enemy models equally.",
+                    "name": "Description",
+                    "typeId": "9f84-4221-785a-db50"
+                  }
+                ],
+                "id": "f4b3-18af-16bf-78dd",
+                "name": "Hatred (High Elves)",
+                "hidden": false,
+                "typeId": "c1ac-c1c8-f9d5-9673",
+                "typeName": "Special Rule",
+                "from": "entry"
+              },
+              {
+                "characteristics": [
+                  {
+                    "$text": "Once per game, a model with this special rule may re-roll a single failed Casting roll.",
+                    "name": "Description",
+                    "typeId": "9f84-4221-785a-db50"
+                  }
+                ],
+                "id": "909c-157c-ea4c-bb2d",
+                "name": "Hekarti’s Blessing",
+                "hidden": false,
+                "typeId": "c1ac-c1c8-f9d5-9673",
+                "typeName": "Special Rule",
+                "from": "entry"
+              },
+              {
+                "characteristics": [
+                  {
+                    "$text": "A Wizard with the ‘Lore of Naggaroth’ special rule may discard one of their randomly generated spells as normal. When they do so, they may select instead either the signature spell of their chosen Lore of Magic, or one of the spells listed below:\n\n• Cursing Word \n• Black Horror",
+                    "name": "Description",
+                    "typeId": "9f84-4221-785a-db50"
+                  }
+                ],
+                "id": "dea-f874-c70e-2e4a",
+                "name": "Lore Of Naggaroth",
+                "hidden": false,
+                "typeId": "c1ac-c1c8-f9d5-9673",
+                "typeName": "Special Rule",
+                "from": "entry"
+              },
+              {
+                "characteristics": [
+                  {
+                    "$text": "When engaged in combat, a model with this special rule that is fighting with a hand weapon may re-roll any rolls To Wound of a natural 1.\n\n*Note that this special rule only applies to a single, non-magical hand weapon and does not apply to a model’s mount (should it have one). If the model is using two hand weapons or any other sort of weapon, this special rule ceases to apply.*",
+                    "name": "Description",
+                    "typeId": "9f84-4221-785a-db50"
+                  }
+                ],
+                "id": "404b-9605-8eb5-e94b",
+                "name": "Murderous",
+                "hidden": false,
+                "typeId": "c1ac-c1c8-f9d5-9673",
+                "typeName": "Special Rule",
+                "from": "entry"
+              }
+            ],
+            "selections": [
+              {
+                "profiles": [
+                  {
+                    "characteristics": [
+                      {
+                        "$text": "5",
+                        "name": "M",
+                        "typeId": "cd3b-a5a4-e185-5a9d"
+                      },
+                      {
+                        "$text": "4",
+                        "name": "WS",
+                        "typeId": "b007-7d58-4f14-1e01"
+                      },
+                      {
+                        "$text": "4",
+                        "name": "BS",
+                        "typeId": "59f9-ccf5-1155-fb05"
+                      },
+                      {
+                        "$text": "3",
+                        "name": "S",
+                        "typeId": "5b6b-1427-2a45-dd0c"
+                      },
+                      {
+                        "$text": "3",
+                        "name": "T",
+                        "typeId": "ab43-8b61-83e7-d090"
+                      },
+                      {
+                        "$text": "3",
+                        "name": "W",
+                        "typeId": "83ed-7b82-bf1f-e558"
+                      },
+                      {
+                        "$text": "5",
+                        "name": "I",
+                        "typeId": "73b1-abe5-72f8-41e2"
+                      },
+                      {
+                        "$text": "2",
+                        "name": "A",
+                        "typeId": "dddc-9fbd-b0fd-a480"
+                      },
+                      {
+                        "$text": "8",
+                        "name": "Ld",
+                        "typeId": "c435-6b14-f77e-3c72"
+                      }
+                    ],
+                    "id": "4951-ff39-987-51f3",
+                    "name": "Supreme Sorceress",
+                    "hidden": false,
+                    "typeId": "b070-143a-73f-2772",
+                    "typeName": "Model",
+                    "from": "entry"
+                  },
+                  {
+                    "characteristics": [
+                      {
+                        "$text": "25x25",
+                        "name": "Base Size",
+                        "typeId": "1adf-d238-57ca-2226"
+                      }
+                    ],
+                    "id": "193c-4d0d-de6b-bbb1",
+                    "name": "Base",
+                    "hidden": false,
+                    "typeId": "1ae4-7f34-4055-fd5f",
+                    "typeName": "Base",
+                    "from": "entry"
+                  },
+                  {
+                    "characteristics": [
+                      {
+                        "$text": "2",
+                        "name": "Number",
+                        "typeId": "8a2b-690b-e552-6aa0"
+                      },
+                      {
+                        "$text": "Hex",
+                        "name": "Type",
+                        "typeId": "c2ca-5fd1-5e9d-bc90"
+                      },
+                      {
+                        "$text": "9+",
+                        "name": "Casting Value",
+                        "typeId": "d84d-3b8b-654a-9e1a"
+                      },
+                      {
+                        "$text": "12\"",
+                        "name": "Range",
+                        "typeId": "1043-a0ad-2909-dd28"
+                      },
+                      {
+                        "$text": "Remains in play. Whilst this spell is in play, the target enemy unit suffers a -1 modifier to either its Weapon skill characteristic, or its Ballistic Skill characteristic (chosen by the casting Wizard’s controlling player, to minimum of 1). If this spell is cast, the effects of any other Hex previously cast on the target unit immediately expire.",
+                        "name": "Effect",
+                        "typeId": "64ba-31-acf0-5a"
+                      }
+                    ],
+                    "id": "4cbe-6c6c-5880-d579",
+                    "name": "Cursing Word",
+                    "hidden": false,
+                    "typeId": "8232-ae14-b1f6-b4df",
+                    "typeName": "Spell",
+                    "from": "entry"
+                  },
+                  {
+                    "characteristics": [
+                      {
+                        "$text": "1",
+                        "name": "Number",
+                        "typeId": "8a2b-690b-e552-6aa0"
+                      },
+                      {
+                        "$text": "Magical Vortex",
+                        "name": "Type",
+                        "typeId": "c2ca-5fd1-5e9d-bc90"
+                      },
+                      {
+                        "$text": "9+",
+                        "name": "Casting Value",
+                        "typeId": "d84d-3b8b-654a-9e1a"
+                      },
+                      {
+                        "$text": "18\"",
+                        "name": "Range",
+                        "typeId": "1043-a0ad-2909-dd28"
+                      },
+                      {
+                        "$text": "Remains in play. Place a large (5\") blast template so that its central hole is within 18\" of the caster. Whilst in play, the template is treated as dangerous terrain. The template moves 2D6\" in a random direction during every Start of Turn sub-phase. Any enemy unit the moving template touches or moves over must immediately make D6 Strength tests. For each test that is failed, the unit loses a single Wound.",
+                        "name": "Effect",
+                        "typeId": "64ba-31-acf0-5a"
+                      }
+                    ],
+                    "id": "d340-c0ee-3f34-7bc6",
+                    "name": "Black Horror",
+                    "hidden": false,
+                    "typeId": "8232-ae14-b1f6-b4df",
+                    "typeName": "Spell",
+                    "from": "entry"
+                  }
+                ],
+                "selections": [
+                  {
+                    "profiles": [
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "Combat",
+                            "name": "R",
+                            "typeId": "2360-c777-5e07-ed58"
+                          },
+                          {
+                            "$text": "S",
+                            "name": "S",
+                            "typeId": "ac19-f99c-72e9-a1a7"
+                          },
+                          {
+                            "$text": "-",
+                            "name": "AP",
+                            "typeId": "9429-ffe7-2ce5-e9a5"
+                          },
+                          {
+                            "$text": "-",
+                            "name": "Special Rules",
+                            "typeId": "5f83-3633-336b-93b4"
+                          },
+                          {
+                            "$text": "Unless specified otherwise, all models are assumed to be equipped with a hand weapon.",
+                            "name": "Notes",
+                            "typeId": "772a-a7ff-f6b3-df71"
+                          }
+                        ],
+                        "id": "6d4a-7733-d725-a267",
+                        "name": "Hand Weapon",
+                        "hidden": false,
+                        "typeId": "a378-c633-912d-11ce",
+                        "typeName": "Weapon",
+                        "from": "entry"
+                      }
+                    ],
+                    "id": "rsb53a",
+                    "name": "Hand Weapon",
+                    "entryId": "333a8a0a-c06edb34::7969a4fd-314cd833::721d-36e3-388a-c0d6",
+                    "number": 1,
+                    "type": "upgrade",
+                    "from": "entry"
+                  },
+                  {
+                    "profiles": [
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "6",
+                            "name": "M",
+                            "typeId": "cd3b-a5a4-e185-5a9d"
+                          },
+                          {
+                            "$text": "6",
+                            "name": "WS",
+                            "typeId": "b007-7d58-4f14-1e01"
+                          },
+                          {
+                            "$text": "-",
+                            "name": "BS",
+                            "typeId": "59f9-ccf5-1155-fb05"
+                          },
+                          {
+                            "$text": "7",
+                            "name": "S",
+                            "typeId": "5b6b-1427-2a45-dd0c"
+                          },
+                          {
+                            "$text": "(+3)",
+                            "name": "T",
+                            "typeId": "ab43-8b61-83e7-d090"
+                          },
+                          {
+                            "$text": "(+6)",
+                            "name": "W",
+                            "typeId": "83ed-7b82-bf1f-e558"
+                          },
+                          {
+                            "$text": "4",
+                            "name": "I",
+                            "typeId": "73b1-abe5-72f8-41e2"
+                          },
+                          {
+                            "$text": "6",
+                            "name": "A",
+                            "typeId": "dddc-9fbd-b0fd-a480"
+                          },
+                          {
+                            "$text": "-",
+                            "name": "Ld",
+                            "typeId": "c435-6b14-f77e-3c72"
+                          }
+                        ],
+                        "id": "3757-b5e6-c5dc-2aec",
+                        "name": "Black Dragon",
+                        "hidden": false,
+                        "typeId": "b070-143a-73f-2772",
+                        "typeName": "Model",
+                        "from": "entry"
+                      },
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "60x100",
+                            "name": "Base Size",
+                            "typeId": "1adf-d238-57ca-2226"
+                          }
+                        ],
+                        "id": "5125-89a4-916a-eabd",
+                        "name": "Base",
+                        "hidden": false,
+                        "typeId": "1ae4-7f34-4055-fd5f",
+                        "typeName": "Base",
+                        "from": "entry"
+                      },
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "A unit consisting of models with this special rule may adopt a Close Order formation.",
+                            "name": "Description",
+                            "typeId": "9f84-4221-785a-db50"
+                          }
+                        ],
+                        "id": "883e-e1b1-4fe9-5912",
+                        "name": "Close Order",
+                        "hidden": false,
+                        "typeId": "c1ac-c1c8-f9d5-9673",
+                        "typeName": "Special Rule",
+                        "from": "entry"
+                      },
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "Except when following up or pursuing, a model with this special rule can choose to move by flying through the air, rather than moving across the ground as normal. When a model flies it uses a special ‘Fly Movement’ characteristic, shown in brackets after the name of this special rule (shown here as ‘X’). Models that choose to move by flying:\n\n- May move as normal (i.e. they may charge, march and manoeuvre as if moving on the ground), except that they are able to pass freely above other models, units and terrain features without any penalty, and they can march whilst within 8\" of an enemy unit without first having to make a Leadership test.\n\n- May end their movement in terrain, but will suffer its effects if they do. They cannot end their movement 'on top' of impassable terrain or another unit, or within 1\" of an enemy unit.\n\nModels that can Fly must begin and end all their movement on the ground. A character with this special rule cannot join a unit without this special rule, and vice versa.",
+                            "name": "Description",
+                            "typeId": "9f84-4221-785a-db50"
+                          }
+                        ],
+                        "id": "c557-6102-9a35-bbcd",
+                        "name": "Fly (10)",
+                        "hidden": false,
+                        "typeId": "c1ac-c1c8-f9d5-9673",
+                        "typeName": "Special Rule",
+                        "from": "entry"
+                      },
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "A model with this special rule may re-roll any failed rolls To Hit made against a hatred enemy during the first round of combat.\n\n Which enemies are hated varies from model to model and will be shown in brackets after the name of this special rule. Some models hate 'all enemies' meaning they hate all enemy models equally.",
+                            "name": "Description",
+                            "typeId": "9f84-4221-785a-db50"
+                          }
+                        ],
+                        "id": "f4b3-18af-16bf-78dd",
+                        "name": "Hatred (High Elves)",
+                        "hidden": false,
+                        "typeId": "c1ac-c1c8-f9d5-9673",
+                        "typeName": "Special Rule",
+                        "from": "entry"
+                      },
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "Large Targets do not benefit from partial or full cover. In addition, a unit can draw a line of sight to a Large Target over or through another unit, and vice versa, provided that unit is not also a Large Target. Finally, a unit that shoots at a Large Target can shoot with one additional rank. For example, a unit armed with crossbows can shoot with its first two ranks when shooting at a Large Target, or with its first three if also standing on a hill.",
+                            "name": "Description",
+                            "typeId": "9f84-4221-785a-db50"
+                          }
+                        ],
+                        "id": "c822-7ad0-f24a-e4af",
+                        "name": "Large Target",
+                        "hidden": false,
+                        "typeId": "c1ac-c1c8-f9d5-9673",
+                        "typeName": "Special Rule",
+                        "from": "entry"
+                      },
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "The number of Stomp Attacks caused varies from model to model and will be shown in brackets after the name of this special rule. Often, this is determined by the roll of a dice.\n\n**Resolving Stomp Attacks:** Stomp Attacks can only be made by a model that is in base contact with the enemy. Stomp Attacks are attacks made in combat that must be made last, after all other attacks have been made, including attacks made at Initiative 1. They hit automatically and use the unmodified Strength of the model making them.",
+                            "name": "Description",
+                            "typeId": "9f84-4221-785a-db50"
+                          }
+                        ],
+                        "id": "72db-24bb-7493-d753",
+                        "name": "Stomp Attacks (D6)",
+                        "hidden": false,
+                        "typeId": "c1ac-c1c8-f9d5-9673",
+                        "typeName": "Special Rule",
+                        "from": "entry"
+                      },
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "A unit which consists entirely of models with this special rule increases its maximum possible charge range by 3\" and, before making a Charge, Flee or Pursuit roll, may choose to apply a +D6 modifier to the result.",
+                            "name": "Description",
+                            "typeId": "9f84-4221-785a-db50"
+                          }
+                        ],
+                        "id": "dc91-48b3-3696-217",
+                        "name": "Swiftstride",
+                        "hidden": false,
+                        "typeId": "c1ac-c1c8-f9d5-9673",
+                        "typeName": "Special Rule",
+                        "from": "entry"
+                      },
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "Models with this special rule cause Terror. Models that cause Terror also cause Fear:\n- When a unit that causes Terror declares a charge, the charge target must immediately make a Leadership test. If this test is failed, it must Flee. If this test is passed, it can declare its charge reaction normally.\n- If the winning side of a combat includes one or more units that cause Terror, each unit that belongs to the losing side must apply a -1 modifier to its Leadership characteristic when making its Break test.\n\nNote that if a charged unit cannot choose to Flee, it does not make this Leadership test.\n\nModels with the Fear special rule Fear models that cause Terror. Models that cause Terror are immune to Terror. A unit that does not cause Terror does not become immune to Terror when joined by a character that does.",
+                            "name": "Description",
+                            "typeId": "9f84-4221-785a-db50"
+                          }
+                        ],
+                        "id": "c7a2-35bf-4313-f4f0",
+                        "name": "Terror",
+                        "hidden": false,
+                        "typeId": "c1ac-c1c8-f9d5-9673",
+                        "typeName": "Special Rule",
+                        "from": "entry"
+                      }
+                    ],
+                    "selections": [
+                      {
+                        "profiles": [
+                          {
+                            "characteristics": [
+                              {
+                                "$text": "Combat",
+                                "name": "R",
+                                "typeId": "2360-c777-5e07-ed58"
+                              },
+                              {
+                                "$text": "S",
+                                "name": "S",
+                                "typeId": "ac19-f99c-72e9-a1a7"
+                              },
+                              {
+                                "$text": "-2",
+                                "name": "AP",
+                                "typeId": "9429-ffe7-2ce5-e9a5"
+                              },
+                              {
+                                "$text": "-",
+                                "name": "Special Rules",
+                                "typeId": "5f83-3633-336b-93b4"
+                              },
+                              {
+                                "name": "Notes",
+                                "typeId": "772a-a7ff-f6b3-df71"
+                              }
+                            ],
+                            "id": "3189-7068-61dc-17ed",
+                            "name": "Wicked Claws",
+                            "hidden": false,
+                            "typeId": "a378-c633-912d-11ce",
+                            "typeName": "Weapon",
+                            "from": "entry"
+                          }
+                        ],
+                        "id": "swkr5hc",
+                        "name": "Wicked claws",
+                        "entryId": "333a8a0a-c06edb34::4bd282bd-a800c7f3::fa5d72d7-5bf26d25::b33f618f-8b2b921d",
+                        "number": 1,
+                        "type": "upgrade",
+                        "from": "entry"
+                      },
+                      {
+                        "profiles": [
+                          {
+                            "characteristics": [
+                              {
+                                "$text": "Combat",
+                                "name": "R",
+                                "typeId": "2360-c777-5e07-ed58"
+                              },
+                              {
+                                "$text": "S",
+                                "name": "S",
+                                "typeId": "ac19-f99c-72e9-a1a7"
+                              },
+                              {
+                                "$text": "-",
+                                "name": "AP",
+                                "typeId": "9429-ffe7-2ce5-e9a5"
+                              },
+                              {
+                                "$text": "Armour Bane (2), Multiple Wounds (2)",
+                                "name": "Special Rules",
+                                "typeId": "5f83-3633-336b-93b4"
+                              },
+                              {
+                                "$text": "In combat, this model must make one of its attacks each turn with this weapon.",
+                                "name": "Notes",
+                                "typeId": "772a-a7ff-f6b3-df71"
+                              }
+                            ],
+                            "id": "c521-1d17-cb12-239e",
+                            "name": "Serrated Maw",
+                            "hidden": false,
+                            "typeId": "a378-c633-912d-11ce",
+                            "typeName": "Weapon",
+                            "from": "entry"
+                          }
+                        ],
+                        "id": "sw23o9o",
+                        "name": "Serrated Maw",
+                        "entryId": "333a8a0a-c06edb34::4bd282bd-a800c7f3::3fdd625b-c0bbb5e9::1e93-bd5f-4eab-4521",
+                        "number": 1,
+                        "type": "upgrade",
+                        "from": "entry"
+                      },
+                      {
+                        "profiles": [
+                          {
+                            "characteristics": [
+                              {
+                                "$text": "N/A",
+                                "name": "R",
+                                "typeId": "2360-c777-5e07-ed58"
+                              },
+                              {
+                                "$text": "4",
+                                "name": "S",
+                                "typeId": "ac19-f99c-72e9-a1a7"
+                              },
+                              {
+                                "$text": "N/A",
+                                "name": "AP",
+                                "typeId": "9429-ffe7-2ce5-e9a5"
+                              },
+                              {
+                                "$text": "Breath Weapon",
+                                "name": "Special Rules",
+                                "typeId": "5f83-3633-336b-93b4"
+                              },
+                              {
+                                "$text": "Until your next Start of Turn sub-phase, every model in a unit that suffers one or more unsaved wounds from this weapon suffers a -1 modifier to its Weapon Skill characteristic (to a minimum of 1). No armour save is permitted against wounds caused by this weapon (Ward and Regeneration saves can be attempted as normal).",
+                                "name": "Notes",
+                                "typeId": "772a-a7ff-f6b3-df71"
+                              }
+                            ],
+                            "id": "79bb-357e-c31e-d97d",
+                            "name": "Noxious breath",
+                            "hidden": false,
+                            "typeId": "a378-c633-912d-11ce",
+                            "typeName": "Weapon",
+                            "from": "entry"
+                          }
+                        ],
+                        "id": "swenlg",
+                        "name": "Noxious breath",
+                        "entryId": "333a8a0a-c06edb34::4bd282bd-a800c7f3::c51e9251-3b6215a7::c12cd453-d01a6901",
+                        "number": 1,
+                        "type": "upgrade",
+                        "from": "entry"
+                      },
+                      {
+                        "profiles": [
+                          {
+                            "characteristics": [
+                              {
+                                "$text": "Armour Value 4+",
+                                "name": "Description",
+                                "typeId": "adcd-c649-e6fc-a9f6"
+                              }
+                            ],
+                            "id": "9a1d-38b0-7d7-7552",
+                            "name": "Full Plate Armour",
+                            "hidden": false,
+                            "typeId": "c14f-740-8107-d34b",
+                            "typeName": "Armour",
+                            "from": "entry"
+                          }
+                        ],
+                        "id": "sx8nr4i",
+                        "name": "Full Plate Armour",
+                        "entryId": "333a8a0a-c06edb34::4bd282bd-a800c7f3::d559ceb-18bd7139::2505-873d-1655-3b0b",
+                        "number": 1,
+                        "type": "upgrade",
+                        "from": "entry"
+                      }
+                    ],
+                    "costs": [
+                      {
+                        "name": "pts",
+                        "typeId": "points",
+                        "value": 280
+                      }
+                    ],
+                    "categories": [
+                      {
+                        "id": "3755-6732-99b2-c713",
+                        "name": "Behemoth",
+                        "entryId": "3755-6732-99b2-c713",
+                        "primary": false
+                      },
+                      {
+                        "id": "may-have-armour",
+                        "name": "MAY_HAVE_ARMOUR",
+                        "entryId": "may-have-armour",
+                        "primary": false
+                      }
+                    ],
+                    "id": "rso4yhs",
+                    "name": "Black Dragon",
+                    "entryId": "333a8a0a-c06edb34::4bd282bd-a800c7f3::d21f2a02-b160fbcc",
+                    "entryGroupId": "333a8a0a-c06edb34::4bd282bd-a800c7f3::bc31-e0cb-8e0e-6ff5",
+                    "number": 1,
+                    "type": "mount",
+                    "from": "group",
+                    "group": "Mount"
+                  },
+                  {
+                    "categories": [
+                      {
+                        "id": "f954-b4c0-b835-a048",
+                        "name": "Wizard",
+                        "entryId": "f954-b4c0-b835-a048",
+                        "primary": false
+                      }
+                    ],
+                    "id": "rrfd93b",
+                    "name": "Wizard Level 3",
+                    "entryId": "333a8a0a-c06edb34::82d5d58f-226e661d::59f1-ac46-8123-3f8d",
+                    "entryGroupId": "333a8a0a-c06edb34::d4f6afa2-5ebedcec",
+                    "number": 1,
+                    "type": "upgrade",
+                    "from": "group",
+                    "group": "Wizard Level"
+                  },
+                  {
+                    "profiles": [
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "1",
+                            "name": "Number",
+                            "typeId": "8a2b-690b-e552-6aa0"
+                          },
+                          {
+                            "$text": "Conveyance",
+                            "name": "Type",
+                            "typeId": "c2ca-5fd1-5e9d-bc90"
+                          },
+                          {
+                            "$text": "8+",
+                            "name": "Casting Value",
+                            "typeId": "d84d-3b8b-654a-9e1a"
+                          },
+                          {
+                            "$text": "15\"",
+                            "name": "Range",
+                            "typeId": "1043-a0ad-2909-dd28"
+                          },
+                          {
+                            "$text": "This spell can only target friendly models whose troop type is ‘infantry’. If the target friendly unit is not fleeing and has not already moved during this Movement phase, it gains the Fly (12) special rule until your next Start of Turn sub-phase.",
+                            "name": "Effect",
+                            "typeId": "64ba-31-acf0-5a"
+                          }
+                        ],
+                        "id": "fa69-ef7b-c86a-55a4",
+                        "name": "Steed of Shadows",
+                        "hidden": false,
+                        "typeId": "8232-ae14-b1f6-b4df",
+                        "typeName": "Spell",
+                        "from": "entry"
+                      },
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "2",
+                            "name": "Number",
+                            "typeId": "8a2b-690b-e552-6aa0"
+                          },
+                          {
+                            "$text": "Hex",
+                            "name": "Type",
+                            "typeId": "c2ca-5fd1-5e9d-bc90"
+                          },
+                          {
+                            "$text": "9+",
+                            "name": "Casting Value",
+                            "typeId": "d84d-3b8b-654a-9e1a"
+                          },
+                          {
+                            "$text": "12\"",
+                            "name": "Range",
+                            "typeId": "1043-a0ad-2909-dd28"
+                          },
+                          {
+                            "$text": "Until your next Start of Turn sub-phase, the target enemy unit suffers a -2 modifier to its Initiative characteristic (to a minimum of 1), a -2 modifier to its Leadership characteristic (to a minimum of 2) and cannot use their General's Inspiring Presence special rule. This spell may target an enemy unit engaged in combat.",
+                            "name": "Effect",
+                            "typeId": "64ba-31-acf0-5a"
+                          }
+                        ],
+                        "id": "2d01-89fc-315d-ef5",
+                        "name": "Gathering Darkness",
+                        "hidden": false,
+                        "typeId": "8232-ae14-b1f6-b4df",
+                        "typeName": "Spell",
+                        "from": "entry"
+                      },
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "3",
+                            "name": "Number",
+                            "typeId": "8a2b-690b-e552-6aa0"
+                          },
+                          {
+                            "$text": "Assailment",
+                            "name": "Type",
+                            "typeId": "c2ca-5fd1-5e9d-bc90"
+                          },
+                          {
+                            "$text": "8+",
+                            "name": "Casting Value",
+                            "typeId": "d84d-3b8b-654a-9e1a"
+                          },
+                          {
+                            "$text": "Combat",
+                            "name": "Range",
+                            "typeId": "1043-a0ad-2909-dd28"
+                          },
+                          {
+                            "$text": "A single enemy unit the caster is engaged in combat with suffers 2D6 Strength 2 hits, with no armour saves permitted (Ward and Regeneration saves can be attempted as normal).",
+                            "name": "Effect",
+                            "typeId": "64ba-31-acf0-5a"
+                          }
+                        ],
+                        "id": "239d-1559-3435-c845",
+                        "name": "Daemonic Familiars",
+                        "hidden": false,
+                        "typeId": "8232-ae14-b1f6-b4df",
+                        "typeName": "Spell",
+                        "from": "entry"
+                      },
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "4",
+                            "name": "Number",
+                            "typeId": "8a2b-690b-e552-6aa0"
+                          },
+                          {
+                            "$text": "Enchantment",
+                            "name": "Type",
+                            "typeId": "c2ca-5fd1-5e9d-bc90"
+                          },
+                          {
+                            "$text": "9+",
+                            "name": "Casting Value",
+                            "typeId": "d84d-3b8b-654a-9e1a"
+                          },
+                          {
+                            "$text": "Self",
+                            "name": "Range",
+                            "typeId": "1043-a0ad-2909-dd28"
+                          },
+                          {
+                            "$text": "Until the end of this turn, the caster, their mount and any unit they have joined, gain a +1 modifier to their Strength and Attacks characteristics (to a maximum of 10), and improve the Armoir Piercing characteristic of their weapons by 1.",
+                            "name": "Effect",
+                            "typeId": "64ba-31-acf0-5a"
+                          }
+                        ],
+                        "id": "e802-6788-1f5c-59a5",
+                        "name": "Daemonic Vessel",
+                        "hidden": false,
+                        "typeId": "8232-ae14-b1f6-b4df",
+                        "typeName": "Spell",
+                        "from": "entry"
+                      },
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "5",
+                            "name": "Number",
+                            "typeId": "8a2b-690b-e552-6aa0"
+                          },
+                          {
+                            "$text": "Magical Vortex",
+                            "name": "Type",
+                            "typeId": "c2ca-5fd1-5e9d-bc90"
+                          },
+                          {
+                            "$text": "8+",
+                            "name": "Casting Value",
+                            "typeId": "d84d-3b8b-654a-9e1a"
+                          },
+                          {
+                            "$text": "15\"",
+                            "name": "Range",
+                            "typeId": "1043-a0ad-2909-dd28"
+                          },
+                          {
+                            "$text": "Remains in Play. Place a small (3\") blast template so that its central hole is within 15\" of the caster. Whilst in play, the template is treated as difficult terrain. The template scatters D6\" during every Start of Turn sub-phase (see page 95). Any unit (friend or foe) that moves through the template, or that the template moves over, suffers D6+1 Strength 3 hits, each with an AP of -.",
+                            "name": "Effect",
+                            "typeId": "64ba-31-acf0-5a"
+                          }
+                        ],
+                        "id": "9237-484e-88ea-80f3",
+                        "name": "Vortex of Chaos",
+                        "hidden": false,
+                        "typeId": "8232-ae14-b1f6-b4df",
+                        "typeName": "Spell",
+                        "from": "entry"
+                      },
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "6",
+                            "name": "Number",
+                            "typeId": "8a2b-690b-e552-6aa0"
+                          },
+                          {
+                            "$text": "Enchantment",
+                            "name": "Type",
+                            "typeId": "c2ca-5fd1-5e9d-bc90"
+                          },
+                          {
+                            "$text": "9+",
+                            "name": "Casting Value",
+                            "typeId": "d84d-3b8b-654a-9e1a"
+                          },
+                          {
+                            "$text": "15\"",
+                            "name": "Range",
+                            "typeId": "1043-a0ad-2909-dd28"
+                          },
+                          {
+                            "$text": "Until the end of this turn, the target friendly unit gains +1 modifier to its movement, Toughness and Initiative characteristics (to a maximum of 10).",
+                            "name": "Effect",
+                            "typeId": "64ba-31-acf0-5a"
+                          }
+                        ],
+                        "id": "94e4-9c6e-c726-1ae0",
+                        "name": "Daemonic Vigour",
+                        "hidden": false,
+                        "typeId": "8232-ae14-b1f6-b4df",
+                        "typeName": "Spell",
+                        "from": "entry"
+                      },
+                      {
+                        "characteristics": [
+                          {
+                            "name": "Number",
+                            "typeId": "8a2b-690b-e552-6aa0"
+                          },
+                          {
+                            "$text": "Magic Missile",
+                            "name": "Type",
+                            "typeId": "c2ca-5fd1-5e9d-bc90"
+                          },
+                          {
+                            "$text": "9+",
+                            "name": "Casting Value",
+                            "typeId": "d84d-3b8b-654a-9e1a"
+                          },
+                          {
+                            "$text": "18\"",
+                            "name": "Range",
+                            "typeId": "1043-a0ad-2909-dd28"
+                          },
+                          {
+                            "$text": "The target enemy unit suffers 2d6 Strength 4 hits, each with an AP of -1.",
+                            "name": "Effect",
+                            "typeId": "64ba-31-acf0-5a"
+                          }
+                        ],
+                        "id": "6661-b481-b61c-6f89",
+                        "name": "The Summoning",
+                        "hidden": false,
+                        "typeId": "8232-ae14-b1f6-b4df",
+                        "typeName": "Spell",
+                        "from": "entry"
+                      }
+                    ],
+                    "id": "swzume4",
+                    "name": "Daemonology",
+                    "entryId": "333a8a0a-c06edb34::4b0ae8a5-2760eb9b::c3ec-be1b-91ce-96ed",
+                    "entryGroupId": "333a8a0a-c06edb34::88a8e69e-ae8c4568",
+                    "number": 1,
+                    "type": "upgrade",
+                    "from": "group",
+                    "group": "Lores of Magic"
+                  },
+                  {
+                    "profiles": [
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "The owner of a Lore Familiar does not randomly generate their spells. Instead, they may choose which spells they know from their chosen lore (including that lore's signature spell).",
+                            "name": "Description",
+                            "typeId": "fdd8-b367-1d68-c9cd"
+                          }
+                        ],
+                        "id": "af85-e641-1bb1-2314",
+                        "name": "Lore Familiar",
+                        "hidden": false,
+                        "typeId": "65d6-7512-2a53-bd6c",
+                        "typeName": "Arcane Items",
+                        "from": "entry"
+                      }
+                    ],
+                    "costs": [
+                      {
+                        "name": "pts",
+                        "typeId": "points",
+                        "value": 30
+                      }
+                    ],
+                    "id": "t25fuys",
+                    "name": "Lore Familiar",
+                    "entryId": "333a8a0a-c06edb34::ea5fa44e-57222258::4cfd-bdbe-d2-c13f::d211-7488-e120-41c5",
+                    "entryGroupId": "333a8a0a-c06edb34::ea5fa44e-57222258::4cfd-bdbe-d2-c13f::7b19-92d3-b52b-e87e",
+                    "number": 1,
+                    "type": "upgrade",
+                    "from": "group",
+                    "group": "Magic Items::Arcane Items::Unique Items"
+                  },
+                  {
+                    "profiles": [
+                      {
+                        "characteristics": [
+                          {
+                            "$text": "The Pendant of Khaeleth gives its bearer a 5+ Ward save against any wounds suffered that were caused by an attack with a Strength of 4 or lower, and a 4+ Ward save against any wounds suffered that were caused by an attack with a Strength of 5 or higher.",
+                            "name": "Description",
+                            "typeId": "3fa5-c856-b00a-c9f4"
+                          }
+                        ],
+                        "id": "9a58-8eb5-d245-eb95",
+                        "name": "Pendant Of Khaeleth",
+                        "hidden": false,
+                        "typeId": "5c1d-13f3-7dd6-e817",
+                        "typeName": "Talismans",
+                        "from": "entry"
+                      }
+                    ],
+                    "costs": [
+                      {
+                        "name": "pts",
+                        "typeId": "points",
+                        "value": 40
+                      }
+                    ],
+                    "id": "sh8kfch",
+                    "name": "Pendant Of Khaeleth",
+                    "entryId": "333a8a0a-c06edb34::ea5fa44e-57222258::736e-a7fa-a2d1-72b2::68a7-4709-1c10-1979",
+                    "entryGroupId": "333a8a0a-c06edb34::ea5fa44e-57222258::736e-a7fa-a2d1-72b2::84df-c7b0-4ed0-999e",
+                    "number": 1,
+                    "type": "upgrade",
+                    "from": "group",
+                    "group": "Magic Items::Talismans::Unique Items"
+                  }
+                ],
+                "costs": [
+                  {
+                    "name": "pts",
+                    "typeId": "points",
+                    "value": 150
+                  }
+                ],
+                "id": "rqqp5ec",
+                "name": "Supreme Sorceress",
+                "entryId": "333a8a0a-c06edb34::ab260de4-3187552e",
+                "number": 1,
+                "type": "model",
+                "from": "entry"
+              }
+            ],
+            "categories": [
+              {
+                "id": "f64e-146a-86bd-73da",
+                "name": "Faction: Dark Elves",
+                "entryId": "f64e-146a-86bd-73da",
+                "primary": false
+              },
+              {
+                "id": "a4cc-15c9-cfae-1b3b",
+                "entryId": "a4cc-15c9-cfae-1b3b",
+                "name": "Characters",
+                "primary": true
+              },
+              {
+                "id": "0012-8b2e-83ce-9615",
+                "name": "0-1 Dark Elf Dreadlord or Supreme Sorceress per 1,000 points",
+                "entryId": "0012-8b2e-83ce-9615",
+                "primary": false
+              }
+            ],
+            "id": "rp40fqd",
+            "name": "Supreme Sorceress",
+            "entryId": "333a8a0a-c06edb34::d9292409-23a541df",
+            "number": 1,
+            "type": "unit",
+            "from": "entry"
+          }
+        ]
+      }
+    ]
+  }
+}
