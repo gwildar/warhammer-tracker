@@ -793,6 +793,8 @@ export const MAGIC_ITEMS = [
     effect:
       "S+2, AP -3. Magical Attacks, Multiple Wounds (2), Requires Two Hands. Bretonnian Exiles only.",
     phases: ["combat"],
+    s: "S+2",
+    ap: "-3",
   },
   {
     name: "Sword of the Stout Hearted",
