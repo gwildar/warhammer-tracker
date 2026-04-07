@@ -161,7 +161,11 @@ export function resolveSpecialRules(rulesString) {
         found = rule;
         break;
       }
-      if (rule.aliases?.some((alias) => alias.toLowerCase() === part.toLowerCase())) {
+      if (
+        rule.aliases?.some(
+          (alias) => alias.toLowerCase() === part.toLowerCase(),
+        )
+      ) {
         found = rule;
         break;
       }
@@ -196,7 +200,14 @@ export function resolveMount(mountName) {
  * Compute armour save from equipment, armour, magic items, mount, special rules, and stats
  * Based on calculateArmourSave from combat-weapons.js
  */
-export function computeArmourSave(equipmentStrings, armourStrings, magicItems, mount, specialRules, stats) {
+export function computeArmourSave(
+  equipmentStrings,
+  armourStrings,
+  magicItems,
+  mount,
+  specialRules,
+  stats,
+) {
   let baseAS = null;
 
   // Natural armour save from unit stat line (e.g. Thundertusk AS:5, Bastiladon AS:3)
@@ -335,8 +346,19 @@ export function computeMR(magicItems, specialRules) {
 }
 
 const RANGED_WEAPON_NAMES = [
-  "javelin", "bow", "crossbow", "handgun", "pistol", "sling",
-  "throwing", "bolt thrower", "cannon", "mortar", "catapult", "harpoon", "breath",
+  "javelin",
+  "bow",
+  "crossbow",
+  "handgun",
+  "pistol",
+  "sling",
+  "throwing",
+  "bolt thrower",
+  "cannon",
+  "mortar",
+  "catapult",
+  "harpoon",
+  "breath",
 ];
 
 /**
@@ -344,7 +366,9 @@ const RANGED_WEAPON_NAMES = [
  */
 export function computePoisonedAttacks(specialRules) {
   for (const rule of specialRules) {
-    const match = rule.displayName?.match(/Poisoned Attacks(?:\s*\(([^)]+)\))?/i);
+    const match = rule.displayName?.match(
+      /Poisoned Attacks(?:\s*\(([^)]+)\))?/i,
+    );
     if (!match) continue;
     if (!match[1]) return true;
     const qualifier = match[1].toLowerCase();

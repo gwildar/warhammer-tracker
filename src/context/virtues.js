@@ -1,4 +1,3 @@
-
 export function renderVirtuesContext(army, phaseId, subPhaseId) {
   const grouped = {};
 

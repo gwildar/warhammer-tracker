@@ -54,7 +54,9 @@ export function renderShootingContext(army) {
     // Get special rules as string for compatibility with resolved schema
     let specialRulesStr = "";
     if (Array.isArray(u.specialRules)) {
-      specialRulesStr = u.specialRules.map((r) => r.displayName || "").join(" ");
+      specialRulesStr = u.specialRules
+        .map((r) => r.displayName || "")
+        .join(" ");
     } else if (typeof u.specialRules === "string") {
       specialRulesStr = u.specialRules;
     }
@@ -63,8 +65,7 @@ export function renderShootingContext(army) {
 
     // Check mount breath weapon
     if (u.mount) {
-      const mount =
-        typeof u.mount === "string" ? findMount(u.mount) : u.mount;
+      const mount = typeof u.mount === "string" ? findMount(u.mount) : u.mount;
       if (mount?.breath) {
         const breathKey = mount.breath.toLowerCase();
         const weapon = RANGED_WEAPONS[breathKey];
@@ -119,8 +120,8 @@ export function renderShootingContext(army) {
       }
     } else {
       // Legacy support for string-based equipment
-      const allParts = [...(u.equipment || []), specialRulesStr || ""].flatMap((g) =>
-        g.split(",").map((s) => s.trim().toLowerCase()),
+      const allParts = [...(u.equipment || []), specialRulesStr || ""].flatMap(
+        (g) => g.split(",").map((s) => s.trim().toLowerCase()),
       );
       for (const part of allParts) {
         // Find the longest matching key for this part to avoid substring false positives

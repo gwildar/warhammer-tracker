@@ -14,11 +14,17 @@ export function parseArmyList(json) {
   }
 
   // Detect OWB format
-  if (json?.army !== undefined || json?.characters !== undefined || json?.core !== undefined) {
+  if (
+    json?.army !== undefined ||
+    json?.characters !== undefined ||
+    json?.core !== undefined
+  ) {
     return fromOwb(json);
   }
 
-  throw new Error("Unrecognised army list format. Expected OWB or New Recruit format.");
+  throw new Error(
+    "Unrecognised army list format. Expected OWB or New Recruit format.",
+  );
 }
 
 export function getCasters(army) {
@@ -36,7 +42,8 @@ export function getShootingUnits(army) {
 
     // Check if unit's mount has breath attack
     if (u.mount) {
-      const mountData = typeof u.mount === "string" ? findMount(u.mount) : u.mount;
+      const mountData =
+        typeof u.mount === "string" ? findMount(u.mount) : u.mount;
       if (mountData?.breath != null) {
         return true;
       }

@@ -51,14 +51,9 @@
   "stomp": null,
   "impactHits": null,
   "singleUseItems": [],
-  "itemNames": [
-    "Spelleater Axe (Dread Knight)"
-  ],
+  "itemNames": ["Spelleater Axe (Dread Knight)"],
   "riderTags": "<span class=\"text-wh-phase-combat font-mono ml-1\">✨ Magical</span>",
-  "combatRules": [
-    "Killing Blow",
-    "Monster Slayer"
-  ],
+  "combatRules": ["Killing Blow", "Monster Slayer"],
   "crew": [],
   "champions": [
     {

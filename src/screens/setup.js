@@ -147,12 +147,15 @@ function renderUnitList(army) {
     html += `<div class="mt-3 first:mt-0">
       <h3 class="text-xs uppercase tracking-wider text-wh-muted mb-1">${cat}</h3>
       ${units
-        .map(
-          (u) => {
-            const magicWeapons = u.magicItems.filter((item) => item.type === "weapon").map((item) => item.name);
-            const banners = u.magicItems.filter((item) => item.type === "banner" || item.type === "standard");
+        .map((u) => {
+          const magicWeapons = u.magicItems
+            .filter((item) => item.type === "weapon")
+            .map((item) => item.name);
+          const banners = u.magicItems.filter(
+            (item) => item.type === "banner" || item.type === "standard",
+          );
 
-            return `
+          return `
         <div class="flex justify-between items-center py-1 px-2 rounded hover:bg-wh-card text-sm">
           <div>
             <span class="text-wh-text">${u.name}</span>
@@ -167,8 +170,7 @@ function renderUnitList(army) {
           <span class="text-wh-muted font-mono text-xs">${u.points}pts</span>
         </div>
       `;
-          },
-        )
+        })
         .join("")}
     </div>`;
   }

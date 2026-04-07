@@ -6,7 +6,8 @@ import { parseUnitRules, normaliseRuleName, ruleMatches } from "../helpers.js";
 function injectMountRules(unitRules, unit) {
   if (!unit.mount) return;
   // In canonical schema, mount is already a resolved object
-  const mount = typeof unit.mount === "string" ? findMount(unit.mount) : unit.mount;
+  const mount =
+    typeof unit.mount === "string" ? findMount(unit.mount) : unit.mount;
   if (!mount) return;
 
   if (

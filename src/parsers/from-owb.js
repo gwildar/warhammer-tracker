@@ -146,7 +146,7 @@ function parseCanonicalUnit(raw, category) {
 
   // From equipment (named characters)
   const gearParts = [...equipment, ...armour].flatMap((e) =>
-    e.split(",").map((s) => s.trim())
+    e.split(",").map((s) => s.trim()),
   );
   for (const part of gearParts) {
     if (MAGIC_ITEM_NAMES.has(part.toLowerCase())) {
@@ -176,10 +176,10 @@ function parseCanonicalUnit(raw, category) {
 
     const keyToTry = [
       baseId,
-      baseId.replace(/s$/, ""),  // Try singular form (remove trailing 's')
+      baseId.replace(/s$/, ""), // Try singular form (remove trailing 's')
       baseId + "s",
       slugFromName,
-      slugFromName?.replace(/s$/, ""),  // Try singular form of name slug
+      slugFromName?.replace(/s$/, ""), // Try singular form of name slug
     ];
 
     for (const key of keyToTry) {
@@ -192,9 +192,14 @@ function parseCanonicalUnit(raw, category) {
 
   // Resolve weapons and items
   const weapons = resolveWeapons(equipment, magicItemNames);
-  const shootingWeapons = resolveShootingWeapons([...equipment, specialRulesText || ""]);
+  const shootingWeapons = resolveShootingWeapons([
+    ...equipment,
+    specialRulesText || "",
+  ]);
   const magicItems = resolveMagicItems(magicItemNames).map((item) =>
-    commandItemNames.has(item.name.toLowerCase()) ? { ...item, championOnly: true } : item
+    commandItemNames.has(item.name.toLowerCase())
+      ? { ...item, championOnly: true }
+      : item,
   );
   const specialRules = resolveSpecialRules(specialRulesText);
 
@@ -209,7 +214,14 @@ function parseCanonicalUnit(raw, category) {
   const mount = resolveMount(mountName);
 
   // Compute saves
-  const armourSave = computeArmourSave(equipment, armour, magicItems, mount, specialRules, stats);
+  const armourSave = computeArmourSave(
+    equipment,
+    armour,
+    magicItems,
+    mount,
+    specialRules,
+    stats,
+  );
   const ward = computeWard(magicItems, specialRules);
   const regen = computeRegen(magicItems, specialRules);
   const magicResistance = computeMR(magicItems, specialRules);
@@ -218,14 +230,24 @@ function parseCanonicalUnit(raw, category) {
   const impactHits = computeImpactHits(mount, specialRules);
 
   // Command group flags
-  const isGeneral = raw.command?.some((cmd) => cmd.active && cmd.name_en?.toLowerCase() === "general") || false;
-  const isBSB = raw.command?.some((cmd) => cmd.active && cmd.name_en?.toLowerCase() === "battle standard bearer") || false;
-  const hasStandard = raw.command?.some(
-    (cmd) => cmd.active && cmd.name_en?.toLowerCase().includes("standard bearer")
-  ) || false;
-  const hasMusician = raw.command?.some(
-    (cmd) => cmd.active && cmd.name_en?.toLowerCase().includes("musician")
-  ) || false;
+  const isGeneral =
+    raw.command?.some(
+      (cmd) => cmd.active && cmd.name_en?.toLowerCase() === "general",
+    ) || false;
+  const isBSB =
+    raw.command?.some(
+      (cmd) =>
+        cmd.active && cmd.name_en?.toLowerCase() === "battle standard bearer",
+    ) || false;
+  const hasStandard =
+    raw.command?.some(
+      (cmd) =>
+        cmd.active && cmd.name_en?.toLowerCase().includes("standard bearer"),
+    ) || false;
+  const hasMusician =
+    raw.command?.some(
+      (cmd) => cmd.active && cmd.name_en?.toLowerCase().includes("musician"),
+    ) || false;
 
   // Caster check and faction lores extraction
   const lores = raw.lores || [];
@@ -241,7 +263,10 @@ function parseCanonicalUnit(raw, category) {
         .replace(/\*$/, "")
         .trim()
         .toLowerCase();
-      if (LORE_NAME_TO_KEY[cleaned] && !factionLores.includes(LORE_NAME_TO_KEY[cleaned])) {
+      if (
+        LORE_NAME_TO_KEY[cleaned] &&
+        !factionLores.includes(LORE_NAME_TO_KEY[cleaned])
+      ) {
         factionLores.push(LORE_NAME_TO_KEY[cleaned]);
       }
     }
@@ -297,7 +322,16 @@ function parseCanonicalUnit(raw, category) {
  */
 export function fromOwb(json) {
   const units = [];
-  const categories = ["characters", "core", "special", "rare", "mercenaries", "allies", "lords", "heroes"];
+  const categories = [
+    "characters",
+    "core",
+    "special",
+    "rare",
+    "mercenaries",
+    "allies",
+    "lords",
+    "heroes",
+  ];
 
   // Parse units from each category
   for (const category of categories) {

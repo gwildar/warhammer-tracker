@@ -5,7 +5,11 @@ const HAND_WEAPON = { name: "Hand Weapon", s: "S", ap: "—", rules: "" };
 
 function findVirtueAttacks(unit) {
   for (const item of unit.magicItems || []) {
-    if (item.type === "virtue" && item.attacks && item.phases?.includes("combat")) {
+    if (
+      item.type === "virtue" &&
+      item.attacks &&
+      item.phases?.includes("combat")
+    ) {
       return item.attacks;
     }
   }
@@ -16,7 +20,11 @@ function findMagicWeapon(unit) {
   const virtueAttacks = findVirtueAttacks(unit);
   for (const item of unit.magicItems || []) {
     if (item.championOnly) continue;
-    if (item.type === "weapon" && (item.s || item.profiles) && item.phases?.includes("combat")) {
+    if (
+      item.type === "weapon" &&
+      (item.s || item.profiles) &&
+      item.phases?.includes("combat")
+    ) {
       return {
         name: item.name,
         s: item.s,
@@ -174,11 +182,16 @@ function hasRiderMagicalAttacks(unit) {
   for (const item of unit.magicItems || []) {
     if (item.championOnly) continue;
     if (item.type === "weapon" && item.phases?.includes("combat")) return true;
-    if (item.type !== "weapon" && item.effect?.includes("Magical Attacks")) return true;
+    if (item.type !== "weapon" && item.effect?.includes("Magical Attacks"))
+      return true;
   }
   const rules = unit.specialRules || [];
-  if (rules.some((r) => r.displayName?.toLowerCase().includes("magical attacks"))) return true;
-  if (rules.some((r) => r.displayName?.toLowerCase().includes("grail vow"))) return true;
+  if (
+    rules.some((r) => r.displayName?.toLowerCase().includes("magical attacks"))
+  )
+    return true;
+  if (rules.some((r) => r.displayName?.toLowerCase().includes("grail vow")))
+    return true;
   return false;
 }
 
@@ -241,7 +254,11 @@ function buildItemNames(unit) {
   const names = (unit.magicItems || []).map((item) => item.name);
   for (const rule of unit.specialRules || []) {
     const lower = rule.displayName?.toLowerCase();
-    if (lower && COMBAT_VOWS.includes(lower) && !names.some((n) => n.toLowerCase() === lower)) {
+    if (
+      lower &&
+      COMBAT_VOWS.includes(lower) &&
+      !names.some((n) => n.toLowerCase() === lower)
+    ) {
       names.push(rule.displayName);
     }
   }
@@ -381,8 +398,20 @@ export function renderCombatWeaponsContext(army) {
           if (suNames.has(n.toLowerCase())) return false;
           const item = (u.magicItems || []).find((i) => i.name === n);
           if (!item) return true; // vow entries — always show
-          if (item.mr && !item.ward && !item.regen && !item.armourBase && !item.armourMod) return false;
-          if (item.type === "weapon" && item.phases && !item.phases.includes("combat")) return false;
+          if (
+            item.mr &&
+            !item.ward &&
+            !item.regen &&
+            !item.armourBase &&
+            !item.armourMod
+          )
+            return false;
+          if (
+            item.type === "weapon" &&
+            item.phases &&
+            !item.phases.includes("combat")
+          )
+            return false;
           return true;
         }),
         riderTags: buildRiderTags(u),
@@ -548,8 +577,20 @@ export function renderCombatWeaponsContext(army) {
           if (suNames.has(n.toLowerCase())) return false;
           const item = (u.magicItems || []).find((i) => i.name === n);
           if (!item) return true; // vow entries — always show
-          if (item.mr && !item.ward && !item.regen && !item.armourBase && !item.armourMod) return false;
-          if (item.type === "weapon" && item.phases && !item.phases.includes("combat")) return false;
+          if (
+            item.mr &&
+            !item.ward &&
+            !item.regen &&
+            !item.armourBase &&
+            !item.armourMod
+          )
+            return false;
+          if (
+            item.type === "weapon" &&
+            item.phases &&
+            !item.phases.includes("combat")
+          )
+            return false;
           return true;
         });
       })(),
@@ -720,7 +761,9 @@ export function renderCombatResultContext(army) {
     const bonuses = [];
     let total = 0;
 
-    const hasCloseOrder = (u.specialRules || []).some((r) => r.displayName?.toLowerCase().includes("close order"));
+    const hasCloseOrder = (u.specialRules || []).some((r) =>
+      r.displayName?.toLowerCase().includes("close order"),
+    );
     if (hasCloseOrder) {
       bonuses.push("Close Order +1");
       total += 1;
@@ -813,16 +856,18 @@ export function renderCombatLeadershipContext(army, title = "Break Test") {
       }
     }
     const hasLargeTarget =
-      (general.specialRules || []).some((r) => r.displayName?.toLowerCase().includes("large target")) ||
-      !!general.mount?.largeTarget;
+      (general.specialRules || []).some((r) =>
+        r.displayName?.toLowerCase().includes("large target"),
+      ) || !!general.mount?.largeTarget;
     if (hasLargeTarget) generalRange = 18;
   }
 
   let bsbRange = 12;
   if (bsb) {
     const hasLargeTarget =
-      (bsb.specialRules || []).some((r) => r.displayName?.toLowerCase().includes("large target")) ||
-      !!bsb.mount?.largeTarget;
+      (bsb.specialRules || []).some((r) =>
+        r.displayName?.toLowerCase().includes("large target"),
+      ) || !!bsb.mount?.largeTarget;
     if (hasLargeTarget) bsbRange = 18;
   }
 
@@ -882,7 +927,9 @@ export function renderDefensiveStatsContext(army) {
       }
     }
 
-    const hasEvasive = (u.specialRules || []).some((r) => r.displayName?.toLowerCase().includes("evasive"));
+    const hasEvasive = (u.specialRules || []).some((r) =>
+      r.displayName?.toLowerCase().includes("evasive"),
+    );
 
     const key = `${u.name}||${t}||${w}||${as}`;
     if (!deduped[key]) {

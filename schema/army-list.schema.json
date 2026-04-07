@@ -38,11 +38,26 @@
     "Unit": {
       "type": "object",
       "required": [
-        "id", "name", "category", "strength", "points",
-        "stats", "weapons", "shootingWeapons", "magicItems", "specialRules",
-        "armourSave", "ward", "regen", "magicResistance",
-        "isGeneral", "isBSB", "hasStandard", "hasMusician",
-        "isCaster", "lores"
+        "id",
+        "name",
+        "category",
+        "strength",
+        "points",
+        "stats",
+        "weapons",
+        "shootingWeapons",
+        "magicItems",
+        "specialRules",
+        "armourSave",
+        "ward",
+        "regen",
+        "magicResistance",
+        "isGeneral",
+        "isBSB",
+        "hasStandard",
+        "hasMusician",
+        "isCaster",
+        "lores"
       ],
       "properties": {
         "id": {
@@ -55,7 +70,14 @@
         },
         "category": {
           "type": "string",
-          "enum": ["characters", "core", "special", "rare", "mercenaries", "allies"]
+          "enum": [
+            "characters",
+            "core",
+            "special",
+            "rare",
+            "mercenaries",
+            "allies"
+          ]
         },
         "strength": {
           "type": "integer",
@@ -176,10 +198,23 @@
         "I": { "type": "string" },
         "A": { "type": "string" },
         "Ld": { "type": "string" },
-        "Name": { "type": "string", "description": "Profile name, e.g. 'Gryphon' for an embedded mount" },
-        "crewed": { "type": "boolean", "description": "Optional: unit is crewed (multiple stat profiles)" },
-        "weapons": { "type": "array", "items": { "type": "string" }, "description": "Optional: combat weapon keys for this profile" },
-        "AS": { "type": "string", "description": "Optional: natural armour save" }
+        "Name": {
+          "type": "string",
+          "description": "Profile name, e.g. 'Gryphon' for an embedded mount"
+        },
+        "crewed": {
+          "type": "boolean",
+          "description": "Optional: unit is crewed (multiple stat profiles)"
+        },
+        "weapons": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optional: combat weapon keys for this profile"
+        },
+        "AS": {
+          "type": "string",
+          "description": "Optional: natural armour save"
+        }
       }
     },
     "ResolvedWeapon": {
@@ -187,19 +222,37 @@
       "required": ["name", "s", "ap", "rules"],
       "properties": {
         "name": { "type": "string" },
-        "s": { "type": "string", "description": "Strength modifier, e.g. 'S', 'S+1', 'S+2'" },
-        "ap": { "type": "string", "description": "Armour Penetration, e.g. '—', '-1', '-2'" },
+        "s": {
+          "type": "string",
+          "description": "Strength modifier, e.g. 'S', 'S+1', 'S+2'"
+        },
+        "ap": {
+          "type": "string",
+          "description": "Armour Penetration, e.g. '—', '-1', '-2'"
+        },
         "rules": { "type": "string", "description": "Rule text, may be empty" },
-        "magical": { "type": "boolean", "description": "True if a magic weapon" },
-        "attacks": { "type": ["string", "null"], "description": "Extra attacks modifier, e.g. '+1', '+D6'" },
-        "reservedAttacks": { "type": ["integer", "null"], "description": "Reserved attacks (rare, for mount natural weapons)" }
+        "magical": {
+          "type": "boolean",
+          "description": "True if a magic weapon"
+        },
+        "attacks": {
+          "type": ["string", "null"],
+          "description": "Extra attacks modifier, e.g. '+1', '+D6'"
+        },
+        "reservedAttacks": {
+          "type": ["integer", "null"],
+          "description": "Reserved attacks (rare, for mount natural weapons)"
+        }
       }
     },
     "ResolvedRule": {
       "type": "object",
       "required": ["displayName"],
       "properties": {
-        "id": { "type": "string", "description": "Rule ID from SPECIAL_RULES, if matched" },
+        "id": {
+          "type": "string",
+          "description": "Rule ID from SPECIAL_RULES, if matched"
+        },
         "displayName": { "type": "string" },
         "phases": {
           "type": "array",

@@ -80,7 +80,8 @@ function gatherSelectionsData(selections) {
   const rulesText = [];
   const mountName = null;
 
-  if (!Array.isArray(selections)) return { equipment, magicItemNames, rulesText, mountName };
+  if (!Array.isArray(selections))
+    return { equipment, magicItemNames, rulesText, mountName };
 
   for (const selection of selections) {
     if (!selection.profiles) continue;
@@ -157,7 +158,9 @@ function findMountName(selections) {
 
   for (const selection of selections) {
     if (selection.profiles) {
-      const mountProfile = selection.profiles.find((p) => p.typeName === "Mount");
+      const mountProfile = selection.profiles.find(
+        (p) => p.typeName === "Mount",
+      );
       if (mountProfile) return mountProfile.name;
     }
 
@@ -202,7 +205,9 @@ function parseCanonicalUnit(selection, category) {
   }
 
   // Gather equipment and magic items from nested selections
-  const { equipment, magicItemNames, rulesText } = gatherSelectionsData(selection.selections);
+  const { equipment, magicItemNames, rulesText } = gatherSelectionsData(
+    selection.selections,
+  );
 
   // Find mount
   const mountName = findMountName(selection.selections);
@@ -231,7 +236,14 @@ function parseCanonicalUnit(selection, category) {
   const resolvedMount = resolveMount(mountName);
 
   // Compute saves
-  const armourSave = computeArmourSave(equipment, [], resolvedMagicItems, resolvedMount, specialRules, modelProfiles);
+  const armourSave = computeArmourSave(
+    equipment,
+    [],
+    resolvedMagicItems,
+    resolvedMount,
+    specialRules,
+    modelProfiles,
+  );
   const ward = computeWard(resolvedMagicItems, specialRules);
   const regen = computeRegen(resolvedMagicItems, specialRules);
   const magicResistance = computeMR(resolvedMagicItems, specialRules);
@@ -241,9 +253,15 @@ function parseCanonicalUnit(selection, category) {
 
   // Check for command roles
   const isGeneral = rulesText.some((r) => r.toLowerCase() === "general");
-  const isBSB = rulesText.some((r) => r.toLowerCase().includes("battle standard bearer"));
-  const hasStandard = rulesText.some((r) => r.toLowerCase().includes("standard bearer"));
-  const hasMusician = rulesText.some((r) => r.toLowerCase().includes("musician"));
+  const isBSB = rulesText.some((r) =>
+    r.toLowerCase().includes("battle standard bearer"),
+  );
+  const hasStandard = rulesText.some((r) =>
+    r.toLowerCase().includes("standard bearer"),
+  );
+  const hasMusician = rulesText.some((r) =>
+    r.toLowerCase().includes("musician"),
+  );
 
   // Check for caster and extract lore keys from "Lores of Magic" group selections
   const lores = [];
@@ -275,7 +293,10 @@ function parseCanonicalUnit(selection, category) {
         .replace(/\*$/, "")
         .trim()
         .toLowerCase();
-      if (LORE_NAME_TO_KEY[cleaned] && !factionLores.includes(LORE_NAME_TO_KEY[cleaned])) {
+      if (
+        LORE_NAME_TO_KEY[cleaned] &&
+        !factionLores.includes(LORE_NAME_TO_KEY[cleaned])
+      ) {
         factionLores.push(LORE_NAME_TO_KEY[cleaned]);
       }
     }
@@ -323,7 +344,11 @@ function getCategoryFromSelection(selection) {
   const entryGroupId = selection.entryGroupId || "";
 
   // Try to infer from entryGroupId patterns
-  if (entryGroupId.includes("character") || entryGroupId.includes("lord") || entryGroupId.includes("hero")) {
+  if (
+    entryGroupId.includes("character") ||
+    entryGroupId.includes("lord") ||
+    entryGroupId.includes("hero")
+  ) {
     return "characters";
   }
   if (entryGroupId.includes("core")) {
@@ -335,7 +360,10 @@ function getCategoryFromSelection(selection) {
   if (entryGroupId.includes("rare")) {
     return "rare";
   }
-  if (entryGroupId.includes("mercenaries") || entryGroupId.includes("mercenary")) {
+  if (
+    entryGroupId.includes("mercenaries") ||
+    entryGroupId.includes("mercenary")
+  ) {
     return "mercenaries";
   }
   if (entryGroupId.includes("allies")) {

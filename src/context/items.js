@@ -1,4 +1,3 @@
-
 export function renderMagicItemsContext(army, phaseId, subPhaseId) {
   const grouped = {};
 
@@ -8,11 +7,7 @@ export function renderMagicItemsContext(army, phaseId, subPhaseId) {
       if (!item) continue;
       if (item.type === "virtue") continue;
       if (!item.phases?.includes(phaseId)) continue;
-      if (
-        subPhaseId &&
-        item.subPhases &&
-        !item.subPhases.includes(subPhaseId)
-      )
+      if (subPhaseId && item.subPhases && !item.subPhases.includes(subPhaseId))
         continue;
       if (subPhaseId && item.opponentOnly) continue;
       if (!subPhaseId && item.yourTurnOnly) continue;
