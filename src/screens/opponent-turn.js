@@ -10,6 +10,9 @@ import {
   saveFirstTurn,
   resetGame,
   canGoBackToPreviousTurn,
+  getStartTime,
+  resetStartTime,
+  recordTiming,
 } from "../state.js";
 import { PHASE_BG } from "../helpers.js";
 import { renderChargeContext } from "../context/charge.js";
@@ -26,6 +29,9 @@ import { navigate } from "../navigate.js";
 const app = document.getElementById("app");
 
 export function renderOpponentTurnScreen(army) {
+  if (getStartTime() === null) {
+    resetStartTime();
+  }
   const opPhaseIdx = getPhaseIndex();
   const round = getRound();
   const phase = PHASES[opPhaseIdx];
@@ -129,33 +135,51 @@ function renderOpponentPhaseContext(army, phase) {
   return html;
 }
 
+function recordAndNavigate(army, newPhaseIdx, isOpponentTurn, isPrev) {
+  const currentIdx = getPhaseIndex();
+  const currentRound = getRound();
+  const currentIsOpponentTurn = true; // in opponentTurnScreen, it's always true for current state
+  const startTime = getStartTime();
+
+  if (startTime) {
+    recordTiming(currentRound, currentIsOpponentTurn, currentIdx, Date.now() - startTime);
+  }
+  resetStartTime();
+
+  if (!isOpponentTurn) {
+    savePhaseIndex(newPhaseIdx);
+    saveIsOpponentTurn(false);
+    if (isPrev) {
+      if (getFirstTurn() === "opponent") saveRound(getRound() - 1);
+    } else {
+      if (getFirstTurn() === "you") saveRound(getRound() + 1);
+    }
+    navigate("gameScreen", army);
+  } else {
+    savePhaseIndex(newPhaseIdx);
+    renderOpponentTurnScreen(army);
+  }
+}
+
 function bindOpponentTurnActions(army) {
   bindScoringEvents(army, renderOpponentTurnScreen);
 
   document.getElementById("prev-btn")?.addEventListener("click", () => {
     const idx = getPhaseIndex();
     if (idx > 0) {
-      savePhaseIndex(idx - 1);
-      renderOpponentTurnScreen(army);
+      recordAndNavigate(army, idx - 1, true, true);
     } else if (canGoBackToPreviousTurn()) {
       const allSubPhases = getAllSubPhases();
-      saveIsOpponentTurn(false);
-      savePhaseIndex(allSubPhases.length - 1);
-      if (getFirstTurn() === "opponent") saveRound(getRound() - 1);
-      navigate("gameScreen", army);
+      recordAndNavigate(army, allSubPhases.length - 1, false, true);
     }
   });
 
   document.getElementById("next-btn")?.addEventListener("click", () => {
     const idx = getPhaseIndex();
     if (idx < PHASES.length - 1) {
-      savePhaseIndex(idx + 1);
-      renderOpponentTurnScreen(army);
+      recordAndNavigate(army, idx + 1, true, false);
     } else {
-      savePhaseIndex(0);
-      saveIsOpponentTurn(false);
-      if (getFirstTurn() === "you") saveRound(getRound() + 1);
-      navigate("gameScreen", army);
+      recordAndNavigate(army, 0, false, false);
     }
   });
 

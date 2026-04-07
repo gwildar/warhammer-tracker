@@ -6,6 +6,8 @@ const KEYS = {
   opponentTurn: "tow-opponent-turn",
   firstTurn: "tow-first-turn",
   scores: "tow-scores",
+  timings: "tow-timings",
+  startTime: "tow-start-time",
 };
 
 function load(key, fallback) {
@@ -102,6 +104,43 @@ export function updateScore(round, isOpponentTurn, player, score) {
   saveScores(scores);
 }
 
+// Timings: { [round]: { you: { [phaseIdx]: duration }, opponent: { [phaseIdx]: duration } } }
+export function getTimings() {
+  return load(KEYS.timings, {});
+}
+
+export function saveTimings(timings) {
+  save(KEYS.timings, timings);
+}
+
+export function recordTiming(round, isOpponentTurn, phaseIdx, duration) {
+  const turnKey = isOpponentTurn ? "opponent" : "you";
+  const timings = getTimings();
+  if (!timings[round]) {
+    timings[round] = {
+      you: {},
+      opponent: {},
+    };
+  }
+  if (!timings[round][turnKey][phaseIdx]) {
+    timings[round][turnKey][phaseIdx] = 0;
+  }
+  timings[round][turnKey][phaseIdx] += duration;
+  saveTimings(timings);
+}
+
+export function getStartTime() {
+  return load(KEYS.startTime, null);
+}
+
+export function saveStartTime(time) {
+  save(KEYS.startTime, time);
+}
+
+export function resetStartTime() {
+  saveStartTime(Date.now());
+}
+
 // Can we go back to the previous turn?
 export function canGoBackToPreviousTurn() {
   const round = getRound();
@@ -120,6 +159,8 @@ export function resetGame() {
   save(KEYS.round, 1);
   save(KEYS.opponentTurn, false);
   save(KEYS.scores, {});
+  save(KEYS.timings, {});
+  save(KEYS.startTime, null);
 }
 
 // Clear all app state
