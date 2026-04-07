@@ -197,7 +197,12 @@ function recordAndNavigate(army, newPhaseIdx, isOpponentTurn, isPrev) {
   const startTime = getStartTime();
 
   if (startTime) {
-    recordTiming(currentRound, currentIsOpponentTurn, currentIdx, Date.now() - startTime);
+    recordTiming(
+      currentRound,
+      currentIsOpponentTurn,
+      currentIdx,
+      Date.now() - startTime,
+    );
   }
   resetStartTime();
 
