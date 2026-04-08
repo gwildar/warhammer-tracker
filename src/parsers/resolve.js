@@ -1,7 +1,62 @@
 import { COMBAT_WEAPONS, RANGED_WEAPONS } from "../data/weapons.js";
 import { MAGIC_ITEMS } from "../data/magic-items.js";
 import { SPECIAL_RULES } from "../data/special-rules.js";
-import { findMount } from "../data/mounts.js";
+import { UNIT_STATS } from "../data/units.js";
+
+// Maps canonical mount name (lowercase) → units.js key.
+// Used for mounts whose slug doesn't directly match a units.js key.
+const MOUNT_KEY_OVERRIDES = {
+  griffon: "griffon-empire",
+  manticore: "manticore-dark-elves",
+  "skeletal steed": "skeletal-steed-vampire-counts",
+};
+
+function resolveMountProfile(entry) {
+  return Array.isArray(entry)
+    ? entry
+    : entry.stats.map((s) => ({ ...entry.shared, ...s }));
+}
+
+function parseBonusInt(val) {
+  return parseInt(String(val ?? "").match(/\(\+(\d+)\)/)?.[1] ?? "0", 10);
+}
+
+export function findMount(name) {
+  if (!name) return null;
+  if (typeof name === "object") return name;
+
+  const lower = name.toLowerCase();
+  const key = MOUNT_KEY_OVERRIDES[lower] ?? lower.replace(/\s+/g, "-");
+  const entry = UNIT_STATS[key];
+  if (!entry) return null;
+
+  const profile = resolveMountProfile(entry)[0];
+  if (!profile) return null;
+
+  const armourBaneRule = profile.rules?.find((r) => /^Armour Bane/i.test(r));
+  const armourBane = armourBaneRule
+    ? parseInt(armourBaneRule.match(/\((\d+)/)?.[1] ?? "0", 10)
+    : null;
+
+  return {
+    name: profile.Name,
+    m: parseInt(profile.M, 10),
+    stomp: profile.Stomps ?? null,
+    impactHits: profile["Impact-Hits"] ?? null,
+    tBonus: parseBonusInt(profile.T),
+    wBonus: parseBonusInt(profile.W),
+    ws: profile.WS,
+    s: profile.S,
+    i: profile.I,
+    a: profile.A,
+    as: profile.as ?? null,
+    weapons: (profile.equipment ?? []).map((e) => e.toLowerCase()),
+    swiftstride:
+      profile.rules?.some((r) => r.toLowerCase() === "swiftstride") ?? false,
+    troopType: profile.troopType?.[0] ?? null,
+    armourBane,
+  };
+}
 
 /**
  * Normalize an item name for lookup in MAGIC_ITEM_MAP
