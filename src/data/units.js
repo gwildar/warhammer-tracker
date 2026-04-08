@@ -76,9 +76,7 @@ export const UNIT_STATS = {
         "Impact-Hits": "D3+1",
         "equipment": [
           "Great horns",
-          "giant bow",
-          "Hand weapons",
-          "javelins"
+          "giant bow"
         ]
       },
       {
@@ -93,8 +91,6 @@ export const UNIT_STATS = {
         "WS": "2",
         "Name": "Skink Crew (x5)",
         "equipment": [
-          "Great horns",
-          "giant bow",
           "Hand weapons",
           "javelins"
         ]
@@ -139,11 +135,7 @@ export const UNIT_STATS = {
         "Name": "Anvil of Doom",
         "as": 3,
         "Magic-Res": "-3",
-        "equipment": [
-          "Hand weapons",
-          "heavy armour",
-          "shields"
-        ]
+        "equipment": []
       },
       {
         "A": "5",
@@ -204,10 +196,7 @@ export const UNIT_STATS = {
         "Stomps": "D6",
         "equipment": [
           "hand weapon",
-          "venom surge",
-          "Hand weapons",
-          "cavalry spears",
-          "shortbows"
+          "venom surge"
         ]
       },
       {
@@ -222,8 +211,6 @@ export const UNIT_STATS = {
         "WS": "2",
         "Name": "Goblin Crew (x8)",
         "equipment": [
-          "hand weapon",
-          "venom surge",
           "Hand weapons",
           "cavalry spears",
           "shortbows"
@@ -686,9 +673,7 @@ export const UNIT_STATS = {
         "Impact-Hits": "D3",
         "equipment": [
           "Thunderous bludgeon",
-          "Ark of Sotek",
-          "Hand weapons",
-          "javelins"
+          "Ark of Sotek"
         ]
       },
       {
@@ -703,8 +688,6 @@ export const UNIT_STATS = {
         "WS": "2",
         "Name": "Skink Crew (x3)",
         "equipment": [
-          "Thunderous bludgeon",
-          "Ark of Sotek",
           "Hand weapons",
           "javelins"
         ]
@@ -1803,8 +1786,7 @@ export const UNIT_STATS = {
         "Name": "Blood Throne",
         "Impact-Hits": "D6+1",
         "equipment": [
-          "hand weapon",
-          "Hellblades"
+          "hand weapon"
         ]
       },
       {
@@ -1819,7 +1801,6 @@ export const UNIT_STATS = {
         "WS": "5",
         "Name": "Bloodletter Crew (x2)",
         "equipment": [
-          "hand weapon",
           "Hellblades"
         ]
       }
@@ -2589,8 +2570,7 @@ export const UNIT_STATS = {
         "WS": "-",
         "Name": "Organ Gun",
         "equipment": [
-          "Organ gun",
-          "hand weapons"
+          "Organ gun"
         ]
       },
       {
@@ -3326,11 +3306,7 @@ export const UNIT_STATS = {
         "Name": "Casket of Souls",
         "as": 6,
         "Regen": "5+",
-        "equipment": [
-          "Hand weapons",
-          "great weapons",
-          "light armour"
-        ]
+        "equipment": []
       },
       {
         "A": "4",
@@ -3381,9 +3357,7 @@ export const UNIT_STATS = {
         "Name": "Grand Cannon",
         "as": 6,
         "equipment": [
-          "Grand cannon",
-          "hand weapons",
-          "light armour"
+          "Grand cannon"
         ]
       },
       {
@@ -3399,7 +3373,6 @@ export const UNIT_STATS = {
         "Name": "Cathayan Artillery Crew (x3)",
         "as": 6,
         "equipment": [
-          "Grand cannon",
           "hand weapons",
           "light armour"
         ]
@@ -3542,9 +3515,7 @@ export const UNIT_STATS = {
         "Name": "Cauldron of Blood",
         "Magic-Res": "-1",
         "Impact-Hits": "D6+1",
-        "equipment": [
-          "Two hand weapons"
-        ]
+        "equipment": []
       },
       {
         "A": "1",
@@ -3601,9 +3572,7 @@ export const UNIT_STATS = {
         "Name": "Cauldron of Blood",
         "Magic-Res": "-1",
         "Impact-Hits": "D6+1",
-        "equipment": [
-          "Two hand weapons"
-        ]
+        "equipment": []
       },
       {
         "A": "1",
@@ -4637,9 +4606,7 @@ export const UNIT_STATS = {
         "Name": "Chariot of Tzeentch",
         "Impact-Hits": "D6+1",
         "Fly": "9",
-        "equipment": [
-          "Lamprey's bite"
-        ]
+        "equipment": []
       },
       {
         "A": "2",
@@ -6929,9 +6896,7 @@ export const UNIT_STATS = {
         "as": 5,
         "equipment": [
           "Demolition Rockets",
-          "Infernal Incendiaries",
-          "hand weapons",
-          "heavy armour"
+          "Infernal Incendiaries"
         ]
       },
       {
@@ -6947,8 +6912,6 @@ export const UNIT_STATS = {
         "Name": "Chaos Dwarf Crew",
         "as": 5,
         "equipment": [
-          "Demolition Rockets",
-          "Infernal Incendiaries",
           "hand weapons",
           "heavy armour"
         ]
@@ -7306,8 +7269,7 @@ export const UNIT_STATS = {
         "WS": "-",
         "Name": "Doom Diver Catapult",
         "equipment": [
-          "stone thrower",
-          "hand weapons"
+          "stone thrower"
         ]
       },
       {
@@ -7322,7 +7284,6 @@ export const UNIT_STATS = {
         "WS": "2",
         "Name": "Goblin Crew",
         "equipment": [
-          "stone thrower",
           "hand weapons"
         ]
       }
@@ -8280,9 +8241,7 @@ export const UNIT_STATS = {
         "Name": "Eagle-Claw Bolt Thrower",
         "as": 6,
         "equipment": [
-          "Repeater bolt thrower",
-          "hand weapons",
-          "light armour"
+          "Repeater bolt thrower"
         ]
       },
       {
@@ -8298,7 +8257,6 @@ export const UNIT_STATS = {
         "Name": "Sea Guard Crew",
         "as": 6,
         "equipment": [
-          "Repeater bolt thrower",
           "hand weapons",
           "light armour"
         ]
@@ -8949,8 +8907,7 @@ export const UNIT_STATS = {
         "Impact-Hits": "D6+1",
         "equipment": [
           "Steam Cannon",
-          "steam gun",
-          "Hand weapon"
+          "steam gun"
         ]
       },
       {
@@ -8965,8 +8922,6 @@ export const UNIT_STATS = {
         "WS": "3",
         "Name": "Engineer Commander (x1)",
         "equipment": [
-          "Steam Cannon",
-          "steam gun",
           "Hand weapon"
         ]
       }
@@ -9445,8 +9400,7 @@ export const UNIT_STATS = {
         "WS": "-",
         "Name": "Field Trebuchet",
         "equipment": [
-          "Field trebuchet",
-          "hand weapons"
+          "Field trebuchet"
         ]
       },
       {
@@ -9461,7 +9415,6 @@ export const UNIT_STATS = {
         "WS": "2",
         "Name": "Peasant Crew",
         "equipment": [
-          "Field trebuchet",
           "hand weapons"
         ]
       }
@@ -9525,9 +9478,7 @@ export const UNIT_STATS = {
         "Name": "Fire Rain Rocket",
         "as": 6,
         "equipment": [
-          "Fire rain rocket",
-          "hand weapons",
-          "light armour"
+          "Fire rain rocket"
         ]
       },
       {
@@ -9543,7 +9494,6 @@ export const UNIT_STATS = {
         "Name": "Cathayan Artillery Crew (x3)",
         "as": 6,
         "equipment": [
-          "Fire rain rocket",
           "hand weapons",
           "light armour"
         ]
@@ -9680,9 +9630,7 @@ export const UNIT_STATS = {
         "as": 6,
         "Magic-Res": "-1",
         "equipment": [
-          "Fire thrower",
-          "hand weapons",
-          "light armour"
+          "Fire thrower"
         ]
       },
       {
@@ -9699,7 +9647,6 @@ export const UNIT_STATS = {
         "as": 6,
         "Magic-Res": "-1",
         "equipment": [
-          "Fire thrower",
           "hand weapons",
           "light armour"
         ]
@@ -11342,8 +11289,7 @@ export const UNIT_STATS = {
         "WS": "-",
         "Name": "Bolt Throwa",
         "equipment": [
-          "Bolt thrower",
-          "hand weapons"
+          "Bolt thrower"
         ]
       },
       {
@@ -11358,7 +11304,6 @@ export const UNIT_STATS = {
         "WS": "2",
         "Name": "Goblin Crew",
         "equipment": [
-          "Bolt thrower",
           "hand weapons"
         ]
       }
@@ -11394,8 +11339,7 @@ export const UNIT_STATS = {
         "Name": "Goblin-Hewer",
         "Magic-Res": "-1",
         "equipment": [
-          "Goblin-Hewer",
-          "hand weapons"
+          "Goblin-Hewer"
         ]
       },
       {
@@ -11411,7 +11355,6 @@ export const UNIT_STATS = {
         "Name": "Slayer Crew",
         "Magic-Res": "-1",
         "equipment": [
-          "Goblin-Hewer",
           "hand weapons"
         ]
       }
@@ -11569,8 +11512,7 @@ export const UNIT_STATS = {
         "WS": "-",
         "Name": "Rock Lobber",
         "equipment": [
-          "Stone thrower",
-          "hand weapons"
+          "Stone thrower"
         ]
       },
       {
@@ -11585,7 +11527,6 @@ export const UNIT_STATS = {
         "WS": "2",
         "Name": "Goblin Crew",
         "equipment": [
-          "Stone thrower",
           "hand weapons"
         ]
       }
@@ -12815,9 +12756,7 @@ export const UNIT_STATS = {
         "as": 6,
         "Magic-Res": "-1",
         "equipment": [
-          "Stone thrower",
-          "hand weapons",
-          "light armour"
+          "Stone thrower"
         ]
       },
       {
@@ -12834,7 +12773,6 @@ export const UNIT_STATS = {
         "as": 6,
         "Magic-Res": "-1",
         "equipment": [
-          "Stone thrower",
           "hand weapons",
           "light armour"
         ]
@@ -13415,8 +13353,7 @@ export const UNIT_STATS = {
         "WS": "-",
         "Name": "Helblaster Volley Gun",
         "equipment": [
-          "Helblaster Volley Gun",
-          "hand weapons"
+          "Helblaster Volley Gun"
         ]
       },
       {
@@ -13431,7 +13368,6 @@ export const UNIT_STATS = {
         "WS": "3",
         "Name": "Gun Crew",
         "equipment": [
-          "Helblaster Volley Gun",
           "hand weapons"
         ]
       }
@@ -13558,8 +13494,7 @@ export const UNIT_STATS = {
         "Impact-Hits": "D6",
         "equipment": [
           "Doomfire",
-          "hand weapons",
-          "Hand weapons"
+          "hand weapons"
         ]
       },
       {
@@ -13575,8 +13510,6 @@ export const UNIT_STATS = {
         "Name": "Chaos Dwarf Handlers (x3)",
         "Regen": "6+",
         "equipment": [
-          "Doomfire",
-          "hand weapons",
           "Hand weapons"
         ]
       }
@@ -13784,8 +13717,7 @@ export const UNIT_STATS = {
         "WS": "-",
         "Name": "Helstorm Rocket Battery",
         "equipment": [
-          "Helstorm Rocket Battery",
-          "hand weapons"
+          "Helstorm Rocket Battery"
         ]
       },
       {
@@ -13800,7 +13732,6 @@ export const UNIT_STATS = {
         "WS": "3",
         "Name": "Gun Crew",
         "equipment": [
-          "Helstorm Rocket Battery",
           "hand weapons"
         ]
       }
@@ -14200,9 +14131,7 @@ export const UNIT_STATS = {
         "Name": "Bolt Thrower",
         "as": 6,
         "equipment": [
-          "Bolt thrower",
-          "hand weapons",
-          "light armour"
+          "Bolt thrower"
         ]
       },
       {
@@ -14218,7 +14147,6 @@ export const UNIT_STATS = {
         "Name": "Hobgoblin Crew",
         "as": 6,
         "equipment": [
-          "Bolt thrower",
           "hand weapons",
           "light armour"
         ]
@@ -15041,8 +14969,7 @@ export const UNIT_STATS = {
         "Stomps": "D3+1",
         "Impact-Hits": "D6+1",
         "equipment": [
-          "Steam Cannonade",
-          "Hand weapons"
+          "Steam Cannonade"
         ]
       },
       {
@@ -15057,7 +14984,6 @@ export const UNIT_STATS = {
         "WS": "4",
         "Name": "Chaos Dwarf Crew (x3)",
         "equipment": [
-          "Steam Cannonade",
           "Hand weapons"
         ]
       }
@@ -15996,9 +15922,7 @@ export const UNIT_STATS = {
         "Stomps": "D3+1",
         "equipment": [
           "Cavernous maw",
-          "writhing tentacles",
-          "Hand weapons",
-          "whips"
+          "writhing tentacles"
         ]
       },
       {
@@ -16013,8 +15937,6 @@ export const UNIT_STATS = {
         "WS": "4",
         "Name": "Beastmaster Handlers (x2)",
         "equipment": [
-          "Cavernous maw",
-          "writhing tentacles",
           "Hand weapons",
           "whips"
         ]
@@ -16061,10 +15983,7 @@ export const UNIT_STATS = {
         "Regen": "6+",
         "Stomps": "D3",
         "equipment": [
-          "Wicked claws",
-          "Hand weapons",
-          "cavalry spears",
-          "shortbows"
+          "Wicked claws"
         ]
       },
       {
@@ -16080,7 +15999,6 @@ export const UNIT_STATS = {
         "Name": "Tomb Guard Crew (x2)",
         "Regen": "6+",
         "equipment": [
-          "Wicked claws",
           "Hand weapons",
           "cavalry spears",
           "shortbows"
@@ -17340,9 +17258,7 @@ export const UNIT_STATS = {
         "Name": "Magma Cannon",
         "as": 5,
         "equipment": [
-          "Fire thrower",
-          "hand weapons",
-          "heavy armour"
+          "Fire thrower"
         ]
       },
       {
@@ -17358,7 +17274,6 @@ export const UNIT_STATS = {
         "Name": "Chaos Dwarf Crew",
         "as": 5,
         "equipment": [
-          "Fire thrower",
           "hand weapons",
           "heavy armour"
         ]
@@ -20939,9 +20854,7 @@ export const UNIT_STATS = {
         "as": 6,
         "Magic-Res": "-1",
         "equipment": [
-          "Organ gun",
-          "hand weapons",
-          "light armour"
+          "Organ gun"
         ]
       },
       {
@@ -20958,7 +20871,6 @@ export const UNIT_STATS = {
         "as": 6,
         "Magic-Res": "-1",
         "equipment": [
-          "Organ gun",
           "hand weapons",
           "light armour"
         ]
@@ -22006,8 +21918,7 @@ export const UNIT_STATS = {
         "Stomps": "D3+1",
         "Impact-Hits": "D3+1",
         "equipment": [
-          "Billowing Death",
-          "Hand weapon"
+          "Billowing Death"
         ]
       },
       {
@@ -22023,7 +21934,6 @@ export const UNIT_STATS = {
         "Name": "Plague Monk Crew (x3)",
         "Magic-Res": "-1",
         "equipment": [
-          "Billowing Death",
           "Hand weapon"
         ]
       }
@@ -22066,8 +21976,7 @@ export const UNIT_STATS = {
         "Stomps": "D3+1",
         "Impact-Hits": "D3+1",
         "equipment": [
-          "Billowing Death",
-          "Hand weapon"
+          "Billowing Death"
         ]
       },
       {
@@ -22083,7 +21992,6 @@ export const UNIT_STATS = {
         "Name": "Plague Monk Crew (x3)",
         "Magic-Res": "-1",
         "equipment": [
-          "Billowing Death",
           "Hand weapon"
         ]
       }
@@ -22268,9 +22176,7 @@ export const UNIT_STATS = {
         "Name": "Plagueclaw Catapult",
         "as": 6,
         "equipment": [
-          "Plagueclaw Catapult",
-          "hand weapons",
-          "light armour"
+          "Plagueclaw Catapult"
         ]
       },
       {
@@ -22286,7 +22192,6 @@ export const UNIT_STATS = {
         "Name": "Plague Monk Crew",
         "as": 6,
         "equipment": [
-          "Plagueclaw Catapult",
           "hand weapons",
           "light armour"
         ]
@@ -23292,9 +23197,7 @@ export const UNIT_STATS = {
         "Name": "Reaper Bolt Thrower",
         "as": 6,
         "equipment": [
-          "Repeater bolt thrower",
-          "hand weapons",
-          "light armour"
+          "Repeater bolt thrower"
         ]
       },
       {
@@ -23310,7 +23213,6 @@ export const UNIT_STATS = {
         "Ld": "8",
         "as": 6,
         "equipment": [
-          "Repeater bolt thrower",
           "hand weapons",
           "light armour"
         ]
@@ -24258,9 +24160,7 @@ export const UNIT_STATS = {
         "Name": "Screaming Bell",
         "Magic-Res": "-3",
         "Impact-Hits": "D6+1",
-        "equipment": [
-          "Hand weapon"
-        ]
+        "equipment": []
       },
       {
         "A": "3",
@@ -24315,9 +24215,7 @@ export const UNIT_STATS = {
         "Name": "Screaming Bell",
         "Magic-Res": "-3",
         "Impact-Hits": "D6+1",
-        "equipment": [
-          "Hand weapon"
-        ]
+        "equipment": []
       },
       {
         "A": "3",
@@ -24370,9 +24268,7 @@ export const UNIT_STATS = {
         "as": 6,
         "Regen": "6+",
         "equipment": [
-          "Screaming skull catapult",
-          "hand weapon",
-          "light armour"
+          "Screaming skull catapult"
         ]
       },
       {
@@ -24389,7 +24285,6 @@ export const UNIT_STATS = {
         "as": 6,
         "Regen": "6+",
         "equipment": [
-          "Screaming skull catapult",
           "hand weapon",
           "light armour"
         ]
@@ -25984,9 +25879,7 @@ export const UNIT_STATS = {
         "WS": "-",
         "Name": "Chariot",
         "Impact-Hits": "D3",
-        "equipment": [
-          "hand weapons"
-        ]
+        "equipment": []
       },
       {
         "A": "1",
@@ -26824,9 +26717,8 @@ export const UNIT_STATS = {
         "Stomps": "D3",
         "Impact-Hits": "D3+1",
         "equipment": [
-          "hand weapon",
           "cannon of Khorne",
-          "Hellblades"
+          "hand weapon"
         ]
       },
       {
@@ -26841,8 +26733,6 @@ export const UNIT_STATS = {
         "WS": "5",
         "Name": "Bloodletter Crew (2x)",
         "equipment": [
-          "hand weapon",
-          "cannon of Khorne",
           "Hellblades"
         ]
       }
@@ -27236,10 +27126,7 @@ export const UNIT_STATS = {
         "WS": "-",
         "Name": "Pump Wagon",
         "Impact-Hits": "D3+1",
-        "equipment": [
-          "Hand weapons",
-          "throwing weapons"
-        ]
+        "equipment": []
       },
       {
         "A": "1",
@@ -27813,9 +27700,7 @@ export const UNIT_STATS = {
         "Impact-Hits": "D3+1",
         "equipment": [
           "Great horns",
-          "giant bow",
-          "Hand weapons",
-          "javelins"
+          "giant bow"
         ]
       },
       {
@@ -27830,8 +27715,6 @@ export const UNIT_STATS = {
         "WS": "2",
         "Name": "Skink Crew (x5)",
         "equipment": [
-          "Great horns",
-          "giant bow",
           "Hand weapons",
           "javelins"
         ]
@@ -29816,9 +29699,7 @@ export const UNIT_STATS = {
         "Stomps": "2",
         "equipment": [
           "Venomous talons",
-          "venom spray",
-          "heavy armour",
-          "Hand weapon"
+          "venom spray"
         ]
       },
       {
@@ -29834,8 +29715,6 @@ export const UNIT_STATS = {
         "Name": "Skink Oracle",
         "as": 5,
         "equipment": [
-          "Venomous talons",
-          "venom spray",
           "heavy armour",
           "Hand weapon"
         ]
@@ -30845,9 +30724,7 @@ export const UNIT_STATS = {
         "Name": "War Altar",
         "Magic-Res": "-2",
         "Impact-Hits": "D6+1",
-        "equipment": [
-          "hand weapon"
-        ]
+        "equipment": []
       },
       {
         "A": "1",
@@ -30931,9 +30808,7 @@ export const UNIT_STATS = {
         "equipment": [
           "Wicked claws",
           "serrated maws",
-          "fiery breath",
-          "Hand weapons",
-          "whips"
+          "fiery breath"
         ]
       },
       {
@@ -30949,9 +30824,6 @@ export const UNIT_STATS = {
         "Name": "Beastmaster Handlers (x2)",
         "Regen": "5+",
         "equipment": [
-          "Wicked claws",
-          "serrated maws",
-          "fiery breath",
           "Hand weapons",
           "whips"
         ]
@@ -31452,9 +31324,7 @@ export const UNIT_STATS = {
         "Name": "Warp Lightning Cannon",
         "as": 6,
         "equipment": [
-          "Warp Lightning Cannon",
-          "hand weapons",
-          "light armour"
+          "Warp Lightning Cannon"
         ]
       },
       {
@@ -31470,7 +31340,6 @@ export const UNIT_STATS = {
         "Name": "Engineer & Crew",
         "as": 6,
         "equipment": [
-          "Warp Lightning Cannon",
           "hand weapons",
           "light armour"
         ]
