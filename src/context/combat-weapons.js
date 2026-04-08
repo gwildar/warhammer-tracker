@@ -200,24 +200,6 @@ function hasRiderMagicalAttacks(unit) {
   return false;
 }
 
-function hasFuriousCharge(unit) {
-  return (
-    (unit.specialRules || []).some((r) =>
-      r.displayName?.toLowerCase().includes("furious charge"),
-    ) ||
-    (unit.mount?.furiousCharge ?? false)
-  );
-}
-
-function hasFirstCharge(unit) {
-  return (
-    (unit.specialRules || []).some((r) =>
-      r.displayName?.toLowerCase().includes("first charge"),
-    ) ||
-    (unit.mount?.firstCharge ?? false)
-  );
-}
-
 function detectItemBonuses(unit) {
   let armourBane = 0;
   const strengthMods = [];

@@ -704,6 +704,24 @@ export const SPECIAL_RULES = [
         description:
           "When rolling on the Miscast table, roll an extra D6 and discard the highest result.",
       },
+      {
+        phaseId: "movement",
+        subPhaseId: "remaining-moves",
+        description:
+          "When rolling on the Miscast table, roll an extra D6 and discard the highest result.",
+      },
+      {
+        phaseId: "shooting",
+        subPhaseId: "shoot",
+        description:
+          "When rolling on the Miscast table, roll an extra D6 and discard the highest result.",
+      },
+      {
+        phaseId: "combat",
+        subPhaseId: "choose-fight",
+        description:
+          "When rolling on the Miscast table, roll an extra D6 and discard the highest result.",
+      },
     ],
   },
   {
