@@ -695,6 +695,18 @@ export const SPECIAL_RULES = [
     ],
   },
   {
+    id: "untutored arcanist",
+    displayName: "Untutored Arcanist",
+    phases: [
+      {
+        phaseId: "strategy",
+        subPhaseId: "conjuration",
+        description:
+          "When rolling on the Miscast table, roll an extra D6 and discard the highest result.",
+      },
+    ],
+  },
+  {
     id: "timmm-berrr!",
     displayName: "Timmm-berrr!",
     phases: [
