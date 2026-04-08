@@ -4049,6 +4049,32 @@ export const UNIT_STATS = {
       optionalRules: [],
     },
   ],
+  "cold-one": [
+    {
+      A: "2",
+      I: "2",
+      M: "7",
+      S: "4",
+      T: "(+1)",
+      W: "-",
+      BS: "-",
+      Ld: "-",
+      WS: "3",
+      Name: "Cold One",
+      rules: [
+        "Armour Bane (1, Cold One only)",
+        "Armoured Hide (1)",
+        "Fear",
+        "First Charge",
+        "Stupidity",
+        "Swiftstride",
+      ],
+      equipment: ["hand weapon"],
+      troopType: ["HC"],
+      magic: [],
+      optionalRules: [],
+    },
+  ],
   "cold-one-chariot": {
     shared: {
       crewed: true,
@@ -8412,6 +8438,25 @@ export const UNIT_STATS = {
       },
     ],
   },
+  rhinox: [
+    {
+      A: "3",
+      I: "2",
+      M: "6",
+      S: "5",
+      T: "-",
+      W: "-",
+      BS: "-",
+      Ld: "-",
+      WS: "3",
+      Name: "Rhinox",
+      rules: ["Armour Bane (2, Rhinox only)", "Fear", "Large Target"],
+      equipment: ["monstrous tusks"],
+      troopType: ["MCa"],
+      magic: [],
+      optionalRules: [],
+    },
+  ],
   "gnoblar-scraplauncher": {
     shared: {
       crewed: true,
@@ -12437,6 +12482,30 @@ export const UNIT_STATS = {
       },
     ],
   },
+  ariandir: [
+    {
+      A: "2",
+      I: "5",
+      M: "10",
+      S: "4",
+      T: "-",
+      W: "-",
+      BS: "-",
+      Ld: "-",
+      WS: "4",
+      Name: "Ariandir",
+      rules: [
+        "Armour Bane (2, Ariandir only)",
+        "Counter Charge",
+        "Fear",
+        "Swiftstride",
+      ],
+      equipment: [],
+      troopType: ["MCa"],
+      magic: [],
+      optionalRules: [],
+    },
+  ],
   lammasu: [
     {
       A: "2",
@@ -14149,6 +14218,25 @@ export const UNIT_STATS = {
       },
     ],
   },
+  mournfang: [
+    {
+      A: "3",
+      I: "2",
+      M: "8",
+      S: "5",
+      T: "-",
+      W: "-",
+      BS: "-",
+      Ld: "-",
+      WS: "3",
+      Name: "Mournfang",
+      rules: ["Fear"],
+      equipment: ["monstrous tusks"],
+      troopType: ["MCa"],
+      magic: [],
+      optionalRules: [],
+    },
+  ],
   "mournfang-cavalry": {
     shared: {
       rules: [
