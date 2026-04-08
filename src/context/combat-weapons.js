@@ -238,23 +238,11 @@ function buildRiderTags(unit) {
     );
     subSpans.push('<span class="text-violet-400">Magical Attacks</span>');
   }
-  if (hasFuriousCharge(unit)) {
-    inlineParts.push(
-      '<span class="text-wh-phase-combat font-mono ml-1">\u{1F4A5}</span>',
-    );
-    subSpans.push('<span class="text-orange-400">Furious Charge</span>');
-  }
   if (unit.poisonedAttacks ?? false) {
     inlineParts.push(
       '<span class="text-wh-phase-combat font-mono ml-1">\u2620\uFE0F</span>',
     );
     subSpans.push('<span class="text-green-400">Poisoned Attacks</span>');
-  }
-  if (hasFirstCharge(unit)) {
-    inlineParts.push(
-      '<span class="text-wh-phase-combat font-mono ml-1">\u26A1</span>',
-    );
-    subSpans.push('<span class="text-yellow-400">First Charge</span>');
   }
   const { armourBane, strengthMods } = detectItemBonuses(unit);
   if (armourBane > 0)
@@ -371,6 +359,8 @@ const COMBAT_RELEVANT_RULES = [
   "hatred",
   "eternal hatred",
   "counter charge",
+  "furious charge",
+  "first charge",
   "strike first",
   "strike last",
   "cleaving blow",
@@ -402,6 +392,18 @@ function extractCombatRules(unit) {
     !results.some((r) => r.toLowerCase().includes("counter charge"))
   ) {
     results.push("Counter Charge");
+  }
+  if (
+    unit.mount?.furiousCharge &&
+    !results.some((r) => r.toLowerCase().includes("furious charge"))
+  ) {
+    results.push("Furious Charge");
+  }
+  if (
+    unit.mount?.firstCharge &&
+    !results.some((r) => r.toLowerCase().includes("first charge"))
+  ) {
+    results.push("First Charge");
   }
   return results;
 }
