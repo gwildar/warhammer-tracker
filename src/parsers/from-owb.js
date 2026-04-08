@@ -31,6 +31,11 @@ import { MAGIC_ITEMS } from "../data/magic-items.js";
 
 const MAGIC_ITEM_NAMES = new Set(MAGIC_ITEMS.map((i) => i.name.toLowerCase()));
 
+export function resolveUnitEntry(entry) {
+  if (Array.isArray(entry)) return entry;
+  return entry.stats.map((s) => ({ ...entry.shared, ...s }));
+}
+
 function formatFaction(armySlug) {
   if (!armySlug) return "Unknown Faction";
   return armySlug
@@ -184,7 +189,7 @@ function parseCanonicalUnit(raw, category) {
 
     for (const key of keyToTry) {
       if (key && UNIT_STATS[key]) {
-        stats = UNIT_STATS[key];
+        stats = resolveUnitEntry(UNIT_STATS[key]);
         break;
       }
     }
