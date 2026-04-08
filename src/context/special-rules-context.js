@@ -1,7 +1,12 @@
 import { SPECIAL_RULES } from "../data/special-rules.js";
-import { TROOP_TYPE_RULES } from "../data/mounts.js";
 import { getRound } from "../state.js";
 import { normaliseRuleName, ruleMatches } from "../helpers.js";
+
+const TROOP_TYPE_RULES = {
+  MCa: ["Fear"],
+  MCr: ["Fear", "Large Target"],
+  Be: ["Terror", "Large Target", "Lumbering"],
+};
 
 function injectMountRules(unitRules, unit) {
   if (!unit.mount) return;
