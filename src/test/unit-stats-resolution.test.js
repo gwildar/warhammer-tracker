@@ -1,6 +1,7 @@
 // src/test/unit-stats-resolution.test.js
 import { describe, it, expect } from "vitest";
 import { resolveUnitEntry } from "../parsers/from-owb.js";
+import { findMount } from "../parsers/resolve.js";
 
 describe("resolveUnitEntry", () => {
   it("returns array unchanged for non-crewed units", () => {
@@ -56,5 +57,59 @@ describe("resolveUnitEntry", () => {
     const resolved = resolveUnitEntry(entry);
     expect(resolved[0].equipment).toEqual(["Cannon"]);
     expect(resolved[1].equipment).toEqual(["hand weapons", "light armour"]);
+  });
+});
+
+describe("findMount", () => {
+  it("returns null for null or missing name", () => {
+    expect(findMount(null)).toBeNull();
+    expect(findMount("")).toBeNull();
+    expect(findMount("unknown beast that does not exist")).toBeNull();
+  });
+
+  it("returns object passthrough when given an object", () => {
+    const obj = { name: "existing", m: 5 };
+    expect(findMount(obj)).toBe(obj);
+  });
+
+  it("resolves a clean slug — Black Dragon tBonus/wBonus/stomp/swiftstride", () => {
+    const mount = findMount("Black Dragon");
+    expect(mount).not.toBeNull();
+    expect(mount.name).toBe("Black Dragon");
+    expect(mount.m).toBe(6);
+    expect(mount.tBonus).toBe(3);
+    expect(mount.wBonus).toBe(6);
+    expect(mount.stomp).toBe("D6");
+    expect(mount.swiftstride).toBe(true);
+    expect(mount.troopType).toBe("Be");
+    expect(mount.armourBane).toBeNull();
+  });
+
+  it("extracts armourBane from rules — Cold One", () => {
+    const mount = findMount("Cold One");
+    expect(mount).not.toBeNull();
+    expect(mount.m).toBe(7);
+    expect(mount.tBonus).toBe(1);
+    expect(mount.armourBane).toBe(1);
+    expect(mount.swiftstride).toBe(true);
+  });
+
+  it("uses MOUNT_KEY_OVERRIDES for faction-variant mounts — Griffon", () => {
+    const mount = findMount("Griffon");
+    expect(mount).not.toBeNull();
+    expect(mount.name).toBe("Griffon");
+    expect(mount.m).toBe(6);
+    expect(mount.tBonus).toBe(1);
+    expect(mount.swiftstride).toBe(true);
+    expect(mount.troopType).toBe("MCr");
+  });
+
+  it("resolves Rhinox standalone entry", () => {
+    const mount = findMount("Rhinox");
+    expect(mount).not.toBeNull();
+    expect(mount.m).toBe(6);
+    expect(mount.tBonus).toBe(0);
+    expect(mount.swiftstride).toBe(false);
+    expect(mount.armourBane).toBe(2);
   });
 });
