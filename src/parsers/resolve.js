@@ -390,11 +390,10 @@ export function computeWard(magicItems, specialRules) {
     if (item.ward) return item.ward;
   }
 
-  // Check special rules (e.g. Blessings of the Lady)
+  // Check special rules — Blessings of the Lady and The Grail Vow both grant 6+
+  const WARD_RULES = new Set(["blessings of the lady", "the grail vow"]);
   for (const rule of specialRules) {
-    if (rule.id === "blessings-of-the-lady") {
-      return "6+";
-    }
+    if (WARD_RULES.has(rule.id)) return "6+";
   }
 
   return null;
