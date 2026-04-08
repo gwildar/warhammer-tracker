@@ -104,6 +104,8 @@ export function buildMagicItemMap() {
 
 const MAGIC_ITEM_MAP = buildMagicItemMap();
 
+const WARD_RULES = new Set(["blessings of the lady", "the grail vow"]);
+
 /**
  * Resolve combat weapons from equipment strings
  * @param {string[]} equipmentStrings - e.g. ["Hand weapon", "Lance", "Shield"]
@@ -391,7 +393,6 @@ export function computeWard(magicItems, specialRules) {
   }
 
   // Check special rules — Blessings of the Lady and The Grail Vow both grant 6+
-  const WARD_RULES = new Set(["blessings of the lady", "the grail vow"]);
   for (const rule of specialRules) {
     if (WARD_RULES.has(rule.id)) return "6+";
   }
