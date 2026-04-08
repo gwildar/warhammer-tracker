@@ -1,4 +1,4 @@
-import { findMount } from "./data/mounts.js";
+import { findMount } from "./parsers/resolve.js";
 
 // Army name → rules index key overrides (both lowercase)
 const UNIT_NAME_ALIASES = {

@@ -1,5 +1,5 @@
 import { COMBAT_WEAPONS, getWeapon } from "../data/weapons.js";
-import { findMount } from "../data/mounts.js";
+import { findMount } from "../parsers/resolve.js";
 
 const HAND_WEAPON = { name: "Hand Weapon", s: "S", ap: "—", rules: "" };
 
