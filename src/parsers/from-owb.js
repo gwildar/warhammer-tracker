@@ -205,7 +205,7 @@ function parseCanonicalUnit(raw, category) {
   );
   const ward = computeWard(magicItems, specialRules);
   const regen = computeRegen(magicItems, specialRules);
-  const magicResistance = computeMR(magicItems, specialRules);
+  const magicResistance = computeMR(magicItems, specialRules, stats);
   const poisonedAttacks = computePoisonedAttacks(specialRules);
   const stomp = computeStomp(mount, specialRules);
   const impactHits = computeImpactHits(mount, specialRules);

@@ -406,6 +406,16 @@ describe("Combat phase with Bretonnian Exiles", () => {
     expect(knightCard.textContent).toContain("Rapid Strikes");
     expect(knightCard.textContent).toContain("Deadly Blows");
   });
+
+  it("shows MR on Outcast Wizard combat card", () => {
+    renderGameScreen(army);
+    const combatPanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    const wizardCard = [...combatPanel.querySelectorAll(".bg-wh-card")].find(
+      (el) => el.textContent.includes("Outcast Wizard"),
+    );
+    expect(wizardCard).toBeTruthy();
+    expect(wizardCard.textContent).toContain("MR:");
+  });
 });
 
 describe("Vampire Counts army", () => {

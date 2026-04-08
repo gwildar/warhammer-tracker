@@ -437,22 +437,17 @@ export function computeRegen(magicItems, specialRules) {
 }
 
 /**
- * Compute magic resistance from magic items and special rules
+ * Compute magic resistance from stats, magic items, and special rules
  */
-export function computeMR(magicItems, specialRules) {
+export function computeMR(magicItems, specialRules, stats) {
   let total = 0;
+
+  // Direct lookup from units.js stat profile
+  if (stats?.[0]?.["Magic-Res"]) total += parseInt(stats[0]["Magic-Res"]);
 
   // Check magic items
   for (const item of magicItems) {
     if (item.mr) total += parseInt(item.mr);
-  }
-
-  // Check special rules
-  for (const rule of specialRules) {
-    if (rule.id === "magic-resistance") {
-      const match = rule.displayName.match(/\((-?\d+)\)/);
-      if (match) total += parseInt(match[1]);
-    }
   }
 
   return total !== 0 ? `${total}` : null;
