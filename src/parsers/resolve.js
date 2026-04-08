@@ -78,6 +78,12 @@ export function findMount(name) {
     armourBane,
     f: profile.Fly ? parseInt(profile.Fly, 10) : null,
     breath: equipment.find((e) => RANGED_WEAPONS[e]) ?? null,
+    firstCharge:
+      profile.rules?.some((r) => r.toLowerCase() === "first charge") ?? false,
+    furiousCharge:
+      profile.rules?.some((r) => r.toLowerCase() === "furious charge") ?? false,
+    counterCharge:
+      profile.rules?.some((r) => r.toLowerCase() === "counter charge") ?? false,
   };
 }
 
@@ -182,18 +188,28 @@ export function resolveShootingWeapons(equipmentStrings) {
   const seen = new Set();
 
   for (const equipStr of equipmentStrings) {
-    const lower = equipStr.toLowerCase();
-    for (const [key, weapon] of Object.entries(RANGED_WEAPONS)) {
-      if (lower.includes(key) && !seen.has(weapon.name)) {
-        seen.add(weapon.name);
+    const parts = equipStr.split(",").map((s) => s.trim().toLowerCase());
+    for (const part of parts) {
+      // Use longest-key matching to avoid substring false positives
+      // e.g. "repeater crossbow" must not also match "crossbow"
+      let bestKey = null;
+      let bestWeapon = null;
+      for (const [key, weapon] of Object.entries(RANGED_WEAPONS)) {
+        if (part.includes(key) && (!bestKey || key.length > bestKey.length)) {
+          bestKey = key;
+          bestWeapon = weapon;
+        }
+      }
+      if (bestWeapon && !seen.has(bestWeapon.name)) {
+        seen.add(bestWeapon.name);
         weapons.push({
-          name: weapon.name,
-          range: weapon.range,
-          s: weapon.s,
-          ap: weapon.ap || "—",
-          rules: weapon.rules || "",
+          name: bestWeapon.name,
+          range: bestWeapon.range,
+          s: bestWeapon.s,
+          ap: bestWeapon.ap || "—",
+          rules: bestWeapon.rules || "",
           magical: false,
-          attacks: weapon.attacks || null,
+          attacks: bestWeapon.attacks || null,
         });
       }
     }

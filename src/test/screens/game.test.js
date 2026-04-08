@@ -71,17 +71,14 @@ describe("Game Screen", () => {
       savePhaseIndex(8);
       renderGameScreen(army);
       const panel = getApp().querySelector(".border-wh-phase-shooting\\/30");
-      const cards = [...panel.querySelectorAll(".bg-wh-card")];
-      const rxbowCard = cards.find((el) =>
-        el.textContent.includes("Repeater Crossbow"),
-      );
-      expect(rxbowCard).toBeTruthy();
-      const crossbowCard = cards.find(
-        (el) =>
-          el.textContent.includes("Crossbow") &&
-          !el.textContent.includes("Repeater Crossbow"),
-      );
-      expect(crossbowCard).toBeFalsy();
+      expect(panel.textContent).toContain("Repeater Crossbow");
+      // Weapon name spans must not include a standalone "Crossbow" entry —
+      // "repeater crossbows" in equipment must not also match the "crossbow" key.
+      const weaponNameSpans = [
+        ...panel.querySelectorAll(".text-wh-muted.text-sm"),
+      ];
+      const weaponNames = weaponNameSpans.map((el) => el.textContent.trim());
+      expect(weaponNames).not.toContain("Crossbow");
     });
   });
 
