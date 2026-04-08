@@ -607,6 +607,31 @@ describe("Movement phase", () => {
   });
 });
 
+describe("Shooting phase with Bretonnian Exiles (war machines)", () => {
+  let army;
+
+  beforeEach(() => {
+    army = loadArmy("bretonnian-exiles");
+    startGame(army);
+    savePhaseIndex(8); // shoot
+  });
+
+  it("shows Bombard in shooting units", () => {
+    renderGameScreen(army);
+    expect(getApp().textContent).toContain("Bombard");
+  });
+
+  it("shows Grapeshot alt profile alongside Bombard", () => {
+    renderGameScreen(army);
+    expect(getApp().textContent).toContain("Grapeshot");
+  });
+
+  it("shows Bombard misfire table", () => {
+    renderGameScreen(army);
+    expect(getApp().textContent).toContain("Bombard Misfire Table");
+  });
+});
+
 describe("Movement phase with Bretonnia charge army", () => {
   let army;
 

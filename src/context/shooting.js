@@ -108,6 +108,24 @@ export function renderShootingContext(army) {
               weapon: rangedWeapon,
             });
             matched = true;
+
+            if (rangedWeapon.altProfiles) {
+              for (const altKey of rangedWeapon.altProfiles) {
+                const altWeapon = getWeapon(RANGED_WEAPONS, altKey);
+                if (altWeapon && !matchedWeapons.has(altWeapon.name)) {
+                  matchedWeapons.add(altWeapon.name);
+                  entries.push({
+                    unitName: u.name,
+                    strength: u.strength,
+                    bs,
+                    unitS,
+                    championBS,
+                    hasArrowsOfIsha,
+                    weapon: altWeapon,
+                  });
+                }
+              }
+            }
           }
         }
       }
