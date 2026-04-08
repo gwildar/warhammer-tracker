@@ -195,6 +195,7 @@ function parseCanonicalUnit(raw, category) {
   const shootingWeapons = resolveShootingWeapons([
     ...equipment,
     specialRulesText || "",
+    raw.name_en || "",
   ]);
   const magicItems = resolveMagicItems(magicItemNames).map((item) =>
     commandItemNames.has(item.name.toLowerCase())
