@@ -767,6 +767,7 @@ export const MAGIC_ITEMS = [
     effect:
       "The unit improves the Armour Piercing characteristic of its combat weapons by 1.",
     phases: ["combat"],
+    apMod: -1,
   },
   {
     name: "Cold-Blooded Banner",

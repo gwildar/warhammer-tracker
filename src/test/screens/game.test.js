@@ -691,3 +691,12 @@ describe("Movement phase with Bretonnia charge army", () => {
     expect(getApp().textContent).toContain('18"');
   });
 });
+
+describe("Banner of Har Ganeth AP modifier", () => {
+  it("banner apMod field exists on Banner of Har Ganeth", async () => {
+    const { MAGIC_ITEMS } = await import("../../data/magic-items.js");
+    const banner = MAGIC_ITEMS.find((i) => i.name === "Banner of Har Ganeth");
+    expect(banner).toBeTruthy();
+    expect(banner.apMod).toBe(-1);
+  });
+});
