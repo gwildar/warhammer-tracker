@@ -151,6 +151,23 @@ export function renderGameScreen(army) {
   bindGameActions(army);
 }
 
+const PHASE_RENDERERS = {
+  rally: [(a) => renderCombatLeadershipContext(a, "Rally Leadership")],
+  "declare-charges": [renderChargeContext],
+  "compulsory-moves": [renderRandomMoverContext],
+  shoot: [(a) => renderCasterContext(a, ["magic-missile", "magical-vortex"])],
+  "remaining-moves": [
+    (a) => renderCasterContext(a, ["conveyance"]),
+    renderMovementStatsContext,
+  ],
+  "choose-fight": [
+    renderCombatWeaponsContext,
+    (a) => renderCasterContext(a, ["assailment"]),
+  ],
+  "combat-result": [renderCombatResultContext],
+  "break-test": [renderCombatLeadershipContext],
+};
+
 function renderPhaseContext(army, phase, subPhase) {
   let html = "";
 
@@ -158,24 +175,9 @@ function renderPhaseContext(army, phase, subPhase) {
     html += renderCasterContext(army, ["enchantment", "hex"]);
   if (subPhase.showShooting) html += renderShootingContext(army);
 
-  if (subPhase.id === "rally")
-    html += renderCombatLeadershipContext(army, "Rally Leadership");
-  if (subPhase.id === "declare-charges") html += renderChargeContext(army);
-  if (subPhase.id === "compulsory-moves")
-    html += renderRandomMoverContext(army);
-
-  if (subPhase.id === "shoot")
-    html += renderCasterContext(army, ["magic-missile", "magical-vortex"]);
-  if (subPhase.id === "remaining-moves")
-    html += renderCasterContext(army, ["conveyance"]);
-  if (subPhase.id === "remaining-moves")
-    html += renderMovementStatsContext(army);
-  if (subPhase.id === "choose-fight") {
-    html += renderCombatWeaponsContext(army);
-    html += renderCasterContext(army, ["assailment"]);
+  for (const renderer of PHASE_RENDERERS[subPhase.id] || []) {
+    html += renderer(army);
   }
-  if (subPhase.id === "combat-result") html += renderCombatResultContext(army);
-  if (subPhase.id === "break-test") html += renderCombatLeadershipContext(army);
 
   if (subPhase.id !== "remove-casualties" && subPhase.id !== "scoring") {
     html += renderMagicItemsContext(army, phase.id, subPhase.id);
