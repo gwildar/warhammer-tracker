@@ -17,7 +17,7 @@ function renderMagicItemNames(unit) {
 
 function renderCharCard(char) {
   return `
-    <div class="p-2 rounded bg-wh-card border border-wh-border cursor-grab active:cursor-grabbing mb-2"
+    <div class="p-2 rounded bg-wh-card border border-wh-border cursor-grab active:cursor-grabbing mb-2 select-none"
       draggable="true"
       data-char-id="${char.id}">
       <div class="text-sm font-semibold text-wh-text">${char.name}</div>
