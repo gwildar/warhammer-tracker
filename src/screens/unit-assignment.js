@@ -1,5 +1,6 @@
 import { getCharacterAssignments, saveCharacterAssignments } from "../state.js";
 import { navigate } from "../navigate.js";
+import { displayUnitName } from "../utils/unit-name.js";
 
 const app = document.getElementById("app");
 
@@ -40,7 +41,7 @@ function renderUnitCard(unit, assignedChars) {
   return `
     <div class="p-2 rounded border border-wh-border bg-wh-surface mb-2 unit-drop-zone"
       data-unit-id="${unit.id}">
-      <div class="text-sm font-semibold text-wh-text">${unit.name}</div>
+      <div class="text-sm font-semibold text-wh-text">${displayUnitName(unit.name, unit.strength)}</div>
       ${renderMagicItemNames(unit)}
       <div class="assigned-chars min-h-[8px]">
         ${assignedChars.map(renderAssignedChar).join("")}
