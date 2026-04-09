@@ -8,6 +8,7 @@ const KEYS = {
   scores: "tow-scores",
   timings: "tow-timings",
   startTime: "tow-start-time",
+  assignments: "tow-character-assignments",
   schemaVersion: "tow-schema-version",
 };
 
@@ -46,6 +47,16 @@ export function saveArmy(army) {
 export function clearArmy() {
   localStorage.removeItem(KEYS.army);
   localStorage.removeItem(KEYS.spellSelections);
+  localStorage.removeItem(KEYS.assignments);
+}
+
+// Character assignments: { [characterId]: unitId }
+export function getCharacterAssignments() {
+  return load(KEYS.assignments, {});
+}
+
+export function saveCharacterAssignments(assignments) {
+  save(KEYS.assignments, assignments);
 }
 
 // Spell selections: { [unitId]: [spellKey, ...] }
