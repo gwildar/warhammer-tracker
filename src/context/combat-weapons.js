@@ -448,6 +448,7 @@ const COMBAT_RELEVANT_RULES = [
   "mighty constitution",
   "valour of ages",
   "arcane backlash",
+  "unstable",
 ];
 
 function extractCombatRules(unit) {
