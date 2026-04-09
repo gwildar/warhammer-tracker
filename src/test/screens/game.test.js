@@ -69,9 +69,10 @@ describe("Game Screen", () => {
     });
 
     renderGameScreen(army);
+    const origConfirm = window.confirm;
     window.confirm = () => true;
     document.getElementById("new-game-btn").click();
-    window.confirm = undefined;
+    window.confirm = origConfirm;
 
     expect(navigated).toBe("setupScreen");
   });
