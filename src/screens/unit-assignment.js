@@ -93,7 +93,7 @@ export function renderUnitAssignmentScreen(army) {
         </div>
         <div class="flex gap-4">
           <div class="w-1/3 shrink-0">
-            <h2 class="text-xs font-bold text-wh-muted mb-2 uppercase tracking-wide">Characters</h2>
+            <h3 class="text-xs font-bold text-wh-muted mb-2 uppercase tracking-wide">Characters</h3>
             <div id="char-pool"
               class="min-h-12 rounded border border-dashed border-wh-border p-2"
               data-pool="true">
@@ -101,7 +101,7 @@ export function renderUnitAssignmentScreen(army) {
             </div>
           </div>
           <div class="flex-1">
-            <h2 class="text-xs font-bold text-wh-muted mb-2 uppercase tracking-wide">Units</h2>
+            <h3 class="text-xs font-bold text-wh-muted mb-2 uppercase tracking-wide">Units</h3>
             <div id="units-list">
               ${regularUnits
                 .map((unit) =>

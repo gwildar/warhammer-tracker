@@ -79,10 +79,11 @@ describe("Unit assignment screen", () => {
     );
   });
 
-  it("shows Optional subtitle below the h2 title", () => {
+  it("shows Setup label and Optional subtitle in title block", () => {
     renderUnitAssignmentScreen(army);
-    const main = getApp().querySelector("main");
-    expect(main.textContent).toContain("Optional");
+    const titleBlock = getApp().querySelector("main > div.mb-4");
+    expect(titleBlock.textContent).toContain("Setup");
+    expect(titleBlock.textContent).toContain("Optional");
   });
 
   it("header still contains Save and Continue button and army name", () => {
