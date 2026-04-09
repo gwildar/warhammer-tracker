@@ -31,6 +31,12 @@ import { MAGIC_ITEMS } from "../data/magic-items.js";
 
 const MAGIC_ITEM_NAMES = new Set(MAGIC_ITEMS.map((i) => i.name.toLowerCase()));
 
+/** Returns name_en values for all active items in an array (safe if arr is not an array). */
+function collectActive(arr) {
+  if (!Array.isArray(arr)) return [];
+  return arr.filter((item) => item.active).map((item) => item.name_en);
+}
+
 function formatFaction(armySlug) {
   if (!armySlug) return "Unknown Faction";
   return armySlug
@@ -106,26 +112,11 @@ function parseCanonicalUnit(raw, category) {
   const strength = raw.strength || 1;
 
   // Gather equipment and armour strings
-  const equipment = [];
-  const armour = [];
-
-  if (Array.isArray(raw.equipment)) {
-    for (const e of raw.equipment) {
-      if (e.active) equipment.push(e.name_en);
-    }
-  }
-
-  if (Array.isArray(raw.armor)) {
-    for (const a of raw.armor) {
-      if (a.active) armour.push(a.name_en);
-    }
-  }
-
-  if (Array.isArray(raw.options)) {
-    for (const opt of raw.options) {
-      if (opt.active) equipment.push(opt.name_en);
-    }
-  }
+  const equipment = [
+    ...collectActive(raw.equipment),
+    ...collectActive(raw.options),
+  ];
+  const armour = collectActive(raw.armor);
 
   // Gather special rules text
   let specialRulesText = raw.specialRules?.name_en || "";
