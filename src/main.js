@@ -1,5 +1,14 @@
 import "./style.css";
-import { getArmy, clearAll, getFirstTurn, getIsOpponentTurn } from "./state.js";
+import {
+  getArmy,
+  clearAll,
+  getFirstTurn,
+  getIsOpponentTurn,
+  getSchemaVersion,
+  saveSchemaVersion,
+  SCHEMA_VERSION,
+  resetStartTime,
+} from "./state.js";
 import { registerScreen } from "./navigate.js";
 
 // Import screens
@@ -32,5 +41,22 @@ function render() {
 
 // ─── Init ───────────────────────────────────────────────────────────────────
 
-clearAll();
-render();
+// Schema version guard: clear stale state if schema has changed
+if (getSchemaVersion() !== SCHEMA_VERSION) {
+  clearAll();
+  saveSchemaVersion(SCHEMA_VERSION);
+}
+
+// Reset start time so timer doesn't accumulate time while page was closed
+resetStartTime();
+
+// Safe render: if anything throws (e.g. stale schema slipped through), clear
+// and restart cleanly rather than leaving the user with a broken screen
+try {
+  render();
+} catch {
+  clearAll();
+  saveSchemaVersion(SCHEMA_VERSION);
+  sessionStorage.setItem("tow-recovered", "1");
+  render();
+}

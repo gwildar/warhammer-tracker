@@ -17,6 +17,8 @@ const app = document.getElementById("app");
 
 export function renderSetupScreen() {
   const army = getArmy();
+  const wasRecovered = sessionStorage.getItem("tow-recovered");
+  sessionStorage.removeItem("tow-recovered");
 
   app.innerHTML = `
     <div class="min-h-dvh flex flex-col">
@@ -29,6 +31,7 @@ export function renderSetupScreen() {
       </header>
 
       <main class="flex-1 p-4 max-w-2xl mx-auto w-full">
+        ${wasRecovered ? `<p class="text-wh-red text-sm text-center mt-4 mb-2">Your saved game data was cleared due to an error. Please re-upload your army.</p>` : ""}
         ${army ? renderArmySummary(army) : renderUploadSection()}
       </main>
     </div>

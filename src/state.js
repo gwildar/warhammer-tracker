@@ -8,7 +8,18 @@ const KEYS = {
   scores: "tow-scores",
   timings: "tow-timings",
   startTime: "tow-start-time",
+  schemaVersion: "tow-schema-version",
 };
+
+export const SCHEMA_VERSION = "1";
+
+export function getSchemaVersion() {
+  return load(KEYS.schemaVersion, null);
+}
+
+export function saveSchemaVersion(v) {
+  save(KEYS.schemaVersion, v);
+}
 
 function load(key, fallback) {
   try {
