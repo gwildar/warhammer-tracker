@@ -338,6 +338,37 @@ function buildItemNames(unit) {
   return names;
 }
 
+function buildFilteredItems(u) {
+  const suItems = detectSingleUseItems(u);
+  const suNames = new Set(suItems.map((i) => i.name.toLowerCase()));
+  const bannerNames = [];
+  const itemNames = buildItemNames(u).filter((n) => {
+    if (suNames.has(n.toLowerCase())) return false;
+    const item = (u.magicItems || []).find((i) => i.name === n);
+    if (!item) return true; // vow entries — always show
+    if (item.type === "banner" || item.type === "standard") {
+      bannerNames.push(n);
+      return false;
+    }
+    if (
+      item.mr &&
+      !item.ward &&
+      !item.regen &&
+      !item.armourBase &&
+      !item.armourMod
+    )
+      return false;
+    if (
+      item.type === "weapon" &&
+      item.phases &&
+      !item.phases.includes("combat")
+    )
+      return false;
+    return true;
+  });
+  return { itemNames, bannerNames };
+}
+
 function findChampions(unit) {
   if (!unit.stats || unit.stats.length < 2) return [];
   // Champion is a non-mount stat line (T is a real number, not "-" or "(+N)")
@@ -394,6 +425,7 @@ function findEmbeddedMount(unit) {
 }
 
 const COMBAT_RELEVANT_RULES = [
+  "Untutored Arcanist",
   "armour bane",
   "beguiling aura",
   "killing blow",
@@ -513,7 +545,8 @@ export function renderCombatWeaponsContext(army) {
     const stats = u.stats?.[0];
     if (!stats) {
       const suItems = detectSingleUseItems(u);
-      const suNames = new Set(suItems.map((i) => i.name.toLowerCase()));
+      const { itemNames: noStatsItemNames, bannerNames: noStatsBannerNames } =
+        buildFilteredItems(u);
       entries.push({
         unitName: u.name,
         points: u.points,
@@ -540,26 +573,8 @@ export function renderCombatWeaponsContext(army) {
         stomp: u.stomp ?? null,
         impactHits: u.impactHits ?? null,
         singleUseItems: suItems,
-        itemNames: buildItemNames(u).filter((n) => {
-          if (suNames.has(n.toLowerCase())) return false;
-          const item = (u.magicItems || []).find((i) => i.name === n);
-          if (!item) return true; // vow entries — always show
-          if (
-            item.mr &&
-            !item.ward &&
-            !item.regen &&
-            !item.armourBase &&
-            !item.armourMod
-          )
-            return false;
-          if (
-            item.type === "weapon" &&
-            item.phases &&
-            !item.phases.includes("combat")
-          )
-            return false;
-          return true;
-        }),
+        itemNames: noStatsItemNames,
+        bannerNames: noStatsBannerNames,
         riderTags: buildRiderTags(u),
         combatRules: extractCombatRules(u),
         apMod,
@@ -697,6 +712,8 @@ export function renderCombatWeaponsContext(army) {
       mountArmourBane = embedded.mountData?.armourBane || null;
     }
 
+    const { itemNames: filteredItemNames, bannerNames: filteredBannerNames } =
+      buildFilteredItems(u);
     entries.push({
       unitName: u.name,
       points: u.points,
@@ -727,30 +744,8 @@ export function renderCombatWeaponsContext(army) {
         embedded?.mountData?.impactHits ||
         (u.impactHits ?? null),
       singleUseItems: detectSingleUseItems(u),
-      itemNames: (() => {
-        const suItems = detectSingleUseItems(u);
-        const suNames = new Set(suItems.map((i) => i.name.toLowerCase()));
-        return buildItemNames(u).filter((n) => {
-          if (suNames.has(n.toLowerCase())) return false;
-          const item = (u.magicItems || []).find((i) => i.name === n);
-          if (!item) return true; // vow entries — always show
-          if (
-            item.mr &&
-            !item.ward &&
-            !item.regen &&
-            !item.armourBase &&
-            !item.armourMod
-          )
-            return false;
-          if (
-            item.type === "weapon" &&
-            item.phases &&
-            !item.phases.includes("combat")
-          )
-            return false;
-          return true;
-        });
-      })(),
+      itemNames: filteredItemNames,
+      bannerNames: filteredBannerNames,
       riderTags: buildRiderTags(u),
       combatRules: extractCombatRules(u),
       crew: [
@@ -938,6 +933,12 @@ export function renderCombatWeaponsContext(army) {
             )
             .join("")
         : "",
+      (r.bannerNames || [])
+        .map(
+          (name) =>
+            `<div class="text-xs mt-0.5 pl-2 border-l-2 border-wh-accent bg-wh-accent/8"><span class="text-[9px] uppercase tracking-wide text-wh-accent-dim mr-1">Banner</span><span class="text-wh-accent">${name}</span></div>`,
+        )
+        .join(""),
       r.itemNames.length > 0
         ? `<div class="text-xs text-wh-muted mt-0.5">${r.itemNames.join(", ")}</div>`
         : "",
