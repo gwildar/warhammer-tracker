@@ -1,11 +1,13 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { renderUnitAssignmentScreen } from "../../screens/unit-assignment.js";
+import { saveCharacterAssignments } from "../../state.js";
 import { getApp, loadArmy } from "../helpers.js";
 
 describe("Unit assignment screen", () => {
   let army;
 
   beforeEach(() => {
+    saveCharacterAssignments({});
     army = loadArmy("bretonnia");
   });
 
@@ -48,5 +50,22 @@ describe("Unit assignment screen", () => {
   it("save button exists", () => {
     renderUnitAssignmentScreen(army);
     expect(getApp().querySelector("#save-assignments-btn")).toBeTruthy();
+  });
+
+  it("pre-seeded assignments render in the unit card, not the pool", () => {
+    const char = army.units.find((u) =>
+      ["characters", "lords", "heroes"].includes(u.category),
+    );
+    const unit = army.units.find(
+      (u) => !["characters", "lords", "heroes"].includes(u.category),
+    );
+    saveCharacterAssignments({ [char.id]: unit.id });
+    renderUnitAssignmentScreen(army);
+    const pool = getApp().querySelector("#char-pool");
+    expect(pool.querySelector(`[data-char-id="${char.id}"]`)).toBeNull();
+    const unitZone = getApp().querySelector(`[data-unit-id="${unit.id}"]`);
+    expect(
+      unitZone.querySelector(`[data-assigned-char="${char.id}"]`),
+    ).toBeTruthy();
   });
 });

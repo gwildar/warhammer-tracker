@@ -137,8 +137,9 @@ function bindDragDrop(army) {
       e.preventDefault();
       zone.classList.add("border-wh-accent");
     });
-    zone.addEventListener("dragleave", () => {
-      zone.classList.remove("border-wh-accent");
+    zone.addEventListener("dragleave", (e) => {
+      if (!zone.contains(e.relatedTarget))
+        zone.classList.remove("border-wh-accent");
     });
     zone.addEventListener("drop", (e) => {
       e.preventDefault();
