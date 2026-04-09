@@ -7,9 +7,10 @@ describe("banner highlight in combat card", () => {
     // bretonnia-charge fixture: Pegasus Knights have Totem of Wrath (type: banner)
     const army = loadArmy("bretonnia-charge");
     const html = renderCombatWeaponsContext(army);
-    expect(html).toContain("border-wh-accent");
-    expect(html).toContain("Totem of Wrath");
-    expect(html).toContain("text-wh-accent-dim");
+    // Verify banner name appears inside the gold-highlighted row
+    expect(html).toMatch(
+      /border-l-2 border-wh-accent[^<]*<span[^>]*text-wh-accent-dim[^>]*>Banner<\/span><span[^>]*text-wh-accent[^>]*>Totem of Wrath<\/span>/,
+    );
   });
 
   it("does not include banner name in the plain muted items line", () => {
