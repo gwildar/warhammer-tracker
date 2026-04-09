@@ -17,6 +17,7 @@ import bretonnianExilesJson from "./fixtures/bretonnian-exiles.owb.json";
 import exilesCorrectJson from "./fixtures/exiles-correct.owb.json";
 import vampireCountsJson from "./fixtures/vampire-counts.owb.json";
 import ogreKingdomsJson from "./fixtures/ogre-kingdoms.owb.json";
+import forestGoblinsJson from "./fixtures/forest-goblins.owb.json";
 
 export function loadArmy(fixture) {
   const jsonMap = {
@@ -28,6 +29,7 @@ export function loadArmy(fixture) {
     "exiles-correct": exilesCorrectJson,
     "vampire-counts": vampireCountsJson,
     "ogre-kingdoms": ogreKingdomsJson,
+    "forest-goblins": forestGoblinsJson,
   };
   const json = jsonMap[fixture];
   const army = parseArmyList(json);

@@ -178,7 +178,7 @@ function parseCanonicalUnit(raw, category) {
     raw.name_en || "",
   ]);
   const magicItems = resolveMagicItems(magicItemNames).map((item) =>
-    commandItemNames.has(item.name.toLowerCase())
+    commandItemNames.has(item.name.toLowerCase()) && item.type !== "banner"
       ? { ...item, championOnly: true }
       : item,
   );

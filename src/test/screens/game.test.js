@@ -1068,3 +1068,14 @@ describe("Combat phase — character assignment", () => {
     expect(standalone).toBeFalsy();
   });
 });
+
+describe("Errantry Banner parsed from OWB command group", () => {
+  it("Errantry Banner on a BSB is not championOnly and shows in combat card", () => {
+    const army = loadArmy("forest-goblins");
+    const paladin = army.units.find((u) => u.name === "Paladin");
+    expect(paladin).toBeTruthy();
+    const banner = paladin.magicItems.find((i) => i.name === "Errantry Banner");
+    expect(banner).toBeTruthy();
+    expect(banner.championOnly).toBeFalsy();
+  });
+});

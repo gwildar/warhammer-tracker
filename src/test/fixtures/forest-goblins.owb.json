@@ -1,0 +1,1649 @@
+{
+  "id": "zxuzvvk",
+  "army": "kingdom-of-bretonnia",
+  "core": [
+    {
+      "id": "mounted-yeomen.ipnezv",
+      "armor": [
+        {
+          "id": 0,
+          "active": false,
+          "points": 0,
+          "name_cn": "无甲",
+          "name_de": "Keine Rüstung",
+          "name_en": "No armour",
+          "name_fr": "Pas d’armure",
+          "perModel": true,
+          "activeDefault": false
+        },
+        {
+          "id": 1,
+          "active": true,
+          "points": 2,
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_en": "Light armour",
+          "name_fr": "Armure légère",
+          "perModel": true
+        }
+      ],
+      "magic": { "items": [] },
+      "mounts": [],
+      "points": 13,
+      "command": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 5,
+          "name_cn": "监军(冠军)",
+          "name_de": "Voigt",
+          "name_en": "Warden (champion)",
+          "name_fr": "Prévôt (champion)"
+        },
+        {
+          "id": 1,
+          "points": 5,
+          "name_cn": "旗手",
+          "name_de": "Standartenträger",
+          "name_en": "Standard bearer",
+          "name_fr": "Porte-étendard"
+        },
+        {
+          "id": 2,
+          "points": 5,
+          "name_cn": "乐手",
+          "name_de": "Musiker",
+          "name_en": "Musician",
+          "name_fr": "Musicien"
+        }
+      ],
+      "maximum": 0,
+      "minimum": 5,
+      "name_cn": "骑马侍从",
+      "name_de": "Berittene Freisassen",
+      "name_en": "Mounted Yeomen",
+      "name_fr": "Sergents montés",
+      "options": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 1,
+          "name_cn": "盾牌",
+          "name_de": "Schild",
+          "name_en": "Shields",
+          "name_fr": "Boucliers",
+          "perModel": true
+        },
+        {
+          "id": 1,
+          "active": true,
+          "points": 2,
+          "name_cn": "诱敌诈退",
+          "name_de": "Vorgetäuschte Flucht",
+          "name_en": "Feigned Flight",
+          "name_fr": "Fuite Feinte",
+          "perModel": true
+        }
+      ],
+      "strength": 5,
+      "equipment": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "单手武器, 骑兵长矛, 短弓",
+          "name_de": "Handwaffen, Kavalleriespeere, Kurzbogen",
+          "name_en": "Hand weapons, Cavalry spears, Shortbows",
+          "name_fr": "Armes de base, Lances de cavalerie, Arcs courts",
+          "perModel": true
+        }
+      ],
+      "specialRules": {
+        "name_cn": "快速骑兵, 游击, 炮灰, 开放阵型, 农民, 预备移动, 散兵, 快速行进",
+        "name_de": "Fast Cavalry, Fire & Flee, Levies, Open Order, Peasantry, Reserve Move, Skirmishers, Swiftstride",
+        "name_en": "Fast Cavalry, Fire & Flee, Levies, Open Order, Peasantry, Reserve Move, Skirmishers, Swiftstride",
+        "name_fr": "Cavalerie Rapide, Tir & Fuite, Conscrits, Ordre Dispersé, Paysannerie, Mouvement de Réserve, Tirailleurs, Rapide"
+      },
+      "armyComposition": {
+        "bretonnian-exiles": { "category": "core" },
+        "errantry-crusades": { "category": "rare" },
+        "kingdom-of-bretonnia": { "category": "special" }
+      }
+    },
+    {
+      "id": "peasant-bowmen.ebgltjcid",
+      "armor": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "无甲",
+          "name_de": "keine Rüstung",
+          "name_en": "No armour",
+          "name_fr": "Pas d’armure",
+          "perModel": true,
+          "activeDefault": false
+        },
+        {
+          "id": 1,
+          "points": 1,
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_en": "Light armour",
+          "name_fr": "Armure légère",
+          "perModel": true
+        }
+      ],
+      "mounts": [],
+      "points": 5,
+      "command": [
+        {
+          "id": 0,
+          "points": 7,
+          "name_cn": "农奴(冠军)",
+          "name_de": "Grundhöriger",
+          "name_en": "Villein (champion)",
+          "name_fr": "Maître Archer (champion)"
+        },
+        {
+          "id": 1,
+          "points": 5,
+          "name_cn": "旗手",
+          "name_de": "Standartenträger",
+          "name_en": "Standard bearer",
+          "name_fr": "Porte-étendard"
+        },
+        {
+          "id": 2,
+          "points": 5,
+          "name_cn": "乐手",
+          "name_de": "Musiker",
+          "name_en": "Musician",
+          "name_fr": "Musicien"
+        }
+      ],
+      "maximum": 0,
+      "minimum": 10,
+      "name_cn": "民兵弓箭手",
+      "name_de": "Bogenschützen",
+      "name_en": "Peasant Bowmen",
+      "name_fr": "Paysans Archers",
+      "options": [
+        {
+          "id": 0,
+          "points": 10,
+          "name_cn": "拒马",
+          "name_de": "Pfähle",
+          "name_en": "Defensive Stakes",
+          "name_fr": "Pieux de Défense"
+        },
+        {
+          "id": 1,
+          "points": 20,
+          "name_cn": "火盆",
+          "name_de": "Feuerschalen",
+          "name_en": "Burning Braziers",
+          "name_fr": "Braséros"
+        },
+        {
+          "id": 2,
+          "points": 0,
+          "name_cn": "散兵",
+          "name_de": "Plänkler",
+          "name_en": "Skirmishers",
+          "name_fr": "Tirailleurs"
+        }
+      ],
+      "strength": 12,
+      "equipment": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "单手武器, 长弓",
+          "name_de": "Handwaffen und Langbogen",
+          "name_en": "Hand weapons, Longbows",
+          "name_fr": "Armes de base, Arcs longs",
+          "perModel": true
+        }
+      ],
+      "specialRules": {
+        "name_cn": "紧密阵型, 炮灰, 农民",
+        "name_de": "Geschlossene Ränge, Gesindel, Bauernvolk",
+        "name_en": "Close Order, Levies, Peasantry",
+        "name_fr": "Ordre Serré, Conscrits, Paysannerie"
+      },
+      "armyComposition": {
+        "bretonnian-exiles": {
+          "notes": {
+            "name_cn": "1个单位以上的民兵卫队和/或民兵弓箭手",
+            "name_de": "1+ Einheiten Freisassengarde und/oder Bogenschützen",
+            "name_en": "1+ unit of Yeomen Guard and/or Peasant Bowmen",
+            "name_es": "",
+            "name_fr": "1+ unité de Gardes Roturiers et/ou de Paysans Archers"
+          },
+          "category": "core"
+        },
+        "errantry-crusades": { "category": "special" },
+        "kingdom-of-bretonnia": {
+          "notes": {
+            "name_cn": "1个单位以上的武装民兵和/或民兵弓箭手",
+            "name_de": "1+ Einheiten Landsknechte und/oder Bogenschützen ",
+            "name_en": "1+ unit of Men-at-Arms and/or Peasant Bowmen",
+            "name_es": "",
+            "name_fr": "1+ unité d’Hommes d’Armes et/ou de Paysans Archers"
+          },
+          "category": "core"
+        }
+      }
+    },
+    {
+      "id": "yeoman-guard.quayorxd",
+      "armor": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "轻甲, 盾牌",
+          "name_de": "Leichte Rüstung, Schilde",
+          "name_en": "Light armour, Shields",
+          "name_es": "Light armour, Shields",
+          "name_fr": "Armure légère, Boucliers",
+          "perModel": true,
+          "activeDefault": true
+        }
+      ],
+      "items": [],
+      "lores": [],
+      "magic": { "items": [] },
+      "mounts": [],
+      "points": 5,
+      "command": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 6,
+          "name_cn": "监军(冠军)",
+          "name_de": "Voigt",
+          "name_en": "Warden (champion)",
+          "name_es": "Warden (champion)",
+          "name_fr": "Prévôt (champion)"
+        },
+        {
+          "id": 1,
+          "active": true,
+          "points": 7,
+          "name_cn": "圣杯侍僧",
+          "name_de": "Gralsmönch",
+          "name_en": "Grail Monk",
+          "name_es": "Grail Monk",
+          "name_fr": "Moine du Graal",
+          "options": [
+            {
+              "points": 25,
+              "name_cn": "圣龛",
+              "name_de": "Heiliges Triptychon",
+              "name_en": "Blessed Triptych",
+              "name_fr": "Triptyque Béni",
+              "exclusive": true
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "magic": {
+            "types": ["banner"],
+            "selected": [
+              {
+                "id": 41,
+                "name": "monster hunter's tapestry",
+                "type": "banner",
+                "points": 25,
+                "name_cn": "猎兽者织锦",
+                "name_de": "Gobelin des Monsterjägers",
+                "name_en": "Monster Hunter's Tapestry",
+                "name_fr": "Tapisserie du Chasseur de Monstres",
+                "name_it": "Monster Hunter's Tapestry",
+                "name_pl": "Monster Hunter's Tapestry",
+                "onePerArmy": true
+              }
+            ],
+            "maxPoints": 25
+          },
+          "active": true,
+          "points": 6,
+          "name_cn": "旗手",
+          "name_de": "Standartenträger",
+          "name_en": "Standard bearer",
+          "name_es": "Standard bearer",
+          "name_fr": "Porte-étendard"
+        },
+        {
+          "id": 3,
+          "active": true,
+          "points": 6,
+          "name_cn": "乐手",
+          "name_de": "Musiker",
+          "name_en": "Musician",
+          "name_es": "Musician",
+          "name_fr": "Musicien"
+        }
+      ],
+      "maximum": 0,
+      "minimum": 10,
+      "name_cn": "民兵卫队",
+      "name_de": "Freisassengarde",
+      "name_en": "Yeomen Guard",
+      "name_es": "Yeomen Guard",
+      "name_fr": "Gardes Roturiers",
+      "options": [],
+      "strength": 31,
+      "equipment": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "单手武器, 长戟",
+          "name_de": "Handwaffen, Hellebarden",
+          "name_en": "Hand weapons, Halberds",
+          "name_es": "Hand weapons, Halberds",
+          "name_fr": "Armes de base, Hallebardes",
+          "perModel": true
+        },
+        {
+          "id": 1,
+          "points": 1,
+          "name_cn": "单手武器, 长柄武器",
+          "name_de": "Handwaffen, Stangenwaffen",
+          "name_en": "Hand weapons, Polearms",
+          "name_es": "Hand weapons, Polearms",
+          "name_fr": "Armes de base, Armes d’hast",
+          "perModel": true
+        },
+        {
+          "id": 2,
+          "points": 0,
+          "name_cn": "单手武器, 刺矛",
+          "name_de": "Handwaffen, Stoßspeere",
+          "name_en": "Hand weapons, Thrusting spears",
+          "name_es": "Hand weapons, Thrusting spears",
+          "name_fr": "Armes de base, Lances d’infanterie",
+          "perModel": true
+        }
+      ],
+      "specialRules": {
+        "name_cn": "紧密阵型, 部群, 农民, 盾墙, 老兵, 战帮",
+        "name_de": "Bauernvolk, Geschlossene Ränge, Horde, Kriegerschar, Schildwall, Veteranen",
+        "name_en": "Close Order, Horde, Peasantry, Shieldwall, Veteran, Warband",
+        "name_es": "Close Order, Horde, Peasantry, Shieldwall, Veteran, Warband",
+        "name_fr": "Ordre Serré, Horde, Paysannerie, Mur de Boucliers, Vétérans, Bande de Guerre"
+      },
+      "armyComposition": {
+        "bretonnian-exiles": {
+          "notes": {
+            "name_cn": "1个单位以上的民兵卫队和/或民兵弓箭手",
+            "name_de": "1+ Einheiten Freisassengarde und/oder Bogenschützen",
+            "name_en": "1+ unit of Yeomen Guard and/or Peasant Bowmen",
+            "name_es": "",
+            "name_fr": "1+ unité de Gardes Roturiers et/ou de Paysans Archers"
+          },
+          "category": "core"
+        }
+      }
+    },
+    {
+      "id": "peasant-bowmen.fcqsedst",
+      "armor": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "无甲",
+          "name_de": "keine Rüstung",
+          "name_en": "No armour",
+          "name_fr": "Pas d’armure",
+          "perModel": true,
+          "activeDefault": false
+        },
+        {
+          "id": 1,
+          "points": 1,
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_en": "Light armour",
+          "name_fr": "Armure légère",
+          "perModel": true
+        }
+      ],
+      "mounts": [],
+      "points": 5,
+      "command": [
+        {
+          "id": 0,
+          "points": 7,
+          "name_cn": "农奴(冠军)",
+          "name_de": "Grundhöriger",
+          "name_en": "Villein (champion)",
+          "name_fr": "Maître Archer (champion)"
+        },
+        {
+          "id": 1,
+          "points": 5,
+          "name_cn": "旗手",
+          "name_de": "Standartenträger",
+          "name_en": "Standard bearer",
+          "name_fr": "Porte-étendard"
+        },
+        {
+          "id": 2,
+          "points": 5,
+          "name_cn": "乐手",
+          "name_de": "Musiker",
+          "name_en": "Musician",
+          "name_fr": "Musicien"
+        }
+      ],
+      "maximum": 0,
+      "minimum": 10,
+      "name_cn": "民兵弓箭手",
+      "name_de": "Bogenschützen",
+      "name_en": "Peasant Bowmen",
+      "name_fr": "Paysans Archers",
+      "options": [
+        {
+          "id": 0,
+          "points": 10,
+          "name_cn": "拒马",
+          "name_de": "Pfähle",
+          "name_en": "Defensive Stakes",
+          "name_fr": "Pieux de Défense"
+        },
+        {
+          "id": 1,
+          "points": 20,
+          "name_cn": "火盆",
+          "name_de": "Feuerschalen",
+          "name_en": "Burning Braziers",
+          "name_fr": "Braséros"
+        },
+        {
+          "id": 2,
+          "points": 0,
+          "name_cn": "散兵",
+          "name_de": "Plänkler",
+          "name_en": "Skirmishers",
+          "name_fr": "Tirailleurs"
+        }
+      ],
+      "strength": 12,
+      "equipment": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "单手武器, 长弓",
+          "name_de": "Handwaffen und Langbogen",
+          "name_en": "Hand weapons, Longbows",
+          "name_fr": "Armes de base, Arcs longs",
+          "perModel": true
+        }
+      ],
+      "specialRules": {
+        "name_cn": "紧密阵型, 炮灰, 农民",
+        "name_de": "Geschlossene Ränge, Gesindel, Bauernvolk",
+        "name_en": "Close Order, Levies, Peasantry",
+        "name_fr": "Ordre Serré, Conscrits, Paysannerie"
+      },
+      "armyComposition": {
+        "bretonnian-exiles": {
+          "notes": {
+            "name_cn": "1个单位以上的民兵卫队和/或民兵弓箭手",
+            "name_de": "1+ Einheiten Freisassengarde und/oder Bogenschützen",
+            "name_en": "1+ unit of Yeomen Guard and/or Peasant Bowmen",
+            "name_es": "",
+            "name_fr": "1+ unité de Gardes Roturiers et/ou de Paysans Archers"
+          },
+          "category": "core"
+        },
+        "errantry-crusades": { "category": "special" },
+        "kingdom-of-bretonnia": {
+          "notes": {
+            "name_cn": "1个单位以上的武装民兵和/或民兵弓箭手",
+            "name_de": "1+ Einheiten Landsknechte und/oder Bogenschützen ",
+            "name_en": "1+ unit of Men-at-Arms and/or Peasant Bowmen",
+            "name_es": "",
+            "name_fr": "1+ unité d’Hommes d’Armes et/ou de Paysans Archers"
+          },
+          "category": "core"
+        }
+      }
+    },
+    {
+      "name_en": "Mounted Knights of the Realm",
+      "name_cn": "骑马王国骑士",
+      "name_de": "Berittene Ritter des Königs",
+      "name_fr": "Chevaliers du Royaume Montés",
+      "id": "mounted-knights-of-the-realm.ubpvymon",
+      "points": 24,
+      "minimum": 5,
+      "maximum": 0,
+      "armyComposition": {
+        "kingdom-of-bretonnia": {
+          "category": "core",
+          "notes": {
+            "name_en": "1+ unit of Knights of the Realm on Foot and/or Mounted Knights of the Realm",
+            "name_cn": "1个单位以上的步战王国骑士和/或骑马王国骑士",
+            "name_de": "1+ Einheiten Ritter des Königs zu Fuß und/oder Berittene Ritter des Königs",
+            "name_es": "",
+            "name_fr": "1+ unité de Chevaliers du Royaume à Pied et/ou de Chevaliers du Royaume Montés"
+          }
+        },
+        "bretonnian-exiles": {
+          "category": "core",
+          "notes": {
+            "name_en": "1+ unit of Knights of the Realm on Foot and/or Mounted Knights of the Realm",
+            "name_cn": "1个单位以上的步战王国骑士和/或骑马王国骑士",
+            "name_de": "1+ Einheiten Ritter des Königs zu Fuß und/oder Berittene Ritter des Königs ",
+            "name_es": "",
+            "name_fr": "1+ unité de Chevaliers du Royaume à Pied et/ou de Chevaliers du Royaume Montés"
+          }
+        },
+        "errantry-crusades": { "category": "core" }
+      },
+      "command": [
+        {
+          "name_en": "First Knight (champion)",
+          "name_cn": "首席骑士(冠军)",
+          "name_de": "Erster Ritter",
+          "name_fr": "Champion du Royaume (champion)",
+          "points": 7,
+          "magic": {
+            "maxPoints": 25,
+            "types": ["weapon", "armor", "talisman", "enchanted-item"]
+          },
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Standard bearer",
+          "name_cn": "旗手",
+          "name_fr": "Porte-étendard",
+          "name_de": "Standartenträger",
+          "points": 7,
+          "magic": { "maxPoints": 25, "types": ["banner"] },
+          "id": 1,
+          "active": true
+        },
+        {
+          "name_en": "Musician",
+          "name_cn": "乐手",
+          "name_fr": "Musicien",
+          "name_de": "Musiker",
+          "points": 7,
+          "id": 2,
+          "active": true
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapons, Lances, Shields",
+          "name_cn": "单手武器, 长枪, 盾牌",
+          "name_de": "Handwaffe, Lanzen, Schild",
+          "name_fr": "Armes de base, Lances de joute, Boucliers",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Heavy armour, Barding",
+          "name_cn": "重甲, 马铠",
+          "name_de": "Schwere Rüstung, Rossharnische",
+          "name_fr": "Armure lourde, Caparaçon",
+          "name_es": "Armadura pesada, Barding",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "The Exile's Vow (replaces the Knight's Vow)",
+          "name_cn": "放逐誓言(替代骑士誓言)",
+          "name_de": "Das Exilantengelübde",
+          "name_fr": "Le Vœu de l’Exilé (remplace le Vœu du Chevalier)",
+          "points": 0,
+          "armyComposition": ["bretonnian-exiles"],
+          "id": 0,
+          "active": false
+        },
+        {
+          "name_en": "The Crusader's Vow (replaces the Knight's Vow)",
+          "name_cn": "远征誓言(替代骑士誓言)",
+          "name_de": "The Crusader's Vow (replaces the Knight's Vow)",
+          "name_fr": "Le Vœu du Croisé (remplace le Vœu du Chevalier)",
+          "points": 0,
+          "armyComposition": ["errantry-crusades"],
+          "id": 1
+        }
+      ],
+      "mounts": [],
+      "specialRules": {
+        "name_en": "Blessings of the Lady, Close Order, Counter Charge, Finest Warhorses, First Charge, Lance Formation, Swiftstride, The Knight's Vow",
+        "name_cn": "女神祝福, 紧密阵型, 反制冲锋, 良种战马, 先行冲锋, 枪骑阵型, 快速行进, 骑士誓言",
+        "name_de": "Blessings of the Lady, Close Order, Counter Charge, Finest Warhorses, First Charge, Lance Formation, Swiftstride, The Knight's Vow",
+        "name_fr": "Bénédiction de la Dame, Ordre Serré, Contre-charge, Destriers Supérieurs, Première Charge, Formation en Fer de Lance, Rapide, Le Vœu du Chevalier"
+      },
+      "strength": 6,
+      "magic": { "items": [] }
+    }
+  ],
+  "game": "the-old-world",
+  "name": "Forest Goblins",
+  "rank": "yg",
+  "rare": [
+    {
+      "id": "border-princes-bombard.qqwgbzos",
+      "armor": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_en": "Light armour",
+          "name_es": "Light armour",
+          "name_fr": "Armure légère",
+          "perModel": true,
+          "activeDefault": true
+        }
+      ],
+      "items": [],
+      "lores": [],
+      "mounts": [],
+      "points": 100,
+      "command": [],
+      "name_cn": "边境亲王领射石炮",
+      "name_de": "Bombarde der Grenzgrafschaften",
+      "name_en": "Border Princes Bombard",
+      "name_es": "Border Princes Bombard",
+      "name_fr": "Bombarde des Principautés Frontalières",
+      "options": [],
+      "equipment": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "Bombard, 单手武器",
+          "name_de": "Bombarde, Handwaffen",
+          "name_en": "Bombard, Hand weapons",
+          "name_es": "Bombarda, Armas de mano",
+          "name_fr": "Bombarde, Armes de base",
+          "perModel": true
+        }
+      ],
+      "specialRules": {
+        "name_cn": "炮灰, 散兵",
+        "name_de": "Gesindel, Plänkler",
+        "name_en": "Levies, Skirmishers",
+        "name_es": "Levies, Skirmishers",
+        "name_fr": "Conscrits, Tirailleurs"
+      },
+      "armyComposition": {
+        "bretonnian-exiles": {
+          "notes": {
+            "name_cn": "每1000分0-1边境亲王领射石炮",
+            "name_de": "0-1 Bombarde der Grenzgrafschaften pro 1000 Punkte",
+            "name_en": "0-1 Border Princes Bombard per 1000 points",
+            "name_es": "",
+            "name_fr": "0-1 Bombarde des Principautés Frontalières par tranche de 1000 points"
+          },
+          "category": "rare"
+        }
+      }
+    },
+    {
+      "id": "border-princes-bombard.bdmvvrbmv",
+      "armor": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_en": "Light armour",
+          "name_es": "Light armour",
+          "name_fr": "Armure légère",
+          "perModel": true,
+          "activeDefault": true
+        }
+      ],
+      "items": [],
+      "lores": [],
+      "mounts": [],
+      "points": 100,
+      "command": [],
+      "name_cn": "边境亲王领射石炮",
+      "name_de": "Bombarde der Grenzgrafschaften",
+      "name_en": "Border Princes Bombard",
+      "name_es": "Border Princes Bombard",
+      "name_fr": "Bombarde des Principautés Frontalières",
+      "options": [],
+      "equipment": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "Bombard, 单手武器",
+          "name_de": "Bombarde, Handwaffen",
+          "name_en": "Bombard, Hand weapons",
+          "name_es": "Bombarda, Armas de mano",
+          "name_fr": "Bombarde, Armes de base",
+          "perModel": true
+        }
+      ],
+      "specialRules": {
+        "name_cn": "炮灰, 散兵",
+        "name_de": "Gesindel, Plänkler",
+        "name_en": "Levies, Skirmishers",
+        "name_es": "Levies, Skirmishers",
+        "name_fr": "Conscrits, Tirailleurs"
+      },
+      "armyComposition": {
+        "bretonnian-exiles": {
+          "notes": {
+            "name_cn": "每1000分0-1边境亲王领射石炮",
+            "name_de": "0-1 Bombarde der Grenzgrafschaften pro 1000 Punkte",
+            "name_en": "0-1 Border Princes Bombard per 1000 points",
+            "name_es": "",
+            "name_fr": "0-1 Bombarde des Principautés Frontalières par tranche de 1000 points"
+          },
+          "category": "rare"
+        }
+      }
+    }
+  ],
+  "allies": [],
+  "folder": "folder-sywziqxo",
+  "points": 2000,
+  "special": [
+    {
+      "id": "pegasus-knights.ddysojsbrl",
+      "armor": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "重甲, 马铠",
+          "name_de": "Schwere Rüstung, Rossharnische",
+          "name_en": "Heavy armour, Barding",
+          "name_es": "Armadura pesada, Barding",
+          "name_fr": "Armure lourde, Caparaçon",
+          "perModel": true,
+          "activeDefault": true
+        }
+      ],
+      "magic": { "items": [] },
+      "mounts": [],
+      "points": 59,
+      "command": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 7,
+          "name_cn": "首席骑士(冠军)",
+          "name_de": "Erster Ritter",
+          "name_en": "First Knight (champion)",
+          "name_fr": "Champion Pégase (champion)"
+        },
+        {
+          "id": 1,
+          "magic": {
+            "types": ["banner"],
+            "selected": [
+              {
+                "id": 19,
+                "name": "banner of châlons",
+                "type": "banner",
+                "points": 20,
+                "name_cn": "守护者战旗",
+                "name_de": "Banner von Chálons",
+                "name_en": "Banner of Châlons",
+                "name_fr": "Bannière de Châlons",
+                "name_it": "Banner of Châlons",
+                "name_pl": "Sztandar Châlons",
+                "onePerArmy": true
+              }
+            ],
+            "maxPoints": 50
+          },
+          "active": true,
+          "points": 7,
+          "name_cn": "旗手",
+          "name_de": "Standartenträger",
+          "name_en": "Standard bearer",
+          "name_fr": "Porte-étendard"
+        },
+        {
+          "id": 2,
+          "active": false,
+          "points": 7,
+          "name_cn": "乐手",
+          "name_de": "Musiker",
+          "name_en": "Musician",
+          "name_fr": "Musicien"
+        }
+      ],
+      "maximum": 0,
+      "minimum": 3,
+      "name_cn": "飞马骑士",
+      "name_de": "Pegasusritter",
+      "name_en": "Pegasus Knights",
+      "name_fr": "Chevaliers Pégases",
+      "options": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "放逐誓言(替代骑士誓言)",
+          "name_de": "Das Exilantengelübde",
+          "name_en": "The Exile's Vow (replaces the Knight's Vow)",
+          "name_fr": "Le Vœu de l’Exilé (remplace le Vœu du Chevalier)",
+          "armyComposition": ["bretonnian-exiles"]
+        },
+        {
+          "id": 1,
+          "points": 0,
+          "name_cn": "远征誓言(替代骑士誓言)",
+          "name_de": "The Crusader's Vow (replaces the Knight's Vow)",
+          "name_en": "The Crusader's Vow (replaces the Knight's Vow)",
+          "name_fr": "Le Vœu du Croisé (remplace le Vœu du Chevalier)",
+          "armyComposition": ["errantry-crusades"]
+        }
+      ],
+      "strength": 5,
+      "equipment": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "单手武器, 长枪, 盾牌",
+          "name_de": "Handwaffen, Lanzen, Schilde",
+          "name_en": "Hand weapon, Lances, Shields",
+          "name_fr": "Arme de base, Lances de joute, Boucliers",
+          "perModel": true
+        }
+      ],
+      "specialRules": {
+        "name_cn": "女神祝福, 反制冲锋, 分散阵型, 先行冲锋, 飞行(10), 狂怒冲锋(仅限飞马骑士&首席骑士), 散兵, 快速行进, 骑士誓言",
+        "name_de": "Blessings of the Lady, Counter Charge, Dispersed Formation, First Charge, Fly (10), Furious Charge (Pegasus Knights & First Knight only), Skirmishers, Swiftstride, The Knight's Vow",
+        "name_en": "Blessings of the Lady, Counter Charge, Dispersed Formation, First Charge, Fly (10), Furious Charge (Pegasus Knights & First Knight only), Skirmishers, Swiftstride, The Knight's Vow",
+        "name_fr": "Bénédiction de la Dame, Contre-charge, Formation Éparse, Première Charge, Vol (10), Charge Dévastatrice (Chevaliers Pégases & Champion Pégase uniquement), Tirailleurs, Rapide, Le Vœu du Chevalier"
+      }
+    }
+  ],
+  "characters": [
+    {
+      "id": "baron.gbargicr",
+      "armor": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "重甲",
+          "name_de": "Schwere Rüstung",
+          "name_en": "Heavy armour",
+          "name_fr": "Armure lourde",
+          "activeDefault": true
+        }
+      ],
+      "items": [
+        {
+          "types": ["weapon", "armor", "talisman", "enchanted-item"],
+          "name_cn": "魔法物品",
+          "name_de": "Magische Gegenstände",
+          "name_en": "Magic Items",
+          "name_fr": "Objets Magiques",
+          "selected": [
+            {
+              "id": 5,
+              "name": "frontier axe",
+              "type": "weapon",
+              "points": 30,
+              "name_cn": "戍边战斧",
+              "name_de": "Grenzlandaxt",
+              "name_en": "Frontier Axe",
+              "name_fr": "Hache Frontalière",
+              "name_it": "Frontier Axe",
+              "name_pl": "Topór Pogranicza",
+              "onePerArmy": true,
+              "armyComposition": "bretonnian-exiles"
+            },
+            {
+              "id": 13,
+              "name": "sirienne's locket",
+              "type": "talisman",
+              "points": 25,
+              "name_cn": "席瑞恩妮的吊坠盒",
+              "name_de": "Siriennes Medaillon",
+              "name_en": "Sirienne's Locket",
+              "name_fr": "Médaillon de Sirienne",
+              "name_it": "Sirienne's Locket",
+              "name_pl": "Medalion Sirienne",
+              "onePerArmy": true
+            },
+            {
+              "id": 27,
+              "name": "charmed shield",
+              "type": "armor",
+              "points": 5,
+              "maximum": 1,
+              "name_cn": "庇佑之盾*",
+              "name_de": "Glücksbringender Schild*",
+              "name_en": "Charmed Shield*",
+              "name_fr": "Bouclier Ensorcelé*",
+              "name_it": "Scudo Fortunato*",
+              "name_pl": "Urzekająca Tarcza*",
+              "stackable": true,
+              "onePerArmy": false
+            }
+          ],
+          "maxPoints": 75
+        },
+        {
+          "types": ["knightly-virtue"],
+          "name_cn": "骑士美德",
+          "name_de": "Rittertugend",
+          "name_en": "Knightly Virtues",
+          "name_fr": "Vertus Chevaleresques",
+          "selected": [
+            {
+              "id": 0,
+              "name": "virtue of knightly temper",
+              "type": "knightly-virtue",
+              "points": 70,
+              "name_cn": "狂怒骑士的美德",
+              "name_de": "Tugend des ritterlichen Zorns",
+              "name_en": "Virtue of Knightly Temper",
+              "name_fr": "Vertu du Tempérament Chevaleresque",
+              "name_it": "Virtue of Knightly Temper",
+              "onePerArmy": true
+            }
+          ],
+          "maxPoints": 0
+        }
+      ],
+      "magic": { "items": [] },
+      "mounts": [
+        {
+          "id": 0,
+          "active": false,
+          "points": 0,
+          "name_cn": "步行",
+          "name_de": "Zu Fuß",
+          "name_en": "On foot",
+          "name_fr": "À Pied"
+        },
+        {
+          "id": 1,
+          "active": false,
+          "points": 16,
+          "name_cn": "巴托尼亚战马",
+          "name_de": "Bretonisches Schlachtross",
+          "name_en": "Bretonnian Warhorse",
+          "name_fr": "Destrier Bretonnien"
+        },
+        {
+          "id": 2,
+          "active": true,
+          "points": 30,
+          "name_cn": "披甲飞马",
+          "name_de": "Pegasus mit Rossharnisch",
+          "name_en": "Barded Pegasus",
+          "name_fr": "Pégase Caparaçonné"
+        },
+        {
+          "id": 3,
+          "active": false,
+          "points": 70,
+          "name_cn": "皇家飞马",
+          "name_de": "Königspegasus",
+          "name_en": "Royal Pegasus",
+          "name_fr": "Pégase Royal"
+        },
+        {
+          "id": 4,
+          "active": false,
+          "points": 120,
+          "name_cn": "角鹰",
+          "name_de": "Hippogreif",
+          "name_en": "Hippogryph",
+          "name_fr": "Hippogriffe",
+          "options": [
+            {
+              "points": 15,
+              "name_cn": "马铠",
+              "name_de": "Rossharnisch",
+              "name_en": "Barding",
+              "name_fr": "Caparaçon"
+            }
+          ]
+        }
+      ],
+      "points": 100,
+      "command": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "主将",
+          "name_de": "General",
+          "name_en": "General",
+          "name_es": "General",
+          "name_fr": "Général"
+        }
+      ],
+      "name_cn": "男爵",
+      "name_de": "Baron",
+      "name_en": "Baron",
+      "name_fr": "Baron",
+      "options": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 2,
+          "name_cn": "盾牌",
+          "name_de": "Schild",
+          "name_en": "Shield",
+          "name_fr": "Bouclier"
+        },
+        {
+          "id": 1,
+          "points": 15,
+          "name_cn": "探索誓言",
+          "name_de": "Questgelübde",
+          "name_en": "The Questing Vow",
+          "name_fr": "Le Vœu de la Quête"
+        },
+        {
+          "id": 2,
+          "points": 20,
+          "name_cn": "圣杯誓言",
+          "name_de": "Gralsgelübde",
+          "name_en": "The Grail Vow",
+          "name_fr": "Le Vœu du Graal",
+          "armyComposition": ["kingdom-of-bretonnia", "errantry-crusades"]
+        },
+        {
+          "id": 3,
+          "active": true,
+          "points": 0,
+          "name_cn": "放逐誓言(替代骑士誓言)",
+          "name_de": "Das Exilantengelübde",
+          "name_en": "The Exile's Vow (replaces the Knight's Vow)",
+          "name_fr": "Le Vœu de l’Exilé (remplace le Vœu du Chevalier)",
+          "armyComposition": ["bretonnian-exiles"]
+        },
+        {
+          "id": 4,
+          "points": 0,
+          "name_cn": "The Crusader's Vow(replaces the Knight's Vow)",
+          "name_de": "The Crusader's Vow (replaces the Knight's Vow)",
+          "name_en": "The Crusader's Vow (replaces the Knight's Vow)",
+          "name_fr": "Le Vœu du Croisé (remplace le Vœu du Chevalier)",
+          "armyComposition": ["errantry-crusades"]
+        }
+      ],
+      "equipment": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "单手武器",
+          "name_de": "Handwaffe",
+          "name_en": "Hand weapon",
+          "name_fr": "Arme de base",
+          "equippedDefault": true
+        },
+        {
+          "id": 1,
+          "points": 3,
+          "name_cn": "晨星锤",
+          "name_de": "Morgenstern",
+          "name_en": "Morning star",
+          "name_fr": "Morgenstern"
+        },
+        {
+          "id": 2,
+          "points": 4,
+          "name_cn": "重型武器",
+          "name_de": "Zweihandwaffe",
+          "name_en": "Great weapon",
+          "name_fr": "Arme lourde"
+        },
+        {
+          "id": 3,
+          "notes": {
+            "name_cn": "若处于骑乘状态",
+            "name_de": "sofern geeignet beritten",
+            "name_en": "if appropriately mounted",
+            "name_fr": "si monté",
+            "name_it": "if appropriately mounted"
+          },
+          "points": 4,
+          "name_cn": "长枪",
+          "name_de": "Lanze",
+          "name_en": "Lance",
+          "name_fr": "Lance de joute"
+        }
+      ],
+      "specialRules": {
+        "name_cn": "女神祝福, 集结战吼, 骑士誓言",
+        "name_de": "Segen der Herrin, Sammelruf, Rittertugend",
+        "name_en": "Blessings of the Lady, Rallying Cry, The Knight's Vow",
+        "name_fr": "Bénédiction de la Dame, Cri de Ralliement, Le Vœu du Chevalier"
+      },
+      "armyComposition": {
+        "bretonnian-exiles": {
+          "notes": {
+            "name_cn": "每1000分0-1男爵",
+            "name_de": "0-1 Baron pro 1.000 Punkte",
+            "name_en": "0-1 Baron per 1000 points",
+            "name_es": "",
+            "name_fr": "0-1 Baron par tranche de 1000 points"
+          },
+          "category": "characters"
+        },
+        "errantry-crusades": {
+          "notes": {
+            "name_cn": "每1000分0-1男爵或女先知",
+            "name_de": "0-1 Baron oder Dame pro 1.000 Punkte ",
+            "name_en": "0-1 Baron or Prophetess per 1000 points",
+            "name_es": "",
+            "name_fr": "0-1 Baron ou Prophétesse par tranche de 1000 points"
+          },
+          "category": "characters"
+        },
+        "kingdom-of-bretonnia": {
+          "notes": {
+            "name_cn": "每1000分0-1男爵或女先知",
+            "name_de": "0-1 Baron oder Dame pro 1.000 Punkte",
+            "name_en": "0-1 Baron or Prophetess per 1000 points",
+            "name_es": "",
+            "name_fr": "0-1 Baron ou Prophétesse par tranche de 1000 points"
+          },
+          "category": "characters"
+        }
+      }
+    },
+    {
+      "id": "paladin.altni",
+      "armor": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "重甲",
+          "name_de": "Schwere Rüstung",
+          "name_en": "Heavy armour",
+          "name_fr": "Armure lourde",
+          "activeDefault": true
+        }
+      ],
+      "items": [
+        {
+          "types": ["weapon", "armor", "talisman", "enchanted-item"],
+          "name_cn": "魔法物品",
+          "name_de": "Magische Gegenstände",
+          "name_en": "Magic Items",
+          "name_fr": "Objets Magiques",
+          "selected": [
+            {
+              "id": 7,
+              "name": "spelleater axe",
+              "type": "weapon",
+              "points": 35,
+              "name_cn": "食法斧",
+              "name_de": "Magiefresserbeil",
+              "name_en": "Spelleater Axe",
+              "name_fr": "Hache Mange-sorts",
+              "name_it": "Ascia di Dispersione",
+              "name_pl": "Czarożerca",
+              "onePerArmy": true
+            },
+            {
+              "id": 27,
+              "name": "charmed shield",
+              "type": "armor",
+              "points": 5,
+              "maximum": 1,
+              "name_cn": "庇佑之盾*",
+              "name_de": "Glücksbringender Schild*",
+              "name_en": "Charmed Shield*",
+              "name_fr": "Bouclier Ensorcelé*",
+              "name_it": "Scudo Fortunato*",
+              "name_pl": "Urzekająca Tarcza*",
+              "stackable": true,
+              "onePerArmy": false
+            }
+          ],
+          "maxPoints": 50
+        },
+        {
+          "types": ["knightly-virtue"],
+          "name_cn": "骑士美德",
+          "name_de": "Rittertugend",
+          "name_en": "Knightly Virtues",
+          "name_fr": "Vertus Chevaleresques",
+          "selected": [
+            {
+              "id": 5,
+              "name": "virtue of the impetuous knight",
+              "type": "knightly-virtue",
+              "points": 40,
+              "name_cn": "冲动骑士的美德",
+              "name_de": "Tugend des ungestümen Ritters",
+              "name_en": "Virtue of the Impetuous Knight",
+              "name_fr": "Vertu du Chevalier Impétueux",
+              "name_it": "Virtue of the Impetuous Cavaliere",
+              "onePerArmy": true
+            }
+          ],
+          "maxPoints": 0
+        }
+      ],
+      "magic": { "items": [] },
+      "mounts": [
+        {
+          "id": 0,
+          "active": false,
+          "points": 0,
+          "name_cn": "步行",
+          "name_de": "Zu Fuß",
+          "name_en": "On foot",
+          "name_fr": "À Pied"
+        },
+        {
+          "id": 1,
+          "active": false,
+          "points": 16,
+          "name_cn": "巴托尼亚战马",
+          "name_de": "Bretonisches Schlachtross",
+          "name_en": "Bretonnian Warhorse",
+          "name_fr": "Destrier Bretonnien"
+        },
+        {
+          "id": 2,
+          "active": true,
+          "points": 30,
+          "name_cn": "披甲飞马",
+          "name_de": "Pegasus mit Rossharnisch",
+          "name_en": "Barded Pegasus",
+          "name_fr": "Pégase Caparaçonné"
+        },
+        {
+          "id": 3,
+          "active": false,
+          "points": 70,
+          "name_cn": "皇家飞马",
+          "name_de": "Königspegasus",
+          "name_en": "Royal Pegasus",
+          "name_fr": "Pégase Royal"
+        }
+      ],
+      "points": 60,
+      "command": [
+        {
+          "id": 0,
+          "points": 0,
+          "name_cn": "主将",
+          "name_de": "General",
+          "name_en": "General",
+          "name_es": "General",
+          "name_fr": "Général"
+        },
+        {
+          "id": 1,
+          "magic": {
+            "types": ["banner"],
+            "selected": [
+              {
+                "id": 18,
+                "name": "errantry banner",
+                "type": "banner",
+                "points": 30,
+                "name_cn": "侠义战旗",
+                "name_de": "Banner der Fahrenden Ritter",
+                "name_en": "Errantry Banner",
+                "name_fr": "Bannière d’Errance",
+                "name_it": "Errantry Banner",
+                "name_pl": "Sztandar Błądzących",
+                "onePerArmy": true
+              }
+            ],
+            "maxPoints": 0
+          },
+          "active": true,
+          "points": 0,
+          "name_cn": "战旗手",
+          "name_de": "Armeestandartenträger",
+          "name_en": "Battle Standard Bearer",
+          "name_fr": "Porteur de la Grande Bannière"
+        }
+      ],
+      "name_cn": "圣骑士",
+      "name_de": "Paladin",
+      "name_en": "Paladin",
+      "name_fr": "Paladin",
+      "options": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 2,
+          "name_cn": "盾牌",
+          "name_de": "Schild",
+          "name_en": "Shield",
+          "name_fr": "Bouclier"
+        },
+        {
+          "id": 1,
+          "points": 15,
+          "name_cn": "探索誓言",
+          "name_de": "Questgelübde",
+          "name_en": "The Questing Vow",
+          "name_fr": "Le Vœu de la Quête"
+        },
+        {
+          "id": 2,
+          "points": 20,
+          "name_cn": "圣杯誓言",
+          "name_de": "Gralsgelübde",
+          "name_en": "The Grail Vow",
+          "name_fr": "Le Vœu du Graal",
+          "armyComposition": ["kingdom-of-bretonnia", "errantry-crusades"]
+        },
+        {
+          "id": 3,
+          "points": 0,
+          "name_cn": "放逐誓言(替代骑士誓言)",
+          "name_de": "Das Exilantengelübde",
+          "name_en": "The Exile's Vow (replaces the Knight's Vow)",
+          "name_fr": "Le Vœu de l’Exilé (remplace le Vœu du Chevalier)",
+          "armyComposition": ["bretonnian-exiles"]
+        },
+        {
+          "id": 4,
+          "points": 0,
+          "name_cn": "The Crusader's Vow(replaces the Knight's Vow)",
+          "name_de": "The Crusader's Vow (replaces the Knight's Vow)",
+          "name_en": "The Crusader's Vow (replaces the Knight's Vow)",
+          "name_fr": "Le Vœu du Croisé (remplace le Vœu du Chevalier)",
+          "armyComposition": ["errantry-crusades"]
+        }
+      ],
+      "equipment": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "单手武器",
+          "name_de": "Handwaffe",
+          "name_en": "Hand weapon",
+          "name_fr": "Arme de base",
+          "equippedDefault": true
+        },
+        {
+          "id": 1,
+          "points": 3,
+          "name_cn": "晨星锤",
+          "name_de": "Morgenstern",
+          "name_en": "Morning star",
+          "name_fr": "Morgenstern"
+        },
+        {
+          "id": 2,
+          "points": 4,
+          "name_cn": "重型武器",
+          "name_de": "Zweihandwaffe",
+          "name_en": "Great weapon",
+          "name_fr": "Arme lourde"
+        },
+        {
+          "id": 3,
+          "notes": {
+            "name_cn": "若处于骑乘状态",
+            "name_de": "sofern geeignet beritten",
+            "name_en": "if appropriately mounted",
+            "name_fr": "si monté",
+            "name_it": "if appropriately mounted"
+          },
+          "points": 4,
+          "name_cn": "长枪",
+          "name_de": "Lanze",
+          "name_en": "Lance",
+          "name_fr": "Lance de joute"
+        }
+      ],
+      "specialRules": {
+        "name_cn": "女神祝福, 集结战吼, 骑士誓言",
+        "name_de": "Segen der Herrin, Sammelruf, Rittergelübde",
+        "name_en": "Blessings of the Lady, Rallying Cry, The Knight's Vow",
+        "name_fr": "Bénédiction de la Dame, Cri de Ralliement, Le Vœu du Chevalier"
+      },
+      "armyComposition": {
+        "bretonnian-exiles": { "category": "characters" },
+        "errantry-crusades": {
+          "notes": {
+            "name_cn": "1+ 圣骑士",
+            "name_de": "1+ Paladin",
+            "name_en": "1+ Paladin",
+            "name_es": "",
+            "name_fr": "1+ Paladin"
+          },
+          "category": "characters"
+        },
+        "kingdom-of-bretonnia": { "category": "characters" }
+      }
+    },
+    {
+      "id": "outcast-wizard.rciei",
+      "armor": [],
+      "items": [
+        {
+          "types": [
+            "weapon",
+            "talisman",
+            "armor-mages",
+            "arcane-item",
+            "enchanted-item"
+          ],
+          "name_cn": "魔法物品",
+          "name_de": "Magische Gegenstände",
+          "name_en": "Magic Items",
+          "name_es": "Objetos mágicos",
+          "name_fr": "Objets Magiques",
+          "selected": [
+            {
+              "id": 61,
+              "name": "lore familiar",
+              "type": "arcane-item",
+              "points": 30,
+              "name_cn": "法系仆从",
+              "name_de": "Gelehrsamer Homunkulus",
+              "name_en": "Lore Familiar",
+              "name_fr": "Familier de Savoir",
+              "name_it": "Famiglio del Sapere",
+              "name_pl": "Chowaniec Wiedzy",
+              "onePerArmy": true
+            }
+          ],
+          "maxPoints": 75
+        }
+      ],
+      "lores": [
+        "battle-magic",
+        "daemonology",
+        "dark-magic",
+        "elementalism",
+        "illusion",
+        "necromancy"
+      ],
+      "mounts": [
+        {
+          "id": 0,
+          "active": false,
+          "points": 0,
+          "name_cn": "步行",
+          "name_de": "Zu Fuß",
+          "name_en": "On foot",
+          "name_fr": "À Pied"
+        },
+        {
+          "id": 1,
+          "active": true,
+          "points": 12,
+          "name_cn": "战马 {bretonnia}",
+          "name_de": "Schlachtross",
+          "name_en": "Warhorse {bretonnia}",
+          "name_es": "Warhorse",
+          "name_fr": "Destrier"
+        }
+      ],
+      "points": 45,
+      "command": [
+        {
+          "id": 0,
+          "points": 0,
+          "name_cn": "主将",
+          "name_de": "General",
+          "name_en": "General",
+          "name_es": "General",
+          "name_fr": "Général"
+        }
+      ],
+      "name_cn": "流亡法师",
+      "name_de": "Ausgestoßene Zauberer",
+      "name_en": "Outcast Wizard",
+      "name_es": "Outcast Wizard",
+      "name_fr": "Mage Proscrit",
+      "options": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "法师",
+          "name_de": "Wizard",
+          "name_en": "Wizard",
+          "name_es": "Hechicero",
+          "name_fr": "Sorcier",
+          "options": [
+            {
+              "active": false,
+              "points": 0,
+              "name_cn": "1级法师",
+              "name_de": "Level 1 Wizard",
+              "name_en": "Level 1 Wizard",
+              "name_es": "Hechicero de Nivel 1",
+              "name_fr": "Sorcier de Niveau 1",
+              "exclusive": true
+            },
+            {
+              "active": false,
+              "points": 30,
+              "name_cn": "2级法师",
+              "name_de": "Level 2 Wizard",
+              "name_en": "Level 2 Wizard",
+              "name_es": "Hechicero de Nivel 2",
+              "name_fr": "Sorcier de Niveau 2",
+              "exclusive": true
+            },
+            {
+              "active": true,
+              "points": 60,
+              "name_cn": "3级法师",
+              "name_de": "Zauberer der Stufe 3",
+              "name_en": "Level 3 Wizard",
+              "name_es": "Level 3 Wizard",
+              "name_fr": "Sorcier de Niveau 3",
+              "exclusive": true
+            }
+          ],
+          "alwaysActive": true
+        }
+      ],
+      "equipment": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "单手武器",
+          "name_de": "Handwaffe",
+          "name_en": "Hand weapon",
+          "name_es": "Hand weapon",
+          "name_fr": "Arme de base"
+        }
+      ],
+      "specialRules": {
+        "name_cn": "魔法攻击, 魔法抗性(-1), 野蛮奥术",
+        "name_de": "Magische Attacken, Magieresistenz (-1), Ungelernter Arkanist",
+        "name_en": "Magical Attacks, Magic Resistance (-1), Untutored Arcanist",
+        "name_fr": "Attaques Magiques, Résistance à la Magie (-1), Arcaniste Autodidacte"
+      },
+      "armyComposition": { "bretonnian-exiles": { "category": "characters" } },
+      "generatedSpells": null
+    },
+    {
+      "id": "the-green-knight.wphiqao",
+      "armor": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "重甲, 盾牌, 马铠",
+          "name_de": "Schwere Rüstung, Schild, Rossharnisch",
+          "name_en": "Heavy armour, Shield, Barding",
+          "name_fr": "Armure lourde, Bouclier, Caparaçon",
+          "activeDefault": true
+        }
+      ],
+      "items": [],
+      "lores": [],
+      "named": true,
+      "mounts": [],
+      "points": 275,
+      "command": [],
+      "name_cn": "绿骑士",
+      "name_de": "Der Grüne Ritter",
+      "name_en": "The Green Knight",
+      "name_es": "The Green Knight",
+      "name_fr": "Le Chevalier de Sinople",
+      "options": [],
+      "equipment": [
+        {
+          "id": 0,
+          "active": true,
+          "points": 0,
+          "name_cn": "哀伤之刃",
+          "name_de": "Die Klinge des Leids",
+          "name_en": "The Dolorous Blade",
+          "name_fr": "La Lame de Douleur"
+        }
+      ],
+      "specialRules": {
+        "name_cn": "仙灵之辉, 受祝骑士, 灵体, 圣地守护者, 心理免疫, 独行, 穿行掩体, 集结战吼, 惊骇, 永不战败, 不稳定",
+        "name_de": "Aura of the Fay, Gesegneter Ritter, Körperlos, Hüter der Heiligen Stätten, Immun gegen Psychologie, Einzelgänger, Durch Deckung bewegen, Sammelruf, Entsetzen, Unerschütterlich, Instabil",
+        "name_en": "Aura of the Fay, Blessed Knight, Ethereal, Guardian of the Sacred Sites, Immune to Psychology, Loner, Move Through Cover, Rallying Cry, Terror, Unbreakable, Unstable",
+        "name_fr": "Aura Féérique, Chevalier Béni, Éthéré, Gardien des Sites Sacrés, Immunisé à la Psychologie, Solitaire, Mouvement à Couvert, Cri de Ralliement, Terreur, Indémoralisable, Instables"
+      }
+    }
+  ],
+  "updated_at": "2026-04-08T17:17:49.804Z",
+  "description": "",
+  "mercenaries": [],
+  "armyComposition": "bretonnian-exiles",
+  "compositionRule": "grand-melee-combined-arms"
+}
