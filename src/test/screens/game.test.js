@@ -1069,6 +1069,161 @@ describe("Combat phase — character assignment", () => {
   });
 });
 
+describe("Charge ranges with assigned characters", () => {
+  function buildChargeArmy() {
+    return {
+      name: "Test",
+      armySlug: "test",
+      faction: "Test",
+      points: 290,
+      composition: null,
+      units: [
+        {
+          id: "paladin-001",
+          name: "Paladin",
+          category: "characters",
+          strength: 1,
+          points: 110,
+          stats: [
+            {
+              M: "7",
+              WS: "5",
+              BS: "3",
+              S: "4",
+              T: "4",
+              W: "2",
+              I: "4",
+              A: "2",
+              Ld: "8",
+              Name: "Paladin",
+            },
+          ],
+          weapons: [],
+          shootingWeapons: [],
+          magicItems: [
+            {
+              name: "Virtue of the Impetuous Knight",
+              type: "virtue",
+              points: 20,
+              effect:
+                'Gains Impetuous. Increases maximum charge range by 3" and may apply +D3 modifier to Charge roll.',
+              phases: [],
+              chargeMod: { range: 3, tag: "Virtue", color: "orange", order: 5 },
+            },
+          ],
+          specialRules: [],
+          mount: null,
+          armourSave: "3+",
+          ward: null,
+          regen: null,
+          magicResistance: null,
+          poisonedAttacks: false,
+          stomp: null,
+          impactHits: null,
+          isGeneral: false,
+          isBSB: false,
+          hasStandard: false,
+          hasMusician: false,
+          isCaster: false,
+          lores: [],
+          activeLore: null,
+          factionLores: [],
+          champions: [],
+          crew: [],
+        },
+        {
+          id: "knights-001",
+          name: "Knights Errant",
+          category: "core",
+          strength: 5,
+          points: 180,
+          stats: [
+            {
+              M: "8",
+              WS: "3",
+              BS: "3",
+              S: "3",
+              T: "3",
+              W: "1",
+              I: "3",
+              A: "1",
+              Ld: "7",
+              Name: "Knight Errant",
+            },
+          ],
+          weapons: [],
+          shootingWeapons: [],
+          magicItems: [],
+          specialRules: [],
+          mount: null,
+          armourSave: "2+",
+          ward: null,
+          regen: null,
+          magicResistance: null,
+          poisonedAttacks: false,
+          stomp: null,
+          impactHits: null,
+          isGeneral: false,
+          isBSB: false,
+          hasStandard: false,
+          hasMusician: false,
+          isCaster: false,
+          lores: [],
+          activeLore: null,
+          factionLores: [],
+          champions: [],
+          crew: [],
+        },
+      ],
+    };
+  }
+
+  beforeEach(() => {
+    saveCharacterAssignments({});
+    const army = buildChargeArmy();
+    saveArmy(army);
+    startGame(army);
+    savePhaseIndex(4); // declare-charges
+  });
+
+  it("merges virtue charge modifier into host unit card when character is assigned", () => {
+    const army = buildChargeArmy();
+    saveCharacterAssignments({ "paladin-001": "knights-001" });
+    renderGameScreen(army);
+
+    const chargePanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    const cards = [...chargePanel.querySelectorAll(".bg-wh-card")];
+
+    // Knights Errant host: M8 + 6 + 3 (virtue) = 17"
+    const knightsCard = cards.find((c) =>
+      c.textContent.includes("Knights Errant"),
+    );
+    expect(knightsCard).toBeTruthy();
+    expect(knightsCard.textContent).toContain('17"');
+    expect(knightsCard.textContent).toContain("Virtue");
+
+    // Paladin should not appear as a standalone row
+    const paladinCard = cards.find(
+      (c) => c.querySelector(".text-wh-text")?.textContent.trim() === "Paladin",
+    );
+    expect(paladinCard).toBeFalsy();
+  });
+
+  it("unassigned character still shows its own charge card", () => {
+    const army = buildChargeArmy();
+    saveCharacterAssignments({});
+    renderGameScreen(army);
+
+    const chargePanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    const cards = [...chargePanel.querySelectorAll(".bg-wh-card")];
+
+    const paladinCard = cards.find((c) => c.textContent.includes("Paladin"));
+    expect(paladinCard).toBeTruthy();
+    // Paladin M7 + 6 + 3 (virtue own item) = 16"
+    expect(paladinCard.textContent).toContain('16"');
+  });
+});
+
 describe("Errantry Banner parsed from OWB command group", () => {
   it("Errantry Banner on a BSB is not championOnly and shows in combat card", () => {
     const army = loadArmy("forest-goblins");

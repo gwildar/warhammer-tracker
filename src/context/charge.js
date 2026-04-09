@@ -1,5 +1,6 @@
 import { SPECIAL_RULES } from "../data/special-rules.js";
 import { resolveMovement, normaliseRuleName } from "../helpers.js";
+import { getCharacterAssignments } from "../state.js";
 
 // Build lookup: normalised rule name → chargeMod object
 const CHARGE_MOD_RULES = new Map();
@@ -52,7 +53,27 @@ export function renderChargeContext(army) {
   const units = army.units;
   if (units.length === 0) return "";
 
-  const rows = units.map((u) => {
+  const assignments = getCharacterAssignments();
+  const assignedCharIds = new Set(
+    Object.entries(assignments)
+      .filter(([, uid]) => uid)
+      .map(([cid]) => cid),
+  );
+
+  // Build reverse map: unitId → assigned character units
+  const charsByUnitId = new Map();
+  for (const [charId, unitId] of Object.entries(assignments)) {
+    if (!unitId) continue;
+    const charUnit = units.find((u) => u.id === charId);
+    if (!charUnit) continue;
+    if (!charsByUnitId.has(unitId)) charsByUnitId.set(unitId, []);
+    charsByUnitId.get(unitId).push(charUnit);
+  }
+
+  // Exclude assigned characters — their chargeMods are merged into the host unit
+  const unitsToRender = units.filter((u) => !assignedCharIds.has(u.id));
+
+  const rows = unitsToRender.map((u) => {
     const mv = resolveMovement(u);
     const mountData = u.mount ?? null;
 
@@ -65,6 +86,19 @@ export function renderChargeContext(army) {
     const hasFly = flyMv != null;
 
     const chargeMods = detectChargeMods(u, mountData);
+
+    // Merge chargeMods from assigned characters' magic items
+    const seenTags = new Set(chargeMods.map((m) => m.tag));
+    for (const char of charsByUnitId.get(u.id) || []) {
+      for (const item of char.magicItems || []) {
+        if (item.chargeMod && !seenTags.has(item.chargeMod.tag)) {
+          seenTags.add(item.chargeMod.tag);
+          chargeMods.push(item.chargeMod);
+        }
+      }
+    }
+    chargeMods.sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+
     const rangeBonus = chargeMods.reduce((sum, m) => sum + m.range, 0);
 
     const baseMv = mountData ? mountData.m : mv != null ? Number(mv) : null;
