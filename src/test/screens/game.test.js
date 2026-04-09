@@ -996,8 +996,8 @@ describe("Errantry Banner conditional strength display", () => {
     const knightsCard = [...combatPanel.querySelectorAll(".bg-wh-card")].find(
       (c) => c.textContent.includes("Knights Errant"),
     );
-    // Lance with S+2 at unit S3: display is "S3+2+1*"
-    expect(knightsCard.textContent).toContain("3+2+1*");
+    // Lance with S+2 at unit S3: display is "S3+2"
+    expect(knightsCard.textContent).toContain("3+2");
     // Banner name and inline modifier appear in banner row
     expect(knightsCard.textContent).toContain("Errantry Banner");
     expect(knightsCard.textContent).toContain("+1S on charge");

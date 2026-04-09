@@ -187,12 +187,9 @@ function renderWeaponLine(
   tags,
   options = {},
 ) {
-  const { apMod = 0, conditionalSMods = [] } = options;
+  const { apMod = 0 } = options;
 
-  let displayS = mergeStrength(s, w.s);
-  for (const mod of conditionalSMods) {
-    displayS += `${mod.numeric}*`;
-  }
+  const displayS = mergeStrength(s, w.s);
 
   const displayA = w.attacks ? `${attacks}${w.attacks}` : attacks;
   const displayRules = stripRedundantRules(w.rules, w);
@@ -514,6 +511,11 @@ export function renderCombatWeaponsContext(army) {
 
     const assignedChars = charsByUnitId[u.id] || [];
     const allUnitsForBonuses = [u, ...assignedChars];
+    const charBannerNames = assignedChars.flatMap((char) =>
+      (char.magicItems || [])
+        .filter((i) => i.type === "banner" || i.type === "standard")
+        .map((i) => i.name),
+    );
 
     // Shared computation (applies to both stats and no-stats paths)
     const unitMRNum = u.magicResistance ? parseInt(u.magicResistance) : 0;
@@ -576,7 +578,7 @@ export function renderCombatWeaponsContext(army) {
         impactHits: u.impactHits ?? null,
         singleUseItems: noStatsSuItems,
         itemNames: noStatsItemNames,
-        bannerNames: noStatsBannerNames,
+        bannerNames: [...noStatsBannerNames, ...charBannerNames],
         riderTags: buildRiderTags(u),
         combatRules: extractCombatRules(u),
         apMod,
@@ -750,7 +752,7 @@ export function renderCombatWeaponsContext(army) {
         (u.impactHits ?? null),
       singleUseItems: filteredSuItems,
       itemNames: filteredItemNames,
-      bannerNames: filteredBannerNames,
+      bannerNames: [...filteredBannerNames, ...charBannerNames],
       riderTags: buildRiderTags(u),
       combatRules: extractCombatRules(u),
       crew: [
