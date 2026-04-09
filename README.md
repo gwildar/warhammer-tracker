@@ -4,11 +4,13 @@ A turn tracker and phase reference tool for Warhammer: The Old World. Import you
 
 ## Features
 
-- Import army lists from Old World Builder (`.owb.json` files)
-- Step-by-step phase and sub-phase tracking
+- Import army lists from [Old World Builder](https://old-world-builder.com) (`.owb.json`) or [New Recruit](https://newrecruit.eu) (`newrecruit_file.json`)
+- Step-by-step phase and sub-phase tracking with rules reminders
 - Contextual display of special rules, magic items, and spells per phase
-- Declarable charge ranges with Fly and Swiftstride support
-- Shooting unit profiles with weapon stats
+- Declarable charge ranges with Fly, Swiftstride, and virtue modifiers
+- Shooting profiles with weapon stats per unit
+- Combat cards showing per-model stats (T/W/AS/MR/Ward/Regen) and weapon lines
+- Assign characters to units — charge modifiers, combat rules, and stat rows merge into the host unit's card
 - Spell selection and per-phase caster reminders
 - Works offline — all data stored in localStorage
 
@@ -38,10 +40,11 @@ npm run preview
 
 ## Usage
 
-1. Export your army list from [Old World Builder](https://old-world-builder.com) as a `.owb.json` file
-2. Open the app and upload the file (or drag and drop)
+1. Export your army list from [Old World Builder](https://old-world-builder.com) as a `.owb.json` file, or from [New Recruit](https://newrecruit.eu) as a `newrecruit_file.json`
+2. Open the app and upload the file (or drag and drop it onto the upload area)
 3. Select spells for your casters if applicable
-4. Click **Start Game** to begin tracking phases
+4. Optionally assign characters to units on the placement screen
+5. Choose who takes the first turn, then step through each phase
 
 ## Disclaimer
 
