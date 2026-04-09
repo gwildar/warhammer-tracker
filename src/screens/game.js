@@ -245,7 +245,7 @@ function bindGameActions(army) {
     if (confirm("Start a new game? This will reset the round counter.")) {
       resetGame();
       saveFirstTurn(null);
-      navigate("render");
+      navigate("setupScreen");
     }
   });
 }

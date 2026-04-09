@@ -58,6 +58,24 @@ describe("Game Screen", () => {
     expect(getApp().querySelector("#new-game-btn")).toBeTruthy();
   });
 
+  it("New Game button navigates to setupScreen", async () => {
+    const { registerScreen } = await import("../../navigate.js");
+    let navigated = null;
+    registerScreen("setupScreen", () => {
+      navigated = "setupScreen";
+    });
+    registerScreen("render", () => {
+      navigated = "render";
+    });
+
+    renderGameScreen(army);
+    window.confirm = () => true;
+    document.getElementById("new-game-btn").click();
+    window.confirm = undefined;
+
+    expect(navigated).toBe("setupScreen");
+  });
+
   it("shows Manage Army button", () => {
     renderGameScreen(army);
     expect(getApp().querySelector("#manage-army-btn")).toBeTruthy();
