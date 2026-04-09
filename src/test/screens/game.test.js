@@ -1002,3 +1002,69 @@ describe("Errantry Banner conditional strength display", () => {
     expect(knightsCard.textContent).toContain("Errantry Banner");
   });
 });
+
+describe("Combat phase — character assignment", () => {
+  let army;
+
+  beforeEach(() => {
+    saveCharacterAssignments({});
+    army = loadArmy("bretonnia");
+    startGame(army);
+    savePhaseIndex(10); // choose-fight
+  });
+
+  function assignFirstCharToFirstUnit(a) {
+    const chars = ["characters", "lords", "heroes"];
+    const char = a.units.find((u) => chars.includes(u.category));
+    const unit = a.units.find((u) => !chars.includes(u.category));
+    saveCharacterAssignments({ [char.id]: unit.id });
+    return { char, unit };
+  }
+
+  it("shows character name as a model label inside the host unit card", () => {
+    const { char, unit } = assignFirstCharToFirstUnit(army);
+    renderGameScreen(army);
+    const combatPanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    const hostCard = [...combatPanel.querySelectorAll(".bg-wh-card")].find(
+      (el) => el.textContent.includes(unit.name),
+    );
+    expect(hostCard).toBeTruthy();
+    expect(hostCard.textContent).toContain(char.name);
+  });
+
+  it("shows character points inside the host unit card", () => {
+    const { char, unit } = assignFirstCharToFirstUnit(army);
+    renderGameScreen(army);
+    const combatPanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    const hostCard = [...combatPanel.querySelectorAll(".bg-wh-card")].find(
+      (el) => el.textContent.includes(unit.name),
+    );
+    expect(hostCard.textContent).toContain(`${char.points}pts`);
+  });
+
+  it("shows character T and W in the host unit card", () => {
+    const { char, unit } = assignFirstCharToFirstUnit(army);
+    const charT = char.stats?.[0]?.T;
+    const charW = char.stats?.[0]?.W;
+    renderGameScreen(army);
+    const combatPanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    const hostCard = [...combatPanel.querySelectorAll(".bg-wh-card")].find(
+      (el) => el.textContent.includes(unit.name),
+    );
+    if (charT) expect(hostCard.textContent).toContain(`T:${charT}`);
+    if (charW) expect(hostCard.textContent).toContain(`W:${charW}`);
+  });
+
+  it("does not show assigned character as a standalone combat card", () => {
+    const { char } = assignFirstCharToFirstUnit(army);
+    renderGameScreen(army);
+    const combatPanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    const cards = [...combatPanel.querySelectorAll(".bg-wh-card")];
+    const standalone = cards.find(
+      (el) =>
+        el.querySelector(".text-wh-text.font-semibold")?.textContent.trim() ===
+        char.name,
+    );
+    expect(standalone).toBeFalsy();
+  });
+});
