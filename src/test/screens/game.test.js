@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { renderGameScreen } from "../../screens/game.js";
 import { loadArmy, startGame, getApp } from "../helpers.js";
 import {
@@ -7,7 +7,9 @@ import {
   saveCharacterAssignments,
   saveTimings,
   saveDeploymentTime,
+  saveDisplayMode,
 } from "../../state.js";
+import { getAllSubPhases } from "../../phases.js";
 
 describe("Game Screen", () => {
   let army;
@@ -146,6 +148,29 @@ describe("Game Screen", () => {
       expect(getApp().querySelector("#next-btn").textContent).toContain(
         "End Turn",
       );
+    });
+  });
+
+  describe("lightweight mode", () => {
+    afterEach(() => saveDisplayMode("standard"));
+
+    it("renders without error in lightweight mode", () => {
+      saveDisplayMode("lightweight");
+      expect(() => renderGameScreen(army)).not.toThrow();
+    });
+
+    it("standard mode renders more content than lightweight at shooting phase", () => {
+      const subPhases = getAllSubPhases();
+      const shootIdx = subPhases.findIndex((sp) => sp.subPhase.showShooting);
+      if (shootIdx === -1) return; // skip if no shooting phase
+      savePhaseIndex(shootIdx);
+      saveDisplayMode("standard");
+      renderGameScreen(army);
+      const standardLen = getApp().innerHTML.length;
+      saveDisplayMode("lightweight");
+      renderGameScreen(army);
+      const lightweightLen = getApp().innerHTML.length;
+      expect(lightweightLen).toBeLessThan(standardLen);
     });
   });
 });

@@ -4,6 +4,7 @@ import { renderUnitAssignmentScreen } from "../../screens/unit-assignment.js";
 import { registerScreen } from "../../navigate.js";
 import { loadArmy, getApp } from "../helpers.js";
 import { displayUnitName } from "../../utils/unit-name.js";
+import { getDisplayMode, saveDisplayMode } from "../../state.js";
 
 describe("Setup Screen", () => {
   describe("without army", () => {
@@ -140,6 +141,33 @@ describe("Setup Screen", () => {
       const btn = getApp().querySelector("#start-game-btn");
       btn.click();
       expect(getApp().textContent).toContain("Place Characters in Units");
+    });
+  });
+
+  describe("display mode settings", () => {
+    it("shows settings button", () => {
+      renderSetupScreen();
+      expect(getApp().querySelector("#settings-btn")).toBeTruthy();
+    });
+
+    it("settings modal contains Standard and Lightweight buttons", () => {
+      renderSetupScreen();
+      expect(getApp().querySelector("#settings-modal")).toBeTruthy();
+      expect(getApp().querySelector("#mode-standard")).toBeTruthy();
+      expect(getApp().querySelector("#mode-lightweight")).toBeTruthy();
+    });
+
+    it("clicking Lightweight saves mode", () => {
+      renderSetupScreen();
+      getApp().querySelector("#mode-lightweight").click();
+      expect(getDisplayMode()).toBe("lightweight");
+    });
+
+    it("clicking Standard saves mode", () => {
+      saveDisplayMode("lightweight");
+      renderSetupScreen();
+      getApp().querySelector("#mode-standard").click();
+      expect(getDisplayMode()).toBe("standard");
     });
   });
 });

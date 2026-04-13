@@ -1,6 +1,19 @@
 import { beforeEach } from "vitest";
 import { registerScreen } from "../navigate.js";
 
+// jsdom does not implement HTMLDialogElement.show/showModal/close — polyfill them
+if (typeof HTMLDialogElement !== "undefined") {
+  if (!HTMLDialogElement.prototype.show) {
+    HTMLDialogElement.prototype.show = function () {};
+  }
+  if (!HTMLDialogElement.prototype.showModal) {
+    HTMLDialogElement.prototype.showModal = function () {};
+  }
+  if (!HTMLDialogElement.prototype.close) {
+    HTMLDialogElement.prototype.close = function () {};
+  }
+}
+
 // Register no-op screens so navigate() calls don't throw during binding
 const noop = () => {};
 registerScreen("render", noop);
