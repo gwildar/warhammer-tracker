@@ -48,6 +48,15 @@ describe("optional rules parsed from unit options", () => {
   });
 });
 
+describe("From Beneath the Sands shows on your turn command sub-phase", () => {
+  it("renders in command sub-phase for army with High Priest", () => {
+    const army = loadArmy("mc-skeleton-horde");
+    startGame(army);
+    const html = renderSpecialRulesContext(army, { id: "command" });
+    expect(html).toContain("From Beneath the Sands");
+  });
+});
+
 describe("optional rules: Shield option does not pollute special rules display", () => {
   it("Skeleton Warriors shield option still grants armour save bonus without appearing as displayed rule", () => {
     const army = loadArmy("mc-skeleton-horde");

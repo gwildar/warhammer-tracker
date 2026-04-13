@@ -1821,7 +1821,7 @@ export const SPECIAL_RULES = [
         subPhaseId: "command",
         yourTurnOnly: true,
         description:
-          'If not engaged, take a Leadership test to summon a friendly unit with both Nehekharan Undead and Ambushers from reserve. Pass: unit enters within 12" of the caster and outside 6" of enemies — cannot charge this turn and counts as having moved. Fail: unit remains in reserve. Units with Ambushers arrive automatically by Round 5.',
+          'If not engaged, choose a friendly unit with Nehekharan Undead and Ambushers in reserve and take a Leadership test. Pass: place the unit within 12" of this model and outside 6" of enemies — it cannot charge this turn and counts as having moved. Fail: unit is delayed until your next turn. Ambushers units still arrive automatically at Round 5.',
       },
     ],
   },
