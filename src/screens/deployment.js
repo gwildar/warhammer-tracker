@@ -83,15 +83,9 @@ export function renderDeploymentScreen(army) {
   }
   app.innerHTML = `
     <div class="min-h-dvh flex flex-col">
-      <header class="bg-wh-surface border-b border-wh-border p-3">
-        <div class="flex justify-between items-center mb-2">
-          <span class="text-sm text-wh-accent">${army.name}</span>
-        </div>
-        <div class="flex gap-1">
-          <div class="flex-1 text-center">
-            <div class="h-1.5 rounded-full mb-1 bg-wh-accent"></div>
-            <span class="text-[10px] text-wh-text font-semibold">Setup</span>
-          </div>
+      <header class="bg-wh-surface border-b border-wh-border p-4">
+        <div class="max-w-4xl mx-auto">
+          <span class="text-sm font-semibold text-wh-accent">${army.name}</span>
         </div>
       </header>
       <main class="flex-1 p-4 max-w-4xl mx-auto w-full">

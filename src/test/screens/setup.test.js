@@ -21,9 +21,9 @@ describe("Setup Screen", () => {
       expect(getApp().textContent).toContain(".owb.json");
     });
 
-    it("shows Setup phase header", () => {
+    it("shows app title", () => {
       renderSetupScreen();
-      expect(getApp().querySelector("header").textContent).toContain("Setup");
+      expect(getApp().textContent).toContain("Turner Overdrive");
     });
   });
 
