@@ -1,6 +1,7 @@
 import { SPECIAL_RULES } from "../data/special-rules.js";
 import { getStartTime, saveDeploymentTime, resetStartTime } from "../state.js";
 import { navigate } from "../navigate.js";
+import { renderSetupHeader, bindSetupHeaderEvents } from "./setup-header.js";
 
 const app = document.getElementById("app");
 
@@ -83,14 +84,9 @@ export function renderDeploymentScreen(army) {
   }
   app.innerHTML = `
     <div class="min-h-dvh flex flex-col">
-      <header class="bg-wh-surface border-b border-wh-border p-4">
-        <div class="max-w-4xl mx-auto">
-          <span class="text-sm font-semibold text-wh-accent">${army.name}</span>
-        </div>
-      </header>
+      ${renderSetupHeader(army, "deploy")}
       <main class="flex-1 p-4 max-w-4xl mx-auto w-full">
         <div class="mb-4">
-          <span class="text-xs uppercase tracking-wider text-wh-muted">Setup</span>
           <h2 class="text-2xl font-bold text-wh-text">Deployment</h2>
         </div>
         ${renderExplainer()}
@@ -108,4 +104,5 @@ export function renderDeploymentScreen(army) {
     resetStartTime(); // seeds the timer for the game screen
     navigate("firstTurnScreen", army);
   });
+  bindSetupHeaderEvents();
 }

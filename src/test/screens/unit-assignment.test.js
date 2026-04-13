@@ -79,18 +79,21 @@ describe("Unit assignment screen", () => {
     );
   });
 
-  it("shows Setup label and Optional subtitle in title block", () => {
+  it("shows Optional subtitle in title block", () => {
     renderUnitAssignmentScreen(army);
     const titleBlock = getApp().querySelector("main > div.mb-4");
-    expect(titleBlock.textContent).toContain("Setup");
     expect(titleBlock.textContent).toContain("Optional");
   });
 
-  it("header shows army name and Save and Continue button is in main", () => {
+  it("header shows army name, setup phases, and army button", () => {
     renderUnitAssignmentScreen(army);
     const header = getApp().querySelector("header");
     expect(header.textContent).toContain(army.name);
-    expect(header.querySelector("#save-assignments-btn")).toBeFalsy();
+    expect(header.textContent).toContain("Place Characters");
+    expect(header.textContent).toContain("Deploy");
+    expect(header.textContent).toContain("Who Goes First");
+    expect(header.querySelector("#setup-army-btn")).toBeTruthy();
+    expect(header.querySelector("#setup-new-game-btn")).toBeTruthy();
     expect(getApp().querySelector("main #save-assignments-btn")).toBeTruthy();
   });
 });

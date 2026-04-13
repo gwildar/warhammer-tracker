@@ -15,15 +15,14 @@ describe("Deployment screen", () => {
     expect(getApp().querySelector("h2").textContent).toContain("Deployment");
   });
 
-  it("shows Setup eyebrow", () => {
-    renderDeploymentScreen(army);
-    expect(getApp().textContent).toContain("Setup");
-  });
-
-  it("shows army name in header", () => {
+  it("shows setup phase header with Deploy active and army name", () => {
     renderDeploymentScreen(army);
     const header = getApp().querySelector("header");
     expect(header.textContent).toContain(army.name);
+    expect(header.textContent).toContain("Deploy");
+    expect(header.textContent).toContain("Place Characters");
+    expect(header.textContent).toContain("Who Goes First");
+    expect(header.querySelector("#setup-army-btn")).toBeTruthy();
   });
 
   it("shows Continue button", () => {

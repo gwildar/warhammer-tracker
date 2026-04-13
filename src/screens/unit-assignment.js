@@ -1,6 +1,7 @@
 import { getCharacterAssignments, saveCharacterAssignments } from "../state.js";
 import { navigate } from "../navigate.js";
 import { displayUnitName } from "../utils/unit-name.js";
+import { renderSetupHeader, bindSetupHeaderEvents } from "./setup-header.js";
 
 const app = document.getElementById("app");
 
@@ -77,14 +78,9 @@ export function renderUnitAssignmentScreen(army) {
 
   app.innerHTML = `
     <div class="min-h-dvh flex flex-col">
-      <header class="bg-wh-surface border-b border-wh-border p-4">
-        <div class="max-w-4xl mx-auto">
-          <span class="text-sm font-semibold text-wh-accent">${army.name}</span>
-        </div>
-      </header>
+      ${renderSetupHeader(army, "characters")}
       <main class="flex-1 p-4 max-w-4xl mx-auto w-full">
         <div class="mb-4">
-          <span class="text-xs uppercase tracking-wider text-wh-muted">Setup</span>
           <h2 class="text-2xl font-bold text-wh-text">Place Characters in Units</h2>
           <span class="text-xs text-wh-muted">Optional</span>
         </div>
@@ -117,6 +113,7 @@ export function renderUnitAssignmentScreen(army) {
   `;
 
   bindDragDrop(army);
+  bindSetupHeaderEvents();
 
   document
     .getElementById("save-assignments-btn")
