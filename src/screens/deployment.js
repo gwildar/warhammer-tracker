@@ -78,6 +78,9 @@ function renderDeploymentUnits(army) {
 }
 
 export function renderDeploymentScreen(army) {
+  if (getStartTime() === null) {
+    resetStartTime();
+  }
   app.innerHTML = `
     <div class="min-h-dvh flex flex-col">
       <header class="p-4 border-b border-wh-border">
