@@ -11,9 +11,10 @@ const KEYS = {
   assignments: "tow-character-assignments",
   schemaVersion: "tow-schema-version",
   deploymentTime: "tow-deployment-time",
+  displayMode: "tow-display-mode",
 };
 
-export const SCHEMA_VERSION = "1";
+export const SCHEMA_VERSION = "2";
 
 export function getSchemaVersion() {
   return load(KEYS.schemaVersion, null);
@@ -214,4 +215,12 @@ export function clearAll() {
   for (const key of Object.values(KEYS)) {
     localStorage.removeItem(key);
   }
+}
+
+export function getDisplayMode() {
+  return load(KEYS.displayMode, "standard");
+}
+
+export function saveDisplayMode(mode) {
+  save(KEYS.displayMode, mode);
 }
