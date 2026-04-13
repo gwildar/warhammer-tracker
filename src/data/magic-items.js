@@ -585,6 +585,7 @@ export const MAGIC_ITEMS = [
     points: 40,
     effect: "The unit gains the Armour Bane (2) special rule.",
     phases: ["combat"],
+    subPhases: ["choose-fight"],
     armourBane: 2,
   },
   {
