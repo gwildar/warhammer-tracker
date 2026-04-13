@@ -96,6 +96,8 @@ export function normaliseItemName(name) {
   return name
     .replace(/\s*\(.*$/, "")
     .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/\*$/, "");
 }
 
@@ -105,7 +107,11 @@ export function normaliseItemName(name) {
 export function buildMagicItemMap() {
   const map = {};
   for (const item of MAGIC_ITEMS) {
-    map[item.name.toLowerCase()] = item;
+    const key = item.name
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+    map[key] = item;
   }
   return map;
 }
