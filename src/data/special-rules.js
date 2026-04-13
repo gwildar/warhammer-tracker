@@ -80,6 +80,7 @@ export const SPECIAL_RULES = [
       {
         phaseId: "strategy",
         subPhaseId: "command",
+        yourTurnOnly: true,
         description:
           'If not engaged, resurrect D3 + Wizard Level Wounds of Infantry, or Wizard Level Wounds of Monstrous/Cavalry, or 1 Wound of Behemoth/War Machine, in a friendly Necromantic Undead unit within 12". Requires Ld test.',
       },

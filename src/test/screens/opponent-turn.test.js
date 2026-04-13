@@ -65,4 +65,13 @@ describe("Opponent Turn Screen", () => {
     renderOpponentTurnScreen(lizardArmy);
     expect(getApp().textContent).not.toContain("Arch-Lightning Rod");
   });
+
+  it("does not show Invocation of Nehek during opponent strategy phase", () => {
+    const vcArmy = loadArmy("vampire-counts");
+    startGame(vcArmy);
+    saveIsOpponentTurn(true);
+    savePhaseIndex(0); // strategy phase
+    renderOpponentTurnScreen(vcArmy);
+    expect(getApp().textContent).not.toContain("Invocation of Nehek");
+  });
 });
