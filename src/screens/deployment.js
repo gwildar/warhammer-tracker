@@ -100,10 +100,7 @@ export function renderDeploymentScreen(army) {
   `;
 
   document.getElementById("continue-btn").addEventListener("click", () => {
-    const startTime = getStartTime();
-    if (startTime) {
-      saveDeploymentTime(Date.now() - startTime);
-    }
+    saveDeploymentTime(Date.now() - getStartTime());
     resetStartTime();
     navigate("firstTurnScreen", army);
   });

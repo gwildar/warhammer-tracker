@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { renderDeploymentScreen } from "../../screens/deployment.js";
 import { getApp, loadArmy } from "../helpers.js";
-import { saveArmy } from "../../state.js";
+import { saveArmy, getDeploymentTime } from "../../state.js";
 
 describe("Deployment screen", () => {
   let army;
@@ -128,5 +128,34 @@ describe("Deployment screen", () => {
     renderDeploymentScreen(mixedArmy);
     expect(getApp().textContent).toContain("Shadow Warriors");
     expect(getApp().textContent).not.toContain("Spearmen");
+  });
+
+  it("shows unit card with Ambushers rule when unit has Ambushers", () => {
+    const armyWithAmbushers = {
+      name: "Test Army",
+      units: [
+        {
+          id: "ambushers-unit",
+          name: "Forest Goblins",
+          category: "core",
+          specialRules: [{ displayName: "Ambushers" }],
+          magicItems: [],
+        },
+      ],
+    };
+    saveArmy(armyWithAmbushers);
+    renderDeploymentScreen(armyWithAmbushers);
+    expect(getApp().textContent).toContain("Deployment Rules");
+    expect(getApp().textContent).toContain("Forest Goblins");
+    expect(getApp().textContent).toContain("Ambushers");
+  });
+
+  it("Continue button saves deployment time", () => {
+    // Set a start time so the elapsed calculation works
+    localStorage.setItem("tow-start-time", String(Date.now() - 60000)); // 1 minute ago
+    renderDeploymentScreen(army);
+    getApp().querySelector("#continue-btn").click();
+    expect(getDeploymentTime()).not.toBeNull();
+    expect(getDeploymentTime()).toBeGreaterThan(0);
   });
 });
