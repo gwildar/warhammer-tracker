@@ -346,6 +346,7 @@ export function fromOwb(json) {
     faction: formatFaction(json.army),
     points: json.points || 0,
     composition: composition || null,
+    owbId: json.id || null,
     units,
   };
 

@@ -84,6 +84,14 @@ describe("Game Screen", () => {
     expect(getApp().querySelector("#manage-army-btn")).toBeTruthy();
   });
 
+  it("shows OWB view link for OWB armies", () => {
+    renderGameScreen(army);
+    const link = getApp().querySelector('a[href*="old-world-builder.com"]');
+    expect(link).toBeTruthy();
+    expect(link.href).toContain(army.owbId);
+    expect(link.target).toBe("_blank");
+  });
+
   describe("shooting phase", () => {
     it("shows shooting units for armies with ranged weapons", () => {
       // Navigate to Choose Target sub-phase (shooting)

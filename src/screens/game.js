@@ -54,6 +54,7 @@ export function renderGameScreen(army) {
             </button>
             <span class="text-wh-muted text-sm hidden sm:inline">|</span>
             <span class="text-sm text-wh-accent hidden sm:inline">${army.name}</span>
+            ${army.owbId ? `<a href="https://old-world-builder.com/game-view/${army.owbId}" target="_blank" rel="noopener noreferrer" class="text-wh-muted hover:text-wh-accent text-sm transition-colors hidden sm:inline" title="View in Old World Builder">&#128065; gameview</a>` : ""}
           </div>
           <div class="flex items-center gap-3">
             <span class="font-mono font-black text-wh-accent">Round ${round}</span>

@@ -57,6 +57,13 @@ describe("Opponent Turn Screen", () => {
     expect(getApp().querySelector("#new-game-btn")).toBeTruthy();
   });
 
+  it("shows OWB view link for OWB armies", () => {
+    renderOpponentTurnScreen(army);
+    const link = getApp().querySelector('a[href*="old-world-builder.com"]');
+    expect(link).toBeTruthy();
+    expect(link.href).toContain(army.owbId);
+  });
+
   it("does not show Arch-Lightning Rod during opponent strategy phase", () => {
     const lizardArmy = loadArmy("lizardmen");
     startGame(lizardArmy);

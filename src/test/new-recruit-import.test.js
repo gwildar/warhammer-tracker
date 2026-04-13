@@ -43,4 +43,9 @@ describe("New Recruit import", () => {
     expect(darkRiders.mount).not.toBeNull();
     expect(darkRiders.mount.m).toBe(9);
   });
+
+  it("does not set owbId on New Recruit armies", () => {
+    const army = parseArmyList(fixture);
+    expect(army.owbId).toBeFalsy();
+  });
 });
