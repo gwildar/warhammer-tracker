@@ -115,14 +115,19 @@ function parseCanonicalUnit(raw, category) {
   const strength = raw.strength || 1;
 
   // Gather equipment and armour strings
-  const equipment = [
-    ...collectActive(raw.equipment),
-    ...collectActive(raw.options),
-  ];
+  const activeOptions = collectActive(raw.options);
+  const equipment = [...collectActive(raw.equipment), ...activeOptions];
   const armour = collectActive(raw.armor);
 
-  // Gather special rules text
+  // Gather special rules text — include active option names so rules like
+  // Ambushers, Scouts, The Grail Vow etc. are resolved from the options array
   let specialRulesText = raw.specialRules?.name_en || "";
+  if (activeOptions.length > 0) {
+    const optionRulesText = activeOptions.join(", ");
+    specialRulesText = specialRulesText
+      ? `${specialRulesText}, ${optionRulesText}`
+      : optionRulesText;
+  }
 
   // Gather magic items from various sources
   const magicItemNames = [];

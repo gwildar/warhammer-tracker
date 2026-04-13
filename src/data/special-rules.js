@@ -1801,6 +1801,18 @@ export const SPECIAL_RULES = [
     ],
   },
   {
+    id: "the terrors below",
+    displayName: "The Terrors Below",
+    phases: [
+      {
+        phaseId: "movement",
+        subPhaseId: "compulsory-moves",
+        description:
+          "When this unit enters via From Beneath the Sands, nominate one enemy regular or heavy infantry unit within 8\". That unit makes Initiative tests equal to this unit's Unit Strength — each failed test removes one model as a casualty.",
+      },
+    ],
+  },
+  {
     id: "from beneath the sands",
     displayName: "From Beneath the Sands",
     phases: [
