@@ -97,15 +97,21 @@ export function renderScoringUI() {
                     totalYou += s.you;
                     totalOpponent += s.opponent;
                     const isCurrent = r === round && turn === turnKey;
+                    const isFuture =
+                      r === round &&
+                      turnsInOrder.indexOf(turn) >
+                        turnsInOrder.indexOf(turnKey);
                     const turnMs = Object.values(
                       (timings[r] && timings[r][turn]) || {},
                     ).reduce((a, b) => a + b, 0);
                     const timeCell = turnMs > 0 ? formatDuration(turnMs) : "—";
                     const scoreSelect = (player) => {
                       const val = s[player];
-                      return isCurrent
-                        ? `<td class="px-3 py-2 text-wh-text font-bold">${val}</td>`
-                        : `<td class="px-3 py-2"><select data-hist-round="${r}" data-hist-turn="${turn}" data-hist-player="${player}" class="bg-wh-card border border-wh-border text-wh-text rounded px-1 py-0.5 text-sm outline-none focus:border-wh-accent transition-colors">${[0, 1, 2, 3, 4].map((v) => `<option value="${v}" ${val === v ? "selected" : ""}>${v}</option>`).join("")}</select></td>`;
+                      if (isCurrent)
+                        return `<td class="px-3 py-2 text-wh-text font-bold">${val}</td>`;
+                      if (isFuture)
+                        return `<td class="px-3 py-2 text-wh-muted">—</td>`;
+                      return `<td class="px-3 py-2"><select data-hist-round="${r}" data-hist-turn="${turn}" data-hist-player="${player}" class="bg-wh-card border border-wh-border text-wh-text rounded px-1 py-0.5 text-sm outline-none focus:border-wh-accent transition-colors">${[0, 1, 2, 3, 4].map((v) => `<option value="${v}" ${val === v ? "selected" : ""}>${v}</option>`).join("")}</select></td>`;
                     };
                     return `
                   <tr class="${isCurrent ? "bg-wh-accent/5" : ""}">
