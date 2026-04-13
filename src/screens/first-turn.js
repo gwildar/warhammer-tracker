@@ -6,16 +6,15 @@ const app = document.getElementById("app");
 export function renderFirstTurnScreen(army) {
   app.innerHTML = `
     <div class="min-h-dvh flex flex-col">
-      <header class="p-4 border-b border-wh-border">
-        <div class="flex justify-between items-center max-w-2xl mx-auto">
-          <div></div>
-          <h1 class="text-2xl font-bold text-wh-accent text-center">Turner Overdrive <span class="text-xs text-wh-red font-normal">Alpha</span></h1>
-          <div></div>
+      <header class="bg-wh-surface border-b border-wh-border p-4">
+        <div class="max-w-2xl mx-auto">
+          <span class="text-sm font-semibold text-wh-accent">${army.name}</span>
         </div>
       </header>
 
       <main class="flex-1 flex items-center justify-center p-4">
         <div class="max-w-md w-full text-center">
+          <span class="text-xs uppercase tracking-wider text-wh-muted">Setup</span>
           <h2 class="text-2xl font-bold text-wh-text mb-2">Who goes first?</h2>
           <p class="text-wh-muted text-sm mb-8">${army.name} — Round 1</p>
           <div class="flex gap-4">

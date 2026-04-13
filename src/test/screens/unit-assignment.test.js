@@ -86,10 +86,11 @@ describe("Unit assignment screen", () => {
     expect(titleBlock.textContent).toContain("Optional");
   });
 
-  it("header still contains Save and Continue button and army name", () => {
+  it("header shows army name and Save and Continue button is in main", () => {
     renderUnitAssignmentScreen(army);
     const header = getApp().querySelector("header");
-    expect(header.querySelector("#save-assignments-btn")).toBeTruthy();
     expect(header.textContent).toContain(army.name);
+    expect(header.querySelector("#save-assignments-btn")).toBeFalsy();
+    expect(getApp().querySelector("main #save-assignments-btn")).toBeTruthy();
   });
 });

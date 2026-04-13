@@ -77,13 +77,9 @@ export function renderUnitAssignmentScreen(army) {
 
   app.innerHTML = `
     <div class="min-h-dvh flex flex-col">
-      <header class="p-4 border-b border-wh-border">
-        <div class="flex justify-between items-center max-w-4xl mx-auto">
-          <h1 class="text-xl font-bold text-wh-accent">${army.name}</h1>
-          <button id="save-assignments-btn"
-            class="px-4 py-2 bg-wh-accent text-wh-bg rounded text-sm font-semibold hover:opacity-90">
-            Save &amp; Continue
-          </button>
+      <header class="bg-wh-surface border-b border-wh-border p-4">
+        <div class="max-w-4xl mx-auto">
+          <span class="text-sm font-semibold text-wh-accent">${army.name}</span>
         </div>
       </header>
       <main class="flex-1 p-4 max-w-4xl mx-auto w-full">
@@ -112,6 +108,10 @@ export function renderUnitAssignmentScreen(army) {
             </div>
           </div>
         </div>
+        <button id="save-assignments-btn"
+          class="mt-6 w-full py-3 bg-wh-accent text-wh-bg rounded font-semibold hover:opacity-90">
+          Save &amp; Continue
+        </button>
       </main>
     </div>
   `;

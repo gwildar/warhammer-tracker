@@ -23,7 +23,7 @@ export function renderSetupScreen() {
 
   app.innerHTML = `
     <div class="min-h-dvh flex flex-col">
-      <header class="p-4 border-b border-wh-border">
+      <header class="bg-wh-surface p-4 border-b border-wh-border">
         <div class="flex justify-between items-center max-w-2xl mx-auto">
           <div></div>
           <h1 class="text-2xl font-bold text-wh-accent text-center">Turner Overdrive <span class="text-xs text-wh-muted font-normal">v${version}</span> <span class="text-xs text-wh-red font-normal">Alpha</span></h1>
