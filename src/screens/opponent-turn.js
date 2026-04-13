@@ -13,6 +13,7 @@ import {
   getStartTime,
   resetStartTime,
   recordCurrentPhaseTime,
+  getDisplayMode,
 } from "../state.js";
 import { PHASE_BG } from "../helpers.js";
 import { renderChargeContext } from "../context/charge.js";
@@ -123,12 +124,15 @@ export function renderOpponentTurnScreen(army) {
 }
 
 function renderOpponentPhaseContext(army, phase) {
+  const lightweight = getDisplayMode() === "lightweight";
   let html = "";
 
-  if (phase.id === "movement")
+  if (!lightweight && phase.id === "movement")
     html += `<details><summary class="text-sm font-bold text-wh-phase-combat mb-3">Charge Distances</summary>${renderChargeContext(army)}</details>`;
-  if (phase.id === "shooting") html += renderDefensiveStatsContext(army);
-  if (phase.id === "combat") html += renderCombatWeaponsContext(army);
+  if (!lightweight && phase.id === "shooting")
+    html += renderDefensiveStatsContext(army);
+  if (!lightweight && phase.id === "combat")
+    html += renderCombatWeaponsContext(army);
   if (phase.id === "scoring") html += renderScoringUI();
   html += renderMagicItemsContext(army, phase.id, null);
   html += renderVirtuesContext(army, phase.id, null);
