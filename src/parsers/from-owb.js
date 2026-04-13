@@ -267,6 +267,25 @@ function parseCanonicalUnit(raw, category) {
   }
   displayName = displayName.replace(/\{[^}]*\}/g, "").trim();
 
+  // Parse detachments (e.g. beasts in a Wood Elf Beast Pack)
+  const detachments = (raw.detachments || []).map((det) => {
+    const detEquipment = collectActive(det.equipment);
+    const detStats = resolveStats(det.id, det.name_en);
+    const detWeapons = resolveWeapons(detEquipment, []);
+    const detSpecialRules = resolveSpecialRules(
+      det.specialRules?.name_en || "",
+    );
+    return {
+      id: det.id,
+      name: det.name_en,
+      strength: det.strength || 1,
+      points: det.points || 0,
+      stats: detStats,
+      weapons: detWeapons,
+      specialRules: detSpecialRules,
+    };
+  });
+
   // Build canonical unit
   const unit = {
     id,
@@ -287,6 +306,7 @@ function parseCanonicalUnit(raw, category) {
     poisonedAttacks,
     stomp,
     impactHits,
+    detachments,
     champions: [], // TODO: parse from stat lines
     crew: [], // TODO: parse from stat lines
     isGeneral,
