@@ -121,7 +121,7 @@ export function renderUnitAssignmentScreen(army) {
   document
     .getElementById("save-assignments-btn")
     .addEventListener("click", () => {
-      navigate("firstTurnScreen", army);
+      navigate("deploymentScreen", army);
     });
 }
 
