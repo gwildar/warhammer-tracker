@@ -152,15 +152,20 @@ function bindDragDrop(army) {
   for (const zone of dropTargets) {
     zone.addEventListener("dragover", (e) => {
       e.preventDefault();
-      zone.classList.add("border-wh-accent", "bg-wh-accent/10");
+      zone.style.borderColor = "var(--color-wh-accent)";
+      zone.style.backgroundColor =
+        "color-mix(in srgb, var(--color-wh-accent) 12%, transparent)";
     });
     zone.addEventListener("dragleave", (e) => {
-      if (!zone.contains(e.relatedTarget))
-        zone.classList.remove("border-wh-accent", "bg-wh-accent/10");
+      if (!zone.contains(e.relatedTarget)) {
+        zone.style.borderColor = "";
+        zone.style.backgroundColor = "";
+      }
     });
     zone.addEventListener("drop", (e) => {
       e.preventDefault();
-      zone.classList.remove("border-wh-accent", "bg-wh-accent/10");
+      zone.style.borderColor = "";
+      zone.style.backgroundColor = "";
       const charId = e.dataTransfer.getData("text/plain");
       if (!charId) return;
       const assignments = getCharacterAssignments();

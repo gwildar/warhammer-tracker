@@ -161,6 +161,15 @@ export const RANGED_WEAPONS = {
     rules: "",
     noBS: true,
   },
+  "screaming skull catapult": {
+    name: "Screaming Skull Catapult",
+    range: '12"-60"',
+    s: "4(8)",
+    ap: "-1(-3)",
+    rules:
+      'Bombardment (3" blast), Cumbersome, Flaming Attacks, Magical Attacks, Move or Shoot, Multiple Wounds (D3+1) on central model, Screaming Skulls',
+    noBS: true,
+  },
   trebuchet: {
     name: "Trebuchet",
     range: '12"-60"',
@@ -299,6 +308,13 @@ export const RANGED_WEAPONS = {
   },
 
   // ─── Breath Weapons ──────────────────────────────────────────────────
+  "breath of desiccation": {
+    name: "Breath of Desiccation",
+    range: "Template",
+    s: "3",
+    ap: "-2",
+    rules: "Breath Weapon, Magical Attacks, Multiple Wounds (2)",
+  },
   "pestilential breath": {
     name: "Pestilential Breath",
     range: "Template",
@@ -637,6 +653,71 @@ export const COMBAT_WEAPONS = {
     s: "S+2",
     ap: "-2",
     rules: "Magical Attacks, Requires Two Hands",
+  },
+
+  // ─── Tomb Kings Weapons ──────────────────────────────────────────────
+  greatbow: {
+    name: "Greatbow",
+    range: '30"',
+    s: "6",
+    ap: "-1",
+    rules: "Armour Bane (2), Multiple Wounds (2), Volley Fire",
+  },
+  "ritual blade": {
+    name: "Ritual Blade",
+    s: "S+2",
+    ap: "-3",
+    rules: "Requires Two Hands, Strike Last",
+  },
+  "swarming mass": {
+    name: "Swarming Mass",
+    range: "Template",
+    s: "2",
+    ap: "—",
+    rules: "Breath Weapon. Wounds on 4+ regardless of Toughness.",
+  },
+  "writhing tail": {
+    name: "Writhing Tail",
+    s: "S",
+    ap: "-1",
+    rules: "Extra Attacks (+D3)",
+  },
+  "envenomed sting": {
+    name: "Envenomed Sting",
+    s: "S",
+    ap: "—",
+    rules: "Poisoned Attacks, Strike First",
+  },
+  "fiery roar": {
+    name: "Fiery Roar",
+    range: "Template",
+    s: "4",
+    ap: "-1",
+    rules: "Breath Weapon, Flaming Attacks",
+  },
+  "decapitating claws": {
+    name: "Decapitating Claws",
+    s: "S",
+    ap: "-2",
+    rules: "Killing Blow, Monster Slayer",
+  },
+  "paired great khopeshes": {
+    name: "Paired Great Khopeshes",
+    s: "S",
+    ap: "-2",
+    rules: "Killing Blow, Requires Two Hands",
+  },
+  "cleaving blades": {
+    name: "Cleaving Blades",
+    s: "S",
+    ap: "-1",
+    rules: "Killing Blow",
+  },
+  "decapitating strike": {
+    name: "Decapitating Strike",
+    s: "S+5",
+    ap: "-4",
+    rules: "Killing Blow, Monster Slayer, Strike Last",
   },
 };
 

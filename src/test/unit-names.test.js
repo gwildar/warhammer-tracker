@@ -4,6 +4,7 @@ import { displayUnitName } from "../utils/unit-name.js";
 import darkElvesJson from "./fixtures/dark-elves.owb.json";
 import bretonniaChargeJson from "./fixtures/bretonnia-charge.owb.json";
 import lizardmenJson from "./fixtures/lizardmen.owb.json";
+import mcSkeletonHordeJson from "./fixtures/mc-skeleton-horde.owb.json";
 
 describe("Unit name resolution", () => {
   it("uses custom name for named characters", () => {
@@ -25,6 +26,16 @@ describe("Unit name resolution", () => {
     expect(slann).toBeTruthy();
     expect(slann.name).not.toContain("{");
     expect(slann.name).not.toContain("renegade");
+  });
+
+  it("strips {tomb kings} faction tag from unit names", () => {
+    const army = parseArmyList(mcSkeletonHordeJson);
+    const skeletons = army.units.find((u) =>
+      u.id.startsWith("skeleton-warriors"),
+    );
+    expect(skeletons).toBeTruthy();
+    expect(skeletons.name).not.toContain("{");
+    expect(skeletons.name).not.toContain("tomb kings");
   });
 
   it("uses stat name for rank and file units", () => {

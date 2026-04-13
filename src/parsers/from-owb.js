@@ -255,7 +255,7 @@ function parseCanonicalUnit(raw, category) {
   if (!displayName) {
     displayName = raw.name_en || "Unit";
   }
-  displayName = displayName.replace(/\{renegade\}/g, "").trim();
+  displayName = displayName.replace(/\{[^}]*\}/g, "").trim();
 
   // Build canonical unit
   const unit = {

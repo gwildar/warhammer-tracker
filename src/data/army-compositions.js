@@ -41,5 +41,5 @@ export const ARMY_COMPOSITIONS = {
  */
 export const ARMY_PHASE_CONFIG = {
   "vampire-counts": { skipPhases: ["rally", "break-test"] },
-  "tomb-kings": { skipPhases: ["rally", "break-test"] },
+  "tomb-kings-of-khemri": { skipPhases: ["rally", "break-test"] },
 };

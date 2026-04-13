@@ -1787,6 +1787,145 @@ export const SPECIAL_RULES = [
     description:
       "Ogre musicians are Bellowers who use their voice instead of instruments. Function as standard musicians.",
   },
+  {
+    id: "arise!",
+    displayName: "Arise!",
+    phases: [
+      {
+        phaseId: "strategy",
+        subPhaseId: "command",
+        yourTurnOnly: true,
+        description:
+          'If not engaged, take a Leadership test. Pass: a single friendly Nehekharan Undead unit within 12" recovers Wounds — Infantry/Swarms: Wizard Level + D3; Cavalry/War Beasts: Wizard Level + 1; Monstrous Infantry/Cavalry/Light Chariot: Wizard Level; Behemoth/Heavy Chariot/War Machine: 1 Wound.',
+      },
+    ],
+  },
+  {
+    id: "from beneath the sands",
+    displayName: "From Beneath the Sands",
+    phases: [
+      {
+        phaseId: "strategy",
+        subPhaseId: "command",
+        yourTurnOnly: true,
+        description:
+          'If not engaged, take a Leadership test to summon a friendly unit with both Nehekharan Undead and Ambushers from reserve. Pass: unit enters within 12" of the caster and outside 6" of enemies — cannot charge this turn and counts as having moved. Fail: unit remains in reserve. Units with Ambushers arrive automatically by Round 5.',
+      },
+    ],
+  },
+  {
+    id: "my will be done",
+    displayName: "My Will Be Done",
+    phases: [
+      {
+        phaseId: "strategy",
+        subPhaseId: "command",
+        yourTurnOnly: true,
+        description:
+          'Take a Leadership test. Pass: choose one bonus lasting until next Start of Turn for this model, its mount, and joined unit — "Forward to Glory!": +D3 Movement; "My Worthy Champions!": +1 Weapon Skill; "Strike like the Cobra!": +D3 Initiative. Not cumulative (no effect if used again on same unit this turn).',
+      },
+    ],
+  },
+  {
+    id: "eternal taskmaster",
+    displayName: "Eternal Taskmaster",
+    phases: [
+      {
+        phaseId: "strategy",
+        subPhaseId: "command",
+        yourTurnOnly: true,
+        description:
+          "Once per Command sub-phase, take a Leadership test. Pass: character and joined unit gain Extra Attacks (+1) and Hatred (all enemies) until next Start of Turn.",
+      },
+    ],
+  },
+  {
+    id: "nehekharan phalanx",
+    displayName: "Nehekharan Phalanx",
+    phases: [
+      {
+        phaseId: "combat",
+        subPhaseId: "combat-result",
+        description:
+          "Units in Close Order with shields may choose not to Give Ground when losing combat. This protection fails if the winner's Unit Strength exceeds twice the loser's.",
+      },
+    ],
+  },
+  {
+    id: "grind them down!",
+    displayName: "Grind Them Down!",
+    aliases: ["grind them down"],
+    phases: [
+      {
+        phaseId: "combat",
+        subPhaseId: "choose-fight",
+        yourTurnOnly: true,
+        description:
+          "Friendly Chariot-type models within General's Command range may re-roll dice when determining Impact Hits.",
+      },
+    ],
+  },
+  {
+    id: "steadfast discipline",
+    displayName: "Steadfast Discipline",
+    phases: [
+      {
+        phaseId: "shooting",
+        subPhaseId: "shoot",
+        yourTurnOnly: true,
+        description:
+          "Unit may perform Volley Fire even after moving this turn, or while performing a Stand & Shoot charge reaction.",
+      },
+    ],
+  },
+  {
+    id: "dry as dust",
+    displayName: "Dry as Dust",
+    phases: [
+      {
+        phaseId: "shooting",
+        subPhaseId: "shoot",
+        description:
+          "When this model suffers an unsaved Wound from a Flaming Attack, opponent rolls D6: 1–3 wound is harmless; 4+ model suffers 1 additional Wound. Excess wounds don't spill over to the unit.",
+      },
+      {
+        phaseId: "combat",
+        subPhaseId: "choose-fight",
+        description:
+          "When this model suffers an unsaved Wound from a Flaming Attack, opponent rolls D6: 1–3 wound is harmless; 4+ model suffers 1 additional Wound. Excess wounds don't spill over to the unit.",
+      },
+    ],
+  },
+  {
+    id: "curse of the necropolis",
+    displayName: "Curse of the Necropolis",
+    phases: [
+      {
+        phaseId: "combat",
+        subPhaseId: "choose-fight",
+        description:
+          "When this model loses its final Wound to an enemy attack, the enemy unit that dealt the killing blow must immediately take a Leadership test. If failed, that unit suffers D3 Strength 2 hits with AP −.",
+      },
+    ],
+  },
+  {
+    id: "nehekharan undead",
+    displayName: "Nehekharan Undead",
+    phases: [
+      {
+        phaseId: "movement",
+        subPhaseId: "remaining-moves",
+        description:
+          "Cannot march (unless possessing Fly and choosing to fly). Immune to Psychology. Unbreakable — gives ground instead of breaking.",
+      },
+      {
+        phaseId: "combat",
+        subPhaseId: "combat-result",
+        description:
+          "Unstable: if combat is lost, unit suffers additional Wounds equal to the combat result points lost (no saves of any kind allowed). Characters with this rule cannot join units without it.",
+      },
+    ],
+  },
 ];
 
 /**
