@@ -10,6 +10,7 @@ const KEYS = {
   startTime: "tow-start-time",
   assignments: "tow-character-assignments",
   schemaVersion: "tow-schema-version",
+  deploymentTime: "tow-deployment-time",
 };
 
 export const SCHEMA_VERSION = "1";
@@ -176,6 +177,15 @@ export function recordCurrentPhaseTime(isOpponentTurn) {
   resetStartTime();
 }
 
+// Deployment time (ms elapsed during deployment screen)
+export function getDeploymentTime() {
+  return load(KEYS.deploymentTime, null);
+}
+
+export function saveDeploymentTime(ms) {
+  save(KEYS.deploymentTime, ms);
+}
+
 // Can we go back to the previous turn?
 export function canGoBackToPreviousTurn() {
   const round = getRound();
@@ -196,6 +206,7 @@ export function resetGame() {
   save(KEYS.scores, {});
   save(KEYS.timings, {});
   save(KEYS.startTime, null);
+  save(KEYS.deploymentTime, null);
 }
 
 // Clear all app state
