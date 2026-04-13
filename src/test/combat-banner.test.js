@@ -38,3 +38,14 @@ describe("two banners: unit banner + BSB character banner both show", () => {
     expect(html).toContain("Errantry Banner");
   });
 });
+
+describe("assigned character magic items on combat card", () => {
+  it("shows Amulet of the Serpent when Mortuary Priest is assigned to Skeleton Warriors", () => {
+    const army = loadArmy("mc-skeleton-horde");
+    saveCharacterAssignments({
+      "mortuary-priest.jbvvlq": "skeleton-warriors.ccrtsqnegn",
+    });
+    const html = renderCombatWeaponsContext(army);
+    expect(html).toContain("Amulet of the Serpent");
+  });
+});

@@ -18,6 +18,7 @@ import exilesCorrectJson from "./fixtures/exiles-correct.owb.json";
 import vampireCountsJson from "./fixtures/vampire-counts.owb.json";
 import ogreKingdomsJson from "./fixtures/ogre-kingdoms.owb.json";
 import forestGoblinsJson from "./fixtures/forest-goblins.owb.json";
+import mcSkeletonHordeJson from "./fixtures/mc-skeleton-horde.owb.json";
 
 export function loadArmy(fixture) {
   const jsonMap = {
@@ -30,6 +31,7 @@ export function loadArmy(fixture) {
     "vampire-counts": vampireCountsJson,
     "ogre-kingdoms": ogreKingdomsJson,
     "forest-goblins": forestGoblinsJson,
+    "mc-skeleton-horde": mcSkeletonHordeJson,
   };
   const json = jsonMap[fixture];
   const army = parseArmyList(json);

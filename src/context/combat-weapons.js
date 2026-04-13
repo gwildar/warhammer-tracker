@@ -542,6 +542,7 @@ export function renderCombatWeaponsContext(army) {
         weapons: charWeapons.length > 0 ? charWeapons : [HAND_WEAPON],
         tags: buildRiderTags(char),
         combatRules: extractCombatRules(char),
+        itemNames: buildFilteredItems(char).itemNames,
       };
     });
 
@@ -1019,6 +1020,7 @@ export function renderCombatWeaponsContext(army) {
                         )
                         .join("")}
                       ${renderCombatRulesHtml(ch.combatRules)}
+                      ${ch.itemNames?.length > 0 ? `<div class="text-xs text-wh-muted mt-0.5">${ch.itemNames.join(", ")}</div>` : ""}
                     </div>
                   `,
                     )
