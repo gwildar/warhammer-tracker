@@ -10,6 +10,7 @@ registerScreen("firstTurnScreen", noop);
 registerScreen("unitAssignmentScreen", noop);
 registerScreen("opponentTurnScreen", noop);
 registerScreen("aboutScreen", noop);
+registerScreen("gameOverScreen", noop);
 
 // Create the #app div before any screen modules are imported
 // (they grab document.getElementById('app') at module level)

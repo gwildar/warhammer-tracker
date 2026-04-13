@@ -19,6 +19,7 @@ import { renderOpponentTurnScreen } from "./screens/opponent-turn.js";
 import { renderAboutScreen } from "./screens/about.js";
 import { renderUnitAssignmentScreen } from "./screens/unit-assignment.js";
 import { renderDeploymentScreen } from "./screens/deployment.js";
+import { renderGameOverScreen } from "./screens/game-over.js";
 
 // Register screens for cross-navigation
 registerScreen("render", render);
@@ -29,6 +30,7 @@ registerScreen("unitAssignmentScreen", renderUnitAssignmentScreen);
 registerScreen("deploymentScreen", renderDeploymentScreen);
 registerScreen("opponentTurnScreen", renderOpponentTurnScreen);
 registerScreen("aboutScreen", renderAboutScreen);
+registerScreen("gameOverScreen", renderGameOverScreen);
 
 function render() {
   const army = getArmy();

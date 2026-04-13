@@ -1,3 +1,4 @@
+import { navigate } from "../navigate.js";
 import {
   getScores,
   updateScore,
@@ -130,6 +131,13 @@ export function renderScoringUI() {
           </tfoot>
         </table>
       </div>
+
+      <div class="mt-4 flex justify-end">
+        <button id="end-game-btn"
+          class="px-4 py-2 rounded-lg font-semibold text-sm bg-wh-card border border-wh-border text-wh-muted hover:border-wh-red hover:text-wh-red transition-colors">
+          End Game
+        </button>
+      </div>
     </div>
   `;
 }
@@ -161,5 +169,9 @@ export function bindScoringEvents(army, renderCallback) {
       updateScore(r, isOpp, player, parseInt(e.target.value, 10));
       renderCallback(army);
     });
+  });
+
+  document.getElementById("end-game-btn")?.addEventListener("click", () => {
+    navigate("gameOverScreen", army);
   });
 }
