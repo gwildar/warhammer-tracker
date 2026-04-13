@@ -18,7 +18,7 @@ export function renderSetupHeader(army, currentPhaseId) {
           </button>
           <span class="text-wh-muted text-sm hidden sm:inline">|</span>
           <span class="text-sm text-wh-accent hidden sm:inline">${army.name}</span>
-          ${army.owbId ? `<a href="https://old-world-builder.com/game-view/${army.owbId}" target="_blank" rel="noopener noreferrer" class="text-xs text-wh-muted hover:text-wh-green border border-wh-green px-2 py-1 rounded transition-colors hidden sm:inline" title="View in Old World Builder">&#128065; gameview</a>` : ""}
+          ${army.owbId ? `<a href="https://old-world-builder.com/game-view/${army.owbId}" target="_blank" rel="noopener noreferrer" class="text-xs text-wh-muted hover:text-wh-green border border-wh-green px-2 py-1 rounded transition-colors" title="View in Old World Builder">&#128065;</a>` : ""}
         </div>
         <div class="flex items-center gap-3">
           <span class="font-mono font-black text-wh-accent">Setup</span>
