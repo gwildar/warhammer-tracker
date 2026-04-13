@@ -123,7 +123,7 @@ export const PHASES = [
         showShooting: true,
       },
       {
-        id: "remove-casualties",
+        id: "reserve-moves",
         name: "Reserve Moves",
         rules: ["Units with reserve move can move now"],
       },

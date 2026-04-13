@@ -3,6 +3,7 @@ import { renderGameScreen } from "../../screens/game.js";
 import { loadArmy, startGame, getApp } from "../helpers.js";
 import {
   savePhaseIndex,
+  getPhaseIndex,
   saveArmy,
   saveCharacterAssignments,
   saveTimings,
@@ -1455,5 +1456,39 @@ describe("Errantry Banner parsed from OWB command group", () => {
     const banner = paladin.magicItems.find((i) => i.name === "Errantry Banner");
     expect(banner).toBeTruthy();
     expect(banner.championOnly).toBeFalsy();
+  });
+});
+
+describe("Psychology-immune armies skip phases", () => {
+  it("Vampire Counts army has skipPhases containing rally and break-test", () => {
+    const vcArmy = loadArmy("vampire-counts");
+    expect(vcArmy.skipPhases).toContain("rally");
+    expect(vcArmy.skipPhases).toContain("break-test");
+  });
+
+  it("skips rally phase when navigating for Vampire Counts army", () => {
+    const vcArmy = loadArmy("vampire-counts");
+    startGame(vcArmy);
+    const subPhases = getAllSubPhases();
+    const rallyIdx = subPhases.findIndex((sp) => sp.subPhase.id === "rally");
+    savePhaseIndex(rallyIdx - 1);
+    renderGameScreen(vcArmy);
+    getApp().querySelector("#next-btn").click();
+    expect(getPhaseIndex()).not.toBe(rallyIdx);
+    expect(getPhaseIndex()).toBeGreaterThan(rallyIdx);
+  });
+
+  it("skips break-test phase when navigating for Vampire Counts army", () => {
+    const vcArmy = loadArmy("vampire-counts");
+    startGame(vcArmy);
+    const subPhases = getAllSubPhases();
+    const breakIdx = subPhases.findIndex(
+      (sp) => sp.subPhase.id === "break-test",
+    );
+    savePhaseIndex(breakIdx - 1);
+    renderGameScreen(vcArmy);
+    getApp().querySelector("#next-btn").click();
+    expect(getPhaseIndex()).not.toBe(breakIdx);
+    expect(getPhaseIndex()).toBeGreaterThan(breakIdx);
   });
 });

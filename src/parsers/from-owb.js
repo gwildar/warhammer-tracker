@@ -26,7 +26,10 @@ import {
   computeStomp,
   computeImpactHits,
 } from "./resolve.js";
-import { ARMY_COMPOSITIONS } from "../data/army-compositions.js";
+import {
+  ARMY_COMPOSITIONS,
+  ARMY_PHASE_CONFIG,
+} from "../data/army-compositions.js";
 import { MAGIC_ITEMS } from "../data/magic-items.js";
 
 const MAGIC_ITEM_NAMES = new Set(MAGIC_ITEMS.map((i) => i.name.toLowerCase()));
@@ -340,6 +343,7 @@ export function fromOwb(json) {
   }
 
   // Build canonical army
+  const phaseConfig = ARMY_PHASE_CONFIG[json.army] || {};
   const army = {
     name: json.name || "Unknown Army",
     armySlug: json.army || "",
@@ -348,6 +352,7 @@ export function fromOwb(json) {
     composition: composition || null,
     owbId: json.id || null,
     units,
+    skipPhases: phaseConfig.skipPhases || [],
   };
 
   return army;

@@ -197,7 +197,7 @@ function renderPhaseContext(army, phase, subPhase) {
     }
   }
 
-  if (subPhase.id !== "remove-casualties" && subPhase.id !== "scoring") {
+  if (subPhase.id !== "reserve-moves" && subPhase.id !== "scoring") {
     html += renderMagicItemsContext(army, phase.id, subPhase.id);
     html += renderVirtuesContext(army, phase.id, subPhase.id);
   }
@@ -236,13 +236,34 @@ function recordAndNavigate(army, newPhaseIdx, isOpponentTurn, isPrev) {
   }
 }
 
+function hasReserveMove(army) {
+  return army.units.some((u) =>
+    (u.specialRules || []).some((r) => r.id === "reserve move"),
+  );
+}
+
+function nextVisibleIdx(army, from, direction) {
+  let idx = from + direction;
+  while (idx >= 0 && idx < allSubPhases.length) {
+    const subPhaseId = allSubPhases[idx].subPhase.id;
+    if (
+      (subPhaseId !== "reserve-moves" || hasReserveMove(army)) &&
+      !(army.skipPhases || []).includes(subPhaseId)
+    )
+      return idx;
+    idx += direction;
+  }
+  return -1;
+}
+
 function bindGameActions(army) {
   bindScoringEvents(army, renderGameScreen);
 
   document.getElementById("prev-btn")?.addEventListener("click", () => {
     const idx = getPhaseIndex();
-    if (idx > 0) {
-      recordAndNavigate(army, idx - 1, false, true);
+    const target = nextVisibleIdx(army, idx, -1);
+    if (target >= 0) {
+      recordAndNavigate(army, target, false, true);
     } else if (canGoBackToPreviousTurn()) {
       recordAndNavigate(army, PHASES.length - 1, true, true);
     }
@@ -250,8 +271,9 @@ function bindGameActions(army) {
 
   document.getElementById("next-btn")?.addEventListener("click", () => {
     const idx = getPhaseIndex();
-    if (idx < allSubPhases.length - 1) {
-      recordAndNavigate(army, idx + 1, false, false);
+    const target = nextVisibleIdx(army, idx, 1);
+    if (target >= 0) {
+      recordAndNavigate(army, target, false, false);
     } else {
       recordAndNavigate(army, 0, true, false);
     }

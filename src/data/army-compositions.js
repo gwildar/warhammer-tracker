@@ -34,3 +34,12 @@ export const ARMY_COMPOSITIONS = {
     ],
   },
 };
+
+/**
+ * Phase skips for armies that are immune to certain game mechanics.
+ * Keyed by armySlug (json.army from OWB export).
+ */
+export const ARMY_PHASE_CONFIG = {
+  "vampire-counts": { skipPhases: ["rally", "break-test"] },
+  "tomb-kings": { skipPhases: ["rally", "break-test"] },
+};

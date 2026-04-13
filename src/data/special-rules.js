@@ -445,7 +445,7 @@ export const SPECIAL_RULES = [
     phases: [
       {
         phaseId: "shooting",
-        subPhaseId: "remove-casualties",
+        subPhaseId: "reserve-moves",
         description:
           "After all shooting, if unit did not charge/march/flee, make a basic move (no march). Resolved at end of Shooting phase.",
       },

@@ -28,9 +28,12 @@ export function renderSetupScreen() {
     <div class="min-h-dvh flex flex-col">
       <header class="bg-wh-surface p-4 border-b border-wh-border">
         <div class="flex justify-between items-center max-w-2xl mx-auto">
-          <button id="settings-btn" class="text-sm text-wh-muted hover:text-wh-accent transition-colors">&#9881;</button>
+          <div></div>
           <h1 class="text-2xl font-bold text-wh-accent text-center">Turner Overdrive <span class="text-xs text-wh-muted font-normal">v${version}</span> <span class="text-xs text-wh-red font-normal">Alpha</span></h1>
-          <button id="about-btn" class="text-sm text-wh-muted hover:text-wh-accent transition-colors">About</button>
+          <div class="flex items-center gap-2">
+            <button id="about-btn" class="px-3 py-1.5 rounded-lg border border-wh-border text-sm text-wh-muted hover:border-wh-accent hover:text-wh-accent transition-colors">About</button>
+            <button id="settings-btn" class="px-3 py-1.5 rounded-lg border border-wh-border text-base text-wh-muted hover:border-wh-accent hover:text-wh-accent transition-colors">&#9881;</button>
+          </div>
         </div>
       </header>
 
@@ -40,7 +43,7 @@ export function renderSetupScreen() {
       </main>
     </div>
 
-    <dialog id="settings-modal" class="bg-wh-surface border border-wh-border rounded-lg p-6 w-full max-w-sm backdrop:bg-black/60">
+    <dialog id="settings-modal" class="bg-wh-surface border border-wh-border rounded-lg p-6 w-full max-w-sm backdrop:bg-black/60 m-auto">
       <h2 class="text-lg font-bold text-wh-text mb-1">Display Mode</h2>
       <p class="text-xs text-wh-muted mb-4">Lightweight mode hides combat, movement, and shooting panels. Keeps spells, magic items, and special rules.</p>
       <div class="flex flex-col gap-3">
