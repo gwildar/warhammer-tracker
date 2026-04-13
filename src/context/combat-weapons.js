@@ -244,6 +244,7 @@ function detectItemBonuses(units) {
   let apMod = 0;
   const conditionalStrengthMods = [];
   const unconditionalStrengthMods = [];
+  const grantedRules = new Set();
 
   for (const unit of units) {
     for (const item of unit.magicItems || []) {
@@ -262,6 +263,9 @@ function detectItemBonuses(units) {
           unconditionalStrengthMods.push(item.strengthMod);
         }
       }
+      for (const rule of item.grantsRules || []) {
+        grantedRules.add(rule);
+      }
     }
   }
   return {
@@ -269,10 +273,11 @@ function detectItemBonuses(units) {
     apMod,
     conditionalStrengthMods,
     unconditionalStrengthMods,
+    grantedRules,
   };
 }
 
-function buildRiderTags(unit) {
+function buildRiderTags(unit, externalGrantedRules = null) {
   const inlineParts = [];
   const subSpans = [];
   if (hasRiderMagicalAttacks(unit)) {
@@ -281,13 +286,21 @@ function buildRiderTags(unit) {
     );
     subSpans.push('<span class="text-violet-400">Magical Attacks</span>');
   }
-  if (unit.poisonedAttacks ?? false) {
+  const {
+    armourBane,
+    unconditionalStrengthMods,
+    grantedRules: unitGrantedRules,
+  } = detectItemBonuses([unit]);
+  const hasPoisoned =
+    (unit.poisonedAttacks ?? false) ||
+    unitGrantedRules.has("poisoned attacks") ||
+    (externalGrantedRules?.has("poisoned attacks") ?? false);
+  if (hasPoisoned) {
     inlineParts.push(
       '<span class="text-wh-phase-combat font-mono ml-1">\u2620\uFE0F</span>',
     );
     subSpans.push('<span class="text-green-400">Poisoned Attacks</span>');
   }
-  const { armourBane, unconditionalStrengthMods } = detectItemBonuses([unit]);
   if (armourBane > 0)
     inlineParts.push(
       `<span class="text-wh-phase-combat font-mono ml-1">AB(${armourBane})</span>`,
@@ -521,7 +534,7 @@ export function renderCombatWeaponsContext(army) {
     // Shared computation (applies to both stats and no-stats paths)
     const unitMRNum = u.magicResistance ? parseInt(u.magicResistance) : 0;
     const mergedMR = unitMRNum !== 0 ? `${unitMRNum}` : null;
-    const { apMod, conditionalStrengthMods } =
+    const { apMod, conditionalStrengthMods, grantedRules } =
       detectItemBonuses(allUnitsForBonuses);
     const assignedCharProfiles = assignedChars.map((char) => {
       const cStats = char.stats?.[0];
@@ -540,7 +553,7 @@ export function renderCombatWeaponsContext(army) {
         ward: char.ward ?? null,
         regen: char.regen ?? null,
         weapons: charWeapons.length > 0 ? charWeapons : [HAND_WEAPON],
-        tags: buildRiderTags(char),
+        tags: buildRiderTags(char, grantedRules),
         combatRules: extractCombatRules(char),
         itemNames: buildFilteredItems(char).itemNames,
       };
@@ -581,7 +594,7 @@ export function renderCombatWeaponsContext(army) {
         singleUseItems: noStatsSuItems,
         itemNames: noStatsItemNames,
         bannerNames: [...noStatsBannerNames, ...charBannerNames],
-        riderTags: buildRiderTags(u),
+        riderTags: buildRiderTags(u, grantedRules),
         combatRules: extractCombatRules(u),
         apMod,
         conditionalStrengthMods,

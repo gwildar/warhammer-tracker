@@ -2607,6 +2607,7 @@ export const MAGIC_ITEMS = [
     effect:
       "The unit gains Poisoned Attacks. If it already has Poisoned Attacks, attacks wound automatically on a natural 5 or 6 To Hit.",
     phases: ["combat"],
+    grantsRules: ["poisoned attacks"],
   },
   {
     name: "Da Angry Ladz Flag",
@@ -4097,6 +4098,7 @@ export const MAGIC_ITEMS = [
     points: 30,
     effect: "The unit gains Poisoned Attacks.",
     phases: ["combat"],
+    grantsRules: ["poisoned attacks"],
   },
   {
     name: "Banner of Outrage",
@@ -4994,6 +4996,7 @@ export const MAGIC_ITEMS = [
     effect:
       "The bearer and any unit they join gain the Poisoned Attacks special rule.",
     phases: ["combat"],
+    grantsRules: ["poisoned attacks"],
   },
   {
     name: "Crown of Kings",

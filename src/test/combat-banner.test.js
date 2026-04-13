@@ -48,4 +48,14 @@ describe("assigned character magic items on combat card", () => {
     const html = renderCombatWeaponsContext(army);
     expect(html).toContain("Amulet of the Serpent");
   });
+
+  it("shows poison icon on Skeleton Warriors weapons when assigned Mortuary Priest has Amulet of the Serpent", () => {
+    const army = loadArmy("mc-skeleton-horde");
+    saveCharacterAssignments({
+      "mortuary-priest.jbvvlq": "skeleton-warriors.ccrtsqnegn",
+    });
+    const html = renderCombatWeaponsContext(army);
+    expect(html).toContain("Poisoned Attacks");
+    expect(html).toContain("\u2620\uFE0F"); // ☠️ skull icon
+  });
 });
