@@ -23,7 +23,7 @@ function resolveMountProfile(entry) {
 
 export function resolveStats(id, name) {
   const baseId = (id || "").split(".")[0];
-  const slug = name?.toLowerCase().replace(/\s+/g, "-");
+  const slug = name?.replace(/[{}]/g, "").toLowerCase().replace(/\s+/g, "-");
   const keys = [
     baseId,
     baseId.replace(/s$/, ""),
