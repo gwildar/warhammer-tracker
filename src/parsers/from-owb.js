@@ -103,6 +103,11 @@ function calculateUnitPoints(raw) {
     }
   }
 
+  // Detachments (e.g. beasts in a Wood Elf Beast Pack)
+  for (const det of raw.detachments || []) {
+    pts += (det.points || 0) * (det.strength || 1);
+  }
+
   return pts;
 }
 
