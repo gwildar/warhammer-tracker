@@ -2,9 +2,9 @@ import { navigate } from "../navigate.js";
 import { resetGame, saveFirstTurn } from "../state.js";
 
 const SETUP_PHASES = [
-  { id: "characters", label: "Place Characters", bg: "bg-wh-phase-strategy" },
-  { id: "deploy", label: "Deploy", bg: "bg-wh-phase-movement" },
-  { id: "first-turn", label: "Who Goes First", bg: "bg-wh-phase-scoring" },
+  { id: "characters", label: "Place Characters", bg: "bg-wh-setup-characters" },
+  { id: "deploy", label: "Deploy", bg: "bg-wh-setup-deploy" },
+  { id: "first-turn", label: "Who Goes First", bg: "bg-wh-setup-first-turn" },
 ];
 
 export function renderSetupHeader(army, currentPhaseId) {

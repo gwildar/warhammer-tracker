@@ -18,6 +18,9 @@
   --color-wh-phase-shooting: #ef4444;
   --color-wh-phase-combat: #f59e0b;
   --color-wh-phase-scoring: #3b82f6;
+  --color-wh-setup-characters: #06b6d4;
+  --color-wh-setup-deploy: #f97316;
+  --color-wh-setup-first-turn: #ec4899;
 }
 
 body {
