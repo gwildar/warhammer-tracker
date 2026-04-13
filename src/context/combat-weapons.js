@@ -81,6 +81,7 @@ function matchRiderWeapons(unit) {
           ap: weapon.ap || "—",
           rules: weapon.rules || "",
           attacks: weapon.attacks || null,
+          reservedAttacks: weapon.reservedAttacks || null,
         });
       }
     }
@@ -163,6 +164,7 @@ function mergeStrength(baseS, weaponS) {
 const REDUNDANT_RULE_PATTERNS = [
   { pattern: /,?\s*Extra Attacks\s*\([^)]*\)/i, condition: (w) => w.attacks },
   { pattern: /,?\s*Magical Attacks/i },
+  { pattern: /,?\s*Poisoned Attacks/i, condition: (w) => w.reservedAttacks },
 ];
 
 function stripRedundantRules(rules, w) {
@@ -329,6 +331,25 @@ function buildMountWeaponTags(w) {
       sub: '<div class="text-xs mt-0.5"><span class="text-violet-400">Magical Attacks</span></div>',
     };
   return { inline: "", sub: "" };
+}
+
+function weaponPoisonTags(w) {
+  if (!w.rules?.toLowerCase().includes("poisoned attacks"))
+    return { inline: "", sub: "" };
+  return {
+    inline:
+      '<span class="text-wh-phase-combat font-mono ml-1">\u2620\uFE0F</span>',
+    sub: '<div class="text-xs mt-0.5"><span class="text-green-400">Poisoned Attacks</span></div>',
+  };
+}
+
+function mergeTagParts(t1, t2) {
+  if (!t2.inline && !t2.sub) return t1;
+  if (!t1.inline && !t1.sub) return t2;
+  return {
+    inline: t1.inline + t2.inline,
+    sub: [t1.sub, t2.sub].filter(Boolean).join(""),
+  };
 }
 
 const COMBAT_VOWS = ["the grail vow", "the questing vow"];
@@ -878,18 +899,43 @@ export function renderCombatWeaponsContext(army) {
           ),
         ),
       ),
-      ...r.riderWeapons.map((w) =>
-        renderWeaponLine(
-          r.riderI,
-          r.riderWS,
-          r.riderS,
-          r.riderA,
-          w,
-          r.riderName,
-          r.riderTags,
-          { apMod: r.apMod, conditionalSMods: r.conditionalStrengthMods },
-        ),
-      ),
+      ...(() => {
+        const reserved = r.riderWeapons.filter((w) => w.reservedAttacks);
+        const remaining = r.riderWeapons.filter((w) => !w.reservedAttacks);
+        const totalA = parseInt(r.riderA) || 0;
+        const reservedCount = reserved.reduce(
+          (sum, w) => sum + w.reservedAttacks,
+          0,
+        );
+        const freeA = Math.max(totalA - reservedCount, 0);
+        const mainA = reserved.length > 0 ? `${freeA}/${r.riderA}` : r.riderA;
+        return [
+          ...remaining.map((w) =>
+            renderWeaponLine(
+              r.riderI,
+              r.riderWS,
+              r.riderS,
+              mainA,
+              w,
+              r.riderName,
+              mergeTagParts(r.riderTags, weaponPoisonTags(w)),
+              { apMod: r.apMod, conditionalSMods: r.conditionalStrengthMods },
+            ),
+          ),
+          ...reserved.map((w) =>
+            renderWeaponLine(
+              r.riderI,
+              r.riderWS,
+              r.riderS,
+              w.reservedAttacks,
+              w,
+              r.riderName,
+              mergeTagParts(r.riderTags, weaponPoisonTags(w)),
+              { apMod: r.apMod, conditionalSMods: r.conditionalStrengthMods },
+            ),
+          ),
+        ];
+      })(),
       ...r.crew.map((c) =>
         c.weapons.length > 0
           ? c.weapons

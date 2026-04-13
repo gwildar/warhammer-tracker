@@ -687,6 +687,7 @@ export const COMBAT_WEAPONS = {
     s: "S",
     ap: "—",
     rules: "Poisoned Attacks, Strike First",
+    reservedAttacks: 1,
   },
   "fiery roar": {
     name: "Fiery Roar",
