@@ -100,12 +100,18 @@ export function renderScoringUI() {
                       (timings[r] && timings[r][turn]) || {},
                     ).reduce((a, b) => a + b, 0);
                     const timeCell = turnMs > 0 ? formatDuration(turnMs) : "—";
+                    const scoreSelect = (player) => {
+                      const val = s[player];
+                      return isCurrent
+                        ? `<td class="px-3 py-2 text-wh-text font-bold">${val}</td>`
+                        : `<td class="px-3 py-2"><select data-hist-round="${r}" data-hist-turn="${turn}" data-hist-player="${player}" class="bg-wh-card border border-wh-border text-wh-text rounded px-1 py-0.5 text-sm outline-none focus:border-wh-accent transition-colors">${[0, 1, 2, 3, 4].map((v) => `<option value="${v}" ${val === v ? "selected" : ""}>${v}</option>`).join("")}</select></td>`;
+                    };
                     return `
                   <tr class="${isCurrent ? "bg-wh-accent/5" : ""}">
                     <td class="px-3 py-2 text-wh-muted font-mono">${turn === turnsInOrder[0] ? r : ""}</td>
                     <td class="px-3 py-2 text-wh-muted italic text-xs capitalize">${turn === "you" ? "Yours" : "Opponents"}</td>
-                    <td class="px-3 py-2 text-wh-text font-bold">${s.you}</td>
-                    <td class="px-3 py-2 text-wh-text font-bold">${s.opponent}</td>
+                    ${scoreSelect("you")}
+                    ${scoreSelect("opponent")}
                     <td class="px-3 py-2 font-mono text-xs">${timeCell}</td>
                   </tr>
                 `;
@@ -145,5 +151,15 @@ export function bindScoringEvents(army, renderCallback) {
       parseInt(e.target.value, 10),
     );
     renderCallback(army);
+  });
+
+  document.querySelectorAll("select[data-hist-round]").forEach((el) => {
+    el.addEventListener("change", (e) => {
+      const r = parseInt(e.target.dataset.histRound, 10);
+      const isOpp = e.target.dataset.histTurn === "opponent";
+      const player = e.target.dataset.histPlayer;
+      updateScore(r, isOpp, player, parseInt(e.target.value, 10));
+      renderCallback(army);
+    });
   });
 }
