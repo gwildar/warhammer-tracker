@@ -5,8 +5,8 @@ import {
   getIsOpponentTurn,
   getFirstTurn,
   getTimings,
+  getDeploymentTime,
 } from "../state.js";
-import { PHASES, getAllSubPhases } from "../phases.js";
 
 function formatDuration(ms) {
   const totalSeconds = Math.floor(ms / 1000);
@@ -22,7 +22,7 @@ export function renderScoringUI() {
   const turnKey = isOpponentTurn ? "opponent" : "you";
   const firstTurn = getFirstTurn();
   const timings = getTimings();
-  const allSubPhases = getAllSubPhases();
+  const deploymentTime = getDeploymentTime();
 
   const currentTurnScores = (scores[round] && scores[round][turnKey]) || {
     you: 0,
@@ -40,65 +40,18 @@ export function renderScoringUI() {
   let totalYou = 0;
   let totalOpponent = 0;
 
-  let timingsHtml = "";
-  if (Object.keys(timings).length > 0) {
-    timingsHtml = `
-      <div class="mt-8 border-t border-wh-border pt-6">
-        <h3 class="text-lg font-bold text-wh-text mb-4">Turn Timings</h3>
-        <div class="space-y-4">
-          ${rounds
-            .map((r) => {
-              return turnsInOrder
-                .map((turn) => {
-                  const turnTimings = (timings[r] && timings[r][turn]) || {};
-                  const totalMs = Object.values(turnTimings).reduce(
-                    (a, b) => a + b,
-                    0,
-                  );
-                  if (totalMs === 0) return "";
-
-                  const isOpponentTimings = turn === "opponent";
-                  const phasesList = isOpponentTimings ? PHASES : allSubPhases;
-
-                  return `
-                <details class="group bg-wh-card border border-wh-border rounded-lg overflow-hidden">
-                  <summary class="flex justify-between items-center p-3 cursor-pointer hover:bg-wh-border/30 transition-colors">
-                    <div class="flex items-center gap-2">
-                      <span class="font-mono text-wh-accent">Rd ${r}</span>
-                      <span class="text-xs uppercase tracking-wider ${isOpponentTimings ? "text-wh-red" : "text-wh-text"}">${turn === "you" ? "Your Turn" : "Opponent Turn"}</span>
-                    </div>
-                    <span class="font-mono font-bold">${formatDuration(totalMs)}</span>
-                  </summary>
-                  <div class="p-3 pt-0 border-t border-wh-border/30">
-                    <table class="w-full text-xs mt-2">
-                      <tbody class="divide-y divide-wh-border/30">
-                        ${Object.entries(turnTimings)
-                          .map(([idx, ms]) => {
-                            const phaseInfo = phasesList[idx];
-                            const name = isOpponentTimings
-                              ? phaseInfo.name
-                              : `${phaseInfo.phase.name.split(" ")[0]} - ${phaseInfo.subPhase.name}`;
-                            return `
-                            <tr>
-                              <td class="py-1 text-wh-muted">${name}</td>
-                              <td class="py-1 text-right font-mono">${formatDuration(ms)}</td>
-                            </tr>
-                          `;
-                          })
-                          .join("")}
-                      </tbody>
-                    </table>
-                  </div>
-                </details>
-              `;
-                })
-                .join("");
-            })
-            .join("")}
-        </div>
-      </div>
-    `;
-  }
+  const deploymentRow =
+    deploymentTime !== null
+      ? `
+    <tr>
+      <td class="px-3 py-2 text-wh-muted font-mono">0</td>
+      <td class="px-3 py-2 text-wh-muted italic text-xs">Deploy</td>
+      <td class="px-3 py-2 text-wh-text">—</td>
+      <td class="px-3 py-2 text-wh-text">—</td>
+      <td class="px-3 py-2 font-mono text-xs">${formatDuration(deploymentTime)}</td>
+    </tr>
+  `
+      : "";
 
   return `
     <div class="mt-8 border-t border-wh-border pt-6 pb-4">
@@ -127,9 +80,11 @@ export function renderScoringUI() {
               <th class="px-3 py-2 font-semibold">Turn</th>
               <th class="px-3 py-2 font-semibold text-wh-accent">You</th>
               <th class="px-3 py-2 font-semibold text-wh-red">Opp</th>
+              <th class="px-3 py-2 font-semibold">Time</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-wh-border">
+            ${deploymentRow}
             ${rounds
               .map((r) => {
                 return turnsInOrder
@@ -141,12 +96,17 @@ export function renderScoringUI() {
                     totalYou += s.you;
                     totalOpponent += s.opponent;
                     const isCurrent = r === round && turn === turnKey;
+                    const turnMs = Object.values(
+                      (timings[r] && timings[r][turn]) || {},
+                    ).reduce((a, b) => a + b, 0);
+                    const timeCell = turnMs > 0 ? formatDuration(turnMs) : "—";
                     return `
                   <tr class="${isCurrent ? "bg-wh-accent/5" : ""}">
                     <td class="px-3 py-2 text-wh-muted font-mono">${turn === turnsInOrder[0] ? r : ""}</td>
                     <td class="px-3 py-2 text-wh-muted italic text-xs capitalize">${turn === "you" ? "Yours" : "Opponents"}</td>
                     <td class="px-3 py-2 text-wh-text font-bold">${s.you}</td>
                     <td class="px-3 py-2 text-wh-text font-bold">${s.opponent}</td>
+                    <td class="px-3 py-2 font-mono text-xs">${timeCell}</td>
                   </tr>
                 `;
                   })
@@ -159,12 +119,12 @@ export function renderScoringUI() {
               <td class="px-3 py-2 text-wh-muted" colspan="2">Total</td>
               <td class="px-3 py-2 text-wh-accent">${totalYou}</td>
               <td class="px-3 py-2 text-wh-red">${totalOpponent}</td>
+              <td class="px-3 py-2"></td>
             </tr>
           </tfoot>
         </table>
       </div>
     </div>
-    ${timingsHtml}
   `;
 }
 

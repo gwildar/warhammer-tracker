@@ -5,6 +5,8 @@ import {
   savePhaseIndex,
   saveArmy,
   saveCharacterAssignments,
+  saveTimings,
+  saveDeploymentTime,
 } from "../../state.js";
 
 describe("Game Screen", () => {
@@ -599,6 +601,7 @@ describe("Scoring UI", () => {
   beforeEach(() => {
     army = loadArmy("dark-elves");
     startGame(army);
+    saveDeploymentTime(null);
   });
 
   it("shows scoring section", () => {
@@ -621,6 +624,41 @@ describe("Scoring UI", () => {
     expect(getApp().textContent).toContain("Strategic Objectives");
     // Should NOT contain any magic items (e.g. Spelleater Axe)
     expect(getApp().textContent).not.toContain("Spelleater Axe");
+  });
+
+  it("shows Time column header in scoring table", () => {
+    savePhaseIndex(14);
+    renderGameScreen(army);
+    const header = getApp().querySelector("thead");
+    expect(header.textContent).toContain("Time");
+  });
+
+  it("shows deployment row when deploymentTime is set", () => {
+    saveDeploymentTime(1200000); // 20 minutes
+    savePhaseIndex(14);
+    renderGameScreen(army);
+    expect(getApp().textContent).toContain("Deploy");
+    expect(getApp().textContent).toContain("20:00");
+  });
+
+  it("does not show deployment row when deploymentTime is null", () => {
+    savePhaseIndex(14);
+    renderGameScreen(army);
+    expect(getApp().textContent).not.toContain("Deploy");
+  });
+
+  it("shows turn time in table when timings are set", () => {
+    saveTimings({ 1: { you: { 0: 900000 } } }); // 15 minutes total
+    savePhaseIndex(14);
+    renderGameScreen(army);
+    expect(getApp().textContent).toContain("15:00");
+  });
+
+  it("does not show the Turn Timings details section", () => {
+    saveTimings({ 1: { you: { 0: 900000 } } });
+    savePhaseIndex(14);
+    renderGameScreen(army);
+    expect(getApp().textContent).not.toContain("Turn Timings");
   });
 });
 
