@@ -12,6 +12,7 @@ import {
   getStartTime,
   resetStartTime,
   recordCurrentPhaseTime,
+  getDisplayMode,
 } from "../state.js";
 import { PHASE_BG, PHASE_TEXT } from "../helpers.js";
 import { renderCasterContext } from "../context/caster.js";
@@ -169,6 +170,7 @@ const PHASE_RENDERERS = {
 };
 
 function renderPhaseContext(army, phase, subPhase) {
+  const lightweight = getDisplayMode() === "lightweight";
   let html = "";
 
   if (subPhase.showCasters)
@@ -177,10 +179,22 @@ function renderPhaseContext(army, phase, subPhase) {
     html += renderer(army);
   }
 
-  if (subPhase.showShooting) html += renderShootingContext(army);
+  if (!lightweight && subPhase.showShooting)
+    html += renderShootingContext(army);
 
-  for (const renderer of PHASE_RENDERERS[subPhase.id] || []) {
-    html += renderer(army);
+  const blockedInLightweight = new Set([
+    "declare-charges",
+    "remaining-moves",
+    "choose-fight",
+    "combat-result",
+    "break-test",
+    "rally",
+  ]);
+
+  if (!lightweight || !blockedInLightweight.has(subPhase.id)) {
+    for (const renderer of PHASE_RENDERERS[subPhase.id] || []) {
+      html += renderer(army);
+    }
   }
 
   if (subPhase.id !== "remove-casualties" && subPhase.id !== "scoring") {
