@@ -13,6 +13,15 @@
  */
 
 export const ARMY_COMPOSITIONS = {
+  "mortuary-cults": {
+    name: "Mortuary Cult",
+    rules: [
+      {
+        rule: "Sepulchral Animus",
+        unitIds: ["mortuary-priest", "high-priest"],
+      },
+    ],
+  },
   "errantry-crusades": {
     name: "Errantry Crusade",
     rules: [
