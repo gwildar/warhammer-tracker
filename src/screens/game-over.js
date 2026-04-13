@@ -81,6 +81,7 @@ export function renderGameOverScreen(army) {
 
       <main class="flex-1 overflow-y-auto p-4">
         <div class="max-w-2xl mx-auto">
+          <h3 class="text-lg font-bold text-wh-text mb-4">Strategic Locations</h3>
           <div class="grid grid-cols-2 gap-4 mb-6">
             <div class="bg-wh-surface rounded-lg border border-wh-border p-4 text-center">
               <div class="text-xs uppercase tracking-wider text-wh-muted mb-1">Your Total</div>
@@ -127,7 +128,7 @@ export function renderGameOverScreen(army) {
             &#8592; Back
           </button>
           <button id="new-game-btn"
-            class="flex-1 py-3 rounded-lg font-bold text-lg transition-colors bg-wh-red text-white hover:opacity-90">
+            class="flex-1 py-3 rounded-lg font-bold text-lg transition-colors bg-wh-accent text-wh-bg hover:bg-wh-accent-dim">
             New Game &#10226;
           </button>
         </div>
