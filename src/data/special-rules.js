@@ -1879,6 +1879,18 @@ export const SPECIAL_RULES = [
     ],
   },
   {
+    id: "arrows of asaph",
+    displayName: "Arrows of Asaph",
+    phases: [
+      {
+        phaseId: "shooting",
+        subPhaseId: "shoot",
+        yourTurnOnly: true,
+        description: "Disregard all modifiers when making ranged attack rolls.",
+      },
+    ],
+  },
+  {
     id: "dry as dust",
     displayName: "Dry as Dust",
     phases: [
