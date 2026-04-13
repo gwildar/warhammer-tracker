@@ -4866,6 +4866,327 @@ export const MAGIC_ITEMS = [
       "Unit may re-roll failed rolls To Wound when resolving Impact Hits.",
     phases: ["combat"],
   },
+
+  // ─── Tomb Kings of Khemri Magic Weapons ─────────────────────────────
+  {
+    name: "Destroyer of Eternities",
+    type: "weapon",
+    points: 75,
+    effect:
+      "Killing Blow, Magical Attacks, Requires Two Hands, Strike Last. Each time the wielder rolls a natural 6 To Hit, they may make D6 additional hits against the same target instead of just 1.",
+    phases: ["combat"],
+    s: "S+2",
+    ap: "-2",
+  },
+  {
+    name: "The Conqueror's Blade",
+    type: "weapon",
+    points: 55,
+    effect:
+      "Killing Blow (5+), Magical Attacks, Requires Two Hands, Strike Last.",
+    phases: ["combat"],
+    s: "S+2",
+    ap: "-2",
+  },
+  {
+    name: "Crook & Flail of Radiance",
+    type: "weapon",
+    points: 50,
+    effect:
+      "Extra Attacks (+D3), Magical Attacks, Requires Two Hands, Strike First.",
+    phases: ["combat"],
+    s: "S",
+    ap: "-1",
+  },
+  {
+    name: "Blade of Antarhak",
+    type: "weapon",
+    points: 45,
+    effect:
+      "Magical Attacks. Each unsaved wound caused by the wielder restores 1 Wound to the wielder (up to their starting Wounds characteristic).",
+    phases: ["combat"],
+    s: "S+1",
+    ap: "-1",
+  },
+  {
+    name: "Flail of Skulls",
+    type: "weapon",
+    points: 35,
+    effect:
+      "Flail. Multiple Wounds (2), Requires Two Hands. Counts as a flail (+2 Strength on the charge only).",
+    phases: ["combat"],
+    s: "S+3",
+    ap: "-1",
+  },
+  {
+    name: "Phakth's Blades of Justice",
+    type: "weapon",
+    points: 35,
+    effect:
+      "Magical Attacks. The wielder gains +1 Attack for each full rank in the enemy unit they are engaged with (not counting the front rank).",
+    phases: ["combat"],
+    s: "S",
+    ap: "-1",
+  },
+  {
+    name: "Staff of Aeons",
+    type: "weapon",
+    points: 30,
+    effect:
+      "Magical Attacks. Each unsaved wound caused by this weapon permanently reduces the target model's armour save by 1 (to a minimum of none).",
+    phases: ["combat"],
+    s: "S+2",
+    ap: "-1",
+  },
+  {
+    name: "Serpent Staff",
+    type: "weapon",
+    points: 20,
+    effect: "Magical Attacks, Poisoned Attacks, Requires Two Hands.",
+    phases: ["combat"],
+    s: "S+2",
+    ap: "-2",
+  },
+
+  // ─── Tomb Kings of Khemri Magic Armour ──────────────────────────────
+  {
+    name: "Armour of the Ages",
+    type: "armour",
+    points: 50,
+    effect:
+      "Heavy armour. Any enemy model that successfully rolls To Wound against the wearer must re-roll that roll.",
+    phases: ["combat", "shooting"],
+    armourBase: 5,
+  },
+  {
+    name: "Royal Mantle",
+    type: "armour",
+    points: 40,
+    effect:
+      "Improves the wearer's armour save by 1 (max 2+). While the wearer is alive, the range of the My Will Be Done special rule is extended by 3\".",
+    phases: ["combat", "shooting", "strategy"],
+    armourMod: -1,
+  },
+  {
+    name: "Warding Splint",
+    type: "armour",
+    points: 35,
+    effect:
+      "Heavy armour. The wearer has a 5+ Ward save against any wounds suffered.",
+    phases: ["combat", "shooting"],
+    armourBase: 5,
+    ward: "5+",
+  },
+  {
+    name: "Shield of Ptra",
+    type: "armour",
+    points: 25,
+    effect:
+      "Shield. Any enemy model directing attacks against the wearer during the Combat phase suffers -1 To Hit.",
+    phases: ["combat"],
+  },
+
+  // ─── Tomb Kings of Khemri Talismans ─────────────────────────────────
+  {
+    name: "Amulet of the Serpent",
+    type: "talisman",
+    points: 30,
+    effect:
+      "The bearer and any unit they join gain the Poisoned Attacks special rule.",
+    phases: ["combat"],
+  },
+  {
+    name: "Crown of Kings",
+    type: "talisman",
+    points: 30,
+    effect:
+      "Extremely Common. During the Command sub-phase, the bearer may use the Arise! special rule to restore D3+1 Wounds to their unit instead of the normal amount.",
+    phases: ["strategy"],
+    subPhases: ["command"],
+    extremely: true,
+  },
+  {
+    name: "Collar of Shapesh",
+    type: "talisman",
+    points: 25,
+    effect:
+      "Single use. When the bearer suffers a wound that would remove their last Wound, roll a D6. On a 4+, that wound is negated and the Collar is destroyed.",
+    phases: ["combat", "shooting"],
+  },
+  {
+    name: "Relic of the Desert Sun",
+    type: "talisman",
+    points: 25,
+    effect:
+      "The bearer is immune to the Dry as Dust special rule and the Flammable special rule.",
+    phases: ["combat", "shooting"],
+  },
+
+  // ─── Tomb Kings of Khemri Banners ───────────────────────────────────
+  {
+    name: "Standard of the Cursing Word",
+    type: "banner",
+    points: 80,
+    effect:
+      "Battle Standard Bearer only. At the start of each Combat phase, choose one enemy unit in base contact with the bearer's unit. That unit must re-roll all successful rolls To Hit until the end of the phase.",
+    phases: ["combat"],
+  },
+  {
+    name: "Icon of the Sacred Eye",
+    type: "banner",
+    points: 50,
+    effect: "All models in the unit gain +1 Weapon Skill.",
+    phases: ["combat"],
+  },
+  {
+    name: "Royal Standard of Settra",
+    type: "banner",
+    points: 50,
+    effect:
+      "All models in the unit gain the Hatred special rule. The unit causes Terror.",
+    phases: ["combat"],
+  },
+  {
+    name: "Sigil of Centuries",
+    type: "banner",
+    points: 45,
+    effect: 'All enemy units within 6" of this banner suffer -1 Initiative.',
+    phases: ["combat"],
+  },
+  {
+    name: "Icon of Rakaph",
+    type: "banner",
+    points: 40,
+    effect:
+      "Once per game, the unit carrying this banner may perform a free Reform during the Remaining Moves sub-phase without counting as having marched.",
+    phases: ["movement"],
+    subPhases: ["remaining-moves"],
+  },
+  {
+    name: "Tapestry of Conquered Lands",
+    type: "banner",
+    points: 35,
+    effect:
+      "If the unit carrying this banner captures an enemy standard, the bearer's side scores an additional D3 Victory Points.",
+    phases: ["combat"],
+  },
+  {
+    name: "Banner of the Desert Winds",
+    type: "banner",
+    points: 30,
+    effect:
+      "Infantry only. The unit gains the Vanguard and Reserve Move special rules.",
+    phases: ["movement"],
+  },
+  {
+    name: "Mirage Banner",
+    type: "banner",
+    points: 20,
+    effect:
+      "All enemy units shooting at the unit carrying this banner suffer -1 To Hit.",
+    phases: ["shooting"],
+  },
+
+  // ─── Tomb Kings of Khemri Enchanted Items ───────────────────────────
+  {
+    name: "Cloak of the Dunes",
+    type: "enchanted-item",
+    points: 50,
+    effect:
+      "The bearer gains the Fly (9) special rule. When the bearer flies over an enemy unit during the Movement phase, that unit suffers D6 Strength 2, AP -1 hits.",
+    phases: ["movement", "combat"],
+  },
+  {
+    name: "Staff of Awakening",
+    type: "enchanted-item",
+    points: 50,
+    effect:
+      "High Priest only. Whenever the bearer uses the Arise! special rule, any wounds restored are increased by D3.",
+    phases: ["strategy"],
+    subPhases: ["command"],
+  },
+  {
+    name: "Orb of Ptra",
+    type: "enchanted-item",
+    points: 40,
+    effect: "All enemy units shooting at the bearer's unit suffer -1 To Hit.",
+    phases: ["shooting"],
+  },
+  {
+    name: "Icon of Rulership",
+    type: "enchanted-item",
+    points: 35,
+    effect:
+      "Extremely Common. War Chariots in the bearer's unit double the number of Impact Hits they inflict and those hits gain Magical Attacks and AP -2.",
+    phases: ["combat"],
+    extremely: true,
+  },
+  {
+    name: "Death Mask of Kharnutt",
+    type: "enchanted-item",
+    points: 20,
+    effect:
+      "The bearer causes Terror. Any enemy unit that breaks from combat with the bearer's unit suffers an additional -1 to their Leadership for the remainder of the battle.",
+    phases: ["combat"],
+  },
+
+  // ─── Tomb Kings of Khemri Arcane Items ──────────────────────────────
+  {
+    name: "Phâzerakt's Kanopi",
+    type: "arcane-item",
+    points: 40,
+    effect:
+      'Single use. During the Command sub-phase, the bearer may summon 2D6+3 Skeleton Warriors with hand weapon and shield within 12" of the bearer. They form a new unit.',
+    phases: ["strategy"],
+    subPhases: ["command"],
+  },
+  {
+    name: "Enkhil's Kanopi",
+    type: "arcane-item",
+    points: 30,
+    effect:
+      "Single use. At the start of any Strategy phase, the bearer may dispel all Remains in Play spells currently in play, including friendly ones.",
+    phases: ["strategy"],
+    subPhases: ["conjuration"],
+  },
+  {
+    name: "Hieratic Jar",
+    type: "arcane-item",
+    points: 25,
+    effect:
+      "Extremely Common. The bearer may use the Arise! special rule twice per Command sub-phase instead of once.",
+    phases: ["strategy"],
+    subPhases: ["command"],
+    extremely: true,
+  },
+  {
+    name: "Curse-Weaver Wand",
+    type: "arcane-item",
+    points: 20,
+    effect:
+      "The bearer applies a +1 modifier to any Casting roll made for a hex or direct damage spell.",
+    phases: ["strategy"],
+    subPhases: ["conjuration"],
+  },
+  {
+    name: "Scarab Brooch",
+    type: "arcane-item",
+    points: 20,
+    effect:
+      'The range of the From Beneath the Sands special rule for the bearer\'s unit is increased to 18" instead of 12".',
+    phases: ["strategy"],
+    subPhases: ["command"],
+  },
+  {
+    name: "Tablets of Tahoth",
+    type: "arcane-item",
+    points: 20,
+    effect:
+      "Extremely Common. May purchase up to three. The bearer applies a +1 modifier to any Casting roll (up to a maximum of +3 from this item).",
+    phases: ["strategy"],
+    subPhases: ["conjuration"],
+    extremely: true,
+  },
 ];
 
 /**
