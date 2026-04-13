@@ -96,4 +96,31 @@ describe("Unit assignment screen", () => {
     expect(header.querySelector("#setup-new-game-btn")).toBeTruthy();
     expect(getApp().querySelector("main #save-assignments-btn")).toBeTruthy();
   });
+
+  it("shows GENERAL tag on the general's character card", () => {
+    renderUnitAssignmentScreen(army);
+    const cards = [...getApp().querySelectorAll("[data-char-id]")];
+    const generalCard = cards.find((c) => c.textContent.includes("GENERAL"));
+    expect(generalCard).toBeTruthy();
+  });
+
+  it("shows BSB tag on the BSB character card", () => {
+    renderUnitAssignmentScreen(army);
+    const cards = [...getApp().querySelectorAll("[data-char-id]")];
+    const bsbCard = cards.find((c) => c.textContent.includes("BSB"));
+    expect(bsbCard).toBeTruthy();
+  });
+
+  it("shows GENERAL tag on assigned char row after assignment", () => {
+    const general = army.units.find((u) => u.isGeneral);
+    const unit = army.units.find(
+      (u) => !["characters", "lords", "heroes"].includes(u.category),
+    );
+    saveCharacterAssignments({ [general.id]: unit.id });
+    renderUnitAssignmentScreen(army);
+    const assignedRow = getApp().querySelector(
+      `[data-assigned-char="${general.id}"]`,
+    );
+    expect(assignedRow.textContent).toContain("GENERAL");
+  });
 });

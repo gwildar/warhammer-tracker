@@ -17,7 +17,9 @@ describe("About Screen", () => {
   it("shows acknowledgements", () => {
     renderAboutScreen();
     expect(getApp().textContent).toContain("Old World Builder");
-    expect(getApp().textContent).toContain("tow.whfb.app");
+    expect(getApp().textContent).toContain(
+      "Warhammer: The Old World Online Rules Index",
+    );
   });
 
   it("shows back button", () => {

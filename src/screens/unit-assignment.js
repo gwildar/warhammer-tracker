@@ -17,12 +17,23 @@ function renderMagicItemNames(unit) {
   return `<div class="text-wh-muted text-[10px] mt-0.5">${names}</div>`;
 }
 
+function renderCharTags(char) {
+  return [
+    char.isGeneral
+      ? '<span class="text-wh-phase-combat text-[10px] font-bold ml-1">GENERAL</span>'
+      : "",
+    char.isBSB
+      ? '<span class="text-wh-accent text-[10px] font-bold ml-1">BSB</span>'
+      : "",
+  ].join("");
+}
+
 function renderCharCard(char) {
   return `
     <div class="p-2 rounded bg-wh-card border border-wh-border cursor-grab active:cursor-grabbing mb-2 select-none"
       draggable="true"
       data-char-id="${char.id}">
-      <div class="text-sm font-semibold text-wh-text">${char.name}</div>
+      <div class="text-sm font-semibold text-wh-text">${char.name}${renderCharTags(char)}</div>
       ${renderMagicItemNames(char)}
     </div>
   `;
@@ -32,7 +43,7 @@ function renderAssignedChar(char) {
   return `
     <div class="flex items-center justify-between mt-1 text-xs text-wh-accent"
       data-assigned-char="${char.id}">
-      <span>${char.name}</span>
+      <span>${char.name}${renderCharTags(char)}</span>
       <button class="remove-char-btn ml-2 text-wh-red hover:opacity-75" data-char-id="${char.id}">✕</button>
     </div>
   `;
@@ -141,15 +152,15 @@ function bindDragDrop(army) {
   for (const zone of dropTargets) {
     zone.addEventListener("dragover", (e) => {
       e.preventDefault();
-      zone.classList.add("border-wh-accent");
+      zone.classList.add("border-wh-accent", "bg-wh-accent/10");
     });
     zone.addEventListener("dragleave", (e) => {
       if (!zone.contains(e.relatedTarget))
-        zone.classList.remove("border-wh-accent");
+        zone.classList.remove("border-wh-accent", "bg-wh-accent/10");
     });
     zone.addEventListener("drop", (e) => {
       e.preventDefault();
-      zone.classList.remove("border-wh-accent");
+      zone.classList.remove("border-wh-accent", "bg-wh-accent/10");
       const charId = e.dataTransfer.getData("text/plain");
       if (!charId) return;
       const assignments = getCharacterAssignments();
