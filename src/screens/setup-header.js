@@ -2,9 +2,9 @@ import { navigate } from "../navigate.js";
 import { resetGame, saveFirstTurn } from "../state.js";
 
 const SETUP_PHASES = [
-  { id: "characters", label: "Place Characters" },
-  { id: "deploy", label: "Deploy" },
-  { id: "first-turn", label: "Who Goes First" },
+  { id: "characters", label: "Place Characters", bg: "bg-wh-phase-strategy" },
+  { id: "deploy", label: "Deploy", bg: "bg-wh-phase-movement" },
+  { id: "first-turn", label: "Who Goes First", bg: "bg-wh-phase-scoring" },
 ];
 
 export function renderSetupHeader(army, currentPhaseId) {
@@ -34,9 +34,9 @@ export function renderSetupHeader(army, currentPhaseId) {
           return `<div class="flex-1 text-center">
             <div class="h-1.5 rounded-full mb-1 transition-all ${
               isCurrent
-                ? "bg-wh-accent"
+                ? phase.bg
                 : isPast
-                  ? "bg-wh-accent opacity-40"
+                  ? `${phase.bg} opacity-40`
                   : "bg-wh-border"
             }"></div>
             <span class="text-[10px] ${isCurrent ? "text-wh-text font-semibold" : "text-wh-muted"}">${phase.label}</span>
