@@ -53,7 +53,7 @@ export function renderOpponentTurnScreen(army) {
           </div>
           <div class="flex items-center gap-3">
             <span class="font-mono text-wh-accent">Round ${round}</span>
-            <span class="text-xs text-wh-red font-semibold border border-wh-red px-2 py-0.5 rounded">Opponent</span>
+            <span class="text-xs text-wh-red font-semibold border border-wh-red px-2 py-0.5 rounded">Opp</span>
             <button id="new-game-btn"
               class="text-xs text-wh-muted hover:text-wh-red border border-wh-border px-2 py-1 rounded transition-colors">
               New Game
