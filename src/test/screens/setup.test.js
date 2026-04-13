@@ -41,13 +41,6 @@ describe("Setup Screen", () => {
       expect(text).toContain("Dark Elves");
     });
 
-    it("shows OWB view link for OWB armies", () => {
-      renderSetupScreen();
-      const link = getApp().querySelector('a[href*="old-world-builder.com"]');
-      expect(link).toBeTruthy();
-      expect(link.href).toContain(army.owbId);
-    });
-
     it("shows total points", () => {
       renderSetupScreen();
       const totalPts = army.units.reduce((sum, u) => sum + u.points, 0);

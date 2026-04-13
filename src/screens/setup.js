@@ -102,10 +102,7 @@ function renderArmySummary(army) {
       <div class="bg-wh-surface rounded-lg border border-wh-border p-4 mb-4">
         <div class="flex justify-between items-start mb-3">
           <div>
-            <div class="flex items-center gap-2">
-              <h2 class="text-xl font-bold text-wh-accent">${army.name}</h2>
-              ${army.owbId ? `<a href="https://old-world-builder.com/game-view/${army.owbId}" target="_blank" rel="noopener noreferrer" class="text-wh-muted hover:text-wh-accent transition-colors" title="View in Old World Builder">&#128065; gameview</a>` : ""}
-            </div>
+            <h2 class="text-xl font-bold text-wh-accent">${army.name}</h2>
             <p class="text-wh-muted text-sm">${army.faction}${army.composition ? " — " + formatSlug(army.composition) : ""}</p>
           </div>
           <span class="text-wh-accent font-mono text-lg">${totalPts} pts</span>
