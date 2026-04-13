@@ -931,10 +931,22 @@ export function renderCombatWeaponsContext(army) {
       : "";
   }
 
-  function renderFooter(r) {
+  function renderBanners(r) {
     const bannerModMap = Object.fromEntries(
       (r.conditionalStrengthMods || []).map((m) => [m.source, m]),
     );
+    return (r.bannerNames || [])
+      .map((name) => {
+        const mod = bannerModMap[name];
+        const modHtml = mod
+          ? `<span class="text-[10px] text-wh-accent-dim ml-2">${mod.numeric}S ${mod.condition}</span>`
+          : "";
+        return `<div class="text-xs mt-0.5 pl-2 border-l-2 border-wh-accent bg-wh-accent/8"><span class="text-[9px] uppercase tracking-wide text-wh-accent-dim mr-1">Banner</span><span class="text-wh-accent">${name}</span>${modHtml}</div>`;
+      })
+      .join("");
+  }
+
+  function renderFooter(r) {
     const bannerNameSet = new Set(r.bannerNames || []);
     return [
       (r.conditionalStrengthMods || [])
@@ -942,15 +954,6 @@ export function renderCombatWeaponsContext(army) {
         .map(
           (m) => `<div class="text-[10px] text-wh-muted">* ${m.source}</div>`,
         )
-        .join(""),
-      (r.bannerNames || [])
-        .map((name) => {
-          const mod = bannerModMap[name];
-          const modHtml = mod
-            ? `<span class="text-[10px] text-wh-accent-dim ml-2">${mod.numeric}S ${mod.condition}</span>`
-            : "";
-          return `<div class="text-xs mt-0.5 pl-2 border-l-2 border-wh-accent bg-wh-accent/8"><span class="text-[9px] uppercase tracking-wide text-wh-accent-dim mr-1">Banner</span><span class="text-wh-accent">${name}</span>${modHtml}</div>`;
-        })
         .join(""),
       r.itemNames.length > 0
         ? `<div class="text-xs text-wh-muted mt-0.5">${r.itemNames.join(", ")}</div>`
@@ -970,6 +973,7 @@ export function renderCombatWeaponsContext(army) {
               <div class="text-wh-text font-semibold text-sm">${displayUnitName(r.unitName, r.strength)}${r.mount ? ` (${r.mount})` : ""}${!r.merged && r.strength > 1 ? ` x${r.strength}` : ""}</div>
               <div class="text-wh-muted text-[10px] font-mono shrink-0 ml-2">${r.points}pts</div>
             </div>
+            ${renderBanners(r)}
             ${
               (r.assignedCharProfiles || []).length === 0
                 ? `
