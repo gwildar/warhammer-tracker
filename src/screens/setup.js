@@ -1,4 +1,3 @@
-import { version } from "../../package.json";
 import { parseArmyList, getCasters } from "../army.js";
 import { displayUnitName } from "../utils/unit-name.js";
 import {
@@ -23,11 +22,16 @@ export function renderSetupScreen() {
 
   app.innerHTML = `
     <div class="min-h-dvh flex flex-col">
-      <header class="bg-wh-surface p-4 border-b border-wh-border">
-        <div class="flex justify-between items-center max-w-2xl mx-auto">
-          <div></div>
-          <h1 class="text-2xl font-bold text-wh-accent text-center">Turner Overdrive <span class="text-xs text-wh-muted font-normal">v${version}</span> <span class="text-xs text-wh-red font-normal">Alpha</span></h1>
-          <button id="about-btn" class="text-sm text-wh-muted hover:text-wh-accent transition-colors">About</button>
+      <header class="bg-wh-surface border-b border-wh-border p-3">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm text-wh-accent">${army ? army.name : ""}</span>
+          <button id="about-btn" class="text-xs text-wh-muted hover:text-wh-accent transition-colors">About</button>
+        </div>
+        <div class="flex gap-1">
+          <div class="flex-1 text-center">
+            <div class="h-1.5 rounded-full mb-1 bg-wh-accent"></div>
+            <span class="text-[10px] text-wh-text font-semibold">Setup</span>
+          </div>
         </div>
       </header>
 
