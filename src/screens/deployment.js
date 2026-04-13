@@ -8,7 +8,7 @@ const DEPLOYMENT_RULE_IDS = new Set([
   "scouts",
   "vanguard",
   "ambushers",
-  "ambush",
+  "ambush", // alias for ambushers in special-rules.js
 ]);
 
 function normaliseRuleId(displayName) {
@@ -27,6 +27,7 @@ function getDeploymentRules(unit) {
 function ruleDescription(displayName) {
   const id = normaliseRuleId(displayName);
   const rule = SPECIAL_RULES.find((sr) => sr.id === id);
+  // phases[0] is used as a fallback; deployment rules lack a dedicated deployment-phase entry
   return rule?.phases?.[0]?.description ?? "";
 }
 
@@ -101,7 +102,7 @@ export function renderDeploymentScreen(army) {
 
   document.getElementById("continue-btn").addEventListener("click", () => {
     saveDeploymentTime(Date.now() - getStartTime());
-    resetStartTime();
+    resetStartTime(); // seeds the timer for the game screen
     navigate("firstTurnScreen", army);
   });
 }

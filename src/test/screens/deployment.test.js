@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { renderDeploymentScreen } from "../../screens/deployment.js";
 import { getApp, loadArmy } from "../helpers.js";
-import { saveArmy, getDeploymentTime } from "../../state.js";
+import { getDeploymentTime } from "../../state.js";
 
 describe("Deployment screen", () => {
   let army;
@@ -57,7 +57,6 @@ describe("Deployment screen", () => {
         },
       ],
     };
-    saveArmy(armyWithScouts);
     renderDeploymentScreen(armyWithScouts);
     expect(getApp().textContent).toContain("Deployment Rules");
     expect(getApp().textContent).toContain("Shadow Warriors");
@@ -77,7 +76,6 @@ describe("Deployment screen", () => {
         },
       ],
     };
-    saveArmy(armyWithVanguard);
     renderDeploymentScreen(armyWithVanguard);
     expect(getApp().textContent).toContain("Deployment Rules");
     expect(getApp().textContent).toContain("Outriders");
@@ -97,7 +95,6 @@ describe("Deployment screen", () => {
         },
       ],
     };
-    saveArmy(armyWithAmbush);
     renderDeploymentScreen(armyWithAmbush);
     expect(getApp().textContent).toContain("Deployment Rules");
     expect(getApp().textContent).toContain("Night Goblins");
@@ -124,7 +121,6 @@ describe("Deployment screen", () => {
         },
       ],
     };
-    saveArmy(mixedArmy);
     renderDeploymentScreen(mixedArmy);
     expect(getApp().textContent).toContain("Shadow Warriors");
     expect(getApp().textContent).not.toContain("Spearmen");
@@ -143,11 +139,28 @@ describe("Deployment screen", () => {
         },
       ],
     };
-    saveArmy(armyWithAmbushers);
     renderDeploymentScreen(armyWithAmbushers);
     expect(getApp().textContent).toContain("Deployment Rules");
     expect(getApp().textContent).toContain("Forest Goblins");
     expect(getApp().textContent).toContain("Ambushers");
+  });
+
+  it("shows unit card when rule has parenthetical suffix like 'Scouts (Cavalry)'", () => {
+    const armyWithParenRule = {
+      name: "Test Army",
+      units: [
+        {
+          id: "paren-unit",
+          name: "Light Cavalry",
+          category: "core",
+          specialRules: [{ displayName: "Scouts (Cavalry)" }],
+          magicItems: [],
+        },
+      ],
+    };
+    renderDeploymentScreen(armyWithParenRule);
+    expect(getApp().textContent).toContain("Deployment Rules");
+    expect(getApp().textContent).toContain("Light Cavalry");
   });
 
   it("Continue button saves deployment time", () => {
