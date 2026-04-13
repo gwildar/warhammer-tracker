@@ -468,6 +468,7 @@ export const MAGIC_ITEMS = [
       "Single use. During the Command sub-phase, if not engaged in combat, the bearer may attempt a Leadership test (unmodified). If passed, until your next Start of Turn sub-phase enemy units cannot use the Fly (X) special rule.",
     phases: ["strategy"],
     subPhases: ["command"],
+    yourTurnOnly: true,
   },
   {
     name: "Flying Carpet",

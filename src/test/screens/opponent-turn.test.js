@@ -56,4 +56,13 @@ describe("Opponent Turn Screen", () => {
     renderOpponentTurnScreen(army);
     expect(getApp().querySelector("#new-game-btn")).toBeTruthy();
   });
+
+  it("does not show Arch-Lightning Rod during opponent strategy phase", () => {
+    const lizardArmy = loadArmy("lizardmen");
+    startGame(lizardArmy);
+    saveIsOpponentTurn(true);
+    savePhaseIndex(0); // strategy phase
+    renderOpponentTurnScreen(lizardArmy);
+    expect(getApp().textContent).not.toContain("Arch-Lightning Rod");
+  });
 });
