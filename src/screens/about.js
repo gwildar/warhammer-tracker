@@ -15,7 +15,7 @@ export function renderAboutScreen() {
 
       <main class="flex-1 p-4 max-w-2xl mx-auto w-full space-y-6">
         <div class="bg-wh-surface rounded-lg border border-wh-border p-4 space-y-3">
-          <h2 class="text-lg font-bold text-wh-text">The Old World — Turn Tracker</h2>
+          <h2 class="text-lg font-bold text-wh-text">Turner Overdrive</h2>
           <p class="text-wh-muted text-sm">
             This is a free resource. No profit is being made from this site.
           </p>
