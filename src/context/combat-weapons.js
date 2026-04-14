@@ -651,7 +651,12 @@ export function renderCombatWeaponsContext(army) {
       embedded && embedded.statLine.A && embedded.statLine.A !== "-";
 
     // Check for champion profiles (non-character units only)
-    const champions = u.category !== "characters" ? findChampions(u) : [];
+    // Units with detachments (e.g. Beast Pack) use detachments[] for their animal profiles —
+    // skip champion detection so we don't show all possible animals, only the ones present.
+    const champions =
+      u.category !== "characters" && !u.detachments?.length
+        ? findChampions(u)
+        : [];
 
     // Check for crew profiles (crewed units like chariots)
     const crew = findCrewProfiles(u);
