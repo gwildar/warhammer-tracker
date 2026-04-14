@@ -37,10 +37,10 @@ const TROOP_TYPE_MARKERS = new Set(["Ch", "NCh"]);
 export function computeUnitStrength(unit) {
   const mount = unit.mount;
 
-  // Character on a monster mount: mount US + 1 for the rider
+  // Character on a monster mount: combined wounds = character W + mount wBonus
   if (mount?.wBonus > 0) {
-    const mountUS = TROOP_STRENGTH_PER_MODEL[mount.troopType] ?? 5;
-    return mountUS + 1;
+    const baseW = parseInt(unit.stats?.[0]?.W) || 1;
+    return baseW + mount.wBonus;
   }
 
   const typeArr = unit.stats?.[0]?.troopType ?? [];

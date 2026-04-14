@@ -8,12 +8,10 @@ import {
 import { saveCharacterAssignments } from "../state.js";
 import { renderArmySummary } from "../screens/setup.js";
 
-function makeUnit(troopTypes, strength, mount = null) {
-  return {
-    strength,
-    stats: troopTypes.length > 0 ? [{ troopType: troopTypes }] : [],
-    mount,
-  };
+function makeUnit(troopTypes, strength, mount = null, w = null) {
+  const statBlock = troopTypes.length > 0 ? [{ troopType: troopTypes }] : [];
+  if (statBlock.length > 0 && w !== null) statBlock[0].W = String(w);
+  return { strength, stats: statBlock, mount };
 }
 
 describe("computeUnitStrength", () => {
@@ -53,9 +51,17 @@ describe("computeUnitStrength", () => {
   it("NCh marker is ignored, primary type used", () => {
     expect(computeUnitStrength(makeUnit(["HI", "NCh"], 1))).toBe(1);
   });
-  it("character on monster mount (wBonus > 0, MCr) has US 6", () => {
+  it("character (W3) on monster mount (wBonus 3) has US 6", () => {
     const mount = { troopType: "MCr", wBonus: 3 };
-    expect(computeUnitStrength(makeUnit(["RI", "Ch"], 1, mount))).toBe(6);
+    expect(computeUnitStrength(makeUnit(["RI", "Ch"], 1, mount, 3))).toBe(6);
+  });
+  it("character (W3) on Forest Dragon (wBonus 6) has US 9", () => {
+    const mount = { troopType: "Be", wBonus: 6 };
+    expect(computeUnitStrength(makeUnit(["RI", "Ch"], 1, mount, 3))).toBe(9);
+  });
+  it("character with unknown W on monster mount (wBonus 3) defaults to W1, US 4", () => {
+    const mount = { troopType: "MCr", wBonus: 3 };
+    expect(computeUnitStrength(makeUnit(["RI", "Ch"], 1, mount))).toBe(4);
   });
   it("character on horse (wBonus 0, HC) has US 1", () => {
     const mount = { troopType: "HC", wBonus: 0 };
@@ -64,6 +70,19 @@ describe("computeUnitStrength", () => {
   it("unit with no stats defaults to 1 per model", () => {
     const unit = { strength: 5, stats: [], mount: null };
     expect(computeUnitStrength(unit)).toBe(5);
+  });
+});
+
+describe("ridden monster unit strength from wood-elves fixture", () => {
+  it("Glade Lord on Forest Dragon has unitStrength 9 (W3 + wBonus6)", () => {
+    const army = loadArmy("wood-elves");
+    const gladeLord = army.units.find(
+      (u) =>
+        u.name === "Glade Lord" &&
+        u.mount?.name?.toLowerCase().includes("forest dragon"),
+    );
+    expect(gladeLord).toBeDefined();
+    expect(gladeLord.unitStrength).toBe(9);
   });
 });
 
