@@ -37,7 +37,7 @@ function renderExplainer() {
     <div class="bg-wh-surface border border-wh-border rounded-lg p-4 mb-4">
       <div class="text-xs uppercase tracking-wider text-wh-muted mb-2">Deployment sequence</div>
       <ol class="space-y-1.5 text-sm text-wh-text list-decimal list-inside">
-        <li>Roll off — higher result picks deployment zone and decides who deploys first</li>
+        <li>Roll off — higher result picks deployment zone and deploys first</li>
         <li>Alternate deploying one unit at a time. Characters may join a unit or deploy separately.</li>
         <li>After all other units: <span class="font-semibold">Scouts</span> deploy — must be placed >12" from all enemy models</li>
         <li>After Scouts: <span class="font-semibold">Vanguard</span> units make their Vanguard move — no march; cannot charge on turn 1</li>
