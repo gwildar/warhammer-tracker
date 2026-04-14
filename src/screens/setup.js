@@ -216,7 +216,7 @@ function renderUnitList(army) {
               ${magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${magicWeapons.join(", ")}</span>` : ""}
               ${banners.length > 0 ? `<span class="text-wh-muted ml-1 text-xs">${banners.map((b) => `${b.name} (${b.points || 0}pts)`).join(", ")}</span>` : ""}
             </div>
-            <span class="text-wh-muted font-mono text-xs shrink-0 ml-2">US:${u.unitStrength}</span>
+            <span class="text-wh-muted font-mono text-xs shrink-0 ml-2">US:${u.unitStrength ?? 0}</span>
           </div>
           <div>
             <span class="text-wh-muted font-mono text-xs">${u.points}pts</span>
