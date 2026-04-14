@@ -16,6 +16,7 @@ import {
   resolveMagicItems,
   resolveSpecialRules,
   resolveMount,
+  resolveStats,
   computeArmourSave,
   computeWard,
   computeRegen,
@@ -23,6 +24,7 @@ import {
   computePoisonedAttacks,
   computeStomp,
   computeImpactHits,
+  computeUnitStrength,
 } from "./resolve.js";
 /**
  * Sum all "pts" costs recursively through a selection tree
@@ -298,6 +300,9 @@ function parseCanonicalUnit(selection, category) {
     }
   }
 
+  // Look up stats from units.js to get troopType for unit strength calculation
+  const resolvedStats = resolveStats(id, unitName);
+
   // Build canonical unit
   const unit = {
     id,
@@ -305,7 +310,7 @@ function parseCanonicalUnit(selection, category) {
     category,
     strength,
     points: sumSelectionCosts(selection),
-    stats: modelProfiles,
+    stats: resolvedStats.length > 0 ? resolvedStats : modelProfiles,
     weapons,
     shootingWeapons,
     magicItems: resolvedMagicItems,
@@ -318,6 +323,7 @@ function parseCanonicalUnit(selection, category) {
     poisonedAttacks,
     stomp,
     impactHits,
+    detachments: [],
     champions: [],
     crew: [],
     isGeneral,
@@ -330,6 +336,7 @@ function parseCanonicalUnit(selection, category) {
     factionLores,
   };
 
+  unit.unitStrength = computeUnitStrength(unit);
   return unit;
 }
 

@@ -197,23 +197,22 @@ describe("Close Order restriction: monsters and characters (US < 10)", () => {
 });
 
 describe("army list displays unit strength", () => {
-  it("unit rows show 'US:' in the rendered HTML", () => {
-    const army = loadArmy("mc-skeleton-horde");
-    const html = renderArmySummary(army);
-    expect(html).toContain("US:");
-  });
-
-  it("army header shows total unit strength", () => {
+  it("army header shows 'Total Army Unit Strength' with correct value", () => {
     const army = loadArmy("mc-skeleton-horde");
     const totalUS = army.units.reduce((sum, u) => sum + u.unitStrength, 0);
     const html = renderArmySummary(army);
-    expect(html).toContain(`US: ${totalUS}`);
+    expect(html).toContain(`Total Army Unit Strength ${totalUS}`);
   });
 
-  it("unit points appear on their own line (not the flex row containing the name)", () => {
+  it("unit rows do not show per-unit US", () => {
     const army = loadArmy("mc-skeleton-horde");
     const html = renderArmySummary(army);
-    // Points span is the sole child of its own <div>, not inside the flex header
+    expect(html).not.toContain("US:");
+  });
+
+  it("unit points appear on their own line", () => {
+    const army = loadArmy("mc-skeleton-horde");
+    const html = renderArmySummary(army);
     expect(html).toMatch(/pts<\/span>\s*<\/div>\s*<\/div>/);
   });
 });
