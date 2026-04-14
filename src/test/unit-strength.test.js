@@ -6,6 +6,7 @@ import {
   renderCombatResultContext,
 } from "../context/combat-weapons.js";
 import { saveCharacterAssignments } from "../state.js";
+import { renderArmySummary } from "../screens/setup.js";
 
 function makeUnit(troopTypes, strength, mount = null) {
   return {
@@ -192,5 +193,27 @@ describe("Close Order restriction: monsters and characters (US < 10)", () => {
       ],
     };
     expect(renderCombatResultContext(army)).toContain("Close Order");
+  });
+});
+
+describe("army list displays unit strength", () => {
+  it("unit rows show 'US:' in the rendered HTML", () => {
+    const army = loadArmy("mc-skeleton-horde");
+    const html = renderArmySummary(army);
+    expect(html).toContain("US:");
+  });
+
+  it("army header shows total unit strength", () => {
+    const army = loadArmy("mc-skeleton-horde");
+    const totalUS = army.units.reduce((sum, u) => sum + u.unitStrength, 0);
+    const html = renderArmySummary(army);
+    expect(html).toContain(`US: ${totalUS}`);
+  });
+
+  it("unit points appear on their own line (not the flex row containing the name)", () => {
+    const army = loadArmy("mc-skeleton-horde");
+    const html = renderArmySummary(army);
+    // Points span is the sole child of its own <div>, not inside the flex header
+    expect(html).toMatch(/pts<\/span>\s*<\/div>\s*<\/div>/);
   });
 });

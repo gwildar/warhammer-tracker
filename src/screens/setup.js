@@ -135,8 +135,9 @@ function renderUploadSection() {
   `;
 }
 
-function renderArmySummary(army) {
+export function renderArmySummary(army) {
   const totalPts = army.units.reduce((sum, u) => sum + u.points, 0);
+  const totalUS = army.units.reduce((sum, u) => sum + (u.unitStrength ?? 0), 0);
 
   return `
     <div class="mt-4">
@@ -146,7 +147,10 @@ function renderArmySummary(army) {
             <h2 class="text-xl font-bold text-wh-accent">${army.name}</h2>
             <p class="text-wh-muted text-sm">${army.faction}${army.composition ? " — " + formatSlug(army.composition) : ""}</p>
           </div>
-          <span class="text-wh-accent font-mono text-lg">${totalPts} pts</span>
+          <div class="text-right">
+            <div class="text-wh-accent font-mono text-lg">${totalPts} pts</div>
+            <div class="text-wh-muted font-mono text-sm">US: ${totalUS}</div>
+          </div>
         </div>
 
         <div class="space-y-1 mb-4">
@@ -200,18 +204,23 @@ function renderUnitList(army) {
           );
 
           return `
-        <div class="flex justify-between items-center py-1 px-2 rounded hover:bg-wh-card text-sm">
-          <div>
-            <span class="text-wh-text">${displayUnitName(u.name, u.strength)}</span>
-            ${u.strength > 1 ? `<span class="text-wh-muted ml-1">x${u.strength}</span>` : ""}
-            ${u.mount ? `<span class="text-wh-muted ml-1">(${u.mount.name})</span>` : ""}
-            ${u.isGeneral ? '<span class="text-wh-phase-combat ml-1 text-xs">GENERAL</span>' : ""}
-            ${u.isBSB ? '<span class="text-wh-phase-combat ml-1 text-xs">BSB</span>' : ""}
-            ${u.isCaster ? '<span class="text-wh-purple ml-1 text-xs">WIZARD</span>' : ""}
-            ${magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${magicWeapons.join(", ")}</span>` : ""}
-            ${banners.length > 0 ? `<span class="text-wh-muted ml-1 text-xs">${banners.map((b) => `${b.name} (${b.points || 0}pts)`).join(", ")}</span>` : ""}
+        <div class="py-1 px-2 rounded hover:bg-wh-card text-sm">
+          <div class="flex justify-between items-start">
+            <div>
+              <span class="text-wh-text">${displayUnitName(u.name, u.strength)}</span>
+              ${u.strength > 1 ? `<span class="text-wh-muted ml-1">x${u.strength}</span>` : ""}
+              ${u.mount ? `<span class="text-wh-muted ml-1">(${u.mount.name})</span>` : ""}
+              ${u.isGeneral ? '<span class="text-wh-phase-combat ml-1 text-xs">GENERAL</span>' : ""}
+              ${u.isBSB ? '<span class="text-wh-phase-combat ml-1 text-xs">BSB</span>' : ""}
+              ${u.isCaster ? '<span class="text-wh-purple ml-1 text-xs">WIZARD</span>' : ""}
+              ${magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${magicWeapons.join(", ")}</span>` : ""}
+              ${banners.length > 0 ? `<span class="text-wh-muted ml-1 text-xs">${banners.map((b) => `${b.name} (${b.points || 0}pts)`).join(", ")}</span>` : ""}
+            </div>
+            <span class="text-wh-muted font-mono text-xs shrink-0 ml-2">US:${u.unitStrength}</span>
           </div>
-          <span class="text-wh-muted font-mono text-xs">${u.points}pts</span>
+          <div>
+            <span class="text-wh-muted font-mono text-xs">${u.points}pts</span>
+          </div>
         </div>
       `;
         })
