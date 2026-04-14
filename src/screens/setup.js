@@ -135,8 +135,9 @@ function renderUploadSection() {
   `;
 }
 
-function renderArmySummary(army) {
+export function renderArmySummary(army) {
   const totalPts = army.units.reduce((sum, u) => sum + u.points, 0);
+  const totalUS = army.units.reduce((sum, u) => sum + (u.unitStrength ?? 0), 0);
 
   return `
     <div class="mt-4">
@@ -145,8 +146,11 @@ function renderArmySummary(army) {
           <div>
             <h2 class="text-xl font-bold text-wh-accent">${army.name}</h2>
             <p class="text-wh-muted text-sm">${army.faction}${army.composition ? " — " + formatSlug(army.composition) : ""}</p>
+            <p class="text-wh-muted text-sm">Total Army Unit Strength ${totalUS}</p>
           </div>
-          <span class="text-wh-accent font-mono text-lg">${totalPts} pts</span>
+          <div class="text-right">
+            <div class="text-wh-accent font-mono text-lg">${totalPts} pts</div>
+          </div>
         </div>
 
         <div class="space-y-1 mb-4">
@@ -211,7 +215,7 @@ function renderUnitList(army) {
             ${magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${magicWeapons.join(", ")}</span>` : ""}
             ${banners.length > 0 ? `<span class="text-wh-muted ml-1 text-xs">${banners.map((b) => `${b.name} (${b.points || 0}pts)`).join(", ")}</span>` : ""}
           </div>
-          <span class="text-wh-muted font-mono text-xs">${u.points}pts</span>
+          <span class="text-wh-muted font-mono text-xs shrink-0 ml-2">${u.points}pts</span>
         </div>
       `;
         })

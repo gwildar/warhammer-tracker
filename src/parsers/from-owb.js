@@ -25,6 +25,7 @@ import {
   computePoisonedAttacks,
   computeStomp,
   computeImpactHits,
+  computeUnitStrength,
 } from "./resolve.js";
 import {
   ARMY_COMPOSITIONS,
@@ -319,6 +320,7 @@ function parseCanonicalUnit(raw, category) {
     factionLores,
   };
 
+  unit.unitStrength = computeUnitStrength(unit);
   return unit;
 }
 

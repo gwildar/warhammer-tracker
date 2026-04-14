@@ -620,6 +620,9 @@ export function renderCombatWeaponsContext(army) {
         apMod,
         conditionalStrengthMods,
         assignedCharProfiles,
+        unitStrength:
+          (u.unitStrength ?? 0) +
+          assignedChars.reduce((sum, c) => sum + (c.unitStrength ?? 0), 0),
         crew: [],
       });
       continue;
@@ -841,6 +844,9 @@ export function renderCombatWeaponsContext(army) {
       apMod,
       conditionalStrengthMods,
       assignedCharProfiles,
+      unitStrength:
+        (u.unitStrength ?? 0) +
+        assignedChars.reduce((sum, c) => sum + (c.unitStrength ?? 0), 0),
     });
   }
 
@@ -1031,7 +1037,10 @@ export function renderCombatWeaponsContext(army) {
           <div class="p-2 rounded bg-wh-card">
             <div class="flex justify-between items-start">
               <div class="text-wh-text font-semibold text-sm">${displayUnitName(r.unitName, r.strength)}${r.mount ? ` (${r.mount})` : ""}${!r.merged && r.strength > 1 ? ` x${r.strength}` : ""}</div>
-              <div class="text-wh-muted text-[10px] font-mono shrink-0 ml-2">${r.points}pts</div>
+              <div class="text-right shrink-0 ml-2">
+                <div class="text-wh-muted text-[10px] font-mono">${r.points}pts</div>
+                <div class="text-wh-muted text-[10px] font-mono">US:${r.unitStrength}</div>
+              </div>
             </div>
             ${renderBanners(r)}
             ${
@@ -1108,7 +1117,18 @@ export function renderCombatResultContext(army) {
     const hasCloseOrder = (u.specialRules || []).some((r) =>
       r.displayName?.toLowerCase().includes("close order"),
     );
-    if (hasCloseOrder) {
+    const primaryTroopType = u.stats?.[0]?.troopType?.find(
+      (t) => !["Ch", "NCh"].includes(t),
+    );
+    const isMonsterOrRiddenMonster =
+      ["MCr", "Be"].includes(primaryTroopType) || u.mount?.wBonus > 0;
+    const isCharacterUnit = ["characters", "lords", "heroes"].includes(
+      u.category,
+    );
+    const closeOrderBlocked =
+      (isMonsterOrRiddenMonster || isCharacterUnit) &&
+      (u.unitStrength ?? 1) < 10;
+    if (hasCloseOrder && !closeOrderBlocked) {
       bonuses.push("Close Order +1");
       total += 1;
     }

@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { renderSetupScreen } from "../../screens/setup.js";
+import { renderSpellSelectionScreen } from "../../screens/spell-selection-screen.js";
 import { renderUnitAssignmentScreen } from "../../screens/unit-assignment.js";
 import { registerScreen } from "../../navigate.js";
 import { loadArmy, getApp } from "../helpers.js";
@@ -79,12 +80,13 @@ describe("Setup Screen", () => {
       }
     });
 
-    it("shows spell selection for casters", () => {
+    it("navigates to spell selection for casters", () => {
+      registerScreen("spellSelectionScreen", renderSpellSelectionScreen);
       renderSetupScreen();
-      const text = getApp().textContent;
       const casters = army.units.filter((u) => u.isCaster);
       if (casters.length > 0) {
-        expect(text).toContain("Spell Selection");
+        getApp().querySelector("#start-game-btn").click();
+        expect(getApp().textContent).toContain("Select Spells");
       }
     });
   });
@@ -132,14 +134,16 @@ describe("Setup Screen", () => {
 
   describe("start game navigation", () => {
     beforeEach(() => {
+      registerScreen("spellSelectionScreen", renderSpellSelectionScreen);
       registerScreen("unitAssignmentScreen", renderUnitAssignmentScreen);
       loadArmy("bretonnia");
     });
 
     it("navigates to unit assignment screen on new game", () => {
       renderSetupScreen();
-      const btn = getApp().querySelector("#start-game-btn");
-      btn.click();
+      getApp().querySelector("#start-game-btn").click();
+      // bretonnia has casters — go through spell selection first
+      getApp().querySelector("#spell-continue-btn").click();
       expect(getApp().textContent).toContain("Place Characters in Units");
     });
   });
