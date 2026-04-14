@@ -635,6 +635,18 @@ export const SPECIAL_RULES = [
     ],
   },
   {
+    id: "vortex of souls",
+    displayName: "Vortex of Souls",
+    phases: [
+      {
+        phaseId: "magic",
+        subPhaseId: null,
+        description:
+          'May cast Light of Death (Magic Missile, 7+, 36") or Light of Protection (Enchantment, 8+, Self, Remains in Play) as bound spells with Power Level 2. Light of Protection immediately expires if Light of Death is cast.',
+      },
+    ],
+  },
+  {
     id: "dance of death",
     displayName: "Dance of Death",
     phases: [

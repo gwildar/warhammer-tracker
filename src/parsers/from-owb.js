@@ -249,9 +249,12 @@ function parseCanonicalUnit(raw, category) {
 
   // Caster check and faction lores extraction
   const hasCursedCoven = specialRules.some((r) => r.id === "cursed coven");
-  const lores = hasCursedCoven
-    ? ["dark-magic", "daemonology"]
-    : raw.lores || [];
+  const hasVortexOfSouls = specialRules.some((r) => r.id === "vortex of souls");
+  const lores = hasVortexOfSouls
+    ? ["vortex-of-souls"]
+    : hasCursedCoven
+      ? ["dark-magic", "daemonology"]
+      : raw.lores || [];
   const isCaster = lores.length > 0;
 
   // Extract faction lores from special rules
@@ -332,6 +335,7 @@ function parseCanonicalUnit(raw, category) {
     isCaster,
     lores,
     hasCursedCoven,
+    hasVortexOfSouls,
     activeLore: raw.activeLore || null,
     factionLores,
   };

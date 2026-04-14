@@ -1492,3 +1492,19 @@ describe("Psychology-immune armies skip phases", () => {
     expect(getPhaseIndex()).toBeGreaterThan(breakIdx);
   });
 });
+
+describe("Skeleton Horde army — Casket of Souls", () => {
+  let army;
+
+  beforeEach(() => {
+    army = loadArmy("mc-skeleton-horde");
+    startGame(army);
+  });
+
+  it("Casket of Souls is parsed as a caster", () => {
+    const casket = army.units.find((u) => u.name === "Casket of Souls");
+    expect(casket).toBeTruthy();
+    expect(casket.isCaster).toBe(true);
+    expect(casket.lores).toContain("vortex-of-souls");
+  });
+});
