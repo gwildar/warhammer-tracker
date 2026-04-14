@@ -487,6 +487,15 @@ const COMBAT_RELEVANT_RULES = [
   "aspect of the bear",
   "aspect of the boar",
   "aspect of the cat",
+  "dance of death",
+  "dark venom",
+  "manbane",
+  "rune of khaine",
+  "stony stare",
+  "wilful beast",
+  "witchbrew",
+  "sea dragon cloak",
+  "abyssal howl",
 ];
 
 // Rules that apply only to the controlling model (rider/handler), not beasts or mounts

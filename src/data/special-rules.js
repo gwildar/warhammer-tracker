@@ -572,6 +572,213 @@ export const SPECIAL_RULES = [
       },
     ],
   },
+
+  // ─── Dark Elves ───────────────────────────────────────────────────────
+  {
+    id: "abyssal howl",
+    displayName: "Abyssal Howl",
+    phases: [
+      {
+        phaseId: null,
+        subPhaseId: null,
+        description:
+          'Enemy units within 6" suffer -1 Leadership when making Fear, Panic, or Terror tests (min 2). Does not stack with similar effects.',
+      },
+    ],
+  },
+  {
+    id: "black lotus",
+    displayName: "Black Lotus",
+    phases: [
+      {
+        phaseId: "combat",
+        subPhaseId: null,
+        description:
+          "For each unsaved Wound inflicted by this character, the enemy character suffers -1 Leadership for the remainder of the game.",
+      },
+    ],
+  },
+  {
+    id: "blessings of khaine",
+    displayName: "Blessings of Khaine",
+    phases: [
+      {
+        phaseId: "magic",
+        subPhaseId: null,
+        description:
+          "Bound spell (9+). Until next Start of Turn, caster and friendly Death Hags, Witch Elves, and Sisters of Slaughter within Command range gain one of: Fury of Khaine (Furious Charge), Strength of Khaine (Cleaving Blow), or Bloodshield of Khaine (5+ Ward save).",
+      },
+    ],
+  },
+  {
+    id: "cry of war",
+    displayName: "Cry of War",
+    phases: [
+      {
+        phaseId: null,
+        subPhaseId: null,
+        description:
+          "Enemy units suffer -1 Leadership whilst within Command range of a non-fleeing Death Hag with this rule.",
+      },
+    ],
+  },
+  {
+    id: "cursed coven",
+    displayName: "Cursed Coven",
+    phases: [
+      {
+        phaseId: "magic",
+        subPhaseId: null,
+        description:
+          "The unit knows one spell from Dark Magic or Daemonology (chosen before deployment). Power Level is 2 (US 10+ with Master), 1 (US ≤9 with Master), or 0 (no Master).",
+      },
+    ],
+  },
+  {
+    id: "dance of death",
+    displayName: "Dance of Death",
+    phases: [
+      {
+        phaseId: "combat",
+        subPhaseId: "combat-result",
+        description:
+          "If this unit makes a successful charge, the charge target suffers -1 to its Maximum Rank Bonus until the end of the Combat phase.",
+      },
+    ],
+  },
+  {
+    id: "dark venom",
+    displayName: "Dark Venom",
+    phases: [
+      {
+        phaseId: "combat",
+        subPhaseId: "choose-fight",
+        description:
+          "Gains Killing Blow. On a natural 6 To Wound, infantry and cavalry cannot use armour or Regeneration saves (Ward saves allowed). An unsaved Killing Blow wound removes all remaining wounds.",
+      },
+    ],
+  },
+  {
+    id: "forbidden poisons",
+    displayName: "Forbidden Poisons",
+    phases: [
+      {
+        phaseId: null,
+        subPhaseId: null,
+        description:
+          "Khainite Assassin may select one poison: Black Lotus, Dark Venom, or Manbane.",
+      },
+    ],
+  },
+  {
+    id: "gifts of khaine",
+    displayName: "Gifts of Khaine",
+    phases: [
+      {
+        phaseId: null,
+        subPhaseId: null,
+        description:
+          "Death Hag selects one gift: Cry of War, Rune of Khaine (Extra Attacks +D3), or Witchbrew.",
+      },
+    ],
+  },
+  {
+    id: "goad beast",
+    displayName: "Goad Beast",
+    phases: [
+      {
+        phaseId: "strategy",
+        subPhaseId: "start-of-turn",
+        yourTurnOnly: true,
+        description:
+          "During Command sub-phase, one friendly monster within Command range (including own mount) gains +D3 Attacks (max 10) until end of turn.",
+      },
+    ],
+  },
+  {
+    id: "hekarti's blessing",
+    displayName: "Hekarti's Blessing",
+    phases: [
+      {
+        phaseId: "magic",
+        subPhaseId: null,
+        description: "Once per game, may re-roll a single failed Casting roll.",
+      },
+    ],
+  },
+  {
+    id: "hidden (dark elves)",
+    displayName: "Hidden",
+    phases: [
+      {
+        phaseId: null,
+        subPhaseId: null,
+        description:
+          "Khainite Assassin starts hidden in a friendly Dark Elf infantry unit (US 10+). Revealed during any Start of Turn sub-phase or at start of any Combat phase. Destroyed with host if host is destroyed before revelation. Cannot be General.",
+      },
+    ],
+  },
+  {
+    id: "manbane",
+    displayName: "Manbane",
+    phases: [
+      {
+        phaseId: "combat",
+        subPhaseId: "choose-fight",
+        description:
+          "To Wound rolls of 4+ always succeed, regardless of the target's Toughness.",
+      },
+    ],
+  },
+  {
+    id: "rune of khaine",
+    displayName: "Rune of Khaine",
+    phases: [
+      {
+        phaseId: "combat",
+        subPhaseId: "choose-fight",
+        description:
+          "Extra Attacks (+D3). Roll during the Choose & Fight Combat sub-phase.",
+      },
+    ],
+  },
+  {
+    id: "sea dragon cloak",
+    displayName: "Sea Dragon Cloak",
+    phases: [
+      {
+        phaseId: "shooting",
+        subPhaseId: null,
+        description:
+          "+1 armour save against non-magical shooting attacks (max 2+).",
+      },
+    ],
+  },
+  {
+    id: "wilful beast",
+    displayName: "Wilful Beast",
+    phases: [
+      {
+        phaseId: "strategy",
+        subPhaseId: "start-of-turn",
+        description:
+          "At Start of Turn, mount makes a Leadership test (unmodified). If failed, the mount gains Frenzy (not the rider, and no +1 Attack for rider) until next Start of Turn.",
+      },
+    ],
+  },
+  {
+    id: "witchbrew",
+    displayName: "Witchbrew",
+    phases: [
+      {
+        phaseId: null,
+        subPhaseId: null,
+        description:
+          "This character, their mount, and any unit they have joined cannot lose the Frenzy special rule.",
+      },
+    ],
+  },
+
   {
     id: "hatred",
     displayName: "Hatred",
