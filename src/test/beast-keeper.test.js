@@ -71,3 +71,14 @@ describe("Beast Pack canonical unit has parsed detachments", () => {
     expect(gladeLord.detachments).toEqual([]);
   });
 });
+
+describe("Beast Pack unit strength includes detachments", () => {
+  it("Beast Pack (RI, US 1) + 1 Deepwood Hound (WB, US 1) = unitStrength 2", () => {
+    const army = loadArmy("wood-elves");
+    const pack = army.units.find(
+      (u) => u.id === "wood-elf-beast-pack.jpyafkrs",
+    );
+    expect(pack).toBeDefined();
+    expect(pack.unitStrength).toBe(2);
+  });
+});

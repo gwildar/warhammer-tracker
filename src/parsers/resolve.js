@@ -58,7 +58,18 @@ export function computeUnitStrength(unit) {
       ? (TROOP_STRENGTH_PER_MODEL[primaryType] ?? 1)
       : 1;
 
-  return usPerModel * (unit.strength || 1);
+  let baseUS = usPerModel * (unit.strength || 1);
+
+  // Add detachment US contributions (e.g. Beast Pack animals)
+  for (const d of unit.detachments || []) {
+    const dTypeArr = d.stats?.[0]?.troopType ?? [];
+    const dPrimary = dTypeArr.find((t) => !TROOP_TYPE_MARKERS.has(t));
+    const dUsPerModel =
+      dPrimary !== undefined ? (TROOP_STRENGTH_PER_MODEL[dPrimary] ?? 1) : 1;
+    baseUS += dUsPerModel * (d.strength || 1);
+  }
+
+  return baseUS;
 }
 
 export function resolveUnitEntry(entry) {
