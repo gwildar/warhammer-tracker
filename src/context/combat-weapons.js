@@ -502,7 +502,8 @@ function extractCombatRules(unit) {
     if (COMBAT_RELEVANT_RULES.some((cr) => lower.includes(cr))) {
       let displayName = rule.displayName.replace(/\s*\{[^}]*\}/g, "").trim();
       if (lower === "elven reflexes") {
-        if (isCavalryMount) displayName += " (rider)";
+        if (isCavalryMount && CHARACTER_CATEGORIES.has(unit.category))
+          displayName += " (rider)";
         else if (hasDetachments) displayName += " (handler)";
       } else if (RIDER_ONLY_RULES.has(lower)) {
         if (hasMount) displayName += " (rider)";
