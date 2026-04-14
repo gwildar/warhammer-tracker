@@ -318,3 +318,21 @@ describe("army list displays unit strength", () => {
     expect(html).toContain("pts</span>");
   });
 });
+
+describe("Troll Horde army points", () => {
+  it("Stone Troll Mob great weapon stackable option costs are included in total", () => {
+    const army = loadArmy("trolls");
+    const total = army.units.reduce((sum, u) => sum + u.points, 0);
+    expect(total).toBe(2600);
+  });
+
+  it("Stone Troll Mob with 8 great weapons adds 32 pts to unit cost", () => {
+    const army = loadArmy("trolls");
+    const bigMob = army.units.find(
+      (u) => u.name === "Stone Troll" && u.strength === 8,
+    );
+    expect(bigMob).toBeTruthy();
+    // 8 trolls at 45pts each = 360, plus 8 great weapons at 4pts each = 32
+    expect(bigMob.points).toBe(392);
+  });
+});

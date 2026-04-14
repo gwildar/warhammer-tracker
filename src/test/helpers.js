@@ -21,6 +21,7 @@ import ogreKingdomsJson from "./fixtures/ogre-kingdoms.owb.json";
 import forestGoblinsJson from "./fixtures/forest-goblins.owb.json";
 import mcSkeletonHordeJson from "./fixtures/mc-skeleton-horde.owb.json";
 import woodElvesJson from "./fixtures/wood-elves.owb.json";
+import trollsJson from "./fixtures/trolls.owb.json";
 
 export function loadArmy(fixture) {
   const jsonMap = {
@@ -36,6 +37,7 @@ export function loadArmy(fixture) {
     "forest-goblins": forestGoblinsJson,
     "mc-skeleton-horde": mcSkeletonHordeJson,
     "wood-elves": woodElvesJson,
+    trolls: trollsJson,
   };
   const json = jsonMap[fixture];
   const army = parseArmyList(json);

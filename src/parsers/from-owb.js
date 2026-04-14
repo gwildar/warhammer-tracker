@@ -60,6 +60,8 @@ function calculateUnitPoints(raw) {
     for (const item of items) {
       if (item.active && item.points) {
         pts += item.perModel ? item.points * (raw.strength || 1) : item.points;
+      } else if (item.stackableCount && item.points) {
+        pts += item.points * item.stackableCount;
       }
       if (recurse && item.active && Array.isArray(item.options)) {
         addActivePoints(item.options, true);
