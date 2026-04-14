@@ -7372,7 +7372,7 @@ export const UNIT_STATS = {
       BS: "-",
       Ld: "-",
       WS: "6",
-      Name: "Forest Dragons",
+      Name: "Forest Dragon",
       as: 4,
       Stomps: "D6",
       Fly: "10",
