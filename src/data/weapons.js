@@ -364,6 +364,14 @@ export const RANGED_WEAPONS = {
     ap: "-2",
     rules: "Breath Weapon. -1 Initiative on wounded models.",
   },
+  "swamp breath": {
+    name: "Swamp Breath",
+    range: "Template",
+    s: "3",
+    ap: "-2",
+    rules:
+      "Breath Weapon. Units suffering one or more unsaved wounds must take a Panic test as if they had taken heavy casualties.",
+  },
 
   // ─── High Elf Ranged ─────────────────────────────────────────────────
   "bow of avelorn": {
