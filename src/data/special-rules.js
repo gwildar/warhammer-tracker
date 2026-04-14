@@ -1932,6 +1932,19 @@ export const SPECIAL_RULES = [
       },
     ],
   },
+  // ─── Wood Elves ───────────────────────────────────────────────────────
+  {
+    id: "daughters of eternity",
+    displayName: "Daughters of Eternity",
+    phases: [
+      {
+        phaseId: null,
+        subPhaseId: null,
+        description: "6+ Ward save.",
+      },
+    ],
+  },
+
   // ─── Alter Kindred (Wood Elves) ──────────────────────────────────────
   {
     id: "aspect of the hound",

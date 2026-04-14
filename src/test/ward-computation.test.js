@@ -26,6 +26,16 @@ describe("computeWard", () => {
     expect(computeWard([], specialRules)).toBe("6+ (5+ > S5)");
   });
 
+  it("returns 6+ for Daughters of Eternity (Sisters of the Thorn)", () => {
+    const specialRules = [
+      {
+        id: "daughters of eternity",
+        displayName: "Daughters of Eternity",
+      },
+    ];
+    expect(computeWard([], specialRules)).toBe("6+");
+  });
+
   it("ignores unrelated special rules", () => {
     const specialRules = [{ id: "hatred", displayName: "Hatred (Undead)" }];
     expect(computeWard([], specialRules)).toBeNull();
