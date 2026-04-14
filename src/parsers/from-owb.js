@@ -189,7 +189,7 @@ function parseCanonicalUnit(raw, category) {
       ? { ...item, championOnly: true }
       : item,
   );
-  const specialRules = resolveSpecialRules(specialRulesText);
+  let specialRules = resolveSpecialRules(specialRulesText);
 
   // Inject rules granted by magic items (e.g. Alter Kindred aspects)
   for (const item of magicItems) {
@@ -199,6 +199,14 @@ function parseCanonicalUnit(raw, category) {
         specialRules.push(...resolved);
       }
     }
+  }
+
+  // Remove rules suppressed by magic items (e.g. Da Thinkin' Orc's 'At removes Impetuous)
+  const removedRuleIds = new Set(
+    magicItems.flatMap((item) => item.removesRules || []),
+  );
+  if (removedRuleIds.size > 0) {
+    specialRules = specialRules.filter((r) => !removedRuleIds.has(r.id));
   }
 
   // Find the active mount (if any)

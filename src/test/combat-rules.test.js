@@ -3,6 +3,7 @@ import { loadArmy } from "./helpers.js";
 import { renderCombatWeaponsContext } from "../context/combat-weapons.js";
 import { saveCharacterAssignments } from "../state.js";
 import { getCasters } from "../army.js";
+import { fromOwb } from "../parsers/from-owb.js";
 
 beforeEach(() => {
   saveCharacterAssignments({});
@@ -71,5 +72,99 @@ describe("Elven Reflexes labelling", () => {
     };
     const html = renderCombatWeaponsContext(spellsingerArmy);
     expect(html).toContain("Elven Reflexes (rider)");
+  });
+});
+
+describe("removesRules — magic item rule suppression", () => {
+  it("Da Thinkin' Orc's 'At removes Impetuous from the unit's special rules", () => {
+    const army = fromOwb({
+      core: [
+        {
+          id: "orc-mob.test",
+          name_en: "Orc Mob",
+          points: 5,
+          strength: 10,
+          lores: [],
+          specialRules: { name_en: "Close Order, Impetuous" },
+          equipment: [],
+          armor: [],
+          options: [],
+          mounts: [],
+          items: [
+            {
+              selected: [
+                {
+                  name_en: "Da Thinkin' Orc's 'At",
+                  type: "enchanted-item",
+                  points: 25,
+                },
+              ],
+            },
+          ],
+          command: [],
+        },
+      ],
+    });
+
+    const orcMob = army.units[0];
+    expect(orcMob.specialRules.some((r) => r.id === "impetuous")).toBe(false);
+  });
+
+  it("removesRules does not affect other rules on the unit", () => {
+    const army = fromOwb({
+      core: [
+        {
+          id: "orc-mob.test",
+          name_en: "Orc Mob",
+          points: 5,
+          strength: 10,
+          lores: [],
+          specialRules: { name_en: "Close Order, Impetuous" },
+          equipment: [],
+          armor: [],
+          options: [],
+          mounts: [],
+          items: [
+            {
+              selected: [
+                {
+                  name_en: "Da Thinkin' Orc's 'At",
+                  type: "enchanted-item",
+                  points: 25,
+                },
+              ],
+            },
+          ],
+          command: [],
+        },
+      ],
+    });
+
+    const orcMob = army.units[0];
+    expect(orcMob.specialRules.some((r) => r.id === "close order")).toBe(true);
+  });
+
+  it("unit without the item retains Impetuous", () => {
+    const army = fromOwb({
+      core: [
+        {
+          id: "orc-mob.test",
+          name_en: "Orc Mob",
+          points: 5,
+          strength: 10,
+          lores: [],
+          specialRules: { name_en: "Close Order, Impetuous" },
+          equipment: [],
+          armor: [],
+          options: [],
+          mounts: [],
+          items: [],
+          command: [],
+        },
+      ],
+    });
+
+    const orcMob = army.units[0];
+    expect(orcMob.specialRules.some((r) => r.id === "impetuous")).toBe(true);
   });
 });
