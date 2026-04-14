@@ -1,0 +1,1059 @@
+{
+  "name": "SB Comp Ser Krump Rockscoffa's Cave-hold Guard v2",
+  "description": "",
+  "game": "the-old-world",
+  "points": 2600,
+  "army": "orc-and-goblin-tribes",
+  "characters": [
+    {
+      "name_en": "Troll Hag",
+      "name_de": "Troll Hag",
+      "name_es": "Troll Hag",
+      "name_fr": "Troll Hag",
+      "name_it": "Troll Hag",
+      "name_pl": "Troll Hag",
+      "id": "troll-hag.cgtsveqe",
+      "points": 235,
+      "command": [
+        {
+          "name_en": "General",
+          "name_de": "General",
+          "name_fr": "Général",
+          "name_es": "General",
+          "points": 0,
+          "id": 0,
+          "active": false
+        }
+      ],
+      "armyComposition": {
+        "orc-and-goblin-tribes": {
+          "category": "rare",
+          "notes": {
+            "name_en": "Any army made using the Orc & Goblin Tribes Grand Army composition list that includes one or more Troll Mob may include 0-1 Troll Hag as a Rare choice.",
+            "name_de": "",
+            "name_es": "",
+            "name_fr": "",
+            "name_it": "",
+            "name_pl": ""
+          }
+        },
+        "troll-horde": { "category": "characters" }
+      },
+      "equipment": [
+        {
+          "name_en": "Hand weapon (Gnarled stump), Troll vomit, Swamp breath",
+          "name_de": "Hand weapon (Gnarled stump), Troll vomit, Swamp breath",
+          "name_es": "Hand weapon (Gnarled stump), Troll vomit, Swamp breath",
+          "name_fr": "Arme de base (Gnarled stump), Troll vomit, Swamp breath",
+          "name_it": "Hand weapon (Gnarled stump), Troll vomit, Swamp breath",
+          "name_pl": "Hand weapon (Gnarled stump), Troll vomit, Swamp breath",
+          "points": 0,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Heavy armour (Scaly skin)",
+          "name_de": "Heavy armour (Scaly skin)",
+          "name_es": "Heavy armour (Scaly skin)",
+          "name_fr": "Armure lourde (Scaly skin)",
+          "name_it": "Heavy armour (Scaly skin)",
+          "name_pl": "Heavy armour (Scaly skin)",
+          "points": 0,
+          "active": true,
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Level 2 Wizard",
+          "name_de": "Level 2 Wizard",
+          "name_es": "Level 2 Wizard",
+          "name_fr": "Sorcier de Niveau 2",
+          "name_it": "Level 2 Wizard",
+          "name_pl": "Level 2 Wizard",
+          "points": 35,
+          "stackable": false,
+          "minimum": 0,
+          "maximum": 0,
+          "id": 0,
+          "active": true
+        }
+      ],
+      "mounts": [],
+      "items": [
+        {
+          "name_en": "Magic Items",
+          "name_de": "Magische Gegenstände",
+          "name_es": "Objetos mágicos",
+          "name_fr": "Objets Magiques",
+          "name_it": "Oggetti magici",
+          "name_pl": "Magiczne przedmioty",
+          "types": [
+            "weapon",
+            "armor-mages",
+            "talisman",
+            "arcane-item",
+            "enchanted-item"
+          ],
+          "selected": [
+            {
+              "name_de": "Talisman des Schutzes",
+              "name_en": "Talisman of Protection",
+              "name_fr": "Talisman de Protection",
+              "name_it": "Talismano Di Protezione",
+              "name_pl": "Talizman Ochrony",
+              "points": 30,
+              "type": "talisman",
+              "id": "general-23"
+            },
+            {
+              "name_cn": "烈焰之刃*",
+              "name_de": "Brennende Klinge*",
+              "name_en": "Burning Blade*",
+              "name_fr": "Lame Ardente*",
+              "name_it": "Lama Infuocata*",
+              "name_pl": "Płonące Ostrze*",
+              "points": 5,
+              "stackable": true,
+              "type": "weapon",
+              "onePerArmy": false,
+              "name": "burning blade",
+              "id": 16
+            }
+          ],
+          "maxPoints": 50
+        }
+      ],
+      "lores": ["troll-magic", "battle-magic"],
+      "specialRules": {
+        "name_en": "Close Order, Flammable, Immune to Psychology, Indiscriminate Hunger, Large Target, Motherly Love, Regeneration (5+), Slimy Shanks, Stomp Attacks (D6), Stupidity, Terror, Timmm-berrr!, Unbreakable",
+        "name_de": "Close Order, Flammable, Immune to Psychology, Indiscriminate Hunger, Large Target, Motherly Love, Regeneration (5+), Slimy Shanks, Stomp Attacks (D6), Stupidity, Terror, Timmm-berrr!, Unbreakable",
+        "name_es": "Close Order, Flammable, Immune to Psychology, Indiscriminate Hunger, Large Target, Motherly Love, Regeneration (5+), Slimy Shanks, Stomp Attacks (D6), Stupidity, Terror, Timmm-berrr!, Unbreakable",
+        "name_fr": "Ordre Serré, Inflammable, Immune to Psychology, Indiscriminate Hunger, Grande Cible, Motherly Love, Régénération (5+), Slimy Shanks, Attaques de Piétinement (D6), Stupidité, Terreur, Timmm-berrr!, Indémoralisable",
+        "name_it": "Close Order, Flammable, Immune to Psychology, Indiscriminate Hunger, Large Target, Motherly Love, Regeneration (5+), Slimy Shanks, Stomp Attacks (D6), Stupidity, Terror, Timmm-berrr!, Unbreakable",
+        "name_pl": "Close Order, Flammable, Immune to Psychology, Indiscriminate Hunger, Large Target, Motherly Love, Regeneration (5+), Slimy Shanks, Stomp Attacks (D6), Stupidity, Terror, Timmm-berrr!, Unbreakable"
+      },
+      "magic": { "items": [] },
+      "name": "Ser Krump Rockscoffa (Troll Hag) ",
+      "generatedSpells": { "troll-magic": [] }
+    },
+    {
+      "name_en": "Troll Hag",
+      "name_de": "Troll Hag",
+      "name_es": "Troll Hag",
+      "name_fr": "Mégère Trollesse",
+      "name_it": "Troll Hag",
+      "name_pl": "Troll Hag",
+      "id": "troll-hag.usbec",
+      "points": 235,
+      "command": [
+        {
+          "name_en": "General",
+          "name_de": "General",
+          "name_fr": "Général",
+          "name_es": "General",
+          "points": 0,
+          "id": 0
+        }
+      ],
+      "armyComposition": {
+        "orc-and-goblin-tribes": {
+          "category": "rare",
+          "notes": {
+            "name_en": "Any army made using the Orc & Goblin Tribes Grand Army composition list that includes one or more Troll Mob may include 0-1 Troll Hag as a Rare choice.",
+            "name_fr": "Toute armée utilisant la liste de composition de grande armée des Tribus d'Orques & Gobelins qui inclut au moins une Bande de Trolls peut inclure 0-1 Mégère Trollesse comme choix d'Unité Rare"
+          }
+        },
+        "troll-horde": { "category": "characters" }
+      },
+      "equipment": [
+        {
+          "name_en": "Hand weapon (Gnarled stump), Troll vomit, Swamp breath",
+          "name_de": "Hand weapon (Gnarled stump), Troll vomit, Swamp breath",
+          "name_es": "Hand weapon (Gnarled stump), Troll vomit, Swamp breath",
+          "name_fr": "Arme de base (Souche noueuse), Vomi de troll, Souffle marécageux",
+          "name_it": "Hand weapon (Gnarled stump), Troll vomit, Swamp breath",
+          "name_pl": "Hand weapon (Gnarled stump), Troll vomit, Swamp breath",
+          "points": 0,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Heavy armour",
+          "name_fr": "Armure lourde",
+          "points": 0,
+          "active": true,
+          "notes": { "name_en": "Scaly skin", "name_fr": "Peau écailleuse" },
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Level 2 Wizard",
+          "name_de": "Level 2 Wizard",
+          "name_es": "Level 2 Wizard",
+          "name_fr": "Sorcier de Niveau 2",
+          "name_it": "Level 2 Wizard",
+          "name_pl": "Level 2 Wizard",
+          "points": 35,
+          "stackable": false,
+          "minimum": 0,
+          "maximum": 0,
+          "id": 0,
+          "active": true
+        }
+      ],
+      "mounts": [],
+      "items": [
+        {
+          "name_en": "Magic Items",
+          "name_de": "Magische Gegenstände",
+          "name_es": "Objetos mágicos",
+          "name_fr": "Objets Magiques",
+          "name_it": "Oggetti magici",
+          "name_pl": "Magiczne przedmioty",
+          "types": [
+            "weapon",
+            "armor-mages",
+            "talisman",
+            "arcane-item",
+            "enchanted-item"
+          ],
+          "selected": [],
+          "maxPoints": 50
+        }
+      ],
+      "lores": ["troll-magic", "battle-magic"],
+      "specialRules": {
+        "name_en": "Close Order, Flammable, Immune to Psychology, Indiscriminate Hunger, Large Target, Motherly Love, Regeneration (5+), Slimy Shanks, Stomp Attacks (D6), Stupidity, Terror, Timmm-berrr!, Unbreakable",
+        "name_de": "Close Order, Flammable, Immune to Psychology, Indiscriminate Hunger, Large Target, Motherly Love, Regeneration (5+), Slimy Shanks, Stomp Attacks (D6), Stupidity, Terror, Timmm-berrr!, Unbreakable",
+        "name_es": "Close Order, Flammable, Immune to Psychology, Indiscriminate Hunger, Large Target, Motherly Love, Regeneration (5+), Slimy Shanks, Stomp Attacks (D6), Stupidity, Terror, Timmm-berrr!, Unbreakable",
+        "name_fr": "Ordre Serré, Inflammable, Immunisé à la Psychologie, Faim Aveugle, Grande Cible, Amour Maternel, Régénération (5+), Jarrets Visqueux, Attaques de Piétinement (D6), Stupidité, Terreur, Timmm-berrr!, Indémoralisable",
+        "name_it": "Close Order, Flammable, Immune to Psychology, Indiscriminate Hunger, Large Target, Motherly Love, Regeneration (5+), Slimy Shanks, Stomp Attacks (D6), Stupidity, Terror, Timmm-berrr!, Unbreakable",
+        "name_pl": "Close Order, Flammable, Immune to Psychology, Indiscriminate Hunger, Large Target, Motherly Love, Regeneration (5+), Slimy Shanks, Stomp Attacks (D6), Stupidity, Terror, Timmm-berrr!, Unbreakable"
+      },
+      "name": "Flappy Rockscoffa (Troll Hag)",
+      "generatedSpells": { "troll-magic": [] }
+    },
+    {
+      "name_en": "Ogdruz Swampdigga",
+      "name_de": "Ogdruz Swampdigga",
+      "name_es": "Ogdruz Swampdigga",
+      "name_fr": "Ogdruz Swampdigga",
+      "name_it": "Ogdruz Swampdigga",
+      "name_pl": "Ogdruz Swampdigga",
+      "id": "ogdruz-swampdigga.nvbpjvjb",
+      "points": 195,
+      "command": [
+        {
+          "name_en": "General",
+          "name_de": "General",
+          "name_fr": "Général",
+          "name_es": "General",
+          "points": 0,
+          "id": 0,
+          "active": true
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Bog-wood staff, Trollhide shawl, Lore Familiar",
+          "name_de": "Bog-wood staff, Trollhide shawl, Lore Familiar",
+          "name_es": "Bog-wood staff, Trollhide shawl, Lore Familiar",
+          "name_fr": "Bog-wood staff, Trollhide shawl, Lore Familiar",
+          "name_it": "Bog-wood staff, Trollhide shawl, Lore Familiar",
+          "name_pl": "Bog-wood staff, Trollhide shawl, Lore Familiar",
+          "points": 0,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [],
+      "options": [
+        {
+          "name_en": "Level 3 Wizard",
+          "name_de": "Level 3 Wizard",
+          "name_es": "Level 3 Wizard",
+          "name_fr": "Sorcier de Niveau 3",
+          "name_it": "Level 3 Wizard",
+          "name_pl": "Level 3 Wizard",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "mounts": [],
+      "items": [],
+      "lores": ["troll-magic", "elementalism"],
+      "specialRules": {
+        "name_en": "Choppas, Da Troll Calla, Ignore Goblin Panic, Protect Da Boss, Syphoned Strength, Warband",
+        "name_de": "Choppas, Da Troll Calla, Ignore Goblin Panic, Protect Da Boss, Syphoned Strength, Warband",
+        "name_es": "Choppas, Da Troll Calla, Ignore Goblin Panic, Protect Da Boss, Syphoned Strength, Warband",
+        "name_fr": "Kikoup', Da Troll Calla, Ignore la Panique des Gobelins, Protect Da Boss, Syphoned Strength, Bande de Guerre",
+        "name_it": "Choppas, Da Troll Calla, Ignore Goblin Panic, Protect Da Boss, Syphoned Strength, Warband",
+        "name_pl": "Choppas, Da Troll Calla, Ignore Goblin Panic, Protect Da Boss, Syphoned Strength, Warband"
+      },
+      "name": "Wazzock da Grand Vizzerler (Ogdruz) ",
+      "magic": { "items": [] },
+      "generatedSpells": { "troll-magic": [] }
+    },
+    {
+      "name_en": "Troll Hag",
+      "name_de": "Troll Hag",
+      "name_es": "Troll Hag",
+      "name_fr": "Troll Hag",
+      "name_it": "Troll Hag",
+      "name_pl": "Troll Hag",
+      "id": "troll-hag.govzjkehls",
+      "points": 235,
+      "command": [
+        {
+          "name_en": "General",
+          "name_de": "General",
+          "name_fr": "Général",
+          "name_es": "General",
+          "points": 0,
+          "id": 0
+        }
+      ],
+      "armyComposition": {
+        "orc-and-goblin-tribes": {
+          "category": "rare",
+          "notes": {
+            "name_en": "Any army made using the Orc & Goblin Tribes Grand Army composition list that includes one or more Troll Mob may include 0-1 Troll Hag as a Rare choice.",
+            "name_de": "",
+            "name_es": "",
+            "name_fr": "Any army made using the Orc & Goblin Tribes Grand Army composition list that includes one or more Troll Mob may include 0-1 Troll Hag as a Rare choice.",
+            "name_it": "",
+            "name_pl": ""
+          }
+        },
+        "troll-horde": { "category": "characters" }
+      },
+      "equipment": [
+        {
+          "name_en": "Hand weapon (Gnarled stump), Troll vomit, Swamp breath",
+          "name_de": "Hand weapon (Gnarled stump), Troll vomit, Swamp breath",
+          "name_es": "Hand weapon (Gnarled stump), Troll vomit, Swamp breath",
+          "name_fr": "Arme de base (Gnarled stump), Troll vomit, Swamp breath",
+          "name_it": "Hand weapon (Gnarled stump), Troll vomit, Swamp breath",
+          "name_pl": "Hand weapon (Gnarled stump), Troll vomit, Swamp breath",
+          "points": 0,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Heavy armour (Scaly skin)",
+          "name_de": "Heavy armour (Scaly skin)",
+          "name_es": "Heavy armour (Scaly skin)",
+          "name_fr": "Armure lourde (Scaly skin)",
+          "name_it": "Heavy armour (Scaly skin)",
+          "name_pl": "Heavy armour (Scaly skin)",
+          "points": 0,
+          "active": true,
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Level 2 Wizard",
+          "name_de": "Level 2 Wizard",
+          "name_es": "Level 2 Wizard",
+          "name_fr": "Sorcier de Niveau 2",
+          "name_it": "Level 2 Wizard",
+          "name_pl": "Level 2 Wizard",
+          "points": 35,
+          "stackable": false,
+          "minimum": 0,
+          "maximum": 0,
+          "id": 0,
+          "active": false
+        }
+      ],
+      "mounts": [],
+      "items": [
+        {
+          "name_en": "Magic Items",
+          "name_de": "Magische Gegenstände",
+          "name_es": "Objetos mágicos",
+          "name_fr": "Objets Magiques",
+          "name_it": "Oggetti magici",
+          "name_pl": "Magiczne przedmioty",
+          "types": [
+            "weapon",
+            "armor-mages",
+            "talisman",
+            "arcane-item",
+            "enchanted-item"
+          ],
+          "selected": [
+            {
+              "name_de": "Glühendes grünes Amulett",
+              "name_en": "Glowy Green Amulet",
+              "name_cn": "绿光护身符",
+              "name_fr": "Amulette Verte Luisante",
+              "name_it": "Glowy Green Amuleto",
+              "points": 35,
+              "type": "talisman",
+              "onePerArmy": true,
+              "name": "glowy green amulet",
+              "id": 14
+            }
+          ],
+          "maxPoints": 50
+        }
+      ],
+      "lores": ["troll-magic", "battle-magic"],
+      "specialRules": {
+        "name_en": "Close Order, Flammable, Immune to Psychology, Indiscriminate Hunger, Large Target, Motherly Love, Regeneration (5+), Slimy Shanks, Stomp Attacks (D6), Stupidity, Terror, Timmm-berrr!, Unbreakable",
+        "name_de": "Close Order, Flammable, Immune to Psychology, Indiscriminate Hunger, Large Target, Motherly Love, Regeneration (5+), Slimy Shanks, Stomp Attacks (D6), Stupidity, Terror, Timmm-berrr!, Unbreakable",
+        "name_es": "Close Order, Flammable, Immune to Psychology, Indiscriminate Hunger, Large Target, Motherly Love, Regeneration (5+), Slimy Shanks, Stomp Attacks (D6), Stupidity, Terror, Timmm-berrr!, Unbreakable",
+        "name_fr": "Ordre Serré, Inflammable, Immune to Psychology, Indiscriminate Hunger, Grande Cible, Motherly Love, Régénération (5+), Slimy Shanks, Attaques de Piétinement (D6), Stupidité, Terreur, Timmm-berrr!, Indémoralisable",
+        "name_it": "Close Order, Flammable, Immune to Psychology, Indiscriminate Hunger, Large Target, Motherly Love, Regeneration (5+), Slimy Shanks, Stomp Attacks (D6), Stupidity, Terror, Timmm-berrr!, Unbreakable",
+        "name_pl": "Close Order, Flammable, Immune to Psychology, Indiscriminate Hunger, Large Target, Motherly Love, Regeneration (5+), Slimy Shanks, Stomp Attacks (D6), Stupidity, Terror, Timmm-berrr!, Unbreakable"
+      },
+      "name": "Wazzock's Rockery (Troll Hag) ",
+      "generatedSpells": null
+    }
+  ],
+  "core": [
+    {
+      "name_en": "Stone Troll Mob",
+      "name_cn": "石巨魔战帮",
+      "name_de": "Steintroll-Mob",
+      "name_fr": "Bande de Trolls de Pierre",
+      "id": "stone-troll-mob.hykeznetp",
+      "points": 45,
+      "minimum": 1,
+      "maximum": 9,
+      "armyComposition": {
+        "troll-horde": {
+          "category": "core",
+          "notes": {
+            "name_en": "1 Troll Mob per 1000 points, 0-1 additional Troll Mob may be taken as a Core choice per Troll Hag taken",
+            "name_cn": "每1000分1巨魔战帮，每选取1巨魔女巫，0-1额外巨魔战帮可作为核心选取",
+            "name_de": "1 Troll-Mob pro 1.000 Punkte. Pro gewählter Trollhexe darf 0-1 zusätzlicher Troll-Mob als Kern-Auswahl gewählt werden",
+            "name_fr": "1 Bande de Trolls par tranche de 1000 points, 0-1 Bande de Trolls additionnelle peut être prise comme choix d’Unité de Base par Mégère Trollesse prise"
+          }
+        }
+      },
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Hand weapons, Troll vomit",
+          "name_cn": "单手武器, 巨魔呕吐",
+          "name_de": "Handwaffen, Trollkotze",
+          "name_fr": "Armes de base, Vomi de Troll",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "equippedDefault": true,
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_fr": "Armure légère",
+          "points": 0,
+          "active": true,
+          "notes": {
+            "name_en": "Calloused hide",
+            "name_cn": "坚硬皮肤",
+            "name_de": "Schwielige Haut",
+            "name_fr": "Peau calleuse"
+          },
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Additional hand weapons",
+          "name_cn": "额外单手武器",
+          "name_de": "Zusätzliche Handwaffen",
+          "name_fr": "Armes de base additionnelles",
+          "points": 3,
+          "perModel": true,
+          "stackable": true,
+          "id": 0
+        },
+        {
+          "name_en": "Great weapons",
+          "name_cn": "重型武器",
+          "name_de": "Zweihandwaffen",
+          "name_fr": "Armes lourdes",
+          "points": 4,
+          "perModel": true,
+          "stackable": true,
+          "id": 1,
+          "stackableCount": 8
+        }
+      ],
+      "mounts": [],
+      "items": [],
+      "specialRules": {
+        "name_en": "Armour Bane (1), Armoured Hide (1), Close Order, Fear, Flammable, Magic Resistance (-1), Regeneration (5+), Stupidity, Motley Crew",
+        "name_cn": "碎甲攻击(1), 坚硬皮肤(1), 紧密阵型, 恐惧, 易燃, 魔法抗性(-1), 重生(5+), 愚笨, Motley Crew",
+        "name_de": "Rüstungsfluch (1), Zähe Haut (1), Geschlossen Ränge, Angst, Brennbar, Magieresistenz (-1), Regeneration (5+), Blödheit, Motley Crew",
+        "name_es": "Armour Bane (1), Armoured Hide (1), Close Order, Fear, Flammable, Magic Resistance (-1), Regeneration (5+), Stupidity, Motley Crew",
+        "name_fr": "Arme Perforante (1), Peau Blindée (1), Ordre Serré, Peur, Inflammable, Résistance à la Magie (-1), Régénération (5+), Stupidité, Bande Hétéroclite"
+      },
+      "strength": 8
+    },
+    {
+      "name_en": "Stone Troll Mob",
+      "name_cn": "石巨魔战帮",
+      "name_de": "Steintroll-Mob",
+      "name_fr": "Bande de Trolls de Pierre",
+      "id": "stone-troll-mob.uiupdoyj",
+      "points": 45,
+      "minimum": 1,
+      "maximum": 9,
+      "armyComposition": {
+        "troll-horde": {
+          "category": "core",
+          "notes": {
+            "name_en": "1 Troll Mob per 1000 points, 0-1 additional Troll Mob may be taken as a Core choice per Troll Hag taken",
+            "name_cn": "每1000分1巨魔战帮，每选取1巨魔女巫，0-1额外巨魔战帮可作为核心选取",
+            "name_de": "1 Troll-Mob pro 1.000 Punkte. Pro gewählter Trollhexe darf 0-1 zusätzlicher Troll-Mob als Kern-Auswahl gewählt werden",
+            "name_fr": "1 Bande de Trolls par tranche de 1000 points, 0-1 Bande de Trolls additionnelle peut être prise comme choix d’Unité de Base par Mégère Trollesse prise"
+          }
+        }
+      },
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Hand weapons, Troll vomit",
+          "name_cn": "单手武器, 巨魔呕吐",
+          "name_de": "Handwaffen, Trollkotze",
+          "name_fr": "Armes de base, Vomi de Troll",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "equippedDefault": true,
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_fr": "Armure légère",
+          "points": 0,
+          "active": true,
+          "notes": {
+            "name_en": "Calloused hide",
+            "name_cn": "坚硬皮肤",
+            "name_de": "Schwielige Haut",
+            "name_fr": "Peau calleuse"
+          },
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Additional hand weapons",
+          "name_cn": "额外单手武器",
+          "name_de": "Zusätzliche Handwaffen",
+          "name_fr": "Armes de base additionnelles",
+          "points": 3,
+          "perModel": true,
+          "stackable": true,
+          "id": 0
+        },
+        {
+          "name_en": "Great weapons",
+          "name_cn": "重型武器",
+          "name_de": "Zweihandwaffen",
+          "name_fr": "Armes lourdes",
+          "points": 4,
+          "perModel": true,
+          "stackable": true,
+          "id": 1,
+          "stackableCount": 2
+        }
+      ],
+      "mounts": [],
+      "items": [],
+      "specialRules": {
+        "name_en": "Armour Bane (1), Armoured Hide (1), Close Order, Fear, Flammable, Magic Resistance (-1), Regeneration (5+), Stupidity, Motley Crew",
+        "name_cn": "碎甲攻击(1), 坚硬皮肤(1), 紧密阵型, 恐惧, 易燃, 魔法抗性(-1), 重生(5+), 愚笨, Motley Crew",
+        "name_de": "Rüstungsfluch (1), Zähe Haut (1), Geschlossen Ränge, Angst, Brennbar, Magieresistenz (-1), Regeneration (5+), Blödheit, Motley Crew",
+        "name_es": "Armour Bane (1), Armoured Hide (1), Close Order, Fear, Flammable, Magic Resistance (-1), Regeneration (5+), Stupidity, Motley Crew",
+        "name_fr": "Arme Perforante (1), Peau Blindée (1), Ordre Serré, Peur, Inflammable, Résistance à la Magie (-1), Régénération (5+), Stupidité, Bande Hétéroclite"
+      },
+      "strength": 2
+    },
+    {
+      "name_en": "Stone Troll Mob",
+      "name_cn": "石巨魔战帮",
+      "name_de": "Steintroll-Mob",
+      "name_fr": "Bande de Trolls de Pierre",
+      "id": "stone-troll-mob.chsaeaibwn",
+      "points": 45,
+      "minimum": 1,
+      "maximum": 9,
+      "armyComposition": {
+        "troll-horde": {
+          "category": "core",
+          "notes": {
+            "name_en": "1 Troll Mob per 1000 points, 0-1 additional Troll Mob may be taken as a Core choice per Troll Hag taken",
+            "name_cn": "每1000分1巨魔战帮，每选取1巨魔女巫，0-1额外巨魔战帮可作为核心选取",
+            "name_de": "1 Troll-Mob pro 1.000 Punkte. Pro gewählter Trollhexe darf 0-1 zusätzlicher Troll-Mob als Kern-Auswahl gewählt werden",
+            "name_fr": "1 Bande de Trolls par tranche de 1000 points, 0-1 Bande de Trolls additionnelle peut être prise comme choix d’Unité de Base par Mégère Trollesse prise"
+          }
+        }
+      },
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Hand weapons, Troll vomit",
+          "name_cn": "单手武器, 巨魔呕吐",
+          "name_de": "Handwaffen, Trollkotze",
+          "name_fr": "Armes de base, Vomi de Troll",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "equippedDefault": true,
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_fr": "Armure légère",
+          "points": 0,
+          "active": true,
+          "notes": {
+            "name_en": "Calloused hide",
+            "name_cn": "坚硬皮肤",
+            "name_de": "Schwielige Haut",
+            "name_fr": "Peau calleuse"
+          },
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Additional hand weapons",
+          "name_cn": "额外单手武器",
+          "name_de": "Zusätzliche Handwaffen",
+          "name_fr": "Armes de base additionnelles",
+          "points": 3,
+          "perModel": true,
+          "stackable": true,
+          "id": 0
+        },
+        {
+          "name_en": "Great weapons",
+          "name_cn": "重型武器",
+          "name_de": "Zweihandwaffen",
+          "name_fr": "Armes lourdes",
+          "points": 4,
+          "perModel": true,
+          "stackable": true,
+          "id": 1,
+          "stackableCount": 2
+        }
+      ],
+      "mounts": [],
+      "items": [],
+      "specialRules": {
+        "name_en": "Armour Bane (1), Armoured Hide (1), Close Order, Fear, Flammable, Magic Resistance (-1), Regeneration (5+), Stupidity, Motley Crew",
+        "name_cn": "碎甲攻击(1), 坚硬皮肤(1), 紧密阵型, 恐惧, 易燃, 魔法抗性(-1), 重生(5+), 愚笨, Motley Crew",
+        "name_de": "Rüstungsfluch (1), Zähe Haut (1), Geschlossen Ränge, Angst, Brennbar, Magieresistenz (-1), Regeneration (5+), Blödheit, Motley Crew",
+        "name_es": "Armour Bane (1), Armoured Hide (1), Close Order, Fear, Flammable, Magic Resistance (-1), Regeneration (5+), Stupidity, Motley Crew",
+        "name_fr": "Arme Perforante (1), Peau Blindée (1), Ordre Serré, Peur, Inflammable, Résistance à la Magie (-1), Régénération (5+), Stupidité, Bande Hétéroclite"
+      },
+      "strength": 2
+    },
+    {
+      "name_en": "Orc Mob",
+      "name_de": "Orc Mob",
+      "name_fr": "Bandes d'Orques",
+      "id": "orc-mob.hjtyv",
+      "points": 5,
+      "minimum": 5,
+      "maximum": 0,
+      "armyComposition": {
+        "orc-and-goblin-tribes": { "category": "core" },
+        "troll-horde": { "category": "core" }
+      },
+      "command": [
+        {
+          "name_en": "Boss (champion)",
+          "name_de": "Boss (champion)",
+          "name_fr": "Chef (champion)",
+          "points": 7,
+          "magic": {
+            "types": ["weapon", "armor", "talisman", "enchanted-item"],
+            "maxPoints": 25,
+            "selected": [
+              {
+                "name_de": "Die Kappe des denkenden Orks",
+                "name_en": "Da Thinkin' Orc's 'At",
+                "name_cn": "寻思帽.",
+                "name_fr": "L’Chapeau d’Intello",
+                "points": 25,
+                "type": "enchanted-item",
+                "onePerArmy": true,
+                "name": "da thinkin' orc's 'at",
+                "id": 27
+              }
+            ]
+          },
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Standard bearer",
+          "name_de": "Standard bearer",
+          "name_fr": "Porte-étendard",
+          "points": 5,
+          "magic": {
+            "types": ["banner"],
+            "maxPoints": 50,
+            "selected": [
+              {
+                "name_de": "Die große rot Lump'nflagge",
+                "name_en": "The Big Red Raggedy Flag",
+                "name_cn": "破旧大红旗",
+                "name_fr": "Le Grand Drapeau Rouj’",
+                "name_it": "The Big Red Raggedy Flag",
+                "points": 50,
+                "type": "banner",
+                "onePerArmy": true,
+                "name": "the big red raggedy flag",
+                "id": 16
+              }
+            ]
+          },
+          "id": 1,
+          "active": true
+        },
+        {
+          "name_en": "Musician",
+          "name_de": "Musician",
+          "name_fr": "Musicien",
+          "points": 5,
+          "id": 2,
+          "active": true
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapons",
+          "name_de": "Hand weapons",
+          "name_fr": "Armes de base",
+          "points": 0,
+          "perModel": true,
+          "active": false,
+          "equippedDefault": true,
+          "id": 0
+        },
+        {
+          "name_en": "Warbows",
+          "name_de": "Warbows",
+          "name_fr": "Arcs de Guerre",
+          "points": 0,
+          "perModel": true,
+          "id": 1,
+          "active": false
+        },
+        {
+          "name_en": "Additional hand weapons",
+          "name_de": "Additional hand weapons",
+          "name_fr": "Armes de base additionnelles",
+          "points": 1,
+          "perModel": true,
+          "id": 2,
+          "active": true
+        },
+        {
+          "name_en": "Thrusting spears",
+          "name_de": "Thrusting spears",
+          "name_fr": "Lances d'Infanterie",
+          "points": 1,
+          "perModel": true,
+          "id": 3,
+          "active": false
+        },
+        {
+          "name_en": "Throwing spears",
+          "name_de": "Throwing spears",
+          "name_fr": "Javelots",
+          "points": 1,
+          "perModel": true,
+          "id": 4,
+          "active": false
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_de": "Light armour",
+          "name_fr": "Armure légère",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "activeDefault": false,
+          "id": 0
+        },
+        {
+          "name_en": "Frenzy (no armour)",
+          "name_de": "Frenzy (no armour)",
+          "name_fr": "Frénésie (à la place de l'Armure légère)",
+          "points": 1,
+          "perModel": true,
+          "id": 1,
+          "active": false
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Warpaint (if frenzied)",
+          "name_de": "Warpaint (if frenzied)",
+          "name_fr": "Peintures de Guerre (si frénétique)",
+          "points": 1,
+          "perModel": true,
+          "minimum": 0,
+          "maximum": 0,
+          "id": 0,
+          "active": false
+        },
+        {
+          "name_en": "Big Stabbas",
+          "name_de": "Big Stabbas",
+          "name_fr": "Grands Kitrou",
+          "points": 5,
+          "minimum": 0,
+          "maximum": 0,
+          "id": 1
+        },
+        {
+          "name_en": "Shields",
+          "name_de": "Shields",
+          "name_fr": "Boucliers",
+          "points": 1,
+          "perModel": true,
+          "minimum": 0,
+          "maximum": 0,
+          "id": 2,
+          "active": true
+        },
+        {
+          "name_en": "Big 'Uns",
+          "name_de": "Big 'Uns",
+          "name_fr": "Kostos",
+          "points": 2,
+          "perModel": true,
+          "minimum": 0,
+          "maximum": 0,
+          "id": 3,
+          "active": true
+        },
+        {
+          "name_en": "Skirmishers",
+          "name_de": "Skirmishers",
+          "name_fr": "Tirailleurs",
+          "points": 0,
+          "perModel": true,
+          "minimum": 0,
+          "maximum": 0,
+          "id": 4,
+          "active": false
+        }
+      ],
+      "mounts": [],
+      "specialRules": {
+        "name_en": "Choppas, Close Order, Ignore Goblin Panic, Impetuous, Warband",
+        "name_de": "Choppas, Close Order, Ignore Goblin Panic, Impetuous, Warband",
+        "name_es": "Choppas, Close Order, Ignore Goblin Panic, Impetuous, Warband",
+        "name_fr": "Kikoup', Ordre Serré, Ignore la Panique des Gobelins, Impétueux, Bande de Guerre"
+      },
+      "strength": 20,
+      "magic": { "items": [] },
+      "name": "Berk's Boyz (Orc Mob)"
+    }
+  ],
+  "special": [],
+  "rare": [
+    {
+      "name_en": "Giant",
+      "name_de": "Giant",
+      "name_fr": "Géant",
+      "id": "giant.fkyfjfh",
+      "points": 200,
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Giant's club",
+          "name_de": "Giant's club",
+          "name_fr": "Massue de Géant",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_de": "Light armour",
+          "name_fr": "Armure légère",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [],
+      "mounts": [],
+      "specialRules": {
+        "name_en": "Close Order, *Giant Attacks, Immune To Psychology, Large Target, *Pick Up And..., Stomp Attacks (D6), Terror, Timmm-berrr!, Unbreakable",
+        "name_de": "Close Order, *Giant Attacks, Immune To Psychology, Large Target, *Pick Up And..., Stomp Attacks (D6), Terror, Timmm-berrr!, Unbreakable",
+        "name_es": "Close Order, *Giant Attacks, Immune To Psychology, Large Target, *Pick Up And..., Stomp Attacks (D6), Terror, Timmm-berrr!, Unbreakable",
+        "name_fr": "Ordre Serré, *Attaques de Géant, Immunisé à la Psychologie, Grande Cible, *Ramassage, Attaques de Piétinement (D6), Terreur, Timmm-berrr!, Indémoralisable"
+      },
+      "name": "Kevin (Giant) "
+    },
+    {
+      "name_en": "Giant",
+      "name_de": "Giant",
+      "name_fr": "Géant",
+      "id": "giant.oprjvuhn",
+      "points": 200,
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Giant's club",
+          "name_de": "Giant's club",
+          "name_fr": "Massue de Géant",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_de": "Light armour",
+          "name_fr": "Armure légère",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [],
+      "mounts": [],
+      "specialRules": {
+        "name_en": "Close Order, *Giant Attacks, Immune To Psychology, Large Target, *Pick Up And..., Stomp Attacks (D6), Terror, Timmm-berrr!, Unbreakable",
+        "name_de": "Close Order, *Giant Attacks, Immune To Psychology, Large Target, *Pick Up And..., Stomp Attacks (D6), Terror, Timmm-berrr!, Unbreakable",
+        "name_es": "Close Order, *Giant Attacks, Immune To Psychology, Large Target, *Pick Up And..., Stomp Attacks (D6), Terror, Timmm-berrr!, Unbreakable",
+        "name_fr": "Ordre Serré, *Attaques de Géant, Immunisé à la Psychologie, Grande Cible, *Ramassage, Attaques de Piétinement (D6), Terreur, Timmm-berrr!, Indémoralisable"
+      },
+      "name": "Perry (Giant) "
+    }
+  ],
+  "mercenaries": [
+    {
+      "name_en": "Bonegrinder Giant",
+      "name_cn": "碾骨者巨人",
+      "name_de": "Knochenmalmer-Riese",
+      "name_es": "Bonegrinder Giant",
+      "name_fr": "Géant Broyeur d’Os",
+      "name_it": "Bonegrinder Giant",
+      "name_pl": "Bonegrinder Giant",
+      "id": "bonegrinder-giant.vmqybqsp",
+      "army": "orc-and-goblin-tribes",
+      "armyComposition": { "renegade-crowns": { "notes": { "name_en": "" } } },
+      "points": 300,
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Bonegrinder Giant's club",
+          "name_cn": "碾骨者巨人大棒",
+          "name_de": "Knochenmalmer-Riesenkeule",
+          "name_es": "Bonegrinder Giant's club",
+          "name_fr": "Massue de Géant Broyeur d’Os",
+          "name_it": "Bonegrinder Giant's club",
+          "name_pl": "Bonegrinder Giant's club",
+          "points": 0,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_es": "Light armour",
+          "name_fr": "Armure légère",
+          "name_it": "Light armour",
+          "name_pl": "Light armour",
+          "points": 0,
+          "active": true,
+          "notes": {
+            "name_en": "Calloused hide",
+            "name_cn": "坚硬皮肤",
+            "name_de": "Schwielige Haut",
+            "name_fr": "Peau calleuse"
+          },
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [],
+      "mounts": [],
+      "items": [],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Bonegrinder Giant Attacks, Close Order, Immune to Psychology, Large Target, Mercenaries, Stomp Attacks (D6+1), Terror, Timmm-berrr!, Unbreakable",
+        "name_cn": "碾骨者巨人攻击, 紧密阵型, 心理免疫, 大型目标, 佣兵, 践踏攻击(D6+1), 惊骇, 倒啦！, 永不战败",
+        "name_de": "Knochenmalmer-Riesenattacken, Geschlossen Ränge, Immun gegen Psychologie, Großes Ziel, Söldner, Stampfattacken (W6+1), Entsetzen, Baum fällt!, Unerschütterlich",
+        "name_es": "Bonegrinder Giant Attacks, Close Order, Immune to Psychology, Large Target, Mercenaries, Stomp Attacks (D6+1), Terror, Timmm-berrr!, Unbreakable",
+        "name_fr": "Attaques de Géant Broyeur d’Os, Ordre Serré, Immunisé à la Psychologie, Grande Cible, Mercenaires, Attaques de Piétinement (D6+1), Terreur, Timmm-berrr!, Indémoralisable",
+        "name_it": "Bonegrinder Giant Attacks, Close Order, Immune to Psychology, Large Target, Mercenaries, Stomp Attacks (D6+1), Terror, Timmm-berrr!, Unbreakable",
+        "name_pl": "Bonegrinder Giant Attacks, Close Order, Immune to Psychology, Large Target, Mercenaries, Stomp Attacks (D6+1), Terror, Timmm-berrr!, Unbreakable"
+      },
+      "notes": {
+        "name_en": "0-1 Bonegrinder Giant",
+        "name_cn": "0-1碾骨者巨人",
+        "name_de": "0-1 Knochenmalmer-Riese",
+        "name_es": "0-1 Bonegrinder Giant",
+        "name_fr": "0-1 Géant Broyeur d’Os",
+        "name_it": "0-1 Bonegrinder Giant",
+        "name_pl": "0-1 Bonegrinder Giant"
+      },
+      "name": "Pebble (Bonegrinder Giant) "
+    }
+  ],
+  "allies": [],
+  "id": "rlmr",
+  "armyComposition": "troll-horde",
+  "folder": null,
+  "compositionRule": "grand-melee-combined-arms"
+}
