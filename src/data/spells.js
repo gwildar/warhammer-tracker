@@ -1028,6 +1028,26 @@ export const LORES = {
       },
     ],
   },
+  "vortex-of-souls": {
+    name: "Vortex of Souls",
+    bound: true,
+    spells: [
+      {
+        num: 1,
+        name: "Light of Death",
+        type: "magic-missile",
+        cv: "7+",
+        range: '36"',
+      },
+      {
+        num: 2,
+        name: "Light of Protection",
+        type: "enchantment",
+        cv: "8+",
+        range: "Self",
+      },
+    ],
+  },
 };
 
 export function getSpellTypeLabel(type) {
