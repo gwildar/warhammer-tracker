@@ -621,8 +621,8 @@ export function renderCombatWeaponsContext(army) {
         conditionalStrengthMods,
         assignedCharProfiles,
         unitStrength:
-          (u.unitStrength || 0) +
-          assignedChars.reduce((sum, c) => sum + (c.unitStrength || 0), 0),
+          (u.unitStrength ?? 0) +
+          assignedChars.reduce((sum, c) => sum + (c.unitStrength ?? 0), 0),
         crew: [],
       });
       continue;
@@ -845,8 +845,8 @@ export function renderCombatWeaponsContext(army) {
       conditionalStrengthMods,
       assignedCharProfiles,
       unitStrength:
-        (u.unitStrength || 0) +
-        assignedChars.reduce((sum, c) => sum + (c.unitStrength || 0), 0),
+        (u.unitStrength ?? 0) +
+        assignedChars.reduce((sum, c) => sum + (c.unitStrength ?? 0), 0),
     });
   }
 
