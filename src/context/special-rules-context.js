@@ -78,6 +78,19 @@ function injectTerrorFear(unitRules) {
   }
 }
 
+function normalisePhaseEntry(rule, entry) {
+  if (typeof entry === "string") {
+    return {
+      subPhaseId: entry,
+      description: rule.description,
+      yourTurnOnly: rule.yourTurnOnly,
+      opponentOnly: rule.opponentOnly,
+      fromRound: rule.fromRound,
+    };
+  }
+  return entry;
+}
+
 function buildUnitRules(unit) {
   const unitRules = [];
 
@@ -141,7 +154,8 @@ export function renderSpecialRulesContext(army, subPhase) {
       const normName = normaliseRuleName(ruleName);
       for (const rule of SPECIAL_RULES) {
         if (!ruleMatches(rule, normName)) continue;
-        for (const phase of rule.phases) {
+        for (const rawEntry of rule.phases) {
+          const phase = normalisePhaseEntry(rule, rawEntry);
           if (phase.subPhaseId !== subPhase.id) continue;
           if (phase.fromRound && round < phase.fromRound) continue;
           if (phase.opponentOnly) continue;
@@ -183,7 +197,8 @@ export function renderSpecialRulesForPhase(army, phase) {
         const normName = normaliseRuleName(ruleName);
         for (const rule of SPECIAL_RULES) {
           if (!ruleMatches(rule, normName)) continue;
-          for (const rulePhase of rule.phases) {
+          for (const rawEntry of rule.phases) {
+            const rulePhase = normalisePhaseEntry(rule, rawEntry);
             if (rulePhase.subPhaseId !== sub.id) continue;
             if (rulePhase.fromRound && round < rulePhase.fromRound) continue;
             if (rulePhase.yourTurnOnly) continue;

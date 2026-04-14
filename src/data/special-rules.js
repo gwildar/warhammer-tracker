@@ -3,7 +3,7 @@
  *
  * Each rule has:
  *   name        – canonical name (as it appears on army lists)
- *   phases      – array of { phaseId, subPhaseId, description } entries
+ *   phases      – string array of sub-phase IDs (simple rules), or object array of { subPhaseId, description } (complex rules with per-phase descriptions), or [] (passive rules)
  *   passive     – true if the rule has no phase-specific trigger (always-on modifier)
  *
  * Phase/sub-phase IDs match those defined in phases.js.
@@ -12,45 +12,29 @@
  */
 
 export const SPECIAL_RULES = [
-  // ─── Deployment / Pre-game ────────────────────────────────────────
   {
     id: "scouts",
     displayName: "Scouts",
-    phases: [
-      {
-        phaseId: null,
-        subPhaseId: null,
-        description:
-          'Deploy after all other units from both armies. Must be placed >12" from enemy models. Cannot charge on first turn.',
-      },
-    ],
+    passive: true,
+    description:
+      'Deploy after all other units from both armies. Must be placed >12" from enemy models. Cannot charge on first turn.',
+    phases: [],
   },
   {
     id: "vanguard",
     displayName: "Vanguard",
-    phases: [
-      {
-        phaseId: null,
-        subPhaseId: null,
-        description:
-          "After deployment, make a Vanguard move (basic movement, no march). Cannot declare charges on first turn.",
-      },
-    ],
+    passive: true,
+    description:
+      "After deployment, make a Vanguard move (basic movement, no march). Cannot declare charges on first turn.",
+    phases: [],
   },
-
-  // ─── Strategy Phase ───────────────────────────────────────────────
   {
     id: "stupidity",
     displayName: "Stupidity",
-    phases: [
-      {
-        phaseId: "strategy",
-        subPhaseId: "start-of-turn",
-        yourTurnOnly: true,
-        description:
-          "Unless fleeing or in combat, test Ld. If failed: cannot move, shoot, cast, or dispel until next Start of Turn. Must Hold if charged.",
-      },
-    ],
+    description:
+      "Unless fleeing or in combat, test Ld. If failed: cannot move, shoot, cast, or dispel until next Start of Turn. Must Hold if charged.",
+    phases: ["start-of-turn"],
+    yourTurnOnly: true,
   },
   {
     id: "ambushers",
@@ -58,14 +42,12 @@ export const SPECIAL_RULES = [
     aliases: ["Ambush"],
     phases: [
       {
-        phaseId: "strategy",
         subPhaseId: "start-of-turn",
         fromRound: 2,
         description:
           "Roll D6 for each unit in reserve. 4+: arrives during Compulsory Moves. Auto-arrives round 5.",
       },
       {
-        phaseId: "movement",
         subPhaseId: "compulsory-moves",
         fromRound: 2,
         description:
@@ -76,128 +58,83 @@ export const SPECIAL_RULES = [
   {
     id: "invocation of nehek",
     displayName: "Invocation of Nehek",
-    phases: [
-      {
-        phaseId: "strategy",
-        subPhaseId: "command",
-        yourTurnOnly: true,
-        description:
-          'If not engaged, resurrect D3 + Wizard Level Wounds of Infantry, or Wizard Level Wounds of Monstrous/Cavalry, or 1 Wound of Behemoth/War Machine, in a friendly Necromantic Undead unit within 12". Requires Ld test.',
-      },
-    ],
+    description:
+      'If not engaged, resurrect D3 + Wizard Level Wounds of Infantry, or Wizard Level Wounds of Monstrous/Cavalry, or 1 Wound of Behemoth/War Machine, in a friendly Necromantic Undead unit within 12". Requires Ld test.',
+    phases: ["command"],
+    yourTurnOnly: true,
   },
   {
     id: "rallying cry",
     displayName: "Rallying Cry",
-    phases: [
-      {
-        phaseId: "strategy",
-        subPhaseId: "command",
-        yourTurnOnly: true,
-        description:
-          "During Command sub-phase, a non-engaged character nominates a fleeing friendly unit within Command range to take a Rally test. If failed, the unit may still try again in the Rally sub-phase.",
-      },
-    ],
+    description:
+      "During Command sub-phase, a non-engaged character nominates a fleeing friendly unit within Command range to take a Rally test. If failed, the unit may still try again in the Rally sub-phase.",
+    phases: ["command"],
+    yourTurnOnly: true,
   },
   {
     id: "frenzy",
     displayName: "Frenzy",
     phases: [
       {
-        phaseId: "movement",
         subPhaseId: "declare-charges",
         description:
           "If majority Frenzied, unit must declare a charge if able. Cannot choose Flee as a charge reaction.",
       },
       {
-        phaseId: "combat",
         subPhaseId: "choose-fight",
         description:
           "+1 Attack during a turn the unit charged or the turn after a follow-up move. Auto-passes Fear, Panic, Terror tests. Lost after losing a combat round.",
       },
       {
-        phaseId: "combat",
         subPhaseId: "pursuit",
         description: "Cannot make Restraint tests — must pursue.",
       },
     ],
   },
-
-  // ─── Movement Phase ───────────────────────────────────────────────
   {
     id: "impetuous",
     displayName: "Impetuous",
-    phases: [
-      {
-        phaseId: "movement",
-        subPhaseId: "declare-charges",
-        yourTurnOnly: true,
-        description:
-          "If able to charge, must take Ld test. If failed, must declare a charge.",
-      },
-    ],
+    description:
+      "If able to charge, must take Ld test. If failed, must declare a charge.",
+    phases: ["declare-charges"],
+    yourTurnOnly: true,
   },
   {
     id: "counter charge",
     displayName: "Counter Charge",
-    phases: [
-      {
-        phaseId: "movement",
-        subPhaseId: "declare-charges",
-        opponentOnly: true,
-        description:
-          "Charge reaction vs cavalry/chariots/monsters charging front arc. Pivot to face, move D3+1\" toward charger. Both units count as having charged. Cannot use if distance < charger's M.",
-      },
-    ],
+    description:
+      "Charge reaction vs cavalry/chariots/monsters charging front arc. Pivot to face, move D3+1\" toward charger. Both units count as having charged. Cannot use if distance < charger's M.",
+    phases: ["declare-charges"],
+    opponentOnly: true,
   },
   {
     id: "fire & flee",
     displayName: "Fire & Flee",
-    phases: [
-      {
-        phaseId: "movement",
-        subPhaseId: "declare-charges",
-        opponentOnly: true,
-        description:
-          "Charge reaction: Stand & Shoot then Flee. Flee roll discards lowest D6. Cannot use if distance < charger's M.",
-      },
-    ],
+    description:
+      "Charge reaction: Stand & Shoot then Flee. Flee roll discards lowest D6. Cannot use if distance < charger's M.",
+    phases: ["declare-charges"],
+    opponentOnly: true,
   },
   {
     id: "feigned flight",
     displayName: "Feigned Flight",
-    phases: [
-      {
-        phaseId: "movement",
-        subPhaseId: "declare-charges",
-        description:
-          "If this unit Flees (or Fire & Flees) as a charge reaction, it automatically rallies at the end of its move.",
-      },
-    ],
+    description:
+      "If this unit Flees (or Fire & Flees) as a charge reaction, it automatically rallies at the end of its move.",
+    phases: ["declare-charges"],
   },
   {
     id: "random movement",
     displayName: "Random Movement",
-    phases: [
-      {
-        phaseId: "movement",
-        subPhaseId: "compulsory-moves",
-        description:
-          "Moves only during Compulsory Moves (distance determined by dice roll). Cannot march, charge, or manoeuvre beyond wheeling. Contacting an enemy counts as a charge.",
-      },
-    ],
+    description:
+      "Moves only during Compulsory Moves (distance determined by dice roll). Cannot march, charge, or manoeuvre beyond wheeling. Contacting an enemy counts as a charge.",
+    phases: ["compulsory-moves"],
   },
   {
     id: "drilled",
     displayName: "Drilled",
-    phases: [
-      {
-        phaseId: "movement",
-        subPhaseId: "remaining-moves",
-        description:
-          'Free "redress the ranks" before moving. Can march within 8" of enemy without Ld test. Characters joining the unit gain Drilled.',
-      },
-    ],
+    description:
+      'Free "redress the ranks" before moving. Can march within 8" of enemy without Ld test. Characters joining the unit gain Drilled.',
+    phases: ["remaining-moves"],
   },
   {
     id: "swiftstride",
@@ -205,20 +142,17 @@ export const SPECIAL_RULES = [
     chargeMod: { range: 3, tag: "Swift", color: "green", order: 1 },
     phases: [
       {
-        phaseId: "movement",
         subPhaseId: "declare-charges",
         yourTurnOnly: true,
         description: 'Max declarable charge range is M+6+3" (instead of M+6").',
       },
       {
-        phaseId: "movement",
         subPhaseId: "charge-moves",
         yourTurnOnly: true,
         description:
           '+3" max charge range. May add +D6 to Charge, Flee, or Pursuit rolls.',
       },
       {
-        phaseId: "combat",
         subPhaseId: "pursuit",
         description: "May add +D6 to Pursuit or Flee rolls.",
       },
@@ -229,14 +163,12 @@ export const SPECIAL_RULES = [
     displayName: "Fly",
     phases: [
       {
-        phaseId: "movement",
         subPhaseId: "remaining-moves",
         yourTurnOnly: true,
         description:
           'Move using Fly (X) characteristic, passing freely over models/terrain. Can march within 8" of enemy without Ld test. Must start and end on ground. Cannot join units without Fly.',
       },
       {
-        phaseId: "movement",
         subPhaseId: "charge-moves",
         yourTurnOnly: true,
         description:
@@ -247,599 +179,361 @@ export const SPECIAL_RULES = [
   {
     id: "fast cavalry",
     displayName: "Fast Cavalry",
-    phases: [
-      {
-        phaseId: "movement",
-        subPhaseId: "remaining-moves",
-        description:
-          "In Open Order, may perform Quick Turn even after marching.",
-      },
-    ],
+    description: "In Open Order, may perform Quick Turn even after marching.",
+    phases: ["remaining-moves"],
   },
   {
     id: "move through cover",
     displayName: "Move Through Cover",
-    phases: [
-      {
-        phaseId: "movement",
-        subPhaseId: "remaining-moves",
-        yourTurnOnly: true,
-        description:
-          "No movement penalty for difficult/dangerous terrain. Re-roll 1s on Dangerous Terrain tests.",
-      },
-    ],
+    description:
+      "No movement penalty for difficult/dangerous terrain. Re-roll 1s on Dangerous Terrain tests.",
+    phases: ["remaining-moves"],
+    yourTurnOnly: true,
   },
   {
     id: "lumbering",
     displayName: "Lumbering",
-    phases: [
-      {
-        phaseId: "movement",
-        subPhaseId: "remaining-moves",
-        description:
-          "After moving, unless it charged, marched or fled, a Lumbering model may pivot about its centre to change its facing by up to 90°.",
-      },
-    ],
+    description:
+      "After moving, unless it charged, marched or fled, a Lumbering model may pivot about its centre to change its facing by up to 90°.",
+    phases: ["remaining-moves"],
   },
   {
     id: "dragged along",
     displayName: "Dragged Along",
-    phases: [
-      {
-        phaseId: "movement",
-        subPhaseId: "remaining-moves",
-        description:
-          "If within 1\" of a friendly infantry unit (10+ models, not fleeing), may use that unit's Movement characteristic.",
-      },
-    ],
+    description:
+      "If within 1\" of a friendly infantry unit (10+ models, not fleeing), may use that unit's Movement characteristic.",
+    phases: ["remaining-moves"],
   },
-
-  // ─── Shooting Phase ───────────────────────────────────────────────
   {
     id: "stony stare",
     displayName: "Stony Stare",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "At the start of each Combat phase, enemy models in base contact must pass an Initiative test or suffer D3 S2 hits. No armour saves (Ward and Regeneration allowed).",
-      },
-    ],
+    description:
+      "At the start of each Combat phase, enemy models in base contact must pass an Initiative test or suffer D3 S2 hits. No armour saves (Ward and Regeneration allowed).",
+    phases: ["choose-fight"],
   },
   {
     id: "cleaving blow",
     displayName: "Cleaving Blow",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Natural 6 To Wound: regular infantry, heavy infantry, light/heavy cavalry, and war beasts cannot take armour or Regeneration saves (Ward saves allowed).",
-      },
-    ],
+    description:
+      "Natural 6 To Wound: regular infantry, heavy infantry, light/heavy cavalry, and war beasts cannot take armour or Regeneration saves (Ward saves allowed).",
+    phases: ["choose-fight"],
   },
   {
     id: "breath weapon",
     displayName: "Breath Weapon",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        description:
-          "Once per round in Shooting phase. Place flame template from model's front arc. Cannot be used in combat or for Stand & Shoot.",
-      },
-    ],
+    description:
+      "Once per round in Shooting phase. Place flame template from model's front arc. Cannot be used in combat or for Stand & Shoot.",
+    phases: ["shoot"],
   },
   {
     id: "volley fire",
     displayName: "Volley Fire",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        description:
-          "Half the models in each rank beyond the front (rounding up) may shoot, in addition to front rank. Cannot use if moved or declared Stand & Shoot.",
-      },
-    ],
+    description:
+      "Half the models in each rank beyond the front (rounding up) may shoot, in addition to front rank. Cannot use if moved or declared Stand & Shoot.",
+    phases: ["shoot"],
   },
   {
     id: "move & shoot",
     displayName: "Move & Shoot",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        description:
-          "Weapon can be used in the Shooting phase even if the model marched.",
-      },
-    ],
+    description:
+      "Weapon can be used in the Shooting phase even if the model marched.",
+    phases: ["shoot"],
   },
   {
     id: "move or shoot",
     displayName: "Move or Shoot",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        description:
-          "Weapon cannot be used if the model moved for any reason this turn (including rallying or reforming).",
-      },
-    ],
+    description:
+      "Weapon cannot be used if the model moved for any reason this turn (including rallying or reforming).",
+    phases: ["shoot"],
   },
   {
     id: "multiple shots",
     displayName: "Multiple Shots",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        description:
-          "Fire X shots at -1 To Hit, or a single shot at normal BS. Entire unit must choose the same option.",
-      },
-    ],
+    description:
+      "Fire X shots at -1 To Hit, or a single shot at normal BS. Entire unit must choose the same option.",
+    phases: ["shoot"],
   },
   {
     id: "quick shot",
     displayName: "Quick Shot",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        description:
-          "No -1 To Hit penalty for moving and shooting. Can Stand & Shoot regardless of distance.",
-      },
-    ],
+    description:
+      "No -1 To Hit penalty for moving and shooting. Can Stand & Shoot regardless of distance.",
+    phases: ["shoot"],
   },
   {
     id: "ignores cover",
     displayName: "Ignores Cover",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        description: "Ignore To Hit modifiers from partial or full cover.",
-      },
-    ],
+    description: "Ignore To Hit modifiers from partial or full cover.",
+    phases: ["shoot"],
   },
   {
     id: "ponderous",
     displayName: "Ponderous",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        description:
-          "-2 To Hit when moving and shooting (instead of the normal -1).",
-      },
-    ],
+    description:
+      "-2 To Hit when moving and shooting (instead of the normal -1).",
+    phases: ["shoot"],
   },
   {
     id: "cumbersome",
     displayName: "Cumbersome",
-    phases: [
-      {
-        phaseId: "movement",
-        subPhaseId: "declare-charges",
-        description:
-          "Weapon cannot be used for Stand & Shoot charge reactions.",
-      },
-    ],
+    description: "Weapon cannot be used for Stand & Shoot charge reactions.",
+    phases: ["declare-charges"],
   },
   {
     id: "evasive",
     displayName: "Evasive",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        opponentOnly: true,
-        description:
-          "When targeted during opponent's Shooting phase, unit may Fall Back in Good Order (flee away from the shooter then auto-rally).",
-      },
-    ],
+    description:
+      "When targeted during opponent's Shooting phase, unit may Fall Back in Good Order (flee away from the shooter then auto-rally).",
+    phases: ["shoot"],
+    opponentOnly: true,
   },
   {
     id: "reserve move",
     displayName: "Reserve Move",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "reserve-moves",
-        description:
-          "After all shooting, if unit did not charge/march/flee, make a basic move (no march). Resolved at end of Shooting phase.",
-      },
-    ],
+    description:
+      "After all shooting, if unit did not charge/march/flee, make a basic move (no march). Resolved at end of Shooting phase.",
+    phases: ["reserve-moves"],
   },
-
-  // ─── Combat Phase ─────────────────────────────────────────────────
   {
     id: "elven reflexes",
     displayName: "Elven Reflexes",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "+1 Initiative (max 10) during the first round of any combat. Does not apply to mount.",
-      },
-    ],
+    description:
+      "+1 Initiative (max 10) during the first round of any combat. Does not apply to mount.",
+    phases: ["choose-fight"],
   },
   {
     id: "strike first",
     displayName: "Strike First",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Initiative becomes 10 (before other modifiers). Cancelled out by Strike Last.",
-      },
-    ],
+    description:
+      "Initiative becomes 10 (before other modifiers). Cancelled out by Strike Last.",
+    phases: ["choose-fight"],
   },
   {
     id: "strike last",
     displayName: "Strike Last",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Initiative becomes 1 (before other modifiers). Cancelled out by Strike First.",
-      },
-    ],
+    description:
+      "Initiative becomes 1 (before other modifiers). Cancelled out by Strike First.",
+    phases: ["choose-fight"],
   },
   {
     id: "extra attacks",
     displayName: "Extra Attacks",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "+X modifier to Attacks characteristic. If random, roll when combat is chosen.",
-      },
-    ],
+    description:
+      "+X modifier to Attacks characteristic. If random, roll when combat is chosen.",
+    phases: ["choose-fight"],
   },
   {
     id: "random attacks",
     displayName: "Random Attacks",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Roll dice to determine number of attacks each combat turn. Roll separately for each model.",
-      },
-    ],
+    description:
+      "Roll dice to determine number of attacks each combat turn. Roll separately for each model.",
+    phases: ["choose-fight"],
   },
   {
     id: "furious charge",
     displayName: "Furious Charge",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          '+1 Attack during a turn in which the model charged 3" or more.',
-      },
-    ],
+    description:
+      '+1 Attack during a turn in which the model charged 3" or more.',
+    phases: ["choose-fight"],
   },
   {
     id: "first charge",
     displayName: "First Charge",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "If the unit's first charge of the game is successful, the charge target becomes Disrupted until end of Combat phase.",
-      },
-    ],
+    description:
+      "If the unit's first charge of the game is successful, the charge target becomes Disrupted until end of Combat phase.",
+    phases: ["choose-fight"],
   },
   {
     id: "dark runes",
     displayName: "Dark Runes",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: null,
-        description: "5+ Ward save against non-magical shooting attacks.",
-      },
-    ],
+    passive: true,
+    description: "5+ Ward save against non-magical shooting attacks.",
+    phases: [],
   },
   {
     id: "eternal hatred",
     displayName: "Eternal Hatred",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Against High Elves, Hatred applies in every round of combat, not just the first. Does not affect mount.",
-      },
-    ],
+    description:
+      "Against High Elves, Hatred applies in every round of combat, not just the first. Does not affect mount.",
+    phases: ["choose-fight"],
   },
   {
     id: "murderous",
     displayName: "Murderous",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Fighting with a single hand weapon: re-roll any To Wound rolls of natural 1. Does not apply with two hand weapons or other weapon types. Does not affect mount.",
-      },
-    ],
+    description:
+      "Fighting with a single hand weapon: re-roll any To Wound rolls of natural 1. Does not apply with two hand weapons or other weapon types. Does not affect mount.",
+    phases: ["choose-fight"],
   },
-
-  // ─── Dark Elves ───────────────────────────────────────────────────────
   {
     id: "abyssal howl",
     displayName: "Abyssal Howl",
-    phases: [
-      {
-        phaseId: null,
-        subPhaseId: null,
-        description:
-          'Enemy units within 6" suffer -1 Leadership when making Fear, Panic, or Terror tests (min 2). Does not stack with similar effects.',
-      },
-    ],
+    passive: true,
+    description:
+      'Enemy units within 6" suffer -1 Leadership when making Fear, Panic, or Terror tests (min 2). Does not stack with similar effects.',
+    phases: [],
   },
   {
     id: "black lotus",
     displayName: "Black Lotus",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: null,
-        description:
-          "For each unsaved Wound inflicted by this character, the enemy character suffers -1 Leadership for the remainder of the game.",
-      },
-    ],
+    passive: true,
+    description:
+      "For each unsaved Wound inflicted by this character, the enemy character suffers -1 Leadership for the remainder of the game.",
+    phases: [],
   },
   {
     id: "blessings of khaine",
     displayName: "Blessings of Khaine",
-    phases: [
-      {
-        phaseId: "magic",
-        subPhaseId: null,
-        description:
-          "Bound spell (9+). Until next Start of Turn, caster and friendly Death Hags, Witch Elves, and Sisters of Slaughter within Command range gain one of: Fury of Khaine (Furious Charge), Strength of Khaine (Cleaving Blow), or Bloodshield of Khaine (5+ Ward save).",
-      },
-    ],
+    passive: true,
+    description:
+      "Bound spell (9+). Until next Start of Turn, caster and friendly Death Hags, Witch Elves, and Sisters of Slaughter within Command range gain one of: Fury of Khaine (Furious Charge), Strength of Khaine (Cleaving Blow), or Bloodshield of Khaine (5+ Ward save).",
+    phases: [],
   },
   {
     id: "cry of war",
     displayName: "Cry of War",
-    phases: [
-      {
-        phaseId: null,
-        subPhaseId: null,
-        description:
-          "Enemy units suffer -1 Leadership whilst within Command range of a non-fleeing Death Hag with this rule.",
-      },
-    ],
+    passive: true,
+    description:
+      "Enemy units suffer -1 Leadership whilst within Command range of a non-fleeing Death Hag with this rule.",
+    phases: [],
   },
   {
     id: "cursed coven",
     displayName: "Cursed Coven",
-    phases: [
-      {
-        phaseId: "magic",
-        subPhaseId: null,
-        description:
-          "The unit knows one spell from Dark Magic or Daemonology (chosen before deployment). Power Level is 2 (US 10+ with Master), 1 (US ≤9 with Master), or 0 (no Master).",
-      },
-    ],
+    passive: true,
+    description:
+      "The unit knows one spell from Dark Magic or Daemonology (chosen before deployment). Power Level is 2 (US 10+ with Master), 1 (US ≤9 with Master), or 0 (no Master).",
+    phases: [],
   },
   {
     id: "vortex of souls",
     displayName: "Vortex of Souls",
-    phases: [
-      {
-        phaseId: "magic",
-        subPhaseId: null,
-        description:
-          'May cast Light of Death (Magic Missile, 7+, 36") or Light of Protection (Enchantment, 8+, Self, Remains in Play) as bound spells with Power Level 2. Light of Protection immediately expires if Light of Death is cast.',
-      },
-    ],
+    passive: true,
+    description:
+      'May cast Light of Death (Magic Missile, 7+, 36") or Light of Protection (Enchantment, 8+, Self, Remains in Play) as bound spells with Power Level 2. Light of Protection immediately expires if Light of Death is cast.',
+    phases: [],
   },
   {
     id: "dance of death",
     displayName: "Dance of Death",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "combat-result",
-        description:
-          "If this unit makes a successful charge, the charge target suffers -1 to its Maximum Rank Bonus until the end of the Combat phase.",
-      },
-    ],
+    description:
+      "If this unit makes a successful charge, the charge target suffers -1 to its Maximum Rank Bonus until the end of the Combat phase.",
+    phases: ["combat-result"],
   },
   {
     id: "dark venom",
     displayName: "Dark Venom",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Gains Killing Blow. On a natural 6 To Wound, infantry and cavalry cannot use armour or Regeneration saves (Ward saves allowed). An unsaved Killing Blow wound removes all remaining wounds.",
-      },
-    ],
+    description:
+      "Gains Killing Blow. On a natural 6 To Wound, infantry and cavalry cannot use armour or Regeneration saves (Ward saves allowed). An unsaved Killing Blow wound removes all remaining wounds.",
+    phases: ["choose-fight"],
   },
   {
     id: "forbidden poisons",
     displayName: "Forbidden Poisons",
-    phases: [
-      {
-        phaseId: null,
-        subPhaseId: null,
-        description:
-          "Khainite Assassin may select one poison: Black Lotus, Dark Venom, or Manbane.",
-      },
-    ],
+    passive: true,
+    description:
+      "Khainite Assassin may select one poison: Black Lotus, Dark Venom, or Manbane.",
+    phases: [],
   },
   {
     id: "gifts of khaine",
     displayName: "Gifts of Khaine",
-    phases: [
-      {
-        phaseId: null,
-        subPhaseId: null,
-        description:
-          "Death Hag selects one gift: Cry of War, Rune of Khaine (Extra Attacks +D3), or Witchbrew.",
-      },
-    ],
+    passive: true,
+    description:
+      "Death Hag selects one gift: Cry of War, Rune of Khaine (Extra Attacks +D3), or Witchbrew.",
+    phases: [],
   },
   {
     id: "goad beast",
     displayName: "Goad Beast",
-    phases: [
-      {
-        phaseId: "strategy",
-        subPhaseId: "start-of-turn",
-        yourTurnOnly: true,
-        description:
-          "During Command sub-phase, one friendly monster within Command range (including own mount) gains +D3 Attacks (max 10) until end of turn.",
-      },
-    ],
+    description:
+      "During Command sub-phase, one friendly monster within Command range (including own mount) gains +D3 Attacks (max 10) until end of turn.",
+    phases: ["start-of-turn"],
+    yourTurnOnly: true,
   },
   {
     id: "hekarti's blessing",
     displayName: "Hekarti's Blessing",
-    phases: [
-      {
-        phaseId: "magic",
-        subPhaseId: null,
-        description: "Once per game, may re-roll a single failed Casting roll.",
-      },
-    ],
+    passive: true,
+    description: "Once per game, may re-roll a single failed Casting roll.",
+    phases: [],
   },
   {
     id: "hidden (dark elves)",
     displayName: "Hidden",
-    phases: [
-      {
-        phaseId: null,
-        subPhaseId: null,
-        description:
-          "Khainite Assassin starts hidden in a friendly Dark Elf infantry unit (US 10+). Revealed during any Start of Turn sub-phase or at start of any Combat phase. Destroyed with host if host is destroyed before revelation. Cannot be General.",
-      },
-    ],
+    passive: true,
+    description:
+      "Khainite Assassin starts hidden in a friendly Dark Elf infantry unit (US 10+). Revealed during any Start of Turn sub-phase or at start of any Combat phase. Destroyed with host if host is destroyed before revelation. Cannot be General.",
+    phases: [],
   },
   {
     id: "manbane",
     displayName: "Manbane",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "To Wound rolls of 4+ always succeed, regardless of the target's Toughness.",
-      },
-    ],
+    description:
+      "To Wound rolls of 4+ always succeed, regardless of the target's Toughness.",
+    phases: ["choose-fight"],
   },
   {
     id: "rune of khaine",
     displayName: "Rune of Khaine",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Extra Attacks (+D3). Roll during the Choose & Fight Combat sub-phase.",
-      },
-    ],
+    description:
+      "Extra Attacks (+D3). Roll during the Choose & Fight Combat sub-phase.",
+    phases: ["choose-fight"],
   },
   {
     id: "sea dragon cloak",
     displayName: "Sea Dragon Cloak",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: null,
-        description:
-          "+1 armour save against non-magical shooting attacks (max 2+).",
-      },
-    ],
+    passive: true,
+    description:
+      "+1 armour save against non-magical shooting attacks (max 2+).",
+    phases: [],
   },
   {
     id: "wilful beast",
     displayName: "Wilful Beast",
-    phases: [
-      {
-        phaseId: "strategy",
-        subPhaseId: "start-of-turn",
-        description:
-          "At Start of Turn, mount makes a Leadership test (unmodified). If failed, the mount gains Frenzy (not the rider, and no +1 Attack for rider) until next Start of Turn.",
-      },
-    ],
+    description:
+      "At Start of Turn, mount makes a Leadership test (unmodified). If failed, the mount gains Frenzy (not the rider, and no +1 Attack for rider) until next Start of Turn.",
+    phases: ["start-of-turn"],
   },
   {
     id: "witchbrew",
     displayName: "Witchbrew",
-    phases: [
-      {
-        phaseId: null,
-        subPhaseId: null,
-        description:
-          "This character, their mount, and any unit they have joined cannot lose the Frenzy special rule.",
-      },
-    ],
+    passive: true,
+    description:
+      "This character, their mount, and any unit they have joined cannot lose the Frenzy special rule.",
+    phases: [],
   },
-
   {
     id: "hatred",
     displayName: "Hatred",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Re-roll failed To Hit rolls against hated enemies during the first round of combat.",
-      },
-    ],
+    description:
+      "Re-roll failed To Hit rolls against hated enemies during the first round of combat.",
+    phases: ["choose-fight"],
   },
   {
     id: "killing blow",
     displayName: "Killing Blow",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Natural 6 To Wound: infantry/cavalry target cannot take armour or Regeneration saves (Ward saves allowed). Loses all remaining Wounds.",
-      },
-    ],
+    description:
+      "Natural 6 To Wound: infantry/cavalry target cannot take armour or Regeneration saves (Ward saves allowed). Loses all remaining Wounds.",
+    phases: ["choose-fight"],
   },
   {
     id: "monster slayer",
     displayName: "Monster Slayer",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Natural 6 To Wound vs monsters: no armour or Regeneration saves (Ward saves allowed). Monster loses all remaining Wounds.",
-      },
-    ],
+    description:
+      "Natural 6 To Wound vs monsters: no armour or Regeneration saves (Ward saves allowed). Monster loses all remaining Wounds.",
+    phases: ["choose-fight"],
   },
   {
     id: "fear",
     displayName: "Fear",
     phases: [
       {
-        phaseId: "movement",
         subPhaseId: "declare-charges",
         opponentOnly: true,
         description:
           "When charging a Fear-causing unit with higher Unit Strength, take Ld test or fail the charge.",
       },
       {
-        phaseId: "combat",
         subPhaseId: "choose-fight",
         description:
           "When fighting a Fear-causing enemy with higher Unit Strength, take Ld test or suffer -1 To Hit against that enemy.",
@@ -851,14 +545,12 @@ export const SPECIAL_RULES = [
     displayName: "Terror",
     phases: [
       {
-        phaseId: "movement",
         subPhaseId: "declare-charges",
         yourTurnOnly: true,
         description:
           "When a Terror-causing unit declares a charge, the target takes Ld test — failed = must Flee. Also causes Fear.",
       },
       {
-        phaseId: "combat",
         subPhaseId: "break-test",
         description:
           "If the winning side includes Terror-causing units, losing units suffer -1 Ld on Break tests.",
@@ -868,133 +560,69 @@ export const SPECIAL_RULES = [
   {
     id: "fight in extra rank",
     displayName: "Fight in Extra Rank",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Models behind the fighting rank may make supporting attacks.",
-      },
-    ],
+    description: "Models behind the fighting rank may make supporting attacks.",
+    phases: ["choose-fight"],
   },
   {
     id: "shieldwall",
     displayName: "Shieldwall",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "break-test",
-        description:
-          "Once per game, a Close Order unit with shields that is charged may Give Ground instead of Falling Back in Good Order.",
-      },
-    ],
+    description:
+      "Once per game, a Close Order unit with shields that is charged may Give Ground instead of Falling Back in Good Order.",
+    phases: ["break-test"],
   },
   {
     id: "stubborn",
     displayName: "Stubborn",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "break-test",
-        description:
-          "May decline first Break test — automatically Falls Back in Good Order instead. Does not transfer between Stubborn characters and non-Stubborn units.",
-      },
-    ],
+    description:
+      "May decline first Break test — automatically Falls Back in Good Order instead. Does not transfer between Stubborn characters and non-Stubborn units.",
+    phases: ["break-test"],
   },
   {
     id: "unbreakable",
     displayName: "Unbreakable",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "break-test",
-        description:
-          "Never takes Break tests. Automatically Gives Ground when losing combat. Non-Unbreakable characters cannot join.",
-      },
-    ],
+    description:
+      "Never takes Break tests. Automatically Gives Ground when losing combat. Non-Unbreakable characters cannot join.",
+    phases: ["break-test"],
   },
   {
     id: "unstable",
     displayName: "Unstable",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "break-test",
-        description:
-          "Loses 1 extra Wound per point of combat result lost by. No Regeneration saves. Wounds split between characters and unit.",
-      },
-    ],
+    description:
+      "Loses 1 extra Wound per point of combat result lost by. No Regeneration saves. Wounds split between characters and unit.",
+    phases: ["break-test"],
   },
   {
     id: "untutored arcanist",
     displayName: "Untutored Arcanist",
-    phases: [
-      {
-        phaseId: "strategy",
-        subPhaseId: "conjuration",
-        description:
-          "When rolling on the Miscast table, roll an extra D6 and discard the highest result.",
-      },
-      {
-        phaseId: "movement",
-        subPhaseId: "remaining-moves",
-        description:
-          "When rolling on the Miscast table, roll an extra D6 and discard the highest result.",
-      },
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        description:
-          "When rolling on the Miscast table, roll an extra D6 and discard the highest result.",
-      },
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "When rolling on the Miscast table, roll an extra D6 and discard the highest result.",
-      },
-    ],
+    description:
+      "When rolling on the Miscast table, roll an extra D6 and discard the highest result.",
+    phases: ["conjuration", "remaining-moves", "shoot", "choose-fight"],
   },
   {
     id: "timmm-berrr!",
     displayName: "Timmm-berrr!",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "When a behemoth is slain, roll off to determine fall direction. Units in base contact in that arc suffer D6 hits at model's S with AP -1.",
-      },
-    ],
+    description:
+      "When a behemoth is slain, roll off to determine fall direction. Units in base contact in that arc suffer D6 hits at model's S with AP -1.",
+    phases: ["choose-fight"],
   },
-
   {
     id: "wailing dirge",
     displayName: "Wailing Dirge",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          'Range 8". Ld test at -2. Wounds = margin of failure. No armour/Regen saves. Can target units in combat.',
-      },
-    ],
+    description:
+      'Range 8". Ld test at -2. Wounds = margin of failure. No armour/Regen saves. Can target units in combat.',
+    phases: ["choose-fight"],
   },
-
-  // ─── Shooting & Combat (wound/save modifiers) ────────────────────
   {
     id: "poisoned attacks",
     displayName: "Poisoned Attacks",
     phases: [
       {
-        phaseId: "shooting",
         subPhaseId: "shoot",
         yourTurnOnly: true,
         description:
           "Natural 6 To Hit: +2 To Wound modifier. Cannot use if To Hit needs 7+ or hits automatically. Does not apply to spells or magic weapons.",
       },
       {
-        phaseId: "combat",
         subPhaseId: "choose-fight",
         description:
           "Natural 6 To Hit: +2 To Wound modifier. Cannot use if To Hit needs 7+ or hits automatically.",
@@ -1004,84 +632,51 @@ export const SPECIAL_RULES = [
   {
     id: "flaming attacks",
     displayName: "Flaming Attacks",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        description:
-          "Attacks are Flaming. Causes Fear in war beasts/swarms. Does not apply to spells or magic weapons.",
-      },
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Attacks are Flaming. Causes Fear in war beasts/swarms. Does not apply to spells or magic weapons.",
-      },
-    ],
+    description:
+      "Attacks are Flaming. Causes Fear in war beasts/swarms. Does not apply to spells or magic weapons.",
+    phases: ["shoot", "choose-fight"],
   },
   {
     id: "multiple wounds",
     displayName: "Multiple Wounds",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        description:
-          "Each unsaved wound is multiplied by X. Excess wounds do not spill over to other models.",
-      },
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Each unsaved wound is multiplied by X. Excess wounds do not spill over to other models.",
-      },
-    ],
+    description:
+      "Each unsaved wound is multiplied by X. Excess wounds do not spill over to other models.",
+    phases: ["shoot", "choose-fight"],
   },
   {
     id: "regeneration",
     displayName: "Regeneration",
     phases: [
       {
-        phaseId: "shooting",
         subPhaseId: "shoot",
         description:
           "After losing a Wound, roll D6: X+ recovers the Wound (still counts for combat result). AP rules do not affect Regeneration.",
       },
       {
-        phaseId: "combat",
         subPhaseId: "choose-fight",
         description:
           "After losing a Wound, roll D6: X+ recovers the Wound (still counts for combat result).",
       },
     ],
   },
-
-  // ─── Kingdom of Bretonnia ─────────────────────────────────────────
   {
     id: "blessings of the lady",
     displayName: "Blessings of the Lady",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "6+ Ward save (5+ vs S5+). Lost if the unit flees or a character refuses a challenge.",
-      },
-    ],
+    description:
+      "6+ Ward save (5+ vs S5+). Lost if the unit flees or a character refuses a challenge.",
+    phases: ["choose-fight"],
   },
   {
     id: "finest warhorses",
     displayName: "Finest Warhorses",
     phases: [
       {
-        phaseId: "movement",
         subPhaseId: "charge-moves",
         yourTurnOnly: true,
         description:
           "Re-roll any natural 1s on Charge, Flee, or Pursuit rolls (before discarding dice).",
       },
       {
-        phaseId: "combat",
         subPhaseId: "pursuit",
         description:
           "Re-roll any natural 1s on Flee or Pursuit rolls (before discarding dice).",
@@ -1094,14 +689,12 @@ export const SPECIAL_RULES = [
     chargeMod: { range: 1, tag: "Zeal", color: "orange", order: 2 },
     phases: [
       {
-        phaseId: "movement",
         subPhaseId: "declare-charges",
         yourTurnOnly: true,
         description:
           '+1" to maximum charge range and +1 to Charge roll result. Also gains Impetuous.',
       },
       {
-        phaseId: "movement",
         subPhaseId: "charge-moves",
         yourTurnOnly: true,
         description:
@@ -1112,134 +705,90 @@ export const SPECIAL_RULES = [
   {
     id: "earn your spurs",
     displayName: "Earn Your Spurs",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          'Enemy standards captured worth 100 VPs. Within 6" of a Grail Vow model or Lord of Bretonnia, re-roll natural 1s To Hit.',
-      },
-    ],
+    description:
+      'Enemy standards captured worth 100 VPs. Within 6" of a Grail Vow model or Lord of Bretonnia, re-roll natural 1s To Hit.',
+    phases: ["choose-fight"],
   },
   {
     id: "beguiling aura",
     displayName: "Beguiling Aura",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        opponentOnly: true,
-        description:
-          "Enemy models must pass Ld test before rolling To Hit against this model; if failed, only natural 6s hit.",
-      },
-    ],
+    description:
+      "Enemy models must pass Ld test before rolling To Hit against this model; if failed, only natural 6s hit.",
+    phases: ["choose-fight"],
+    opponentOnly: true,
   },
   {
-    name: "Peasant's Duty",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "break-test",
-        description:
-          "May Give Ground instead of Fall Back in Good Order. Friendly Levies within Command range re-roll failed Panic tests.",
-      },
-    ],
+    id: undefined,
+    displayName: undefined,
+    description:
+      "May Give Ground instead of Fall Back in Good Order. Friendly Levies within Command range re-roll failed Panic tests.",
+    phases: ["break-test"],
   },
   {
     id: "the grail vow",
     displayName: "The Grail Vow",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Immune to Psychology, Magical Attacks, Stubborn. Cannot refuse challenges.",
-      },
-    ],
+    description:
+      "Immune to Psychology, Magical Attacks, Stubborn. Cannot refuse challenges.",
+    phases: ["choose-fight"],
   },
   {
     id: "the questing vow",
     displayName: "The Questing Vow",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "break-test",
-        description: "Stubborn. Re-roll failed Fear, Panic, and Terror tests.",
-      },
-    ],
+    description: "Stubborn. Re-roll failed Fear, Panic, and Terror tests.",
+    phases: ["break-test"],
   },
   {
-    name: "The Knight's Vow",
-    phases: [
-      {
-        phaseId: "strategy",
-        subPhaseId: "start-of-turn",
-        description:
-          'No Panic test when a friendly Peasantry unit is destroyed within 6" or flees through.',
-      },
-    ],
+    id: undefined,
+    displayName: undefined,
+    description:
+      'No Panic test when a friendly Peasantry unit is destroyed within 6" or flees through.',
+    phases: ["start-of-turn"],
   },
   {
     id: "guardian of the sacred sites",
     displayName: "Guardian of the Sacred Sites",
-    phases: [
-      {
-        phaseId: "strategy",
-        subPhaseId: "start-of-turn",
-        yourTurnOnly: true,
-        description:
-          "D6 roll of 3+ to awaken the Green Knight (automatic from round 5). Place within any natural terrain feature.",
-      },
-    ],
+    description:
+      "D6 roll of 3+ to awaken the Green Knight (automatic from round 5). Place within any natural terrain feature.",
+    phases: ["start-of-turn"],
+    yourTurnOnly: true,
   },
   {
     id: "aura of the fay",
     displayName: "Aura of the Fay",
-    phases: [
-      {
-        phaseId: "strategy",
-        subPhaseId: "start-of-turn",
-        yourTurnOnly: true,
-        description:
-          "If removed, attempt to reawaken with cumulative -1 penalty. -1 Wounds characteristic each time (min 1).",
-      },
-    ],
+    description:
+      "If removed, attempt to reawaken with cumulative -1 penalty. -1 Wounds characteristic each time (min 1).",
+    phases: ["start-of-turn"],
+    yourTurnOnly: true,
   },
   {
     id: "arcane backlash",
     displayName: "Arcane Backlash",
     phases: [
       {
-        phaseId: "strategy",
         subPhaseId: "conjuration",
         opponentOnly: true,
         description:
           "+1 to Dispel rolls. On any natural double (except double 1), the spell is unbound and the casting Wizard loses a Wound.",
       },
       {
-        phaseId: "movement",
         subPhaseId: "remaining-moves",
         opponentOnly: true,
         description:
           "+1 to Dispel rolls vs Conveyance spells. On any natural double (except double 1), the spell is unbound and the casting Wizard loses a Wound.",
       },
       {
-        phaseId: "shooting",
         subPhaseId: "shoot",
         opponentOnly: true,
         description:
           "+1 to Dispel rolls vs Magic Missiles. On any natural double (except double 1), the spell is unbound and the casting Wizard loses a Wound.",
       },
       {
-        phaseId: "combat",
         subPhaseId: "choose-fight",
         description:
           "+1 to Dispel rolls vs Assailment spells. On any natural double (except double 1), the spell is unbound and the casting Wizard loses a Wound.",
       },
     ],
   },
-
-  // ─── Passive / always-on rules ────────────────────────────────────
   {
     id: "armoured hide",
     displayName: "Armoured Hide",
@@ -1254,7 +803,6 @@ export const SPECIAL_RULES = [
     passive: true,
     phases: [
       {
-        phaseId: "combat",
         subPhaseId: "combat-result",
         description: "+1 combat result bonus when in Close Order formation.",
       },
@@ -1434,21 +982,12 @@ export const SPECIAL_RULES = [
     description:
       "Split profile (as chariots) and Firing Platform rules. Otherwise treated as a behemoth.",
   },
-
-  // ─── High Elf Realms ─────────────────────────────────────────────
   {
     id: "arrows of isha",
     displayName: "Arrows of Isha",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        yourTurnOnly: true,
-        description: "Bows gain Armour Bane (1) and AP -1.",
-      },
-    ],
-    description:
-      "Any bow (longbow, shortbow, warbow, or Bow of Avelorn) gains Armour Bane (1) and AP -1.",
+    description: "Bows gain Armour Bane (1) and AP -1.",
+    phases: ["shoot"],
+    yourTurnOnly: true,
   },
   {
     id: "blessings of asuryan",
@@ -1461,26 +1000,15 @@ export const SPECIAL_RULES = [
   {
     id: "blizzard aura",
     displayName: "Blizzard Aura",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Enemy models in base contact become subject to Strike Last.",
-      },
-    ],
+    description: "Enemy models in base contact become subject to Strike Last.",
+    phases: ["choose-fight"],
   },
   {
     id: "champions of chrace",
     displayName: "Champions of Chrace",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          'Any model in a Lion Guard unit can accept challenges like a character. Once per turn, a character joined to a Lion Guard unit may re-roll a failed "Look Out, Sir!" roll.',
-      },
-    ],
+    description:
+      'Any model in a Lion Guard unit can accept challenges like a character. Once per turn, a character joined to a Lion Guard unit may re-roll a failed "Look Out, Sir!" roll.',
+    phases: ["choose-fight"],
   },
   {
     id: "deflect shots",
@@ -1502,44 +1030,28 @@ export const SPECIAL_RULES = [
   {
     id: "enfeebling cold",
     displayName: "Enfeebling Cold",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Enemy models in base contact suffer -1 Strength (minimum 1).",
-      },
-    ],
+    description: "Enemy models in base contact suffer -1 Strength (minimum 1).",
+    phases: ["choose-fight"],
   },
   {
     id: "from the ashes",
     displayName: "From The Ashes",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "remove-casualties",
-        description:
-          "When a Flamespyre Phoenix loses its last Wound, roll a D6: 1-2 removed; 3-5 explodes (D6 S3 AP-1 Flaming hits to enemies in base contact) then removed; 6 reborn, recovers D3 Wounds.",
-      },
-    ],
+    description:
+      "When a Flamespyre Phoenix loses its last Wound, roll a D6: 1-2 removed; 3-5 explodes (D6 S3 AP-1 Flaming hits to enemies in base contact) then removed; 6 reborn, recovers D3 Wounds.",
+    phases: ["remove-casualties"],
   },
   {
     id: "horn of isha",
     displayName: "Horn of Isha",
-    phases: [
-      {
-        phaseId: "strategy",
-        subPhaseId: "start-of-turn",
-        description:
-          "Single use. During the Command sub-phase, take a Leadership test. If passed, the character and their unit gain +1 To Hit and +1 To Wound until the next Start of Turn.",
-      },
-    ],
+    description:
+      "Single use. During the Command sub-phase, take a Leadership test. If passed, the character and their unit gain +1 To Hit and +1 To Wound until the next Start of Turn.",
+    phases: ["start-of-turn"],
   },
   {
     id: "ithilmar armour",
     displayName: "Ithilmar Armour",
     passive: true,
-    phases: ["movement"],
+    phases: [],
     description:
       "Re-roll any rolls of 1 on Dangerous Terrain tests. Wizards may wear armour without penalty.",
     aliases: ["Ithilmar Barding"],
@@ -1548,7 +1060,7 @@ export const SPECIAL_RULES = [
     id: "ithilmar barding",
     displayName: "Ithilmar Barding",
     passive: true,
-    phases: ["movement"],
+    phases: [],
     description:
       "Re-roll any rolls of 1 on Dangerous Terrain tests. Wizards may wear armour without penalty.",
     aliases: ["Ithilmar Armour"],
@@ -1556,37 +1068,22 @@ export const SPECIAL_RULES = [
   {
     id: "ithilmar weapons",
     displayName: "Ithilmar Weapons",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "When fighting with a single, non-magical hand weapon, re-roll natural 1s To Hit. Does not apply to mount. Inactive if using two hand weapons or another weapon type.",
-      },
-    ],
+    description:
+      "When fighting with a single, non-magical hand weapon, re-roll natural 1s To Hit. Does not apply to mount. Inactive if using two hand weapons or another weapon type.",
+    phases: ["choose-fight"],
   },
   {
     id: "king's guard",
     displayName: "King's Guard",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Any model in a White Lions of Chrace unit joined by your General can issue and accept challenges like a character. Lost if the General leaves the unit.",
-      },
-    ],
+    description:
+      "Any model in a White Lions of Chrace unit joined by your General can issue and accept challenges like a character. Lost if the General leaves the unit.",
+    phases: ["choose-fight"],
   },
   {
     id: "lileath's blessing",
     displayName: "Lileath's Blessing",
-    phases: [
-      {
-        phaseId: "strategy",
-        subPhaseId: "conjuration",
-        description: "Once per turn, re-roll a single failed Casting roll.",
-      },
-    ],
+    description: "Once per turn, re-roll a single failed Casting roll.",
+    phases: ["conjuration"],
   },
   {
     id: "lion cloak",
@@ -1600,62 +1097,37 @@ export const SPECIAL_RULES = [
   {
     id: "martial prowess",
     displayName: "Martial Prowess",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Unit can make supporting attacks to its flank or rear, as well as to its front.",
-      },
-    ],
+    description:
+      "Unit can make supporting attacks to its flank or rear, as well as to its front.",
+    phases: ["choose-fight"],
   },
   {
     id: "mighty constitution",
     displayName: "Mighty Constitution",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          'During a turn in which he charged 3"+, gains +1 Strength. Immune to Poisoned Attacks (attackers must roll To Wound normally).',
-      },
-    ],
+    description:
+      'During a turn in which he charged 3"+, gains +1 Strength. Immune to Poisoned Attacks (attackers must roll To Wound normally).',
+    phases: ["choose-fight"],
   },
   {
     id: "naval discipline",
     displayName: "Naval Discipline",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        description:
-          "Lothern Sea Guard may Stand & Shoot regardless of how close the charging unit is. After resolving shooting, the unit may perform a free redress the ranks manoeuvre.",
-      },
-    ],
+    description:
+      "Lothern Sea Guard may Stand & Shoot regardless of how close the charging unit is. After resolving shooting, the unit may perform a free redress the ranks manoeuvre.",
+    phases: ["shoot"],
   },
   {
     id: "valour of ages",
     displayName: "Valour of Ages",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "break-test",
-        description:
-          "Re-roll any failed Panic test caused by heavy casualties or being fled through by a friendly unit.",
-      },
-    ],
+    description:
+      "Re-roll any failed Panic test caused by heavy casualties or being fled through by a friendly unit.",
+    phases: ["break-test"],
   },
   {
     id: "wake of fire",
     displayName: "Wake of Fire",
-    phases: [
-      {
-        phaseId: "movement",
-        subPhaseId: "remaining-moves",
-        description:
-          "During the Remaining Moves sub-phase, may fly over a single unengaged enemy unit. That unit suffers D6 S4 hits, AP -1, Flaming Attacks.",
-      },
-    ],
+    description:
+      "During the Remaining Moves sub-phase, may fly over a single unengaged enemy unit. That unit suffers D6 S4 hits, AP -1, Flaming Attacks.",
+    phases: ["remaining-moves"],
   },
   {
     id: "witness to destiny",
@@ -1692,14 +1164,9 @@ export const SPECIAL_RULES = [
   {
     id: "precision strikes",
     displayName: "Precision Strikes",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "A Lothern Sea Guard unit joined by Ishaya Vess improves the AP of its weapons by 1.",
-      },
-    ],
+    description:
+      "A Lothern Sea Guard unit joined by Ishaya Vess improves the AP of its weapons by 1.",
+    phases: ["choose-fight"],
   },
   {
     id: "sons of caledor",
@@ -1733,7 +1200,6 @@ export const SPECIAL_RULES = [
     description:
       "Unit may only be joined by a High Elf Mage, or by a character with the Warden of Saphery or Loremaster Elven Honour.",
   },
-  // Army of Infamy composition rules (passive, no phase trigger)
   {
     id: "armies of the sea lord",
     displayName: "Armies of the Sea Lord",
@@ -1806,103 +1272,61 @@ export const SPECIAL_RULES = [
     description:
       'After terrain placement, place one additional wood (3"-9" wide) on the battlefield. Cannot be in opponent deployment zone or within 6" of special features.',
   },
-
-  // ─── Ogre Kingdoms ──────────────────────────────────────────────────
   {
     id: "ogre charge",
     displayName: "Ogre Charge",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "The AP of any Impact Hits caused by this model (not its mount) is improved by the current Rank Bonus of its unit.",
-      },
-    ],
+    description:
+      "The AP of any Impact Hits caused by this model (not its mount) is improved by the current Rank Bonus of its unit.",
+    phases: ["choose-fight"],
   },
   {
     id: "bull charge",
     displayName: "Bull Charge",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Impact Hits caused by this model (not its mount) have an Armour Piercing characteristic of -1.",
-      },
-    ],
+    description:
+      "Impact Hits caused by this model (not its mount) have an Armour Piercing characteristic of -1.",
+    phases: ["choose-fight"],
   },
   {
     id: "thunderous charge",
     displayName: "Thunderous Charge",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description: "Impact Hits caused by this model have an AP of -2.",
-      },
-    ],
+    description: "Impact Hits caused by this model have an AP of -2.",
+    phases: ["choose-fight"],
   },
   {
     id: "mournfang charge",
     displayName: "Mournfang Charge",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Impact Hits caused by this model have Armour Bane (1) and AP -1.",
-      },
-    ],
+    description:
+      "Impact Hits caused by this model have Armour Bane (1) and AP -1.",
+    phases: ["choose-fight"],
   },
   {
     id: "belly flop",
     displayName: "Belly Flop",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Place a 3\" blast template over the target unit centre. Models underneath suffer a hit at this model's Strength with AP -2.",
-      },
-    ],
+    description:
+      "Place a 3\" blast template over the target unit centre. Models underneath suffer a hit at this model's Strength with AP -2.",
+    phases: ["choose-fight"],
   },
   {
     id: "giant attacks",
     displayName: "Giant Attacks",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Instead of normal attacks, roll D6: 1 = 'Eadbutt (D3+1 wounds, no armour/regen), 2 = Belly Flop (3\" blast, S, AP -2), 3-4 = Mighty Swing (D6+1 attacks, S+1, AP -2), 5 = Thump with Club (single model, S+4, AP -4, Multiple Wounds D6), 6 = Jump Up & Down (D6+1 hits, no armour saves).",
-      },
-    ],
+    description:
+      "Instead of normal attacks, roll D6: 1 = 'Eadbutt (D3+1 wounds, no armour/regen), 2 = Belly Flop (3\" blast, S, AP -2), 3-4 = Mighty Swing (D6+1 attacks, S+1, AP -2), 5 = Thump with Club (single model, S+4, AP -4, Multiple Wounds D6), 6 = Jump Up & Down (D6+1 hits, no armour saves).",
+    phases: ["choose-fight"],
   },
   {
     id: "pick up and",
     displayName: "Pick Up And...",
     aliases: ["pick up and..."],
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Instead of normal attacks vs infantry/heavy infantry: target makes Initiative test. Fail = one model removed as casualty. Then roll D6: 4+ = repeat. 1-3 = stop.",
-      },
-    ],
+    description:
+      "Instead of normal attacks vs infantry/heavy infantry: target makes Initiative test. Fail = one model removed as casualty. Then roll D6: 4+ = repeat. 1-3 = stop.",
+    phases: ["choose-fight"],
   },
   {
     id: "numbing chill",
     displayName: "Numbing Chill",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Enemy models in base contact suffer -1 WS and -1 Initiative (minimum 1).",
-      },
-    ],
+    description:
+      "Enemy models in base contact suffer -1 WS and -1 Initiative (minimum 1).",
+    phases: ["choose-fight"],
   },
   {
     id: "butcher's cauldron",
@@ -1910,12 +1334,10 @@ export const SPECIAL_RULES = [
     aliases: ["butchers cauldron"],
     phases: [
       {
-        phaseId: "combat",
         subPhaseId: "choose-fight",
         description: "Replaces Impact Hits (2) with Impact Hits (D3+1).",
       },
       {
-        phaseId: "strategy",
         subPhaseId: "command",
         yourTurnOnly: true,
         description:
@@ -1926,19 +1348,8 @@ export const SPECIAL_RULES = [
   {
     id: "blessings of the volcano god",
     displayName: "Blessings of the Volcano God",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description: "4+ Ward save against wounds caused by Flaming Attacks.",
-      },
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        opponentTurnOnly: true,
-        description: "4+ Ward save against wounds caused by Flaming Attacks.",
-      },
-    ],
+    description: "4+ Ward save against wounds caused by Flaming Attacks.",
+    phases: ["choose-fight", "shoot"],
   },
   {
     id: "stone skeleton",
@@ -1946,7 +1357,6 @@ export const SPECIAL_RULES = [
     passive: true,
     phases: [
       {
-        phaseId: "combat",
         subPhaseId: "choose-fight",
         description:
           "When suffering an unsaved wound from Multiple Wounds (X), reduce the number of wounds lost by 1 (minimum 1).",
@@ -1957,27 +1367,16 @@ export const SPECIAL_RULES = [
     id: "ravenous hunger",
     displayName: "Ravenous Hunger",
     chargeMod: { range: 0, tag: "Ravenous", color: "orange", order: 3 },
-    phases: [
-      {
-        phaseId: "movement",
-        subPhaseId: "declare-charges",
-        yourTurnOnly: true,
-        description: "When declaring a charge, may re-roll the Charge roll.",
-      },
-    ],
+    description: "When declaring a charge, may re-roll the Charge roll.",
+    phases: ["declare-charges"],
+    yourTurnOnly: true,
   },
   {
     id: "look-out gnoblar",
     displayName: "Look-out Gnoblar",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        opponentTurnOnly: true,
-        description:
-          'Champion/character may make "Look Out, Sir!" with 2+ rank-and-file (instead of 5). With 5+, may re-roll the roll.',
-      },
-    ],
+    description:
+      'Champion/character may make "Look Out, Sir!" with 2+ rank-and-file (instead of 5). With 5+, may re-roll the roll.',
+    phases: ["shoot"],
   },
   {
     id: "largely insignificant",
@@ -1999,14 +1398,9 @@ export const SPECIAL_RULES = [
     id: "traps and snares",
     displayName: "Traps & Snares",
     aliases: ["traps & snares"],
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Any enemy model that ends its charge move in base contact with this model must make a Dangerous Terrain test.",
-      },
-    ],
+    description:
+      "Any enemy model that ends its charge move in base contact with this model must make a Dangerous Terrain test.",
+    phases: ["choose-fight"],
   },
   {
     id: "bellowers and musicians",
@@ -2020,264 +1414,161 @@ export const SPECIAL_RULES = [
   {
     id: "arise!",
     displayName: "Arise!",
-    phases: [
-      {
-        phaseId: "strategy",
-        subPhaseId: "command",
-        yourTurnOnly: true,
-        description:
-          'If not engaged, take a Leadership test. Pass: a single friendly Nehekharan Undead unit within 12" recovers Wounds — Infantry/Swarms: Wizard Level + D3; Cavalry/War Beasts: Wizard Level + 1; Monstrous Infantry/Cavalry/Light Chariot: Wizard Level; Behemoth/Heavy Chariot/War Machine: 1 Wound.',
-      },
-    ],
+    description:
+      'If not engaged, take a Leadership test. Pass: a single friendly Nehekharan Undead unit within 12" recovers Wounds — Infantry/Swarms: Wizard Level + D3; Cavalry/War Beasts: Wizard Level + 1; Monstrous Infantry/Cavalry/Light Chariot: Wizard Level; Behemoth/Heavy Chariot/War Machine: 1 Wound.',
+    phases: ["command"],
+    yourTurnOnly: true,
   },
   {
     id: "the terrors below",
     displayName: "The Terrors Below",
-    phases: [
-      {
-        phaseId: "movement",
-        subPhaseId: "compulsory-moves",
-        description:
-          "When this unit enters via From Beneath the Sands, nominate one enemy regular or heavy infantry unit within 8\". That unit makes Initiative tests equal to this unit's Unit Strength — each failed test removes one model as a casualty.",
-      },
-    ],
+    description:
+      "When this unit enters via From Beneath the Sands, nominate one enemy regular or heavy infantry unit within 8\". That unit makes Initiative tests equal to this unit's Unit Strength — each failed test removes one model as a casualty.",
+    phases: ["compulsory-moves"],
   },
   {
     id: "from beneath the sands",
     displayName: "From Beneath the Sands",
-    phases: [
-      {
-        phaseId: "strategy",
-        subPhaseId: "command",
-        yourTurnOnly: true,
-        description:
-          'If not engaged, choose a friendly unit with Nehekharan Undead and Ambushers in reserve and take a Leadership test. Pass: place the unit within 12" of this model and outside 6" of enemies — it cannot charge this turn and counts as having moved. Fail: unit is delayed until your next turn. Ambushers units still arrive automatically at Round 5.',
-      },
-    ],
+    description:
+      'If not engaged, choose a friendly unit with Nehekharan Undead and Ambushers in reserve and take a Leadership test. Pass: place the unit within 12" of this model and outside 6" of enemies — it cannot charge this turn and counts as having moved. Fail: unit is delayed until your next turn. Ambushers units still arrive automatically at Round 5.',
+    phases: ["command"],
+    yourTurnOnly: true,
   },
   {
     id: "my will be done",
     displayName: "My Will Be Done",
-    phases: [
-      {
-        phaseId: "strategy",
-        subPhaseId: "command",
-        yourTurnOnly: true,
-        description:
-          'Take a Leadership test. Pass: choose one bonus lasting until next Start of Turn for this model, its mount, and joined unit — "Forward to Glory!": +D3 Movement; "My Worthy Champions!": +1 Weapon Skill; "Strike like the Cobra!": +D3 Initiative. Not cumulative (no effect if used again on same unit this turn).',
-      },
-    ],
+    description:
+      'Take a Leadership test. Pass: choose one bonus lasting until next Start of Turn for this model, its mount, and joined unit — "Forward to Glory!": +D3 Movement; "My Worthy Champions!": +1 Weapon Skill; "Strike like the Cobra!": +D3 Initiative. Not cumulative (no effect if used again on same unit this turn).',
+    phases: ["command"],
+    yourTurnOnly: true,
   },
   {
     id: "eternal taskmaster",
     displayName: "Eternal Taskmaster",
-    phases: [
-      {
-        phaseId: "strategy",
-        subPhaseId: "command",
-        yourTurnOnly: true,
-        description:
-          "Once per Command sub-phase, take a Leadership test. Pass: character and joined unit gain Extra Attacks (+1) and Hatred (all enemies) until next Start of Turn.",
-      },
-    ],
+    description:
+      "Once per Command sub-phase, take a Leadership test. Pass: character and joined unit gain Extra Attacks (+1) and Hatred (all enemies) until next Start of Turn.",
+    phases: ["command"],
+    yourTurnOnly: true,
   },
   {
     id: "nehekharan phalanx",
     displayName: "Nehekharan Phalanx",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "combat-result",
-        description:
-          "Units in Close Order with shields may choose not to Give Ground when losing combat. This protection fails if the winner's Unit Strength exceeds twice the loser's.",
-      },
-    ],
+    description:
+      "Units in Close Order with shields may choose not to Give Ground when losing combat. This protection fails if the winner's Unit Strength exceeds twice the loser's.",
+    phases: ["combat-result"],
   },
   {
     id: "grind them down!",
     displayName: "Grind Them Down!",
     aliases: ["grind them down"],
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        yourTurnOnly: true,
-        description:
-          "Friendly Chariot-type models within General's Command range may re-roll dice when determining Impact Hits.",
-      },
-    ],
+    description:
+      "Friendly Chariot-type models within General's Command range may re-roll dice when determining Impact Hits.",
+    phases: ["choose-fight"],
+    yourTurnOnly: true,
   },
   {
     id: "steadfast discipline",
     displayName: "Steadfast Discipline",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        yourTurnOnly: true,
-        description:
-          "Unit may perform Volley Fire even after moving this turn, or while performing a Stand & Shoot charge reaction.",
-      },
-    ],
+    description:
+      "Unit may perform Volley Fire even after moving this turn, or while performing a Stand & Shoot charge reaction.",
+    phases: ["shoot"],
+    yourTurnOnly: true,
   },
   {
     id: "arrows of asaph",
     displayName: "Arrows of Asaph",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        yourTurnOnly: true,
-        description: "Disregard all modifiers when making ranged attack rolls.",
-      },
-    ],
+    description: "Disregard all modifiers when making ranged attack rolls.",
+    phases: ["shoot"],
+    yourTurnOnly: true,
   },
   {
     id: "dry as dust",
     displayName: "Dry as Dust",
-    phases: [
-      {
-        phaseId: "shooting",
-        subPhaseId: "shoot",
-        description:
-          "When this model suffers an unsaved Wound from a Flaming Attack, opponent rolls D6: 1–3 wound is harmless; 4+ model suffers 1 additional Wound. Excess wounds don't spill over to the unit.",
-      },
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "When this model suffers an unsaved Wound from a Flaming Attack, opponent rolls D6: 1–3 wound is harmless; 4+ model suffers 1 additional Wound. Excess wounds don't spill over to the unit.",
-      },
-    ],
+    description:
+      "When this model suffers an unsaved Wound from a Flaming Attack, opponent rolls D6: 1–3 wound is harmless; 4+ model suffers 1 additional Wound. Excess wounds don't spill over to the unit.",
+    phases: ["shoot", "choose-fight"],
   },
   {
     id: "curse of the necropolis",
     displayName: "Curse of the Necropolis",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "When this model loses its final Wound to an enemy attack, the enemy unit that dealt the killing blow must immediately take a Leadership test. If failed, that unit suffers D3 Strength 2 hits with AP −.",
-      },
-    ],
+    description:
+      "When this model loses its final Wound to an enemy attack, the enemy unit that dealt the killing blow must immediately take a Leadership test. If failed, that unit suffers D3 Strength 2 hits with AP −.",
+    phases: ["choose-fight"],
   },
-  // ─── Wood Elves ───────────────────────────────────────────────────────
   {
     id: "daughters of eternity",
     displayName: "Daughters of Eternity",
-    phases: [
-      {
-        phaseId: null,
-        subPhaseId: null,
-        description: "4+ Ward save.",
-      },
-    ],
+    passive: true,
+    description: "4+ Ward save.",
+    phases: [],
   },
-
-  // ─── Alter Kindred (Wood Elves) ──────────────────────────────────────
   {
     id: "aspect of the hound",
     displayName: "Aspect of the Hound",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: null,
-        description:
-          "The character and their unit may re-roll any To Hit rolls of a natural 1 during the Combat phase.",
-      },
-    ],
+    passive: true,
+    description:
+      "The character and their unit may re-roll any To Hit rolls of a natural 1 during the Combat phase.",
+    phases: [],
   },
   {
     id: "aspect of the bear",
     displayName: "Aspect of the Bear",
-    phases: [
-      {
-        phaseId: null,
-        subPhaseId: null,
-        description: "+1 Strength and +1 Toughness. Infantry or cavalry only.",
-      },
-    ],
+    passive: true,
+    description: "+1 Strength and +1 Toughness. Infantry or cavalry only.",
+    phases: [],
   },
   {
     id: "aspect of the boar",
     displayName: "Aspect of the Boar",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: null,
-        description:
-          "Impact Hits (1). Weapon AP improves by 1 on a turn in which the character charged.",
-      },
-    ],
+    passive: true,
+    description:
+      "Impact Hits (1). Weapon AP improves by 1 on a turn in which the character charged.",
+    phases: [],
   },
   {
     id: "aspect of the cat",
     displayName: "Aspect of the Cat",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: null,
-        description:
-          "Armour Bane (1). May re-roll failed To Hit rolls during a challenge.",
-      },
-    ],
+    passive: true,
+    description:
+      "Armour Bane (1). May re-roll failed To Hit rolls during a challenge.",
+    phases: [],
   },
   {
     id: "nehekharan undead",
     displayName: "Nehekharan Undead",
     phases: [
       {
-        phaseId: "movement",
         subPhaseId: "remaining-moves",
         description:
           "Cannot march (unless possessing Fly and choosing to fly). Immune to Psychology. Unbreakable — gives ground instead of breaking.",
       },
       {
-        phaseId: "combat",
         subPhaseId: "combat-result",
         description:
           "Unstable: if combat is lost, unit suffers additional Wounds equal to the combat result points lost (no saves of any kind allowed). Characters with this rule cannot join units without it.",
       },
     ],
   },
-
-  // ─── Orc & Goblin Tribes ─────────────────────────────────────────────────
   {
     id: "bonegrinder giant attacks",
     displayName: "Bonegrinder Giant Attacks",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "Instead of normal attacks, roll D6: 1 = 'Eadbutt (D6+1 wounds, no armour/Regen saves), 2 = Belly Flop (5\" blast, S, AP -2), 3-4 = Mighty Swing (2D6 attacks, S+2, AP -3), 5 = Grind its Bones (each base-contact infantry model tests Str or removed as casualty; repeat on 4+), 6 = Crush Underfoot (all base-contact models, D6 hits at S+3, AP -3).",
-      },
-    ],
+    description:
+      "Instead of normal attacks, roll D6: 1 = 'Eadbutt (D6+1 wounds, no armour/Regen saves), 2 = Belly Flop (5\" blast, S, AP -2), 3-4 = Mighty Swing (2D6 attacks, S+2, AP -3), 5 = Grind its Bones (each base-contact infantry model tests Str or removed as casualty; repeat on 4+), 6 = Crush Underfoot (all base-contact models, D6 hits at S+3, AP -3).",
+    phases: ["choose-fight"],
   },
   {
     id: "choppas",
     displayName: "Choppas",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "During a turn in which it charged, a model with this special rule may re-roll any rolls To Wound of a natural 1, and improves the Armour Piercing characteristic of its weapon(s) by 1.",
-      },
-    ],
+    description:
+      "During a turn in which it charged, a model with this special rule may re-roll any rolls To Wound of a natural 1, and improves the Armour Piercing characteristic of its weapon(s) by 1.",
+    phases: ["choose-fight"],
   },
   {
     id: "da troll calla",
     displayName: "Da Troll Calla",
-    phases: [
-      {
-        phaseId: "strategy",
-        subPhaseId: "command",
-        description:
-          "Unless he is fleeing, friendly Troll Mobs within Ogdruz's Command range may use his Leadership characteristic instead of their own.",
-      },
-    ],
+    description:
+      "Unless he is fleeing, friendly Troll Mobs within Ogdruz's Command range may use his Leadership characteristic instead of their own.",
+    phases: ["command"],
   },
   {
     id: "ignore goblin panic",
@@ -2290,15 +1581,10 @@ export const SPECIAL_RULES = [
   {
     id: "indiscriminate hunger",
     displayName: "Indiscriminate Hunger",
-    phases: [
-      {
-        phaseId: "strategy",
-        subPhaseId: "start-of-turn",
-        yourTurnOnly: true,
-        description:
-          'At Start of Turn, if within 1" of a friendly unit, take a Leadership test. If failed, the unit attacks the nearest friendly unit this turn instead of the nearest enemy.',
-      },
-    ],
+    description:
+      'At Start of Turn, if within 1" of a friendly unit, take a Leadership test. If failed, the unit attacks the nearest friendly unit this turn instead of the nearest enemy.',
+    phases: ["start-of-turn"],
+    yourTurnOnly: true,
   },
   {
     id: "motherly love",
@@ -2311,14 +1597,9 @@ export const SPECIAL_RULES = [
   {
     id: "protect da boss",
     displayName: "Protect Da Boss",
-    phases: [
-      {
-        phaseId: "combat",
-        subPhaseId: "choose-fight",
-        description:
-          "A character joined to this unit improves their armour save by 1 (max 1+). The character may use Look Out, Sir! with only 2 rank-and-file models present (instead of 5).",
-      },
-    ],
+    description:
+      "A character joined to this unit improves their armour save by 1 (max 1+). The character may use Look Out, Sir! with only 2 rank-and-file models present (instead of 5).",
+    phases: ["choose-fight"],
   },
   {
     id: "slimy shanks",
