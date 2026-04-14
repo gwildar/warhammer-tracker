@@ -2229,6 +2229,93 @@ export const SPECIAL_RULES = [
       },
     ],
   },
+
+  // ─── Orc & Goblin Tribes ─────────────────────────────────────────────────
+  {
+    id: "bonegrinder giant attacks",
+    displayName: "Bonegrinder Giant Attacks",
+    phases: [
+      {
+        phaseId: "combat",
+        subPhaseId: "choose-fight",
+        description:
+          "Instead of normal attacks, roll D6: 1 = 'Eadbutt (D6+1 wounds, no armour/Regen saves), 2 = Belly Flop (5\" blast, S, AP -2), 3-4 = Mighty Swing (2D6 attacks, S+2, AP -3), 5 = Grind its Bones (each base-contact infantry model tests Str or removed as casualty; repeat on 4+), 6 = Crush Underfoot (all base-contact models, D6 hits at S+3, AP -3).",
+      },
+    ],
+  },
+  {
+    id: "choppas",
+    displayName: "Choppas",
+    phases: [
+      {
+        phaseId: "combat",
+        subPhaseId: "choose-fight",
+        description:
+          "During a turn in which it charged, a model with this special rule may re-roll any rolls To Wound of a natural 1, and improves the Armour Piercing characteristic of its weapon(s) by 1.",
+      },
+    ],
+  },
+  {
+    id: "da troll calla",
+    displayName: "Da Troll Calla",
+    phases: [
+      {
+        phaseId: "strategy",
+        subPhaseId: "command",
+        description:
+          "Unless he is fleeing, friendly Troll Mobs within Ogdruz's Command range may use his Leadership characteristic instead of their own.",
+      },
+    ],
+  },
+  {
+    id: "ignore goblin panic",
+    displayName: "Ignore Goblin Panic",
+    passive: true,
+    phases: [],
+    description:
+      "Does not take Panic tests caused by friendly Goblinoid units being destroyed or fleeing through the unit.",
+  },
+  {
+    id: "indiscriminate hunger",
+    displayName: "Indiscriminate Hunger",
+    phases: [
+      {
+        phaseId: "strategy",
+        subPhaseId: "start-of-turn",
+        yourTurnOnly: true,
+        description:
+          'At Start of Turn, if within 1" of a friendly unit, take a Leadership test. If failed, the unit attacks the nearest friendly unit this turn instead of the nearest enemy.',
+      },
+    ],
+  },
+  {
+    id: "motherly love",
+    displayName: "Motherly Love",
+    passive: true,
+    phases: [],
+    description:
+      "Friendly Troll units within Command range may use this model's Leadership for Leadership tests and may re-roll failed Regeneration saves.",
+  },
+  {
+    id: "protect da boss",
+    displayName: "Protect Da Boss",
+    phases: [
+      {
+        phaseId: "combat",
+        subPhaseId: "choose-fight",
+        description:
+          "A character joined to this unit improves their armour save by 1 (max 1+). The character may use Look Out, Sir! with only 2 rank-and-file models present (instead of 5).",
+      },
+    ],
+  },
+  {
+    id: "slimy shanks",
+    displayName: "Slimy Shanks",
+    passive: true,
+    phases: [],
+    description:
+      "Unit ignores the movement penalties for difficult terrain. Enemy models moving into base contact with this unit treat that movement as difficult terrain.",
+  },
 ];
 
 /**

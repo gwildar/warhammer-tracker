@@ -406,6 +406,15 @@ export const RANGED_WEAPONS = {
     rules:
       "Ld test at -2. Wounds = margin of failure. No armour/Regen saves. Can target units in combat.",
   },
+
+  // ─── Tomb Kings Ranged Weapons ───────────────────────────────────────
+  greatbow: {
+    name: "Greatbow",
+    range: '30"',
+    s: "6",
+    ap: "-1",
+    rules: "Armour Bane (2), Multiple Wounds (2), Volley Fire",
+  },
 };
 
 export const COMBAT_WEAPONS = {
@@ -655,14 +664,7 @@ export const COMBAT_WEAPONS = {
     rules: "Magical Attacks, Requires Two Hands",
   },
 
-  // ─── Tomb Kings Weapons ──────────────────────────────────────────────
-  greatbow: {
-    name: "Greatbow",
-    range: '30"',
-    s: "6",
-    ap: "-1",
-    rules: "Armour Bane (2), Multiple Wounds (2), Volley Fire",
-  },
+  // ─── Tomb Kings Combat Weapons ───────────────────────────────────────
   "ritual blade": {
     name: "Ritual Blade",
     s: "S+2",

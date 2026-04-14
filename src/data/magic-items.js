@@ -2354,6 +2354,7 @@ export const MAGIC_ITEMS = [
     name: "Backstabber's Blade",
     type: "weapon",
     points: 25,
+    extremely: true,
     effect:
       "Goblin and Night Goblin Bosses only. S+1, AP -1. Magical Attacks. May re-roll failed To Wound if engaged with enemy flank; re-roll failed To Hit and To Wound if engaged with rear.",
     phases: ["combat"],
@@ -2386,6 +2387,7 @@ export const MAGIC_ITEMS = [
     name: "Trollhide Trousers",
     type: "armour",
     points: 40,
+    extremely: true,
     effect:
       "May be worn with other armour. +1 armour value (max 2+). The wearer gains Regeneration (5+).",
     phases: ["combat", "shooting"],
@@ -2548,6 +2550,7 @@ export const MAGIC_ITEMS = [
     name: "'Eadbuttin' 'At",
     type: "enchanted-item",
     points: 15,
+    extremely: true,
     effect: "The wearer gains Impact Hits (1) with AP -2.",
     phases: ["combat"],
   },
@@ -2555,6 +2558,7 @@ export const MAGIC_ITEMS = [
     name: "Fungus Wine",
     type: "enchanted-item",
     points: 10,
+    extremely: true,
     effect:
       "Night Goblin characters only. Single use. During the Command sub-phase, make a Leadership test. If passed, the character and their unit gain Immune to Psychology until the next Start of Turn sub-phase.",
     phases: ["strategy"],
