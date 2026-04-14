@@ -485,8 +485,12 @@ const COMBAT_RELEVANT_RULES = [
   "unstable",
 ];
 
+// Rules that apply only to the controlling model (rider/handler), not beasts or mounts
+const RIDER_ONLY_RULES = new Set(["strike first", "elven reflexes"]);
+
 function extractCombatRules(unit) {
   const hasMount = !!unit.mount;
+  const hasDetachments = (unit.detachments?.length ?? 0) > 0;
   const results = [];
   for (const rule of unit.specialRules || []) {
     const lower = (rule.displayName || "")
@@ -496,8 +500,10 @@ function extractCombatRules(unit) {
       .trim();
     if (COMBAT_RELEVANT_RULES.some((cr) => lower.includes(cr))) {
       let displayName = rule.displayName.replace(/\s*\{[^}]*\}/g, "").trim();
-      if (hasMount && lower === "strike first")
-        displayName = "Strike First (rider)";
+      if (RIDER_ONLY_RULES.has(lower)) {
+        if (hasMount) displayName += " (rider)";
+        else if (hasDetachments) displayName += " (handler)";
+      }
       results.push(displayName);
     }
   }
