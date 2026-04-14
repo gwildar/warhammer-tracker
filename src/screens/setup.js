@@ -13,7 +13,6 @@ import {
   saveDisplayMode,
 } from "../state.js";
 import { formatSlug } from "../helpers.js";
-import { renderSpellSelection, bindSpellSelectors } from "./spell-selection.js";
 import { navigate } from "../navigate.js";
 
 const app = document.getElementById("app");
@@ -64,7 +63,6 @@ export function renderSetupScreen() {
 
   if (army) {
     bindArmyActions();
-    bindSpellSelectors(army);
   } else {
     bindUpload();
   }
@@ -138,7 +136,6 @@ function renderUploadSection() {
 }
 
 function renderArmySummary(army) {
-  const casters = getCasters(army);
   const totalPts = army.units.reduce((sum, u) => sum + u.points, 0);
 
   return `
@@ -170,7 +167,6 @@ function renderArmySummary(army) {
         </div>
       </div>
 
-      ${casters.length > 0 ? renderSpellSelection(army, casters) : ""}
     </div>
   `;
 }
@@ -285,7 +281,12 @@ function bindArmyActions() {
   document.getElementById("start-game-btn").addEventListener("click", () => {
     const firstTurn = getFirstTurn();
     if (!firstTurn) {
-      navigate("unitAssignmentScreen", getArmy());
+      const army = getArmy();
+      const casters = getCasters(army);
+      navigate(
+        casters.length > 0 ? "spellSelectionScreen" : "unitAssignmentScreen",
+        army,
+      );
     } else if (getIsOpponentTurn()) {
       navigate("opponentTurnScreen", getArmy());
     } else {
