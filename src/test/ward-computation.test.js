@@ -26,6 +26,11 @@ describe("computeWard", () => {
     expect(computeWard([], specialRules)).toBe("6+ (5+ > S5)");
   });
 
+  it("returns 5+ (non-magical shooting) for Dark Runes (Doomfire Warlocks)", () => {
+    const specialRules = [{ id: "dark runes", displayName: "Dark Runes" }];
+    expect(computeWard([], specialRules)).toBe("5+ (non-magical shooting)");
+  });
+
   it("returns 6+ for Daughters of Eternity (Sisters of the Thorn)", () => {
     const specialRules = [
       {

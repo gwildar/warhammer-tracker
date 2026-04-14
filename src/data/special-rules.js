@@ -538,6 +538,17 @@ export const SPECIAL_RULES = [
     ],
   },
   {
+    id: "dark runes",
+    displayName: "Dark Runes",
+    phases: [
+      {
+        phaseId: "shooting",
+        subPhaseId: null,
+        description: "5+ Ward save against non-magical shooting attacks.",
+      },
+    ],
+  },
+  {
     id: "eternal hatred",
     displayName: "Eternal Hatred",
     phases: [
