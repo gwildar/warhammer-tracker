@@ -207,6 +207,36 @@ describe("Close Order restriction: monsters and characters (US < 10)", () => {
     expect(renderCombatResultContext(army)).not.toContain("Close Order");
   });
 
+  it("Great Eagle (MCr, US 5) from wood-elves fixture does NOT get Close Order bonus", () => {
+    const army = loadArmy("wood-elves");
+    const eagle = army.units.find((u) => u.name === "Great Eagle");
+    expect(eagle).toBeDefined();
+    const html = renderCombatResultContext({ units: [eagle] });
+    expect(html).not.toContain("Close Order");
+  });
+
+  it("Be monster (US 3, non-MCr) with Close Order does NOT get the bonus", () => {
+    const army = {
+      units: [
+        {
+          id: "beast.t",
+          name: "Some Beast",
+          category: "rare",
+          strength: 1,
+          unitStrength: 3,
+          stats: [{ troopType: ["Be"], Name: "Some Beast" }],
+          mount: null,
+          specialRules: [
+            { id: "close order", displayName: "Close Order", phases: [] },
+          ],
+          hasStandard: false,
+          hasMusician: false,
+        },
+      ],
+    };
+    expect(renderCombatResultContext(army)).not.toContain("Close Order");
+  });
+
   it("RI infantry (US 20) with Close Order DOES get the bonus", () => {
     const army = {
       units: [

@@ -1117,8 +1117,11 @@ export function renderCombatResultContext(army) {
     const hasCloseOrder = (u.specialRules || []).some((r) =>
       r.displayName?.toLowerCase().includes("close order"),
     );
+    const primaryTroopType = u.stats?.[0]?.troopType?.find(
+      (t) => !["Ch", "NCh"].includes(t),
+    );
     const isMonsterOrRiddenMonster =
-      u.stats?.[0]?.troopType?.[0] === "MCr" || u.mount?.wBonus > 0;
+      ["MCr", "Be"].includes(primaryTroopType) || u.mount?.wBonus > 0;
     const isCharacterUnit = ["characters", "lords", "heroes"].includes(
       u.category,
     );
