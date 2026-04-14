@@ -2134,6 +2134,7 @@ export const MAGIC_ITEMS = [
     effect:
       "Alter Kindred. The character and their unit may re-roll any To Hit rolls of a natural 1 during the Combat phase.",
     phases: ["combat"],
+    grantsRules: ["aspect of the hound"],
   },
   {
     name: "Eternal Kindred",
@@ -2166,8 +2167,8 @@ export const MAGIC_ITEMS = [
     effect:
       "Alter Kindred. Infantry or cavalry only. +1 Strength and +1 Toughness.",
     phases: ["passive"],
-
     strengthMod: "+1",
+    grantsRules: ["aspect of the bear"],
   },
   {
     name: "Blight-Tipped Arrows",
@@ -2200,6 +2201,8 @@ export const MAGIC_ITEMS = [
     effect:
       "Alter Kindred. Improves AP of weapons by 1 during a turn in which the character charged. Gains Impact Hits (1).",
     phases: ["combat"],
+    impactHits: "1",
+    grantsRules: ["aspect of the boar"],
   },
   {
     name: "Aspect of the Cat",
@@ -2208,8 +2211,8 @@ export const MAGIC_ITEMS = [
     effect:
       "Alter Kindred. Gains Armour Bane (1) and may re-roll failed To Hit rolls during a challenge.",
     phases: ["combat"],
-
     armourBane: 1,
+    grantsRules: ["aspect of the cat"],
   },
   {
     name: "A Resplendence of Luminescents",

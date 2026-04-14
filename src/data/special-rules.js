@@ -1932,6 +1932,54 @@ export const SPECIAL_RULES = [
       },
     ],
   },
+  // ─── Alter Kindred (Wood Elves) ──────────────────────────────────────
+  {
+    id: "aspect of the hound",
+    displayName: "Aspect of the Hound",
+    phases: [
+      {
+        phaseId: "combat",
+        subPhaseId: null,
+        description:
+          "The character and their unit may re-roll any To Hit rolls of a natural 1 during the Combat phase.",
+      },
+    ],
+  },
+  {
+    id: "aspect of the bear",
+    displayName: "Aspect of the Bear",
+    phases: [
+      {
+        phaseId: null,
+        subPhaseId: null,
+        description: "+1 Strength and +1 Toughness. Infantry or cavalry only.",
+      },
+    ],
+  },
+  {
+    id: "aspect of the boar",
+    displayName: "Aspect of the Boar",
+    phases: [
+      {
+        phaseId: "combat",
+        subPhaseId: null,
+        description:
+          "Impact Hits (1). Weapon AP improves by 1 on a turn in which the character charged.",
+      },
+    ],
+  },
+  {
+    id: "aspect of the cat",
+    displayName: "Aspect of the Cat",
+    phases: [
+      {
+        phaseId: "combat",
+        subPhaseId: null,
+        description:
+          "Armour Bane (1). May re-roll failed To Hit rolls during a challenge.",
+      },
+    ],
+  },
   {
     id: "nehekharan undead",
     displayName: "Nehekharan Undead",

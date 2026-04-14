@@ -483,6 +483,10 @@ const COMBAT_RELEVANT_RULES = [
   "valour of ages",
   "arcane backlash",
   "unstable",
+  "aspect of the hound",
+  "aspect of the bear",
+  "aspect of the boar",
+  "aspect of the cat",
 ];
 
 // Rules that apply only to the controlling model (rider/handler), not beasts or mounts

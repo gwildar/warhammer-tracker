@@ -189,6 +189,16 @@ function parseCanonicalUnit(raw, category) {
   );
   const specialRules = resolveSpecialRules(specialRulesText);
 
+  // Inject rules granted by magic items (e.g. Alter Kindred aspects)
+  for (const item of magicItems) {
+    for (const ruleName of item.grantsRules || []) {
+      if (!specialRules.some((r) => r.id === ruleName)) {
+        const resolved = resolveSpecialRules(ruleName);
+        specialRules.push(...resolved);
+      }
+    }
+  }
+
   // Find the active mount (if any)
   let mountName = null;
   if (Array.isArray(raw.mounts)) {
@@ -213,7 +223,9 @@ function parseCanonicalUnit(raw, category) {
   const magicResistance = computeMR(magicItems, specialRules, stats);
   const poisonedAttacks = computePoisonedAttacks(specialRules);
   const stomp = computeStomp(mount, specialRules);
-  const impactHits = computeImpactHits(mount, specialRules);
+  const itemImpactHits =
+    magicItems.find((item) => item.impactHits)?.impactHits ?? null;
+  const impactHits = computeImpactHits(mount, specialRules) ?? itemImpactHits;
 
   // Command group flags
   const isGeneral =
