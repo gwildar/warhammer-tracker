@@ -2,6 +2,21 @@ import { SPECIAL_RULES } from "../data/special-rules.js";
 import { getRound } from "../state.js";
 import { normaliseRuleName, ruleMatches } from "../helpers.js";
 
+const RULES = SPECIAL_RULES.map((rule) => ({
+  ...rule,
+  phases: rule.phases.map((entry) =>
+    typeof entry === "string"
+      ? {
+          subPhaseId: entry,
+          description: rule.description,
+          yourTurnOnly: rule.yourTurnOnly,
+          opponentOnly: rule.opponentOnly,
+          fromRound: rule.fromRound,
+        }
+      : entry,
+  ),
+}));
+
 const TROOP_TYPE_RULES = {
   MCa: ["Fear"],
   MCr: ["Fear", "Large Target"],
@@ -11,7 +26,6 @@ const TROOP_TYPE_RULES = {
 function injectMountRules(unitRules, unit) {
   if (!unit.mount) return;
   const mount = unit.mount;
-  if (!mount) return;
 
   if (
     mount.swiftstride &&
@@ -78,19 +92,6 @@ function injectTerrorFear(unitRules) {
   }
 }
 
-function normalisePhaseEntry(rule, entry) {
-  if (typeof entry === "string") {
-    return {
-      subPhaseId: entry,
-      description: rule.description,
-      yourTurnOnly: rule.yourTurnOnly,
-      opponentOnly: rule.opponentOnly,
-      fromRound: rule.fromRound,
-    };
-  }
-  return entry;
-}
-
 function buildUnitRules(unit) {
   const unitRules = [];
 
@@ -98,7 +99,6 @@ function buildUnitRules(unit) {
     if (rule.displayName) unitRules.push(rule.displayName);
   }
 
-  // Add weapon names from resolved weapons
   if (Array.isArray(unit.weapons)) {
     for (const weapon of unit.weapons) {
       if (weapon.name) {
@@ -152,10 +152,9 @@ export function renderSpecialRulesContext(army, subPhase) {
 
     for (const ruleName of unitRules) {
       const normName = normaliseRuleName(ruleName);
-      for (const rule of SPECIAL_RULES) {
+      for (const rule of RULES) {
         if (!ruleMatches(rule, normName)) continue;
-        for (const rawEntry of rule.phases) {
-          const phase = normalisePhaseEntry(rule, rawEntry);
+        for (const phase of rule.phases) {
           if (phase.subPhaseId !== subPhase.id) continue;
           if (phase.fromRound && round < phase.fromRound) continue;
           if (phase.opponentOnly) continue;
@@ -195,10 +194,9 @@ export function renderSpecialRulesForPhase(army, phase) {
 
       for (const ruleName of unitRules) {
         const normName = normaliseRuleName(ruleName);
-        for (const rule of SPECIAL_RULES) {
+        for (const rule of RULES) {
           if (!ruleMatches(rule, normName)) continue;
-          for (const rawEntry of rule.phases) {
-            const rulePhase = normalisePhaseEntry(rule, rawEntry);
+          for (const rulePhase of rule.phases) {
             if (rulePhase.subPhaseId !== sub.id) continue;
             if (rulePhase.fromRound && round < rulePhase.fromRound) continue;
             if (rulePhase.yourTurnOnly) continue;

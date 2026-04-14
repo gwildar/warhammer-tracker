@@ -718,8 +718,8 @@ export const SPECIAL_RULES = [
     opponentOnly: true,
   },
   {
-    id: undefined,
-    displayName: undefined,
+    id: "Peasant's Duty",
+    displayName: "Peasant's Duty",
     description:
       "May Give Ground instead of Fall Back in Good Order. Friendly Levies within Command range re-roll failed Panic tests.",
     phases: ["break-test"],
@@ -738,11 +738,11 @@ export const SPECIAL_RULES = [
     phases: ["break-test"],
   },
   {
-    id: undefined,
-    displayName: undefined,
+    id: "peasantry",
+    displayName: "Peasantry",
     description:
-      'No Panic test when a friendly Peasantry unit is destroyed within 6" or flees through.',
-    phases: ["start-of-turn"],
+      "Within 6\" of a non-fleeing Knight's/Questing/Grail Vow model, may use that model's Ld. Standard cannot be taken as a trophy.",
+    phases: ["command", "rally", "break-test"],
   },
   {
     id: "guardian of the sacred sites",
@@ -1645,44 +1645,6 @@ export const ARCANE_FAMILIAR = {
 };
 
 // ─── Helpers ────────────────────────────────────────────────────────
-
-/**
- * Return all special rules that are active during a given sub-phase.
- * @param {string} subPhaseId – e.g. 'start-of-turn', 'declare-charges'
- * @returns {Array<{name: string, description: string}>}
- */
-export function rulesForSubPhase(subPhaseId) {
-  const results = [];
-  for (const rule of SPECIAL_RULES) {
-    for (const p of rule.phases) {
-      if (p.subPhaseId === subPhaseId) {
-        results.push({ name: rule.displayName, description: p.description });
-      }
-    }
-  }
-  return results;
-}
-
-/**
- * Return all special rules that are active during a given phase.
- * @param {string} phaseId – e.g. 'strategy', 'movement', 'shooting', 'combat'
- * @returns {Array<{name: string, subPhaseId: string, description: string}>}
- */
-export function rulesForPhase(phaseId) {
-  const results = [];
-  for (const rule of SPECIAL_RULES) {
-    for (const p of rule.phases) {
-      if (p.phaseId === phaseId) {
-        results.push({
-          name: rule.displayName,
-          subPhaseId: p.subPhaseId,
-          description: p.description,
-        });
-      }
-    }
-  }
-  return results;
-}
 
 /**
  * Look up a specific rule by name (case-insensitive).
