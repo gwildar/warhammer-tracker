@@ -69,9 +69,13 @@ describe("computeUnitStrength", () => {
     const mount = { troopType: "MCr", wBonus: 3 };
     expect(computeUnitStrength(makeUnit(["RI", "Ch"], 1, mount))).toBe(4);
   });
-  it("character on horse (wBonus 0, HC) has US 1", () => {
+  it("character on horse (wBonus 0, HC) has US 2", () => {
     const mount = { troopType: "HC", wBonus: 0 };
-    expect(computeUnitStrength(makeUnit(["RI", "Ch"], 1, mount))).toBe(1);
+    expect(computeUnitStrength(makeUnit(["RI", "Ch"], 1, mount))).toBe(2);
+  });
+  it("character on Warhawk (wBonus 0, MCa) has US 3", () => {
+    const mount = { troopType: "MCa", wBonus: 0 };
+    expect(computeUnitStrength(makeUnit(["RI", "Ch"], 1, mount))).toBe(3);
   });
   it("unit with no stats defaults to 1 per model", () => {
     const unit = { strength: 5, stats: [], mount: null };
@@ -85,6 +89,14 @@ describe("cavalry unit strength from wood-elves fixture", () => {
     const riders = army.units.find((u) => u.id.startsWith("glade-riders"));
     expect(riders).toBeDefined();
     expect(riders.unitStrength).toBe(16);
+  });
+  it("Spellsinger on Warhawk (MCa mount, wBonus 0) has unitStrength 3", () => {
+    const army = loadArmy("wood-elves");
+    const spellsinger = army.units.find(
+      (u) => u.name === "Spellsinger" && u.mount?.name === "Warhawk",
+    );
+    expect(spellsinger).toBeDefined();
+    expect(spellsinger.unitStrength).toBe(3);
   });
 });
 

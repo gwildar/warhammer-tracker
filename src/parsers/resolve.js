@@ -45,6 +45,14 @@ export function computeUnitStrength(unit) {
 
   const typeArr = unit.stats?.[0]?.troopType ?? [];
   const primaryType = typeArr.find((t) => !TROOP_TYPE_MARKERS.has(t));
+  const isCharacter = typeArr.some((t) => TROOP_TYPE_MARKERS.has(t));
+
+  // Character on a cavalry mount (wBonus = 0): use mount's troop type US
+  if (mount?.troopType && isCharacter) {
+    const mountUS = TROOP_STRENGTH_PER_MODEL[mount.troopType] ?? 1;
+    return mountUS * (unit.strength || 1);
+  }
+
   const usPerModel =
     primaryType !== undefined
       ? (TROOP_STRENGTH_PER_MODEL[primaryType] ?? 1)
