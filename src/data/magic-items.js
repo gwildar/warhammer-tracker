@@ -2545,6 +2545,7 @@ export const MAGIC_ITEMS = [
     effect:
       "+1 Initiative. The wearer and their unit are not subject to the Impetuous special rule.",
     phases: ["passive"],
+    removesRules: ["impetuous"],
   },
   {
     name: "'Eadbuttin' 'At",
