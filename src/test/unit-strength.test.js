@@ -196,6 +196,32 @@ describe("Close Order restriction: monsters and characters (US < 10)", () => {
   });
 });
 
+describe("New Recruit format: unitStrength is computed at parse time", () => {
+  it("each unit in a NR army has a numeric unitStrength >= 0", () => {
+    const army = loadArmy("dark-elves-nr");
+    for (const u of army.units) {
+      expect(typeof u.unitStrength).toBe("number");
+      expect(u.unitStrength).toBeGreaterThanOrEqual(0);
+    }
+  });
+
+  it("NR army total unit strength is greater than 0", () => {
+    const army = loadArmy("dark-elves-nr");
+    const totalUS = army.units.reduce(
+      (sum, u) => sum + (u.unitStrength ?? 0),
+      0,
+    );
+    expect(totalUS).toBeGreaterThan(0);
+  });
+
+  it("Dark Riders (5 LC) have unitStrength 5", () => {
+    const army = loadArmy("dark-elves-nr");
+    const darkRiders = army.units.find((u) => u.name === "Dark Riders");
+    expect(darkRiders).toBeDefined();
+    expect(darkRiders.unitStrength).toBe(5);
+  });
+});
+
 describe("army list displays unit strength", () => {
   it("army header shows 'Total Army Unit Strength' with correct value", () => {
     const army = loadArmy("mc-skeleton-horde");

@@ -10,6 +10,7 @@ import {
 import { getCasters } from "../army.js";
 
 import darkElvesJson from "./fixtures/dark-elves.owb.json";
+import darkElvesNRJson from "./fixtures/dark-elves.new-recruit.json";
 import lizardmenJson from "./fixtures/lizardmen.owb.json";
 import bretonniaJson from "./fixtures/bretonnia.owb.json";
 import bretonniaChargeJson from "./fixtures/bretonnia-charge.owb.json";
@@ -24,6 +25,7 @@ import woodElvesJson from "./fixtures/wood-elves.owb.json";
 export function loadArmy(fixture) {
   const jsonMap = {
     "dark-elves": darkElvesJson,
+    "dark-elves-nr": darkElvesNRJson,
     lizardmen: lizardmenJson,
     bretonnia: bretonniaJson,
     "bretonnia-charge": bretonniaChargeJson,
