@@ -1,6 +1,8 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import { computeUnitStrength } from "../parsers/resolve.js";
 import { loadArmy } from "./helpers.js";
+import { renderCombatWeaponsContext } from "../context/combat-weapons.js";
+import { saveCharacterAssignments } from "../state.js";
 
 function makeUnit(troopTypes, strength, mount = null) {
   return {
@@ -76,5 +78,26 @@ describe("unit.unitStrength on canonical units from loadArmy", () => {
     );
     expect(skeletons).toBeDefined();
     expect(skeletons.unitStrength).toBe(skeletons.strength);
+  });
+});
+
+describe("combat panel displays unit strength", () => {
+  beforeEach(() => {
+    saveCharacterAssignments({});
+  });
+
+  it("shows 'US:' in the combat panel HTML", () => {
+    const army = loadArmy("mc-skeleton-horde");
+    const html = renderCombatWeaponsContext(army);
+    expect(html).toContain("US:");
+  });
+
+  it("Skeleton Warriors unit strength matches their model count", () => {
+    const army = loadArmy("mc-skeleton-horde");
+    const skeletons = army.units.find((u) =>
+      u.id.startsWith("skeleton-warriors"),
+    );
+    const html = renderCombatWeaponsContext(army);
+    expect(html).toContain(`US:${skeletons.unitStrength}`);
   });
 });
