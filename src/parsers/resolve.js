@@ -323,7 +323,9 @@ export function resolveSpecialRules(rulesString) {
   const rules = [];
   const parts = rulesString.split(",").map((s) => s.trim());
 
-  for (const part of parts) {
+  for (const rawPart of parts) {
+    // Strip trailing * — OWB uses it as a footnote marker for conditional rules
+    const part = rawPart.replace(/\*$/, "");
     // Try to find in SPECIAL_RULES by id or alias
     let found = null;
 
