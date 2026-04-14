@@ -30,7 +30,7 @@ function renderCharTags(char) {
 
 function renderCharCard(char) {
   return `
-    <div class="p-2 rounded bg-wh-card border border-wh-border cursor-grab active:cursor-grabbing mb-2 select-none"
+    <div class="p-2 rounded bg-wh-card border border-wh-border cursor-grab active:cursor-grabbing mb-2 select-none touch-none"
       draggable="true"
       data-char-id="${char.id}">
       <div class="text-sm font-semibold text-wh-text">${char.name}${renderCharTags(char)}</div>
