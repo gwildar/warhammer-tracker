@@ -1940,7 +1940,7 @@ export const SPECIAL_RULES = [
       {
         phaseId: null,
         subPhaseId: null,
-        description: "6+ Ward save.",
+        description: "4+ Ward save.",
       },
     ],
   },

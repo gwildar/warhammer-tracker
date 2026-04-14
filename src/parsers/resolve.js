@@ -183,7 +183,7 @@ const MAGIC_ITEM_MAP = buildMagicItemMap();
 
 const WARD_RULES = new Map([
   ["the grail vow", "6+ (5+ > S5)"],
-  ["daughters of eternity", "6+"],
+  ["daughters of eternity", "4+"],
 ]);
 
 /**

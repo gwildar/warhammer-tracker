@@ -33,7 +33,7 @@ describe("computeWard", () => {
         displayName: "Daughters of Eternity",
       },
     ];
-    expect(computeWard([], specialRules)).toBe("6+");
+    expect(computeWard([], specialRules)).toBe("4+");
   });
 
   it("ignores unrelated special rules", () => {
