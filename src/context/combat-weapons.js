@@ -624,6 +624,18 @@ export function renderCombatWeaponsContext(army) {
           (u.unitStrength ?? 0) +
           assignedChars.reduce((sum, c) => sum + (c.unitStrength ?? 0), 0),
         crew: [],
+        detachments: (u.detachments || []).map((d) => {
+          const dStats = d.stats?.[0];
+          return {
+            name: d.name,
+            strength: d.strength,
+            i: dStats?.I || "?",
+            ws: dStats?.WS || "?",
+            s: dStats?.S || "?",
+            a: dStats?.A || "?",
+            weapons: d.weapons || [],
+          };
+        }),
       });
       continue;
     }
@@ -847,6 +859,18 @@ export function renderCombatWeaponsContext(army) {
       unitStrength:
         (u.unitStrength ?? 0) +
         assignedChars.reduce((sum, c) => sum + (c.unitStrength ?? 0), 0),
+      detachments: (u.detachments || []).map((d) => {
+        const dStats = d.stats?.[0];
+        return {
+          name: d.name,
+          strength: d.strength,
+          i: dStats?.I || "?",
+          ws: dStats?.WS || "?",
+          s: dStats?.S || "?",
+          a: dStats?.A || "?",
+          weapons: d.weapons || [],
+        };
+      }),
     });
   }
 
@@ -953,6 +977,21 @@ export function renderCombatWeaponsContext(army) {
               )
               .join("")
           : renderWeaponLine(c.i, c.ws, c.s, c.a, HAND_WEAPON, c.name, null, {
+              apMod: r.apMod,
+              conditionalSMods: r.conditionalStrengthMods,
+            }),
+      ),
+      ...(r.detachments || []).map((d) =>
+        d.weapons.length > 0
+          ? d.weapons
+              .map((w) =>
+                renderWeaponLine(d.i, d.ws, d.s, d.a, w, d.name, null, {
+                  apMod: r.apMod,
+                  conditionalSMods: r.conditionalStrengthMods,
+                }),
+              )
+              .join("")
+          : renderWeaponLine(d.i, d.ws, d.s, d.a, HAND_WEAPON, d.name, null, {
               apMod: r.apMod,
               conditionalSMods: r.conditionalStrengthMods,
             }),
