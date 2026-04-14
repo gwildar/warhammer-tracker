@@ -486,6 +486,7 @@ const COMBAT_RELEVANT_RULES = [
 ];
 
 function extractCombatRules(unit) {
+  const hasMount = !!unit.mount;
   const results = [];
   for (const rule of unit.specialRules || []) {
     const lower = (rule.displayName || "")
@@ -494,7 +495,10 @@ function extractCombatRules(unit) {
       .replace(/\s*\{[^}]*\}/g, "")
       .trim();
     if (COMBAT_RELEVANT_RULES.some((cr) => lower.includes(cr))) {
-      results.push(rule.displayName.replace(/\s*\{[^}]*\}/g, "").trim());
+      let displayName = rule.displayName.replace(/\s*\{[^}]*\}/g, "").trim();
+      if (hasMount && lower === "strike first")
+        displayName = "Strike First (rider)";
+      results.push(displayName);
     }
   }
   if (
@@ -514,6 +518,9 @@ function extractCombatRules(unit) {
     !results.some((r) => r.toLowerCase().includes("first charge"))
   ) {
     results.push("First Charge");
+  }
+  if (unit.mount?.strikeFirst) {
+    results.push("Strike First (mount)");
   }
   return results;
 }
