@@ -14,8 +14,8 @@ const MOUNT_KEY_OVERRIDES = {
 const TROOP_STRENGTH_PER_MODEL = {
   RI: 1, // Regular Infantry
   HI: 1, // Heavy Infantry
-  LC: 1, // Light Cavalry
-  HC: 1, // Heavy Cavalry
+  LC: 2, // Light Cavalry
+  HC: 2, // Heavy Cavalry
   WB: 1, // War Beasts
   MI: 2, // Monstrous Infantry
   MCa: 3, // Monstrous Cavalry

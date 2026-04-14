@@ -21,6 +21,12 @@ describe("computeUnitStrength", () => {
   it("HI unit of 10 has US 10", () => {
     expect(computeUnitStrength(makeUnit(["HI"], 10))).toBe(10);
   });
+  it("LC unit of 8 has US 16", () => {
+    expect(computeUnitStrength(makeUnit(["LC"], 8))).toBe(16);
+  });
+  it("HC unit of 5 has US 10", () => {
+    expect(computeUnitStrength(makeUnit(["HC"], 5))).toBe(10);
+  });
   it("MI unit of 3 has US 6", () => {
     expect(computeUnitStrength(makeUnit(["MI"], 3))).toBe(6);
   });
@@ -70,6 +76,15 @@ describe("computeUnitStrength", () => {
   it("unit with no stats defaults to 1 per model", () => {
     const unit = { strength: 5, stats: [], mount: null };
     expect(computeUnitStrength(unit)).toBe(5);
+  });
+});
+
+describe("cavalry unit strength from wood-elves fixture", () => {
+  it("Glade Riders (8 LC) have unitStrength 16", () => {
+    const army = loadArmy("wood-elves");
+    const riders = army.units.find((u) => u.id.startsWith("glade-riders"));
+    expect(riders).toBeDefined();
+    expect(riders.unitStrength).toBe(16);
   });
 });
 
@@ -233,11 +248,11 @@ describe("New Recruit format: unitStrength is computed at parse time", () => {
     expect(totalUS).toBeGreaterThan(0);
   });
 
-  it("Dark Riders (5 LC) have unitStrength 5", () => {
+  it("Dark Riders (5 LC) have unitStrength 10", () => {
     const army = loadArmy("dark-elves-nr");
     const darkRiders = army.units.find((u) => u.name === "Dark Riders");
     expect(darkRiders).toBeDefined();
-    expect(darkRiders.unitStrength).toBe(5);
+    expect(darkRiders.unitStrength).toBe(10);
   });
 });
 
