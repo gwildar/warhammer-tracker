@@ -490,6 +490,7 @@ const RIDER_ONLY_RULES = new Set(["strike first", "elven reflexes"]);
 
 function extractCombatRules(unit) {
   const hasMount = !!unit.mount;
+  const isCavalryMount = hasMount && !(unit.mount.wBonus > 0);
   const hasDetachments = (unit.detachments?.length ?? 0) > 0;
   const results = [];
   for (const rule of unit.specialRules || []) {
@@ -500,7 +501,10 @@ function extractCombatRules(unit) {
       .trim();
     if (COMBAT_RELEVANT_RULES.some((cr) => lower.includes(cr))) {
       let displayName = rule.displayName.replace(/\s*\{[^}]*\}/g, "").trim();
-      if (RIDER_ONLY_RULES.has(lower)) {
+      if (lower === "elven reflexes") {
+        if (isCavalryMount) displayName += " (rider)";
+        else if (hasDetachments) displayName += " (handler)";
+      } else if (RIDER_ONLY_RULES.has(lower)) {
         if (hasMount) displayName += " (rider)";
         else if (hasDetachments) displayName += " (handler)";
       }
