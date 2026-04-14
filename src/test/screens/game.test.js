@@ -1515,4 +1515,22 @@ describe("Skeleton Horde army — Casket of Souls", () => {
     expect(spells.map((s) => s.name)).toContain("Light of Death");
     expect(spells.map((s) => s.name)).toContain("Light of Protection");
   });
+
+  it("Light of Protection appears in conjuration sub-phase", () => {
+    savePhaseIndex(2); // conjuration
+    renderGameScreen(army);
+    expect(getApp().textContent).toContain("Light of Protection");
+  });
+
+  it("Light of Death appears in shoot sub-phase", () => {
+    savePhaseIndex(8); // shoot
+    renderGameScreen(army);
+    expect(getApp().textContent).toContain("Light of Death");
+  });
+
+  it("Light of Death does not appear in conjuration sub-phase", () => {
+    savePhaseIndex(2); // conjuration — magic missiles are cast in shoot
+    renderGameScreen(army);
+    expect(getApp().textContent).not.toContain("Light of Death");
+  });
 });

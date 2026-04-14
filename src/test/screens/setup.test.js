@@ -175,3 +175,18 @@ describe("Setup Screen", () => {
     });
   });
 });
+
+describe("Setup Screen — Skeleton Horde army (Casket of Souls)", () => {
+  beforeEach(() => {
+    registerScreen("spellSelectionScreen", renderSpellSelectionScreen);
+    loadArmy("mc-skeleton-horde");
+  });
+
+  it("spell selection screen shows bound spells without checkboxes for the Casket", () => {
+    renderSetupScreen();
+    getApp().querySelector("#start-game-btn").click();
+    expect(getApp().textContent).toContain("Light of Death");
+    expect(getApp().textContent).toContain("Light of Protection");
+    expect(getApp().textContent).toContain("Bound Spells");
+  });
+});

@@ -12,6 +12,35 @@ export function renderSpellSelection(army, casters) {
 
       ${casters
         .map((caster) => {
+          const allBound =
+            caster.lores.length > 0 &&
+            caster.lores.every((l) => LORES[l]?.bound);
+          if (allBound) {
+            const boundSpells = caster.lores.flatMap(
+              (l) => LORES[l]?.spells || [],
+            );
+            return `
+              <div class="mb-6 last:mb-0 pb-4 border-b border-wh-border last:border-0">
+                <div class="mb-2">
+                  <span class="font-semibold text-wh-text">${caster.name}</span>
+                </div>
+                <p class="text-xs text-wh-muted mb-2">Bound Spells — always available, no selection required.</p>
+                <div class="space-y-1">
+                  ${boundSpells
+                    .map(
+                      (s) => `
+                    <div class="flex justify-between text-xs text-wh-muted py-0.5">
+                      <span>${s.name}</span>
+                      <span class="font-mono">${s.cv}</span>
+                    </div>
+                  `,
+                    )
+                    .join("")}
+                </div>
+              </div>
+            `;
+          }
+
           const coreLoreKey =
             caster.activeLore ||
             (caster.lores.length > 0 ? caster.lores[0] : null);
