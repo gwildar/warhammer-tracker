@@ -11,6 +11,48 @@ const MOUNT_KEY_OVERRIDES = {
   "skeletal steed": "skeletal-steed-vampire-counts",
 };
 
+const TROOP_STRENGTH_PER_MODEL = {
+  RI: 1, // Regular Infantry
+  HI: 1, // Heavy Infantry
+  LC: 1, // Light Cavalry
+  HC: 1, // Heavy Cavalry
+  WB: 1, // War Beasts
+  MI: 2, // Monstrous Infantry
+  MCa: 3, // Monstrous Cavalry
+  Be: 3, // Monstrous Beasts
+  HCh: 3, // Heavy Chariot
+  LCh: 3, // Light Chariot
+  MCr: 5, // Monsters
+  WM: 0, // War Machines
+  Sw: 3, // Swarms
+};
+
+const TROOP_TYPE_MARKERS = new Set(["Ch", "NCh"]);
+
+/**
+ * Compute unit strength for a canonical unit.
+ * For a character on a monster mount (mount.wBonus > 0), returns mount US + 1.
+ * Otherwise derives US per model from the unit's primary troop type × model count.
+ */
+export function computeUnitStrength(unit) {
+  const mount = unit.mount;
+
+  // Character on a monster mount: mount US + 1 for the rider
+  if (mount?.wBonus > 0) {
+    const mountUS = TROOP_STRENGTH_PER_MODEL[mount.troopType] ?? 5;
+    return mountUS + 1;
+  }
+
+  const typeArr = unit.stats?.[0]?.troopType ?? [];
+  const primaryType = typeArr.find((t) => !TROOP_TYPE_MARKERS.has(t));
+  const usPerModel =
+    primaryType !== undefined
+      ? (TROOP_STRENGTH_PER_MODEL[primaryType] ?? 1)
+      : 1;
+
+  return usPerModel * (unit.strength || 1);
+}
+
 export function resolveUnitEntry(entry) {
   return Array.isArray(entry)
     ? entry
