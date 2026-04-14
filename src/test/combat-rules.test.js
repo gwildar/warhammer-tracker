@@ -2,9 +2,39 @@ import { describe, it, expect, beforeEach } from "vitest";
 import { loadArmy } from "./helpers.js";
 import { renderCombatWeaponsContext } from "../context/combat-weapons.js";
 import { saveCharacterAssignments } from "../state.js";
+import { getCasters } from "../army.js";
 
 beforeEach(() => {
   saveCharacterAssignments({});
+});
+
+describe("Cursed Coven — Doomfire Warlocks as casters", () => {
+  it("Doomfire Warlocks are detected as casters", () => {
+    const army = loadArmy("dark-elves");
+    const warlocks = army.units.find((u) => u.name === "Doomfire Warlock");
+    expect(warlocks).toBeDefined();
+    expect(warlocks.isCaster).toBe(true);
+  });
+
+  it("Doomfire Warlocks have dark-magic and daemonology lores", () => {
+    const army = loadArmy("dark-elves");
+    const warlocks = army.units.find((u) => u.name === "Doomfire Warlock");
+    expect(warlocks.lores).toContain("dark-magic");
+    expect(warlocks.lores).toContain("daemonology");
+  });
+
+  it("Doomfire Warlocks appear in getCasters", () => {
+    const army = loadArmy("dark-elves");
+    const casters = getCasters(army);
+    const warlocks = casters.find((u) => u.name === "Doomfire Warlock");
+    expect(warlocks).toBeDefined();
+  });
+
+  it("Doomfire Warlocks have hasCursedCoven flag", () => {
+    const army = loadArmy("dark-elves");
+    const warlocks = army.units.find((u) => u.name === "Doomfire Warlock");
+    expect(warlocks.hasCursedCoven).toBe(true);
+  });
 });
 
 describe("Elven Reflexes labelling", () => {

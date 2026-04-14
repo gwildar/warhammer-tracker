@@ -51,6 +51,7 @@ export function renderSpellSelection(army, casters) {
             `
             }
 
+            ${caster.hasCursedCoven ? '<p class="text-xs text-wh-muted mb-2">Cursed Coven: choose 1 spell from the selected lore.</p>' : ""}
             <div class="spell-list" data-unit-id="${caster.id}" data-lore="${coreLoreKey || ""}">
               ${coreLoreKey ? renderCasterSpells(coreLoreKey, caster, unitSelections, caster.factionLores) : '<p class="text-sm text-wh-muted">Select a lore above</p>'}
             </div>
@@ -75,9 +76,8 @@ function renderCasterSpells(
   const coreSignatures = coreLore.spells.filter((s) => s.num === "S");
   const numberedSpells = coreLore.spells.filter((s) => s.num !== "S");
 
-  if (caster.hasLoreFamiliar) {
+  if (caster.hasLoreFamiliar || caster.hasCursedCoven) {
     return `
-      <div class="mb-2 text-xs text-wh-purple">Lore Familiar: choose any spells from ${coreLore.name}</div>
       <div class="space-y-1">
         ${coreLore.spells.map((spell) => renderSpellCheckbox(coreLoreKey, spell, caster.id, unitSelections, false)).join("")}
       </div>
