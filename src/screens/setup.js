@@ -204,7 +204,7 @@ function renderUnitList(army) {
           );
 
           return `
-        <div class="py-1 px-2 rounded hover:bg-wh-card text-sm">
+        <div class="flex justify-between items-center py-1 px-2 rounded hover:bg-wh-card text-sm">
           <div>
             <span class="text-wh-text">${displayUnitName(u.name, u.strength)}</span>
             ${u.strength > 1 ? `<span class="text-wh-muted ml-1">x${u.strength}</span>` : ""}
@@ -215,9 +215,7 @@ function renderUnitList(army) {
             ${magicWeapons.length > 0 ? `<span class="text-wh-accent ml-1 text-xs">${magicWeapons.join(", ")}</span>` : ""}
             ${banners.length > 0 ? `<span class="text-wh-muted ml-1 text-xs">${banners.map((b) => `${b.name} (${b.points || 0}pts)`).join(", ")}</span>` : ""}
           </div>
-          <div>
-            <span class="text-wh-muted font-mono text-xs">${u.points}pts</span>
-          </div>
+          <span class="text-wh-muted font-mono text-xs shrink-0 ml-2">${u.points}pts</span>
         </div>
       `;
         })

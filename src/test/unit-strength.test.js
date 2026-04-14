@@ -236,9 +236,9 @@ describe("army list displays unit strength", () => {
     expect(html).not.toContain("US:");
   });
 
-  it("unit points appear on their own line", () => {
+  it("unit points are shown in the unit row", () => {
     const army = loadArmy("mc-skeleton-horde");
     const html = renderArmySummary(army);
-    expect(html).toMatch(/pts<\/span>\s*<\/div>\s*<\/div>/);
+    expect(html).toContain("pts</span>");
   });
 });
