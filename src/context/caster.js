@@ -7,6 +7,17 @@ export function getKnownSpells(caster) {
   const unitSel = selections[caster.id] || {};
   const spells = [];
 
+  // Auto-include all spells from bound lores (no selection needed)
+  for (const loreKey of caster.lores || []) {
+    const lore = LORES[loreKey];
+    if (lore?.bound) {
+      for (const spell of lore.spells) {
+        spells.push({ ...spell, loreKey, loreName: lore.name });
+      }
+    }
+  }
+
+  // Include selected spells from non-bound lores
   for (const [key, selected] of Object.entries(unitSel)) {
     if (!selected) continue;
     const parts = key.split(":");
@@ -15,7 +26,7 @@ export function getKnownSpells(caster) {
     const num = parts[1];
     const name = parts.slice(2).join(":");
     const lore = LORES[loreKey];
-    if (!lore) continue;
+    if (!lore || lore.bound) continue;
     const spell = lore.spells.find(
       (s) => String(s.num) === num && s.name === name,
     );

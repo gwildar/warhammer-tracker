@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { renderGameScreen } from "../../screens/game.js";
+import { getKnownSpells } from "../../context/caster.js";
 import { loadArmy, startGame, getApp } from "../helpers.js";
 import {
   savePhaseIndex,
@@ -1506,5 +1507,12 @@ describe("Skeleton Horde army — Casket of Souls", () => {
     expect(casket).toBeTruthy();
     expect(casket.isCaster).toBe(true);
     expect(casket.lores).toContain("vortex-of-souls");
+  });
+
+  it("getKnownSpells returns both bound spells without user selection", () => {
+    const casket = army.units.find((u) => u.name === "Casket of Souls");
+    const spells = getKnownSpells(casket);
+    expect(spells.map((s) => s.name)).toContain("Light of Death");
+    expect(spells.map((s) => s.name)).toContain("Light of Protection");
   });
 });
