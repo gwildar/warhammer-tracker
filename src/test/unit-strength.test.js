@@ -1,7 +1,10 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { computeUnitStrength } from "../parsers/resolve.js";
 import { loadArmy } from "./helpers.js";
-import { renderCombatWeaponsContext } from "../context/combat-weapons.js";
+import {
+  renderCombatWeaponsContext,
+  renderCombatResultContext,
+} from "../context/combat-weapons.js";
 import { saveCharacterAssignments } from "../state.js";
 
 function makeUnit(troopTypes, strength, mount = null) {
@@ -99,5 +102,95 @@ describe("combat panel displays unit strength", () => {
     );
     const html = renderCombatWeaponsContext(army);
     expect(html).toContain(`US:${skeletons.unitStrength}`);
+  });
+});
+
+describe("Close Order restriction: monsters and characters (US < 10)", () => {
+  it("MCr monster (US 5) with Close Order does NOT get the bonus", () => {
+    const army = {
+      units: [
+        {
+          id: "zombie-dragon.t",
+          name: "Zombie Dragon",
+          category: "rare",
+          strength: 1,
+          unitStrength: 5,
+          stats: [{ troopType: ["MCr"], Name: "Zombie Dragon" }],
+          mount: null,
+          specialRules: [
+            { id: "close order", displayName: "Close Order", phases: [] },
+          ],
+          hasStandard: false,
+          hasMusician: false,
+        },
+      ],
+    };
+    expect(renderCombatResultContext(army)).not.toContain("Close Order");
+  });
+
+  it("character (category characters, US 1) with Close Order does NOT get the bonus", () => {
+    const army = {
+      units: [
+        {
+          id: "vampire.t",
+          name: "Vampire",
+          category: "characters",
+          strength: 1,
+          unitStrength: 1,
+          stats: [{ troopType: ["RI", "Ch"], Name: "Vampire" }],
+          mount: null,
+          specialRules: [
+            { id: "close order", displayName: "Close Order", phases: [] },
+          ],
+          hasStandard: false,
+          hasMusician: false,
+        },
+      ],
+    };
+    expect(renderCombatResultContext(army)).not.toContain("Close Order");
+  });
+
+  it("ridden monster (mount.wBonus > 0, US 6) with Close Order does NOT get the bonus", () => {
+    const army = {
+      units: [
+        {
+          id: "char-on-dragon.t",
+          name: "Vampire on Zombie Dragon",
+          category: "characters",
+          strength: 1,
+          unitStrength: 6,
+          stats: [{ troopType: ["RI", "Ch"], Name: "Vampire" }],
+          mount: { wBonus: 3, troopType: "MCr", name: "Zombie Dragon" },
+          specialRules: [
+            { id: "close order", displayName: "Close Order", phases: [] },
+          ],
+          hasStandard: false,
+          hasMusician: false,
+        },
+      ],
+    };
+    expect(renderCombatResultContext(army)).not.toContain("Close Order");
+  });
+
+  it("RI infantry (US 20) with Close Order DOES get the bonus", () => {
+    const army = {
+      units: [
+        {
+          id: "skeletons.t",
+          name: "Skeleton Warriors",
+          category: "core",
+          strength: 20,
+          unitStrength: 20,
+          stats: [{ troopType: ["RI"], Name: "Skeleton Warriors" }],
+          mount: null,
+          specialRules: [
+            { id: "close order", displayName: "Close Order", phases: [] },
+          ],
+          hasStandard: false,
+          hasMusician: false,
+        },
+      ],
+    };
+    expect(renderCombatResultContext(army)).toContain("Close Order");
   });
 });

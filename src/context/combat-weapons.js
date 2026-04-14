@@ -1117,7 +1117,15 @@ export function renderCombatResultContext(army) {
     const hasCloseOrder = (u.specialRules || []).some((r) =>
       r.displayName?.toLowerCase().includes("close order"),
     );
-    if (hasCloseOrder) {
+    const isMonsterOrRiddenMonster =
+      u.stats?.[0]?.troopType?.[0] === "MCr" || u.mount?.wBonus > 0;
+    const isCharacterUnit = ["characters", "lords", "heroes"].includes(
+      u.category,
+    );
+    const closeOrderBlocked =
+      (isMonsterOrRiddenMonster || isCharacterUnit) &&
+      (u.unitStrength ?? 1) < 10;
+    if (hasCloseOrder && !closeOrderBlocked) {
       bonuses.push("Close Order +1");
       total += 1;
     }
