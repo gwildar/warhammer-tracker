@@ -487,10 +487,17 @@ const COMBAT_RELEVANT_RULES = [
 
 // Rules that apply only to the controlling model (rider/handler), not beasts or mounts
 const RIDER_ONLY_RULES = new Set(["strike first", "elven reflexes"]);
+// Troop types where rider and mount are distinct models (Elven Reflexes applies to rider only)
+const CAVALRY_TROOP_TYPES = new Set(["LC", "HC", "MCa"]);
 
 function extractCombatRules(unit) {
   const hasMount = !!unit.mount;
   const isCavalryMount = hasMount && !(unit.mount.wBonus > 0);
+  // Regular cavalry units store their type in stats.troopType with no explicit mount object
+  const hasCavalryTroopType = (unit.stats?.[0]?.troopType ?? []).some((t) =>
+    CAVALRY_TROOP_TYPES.has(t),
+  );
+  const isRiderContext = isCavalryMount || hasCavalryTroopType;
   const hasDetachments = (unit.detachments?.length ?? 0) > 0;
   const results = [];
   for (const rule of unit.specialRules || []) {
@@ -502,8 +509,7 @@ function extractCombatRules(unit) {
     if (COMBAT_RELEVANT_RULES.some((cr) => lower.includes(cr))) {
       let displayName = rule.displayName.replace(/\s*\{[^}]*\}/g, "").trim();
       if (lower === "elven reflexes") {
-        if (isCavalryMount && CHARACTER_CATEGORIES.has(unit.category))
-          displayName += " (rider)";
+        if (isRiderContext) displayName += " (rider)";
         else if (hasDetachments) displayName += " (handler)";
       } else if (RIDER_ONLY_RULES.has(lower)) {
         if (hasMount) displayName += " (rider)";

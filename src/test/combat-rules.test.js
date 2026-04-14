@@ -8,15 +8,12 @@ beforeEach(() => {
 });
 
 describe("Elven Reflexes labelling", () => {
-  it("Glade Riders (regular cavalry) show 'Elven Reflexes' without '(rider)' suffix", () => {
+  it("Glade Riders (regular cavalry) show 'Elven Reflexes (rider)' — applies to rider not mount", () => {
     const army = loadArmy("wood-elves");
     const gladeRiders = army.units.find((u) => u.id.startsWith("glade-riders"));
     expect(gladeRiders).toBeDefined();
-    // Render just this unit in isolation
     const html = renderCombatWeaponsContext({ units: [gladeRiders] });
-    expect(html).toContain("Elven Reflexes");
-    // Regular cavalry unit — no (rider) suffix needed
-    expect(html).not.toContain("Elven Reflexes (rider)");
+    expect(html).toContain("Elven Reflexes (rider)");
   });
 
   it("Spellsinger on Warhawk (character on cavalry mount) shows 'Elven Reflexes (rider)'", () => {
