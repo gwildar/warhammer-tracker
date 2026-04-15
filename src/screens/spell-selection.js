@@ -41,16 +41,34 @@ export function renderSpellSelection(army, casters) {
             `;
           }
 
+          const unitSelections = selections[caster.id] || {};
+          const { canChoose, multiLore, maxSpells } =
+            caster.spellSelectionMode ?? {};
+
+          if (multiLore) {
+            return renderAllLoresCasterSection(
+              caster,
+              unitSelections,
+              "Arcane Familiar",
+            );
+          }
+          if (canChoose && caster.lores.length > 1) {
+            return renderAllLoresCasterSection(
+              caster,
+              unitSelections,
+              "Lore Familiar",
+            );
+          }
+
           const coreLoreKey =
             caster.activeLore ||
             (caster.lores.length > 0 ? caster.lores[0] : null);
-          const unitSelections = selections[caster.id] || {};
 
           return `
           <div class="mb-6 last:mb-0 pb-4 border-b border-wh-border last:border-0">
             <div class="flex items-center gap-2 mb-2">
               <span class="font-semibold text-wh-text">${caster.name}</span>
-              ${caster.spellSelectionMode?.canChoose ? '<span class="text-xs bg-wh-purple/20 text-wh-purple px-1.5 py-0.5 rounded">Lore Familiar</span>' : ""}
+              ${canChoose ? '<span class="text-xs bg-wh-purple/20 text-wh-purple px-1.5 py-0.5 rounded">Lore Familiar</span>' : ""}
             </div>
 
             <!-- Core lore selector -->
@@ -80,12 +98,49 @@ export function renderSpellSelection(army, casters) {
             `
             }
 
-            ${caster.spellSelectionMode?.maxSpells === 1 ? '<p class="text-xs text-wh-muted mb-2">Cursed Coven: choose 1 spell from the selected lore.</p>' : ""}
+            ${maxSpells === 1 ? '<p class="text-xs text-wh-muted mb-2">Cursed Coven: choose 1 spell from the selected lore.</p>' : ""}
             <div class="spell-list" data-unit-id="${caster.id}" data-lore="${coreLoreKey || ""}">
               ${coreLoreKey ? renderCasterSpells(coreLoreKey, caster, unitSelections, caster.factionLores) : '<p class="text-sm text-wh-muted">Select a lore above</p>'}
             </div>
           </div>
         `;
+        })
+        .join("")}
+    </div>
+  `;
+}
+
+function renderAllLoresCasterSection(caster, unitSelections, badge) {
+  return `
+    <div class="mb-6 last:mb-0 pb-4 border-b border-wh-border last:border-0">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="font-semibold text-wh-text">${caster.name}</span>
+        <span class="text-xs bg-wh-purple/20 text-wh-purple px-1.5 py-0.5 rounded">${badge}</span>
+      </div>
+      <p class="text-xs text-wh-muted mb-3">Select spells from all available lores.</p>
+      ${caster.lores
+        .filter((loreKey) => !LORES[loreKey]?.bound)
+        .map((loreKey) => {
+          const lore = LORES[loreKey];
+          if (!lore) return "";
+          return `
+            <div class="mb-3">
+              <div class="text-xs text-wh-muted mb-1">${lore.name}:</div>
+              <div class="space-y-1">
+                ${lore.spells
+                  .map((spell) =>
+                    renderSpellCheckbox(
+                      loreKey,
+                      spell,
+                      caster.id,
+                      unitSelections,
+                      false,
+                    ),
+                  )
+                  .join("")}
+              </div>
+            </div>
+          `;
         })
         .join("")}
     </div>
