@@ -1,15 +1,5 @@
 import { findMount } from "./parsers/resolve.js";
 
-// Army name → rules index key overrides (both lowercase)
-const UNIT_NAME_ALIASES = {
-  "bloodwrack medusas": "bloodwrack medusa",
-};
-
-export function resolveRulesIndexKey(name) {
-  const key = name.toLowerCase();
-  return UNIT_NAME_ALIASES[key] || key;
-}
-
 export function resolveMovement(unit) {
   // 1. Inline stats from army file
   const inlineMv = unit.stats?.[0]?.M;
@@ -27,16 +17,6 @@ export function resolveMovement(unit) {
     }
   }
 }
-
-// Spell type → sub-phase mapping
-export const SPELL_TYPE_PHASES = {
-  enchantment: "conjuration",
-  hex: "conjuration",
-  "magical-vortex": "conjuration",
-  "magic-missile": "shoot",
-  conveyance: "remaining-moves",
-  assailment: "choose-fight",
-};
 
 // Phase colour maps — full class names so Tailwind can detect them at build time
 export const PHASE_BG = {
@@ -92,4 +72,11 @@ export function extractFlyMovement(unit, mountData) {
  */
 export function resolveBaseMv(mountData, statMv) {
   return mountData ? mountData.m : statMv != null ? Number(statMv) : null;
+}
+
+export function formatDuration(ms) {
+  const totalSeconds = Math.floor(ms / 1000);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  return `${minutes}:${seconds.toString().padStart(2, "0")}`;
 }

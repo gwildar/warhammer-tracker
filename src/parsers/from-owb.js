@@ -4,13 +4,7 @@
  * the enriched canonical schema instead of the intermediate parsed format.
  */
 
-import { LORES } from "../data/spells.js";
-
-// Build a map from lore display name → lore key
-const LORE_NAME_TO_KEY = {};
-for (const [key, lore] of Object.entries(LORES)) {
-  LORE_NAME_TO_KEY[lore.name.toLowerCase()] = key;
-}
+import { LORE_NAME_TO_KEY } from "../data/spells.js";
 import {
   resolveWeapons,
   resolveShootingWeapons,

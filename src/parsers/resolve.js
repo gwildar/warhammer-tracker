@@ -78,10 +78,6 @@ export function resolveUnitEntry(entry) {
     : entry.stats.map((s) => ({ ...entry.shared, ...s }));
 }
 
-function resolveMountProfile(entry) {
-  return resolveUnitEntry(entry);
-}
-
 export function resolveStats(id, name) {
   const baseId = (id || "").split(".")[0];
   const slug = name?.replace(/[{}]/g, "").toLowerCase().replace(/\s+/g, "-");
@@ -111,7 +107,7 @@ export function findMount(name) {
   const entry = UNIT_STATS[key];
   if (!entry) return null;
 
-  const profile = resolveMountProfile(entry)[0];
+  const profile = resolveUnitEntry(entry)[0];
   if (!profile) return null;
 
   const armourBaneRule = profile.rules?.find((r) => /^Armour Bane/i.test(r));
@@ -155,7 +151,7 @@ export function findMount(name) {
 /**
  * Normalize an item name for lookup in MAGIC_ITEM_MAP
  */
-export function normaliseItemName(name) {
+function normaliseItemName(name) {
   return name
     .replace(/\s*\(.*$/, "")
     .toLowerCase()
@@ -167,7 +163,7 @@ export function normaliseItemName(name) {
 /**
  * Build a lookup map from magic item names (lowercase) → item data
  */
-export function buildMagicItemMap() {
+function buildMagicItemMap() {
   const map = {};
   for (const item of MAGIC_ITEMS) {
     const key = item.name
@@ -504,10 +500,8 @@ export function computeRegen(magicItems, specialRules) {
 
   // Check special rules
   for (const rule of specialRules) {
-    if (rule.displayName.match(/Regeneration\s*\((\d\+)\)/i)) {
-      const match = rule.displayName.match(/Regeneration\s*\((\d\+)\)/i);
-      if (match) return match[1];
-    }
+    const match = rule.displayName.match(/Regeneration\s*\((\d\+)\)/i);
+    if (match) return match[1];
   }
 
   return null;

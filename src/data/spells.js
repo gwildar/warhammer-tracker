@@ -1076,6 +1076,12 @@ export const LORES = {
   },
 };
 
+// Map from lore display name (lowercase) → lore key
+export const LORE_NAME_TO_KEY = {};
+for (const [key, lore] of Object.entries(LORES)) {
+  LORE_NAME_TO_KEY[lore.name.toLowerCase()] = key;
+}
+
 export function getSpellTypeLabel(type) {
   const labels = {
     assailment: "Assailment",

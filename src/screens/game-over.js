@@ -9,15 +9,9 @@ import {
   saveFirstTurn,
 } from "../state.js";
 import { navigate } from "../navigate.js";
+import { formatDuration } from "../helpers.js";
 
 const app = document.getElementById("app");
-
-function formatDuration(ms) {
-  const totalSeconds = Math.floor(ms / 1000);
-  const minutes = Math.floor(totalSeconds / 60);
-  const seconds = totalSeconds % 60;
-  return `${minutes}:${seconds.toString().padStart(2, "0")}`;
-}
 
 export function renderGameOverScreen(army) {
   const scores = getScores();

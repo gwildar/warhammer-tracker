@@ -314,7 +314,7 @@ export function bindSpellSelectors(army) {
   bindSpellCheckboxes();
 }
 
-export function bindSpellCheckboxes() {
+function bindSpellCheckboxes() {
   document.querySelectorAll(".spell-checkbox:not([disabled])").forEach((cb) => {
     cb.addEventListener("change", () => {
       const unitId = cb.dataset.unitId;
