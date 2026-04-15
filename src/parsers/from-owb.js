@@ -18,6 +18,7 @@ import {
   resolveSpecialRules,
   resolveMount,
   resolveStats,
+  deriveSpellSelectionMode,
   computeArmourSave,
   computeWard,
   computeRegen,
@@ -209,6 +210,8 @@ function parseCanonicalUnit(raw, category) {
     specialRules = specialRules.filter((r) => !removedRuleIds.has(r.id));
   }
 
+  const spellSelectionMode = deriveSpellSelectionMode(magicItems, specialRules);
+
   // Find the active mount (if any)
   let mountName = null;
   if (Array.isArray(raw.mounts)) {
@@ -258,6 +261,8 @@ function parseCanonicalUnit(raw, category) {
     ) || false;
 
   // Caster check and faction lores extraction
+  // These locals drive lore assignment only (see lores derivation below).
+  // They are NOT put on the unit — spell selection behaviour is in spellSelectionMode.
   const hasCursedCoven = specialRules.some((r) => r.id === "cursed coven");
   const hasVortexOfSouls = specialRules.some((r) => r.id === "vortex of souls");
   const lores = hasVortexOfSouls
@@ -344,8 +349,7 @@ function parseCanonicalUnit(raw, category) {
     hasMusician,
     isCaster,
     lores,
-    hasCursedCoven,
-    hasVortexOfSouls,
+    spellSelectionMode,
     activeLore: raw.activeLore || null,
     factionLores,
   };

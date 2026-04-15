@@ -17,6 +17,7 @@ import {
   resolveSpecialRules,
   resolveMount,
   resolveStats,
+  deriveSpellSelectionMode,
   computeArmourSave,
   computeWard,
   computeRegen,
@@ -231,6 +232,10 @@ function parseCanonicalUnit(selection, category) {
   const shootingWeapons = resolveShootingWeapons(equipment);
   const resolvedMagicItems = resolveMagicItems(magicItemNames);
   const specialRules = resolveSpecialRules(allRulesText);
+  const spellSelectionMode = deriveSpellSelectionMode(
+    resolvedMagicItems,
+    specialRules,
+  );
   const resolvedMount = resolveMount(mountName);
 
   // Compute saves
@@ -332,6 +337,7 @@ function parseCanonicalUnit(selection, category) {
     hasMusician,
     isCaster,
     lores,
+    spellSelectionMode,
     activeLore: lores[0] || null,
     factionLores,
   };
