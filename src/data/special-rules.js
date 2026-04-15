@@ -1733,7 +1733,7 @@ export const SPECIAL_RULES = [
     displayName: "Discipline of the Dragon",
     description:
       'Once per game during the Command sub-phase, each Sky Lantern not in combat may attempt a Grand Strategy (Leadership test). Success: choose Defiance of the Dragon (Stubborn/Unbreakable), Strength of the Everlasting Empire (cannot be wounded on a 2 to wound), or Fury of the Falling Blade (+1M, re-roll Charge/Flee/Pursuit) for all friendly Cathayan units within 12" until next Start of Turn.',
-    phases: ["strategy"],
+    phases: ["command"],
     yourTurnOnly: true,
   },
   {
@@ -1764,7 +1764,7 @@ export const SPECIAL_RULES = [
     displayName: "Transformation",
     description:
       'During the Command sub-phase, place the new form\'s model within 6" of the current form (not within 1" of friendly or 3" of enemy models). Remove previous form, recover D3 Wounds. Cannot charge that turn; counts as having moved for shooting.',
-    phases: ["strategy"],
+    phases: ["command"],
     yourTurnOnly: true,
   },
   {
@@ -1772,7 +1772,7 @@ export const SPECIAL_RULES = [
     displayName: "Transformation of the Dragon",
     description:
       "May switch between Human form (Heavy Infantry character) and Dragon form (Behemoth, no Inspiring Presence) during the Command sub-phase. Wounds are shared. Reduced to 0W in Dragon form: transform to Human form, recover D3W, cannot return to Dragon form. Human to Dragon transformation allows escaping combat.",
-    phases: ["strategy"],
+    phases: ["command"],
     yourTurnOnly: true,
   },
   {
