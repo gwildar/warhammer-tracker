@@ -1,6 +1,8 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { renderSpellSelection } from "../../screens/spell-selection.js";
 import { saveSpellSelections } from "../../state.js";
+import { loadArmy } from "../helpers.js";
+import { getCasters } from "../../army.js";
 
 beforeEach(() => {
   saveSpellSelections({});
@@ -112,5 +114,32 @@ describe("renderSpellSelection — multi-lore with no renderable lores", () => {
     const html = renderSpellSelection({ units: [] }, [caster]);
     expect(html).toContain("Arcane Familiar");
     expect(html).toContain("No spells available.");
+  });
+});
+
+describe("renderSpellSelection — Lore Familiar with many lore options (Supreme Sorceress)", () => {
+  let html;
+
+  beforeEach(() => {
+    const army = loadArmy("dark-elves");
+    const casters = getCasters(army);
+    const sorceress = casters.find((c) => c.name === "Supreme Sorceress");
+    html = renderSpellSelection(army, [sorceress]);
+  });
+
+  it("shows Lore Familiar badge", () => {
+    expect(html).toContain("Lore Familiar");
+  });
+
+  it("does not show Arcane Familiar badge", () => {
+    expect(html).not.toContain("Arcane Familiar");
+  });
+
+  it("shows a lore selector dropdown, not all lores at once", () => {
+    expect(html).toContain('class="lore-select');
+  });
+
+  it("shows spell checkboxes for the selected lore", () => {
+    expect(html).toContain('class="spell-checkbox');
   });
 });

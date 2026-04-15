@@ -52,7 +52,7 @@ export function renderSpellSelection(army, casters) {
               "Arcane Familiar",
             );
           }
-          if (canChoose && caster.lores.length > 1) {
+          if (canChoose && caster.lores.length === 2) {
             return renderAllLoresCasterSection(
               caster,
               unitSelections,
