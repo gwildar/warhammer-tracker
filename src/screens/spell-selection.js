@@ -111,6 +111,22 @@ export function renderSpellSelection(army, casters) {
 }
 
 function renderAllLoresCasterSection(caster, unitSelections, badge) {
+  const renderableLores = caster.lores.filter(
+    (loreKey) => !LORES[loreKey]?.bound,
+  );
+
+  if (renderableLores.length === 0) {
+    return `
+      <div class="mb-6 last:mb-0 pb-4 border-b border-wh-border last:border-0">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="font-semibold text-wh-text">${caster.name}</span>
+          <span class="text-xs bg-wh-purple/20 text-wh-purple px-1.5 py-0.5 rounded">${badge}</span>
+        </div>
+        <p class="text-xs text-wh-muted">No spells available.</p>
+      </div>
+    `;
+  }
+
   return `
     <div class="mb-6 last:mb-0 pb-4 border-b border-wh-border last:border-0">
       <div class="flex items-center gap-2 mb-2">
@@ -118,8 +134,7 @@ function renderAllLoresCasterSection(caster, unitSelections, badge) {
         <span class="text-xs bg-wh-purple/20 text-wh-purple px-1.5 py-0.5 rounded">${badge}</span>
       </div>
       <p class="text-xs text-wh-muted mb-3">Select spells from all available lores.</p>
-      ${caster.lores
-        .filter((loreKey) => !LORES[loreKey]?.bound)
+      ${renderableLores
         .map((loreKey) => {
           const lore = LORES[loreKey];
           if (!lore) return "";

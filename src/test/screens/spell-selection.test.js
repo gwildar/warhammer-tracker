@@ -21,6 +21,11 @@ describe("renderSpellSelection — Arcane Familiar (multiLore)", () => {
     expect(html).toContain("Arcane Familiar");
   });
 
+  it("does not show Lore Familiar badge", () => {
+    const html = renderSpellSelection({ units: [] }, [caster]);
+    expect(html).not.toContain("Lore Familiar");
+  });
+
   it("shows spells from all lores", () => {
     const html = renderSpellSelection({ units: [] }, [caster]);
     expect(html).toContain("Elementalism");
@@ -51,6 +56,11 @@ describe("renderSpellSelection — Lore Familiar with multiple lores (Ogdruz)", 
   it("shows Lore Familiar badge", () => {
     const html = renderSpellSelection({ units: [] }, [caster]);
     expect(html).toContain("Lore Familiar");
+  });
+
+  it("does not show Arcane Familiar badge", () => {
+    const html = renderSpellSelection({ units: [] }, [caster]);
+    expect(html).not.toContain("Arcane Familiar");
   });
 
   it("shows spells from all lores without a selector dropdown", () => {
@@ -85,5 +95,22 @@ describe("renderSpellSelection — Lore Familiar with single lore", () => {
     const html = renderSpellSelection({ units: [] }, [caster]);
     expect(html).not.toContain("Signature Spells:");
     expect(html).toContain('class="spell-checkbox');
+  });
+});
+
+describe("renderSpellSelection — multi-lore with no renderable lores", () => {
+  const caster = {
+    id: "weird.t",
+    name: "Weird Wizard",
+    lores: [],
+    factionLores: [],
+    activeLore: null,
+    spellSelectionMode: { canChoose: false, multiLore: true, maxSpells: null },
+  };
+
+  it("renders the section with a no-spells message", () => {
+    const html = renderSpellSelection({ units: [] }, [caster]);
+    expect(html).toContain("Arcane Familiar");
+    expect(html).toContain("No spells available.");
   });
 });
