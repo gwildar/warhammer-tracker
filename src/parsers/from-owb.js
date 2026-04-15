@@ -261,6 +261,8 @@ function parseCanonicalUnit(raw, category) {
     ) || false;
 
   // Caster check and faction lores extraction
+  // These locals drive lore assignment only (see lores derivation below).
+  // They are NOT put on the unit — spell selection behaviour is in spellSelectionMode.
   const hasCursedCoven = specialRules.some((r) => r.id === "cursed coven");
   const hasVortexOfSouls = specialRules.some((r) => r.id === "vortex of souls");
   const lores = hasVortexOfSouls

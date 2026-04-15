@@ -8,7 +8,7 @@ export function renderSpellSelection(army, casters) {
   return `
     <div class="bg-wh-surface rounded-lg border border-wh-border p-4">
       <h3 class="text-lg font-bold text-wh-purple mb-3">Spell Selection</h3>
-      <p class="text-sm text-wh-muted mb-4">Choose a core lore, then select your signature spell and numbered spells.</p>
+      <p class="text-sm text-wh-muted mb-4">Select spells for each caster.</p>
 
       ${casters
         .map((caster) => {
@@ -175,6 +175,8 @@ function renderCasterSpells(
   const coreSignatures = coreLore.spells.filter((s) => s.num === "S");
   const numberedSpells = coreLore.spells.filter((s) => s.num !== "S");
 
+  // canChoose (Lore Familiar) and maxSpells === 1 (Cursed Coven) both render all
+  // spells as a flat checkbox list rather than the standard signature/numbered split.
   if (
     caster.spellSelectionMode?.canChoose ||
     caster.spellSelectionMode?.maxSpells === 1
