@@ -585,3 +585,18 @@ export function computeImpactHits(mount, specialRules) {
   }
   return null;
 }
+
+/**
+ * Derive spell selection behaviour from resolved magic items and special rules.
+ * @param {object[]} magicItems - resolved magic item objects
+ * @param {object[]} specialRules - resolved special rule objects
+ * @returns {{ canChoose: boolean, multiLore: boolean, maxSpells: number|null }}
+ */
+export function deriveSpellSelectionMode(magicItems, specialRules) {
+  const itemNames = magicItems.map((i) => i.name.toLowerCase());
+  return {
+    canChoose: itemNames.includes("lore familiar"),
+    multiLore: itemNames.includes("arcane familiar"),
+    maxSpells: specialRules.some((r) => r.id === "cursed coven") ? 1 : null,
+  };
+}
