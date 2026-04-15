@@ -130,12 +130,39 @@ function renderRulesBlock(grouped, title) {
         ${entries
           .map(
             (g) => `
-          <div class="p-2 rounded bg-wh-card text-sm">
-            <span class="text-xs bg-wh-accent/20 text-wh-accent px-1.5 py-0.5 rounded">${g.ruleName}</span>
-            <p class="text-wh-muted text-xs mt-1">${g.description}</p>
-            <p class="text-wh-text text-xs mt-1">${g.units.join(", ")}</p>
-          </div>
+  <div class="p-2 rounded bg-wh-card text-sm">
+    <span class="text-xs bg-wh-accent/20 text-wh-accent px-1.5 py-0.5 rounded">${g.ruleName}</span>
+    <p class="text-wh-muted text-xs mt-1">${g.description}</p>
+    ${
+      g.table
+        ? `
+    <table class="w-full text-xs mt-2">
+      <thead>
+        <tr class="text-left text-wh-muted">
+          <th class="pb-1 pr-2 font-medium w-8">D6</th>
+          <th class="pb-1 pr-2 font-medium">Result</th>
+          <th class="pb-1 font-medium">Effect</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${g.table
+          .map(
+            (r) => `
+        <tr>
+          <td class="py-0.5 pr-2 font-mono text-wh-accent align-top">${r.roll}</td>
+          <td class="py-0.5 pr-2 font-semibold text-wh-text align-top whitespace-nowrap">${r.result}</td>
+          <td class="py-0.5 text-wh-muted">${r.effect}</td>
+        </tr>
         `,
+          )
+          .join("")}
+      </tbody>
+    </table>`
+        : ""
+    }
+    <p class="text-wh-text text-xs mt-1">${g.units.join(", ")}</p>
+  </div>
+`,
           )
           .join("")}
       </div>
@@ -162,6 +189,7 @@ export function renderSpecialRulesContext(army, subPhase) {
             unitName: unit.name,
             ruleName: rule.displayName,
             description: phase.description,
+            table: phase.table ?? null,
           });
         }
       }
@@ -175,6 +203,7 @@ export function renderSpecialRulesContext(army, subPhase) {
       grouped[key] = {
         ruleName: m.ruleName,
         description: m.description,
+        table: m.table,
         units: [],
       };
     if (!grouped[key].units.includes(m.unitName))
@@ -205,6 +234,7 @@ export function renderSpecialRulesForPhase(army, phase) {
               grouped[key] = {
                 ruleName: rule.displayName,
                 description: rulePhase.description,
+                table: rulePhase.table ?? null,
                 units: [],
               };
             if (!grouped[key].units.includes(unit.name))
