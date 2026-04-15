@@ -129,7 +129,7 @@ function renderUploadSection() {
 
       <div class="mt-4 p-3 rounded-lg border border-orange-400/30 bg-orange-400/5">
         <p class="text-xs text-orange-400 font-semibold mb-1">Alpha Build</p>
-        <p class="text-xs text-wh-muted">Stats, rules and item effects may be incomplete or incorrect. Tested armies: Dark Elves, Exiles, Lizardmen, Ogre Kingdoms, Vampire Counts, Troll Horde, Cathay, Mortuary Cult</p>
+        <p class="text-xs text-wh-muted">Stats, rules and item effects may be incomplete or incorrect. Tested armies: Dark Elves, Exiles, Lizardmen, Ogre Kingdoms, Vampire Counts, Troll Horde, Cathay, Mortuary Cult, Wild Hunt</p>
       </div>
     </div>
   `;
