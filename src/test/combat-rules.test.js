@@ -168,3 +168,23 @@ describe("removesRules — magic item rule suppression", () => {
     expect(orcMob.specialRules.some((r) => r.id === "impetuous")).toBe(true);
   });
 });
+
+describe("Troll Vomit — weapon resolution", () => {
+  let troll;
+
+  beforeEach(() => {
+    const army = loadArmy("trolls");
+    troll = army.units.find((u) => u.name === "Stone Troll");
+  });
+
+  it("Stone Troll has both Hand Weapon and Troll Vomit", () => {
+    expect(troll.weapons.some((w) => w.name === "Hand Weapon")).toBe(true);
+    expect(troll.weapons.some((w) => w.name === "Troll Vomit")).toBe(true);
+  });
+
+  it("Troll Vomit has correct stats (S3, AP-2)", () => {
+    const vomit = troll.weapons.find((w) => w.name === "Troll Vomit");
+    expect(vomit.s).toBe("3");
+    expect(vomit.ap).toBe("-2");
+  });
+});

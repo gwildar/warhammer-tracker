@@ -498,6 +498,12 @@ export const RANGED_WEAPONS = {
 
 export const COMBAT_WEAPONS = {
   // ─── Core Combat Weapons ─────────────────────────────────────────────
+  "hand weapon": {
+    name: "Hand Weapon",
+    s: "S",
+    ap: "—",
+    rules: "",
+  },
   "great weapon": {
     name: "Great Weapon",
     s: "S+2",
@@ -841,6 +847,13 @@ export const COMBAT_WEAPONS = {
     ap: "—",
     rules:
       "Fight In Extra Rank, Strike First (vs charging enemies only). Infantry only; cannot use on a turn the model charged.",
+  },
+  "troll vomit": {
+    name: "Troll Vomit",
+    s: "3",
+    ap: "-2",
+    rules:
+      "One bonus attack per turn. Hits automatically. Must be made last, after all other attacks including Stomp Attacks.",
   },
 };
 
