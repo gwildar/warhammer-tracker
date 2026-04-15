@@ -1,0 +1,2295 @@
+{
+  "name": "Grand Cathay",
+  "description": "",
+  "game": "the-old-world",
+  "points": 2000,
+  "army": "grand-cathay",
+  "characters": [
+    {
+      "name_en": "Shugengan Lord",
+      "name_cn": "修验卿领主",
+      "name_de": "Shugengan Lord",
+      "name_fr": "Seigneur Shugengan",
+      "name_es": "Shugengan Lord",
+      "id": "shugengan-lord.dscrzbu",
+      "points": 220,
+      "armyComposition": {
+        "grand-cathay": {
+          "category": "characters",
+          "notes": {
+            "name_en": "0-1 Shugengan Lord, Gate Master, Lord Magistrate or Supreme Astromancer per 1,000 points",
+            "name_cn": "每1000分0-1修验卿领主，门下督，经略使或至上司天丞",
+            "name_de": "0-1 Shugengan Lord, Gate Master, Lord Magistrate or Supreme Astromancer per 1,000 points",
+            "name_fr": "0-1 Shugengan Lord, Gate Master, Lord Magistrate or Supreme Astromancer per 1,000 points",
+            "name_es": "0-1 Shugengan Lord, Gate Master, Lord Magistrate or Supreme Astromancer per 1,000 points"
+          }
+        },
+        "jade-fleet": {
+          "category": "characters",
+          "notes": {
+            "name_en": "0-1 Shugengan Lord or Lord Magistrate per 1,000 points",
+            "name_cn": "每1000分0-1修验卿领主或经略使",
+            "name_de": "0-1 Shugengan Lord or Lord Magistrate per 1,000 points",
+            "name_fr": "0-1 Shugengan Lord or Lord Magistrate per 1,000 points",
+            "name_es": "0-1 Shugengan Lord or Lord Magistrate per 1,000 points"
+          }
+        }
+      },
+      "command": [
+        {
+          "name_en": "General",
+          "name_cn": "主将",
+          "name_de": "General",
+          "name_fr": "Général",
+          "name_es": "General",
+          "points": 0,
+          "id": 0,
+          "active": true
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapon, Iron talons",
+          "name_cn": "单手武器, 铁爪",
+          "name_de": "Handwaffe, Iron talons",
+          "name_fr": "Arme de base, Serres de fer",
+          "name_es": "Arma de mano, Iron talons",
+          "points": 0,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Celestial blade, Iron talons",
+          "name_cn": "天廷之刃, 铁爪",
+          "name_de": "Celestial blade, Iron talons",
+          "name_fr": "Lame Céleste, Serres de fer",
+          "name_es": "Celestial blade, Iron talons",
+          "points": 6,
+          "id": 1
+        },
+        {
+          "name_en": "Cathayan lance, Iron talons",
+          "name_cn": "震旦骑枪, 铁爪",
+          "name_de": "Cathayan lance, Iron talons",
+          "name_fr": "Lance cathayennes, Serres de fer",
+          "name_es": "Cathayan lance, Iron talons",
+          "points": 4,
+          "id": 2
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_fr": "Armure légère",
+          "name_es": "Armadura ligera",
+          "points": 0,
+          "active": false,
+          "activeDefault": false,
+          "id": 0
+        },
+        {
+          "name_en": "Heavy armour",
+          "name_cn": "重甲",
+          "name_de": "Schwere Rüstung",
+          "name_fr": "Armure lourde",
+          "name_es": "Armadura pesada",
+          "points": 4,
+          "id": 1,
+          "active": true
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Wizard",
+          "name_cn": "法师",
+          "name_de": "Wizard",
+          "name_fr": "Sorcier",
+          "name_es": "Hechicero",
+          "points": 0,
+          "active": true,
+          "alwaysActive": true,
+          "options": [
+            {
+              "name_en": "Level 2 Wizard",
+              "name_cn": "2级法师",
+              "name_de": "Level 2 Wizard",
+              "name_fr": "Sorcier de Niveau 2",
+              "name_es": "Hechicero de Nivel 2",
+              "points": 0,
+              "active": false,
+              "exclusive": true
+            },
+            {
+              "name_en": "Level 3 Wizard",
+              "name_cn": "3级法师",
+              "name_de": "Level 3 Wizard",
+              "name_fr": "Sorcier de Niveau 3",
+              "name_es": "Hechicero de Nivel 3",
+              "points": 30,
+              "exclusive": true,
+              "active": false
+            },
+            {
+              "name_en": "Level 4 Wizard",
+              "name_cn": "4级法师",
+              "name_de": "Level 4 Wizard",
+              "name_fr": "Sorcier de Niveau 4",
+              "name_es": "Hechicero de Nivel 4",
+              "points": 60,
+              "exclusive": true,
+              "active": true
+            }
+          ],
+          "id": 0
+        },
+        {
+          "name_en": "Dragon fire pistol",
+          "name_cn": "龙火手枪",
+          "name_de": "Dragon fire pistol",
+          "name_fr": "Pistolet feu de dragon",
+          "name_es": "Dragon fire pistol",
+          "points": 4,
+          "id": 1
+        },
+        {
+          "name_en": "Lore of Yang",
+          "name_cn": "阳系法术",
+          "name_de": "Lore of Yang",
+          "name_fr": "Domaine du Yang",
+          "name_es": "Lore of Yang",
+          "points": 0,
+          "active": true,
+          "exclusive": true,
+          "notes": {
+            "name_en": "Must choose Lore of Yang or Lore of Yin",
+            "name_cn": "必须选择阳系或者阴系法术",
+            "name_fr": "Doit choisir le Domaine du Yang ou le Domaine du Yin"
+          },
+          "id": 2
+        },
+        {
+          "name_en": "Lore of Yin",
+          "name_cn": "阴系法术",
+          "name_de": "Lore of Yin",
+          "name_fr": "Domaine du Yin",
+          "name_es": "Lore of Yin",
+          "points": 0,
+          "exclusive": true,
+          "id": 3
+        }
+      ],
+      "mounts": [
+        {
+          "name_en": "Great Spirit Longma",
+          "name_cn": "巨精魄龙马",
+          "name_de": "Great Spirit Longma",
+          "name_fr": "Grand Esprit Longma",
+          "name_es": "Great Spirit Longma",
+          "points": 0,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "items": [
+        {
+          "name_en": "Magic Items",
+          "name_cn": "魔法物品",
+          "name_de": "Magische Gegenstände",
+          "name_fr": "Objets Magiques",
+          "name_es": "Objetos Mágicos",
+          "types": [
+            "weapon",
+            "armor",
+            "armor-mages",
+            "talisman",
+            "arcane-item",
+            "enchanted-item"
+          ],
+          "selected": [
+            {
+              "name_en": "The Monkey King's Wisdom",
+              "name_de": "Des Affenkönigs Weisheit",
+              "name_cn": "美猴王之智",
+              "name_es": "The Monkey King's Wisdom",
+              "name_fr": "La Sagesse du Roi des Singes",
+              "name_it": "The Monkey King's Wisdom",
+              "points": 75,
+              "type": "weapon",
+              "onePerArmy": true,
+              "name": "the monkey king's wisdom",
+              "id": 0
+            },
+            {
+              "name_en": "Scrolls of Wei-jin",
+              "name_de": "Schriftrollen von Wei-Jin",
+              "name_cn": "巍京秘卷",
+              "name_es": "Scrolls of Wei-jin",
+              "name_fr": "Parchemins de Wei-jin",
+              "name_it": "Scrolls of Wei-jin",
+              "points": 10,
+              "type": "arcane-item",
+              "onePerArmy": true,
+              "name": "scrolls of wei-jin",
+              "id": 35
+            }
+          ],
+          "maxPoints": 100,
+          "notes": {
+            "name_en": "Cannot take shields",
+            "name_cn": "不能购买盾牌",
+            "name_fr": "Ne peut prendre de boucliers"
+          }
+        }
+      ],
+      "lores": ["battle-magic", "elementalism", "illusion", "high-magic"],
+      "specialRules": {
+        "name_en": "Armoured Hide (2), Celestial Forged Armour (5+), Counter Charge, Fear, Fly (9), Impact Hits (D3+1), Mastery of the Elemental Winds, Swiftstride, Will of the Dragons, Crown of horns {cathay}",
+        "name_cn": "坚硬皮肤(2), 天工铸甲(5+), 反制冲锋, 恐惧, 飞行(9), 撞击(D3+1), 精气之风精通, 快速行进, 巨龙意志, 角冠",
+        "name_de": "Armoured Hide (2), Celestial Forged Armour (5+), Counter Charge, Fear, Fly (9), Impact Hits (D3+1), Mastery of the Elemental Winds, Swiftstride, Will of the Dragons, Crown of horns {cathay}",
+        "name_fr": "Peau Blindée (2), Armure Céleste (5+), Contre-charge, Peur, Vol (9), Touches d’Impact (D3+1), Maîtrise des Vents Élémentaires, Rapide, Volonté des Dragons, Couronne de Cornes",
+        "name_es": "Armoured Hide (2), Celestial Forged Armour (5+), Counter Charge, Fear, Fly (9), Impact Hits (D3+1), Mastery of the Elemental Winds, Swiftstride, Will of the Dragons, Crown of horns {cathay}"
+      },
+      "notes": {
+        "name_en": "",
+        "name_cn": "",
+        "name_de": "",
+        "name_fr": "",
+        "name_es": ""
+      },
+      "activeLore": "illusion",
+      "generatedSpells": null,
+      "magic": { "items": [] }
+    },
+    {
+      "name_en": "Shugengan General",
+      "name_cn": "修验卿将军",
+      "name_de": "Shugengan General",
+      "name_fr": "Général Shugengan",
+      "name_es": "Shugengan General",
+      "id": "shugengan.awlgrsppst",
+      "points": 145,
+      "command": [
+        {
+          "name_en": "General",
+          "name_cn": "主将",
+          "name_de": "General",
+          "name_fr": "Général",
+          "name_es": "General",
+          "points": 0,
+          "id": 0
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapon, Iron talons",
+          "name_cn": "单手武器, 铁爪",
+          "name_de": "Handwaffe, Iron talons",
+          "name_fr": "Arme de base, Serres de fer",
+          "name_es": "Arma de mano, Iron talons",
+          "points": 0,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Celestial blade, Iron talons",
+          "name_cn": "天廷之刃, 铁爪",
+          "name_de": "Celestial blade, Iron talons",
+          "name_fr": "Lame Céleste, Serres de fer",
+          "name_es": "Celestial blade, Iron talons",
+          "points": 6,
+          "id": 1
+        },
+        {
+          "name_en": "Cathayan lance, Iron talons",
+          "name_cn": "震旦骑枪, 铁爪",
+          "name_de": "Cathayan lance, Iron talons",
+          "name_fr": "Lance cathayennes, Serres de fer",
+          "name_es": "Cathayan lance, Iron talons",
+          "points": 4,
+          "id": 2
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_fr": "Armure légère",
+          "name_es": "Armadura ligera",
+          "points": 0,
+          "active": false,
+          "activeDefault": false,
+          "id": 0
+        },
+        {
+          "name_en": "Heavy armour",
+          "name_cn": "重甲",
+          "name_de": "Schwere Rüstung",
+          "name_fr": "Armure lourde",
+          "name_es": "Armadura pesada",
+          "points": 4,
+          "id": 1,
+          "active": true
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Wizard",
+          "name_cn": "法师",
+          "name_de": "Wizard",
+          "name_fr": "Sorcier",
+          "name_es": "Hechicero",
+          "points": 0,
+          "active": true,
+          "alwaysActive": true,
+          "options": [
+            {
+              "name_en": "Level 1 Wizard",
+              "name_cn": "1级法师",
+              "name_de": "Level 1 Wizard",
+              "name_fr": "Sorcier de Niveau 1",
+              "name_es": "Hechicero de Nivel 1",
+              "points": 0,
+              "active": true,
+              "exclusive": true
+            },
+            {
+              "name_en": "Level 2 Wizard",
+              "name_cn": "2级法师",
+              "name_de": "Level 2 Wizard",
+              "name_fr": "Sorcier de Niveau 2",
+              "name_es": "Hechicero de Nivel 2",
+              "points": 30,
+              "exclusive": true
+            }
+          ],
+          "id": 0
+        },
+        {
+          "name_en": "Dragon fire pistol",
+          "name_cn": "龙火手枪",
+          "name_de": "Dragon fire pistol",
+          "name_fr": "Pistolet feu de dragon",
+          "name_es": "Dragon fire pistol",
+          "points": 4,
+          "id": 1
+        },
+        {
+          "name_en": "Lore of Yang",
+          "name_cn": "阳系法术",
+          "name_de": "Lore of Yang",
+          "name_fr": "Domaine du Yang",
+          "name_es": "Lore of Yang",
+          "points": 0,
+          "active": true,
+          "exclusive": true,
+          "notes": {
+            "name_en": "Must choose Lore of Yang or Lore of Yin",
+            "name_cn": "必须选择阳系或者阴系法术",
+            "name_fr": "Doit choisir le Domaine du Yang ou le Domaine du Yin"
+          },
+          "id": 2
+        },
+        {
+          "name_en": "Lore of Yin",
+          "name_cn": "阴系法术",
+          "name_de": "Lore of Yin",
+          "name_fr": "Domaine du Yin",
+          "name_es": "Lore of Yin",
+          "points": 0,
+          "exclusive": true,
+          "id": 3
+        }
+      ],
+      "mounts": [
+        {
+          "name_en": "Great Spirit Longma",
+          "name_cn": "巨精魄龙马",
+          "name_de": "Great Spirit Longma",
+          "name_fr": "Grand Esprit Longma",
+          "name_es": "Great Spirit Longma",
+          "points": 0,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "items": [
+        {
+          "name_en": "Magic Items",
+          "name_cn": "魔法物品",
+          "name_de": "Magische Gegenstände",
+          "name_fr": "Objets Magiques",
+          "name_es": "Objetos Mágicos",
+          "types": [
+            "weapon",
+            "armor",
+            "armor-mages",
+            "talisman",
+            "arcane-item",
+            "enchanted-item"
+          ],
+          "selected": [
+            {
+              "name_en": "Ring of Jet",
+              "name_de": "Pechkohlenring",
+              "name_cn": "墨玉指环",
+              "name_es": "Ring of Jet",
+              "name_fr": "Anneau de Jais",
+              "name_it": "Ring of Jet",
+              "points": 30,
+              "type": "enchanted-item",
+              "onePerArmy": true,
+              "name": "ring of jet",
+              "id": 26
+            }
+          ],
+          "maxPoints": 50,
+          "notes": {
+            "name_en": "Cannot take shields",
+            "name_cn": "不能购买盾牌",
+            "name_fr": "Ne peut prendre de boucliers"
+          }
+        }
+      ],
+      "lores": ["battle-magic", "elementalism", "illusion", "high-magic"],
+      "specialRules": {
+        "name_en": "Armoured Hide (2), Celestial Forged Armour (5+), Counter Charge, Fear, Fly (9), Impact Hits (D3+1), Mastery of the Elemental Winds, Swiftstride, Will of the Dragons, Crown of horns {cathay}",
+        "name_cn": "坚硬皮肤(2), 天工铸甲(5+), 反制冲锋, 恐惧, 飞行(9), 撞击(D3+1), 精气之风精通, 快速行进, 巨龙意志, 角冠",
+        "name_de": "Armoured Hide (2), Celestial Forged Armour (5+), Counter Charge, Fear, Fly (9), Impact Hits (D3+1), Mastery of the Elemental Winds, Swiftstride, Will of the Dragons, Crown of horns",
+        "name_fr": "Peau Blindée (2), Armure Céleste (5+), Contre-charge, Peur, Vol (9), Touches d’Impact (D3+1), Maîtrise des Vents Élémentaires, Rapide, Volonté des Dragons, Couronne de Cornes",
+        "name_es": "Armoured Hide (2), Celestial Forged Armour (5+), Counter Charge, Fear, Fly (9), Impact Hits (D3+1), Mastery of the Elemental Winds, Swiftstride, Will of the Dragons, Crown of horns"
+      },
+      "notes": {
+        "name_en": "",
+        "name_cn": "",
+        "name_de": "",
+        "name_fr": "",
+        "name_es": ""
+      },
+      "generatedSpells": null
+    },
+    {
+      "name_en": "Shugengan General",
+      "name_cn": "修验卿将军",
+      "name_de": "Shugengan General",
+      "name_fr": "Général Shugengan",
+      "name_es": "Shugengan General",
+      "id": "shugengan.ebsgztnhxj",
+      "points": 145,
+      "command": [
+        {
+          "name_en": "General",
+          "name_cn": "主将",
+          "name_de": "General",
+          "name_fr": "Général",
+          "name_es": "General",
+          "points": 0,
+          "id": 0
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapon, Iron talons",
+          "name_cn": "单手武器, 铁爪",
+          "name_de": "Handwaffe, Iron talons",
+          "name_fr": "Arme de base, Serres de fer",
+          "name_es": "Arma de mano, Iron talons",
+          "points": 0,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Celestial blade, Iron talons",
+          "name_cn": "天廷之刃, 铁爪",
+          "name_de": "Celestial blade, Iron talons",
+          "name_fr": "Lame Céleste, Serres de fer",
+          "name_es": "Celestial blade, Iron talons",
+          "points": 6,
+          "id": 1
+        },
+        {
+          "name_en": "Cathayan lance, Iron talons",
+          "name_cn": "震旦骑枪, 铁爪",
+          "name_de": "Cathayan lance, Iron talons",
+          "name_fr": "Lance cathayennes, Serres de fer",
+          "name_es": "Cathayan lance, Iron talons",
+          "points": 4,
+          "id": 2
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_fr": "Armure légère",
+          "name_es": "Armadura ligera",
+          "points": 0,
+          "active": false,
+          "activeDefault": false,
+          "id": 0
+        },
+        {
+          "name_en": "Heavy armour",
+          "name_cn": "重甲",
+          "name_de": "Schwere Rüstung",
+          "name_fr": "Armure lourde",
+          "name_es": "Armadura pesada",
+          "points": 4,
+          "id": 1,
+          "active": true
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Wizard",
+          "name_cn": "法师",
+          "name_de": "Wizard",
+          "name_fr": "Sorcier",
+          "name_es": "Hechicero",
+          "points": 0,
+          "active": true,
+          "alwaysActive": true,
+          "options": [
+            {
+              "name_en": "Level 1 Wizard",
+              "name_cn": "1级法师",
+              "name_de": "Level 1 Wizard",
+              "name_fr": "Sorcier de Niveau 1",
+              "name_es": "Hechicero de Nivel 1",
+              "points": 0,
+              "active": true,
+              "exclusive": true
+            },
+            {
+              "name_en": "Level 2 Wizard",
+              "name_cn": "2级法师",
+              "name_de": "Level 2 Wizard",
+              "name_fr": "Sorcier de Niveau 2",
+              "name_es": "Hechicero de Nivel 2",
+              "points": 30,
+              "exclusive": true
+            }
+          ],
+          "id": 0
+        },
+        {
+          "name_en": "Dragon fire pistol",
+          "name_cn": "龙火手枪",
+          "name_de": "Dragon fire pistol",
+          "name_fr": "Pistolet feu de dragon",
+          "name_es": "Dragon fire pistol",
+          "points": 4,
+          "id": 1
+        },
+        {
+          "name_en": "Lore of Yang",
+          "name_cn": "阳系法术",
+          "name_de": "Lore of Yang",
+          "name_fr": "Domaine du Yang",
+          "name_es": "Lore of Yang",
+          "points": 0,
+          "active": true,
+          "exclusive": true,
+          "notes": {
+            "name_en": "Must choose Lore of Yang or Lore of Yin",
+            "name_cn": "必须选择阳系或者阴系法术",
+            "name_fr": "Doit choisir le Domaine du Yang ou le Domaine du Yin"
+          },
+          "id": 2
+        },
+        {
+          "name_en": "Lore of Yin",
+          "name_cn": "阴系法术",
+          "name_de": "Lore of Yin",
+          "name_fr": "Domaine du Yin",
+          "name_es": "Lore of Yin",
+          "points": 0,
+          "exclusive": true,
+          "id": 3
+        }
+      ],
+      "mounts": [
+        {
+          "name_en": "Great Spirit Longma",
+          "name_cn": "巨精魄龙马",
+          "name_de": "Great Spirit Longma",
+          "name_fr": "Grand Esprit Longma",
+          "name_es": "Great Spirit Longma",
+          "points": 0,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "items": [
+        {
+          "name_en": "Magic Items",
+          "name_cn": "魔法物品",
+          "name_de": "Magische Gegenstände",
+          "name_fr": "Objets Magiques",
+          "name_es": "Objetos Mágicos",
+          "types": [
+            "weapon",
+            "armor",
+            "armor-mages",
+            "talisman",
+            "arcane-item",
+            "enchanted-item"
+          ],
+          "selected": [],
+          "maxPoints": 50,
+          "notes": {
+            "name_en": "Cannot take shields",
+            "name_cn": "不能购买盾牌",
+            "name_fr": "Ne peut prendre de boucliers"
+          }
+        }
+      ],
+      "lores": ["battle-magic", "elementalism", "illusion", "high-magic"],
+      "specialRules": {
+        "name_en": "Armoured Hide (2), Celestial Forged Armour (5+), Counter Charge, Fear, Fly (9), Impact Hits (D3+1), Mastery of the Elemental Winds, Swiftstride, Will of the Dragons, Crown of horns {cathay}",
+        "name_cn": "坚硬皮肤(2), 天工铸甲(5+), 反制冲锋, 恐惧, 飞行(9), 撞击(D3+1), 精气之风精通, 快速行进, 巨龙意志, 角冠",
+        "name_de": "Armoured Hide (2), Celestial Forged Armour (5+), Counter Charge, Fear, Fly (9), Impact Hits (D3+1), Mastery of the Elemental Winds, Swiftstride, Will of the Dragons, Crown of horns",
+        "name_fr": "Peau Blindée (2), Armure Céleste (5+), Contre-charge, Peur, Vol (9), Touches d’Impact (D3+1), Maîtrise des Vents Élémentaires, Rapide, Volonté des Dragons, Couronne de Cornes",
+        "name_es": "Armoured Hide (2), Celestial Forged Armour (5+), Counter Charge, Fear, Fly (9), Impact Hits (D3+1), Mastery of the Elemental Winds, Swiftstride, Will of the Dragons, Crown of horns"
+      },
+      "notes": {
+        "name_en": "",
+        "name_cn": "",
+        "name_de": "",
+        "name_fr": "",
+        "name_es": ""
+      }
+    },
+    {
+      "name_en": "Astromancer",
+      "name_cn": "司天丞",
+      "name_de": "Astromancer",
+      "name_fr": "Astromancer",
+      "name_es": "Astromancer",
+      "id": "astromancer.gxuodlhgn",
+      "points": 65,
+      "armyComposition": {
+        "grand-cathay": { "category": "characters" },
+        "warriors-of-wind-and-field": { "category": "characters" }
+      },
+      "command": [
+        {
+          "name_en": "General",
+          "name_cn": "主将",
+          "name_de": "General",
+          "name_fr": "Général",
+          "name_es": "General",
+          "points": 0,
+          "id": 0
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapon",
+          "name_cn": "单手武器",
+          "name_de": "Handwaffe",
+          "name_fr": "Arme de base",
+          "name_es": "Arma de mano",
+          "points": 0,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [],
+      "options": [
+        {
+          "name_en": "Lore of Yang",
+          "name_cn": "阳系法术",
+          "name_de": "Lore of Yang",
+          "name_fr": "Domaine du Yang",
+          "name_es": "Lore of Yang",
+          "points": 0,
+          "active": true,
+          "exclusive": true,
+          "notes": {
+            "name_en": "Must choose Lore of Yang or Lore of Yin",
+            "name_cn": "必须选择阳系或者阴系法术",
+            "name_fr": "Doit choisir le Domaine du Yang ou le Domaine du Yin"
+          },
+          "id": 0
+        },
+        {
+          "name_en": "Lore of Yin",
+          "name_cn": "阴系法术",
+          "name_de": "Lore of Yin",
+          "name_fr": "Domaine du Yin",
+          "name_es": "Lore of Yin",
+          "points": 0,
+          "exclusive": true,
+          "id": 1
+        },
+        {
+          "name_en": "Wizard",
+          "name_cn": "法师",
+          "name_de": "Wizard",
+          "name_fr": "Sorcier",
+          "name_es": "Hechicero",
+          "points": 0,
+          "active": true,
+          "alwaysActive": true,
+          "options": [
+            {
+              "name_en": "Level 1 Wizard",
+              "name_cn": "1级法师",
+              "name_de": "Level 1 Wizard",
+              "name_fr": "Sorcier de Niveau 1",
+              "name_es": "Hechicero de Nivel 1",
+              "points": 0,
+              "active": true,
+              "exclusive": true
+            },
+            {
+              "name_en": "Level 2 Wizard",
+              "name_cn": "2级法师",
+              "name_de": "Level 2 Wizard",
+              "name_fr": "Sorcier de Niveau 2",
+              "name_es": "Hechicero de Nivel 2",
+              "points": 30,
+              "exclusive": true
+            }
+          ],
+          "id": 2
+        }
+      ],
+      "mounts": [
+        {
+          "name_en": "On foot",
+          "name_cn": "步行",
+          "name_de": "Zu Fuß",
+          "name_fr": "À Pied",
+          "name_es": "A pie",
+          "points": 0,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Cathayan Horse",
+          "name_cn": "震旦骏马",
+          "name_de": "Cathayan Horse",
+          "name_fr": "Cathayan Horse",
+          "name_es": "Cathayan Horse",
+          "points": 16,
+          "id": 1
+        }
+      ],
+      "items": [
+        {
+          "name_en": "Magic Items",
+          "name_cn": "魔法物品",
+          "name_de": "Magische Gegenstände",
+          "name_fr": "Objets Magiques",
+          "name_es": "Objetos Mágicos",
+          "types": ["weapon", "talisman", "enchanted-item", "arcane-item"],
+          "selected": [
+            {
+              "name_cn": "毁灭红宝石之戒",
+              "name_de": "Rubinring der Zerstörung",
+              "name_en": "Ruby Ring of Ruin",
+              "name_fr": "Anneau Rubis de Ruine",
+              "name_it": "Anello Di Rubino Della Rovina",
+              "name_pl": "Rubinowy Pierścień Zguby",
+              "points": 35,
+              "type": "enchanted-item",
+              "onePerArmy": true,
+              "name": "ruby ring of ruin",
+              "id": 48
+            }
+          ],
+          "maxPoints": 50
+        }
+      ],
+      "lores": ["battle-magic", "elementalism", "high-magic", "illusion"],
+      "specialRules": {
+        "name_en": "Magical Attacks, Magic Resistance (-1), Mastery of the Elemental Winds",
+        "name_cn": "魔法攻击, 魔法抗性(-1), 精气之风精通",
+        "name_de": "Magical Attacks, Magic Resistance (-1), Mastery of the Elemental Winds",
+        "name_fr": "Magical Attacks, Magic Resistance (-1), Mastery of the Elemental Winds",
+        "name_es": "Magical Attacks, Magic Resistance (-1), Mastery of the Elemental Winds"
+      },
+      "notes": {
+        "name_en": "",
+        "name_cn": "",
+        "name_de": "",
+        "name_fr": "",
+        "name_es": ""
+      },
+      "generatedSpells": null
+    },
+    {
+      "name_en": "Astromancer",
+      "name_cn": "司天丞",
+      "name_de": "Astromancer",
+      "name_fr": "Astromancer",
+      "name_es": "Astromancer",
+      "id": "astromancer.dknhdavo",
+      "points": 65,
+      "armyComposition": {
+        "grand-cathay": { "category": "characters" },
+        "warriors-of-wind-and-field": { "category": "characters" }
+      },
+      "command": [
+        {
+          "name_en": "General",
+          "name_cn": "主将",
+          "name_de": "General",
+          "name_fr": "Général",
+          "name_es": "General",
+          "points": 0,
+          "id": 0
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapon",
+          "name_cn": "单手武器",
+          "name_de": "Handwaffe",
+          "name_fr": "Arme de base",
+          "name_es": "Arma de mano",
+          "points": 0,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [],
+      "options": [
+        {
+          "name_en": "Lore of Yang",
+          "name_cn": "阳系法术",
+          "name_de": "Lore of Yang",
+          "name_fr": "Domaine du Yang",
+          "name_es": "Lore of Yang",
+          "points": 0,
+          "active": true,
+          "exclusive": true,
+          "notes": {
+            "name_en": "Must choose Lore of Yang or Lore of Yin",
+            "name_cn": "必须选择阳系或者阴系法术",
+            "name_fr": "Doit choisir le Domaine du Yang ou le Domaine du Yin"
+          },
+          "id": 0
+        },
+        {
+          "name_en": "Lore of Yin",
+          "name_cn": "阴系法术",
+          "name_de": "Lore of Yin",
+          "name_fr": "Domaine du Yin",
+          "name_es": "Lore of Yin",
+          "points": 0,
+          "exclusive": true,
+          "id": 1
+        },
+        {
+          "name_en": "Wizard",
+          "name_cn": "法师",
+          "name_de": "Wizard",
+          "name_fr": "Sorcier",
+          "name_es": "Hechicero",
+          "points": 0,
+          "active": true,
+          "alwaysActive": true,
+          "options": [
+            {
+              "name_en": "Level 1 Wizard",
+              "name_cn": "1级法师",
+              "name_de": "Level 1 Wizard",
+              "name_fr": "Sorcier de Niveau 1",
+              "name_es": "Hechicero de Nivel 1",
+              "points": 0,
+              "active": true,
+              "exclusive": true
+            },
+            {
+              "name_en": "Level 2 Wizard",
+              "name_cn": "2级法师",
+              "name_de": "Level 2 Wizard",
+              "name_fr": "Sorcier de Niveau 2",
+              "name_es": "Hechicero de Nivel 2",
+              "points": 30,
+              "exclusive": true
+            }
+          ],
+          "id": 2
+        }
+      ],
+      "mounts": [
+        {
+          "name_en": "On foot",
+          "name_cn": "步行",
+          "name_de": "Zu Fuß",
+          "name_fr": "À Pied",
+          "name_es": "A pie",
+          "points": 0,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Cathayan Horse",
+          "name_cn": "震旦骏马",
+          "name_de": "Cathayan Horse",
+          "name_fr": "Cathayan Horse",
+          "name_es": "Cathayan Horse",
+          "points": 16,
+          "id": 1
+        }
+      ],
+      "items": [
+        {
+          "name_en": "Magic Items",
+          "name_cn": "魔法物品",
+          "name_de": "Magische Gegenstände",
+          "name_fr": "Objets Magiques",
+          "name_es": "Objetos Mágicos",
+          "types": ["weapon", "talisman", "enchanted-item", "arcane-item"],
+          "selected": [],
+          "maxPoints": 50
+        }
+      ],
+      "lores": ["battle-magic", "elementalism", "high-magic", "illusion"],
+      "specialRules": {
+        "name_en": "Magical Attacks, Magic Resistance (-1), Mastery of the Elemental Winds",
+        "name_cn": "魔法攻击, 魔法抗性(-1), 精气之风精通",
+        "name_de": "Magical Attacks, Magic Resistance (-1), Mastery of the Elemental Winds",
+        "name_fr": "Magical Attacks, Magic Resistance (-1), Mastery of the Elemental Winds",
+        "name_es": "Magical Attacks, Magic Resistance (-1), Mastery of the Elemental Winds"
+      },
+      "notes": {
+        "name_en": "",
+        "name_cn": "",
+        "name_de": "",
+        "name_fr": "",
+        "name_es": ""
+      }
+    }
+  ],
+  "core": [
+    {
+      "name_en": "Peasant Levy",
+      "name_cn": "役农乡勇",
+      "name_de": "Peasant Levy",
+      "name_fr": "Peasant Levy",
+      "name_es": "Peasant Levy",
+      "id": "peasant-levy.gmgtcxcmb",
+      "armyComposition": {
+        "grand-cathay": { "category": "core" },
+        "warriors-of-wind-and-field": {
+          "category": "core",
+          "notes": {
+            "name_en": "1+ unit of Peasant Levy",
+            "name_cn": "1+单位的役农乡勇",
+            "name_de": "1+ unit of Peasant Levy",
+            "name_fr": "1+ unit of Peasant Levy",
+            "name_es": "1+ unit of Peasant Levy"
+          }
+        }
+      },
+      "points": 4,
+      "minimum": 10,
+      "maximum": 0,
+      "command": [
+        {
+          "name_en": "Peasant Elder (champion)",
+          "name_cn": "役农老兵(冠军)",
+          "name_de": "Peasant Elder (Champion)",
+          "name_fr": "Peasant Elder (champion)",
+          "name_es": "Peasant Elder (campeón)",
+          "points": 8,
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Standard bearer",
+          "name_cn": "旗手",
+          "name_de": "Standartenträger",
+          "name_fr": "Porte-étendard",
+          "name_es": "Portaestandarte",
+          "points": 5,
+          "id": 1
+        },
+        {
+          "name_en": "Musician",
+          "name_cn": "乐手",
+          "name_de": "Musiker",
+          "name_fr": "Musicien",
+          "name_es": "Músico",
+          "points": 5,
+          "id": 2
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapons, Long spears",
+          "name_cn": "单手武器, 长矛",
+          "name_de": "Handwaffen, Long spears",
+          "name_fr": "Armes de base, Long spears",
+          "name_es": "Armas de mano, Long spears",
+          "points": 0,
+          "perModel": true,
+          "active": false,
+          "id": 0
+        },
+        {
+          "name_en": "Hand weapons, Warbows",
+          "name_cn": "单手武器, 战弓",
+          "name_de": "Handwaffen, Kriegsbögen",
+          "name_fr": "Armes de base, Arcs de guerre",
+          "name_es": "Armas de mano, Arcos de guerra",
+          "points": 0,
+          "perModel": true,
+          "id": 1,
+          "active": true
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "No armour",
+          "name_cn": "无甲",
+          "name_de": "Keine Rüstung",
+          "name_es": "Sin armadura",
+          "name_fr": "Pas d’armure",
+          "points": 0,
+          "active": true,
+          "activeDefault": false,
+          "id": 0
+        },
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_es": "Armadura ligera",
+          "name_fr": "Armure légère",
+          "perModel": true,
+          "points": 1,
+          "id": 1
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Ambushers",
+          "name_cn": "伏击",
+          "name_de": "Überfall",
+          "name_es": "Emboscada",
+          "name_fr": "Embusqueurs",
+          "points": 1,
+          "perModel": true,
+          "notes": {
+            "name_de": "0-1 Einheit pro 1000 Punkte",
+            "name_en": "0-1 unit per 1000 points",
+            "name_cn": "每1000分0-1单位",
+            "name_fr": "0-1 unité par tranche de 1000 points",
+            "name_it": "0-1 unità ogni 1000p.ti"
+          },
+          "id": 0
+        },
+        {
+          "name_en": "Skirmishers",
+          "name_cn": "散兵",
+          "name_de": "Plänkler",
+          "name_fr": "Tirailleurs",
+          "points": 0,
+          "perModel": true,
+          "notes": [
+            {
+              "name_en": "Replace Close Order",
+              "name_cn": "替换紧密阵型",
+              "name_de": "Ersetzt Geschlossene Ränge",
+              "name_fr": "Remplace Ordre Serré"
+            }
+          ],
+          "id": 1,
+          "active": true
+        },
+        {
+          "name_en": "Move through Cover",
+          "name_cn": "穿行掩体",
+          "name_de": "Move through Cover",
+          "name_es": "Move through Cover",
+          "name_fr": "Move through Cover",
+          "points": 20,
+          "armyComposition": "warriors-of-wind-and-field",
+          "notes": {
+            "name_de": "0-1 Einheit pro 1000 Punkte",
+            "name_en": "0-1 unit per 1000 points",
+            "name_cn": "每1000分0-1单位",
+            "name_fr": "0-1 unité par tranche de 1000 points",
+            "name_it": "0-1 unità ogni 1000p.ti"
+          },
+          "id": 2
+        },
+        {
+          "name_en": "Reserve Move, Scouts",
+          "name_cn": "预备移动, 侦察",
+          "name_de": "Reserve Move, Scouts",
+          "name_es": "Reserve Move, Scouts",
+          "name_fr": "Reserve Move, Scouts",
+          "points": 2,
+          "perModel": true,
+          "armyComposition": "warriors-of-wind-and-field",
+          "notes": {
+            "name_de": "0-1 Einheit pro 1000 Punkte",
+            "name_en": "0-1 unit per 1000 points",
+            "name_cn": "每1000分0-1单位",
+            "name_fr": "0-1 unité par tranche de 1000 points",
+            "name_it": "0-1 unità ogni 1000p.ti"
+          },
+          "id": 3
+        }
+      ],
+      "mounts": [],
+      "items": [],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Close Order, Horde, Warband",
+        "name_cn": "紧密阵型, 战帮, 部群",
+        "name_de": "Close Order, Horde, Warband",
+        "name_fr": "Close Order, Horde, Warband",
+        "name_es": "Close Order, Horde, Warband"
+      },
+      "strength": 15,
+      "magic": { "items": [] }
+    },
+    {
+      "name_en": "Peasant Levy",
+      "name_cn": "役农乡勇",
+      "name_de": "Peasant Levy",
+      "name_fr": "Peasant Levy",
+      "name_es": "Peasant Levy",
+      "id": "peasant-levy.uiswgml",
+      "armyComposition": {
+        "grand-cathay": { "category": "core" },
+        "warriors-of-wind-and-field": {
+          "category": "core",
+          "notes": {
+            "name_en": "1+ unit of Peasant Levy",
+            "name_cn": "1+单位的役农乡勇",
+            "name_de": "1+ unit of Peasant Levy",
+            "name_fr": "1+ unit of Peasant Levy",
+            "name_es": "1+ unit of Peasant Levy"
+          }
+        }
+      },
+      "points": 4,
+      "minimum": 10,
+      "maximum": 0,
+      "command": [
+        {
+          "name_en": "Peasant Elder (champion)",
+          "name_cn": "役农老兵(冠军)",
+          "name_de": "Peasant Elder (Champion)",
+          "name_fr": "Peasant Elder (champion)",
+          "name_es": "Peasant Elder (campeón)",
+          "points": 8,
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Standard bearer",
+          "name_cn": "旗手",
+          "name_de": "Standartenträger",
+          "name_fr": "Porte-étendard",
+          "name_es": "Portaestandarte",
+          "points": 5,
+          "id": 1
+        },
+        {
+          "name_en": "Musician",
+          "name_cn": "乐手",
+          "name_de": "Musiker",
+          "name_fr": "Musicien",
+          "name_es": "Músico",
+          "points": 5,
+          "id": 2
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapons, Long spears",
+          "name_cn": "单手武器, 长矛",
+          "name_de": "Handwaffen, Long spears",
+          "name_fr": "Armes de base, Long spears",
+          "name_es": "Armas de mano, Long spears",
+          "points": 0,
+          "perModel": true,
+          "active": false,
+          "id": 0
+        },
+        {
+          "name_en": "Hand weapons, Warbows",
+          "name_cn": "单手武器, 战弓",
+          "name_de": "Handwaffen, Kriegsbögen",
+          "name_fr": "Armes de base, Arcs de guerre",
+          "name_es": "Armas de mano, Arcos de guerra",
+          "points": 0,
+          "perModel": true,
+          "id": 1,
+          "active": true
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "No armour",
+          "name_cn": "无甲",
+          "name_de": "Keine Rüstung",
+          "name_es": "Sin armadura",
+          "name_fr": "Pas d’armure",
+          "points": 0,
+          "active": true,
+          "activeDefault": false,
+          "id": 0
+        },
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_es": "Armadura ligera",
+          "name_fr": "Armure légère",
+          "perModel": true,
+          "points": 1,
+          "id": 1
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Ambushers",
+          "name_cn": "伏击",
+          "name_de": "Überfall",
+          "name_es": "Emboscada",
+          "name_fr": "Embusqueurs",
+          "points": 1,
+          "perModel": true,
+          "notes": {
+            "name_de": "0-1 Einheit pro 1000 Punkte",
+            "name_en": "0-1 unit per 1000 points",
+            "name_cn": "每1000分0-1单位",
+            "name_fr": "0-1 unité par tranche de 1000 points",
+            "name_it": "0-1 unità ogni 1000p.ti"
+          },
+          "id": 0
+        },
+        {
+          "name_en": "Skirmishers",
+          "name_cn": "散兵",
+          "name_de": "Plänkler",
+          "name_fr": "Tirailleurs",
+          "points": 0,
+          "perModel": true,
+          "notes": [
+            {
+              "name_en": "Replace Close Order",
+              "name_cn": "替换紧密阵型",
+              "name_de": "Ersetzt Geschlossene Ränge",
+              "name_fr": "Remplace Ordre Serré"
+            }
+          ],
+          "id": 1,
+          "active": true
+        },
+        {
+          "name_en": "Move through Cover",
+          "name_cn": "穿行掩体",
+          "name_de": "Move through Cover",
+          "name_es": "Move through Cover",
+          "name_fr": "Move through Cover",
+          "points": 20,
+          "armyComposition": "warriors-of-wind-and-field",
+          "notes": {
+            "name_de": "0-1 Einheit pro 1000 Punkte",
+            "name_en": "0-1 unit per 1000 points",
+            "name_cn": "每1000分0-1单位",
+            "name_fr": "0-1 unité par tranche de 1000 points",
+            "name_it": "0-1 unità ogni 1000p.ti"
+          },
+          "id": 2
+        },
+        {
+          "name_en": "Reserve Move, Scouts",
+          "name_cn": "预备移动, 侦察",
+          "name_de": "Reserve Move, Scouts",
+          "name_es": "Reserve Move, Scouts",
+          "name_fr": "Reserve Move, Scouts",
+          "points": 2,
+          "perModel": true,
+          "armyComposition": "warriors-of-wind-and-field",
+          "notes": {
+            "name_de": "0-1 Einheit pro 1000 Punkte",
+            "name_en": "0-1 unit per 1000 points",
+            "name_cn": "每1000分0-1单位",
+            "name_fr": "0-1 unité par tranche de 1000 points",
+            "name_it": "0-1 unità ogni 1000p.ti"
+          },
+          "id": 3
+        }
+      ],
+      "mounts": [],
+      "items": [],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Close Order, Horde, Warband",
+        "name_cn": "紧密阵型, 战帮, 部群",
+        "name_de": "Close Order, Horde, Warband",
+        "name_fr": "Close Order, Horde, Warband",
+        "name_es": "Close Order, Horde, Warband"
+      },
+      "strength": 16,
+      "magic": { "items": [] }
+    },
+    {
+      "name_en": "Peasant Levy",
+      "name_cn": "役农乡勇",
+      "name_de": "Peasant Levy",
+      "name_fr": "Peasant Levy",
+      "name_es": "Peasant Levy",
+      "id": "peasant-levy.umliz",
+      "armyComposition": {
+        "grand-cathay": { "category": "core" },
+        "warriors-of-wind-and-field": {
+          "category": "core",
+          "notes": {
+            "name_en": "1+ unit of Peasant Levy",
+            "name_cn": "1+单位的役农乡勇",
+            "name_de": "1+ unit of Peasant Levy",
+            "name_fr": "1+ unit of Peasant Levy",
+            "name_es": "1+ unit of Peasant Levy"
+          }
+        }
+      },
+      "points": 4,
+      "minimum": 10,
+      "maximum": 0,
+      "command": [
+        {
+          "name_en": "Peasant Elder (champion)",
+          "name_cn": "役农老兵(冠军)",
+          "name_de": "Peasant Elder (Champion)",
+          "name_fr": "Peasant Elder (champion)",
+          "name_es": "Peasant Elder (campeón)",
+          "points": 8,
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Standard bearer",
+          "name_cn": "旗手",
+          "name_de": "Standartenträger",
+          "name_fr": "Porte-étendard",
+          "name_es": "Portaestandarte",
+          "points": 5,
+          "id": 1
+        },
+        {
+          "name_en": "Musician",
+          "name_cn": "乐手",
+          "name_de": "Musiker",
+          "name_fr": "Musicien",
+          "name_es": "Músico",
+          "points": 5,
+          "id": 2
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapons, Long spears",
+          "name_cn": "单手武器, 长矛",
+          "name_de": "Handwaffen, Long spears",
+          "name_fr": "Armes de base, Long spears",
+          "name_es": "Armas de mano, Long spears",
+          "points": 0,
+          "perModel": true,
+          "active": false,
+          "id": 0
+        },
+        {
+          "name_en": "Hand weapons, Warbows",
+          "name_cn": "单手武器, 战弓",
+          "name_de": "Handwaffen, Kriegsbögen",
+          "name_fr": "Armes de base, Arcs de guerre",
+          "name_es": "Armas de mano, Arcos de guerra",
+          "points": 0,
+          "perModel": true,
+          "id": 1,
+          "active": true
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "No armour",
+          "name_cn": "无甲",
+          "name_de": "Keine Rüstung",
+          "name_es": "Sin armadura",
+          "name_fr": "Pas d’armure",
+          "points": 0,
+          "active": true,
+          "activeDefault": false,
+          "id": 0
+        },
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_es": "Armadura ligera",
+          "name_fr": "Armure légère",
+          "perModel": true,
+          "points": 1,
+          "id": 1
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Ambushers",
+          "name_cn": "伏击",
+          "name_de": "Überfall",
+          "name_es": "Emboscada",
+          "name_fr": "Embusqueurs",
+          "points": 1,
+          "perModel": true,
+          "notes": {
+            "name_de": "0-1 Einheit pro 1000 Punkte",
+            "name_en": "0-1 unit per 1000 points",
+            "name_cn": "每1000分0-1单位",
+            "name_fr": "0-1 unité par tranche de 1000 points",
+            "name_it": "0-1 unità ogni 1000p.ti"
+          },
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Skirmishers",
+          "name_cn": "散兵",
+          "name_de": "Plänkler",
+          "name_fr": "Tirailleurs",
+          "points": 0,
+          "perModel": true,
+          "notes": [
+            {
+              "name_en": "Replace Close Order",
+              "name_cn": "替换紧密阵型",
+              "name_de": "Ersetzt Geschlossene Ränge",
+              "name_fr": "Remplace Ordre Serré"
+            }
+          ],
+          "id": 1,
+          "active": true
+        },
+        {
+          "name_en": "Move through Cover",
+          "name_cn": "穿行掩体",
+          "name_de": "Move through Cover",
+          "name_es": "Move through Cover",
+          "name_fr": "Move through Cover",
+          "points": 20,
+          "armyComposition": "warriors-of-wind-and-field",
+          "notes": {
+            "name_de": "0-1 Einheit pro 1000 Punkte",
+            "name_en": "0-1 unit per 1000 points",
+            "name_cn": "每1000分0-1单位",
+            "name_fr": "0-1 unité par tranche de 1000 points",
+            "name_it": "0-1 unità ogni 1000p.ti"
+          },
+          "id": 2
+        },
+        {
+          "name_en": "Reserve Move, Scouts",
+          "name_cn": "预备移动, 侦察",
+          "name_de": "Reserve Move, Scouts",
+          "name_es": "Reserve Move, Scouts",
+          "name_fr": "Reserve Move, Scouts",
+          "points": 2,
+          "perModel": true,
+          "armyComposition": "warriors-of-wind-and-field",
+          "notes": {
+            "name_de": "0-1 Einheit pro 1000 Punkte",
+            "name_en": "0-1 unit per 1000 points",
+            "name_cn": "每1000分0-1单位",
+            "name_fr": "0-1 unité par tranche de 1000 points",
+            "name_it": "0-1 unità ogni 1000p.ti"
+          },
+          "id": 3
+        }
+      ],
+      "mounts": [],
+      "items": [],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Close Order, Horde, Warband",
+        "name_cn": "紧密阵型, 战帮, 部群",
+        "name_de": "Close Order, Horde, Warband",
+        "name_fr": "Close Order, Horde, Warband",
+        "name_es": "Close Order, Horde, Warband"
+      },
+      "strength": 15,
+      "magic": { "items": [] }
+    },
+    {
+      "name_en": "Jade Warriors",
+      "name_cn": "玉勇",
+      "name_de": "Jade Warriors",
+      "name_fr": "Guerriers de Jade",
+      "name_es": "Jade Warriors",
+      "id": "jade-warriors.lkkdnovs",
+      "points": 8,
+      "minimum": 5,
+      "maximum": 0,
+      "armyComposition": {
+        "grand-cathay": { "category": "core" },
+        "jade-fleet": { "category": "core" },
+        "warriors-of-wind-and-field": {
+          "category": "core",
+          "notes": {
+            "name_en": "0-1 unit of Jade Warriors per 1,000 points may be taken as a Core choice",
+            "name_cn": "每1000分0-1单位的玉勇可以作为核心选择",
+            "name_de": "0-1 unit of Jade Warriors per 1,000 points may be taken as a Core choice",
+            "name_fr": "0-1 unit of Jade Warriors per 1,000 points may be taken as a Core choice",
+            "name_es": "0-1 unit of Jade Warriors per 1,000 points may be taken as a Core choice"
+          }
+        }
+      },
+      "command": [
+        {
+          "name_en": "Jade Officer (champion)",
+          "name_cn": "玉勇长(冠军)",
+          "name_de": "Jade Officer (Champion)",
+          "name_fr": "Officier de Jade (champion)",
+          "name_es": "Jade Officer (campeón)",
+          "points": 6,
+          "magic": {
+            "types": ["weapon", "armor", "talisman", "enchanted-item"],
+            "maxPoints": 25
+          },
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Standard bearer",
+          "name_cn": "旗手",
+          "name_de": "Standartenträger",
+          "name_fr": "Porte-étendard",
+          "name_es": "Portaestandarte",
+          "points": 6,
+          "magic": {
+            "types": ["banner"],
+            "maxPoints": 50,
+            "selected": [
+              {
+                "name_en": "Icon of Heavenly Fury",
+                "name_de": "Ikone der Göttlichen Wut",
+                "name_cn": "天怒圣像",
+                "name_es": "Icon of Heavenly Fury",
+                "name_fr": "Icône de Fureur Céleste",
+                "name_it": "Icon of Heavenly Fury",
+                "points": 45,
+                "type": "banner",
+                "onePerArmy": true,
+                "name": "icon of heavenly fury",
+                "id": 18
+              }
+            ]
+          },
+          "notes": {
+            "name_de": "0-1 Einheit pro 1.000 Punkte können eine Magische Standarte im Wert von bis zu 50 Punkten erwerben",
+            "name_en": "0-1 unit per 1000 points may purchase a magic standard worth up to 50 points",
+            "name_cn": "每1000分0-1单位可购买不超过50分的魔法战旗",
+            "name_fr": "0-1 unité par tranche de 1000 points peut acheter une bannière magique pour une valeur maximale de 50 points"
+          },
+          "id": 1,
+          "active": true
+        },
+        {
+          "name_en": "Musician",
+          "name_cn": "乐手",
+          "name_de": "Musiker",
+          "name_fr": "Musicien",
+          "name_es": "Músico",
+          "points": 6,
+          "id": 2,
+          "active": true
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapons, Shields",
+          "name_cn": "单手武器, 盾牌",
+          "name_de": "Handwaffen, Schilde",
+          "name_fr": "Armes de base, Boucliers",
+          "name_es": "Armas de mano, Escudos",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Hand weapons, Halberds",
+          "name_cn": "单手武器, 长戟",
+          "name_de": "Handwaffen, Hellebarden",
+          "name_fr": "Armes de base, Hallebardes",
+          "name_es": "Armas de mano, Alabardas",
+          "points": 0,
+          "perModel": true,
+          "id": 1
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Heavy armour",
+          "name_cn": "重甲",
+          "name_de": "Schwere Rüstung",
+          "name_fr": "Armure lourde",
+          "name_es": "Armadura pesada",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Drilled",
+          "name_cn": "受训",
+          "name_de": "Gut ausgebildet",
+          "name_fr": "Bien Entraînés",
+          "name_es": "Entrenado",
+          "points": 1,
+          "perModel": true,
+          "notes": {
+            "name_de": "0-1 Einheit pro 1000 Punkte",
+            "name_en": "0-1 unit per 1000 points",
+            "name_cn": "每1000分0-1单位",
+            "name_fr": "0-1 unité par tranche de 1000 points",
+            "name_it": "0-1 unità ogni 1000p.ti"
+          },
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Stubborn",
+          "name_cn": "坚毅",
+          "name_de": "Unnachgiebig",
+          "name_fr": "Obstiné",
+          "name_es": "Tozudo",
+          "points": 2,
+          "perModel": true,
+          "notes": {
+            "name_de": "0-1 Einheit pro 1000 Punkte",
+            "name_en": "0-1 unit per 1000 points",
+            "name_cn": "每1000分0-1单位",
+            "name_fr": "0-1 unité par tranche de 1000 points",
+            "name_it": "0-1 unità ogni 1000p.ti"
+          },
+          "id": 1
+        },
+        {
+          "name_en": "Celestial Dragon Guard",
+          "name_cn": "天廷龙卫",
+          "name_de": "Celestial Dragon Guard",
+          "name_fr": "Garde du Dragon Céleste",
+          "name_es": "Celestial Dragon Guard",
+          "points": 1,
+          "perModel": true,
+          "specialRules": {
+            "name_en": "Celestial Forged Armour (6+)",
+            "name_cn": "天工铸甲(6+)",
+            "name_de": "Celestial Forged Armour (6+)",
+            "name_fr": "Armure Céleste (6+)",
+            "name_es": "Celestial Forged Armour (6+)"
+          },
+          "notes": {
+            "name_en": "0-1 unit if Miao Ying is the army's General",
+            "name_de": "0-1 unit if Miao Ying is the army's General",
+            "name_cn": "如果妙影为主将，0-1单位",
+            "name_fr": "0-1 unité si Miao Ying est la Générale de l’armée",
+            "name_it": "0-1 unit if Miao Ying is the army's General"
+          },
+          "id": 2
+        }
+      ],
+      "mounts": [],
+      "items": [],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Close Order, Defensive Stance, Detachment, Regimental Unit, Will of the Dragons",
+        "name_cn": "紧密阵型, 不动如山, 分遣队, 主团单位, 巨龙意志",
+        "name_de": "Close Order, Defensive Stance, Detachment, Regimental Unit, Will of the Dragons",
+        "name_fr": "Ordre Serré, Posture Défensive, Détachement, Unité Régimentaire, Volonté des Dragons",
+        "name_es": "Close Order, Defensive Stance, Detachment, Regimental Unit, Will of the Dragons"
+      },
+      "strength": 19,
+      "magic": { "items": [] }
+    },
+    {
+      "name_en": "Jade Warriors",
+      "name_cn": "玉勇",
+      "name_de": "Jade Warriors",
+      "name_fr": "Guerriers de Jade",
+      "name_es": "Jade Warriors",
+      "id": "jade-warriors.qhcrjq",
+      "points": 8,
+      "minimum": 5,
+      "maximum": 0,
+      "armyComposition": {
+        "grand-cathay": { "category": "core" },
+        "jade-fleet": { "category": "core" },
+        "warriors-of-wind-and-field": {
+          "category": "core",
+          "notes": {
+            "name_en": "0-1 unit of Jade Warriors per 1,000 points may be taken as a Core choice",
+            "name_cn": "每1000分0-1单位的玉勇可以作为核心选择",
+            "name_de": "0-1 unit of Jade Warriors per 1,000 points may be taken as a Core choice",
+            "name_fr": "0-1 unit of Jade Warriors per 1,000 points may be taken as a Core choice",
+            "name_es": "0-1 unit of Jade Warriors per 1,000 points may be taken as a Core choice"
+          }
+        }
+      },
+      "command": [
+        {
+          "name_en": "Jade Officer (champion)",
+          "name_cn": "玉勇长(冠军)",
+          "name_de": "Jade Officer (Champion)",
+          "name_fr": "Officier de Jade (champion)",
+          "name_es": "Jade Officer (campeón)",
+          "points": 6,
+          "magic": {
+            "types": ["weapon", "armor", "talisman", "enchanted-item"],
+            "maxPoints": 25
+          },
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Standard bearer",
+          "name_cn": "旗手",
+          "name_de": "Standartenträger",
+          "name_fr": "Porte-étendard",
+          "name_es": "Portaestandarte",
+          "points": 6,
+          "magic": { "types": ["banner"], "maxPoints": 50 },
+          "notes": {
+            "name_de": "0-1 Einheit pro 1.000 Punkte können eine Magische Standarte im Wert von bis zu 50 Punkten erwerben",
+            "name_en": "0-1 unit per 1000 points may purchase a magic standard worth up to 50 points",
+            "name_cn": "每1000分0-1单位可购买不超过50分的魔法战旗",
+            "name_fr": "0-1 unité par tranche de 1000 points peut acheter une bannière magique pour une valeur maximale de 50 points"
+          },
+          "id": 1
+        },
+        {
+          "name_en": "Musician",
+          "name_cn": "乐手",
+          "name_de": "Musiker",
+          "name_fr": "Musicien",
+          "name_es": "Músico",
+          "points": 6,
+          "id": 2
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapons, Shields",
+          "name_cn": "单手武器, 盾牌",
+          "name_de": "Handwaffen, Schilde",
+          "name_fr": "Armes de base, Boucliers",
+          "name_es": "Armas de mano, Escudos",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Hand weapons, Halberds",
+          "name_cn": "单手武器, 长戟",
+          "name_de": "Handwaffen, Hellebarden",
+          "name_fr": "Armes de base, Hallebardes",
+          "name_es": "Armas de mano, Alabardas",
+          "points": 0,
+          "perModel": true,
+          "id": 1
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Heavy armour",
+          "name_cn": "重甲",
+          "name_de": "Schwere Rüstung",
+          "name_fr": "Armure lourde",
+          "name_es": "Armadura pesada",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Drilled",
+          "name_cn": "受训",
+          "name_de": "Gut ausgebildet",
+          "name_fr": "Bien Entraînés",
+          "name_es": "Entrenado",
+          "points": 1,
+          "perModel": true,
+          "notes": {
+            "name_de": "0-1 Einheit pro 1000 Punkte",
+            "name_en": "0-1 unit per 1000 points",
+            "name_cn": "每1000分0-1单位",
+            "name_fr": "0-1 unité par tranche de 1000 points",
+            "name_it": "0-1 unità ogni 1000p.ti"
+          },
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Stubborn",
+          "name_cn": "坚毅",
+          "name_de": "Unnachgiebig",
+          "name_fr": "Obstiné",
+          "name_es": "Tozudo",
+          "points": 2,
+          "perModel": true,
+          "notes": {
+            "name_de": "0-1 Einheit pro 1000 Punkte",
+            "name_en": "0-1 unit per 1000 points",
+            "name_cn": "每1000分0-1单位",
+            "name_fr": "0-1 unité par tranche de 1000 points",
+            "name_it": "0-1 unità ogni 1000p.ti"
+          },
+          "id": 1
+        },
+        {
+          "name_en": "Celestial Dragon Guard",
+          "name_cn": "天廷龙卫",
+          "name_de": "Celestial Dragon Guard",
+          "name_fr": "Garde du Dragon Céleste",
+          "name_es": "Celestial Dragon Guard",
+          "points": 1,
+          "perModel": true,
+          "specialRules": {
+            "name_en": "Celestial Forged Armour (6+)",
+            "name_cn": "天工铸甲(6+)",
+            "name_de": "Celestial Forged Armour (6+)",
+            "name_fr": "Armure Céleste (6+)",
+            "name_es": "Celestial Forged Armour (6+)"
+          },
+          "notes": {
+            "name_en": "0-1 unit if Miao Ying is the army's General",
+            "name_de": "0-1 unit if Miao Ying is the army's General",
+            "name_cn": "如果妙影为主将，0-1单位",
+            "name_fr": "0-1 unité si Miao Ying est la Générale de l’armée",
+            "name_it": "0-1 unit if Miao Ying is the army's General"
+          },
+          "id": 2
+        }
+      ],
+      "mounts": [],
+      "items": [],
+      "lores": [],
+      "specialRules": {
+        "name_en": "Close Order, Defensive Stance, Detachment, Regimental Unit, Will of the Dragons",
+        "name_cn": "紧密阵型, 不动如山, 分遣队, 主团单位, 巨龙意志",
+        "name_de": "Close Order, Defensive Stance, Detachment, Regimental Unit, Will of the Dragons",
+        "name_fr": "Ordre Serré, Posture Défensive, Détachement, Unité Régimentaire, Volonté des Dragons",
+        "name_es": "Close Order, Defensive Stance, Detachment, Regimental Unit, Will of the Dragons"
+      },
+      "strength": 5,
+      "magic": { "items": [] }
+    }
+  ],
+  "special": [
+    {
+      "name_en": "Cathayan Grand Cannon",
+      "name_cn": "震旦巨炮",
+      "name_de": "Cathayan Grand Cannon",
+      "name_fr": "Grand Canon Cathayen",
+      "name_es": "Cathayan Grand Cannon",
+      "id": "cathayan-grand-cannon.hrgznb",
+      "points": 130,
+      "armyComposition": {
+        "grand-cathay": {
+          "category": "special",
+          "notes": {
+            "name_en": "0-2 war machines chosen from the following list per 1000 points: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_cn": "每1000分从以下列表中选择0-2台战争机器：震旦巨炮, 炎霖火箭炮",
+            "name_de": "0-2 Kriegsmaschine aus der folgende Liste pro 1.000 Punkte: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_fr": "0-2 machines de guerre choisies dans la liste suivante par tranche de 1000 points: Grand Canon Cathayen, Batterie de Fusées Pluie de Feu",
+            "name_es": "0-2 máquinas de guerra de la siguiente lista por cada 1.000 puntos: Cathayan Grand Cannon, Fire Rain Rocket Battery"
+          }
+        },
+        "jade-fleet": {
+          "category": "special",
+          "notes": {
+            "name_en": "0-3 war machines chosen from the following list per 1000 points: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_cn": "每1000分从以下列表中选择0-3台战争机器：震旦巨炮, 炎霖火箭炮",
+            "name_de": "0-3 Kriegsmaschine aus der folgende Liste pro 1.000 Punkte: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_fr": "0-3 machines de guerre choisies dans la liste suivante par tranche de 1000 points: Grand Canon Cathayen, Batterie de Fusées Pluie de Feu",
+            "name_es": "0-3 máquinas de guerra de la siguiente lista por cada 1.000 puntos: Cathayan Grand Cannon, Fire Rain Rocket Battery"
+          }
+        },
+        "warriors-of-wind-and-field": {
+          "category": "special",
+          "notes": {
+            "name_en": "0-2 war machines chosen from the following list per 1000 points: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_cn": "每1000分从以下列表中选择0-2台战争机器：震旦巨炮, 炎霖火箭炮",
+            "name_de": "0-2 Kriegsmaschine aus der folgende Liste pro 1.000 Punkte: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_fr": "0-2 machines de guerre choisies dans la liste suivante par tranche de 1000 points: Grand Canon Cathayen, Batterie de Fusées Pluie de Feu",
+            "name_es": "0-2 máquinas de guerra de la siguiente lista por cada 1.000 puntos: Cathayan Grand Cannon, Fire Rain Rocket Battery"
+          }
+        }
+      },
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Grand cannon, Hand weapons",
+          "name_cn": "巨炮, 单手武器",
+          "name_de": "Grand cannon, Handwaffen",
+          "name_fr": "Grand canon, Armes de base",
+          "name_es": "Grand cannon, Armas de mano",
+          "points": 0,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_fr": "Armure légère",
+          "name_es": "Armadura ligera",
+          "points": 0,
+          "active": true,
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Ogre Loader",
+          "name_cn": "食人魔装填手",
+          "name_de": "Ogre Loader",
+          "name_fr": "Chargeur Ogre",
+          "name_es": "Ogre Loader",
+          "points": 35,
+          "options": [
+            {
+              "name_en": "Gunpowder bombs",
+              "name_cn": "火药炸弹",
+              "name_de": "Gunpowder bombs",
+              "name_fr": "Bombes de poudre à canon",
+              "name_es": "Gunpowder bombs",
+              "points": 8
+            }
+          ],
+          "id": 0,
+          "active": true
+        }
+      ],
+      "mounts": [],
+      "specialRules": {
+        "name_en": "Skirmishers",
+        "name_cn": "散兵",
+        "name_de": "Plänkler",
+        "name_fr": "Tirailleurs",
+        "name_es": "Hostigadores"
+      }
+    },
+    {
+      "name_en": "Cathayan Grand Cannon",
+      "name_cn": "震旦巨炮",
+      "name_de": "Cathayan Grand Cannon",
+      "name_fr": "Grand Canon Cathayen",
+      "name_es": "Cathayan Grand Cannon",
+      "id": "cathayan-grand-cannon.rnxjrpgtb",
+      "points": 130,
+      "armyComposition": {
+        "grand-cathay": {
+          "category": "special",
+          "notes": {
+            "name_en": "0-2 war machines chosen from the following list per 1000 points: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_cn": "每1000分从以下列表中选择0-2台战争机器：震旦巨炮, 炎霖火箭炮",
+            "name_de": "0-2 Kriegsmaschine aus der folgende Liste pro 1.000 Punkte: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_fr": "0-2 machines de guerre choisies dans la liste suivante par tranche de 1000 points: Grand Canon Cathayen, Batterie de Fusées Pluie de Feu",
+            "name_es": "0-2 máquinas de guerra de la siguiente lista por cada 1.000 puntos: Cathayan Grand Cannon, Fire Rain Rocket Battery"
+          }
+        },
+        "jade-fleet": {
+          "category": "special",
+          "notes": {
+            "name_en": "0-3 war machines chosen from the following list per 1000 points: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_cn": "每1000分从以下列表中选择0-3台战争机器：震旦巨炮, 炎霖火箭炮",
+            "name_de": "0-3 Kriegsmaschine aus der folgende Liste pro 1.000 Punkte: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_fr": "0-3 machines de guerre choisies dans la liste suivante par tranche de 1000 points: Grand Canon Cathayen, Batterie de Fusées Pluie de Feu",
+            "name_es": "0-3 máquinas de guerra de la siguiente lista por cada 1.000 puntos: Cathayan Grand Cannon, Fire Rain Rocket Battery"
+          }
+        },
+        "warriors-of-wind-and-field": {
+          "category": "special",
+          "notes": {
+            "name_en": "0-2 war machines chosen from the following list per 1000 points: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_cn": "每1000分从以下列表中选择0-2台战争机器：震旦巨炮, 炎霖火箭炮",
+            "name_de": "0-2 Kriegsmaschine aus der folgende Liste pro 1.000 Punkte: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_fr": "0-2 machines de guerre choisies dans la liste suivante par tranche de 1000 points: Grand Canon Cathayen, Batterie de Fusées Pluie de Feu",
+            "name_es": "0-2 máquinas de guerra de la siguiente lista por cada 1.000 puntos: Cathayan Grand Cannon, Fire Rain Rocket Battery"
+          }
+        }
+      },
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Grand cannon, Hand weapons",
+          "name_cn": "巨炮, 单手武器",
+          "name_de": "Grand cannon, Handwaffen",
+          "name_fr": "Grand canon, Armes de base",
+          "name_es": "Grand cannon, Armas de mano",
+          "points": 0,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_fr": "Armure légère",
+          "name_es": "Armadura ligera",
+          "points": 0,
+          "active": true,
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Ogre Loader",
+          "name_cn": "食人魔装填手",
+          "name_de": "Ogre Loader",
+          "name_fr": "Chargeur Ogre",
+          "name_es": "Ogre Loader",
+          "points": 35,
+          "options": [
+            {
+              "name_en": "Gunpowder bombs",
+              "name_cn": "火药炸弹",
+              "name_de": "Gunpowder bombs",
+              "name_fr": "Bombes de poudre à canon",
+              "name_es": "Gunpowder bombs",
+              "points": 8
+            }
+          ],
+          "id": 0,
+          "active": true
+        }
+      ],
+      "mounts": [],
+      "specialRules": {
+        "name_en": "Skirmishers",
+        "name_cn": "散兵",
+        "name_de": "Plänkler",
+        "name_fr": "Tirailleurs",
+        "name_es": "Hostigadores"
+      }
+    },
+    {
+      "name_en": "Cathayan Grand Cannon",
+      "name_cn": "震旦巨炮",
+      "name_de": "Cathayan Grand Cannon",
+      "name_fr": "Grand Canon Cathayen",
+      "name_es": "Cathayan Grand Cannon",
+      "id": "cathayan-grand-cannon.crxcdikvln",
+      "points": 130,
+      "armyComposition": {
+        "grand-cathay": {
+          "category": "special",
+          "notes": {
+            "name_en": "0-2 war machines chosen from the following list per 1000 points: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_cn": "每1000分从以下列表中选择0-2台战争机器：震旦巨炮, 炎霖火箭炮",
+            "name_de": "0-2 Kriegsmaschine aus der folgende Liste pro 1.000 Punkte: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_fr": "0-2 machines de guerre choisies dans la liste suivante par tranche de 1000 points: Grand Canon Cathayen, Batterie de Fusées Pluie de Feu",
+            "name_es": "0-2 máquinas de guerra de la siguiente lista por cada 1.000 puntos: Cathayan Grand Cannon, Fire Rain Rocket Battery"
+          }
+        },
+        "jade-fleet": {
+          "category": "special",
+          "notes": {
+            "name_en": "0-3 war machines chosen from the following list per 1000 points: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_cn": "每1000分从以下列表中选择0-3台战争机器：震旦巨炮, 炎霖火箭炮",
+            "name_de": "0-3 Kriegsmaschine aus der folgende Liste pro 1.000 Punkte: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_fr": "0-3 machines de guerre choisies dans la liste suivante par tranche de 1000 points: Grand Canon Cathayen, Batterie de Fusées Pluie de Feu",
+            "name_es": "0-3 máquinas de guerra de la siguiente lista por cada 1.000 puntos: Cathayan Grand Cannon, Fire Rain Rocket Battery"
+          }
+        },
+        "warriors-of-wind-and-field": {
+          "category": "special",
+          "notes": {
+            "name_en": "0-2 war machines chosen from the following list per 1000 points: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_cn": "每1000分从以下列表中选择0-2台战争机器：震旦巨炮, 炎霖火箭炮",
+            "name_de": "0-2 Kriegsmaschine aus der folgende Liste pro 1.000 Punkte: Cathayan Grand Cannon, Fire Rain Rocket Battery",
+            "name_fr": "0-2 machines de guerre choisies dans la liste suivante par tranche de 1000 points: Grand Canon Cathayen, Batterie de Fusées Pluie de Feu",
+            "name_es": "0-2 máquinas de guerra de la siguiente lista por cada 1.000 puntos: Cathayan Grand Cannon, Fire Rain Rocket Battery"
+          }
+        }
+      },
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Grand cannon, Hand weapons",
+          "name_cn": "巨炮, 单手武器",
+          "name_de": "Grand cannon, Handwaffen",
+          "name_fr": "Grand canon, Armes de base",
+          "name_es": "Grand cannon, Armas de mano",
+          "points": 0,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_de": "Leichte Rüstung",
+          "name_fr": "Armure légère",
+          "name_es": "Armadura ligera",
+          "points": 0,
+          "active": true,
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Ogre Loader",
+          "name_cn": "食人魔装填手",
+          "name_de": "Ogre Loader",
+          "name_fr": "Chargeur Ogre",
+          "name_es": "Ogre Loader",
+          "points": 35,
+          "options": [
+            {
+              "name_en": "Gunpowder bombs",
+              "name_cn": "火药炸弹",
+              "name_de": "Gunpowder bombs",
+              "name_fr": "Bombes de poudre à canon",
+              "name_es": "Gunpowder bombs",
+              "points": 8
+            }
+          ],
+          "id": 0,
+          "active": true
+        }
+      ],
+      "mounts": [],
+      "specialRules": {
+        "name_en": "Skirmishers",
+        "name_cn": "散兵",
+        "name_de": "Plänkler",
+        "name_fr": "Tirailleurs",
+        "name_es": "Hostigadores"
+      }
+    }
+  ],
+  "rare": [
+    {
+      "name_en": "Sky Lantern",
+      "name_cn": "天灯",
+      "name_de": "Sky Lantern",
+      "name_fr": "Lanterne Céleste",
+      "name_es": "Sky Lantern",
+      "id": "sky-lantern.kmpvywvc",
+      "points": 135,
+      "armyComposition": {
+        "grand-cathay": { "category": "rare" },
+        "jade-fleet": { "category": "rare" }
+      },
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Sky Lantern Crane Guns",
+          "name_cn": "天灯鹤铳",
+          "name_de": "Sky Lantern Crane Guns",
+          "name_fr": "Canons Grues de Lanterne Céleste",
+          "name_es": "Sky Lantern Crane Guns",
+          "points": 0,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Iron hail guns, Gunpowder bombs",
+          "name_cn": "铁雹铳, 火药炸弹",
+          "name_de": "Iron hail guns, Gunpowder bombs",
+          "name_fr": "Canons grêle de fer, Bombes de poudre à canon",
+          "name_es": "Iron hail guns, Gunpowder bombs",
+          "points": 0,
+          "id": 1
+        },
+        {
+          "name_en": "Iron hail guns, Dragon fire bombs",
+          "name_cn": "铁雹铳, 龙火炸弹",
+          "name_de": "Iron hail guns, Dragon fire bombs",
+          "name_fr": "Canons grêle de fer, Bombes de feu du dragon",
+          "name_es": "Iron hail guns, Dragon fire bombs",
+          "points": 20,
+          "id": 2
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "4+",
+          "name_cn": "4+",
+          "name_de": "4+",
+          "name_fr": "4+",
+          "name_es": "4+",
+          "points": 0,
+          "active": true,
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Sky Lantern bombs",
+          "name_cn": "天灯炸弹",
+          "name_de": "Sky Lantern bombs",
+          "name_fr": "Bombes de Lanterne Céleste",
+          "name_es": "Sky Lantern bombs",
+          "points": 15,
+          "id": 0
+        },
+        {
+          "name_en": "Ambushers",
+          "name_cn": "伏击",
+          "name_de": "Überfall",
+          "name_fr": "Embusqueurs",
+          "name_es": "Ambushers",
+          "points": 15,
+          "armyComposition": "jade-fleet",
+          "notes": {
+            "name_en": "0-1 per 1000 points",
+            "name_cn": "每1000分0-1",
+            "name_de": "0-1 per 1000 points",
+            "name_fr": "0-1 par tranche de 1000 points",
+            "name_es": "0-1 per 1000 points"
+          },
+          "id": 1
+        }
+      ],
+      "mounts": [],
+      "specialRules": {
+        "name_en": "Close Order, Disengage, Eye of the Dragon, Feigned Flight, Fire & Flee, Fly (8), Heavenly Beacon, Impact Hits (D3+1 - Sky Lantern only), Large Target, Reserve Move, Scouts, Flammable",
+        "name_cn": "紧密阵型, 脱离, 龙之眼, 诱敌诈退, 游击, 飞行(8), 天际灯标, 撞击(D3+1 - 仅限天灯), 大型目标, 预备移动, 侦察, 易燃",
+        "name_de": "Close Order, Disengage, Eye of the Dragon, Feigned Flight, Fire & Flee, Fly (8), Heavenly Beacon, Impact Hits (D3+1 - Sky Lantern only), Large Target, Reserve Move, Scouts, Brennbar",
+        "name_fr": "Ordre Serré, Désengagement, Œil du Dragon, Fuite Feinte, Tir & Fuite, Vol (8), Fanal Céleste, Touches d’Impact (D3+1 - Lanterne Céleste uniquement), Grande Cible, Mouvement de Réserve, Éclaireurs, Inflammable",
+        "name_es": "Close Order, Disengage, Eye of the Dragon, Feigned Flight, Fire & Flee, Fly (8), Heavenly Beacon, Impact Hits (D3+1 - Sky Lantern only), Large Target, Reserve Move, Scouts, Flammable"
+      }
+    }
+  ],
+  "mercenaries": [],
+  "allies": [],
+  "id": "khuxlbcxk",
+  "armyComposition": "grand-cathay",
+  "compositionRule": "grand-melee-combined-arms"
+}

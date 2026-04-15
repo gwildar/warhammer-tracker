@@ -145,6 +145,16 @@ export const RANGED_WEAPONS = {
     rules: "Cumbersome, Move or Shoot, Needs More Nails",
     noBS: true,
   },
+  "grand cannon": {
+    name: "Grand Cannon",
+    range: '48"',
+    s: "10",
+    ap: "-3",
+    rules:
+      "Armour Bane (3), Cumbersome, Move or Shoot, Multiple Wounds (D3+1), Thunderous Impact",
+    misfireTable: "black-powder",
+    noBS: true,
+  },
   mortar: {
     name: "Mortar",
     range: '12"-48"',
@@ -406,6 +416,83 @@ export const RANGED_WEAPONS = {
     s: "6",
     ap: "-1",
     rules: "Armour Bane (2), Multiple Wounds (2), Volley Fire",
+  },
+
+  // ─── Grand Cathay Ranged ─────────────────────────────────────────────
+  "crane gun": {
+    name: "Crane Gun",
+    range: '36"',
+    s: "6",
+    ap: "-2",
+    rules: "Armour Bane (2), Cumbersome, Move or Shoot",
+  },
+  "dragon fire bombs": {
+    name: "Dragon Fire Bombs",
+    range: '9"',
+    s: "3",
+    ap: "-1",
+    rules:
+      "Armour Bane (1), Flaming Attacks, Move & Shoot, Quick Shot. D3+1 hits on successful To Hit.",
+  },
+  "dragon fire pistol": {
+    name: "Dragon Fire Pistol",
+    range: '12"',
+    s: "5",
+    ap: "-1",
+    rules: "Flaming Attacks, Multiple Shots (2), Quick Shot",
+  },
+  "fire rain rocket": {
+    name: "Fire Rain Rocket (Bastion Rockets)",
+    range: '12"-48"',
+    s: "4",
+    ap: "-1",
+    rules:
+      'Bombardment (3"). S5, AP-3 at blast centre. Multiple Wounds (D6) at centre only.',
+    misfireTable: "black-powder",
+    noBS: true,
+    altProfiles: ["fire rain rocket (rocket battery)"],
+  },
+  "fire rain rocket (rocket battery)": {
+    name: "Fire Rain Rocket (Rocket Battery)",
+    range: '12"-48"',
+    s: "3",
+    ap: "-1",
+    rules:
+      'Bombardment (5"), Flaming Attacks, Wailing Spirits. S4, AP-1 at blast centre.',
+    misfireTable: "black-powder",
+    noBS: true,
+  },
+  "gunpowder bombs": {
+    name: "Gunpowder Bombs",
+    range: '9"',
+    s: "3",
+    ap: "—",
+    rules:
+      "Armour Bane (1), Move & Shoot, Quick Shot. D3 hits on successful To Hit.",
+  },
+  "iron hail gun": {
+    name: "Iron Hail Gun",
+    range: '12"',
+    s: "3",
+    ap: "-1",
+    rules:
+      "Move & Shoot, Multiple Shots (D3). No penalties for long range, Multiple Shots, or Stand & Shoot.",
+  },
+  "sky lantern bombs": {
+    name: "Sky Lantern Bombs",
+    range: '6"',
+    s: "5",
+    ap: "-2",
+    rules:
+      'Once per game. During Remaining Moves sub-phase. Roll D6: 1=lose 1W; 2=enemy loses 1W; 3-4=5" template scatters D6"; 5-6=two 3" templates scatter D6" each.',
+    noBS: true,
+  },
+  "sky lantern crane gun": {
+    name: "Sky Lantern Crane Gun",
+    range: '36"',
+    s: "6",
+    ap: "-2",
+    rules: "Armour Bane (2), Cumbersome",
   },
 };
 
@@ -713,6 +800,47 @@ export const COMBAT_WEAPONS = {
     s: "S+5",
     ap: "-4",
     rules: "Killing Blow, Monster Slayer, Strike Last",
+  },
+
+  // ─── Grand Cathay Combat ─────────────────────────────────────────────
+  "cathayan lance": {
+    name: "Cathayan Lance",
+    s: "S+1",
+    ap: "-1",
+    rules:
+      "Armour Bane (1), Fight In Extra Rank. S+1 and AP-1 on charge turn only. Cavalry, monster, and chariot models only.",
+  },
+  "celestial blade": {
+    name: "Celestial Blade",
+    s: "S+1",
+    ap: "-1",
+    rules: "Strike First",
+  },
+  "crown of horns": {
+    name: "Crown of Horns",
+    s: "S",
+    ap: "-1",
+    rules: "Armour Bane (1)",
+  },
+  "great blade": {
+    name: "Great Blade",
+    s: "S / S+1",
+    ap: "-2 / -4",
+    rules:
+      "Choose at start of each combat round. Scything Blow (S, AP-2): Armour Bane (1), Extra Attacks (+2D3), Strike Last. Deadly Strike (S+1, AP-4): Killing Blow, Monster Slayer, Multiple Wounds (D3).",
+  },
+  "iron talons": {
+    name: "Iron Talons",
+    s: "S",
+    ap: "-1",
+    rules: "Strike First",
+  },
+  "long spear": {
+    name: "Long Spear",
+    s: "S",
+    ap: "—",
+    rules:
+      "Fight In Extra Rank, Strike First (vs charging enemies only). Infantry only; cannot use on a turn the model charged.",
   },
 };
 
