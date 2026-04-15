@@ -18,6 +18,7 @@ import {
   resolveSpecialRules,
   resolveMount,
   resolveStats,
+  deriveSpellSelectionMode,
   computeArmourSave,
   computeWard,
   computeRegen,
@@ -209,6 +210,8 @@ function parseCanonicalUnit(raw, category) {
     specialRules = specialRules.filter((r) => !removedRuleIds.has(r.id));
   }
 
+  const spellSelectionMode = deriveSpellSelectionMode(magicItems, specialRules);
+
   // Find the active mount (if any)
   let mountName = null;
   if (Array.isArray(raw.mounts)) {
@@ -344,8 +347,7 @@ function parseCanonicalUnit(raw, category) {
     hasMusician,
     isCaster,
     lores,
-    hasCursedCoven,
-    hasVortexOfSouls,
+    spellSelectionMode,
     activeLore: raw.activeLore || null,
     factionLores,
   };

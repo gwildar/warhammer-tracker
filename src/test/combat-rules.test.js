@@ -31,10 +31,10 @@ describe("Cursed Coven — Doomfire Warlocks as casters", () => {
     expect(warlocks).toBeDefined();
   });
 
-  it("Doomfire Warlocks have hasCursedCoven flag", () => {
+  it("Doomfire Warlocks have maxSpells 1 in spellSelectionMode", () => {
     const army = loadArmy("dark-elves");
     const warlocks = army.units.find((u) => u.name === "Doomfire Warlock");
-    expect(warlocks.hasCursedCoven).toBe(true);
+    expect(warlocks.spellSelectionMode.maxSpells).toBe(1);
   });
 });
 
