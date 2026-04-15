@@ -269,7 +269,25 @@ function parseCanonicalUnit(raw, category) {
     ? ["vortex-of-souls"]
     : hasCursedCoven
       ? ["dark-magic", "daemonology"]
-      : raw.lores || [];
+      : [...(raw.lores || [])];
+
+  // Detect bound spell weapons in equipment (treated as spells, not shooting weapons)
+  const equipmentFlat = [...equipment, specialRulesText || ""]
+    .join(", ")
+    .toLowerCase();
+  if (
+    equipmentFlat.includes("engine of the gods") &&
+    !lores.includes("engine-of-the-gods")
+  ) {
+    lores.push("engine-of-the-gods");
+  }
+  if (
+    equipmentFlat.includes("solar engine") &&
+    !lores.includes("solar-engine")
+  ) {
+    lores.push("solar-engine");
+  }
+
   const isCaster = lores.length > 0;
 
   // Extract faction lores from special rules

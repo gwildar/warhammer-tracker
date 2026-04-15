@@ -201,14 +201,13 @@ describe("Shooting phase with Lizardmen", () => {
     savePhaseIndex(8); // shoot
   });
 
-  it("shows Solar Engine in shooting units", () => {
+  it("shows Solar Engine in spells", () => {
     renderGameScreen(army);
     const text = getApp().textContent;
     expect(text).toContain("Solar Engine");
-    expect(text).toContain("Bound Spell");
   });
 
-  it("shows Engine of the Gods in shooting units", () => {
+  it("shows Engine of the Gods in spells", () => {
     renderGameScreen(army);
     const text = getApp().textContent;
     expect(text).toContain("Engine of the Gods");

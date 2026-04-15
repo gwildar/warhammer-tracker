@@ -1048,6 +1048,32 @@ export const LORES = {
       },
     ],
   },
+  "engine-of-the-gods": {
+    name: "Engine of the Gods",
+    bound: true,
+    spells: [
+      {
+        num: 1,
+        name: "Engine of the Gods",
+        type: "magic-missile",
+        cv: "8+",
+        range: '15"',
+      },
+    ],
+  },
+  "solar-engine": {
+    name: "Solar Engine",
+    bound: true,
+    spells: [
+      {
+        num: 1,
+        name: "Solar Engine (Beam of Chotec)",
+        type: "magic-missile",
+        cv: "9+",
+        range: '24"',
+      },
+    ],
+  },
 };
 
 export function getSpellTypeLabel(type) {

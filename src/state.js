@@ -14,7 +14,7 @@ const KEYS = {
   displayMode: "tow-display-mode",
 };
 
-export const SCHEMA_VERSION = "3";
+export const SCHEMA_VERSION = "4";
 
 export function getSchemaVersion() {
   return load(KEYS.schemaVersion, null);

@@ -285,6 +285,22 @@ function parseCanonicalUnit(selection, category) {
     }
   }
   walkSelectionsForLores(selection.selections);
+
+  // Detect bound spell weapons in equipment (treated as spells, not shooting weapons)
+  const equipmentFlat = equipment.join(", ").toLowerCase();
+  if (
+    equipmentFlat.includes("engine of the gods") &&
+    !lores.includes("engine-of-the-gods")
+  ) {
+    lores.push("engine-of-the-gods");
+  }
+  if (
+    equipmentFlat.includes("solar engine") &&
+    !lores.includes("solar-engine")
+  ) {
+    lores.push("solar-engine");
+  }
+
   if (lores.length > 0) isCaster = true;
 
   // Extract faction lores from special rules

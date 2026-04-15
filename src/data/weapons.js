@@ -389,22 +389,6 @@ export const RANGED_WEAPONS = {
     rules: "Cumbersome, Multiple Wounds (D3)",
   },
 
-  // ─── Bound Spells (Magic Missiles) ──────────────────────────────────
-  "engine of the gods": {
-    name: "Engine of the Gods",
-    range: '15"',
-    s: "4",
-    ap: "—",
-    rules: "Bound Spell (PL3, CV8+). 2D6 hits, Flaming Attacks.",
-  },
-  "solar engine": {
-    name: "Solar Engine (Beam of Chotec)",
-    range: '24"',
-    s: "5",
-    ap: "-2",
-    rules: "Bound Spell (PL2, CV9+). 3D3 hits, Flaming Attacks.",
-  },
-
   // ─── Special Shooting Attacks ───────────────────────────────────────
   "wailing dirge": {
     name: "Wailing Dirge",
