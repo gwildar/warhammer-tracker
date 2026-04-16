@@ -95,7 +95,11 @@ function calculateUnitPoints(raw) {
     for (const slot of raw.items) {
       if (Array.isArray(slot.selected)) {
         for (const item of slot.selected) {
-          pts += (item.points || 0) * (item.amount || 1);
+          if (item.perModel && item.perModelPoints != null) {
+            pts += item.perModelPoints * (raw.strength || 1);
+          } else {
+            pts += (item.points || 0) * (item.amount || 1);
+          }
         }
       }
     }

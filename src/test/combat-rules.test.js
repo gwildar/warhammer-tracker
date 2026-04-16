@@ -4,6 +4,7 @@ import { renderCombatWeaponsContext } from "../context/combat-weapons.js";
 import { saveCharacterAssignments } from "../state.js";
 import { getCasters } from "../army.js";
 import { fromOwb } from "../parsers/from-owb.js";
+import chaosJson from "./fixtures/chaos.own.json";
 
 beforeEach(() => {
   saveCharacterAssignments({});
@@ -211,5 +212,21 @@ describe("Additional Hand Weapon — attack bonus display", () => {
     });
     const html = renderCombatWeaponsContext(army);
     expect(html).toContain("A1+1");
+  });
+});
+
+describe("perModel items in slots — points scale with unit size", () => {
+  it("7-model Marauder Horsemen with Unnatural Fortitude (2pts/model) total 124pts", () => {
+    const army = fromOwb(chaosJson);
+    const unit = army.units.find(
+      (u) => u.id === "marauder-horsemen.hfahidnnqet",
+    );
+    expect(unit.points).toBe(124);
+  });
+
+  it("6-model Marauder Horsemen with Unnatural Fortitude (2pts/model) total 108pts", () => {
+    const army = fromOwb(chaosJson);
+    const unit = army.units.find((u) => u.id === "marauder-horsemen.ygvvm");
+    expect(unit.points).toBe(108);
   });
 });
