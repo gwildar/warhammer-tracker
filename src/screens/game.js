@@ -13,6 +13,7 @@ import {
   resetStartTime,
   recordCurrentPhaseTime,
   getDisplayMode,
+  getScenarioOptions,
 } from "../state.js";
 import { PHASE_BG, PHASE_TEXT } from "../helpers.js";
 import { renderCasterContext } from "../context/caster.js";
@@ -29,6 +30,7 @@ import { renderMagicItemsContext } from "../context/items.js";
 import { renderVirtuesContext } from "../context/virtues.js";
 import { renderSpecialRulesContext } from "../context/special-rules-context.js";
 import { renderScoringUI, bindScoringEvents } from "./scoring.js";
+import { renderSpecialFeaturesTable } from "../context/scenario-context.js";
 import { navigate } from "../navigate.js";
 
 const app = document.getElementById("app");
@@ -187,6 +189,9 @@ const PHASE_RENDERERS = {
 function renderPhaseContext(army, phase, subPhase) {
   const lightweight = getDisplayMode() === "lightweight";
   let html = "";
+
+  if (subPhase.id === "start-of-turn" && getScenarioOptions().specialFeatures)
+    html += renderSpecialFeaturesTable();
 
   if (subPhase.showCasters)
     html += renderCasterContext(army, ["enchantment", "hex"]);

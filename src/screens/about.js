@@ -30,9 +30,18 @@ export function renderAboutScreen() {
             Thank you to the Old World Builder team for making such a fantastic tool for the community.
           </p>
           <p class="text-wh-muted text-sm">
-            Huge thanks to  <a href="https://tow.whfb.app" target="_blank" rel="noopener noreferrer"
+            Huge thanks to <a href="https://tow.whfb.app" target="_blank" rel="noopener noreferrer"
               class="text-wh-accent hover:underline">Warhammer: The Old World Online Rules Index</a>. for their excellent resource as well.
           </p>
+        </div>
+
+        <div class="bg-wh-surface rounded-lg border border-wh-border p-4 space-y-3">
+          <h2 class="text-lg font-bold text-wh-text">A note on rules</h2>
+          <p class="text-wh-muted text-sm">
+            This app uses abbreviated rules for brevity, for the exact wording please use <a href="https://tow.whfb.app" target="_blank" rel="noopener noreferrer"
+              class="text-wh-accent hover:underline">Warhammer: The Old World Online Rules Index</a>
+          </p>
+        
         </div>
 
         <div class="bg-wh-surface rounded-lg border border-wh-border p-4 space-y-3">

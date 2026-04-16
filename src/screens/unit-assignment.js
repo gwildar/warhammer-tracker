@@ -129,7 +129,7 @@ export function renderUnitAssignmentScreen(army) {
   document
     .getElementById("save-assignments-btn")
     .addEventListener("click", () => {
-      navigate("deploymentScreen", army);
+      navigate("scenarioSetupScreen", army);
     });
 }
 

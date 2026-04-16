@@ -14,6 +14,7 @@ import {
   resetStartTime,
   recordCurrentPhaseTime,
   getDisplayMode,
+  getScenarioOptions,
 } from "../state.js";
 import { PHASE_BG } from "../helpers.js";
 import { renderChargeContext } from "../context/charge.js";
@@ -25,6 +26,7 @@ import {
   renderDefensiveStatsContext,
 } from "../context/combat-weapons.js";
 import { renderScoringUI, bindScoringEvents } from "./scoring.js";
+import { renderSpecialFeaturesTable } from "../context/scenario-context.js";
 import { navigate } from "../navigate.js";
 
 const app = document.getElementById("app");
@@ -126,6 +128,9 @@ export function renderOpponentTurnScreen(army) {
 function renderOpponentPhaseContext(army, phase) {
   const lightweight = getDisplayMode() === "lightweight";
   let html = "";
+
+  if (phase.id === "strategy" && getScenarioOptions().specialFeatures)
+    html += renderSpecialFeaturesTable();
 
   if (!lightweight && phase.id === "movement")
     html += `<details><summary class="text-sm font-bold text-wh-phase-combat mb-3">Charge Distances</summary>${renderChargeContext(army)}</details>`;

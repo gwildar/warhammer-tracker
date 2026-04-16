@@ -12,6 +12,14 @@ const KEYS = {
   schemaVersion: "tow-schema-version",
   deploymentTime: "tow-deployment-time",
   displayMode: "tow-display-mode",
+  scenario: "tow-scenario",
+};
+
+const DEFAULT_SCENARIO = {
+  domination: false,
+  baggageTrains: false,
+  strategicLocations: { enabled: false, count: 3 },
+  specialFeatures: false,
 };
 
 export const SCHEMA_VERSION = "4";
@@ -199,6 +207,15 @@ export function canGoBackToPreviousTurn() {
   return true;
 }
 
+// Scenario options
+export function getScenarioOptions() {
+  return load(KEYS.scenario, DEFAULT_SCENARIO);
+}
+
+export function saveScenarioOptions(opts) {
+  save(KEYS.scenario, opts);
+}
+
 // Reset game (keeps army)
 export function resetGame() {
   save(KEYS.phaseIndex, 0);
@@ -208,6 +225,7 @@ export function resetGame() {
   save(KEYS.timings, {});
   save(KEYS.startTime, null);
   save(KEYS.deploymentTime, null);
+  localStorage.removeItem(KEYS.scenario);
 }
 
 // Clear all app state
