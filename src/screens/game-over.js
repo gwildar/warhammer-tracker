@@ -7,6 +7,7 @@ import {
   getDeploymentTime,
   resetGame,
   saveFirstTurn,
+  getScenarioOptions,
 } from "../state.js";
 import { navigate } from "../navigate.js";
 import { formatDuration } from "../helpers.js";
@@ -63,6 +64,12 @@ export function renderGameOverScreen(army) {
     )
     .join("");
 
+  const scenarioOpts = getScenarioOptions();
+  const slOpts = scenarioOpts.strategicLocations;
+  const scoreLabel = slOpts.enabled
+    ? `Strategic Locations (${slOpts.count})`
+    : "Strategic Objectives";
+
   app.innerHTML = `
     <div class="min-h-dvh flex flex-col">
       <header class="bg-wh-surface border-b border-wh-border p-3">
@@ -75,7 +82,7 @@ export function renderGameOverScreen(army) {
 
       <main class="flex-1 overflow-y-auto p-4">
         <div class="max-w-2xl mx-auto">
-          <h3 class="text-lg font-bold text-wh-text mb-4">Strategic Locations</h3>
+          <h3 class="text-lg font-bold text-wh-text mb-4">${scoreLabel}</h3>
           <div class="grid grid-cols-2 gap-4 mb-6">
             <div class="bg-wh-surface rounded-lg border border-wh-border p-4 text-center">
               <div class="text-xs uppercase tracking-wider text-wh-muted mb-1">Your Total</div>
@@ -87,7 +94,7 @@ export function renderGameOverScreen(army) {
             </div>
           </div>
 
-          <div class="overflow-hidden border border-wh-border rounded-lg">
+          <div class="overflow-hidden border border-wh-border rounded-lg mb-6">
             <table class="w-full text-sm text-left">
               <thead class="bg-wh-card text-wh-muted uppercase tracking-wider border-b border-wh-border">
                 <tr>
@@ -112,6 +119,64 @@ export function renderGameOverScreen(army) {
               </tfoot>
             </table>
           </div>
+
+          ${
+            scenarioOpts.domination
+              ? `
+          <div class="bg-wh-surface rounded-lg border border-wh-border p-4 mb-4">
+            <h3 class="text-sm font-bold text-wh-text mb-2">Domination</h3>
+            <p class="text-wh-muted text-xs mb-2">Score each board quarter separately. Winner = higher Unit Strength (fleeing units don't count).</p>
+            <table class="w-full text-xs">
+              <thead><tr class="text-left text-wh-muted">
+                <th class="pb-1 pr-2 font-medium">Condition</th>
+                <th class="pb-1 font-medium text-right">VP</th>
+              </tr></thead>
+              <tbody>
+                <tr><td class="py-0.5 pr-2 text-wh-text">Control a quarter</td><td class="py-0.5 font-mono text-wh-accent text-right">100</td></tr>
+                <tr><td class="py-0.5 pr-2 text-wh-text">2:1 US advantage in a quarter</td><td class="py-0.5 font-mono text-wh-accent text-right">+50</td></tr>
+                <tr><td class="py-0.5 pr-2 text-wh-text">Opponent has 0 US in a quarter</td><td class="py-0.5 font-mono text-wh-accent text-right">+100</td></tr>
+              </tbody>
+            </table>
+          </div>`
+              : ""
+          }
+
+          ${
+            scenarioOpts.baggageTrains
+              ? `
+          <div class="bg-wh-surface rounded-lg border border-wh-border p-4 mb-4">
+            <h3 class="text-sm font-bold text-wh-text mb-2">Baggage Trains</h3>
+            <table class="w-full text-xs">
+              <thead><tr class="text-left text-wh-muted">
+                <th class="pb-1 pr-2 font-medium">Condition</th>
+                <th class="pb-1 font-medium text-right">VP</th>
+              </tr></thead>
+              <tbody>
+                <tr><td class="py-0.5 pr-2 text-wh-text">Control your supply train</td><td class="py-0.5 font-mono text-wh-accent text-right">100</td></tr>
+                <tr><td class="py-0.5 pr-2 text-wh-text">Destroy opponent's supply train</td><td class="py-0.5 font-mono text-wh-accent text-right">250</td></tr>
+              </tbody>
+            </table>
+          </div>`
+              : ""
+          }
+
+          ${
+            scenarioOpts.specialFeatures
+              ? `
+          <div class="bg-wh-surface rounded-lg border border-wh-border p-4 mb-4">
+            <h3 class="text-sm font-bold text-wh-text mb-2">Special Features</h3>
+            <table class="w-full text-xs">
+              <thead><tr class="text-left text-wh-muted">
+                <th class="pb-1 pr-2 font-medium">Condition</th>
+                <th class="pb-1 font-medium text-right">VP</th>
+              </tr></thead>
+              <tbody>
+                <tr><td class="py-0.5 pr-2 text-wh-text">Control the feature at game end</td><td class="py-0.5 font-mono text-wh-accent text-right">200</td></tr>
+              </tbody>
+            </table>
+          </div>`
+              : ""
+          }
         </div>
       </main>
 
