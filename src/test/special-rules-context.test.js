@@ -55,6 +55,21 @@ const COMPLEX_RULE = {
   ],
 };
 
+const TABLE_RULE = {
+  id: "table rule",
+  displayName: "Table Rule",
+  phases: [
+    {
+      subPhaseId: "choose-fight",
+      description: "Roll a D6:",
+      table: [
+        { roll: "1", result: "Miss", effect: "Nothing happens." },
+        { roll: "2-6", result: "Hit", effect: "Deal 1 wound." },
+      ],
+    },
+  ],
+};
+
 const ALL_TEST_RULES = [
   SIMPLE_RULE,
   SIMPLE_MULTI_RULE,
@@ -62,6 +77,7 @@ const ALL_TEST_RULES = [
   OPPONENT_RULE,
   FROM_ROUND_RULE,
   COMPLEX_RULE,
+  TABLE_RULE,
 ];
 
 // Mock SPECIAL_RULES so the rendering code finds our test rules
@@ -172,5 +188,39 @@ describe("complex object format still works", () => {
       id: "pursuit",
     });
     expect(html2).toContain("On pursuit.");
+  });
+});
+
+describe("table field renders D6 table", () => {
+  it("renders roll values as <td> cells", () => {
+    const html = renderSpecialRulesContext(makeArmy(TABLE_RULE), {
+      id: "choose-fight",
+    });
+    expect(html).toContain("<td");
+    expect(html).toContain(">1<");
+    expect(html).toContain(">2-6<");
+  });
+
+  it("renders result and effect text", () => {
+    const html = renderSpecialRulesContext(makeArmy(TABLE_RULE), {
+      id: "choose-fight",
+    });
+    expect(html).toContain("Miss");
+    expect(html).toContain("Deal 1 wound.");
+  });
+
+  it("description still renders when table is present", () => {
+    const html = renderSpecialRulesContext(makeArmy(TABLE_RULE), {
+      id: "choose-fight",
+    });
+    expect(html).toContain("Roll a D6:");
+    expect(html).toContain("<td"); // table also present — not a replacement
+  });
+
+  it("renderSpecialRulesForPhase also renders the table", () => {
+    const combatPhase = PHASES.find((p) => p.id === "combat");
+    const html = renderSpecialRulesForPhase(makeArmy(TABLE_RULE), combatPhase);
+    expect(html).toContain(">1<");
+    expect(html).toContain(">2-6<");
   });
 });
