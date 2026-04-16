@@ -565,12 +565,14 @@ export const COMBAT_WEAPONS = {
     s: "S",
     ap: "—",
     rules: "Extra Attacks (+1), Requires Two Hands",
+    attacks: "+1",
   },
   "two hand weapons": {
     name: "Additional Hand Weapon",
     s: "S",
     ap: "—",
     rules: "Extra Attacks (+1), Requires Two Hands",
+    attacks: "+1",
   },
 
   // ─── Dark Elf Weapons ────────────────────────────────────────────────

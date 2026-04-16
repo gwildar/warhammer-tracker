@@ -188,3 +188,28 @@ describe("Troll Vomit — weapon resolution", () => {
     expect(vomit.ap).toBe("-2");
   });
 });
+
+describe("Additional Hand Weapon — attack bonus display", () => {
+  it("shows +1 attacks on the weapon line for an Orc Boy with Additional Hand Weapon", () => {
+    const army = fromOwb({
+      core: [
+        {
+          id: "orc-mob.test",
+          name_en: "Orc Mob",
+          points: 5,
+          strength: 10,
+          lores: [],
+          specialRules: { name_en: "Close Order" },
+          equipment: [{ active: true, name_en: "Additional Hand Weapon" }],
+          armor: [],
+          options: [],
+          mounts: [],
+          items: [],
+          command: [],
+        },
+      ],
+    });
+    const html = renderCombatWeaponsContext(army);
+    expect(html).toContain("A1+1");
+  });
+});
