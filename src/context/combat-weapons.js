@@ -927,7 +927,10 @@ export function renderCombatWeaponsContext(army) {
       .map((w) => w.name)
       .sort()
       .join(",");
-    const key = `${e.unitName}||${e.riderI}||${e.riderA}||${e.t}||${e.w}||${e.as}||${riderWKey}||${mountWKey}`;
+    const itemKey = [...e.itemNames, ...e.singleUseItems.map((i) => i.name)]
+      .sort()
+      .join(",");
+    const key = `${e.unitName}||${e.riderI}||${e.riderA}||${e.t}||${e.w}||${e.as}||${riderWKey}||${mountWKey}||${itemKey}`;
     if (!deduped[key]) {
       deduped[key] = { ...e, merged: false };
     } else {

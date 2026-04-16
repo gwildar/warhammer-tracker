@@ -230,3 +230,14 @@ describe("perModel items in slots — points scale with unit size", () => {
     expect(unit.points).toBe(108);
   });
 });
+
+describe("combat screen deduplication — units with different magic items are not merged", () => {
+  it("both Exalted Champions appear separately when they have different magic items", () => {
+    const army = fromOwb(chaosJson);
+    const html = renderCombatWeaponsContext(army);
+    // Champion uzqecv has Talisman of the Carrion Crow; Champion lcqequnzw has Crown of Everlasting Conquest
+    // Both must appear — if they were merged only one would be shown
+    expect(html).toContain("Talisman of the Carrion Crow");
+    expect(html).toContain("Crown of Everlasting Conquest");
+  });
+});
