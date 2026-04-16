@@ -22,7 +22,7 @@ const DEFAULT_SCENARIO = {
   specialFeatures: false,
 };
 
-export const SCHEMA_VERSION = "4";
+export const SCHEMA_VERSION = "5";
 
 export function getSchemaVersion() {
   return load(KEYS.schemaVersion, null);
