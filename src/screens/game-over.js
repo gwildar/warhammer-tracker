@@ -121,27 +121,6 @@ export function renderGameOverScreen(army) {
           </div>
 
           ${
-            scenarioOpts.domination
-              ? `
-          <div class="bg-wh-surface rounded-lg border border-wh-border p-4 mb-4">
-            <h3 class="text-sm font-bold text-wh-text mb-2">Domination</h3>
-            <p class="text-wh-muted text-xs mb-2">Score each board quarter separately. Winner = higher Unit Strength (fleeing units don't count).</p>
-            <table class="w-full text-xs">
-              <thead><tr class="text-left text-wh-muted">
-                <th class="pb-1 pr-2 font-medium">Condition</th>
-                <th class="pb-1 font-medium text-right">VP</th>
-              </tr></thead>
-              <tbody>
-                <tr><td class="py-0.5 pr-2 text-wh-text">Control a quarter</td><td class="py-0.5 font-mono text-wh-accent text-right">100</td></tr>
-                <tr><td class="py-0.5 pr-2 text-wh-text">2:1 US advantage in a quarter</td><td class="py-0.5 font-mono text-wh-accent text-right">+50</td></tr>
-                <tr><td class="py-0.5 pr-2 text-wh-text">Opponent has 0 US in a quarter</td><td class="py-0.5 font-mono text-wh-accent text-right">+100</td></tr>
-              </tbody>
-            </table>
-          </div>`
-              : ""
-          }
-
-          ${
             scenarioOpts.baggageTrains
               ? `
           <div class="bg-wh-surface rounded-lg border border-wh-border p-4 mb-4">
@@ -174,6 +153,45 @@ export function renderGameOverScreen(army) {
                 <tr><td class="py-0.5 pr-2 text-wh-text">Control the feature at game end</td><td class="py-0.5 font-mono text-wh-accent text-right">200</td></tr>
               </tbody>
             </table>
+          </div>`
+              : ""
+          }
+
+          ${
+            scenarioOpts.domination
+              ? `
+          <div class="bg-wh-surface rounded-lg border border-wh-border p-4 mb-4">
+            <h3 class="text-sm font-bold text-wh-text mb-2">Domination</h3>
+            <p class="text-wh-muted text-xs mb-2">Score each board quarter separately. Winner = higher Unit Strength (fleeing units don't count).</p>
+            <table class="w-full text-xs">
+              <thead><tr class="text-left text-wh-muted">
+                <th class="pb-1 pr-2 font-medium">Condition</th>
+                <th class="pb-1 font-medium text-right">VP</th>
+              </tr></thead>
+              <tbody>
+                <tr><td class="py-0.5 pr-2 text-wh-text">Control a quarter</td><td class="py-0.5 font-mono text-wh-accent text-right">100</td></tr>
+                <tr><td class="py-0.5 pr-2 text-wh-text">2:1 US advantage in a quarter</td><td class="py-0.5 font-mono text-wh-accent text-right">+50</td></tr>
+                <tr><td class="py-0.5 pr-2 text-wh-text">Opponent has 0 US in a quarter</td><td class="py-0.5 font-mono text-wh-accent text-right">+100</td></tr>
+              </tbody>
+            </table>
+            <div class="border-t border-wh-border mt-3 pt-3">
+              <table class="w-full text-xs">
+                <thead><tr class="text-left text-wh-muted">
+                  <th class="pb-1 pr-2 font-medium">Unit</th>
+                  <th class="pb-1 font-medium text-right">US</th>
+                </tr></thead>
+                <tbody>
+                  ${army.units
+                    .slice()
+                    .sort((a, b) => b.unitStrength - a.unitStrength)
+                    .map(
+                      (u) =>
+                        `<tr><td class="py-0.5 pr-2 text-wh-text">${u.name}</td><td class="py-0.5 font-mono text-wh-accent text-right">${u.unitStrength}</td></tr>`,
+                    )
+                    .join("")}
+                </tbody>
+              </table>
+            </div>
           </div>`
               : ""
           }

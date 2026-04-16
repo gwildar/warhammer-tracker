@@ -1,9 +1,10 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { renderGameOverScreen } from "../../screens/game-over.js";
 import { loadArmy, startGame, getApp } from "../helpers.js";
 import {
   saveIsOpponentTurn,
   saveDeploymentTime,
+  saveScenarioOptions,
   getRound,
   getFirstTurn,
   updateScore,
@@ -16,6 +17,15 @@ describe("Game Over Screen", () => {
   beforeEach(() => {
     army = loadArmy("dark-elves");
     startGame(army);
+  });
+
+  afterEach(() => {
+    saveScenarioOptions({
+      domination: false,
+      baggageTrains: false,
+      strategicLocations: { enabled: false, count: 3 },
+      specialFeatures: false,
+    });
   });
 
   it("renders Game Over heading", () => {
@@ -109,5 +119,34 @@ describe("Game Over Screen", () => {
     const text = getApp().textContent;
     expect(text).toContain("3");
     expect(text).toContain("2");
+  });
+
+  it("domination section appears after baggage trains when both enabled", () => {
+    saveScenarioOptions({
+      domination: true,
+      baggageTrains: true,
+      strategicLocations: { enabled: false, count: 3 },
+      specialFeatures: false,
+    });
+    renderGameOverScreen(army);
+    const html = getApp().innerHTML;
+    expect(html.indexOf("Baggage Trains")).toBeLessThan(
+      html.indexOf("Domination"),
+    );
+  });
+
+  it("shows unit strength table sorted by US descending in domination section", () => {
+    saveScenarioOptions({
+      domination: true,
+      baggageTrains: false,
+      strategicLocations: { enabled: false, count: 3 },
+      specialFeatures: false,
+    });
+    renderGameOverScreen(army);
+    const html = getApp().innerHTML;
+    expect(html).toContain("Repeater Crossbowman");
+    expect(html.indexOf("Repeater Crossbowman")).toBeLessThan(
+      html.indexOf("Dark Rider"),
+    );
   });
 });
