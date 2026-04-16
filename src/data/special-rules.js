@@ -1316,9 +1316,39 @@ export const SPECIAL_RULES = [
   {
     id: "giant attacks",
     displayName: "Giant Attacks",
-    description:
-      "Instead of normal attacks, roll D6: 1 = 'Eadbutt (D3+1 wounds, no armour/regen), 2 = Belly Flop (3\" blast, S, AP -2), 3-4 = Mighty Swing (D6+1 attacks, S+1, AP -2), 5 = Thump with Club (single model, S+4, AP -4, Multiple Wounds D6), 6 = Jump Up & Down (D6+1 hits, no armour saves).",
-    phases: ["choose-fight"],
+    phases: [
+      {
+        subPhaseId: "choose-fight",
+        description: "Instead of normal attacks, roll a D6:",
+        table: [
+          {
+            roll: "1",
+            result: "'Eadbutt",
+            effect: "D3+1 wounds, no armour or regeneration saves.",
+          },
+          {
+            roll: "2",
+            result: "Belly Flop",
+            effect: '3" blast, Strength, AP -2.',
+          },
+          {
+            roll: "3-4",
+            result: "Mighty Swing",
+            effect: "D6+1 attacks, S+1, AP -2.",
+          },
+          {
+            roll: "5",
+            result: "Thump with Club",
+            effect: "One model, S+4, AP -4, Multiple Wounds (D6).",
+          },
+          {
+            roll: "6",
+            result: "Jump Up and Down",
+            effect: "D6+1 hits, no armour saves allowed.",
+          },
+        ],
+      },
+    ],
   },
   {
     id: "pick up and",
@@ -1559,9 +1589,40 @@ export const SPECIAL_RULES = [
   {
     id: "bonegrinder giant attacks",
     displayName: "Bonegrinder Giant Attacks",
-    description:
-      "Instead of normal attacks, roll D6: 1 = 'Eadbutt (D6+1 wounds, no armour/Regen saves), 2 = Belly Flop (5\" blast, S, AP -2), 3-4 = Mighty Swing (2D6 attacks, S+2, AP -3), 5 = Grind its Bones (each base-contact infantry model tests Str or removed as casualty; repeat on 4+), 6 = Crush Underfoot (all base-contact models, D6 hits at S+3, AP -3).",
-    phases: ["choose-fight"],
+    phases: [
+      {
+        subPhaseId: "choose-fight",
+        description: "Instead of normal attacks, roll a D6:",
+        table: [
+          {
+            roll: "1",
+            result: "'Eadbutt",
+            effect: "D6+1 wounds, no armour or regeneration saves.",
+          },
+          {
+            roll: "2",
+            result: "Belly Flop",
+            effect: '5" blast, Strength, AP -2.',
+          },
+          {
+            roll: "3-4",
+            result: "Mighty Swing",
+            effect: "2D6 attacks, S+2, AP -3.",
+          },
+          {
+            roll: "5",
+            result: "Grind its Bones",
+            effect:
+              "Each base-contact infantry model tests Strength or is removed as a casualty; repeat on 4+.",
+          },
+          {
+            roll: "6",
+            result: "Crush Underfoot",
+            effect: "All base-contact models suffer D6 hits at S+3, AP -3.",
+          },
+        ],
+      },
+    ],
   },
   {
     id: "choppas",
