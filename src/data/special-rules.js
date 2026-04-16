@@ -2064,26 +2064,23 @@ export const SPECIAL_RULES = [
   {
     id: "explosive demise",
     displayName: "Explosive Demise",
-    passive: true,
-    phases: [],
     description:
       'When this model loses its last Wound, before it is removed from play, every unit (friend or foe) within 6" suffers D6 Strength 5 hits, each with AP -2.',
+    phases: ["choose-fight"],
   },
   {
     id: "warpfire aura",
     displayName: "Warpfire Aura",
-    passive: true,
-    phases: [],
     description:
       'Other models (friend and foe) cannot make Ward saves while within 3" of this model.',
+    phases: ["choose-fight", "shoot"],
   },
   {
     id: "fire and chaos",
     displayName: "Fire and Chaos",
-    passive: true,
-    phases: [],
     description:
       "5+ Ward save against wounds caused by attacks with the Magical Attacks or Flaming Attacks special rule.",
+    phases: ["choose-fight"],
   },
 ];
 
