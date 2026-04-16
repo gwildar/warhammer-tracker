@@ -2012,6 +2012,55 @@ export const SPECIAL_RULES = [
     phases: ["choose-fight"],
     yourTurnOnly: true,
   },
+  {
+    id: "gaze of the gods",
+    displayName: "Gaze of the Gods",
+    phases: [
+      {
+        subPhaseId: "command",
+        yourTurnOnly: true,
+        description:
+          "May roll on the Gaze of the Gods table. Applies to the Champion only, not any mount:",
+        table: [
+          {
+            roll: "1",
+            result: "Damned by Chaos",
+            effect:
+              "Gains Stupidity for the remainder of the game. If already affected, suffers -1 Leadership (minimum 2).",
+          },
+          {
+            roll: "2",
+            result: "Unnatural Quickness",
+            effect:
+              "+1 Initiative until the next Start of Turn sub-phase (maximum 10).",
+          },
+          {
+            roll: "3",
+            result: "Iron Skin",
+            effect:
+              "+1 Toughness until the next Start of Turn sub-phase (maximum 10).",
+          },
+          {
+            roll: "4",
+            result: "Murderous Mutation",
+            effect:
+              "+1 Weapon Skill for the remainder of the game (maximum 10).",
+          },
+          {
+            roll: "5",
+            result: "Dark Fury",
+            effect: "+1 Attacks for the remainder of the game (maximum 10).",
+          },
+          {
+            roll: "6",
+            result: "Apotheosis",
+            effect:
+              "+1 Strength and +1 Leadership for the remainder of the game (maximum 10).",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 /**
