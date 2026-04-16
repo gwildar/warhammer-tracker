@@ -183,10 +183,12 @@ export function renderGameOverScreen(army) {
                 <tbody>
                   ${army.units
                     .slice()
-                    .sort((a, b) => b.unitStrength - a.unitStrength)
+                    .sort(
+                      (a, b) => (b.unitStrength ?? 0) - (a.unitStrength ?? 0),
+                    )
                     .map(
                       (u) =>
-                        `<tr><td class="py-0.5 pr-2 text-wh-text">${u.name}</td><td class="py-0.5 font-mono text-wh-accent text-right">${u.unitStrength}</td></tr>`,
+                        `<tr><td class="py-0.5 pr-2 text-wh-text">${u.name}</td><td class="py-0.5 font-mono text-wh-accent text-right">${u.unitStrength ?? 0}</td></tr>`,
                     )
                     .join("")}
                 </tbody>
