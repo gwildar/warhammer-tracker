@@ -199,6 +199,15 @@ export const RANGED_WEAPONS = {
     noBS: true,
     altProfiles: ["grapeshot"],
   },
+  "warpfire blast": {
+    name: "Warpfire Blast",
+    range: '6"-24"',
+    s: "4(8)",
+    ap: "-1(-3)",
+    rules:
+      'Bombardment (3" blast), Cumbersome, Flaming Attacks, Multiple Wounds (D3+1) on central model',
+    noBS: true,
+  },
 
   // ─── Ogre Kingdoms Ranged ─────────────────────────────────────────────
   "blood vulture": {
