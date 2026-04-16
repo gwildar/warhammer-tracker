@@ -3,7 +3,7 @@
  *
  * Each rule has:
  *   name        – canonical name (as it appears on army lists)
- *   phases      – string array of sub-phase IDs (simple rules), or object array of { subPhaseId, description } (complex rules with per-phase descriptions), or [] (passive rules)
+ *   phases      – string array of sub-phase IDs (simple rules), or object array of { subPhaseId, description, table?, yourTurnOnly?, opponentOnly?, fromRound? } (complex rules with per-phase descriptions), or [] (passive rules)
  *   passive     – true if the rule has no phase-specific trigger (always-on modifier)
  *
  * Phase/sub-phase IDs match those defined in phases.js.
@@ -1936,6 +1936,42 @@ export const SPECIAL_RULES = [
     phases: [],
     description:
       "Up to one Sky Lantern per 1,000 points may gain Ambushers (+15 pts). Once per game, a Sky Lantern held in reserve may re-roll the dice when rolling to arrive as reinforcements or be delayed.",
+  },
+  {
+    id: "sky lantern bombs",
+    displayName: "Sky Lantern Bombs",
+    phases: [
+      {
+        subPhaseId: "shoot",
+        description: "Roll a D6 to determine the bombing run result:",
+        table: [
+          {
+            roll: "1",
+            result: "Premature Detonation",
+            effect:
+              "The release mechanism jams and a bomb explodes prematurely. This model loses a single Wound.",
+          },
+          {
+            roll: "2",
+            result: "Dud",
+            effect:
+              "A solitary bomb is released but fails to detonate, landing on an enemy model. The enemy unit loses a single Wound.",
+          },
+          {
+            roll: "3-4",
+            result: "Direct Hit",
+            effect:
+              'Place a large (5") blast template over the centre of the enemy unit; it scatters D6". Any model underneath risks a Strength 5 hit, AP -2.',
+          },
+          {
+            roll: "5-6",
+            result: "Bombs Away",
+            effect:
+              'Place two small (3") blast templates over the enemy unit; each scatters D6". Any model underneath risks a Strength 5 hit, AP -2.',
+          },
+        ],
+      },
+    ],
   },
   {
     id: "warpstone sentinel",
