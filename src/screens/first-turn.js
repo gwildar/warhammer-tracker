@@ -25,6 +25,14 @@ export function renderFirstTurnScreen(army) {
           </div>
         </div>
       </main>
+      <footer class="sticky bottom-0 bg-wh-surface border-t border-wh-border p-3">
+        <div class="max-w-2xl mx-auto">
+          <button id="prev-btn"
+            class="w-full py-3 rounded-lg font-semibold text-lg transition-colors bg-wh-card text-wh-text hover:bg-wh-border">
+            &#8592; Back
+          </button>
+        </div>
+      </footer>
     </div>
   `;
 
@@ -45,4 +53,8 @@ export function renderFirstTurnScreen(army) {
     });
 
   bindSetupHeaderEvents();
+
+  document.getElementById("prev-btn").addEventListener("click", () => {
+    navigate("deploymentScreen", army);
+  });
 }

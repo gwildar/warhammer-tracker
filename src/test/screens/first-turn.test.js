@@ -1,6 +1,8 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { renderFirstTurnScreen } from "../../screens/first-turn.js";
 import { loadArmy, getApp } from "../helpers.js";
+import { registerScreen } from "../../navigate.js";
+import { renderDeploymentScreen } from "../../screens/deployment.js";
 
 describe("First Turn Screen", () => {
   let army;
@@ -34,5 +36,13 @@ describe("First Turn Screen", () => {
   it("shows Round 1", () => {
     renderFirstTurnScreen(army);
     expect(getApp().textContent).toContain("Round 1");
+  });
+
+  it("has a prev-btn that navigates back to deployment", () => {
+    registerScreen("deploymentScreen", renderDeploymentScreen);
+    renderFirstTurnScreen(army);
+    expect(getApp().querySelector("#prev-btn")).toBeTruthy();
+    getApp().querySelector("#prev-btn").click();
+    expect(getApp().textContent).toContain("Deployment");
   });
 });
