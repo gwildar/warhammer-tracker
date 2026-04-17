@@ -24,7 +24,7 @@ describe("Deployment screen", () => {
     expect(header.textContent).toContain(army.name);
     expect(header.textContent).toContain("Deploy");
     expect(header.textContent).toContain("Characters");
-    expect(header.textContent).toContain("Who Goes First");
+    expect(header.textContent).toContain("First Turn");
     expect(header.querySelector("#setup-army-btn")).toBeTruthy();
   });
 

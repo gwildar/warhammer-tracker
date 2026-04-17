@@ -92,7 +92,7 @@ describe("Unit assignment screen", () => {
     expect(header.textContent).toContain(army.name);
     expect(header.textContent).toContain("Characters");
     expect(header.textContent).toContain("Deploy");
-    expect(header.textContent).toContain("Who Goes First");
+    expect(header.textContent).toContain("First Turn");
     expect(header.querySelector("#setup-army-btn")).toBeTruthy();
     expect(header.querySelector("#setup-new-game-btn")).toBeTruthy();
     expect(getApp().querySelector("footer #next-btn")).toBeTruthy();

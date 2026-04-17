@@ -6,7 +6,7 @@ const SETUP_PHASES = [
   { id: "characters", label: "Characters", bg: "bg-wh-setup-characters" },
   { id: "scenario", label: "Scenario", bg: "bg-wh-setup-scenario" },
   { id: "deploy", label: "Deploy", bg: "bg-wh-setup-deploy" },
-  { id: "first-turn", label: "Who Goes First", bg: "bg-wh-setup-first-turn" },
+  { id: "first-turn", label: "First Turn", bg: "bg-wh-setup-first-turn" },
 ];
 
 export function renderSetupHeader(army, currentPhaseId) {
