@@ -143,7 +143,7 @@ describe("Setup Screen", () => {
       renderSetupScreen();
       getApp().querySelector("#start-game-btn").click();
       // bretonnia has casters — go through spell selection first
-      getApp().querySelector("#spell-continue-btn").click();
+      getApp().querySelector("#next-btn").click();
       expect(getApp().textContent).toContain("Place Characters in Units");
     });
   });
@@ -188,5 +188,27 @@ describe("Setup Screen — Skeleton Horde army (Casket of Souls)", () => {
     expect(getApp().textContent).toContain("Light of Death");
     expect(getApp().textContent).toContain("Light of Protection");
     expect(getApp().textContent).toContain("Bound Spells");
+  });
+});
+
+describe("Spell Selection Screen — navigation", () => {
+  let army;
+
+  beforeEach(() => {
+    registerScreen("setupScreen", renderSetupScreen);
+    registerScreen("unitAssignmentScreen", renderUnitAssignmentScreen);
+    army = loadArmy("dark-elves");
+  });
+
+  it("has a prev-btn that navigates back to setup screen", () => {
+    renderSpellSelectionScreen(army);
+    getApp().querySelector("#prev-btn").click();
+    expect(getApp().querySelector("#start-game-btn")).toBeTruthy();
+  });
+
+  it("has a next-btn that navigates to unit assignment", () => {
+    renderSpellSelectionScreen(army);
+    getApp().querySelector("#next-btn").click();
+    expect(getApp().textContent).toContain("Place Characters in Units");
   });
 });
