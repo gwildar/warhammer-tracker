@@ -5,7 +5,6 @@ import { getKnownSpells } from "../../context/caster.js";
 import { loadArmy, startGame, getApp } from "../helpers.js";
 import {
   savePhaseIndex,
-  getPhaseIndex,
   saveArmy,
   saveCharacterAssignments,
   saveTimings,
@@ -1454,6 +1453,8 @@ describe("Errantry Banner parsed from OWB command group", () => {
 });
 
 describe("Psychology-immune armies skip phases", () => {
+  afterEach(() => vi.restoreAllMocks());
+
   it("Vampire Counts army has skipPhases containing rally and break-test", () => {
     const vcArmy = loadArmy("vampire-counts");
     expect(vcArmy.skipPhases).toContain("rally");
@@ -1461,6 +1462,7 @@ describe("Psychology-immune armies skip phases", () => {
   });
 
   it("skips rally phase when navigating for Vampire Counts army", () => {
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     const vcArmy = loadArmy("vampire-counts");
     startGame(vcArmy);
     const subPhases = getAllSubPhases();
@@ -1468,11 +1470,17 @@ describe("Psychology-immune armies skip phases", () => {
     savePhaseIndex(rallyIdx - 1);
     renderGameScreen(vcArmy);
     getApp().querySelector("#next-btn").click();
-    expect(getPhaseIndex()).not.toBe(rallyIdx);
-    expect(getPhaseIndex()).toBeGreaterThan(rallyIdx);
+    const navigatedUrl = Nav.navigate.mock.calls[0][0];
+    const navigatedSubPhaseId = navigatedUrl.split("/").pop();
+    const navigatedIdx = subPhases.findIndex(
+      (sp) => sp.subPhase.id === navigatedSubPhaseId,
+    );
+    expect(navigatedIdx).not.toBe(rallyIdx);
+    expect(navigatedIdx).toBeGreaterThan(rallyIdx);
   });
 
   it("skips break-test phase when navigating for Vampire Counts army", () => {
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     const vcArmy = loadArmy("vampire-counts");
     startGame(vcArmy);
     const subPhases = getAllSubPhases();
@@ -1482,8 +1490,13 @@ describe("Psychology-immune armies skip phases", () => {
     savePhaseIndex(breakIdx - 1);
     renderGameScreen(vcArmy);
     getApp().querySelector("#next-btn").click();
-    expect(getPhaseIndex()).not.toBe(breakIdx);
-    expect(getPhaseIndex()).toBeGreaterThan(breakIdx);
+    const navigatedUrl = Nav.navigate.mock.calls[0][0];
+    const navigatedSubPhaseId = navigatedUrl.split("/").pop();
+    const navigatedIdx = subPhases.findIndex(
+      (sp) => sp.subPhase.id === navigatedSubPhaseId,
+    );
+    expect(navigatedIdx).not.toBe(breakIdx);
+    expect(navigatedIdx).toBeGreaterThan(breakIdx);
   });
 });
 
