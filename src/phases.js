@@ -85,10 +85,11 @@ export const PHASES = [
       {
         id: "compulsory-moves",
         name: "Compulsory Moves",
+        pinnedRule:
+          'Fleeing units move 2D6" directly away from the nearest enemy.',
         rules: [
           "Units that must move (e.g. fleeing units) do so now.",
           "No player discretion \u2014 these movements are mandatory.",
-          'Fleeing units move 2D6" directly away from the nearest enemy.',
         ],
       },
       {

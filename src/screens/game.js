@@ -97,6 +97,17 @@ export function renderGameScreen(army) {
             <span class="text-xs text-wh-muted">Step ${phaseIdx + 1} of ${allSubPhases.length}</span>
           </div>
 
+          <!-- Pinned rule -->
+          ${
+            subPhase.pinnedRule
+              ? `
+          <div class="flex gap-2 text-sm mb-4 px-1">
+            <span class="${PHASE_TEXT[phase.colour]} mt-0.5 shrink-0">&#9654;</span>
+            <span class="text-wh-text font-medium">${subPhase.pinnedRule}</span>
+          </div>`
+              : ""
+          }
+
           <!-- Rules -->
           <details class="mb-4">
           <summary>Rules Summary</summary>
