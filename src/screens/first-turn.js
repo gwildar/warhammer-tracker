@@ -12,6 +12,12 @@ export function renderFirstTurnScreen(army) {
     <div class="min-h-dvh flex flex-col">
       ${renderSetupHeader(army, "first-turn")}
 
+      <div class="max-w-2xl mx-auto w-full px-4 pt-3">
+        <button id="prev-btn" class="text-wh-muted hover:text-wh-text transition-colors text-sm">
+          &#8592; Back
+        </button>
+      </div>
+
       <main class="flex-1 flex items-center justify-center p-4">
         <div class="max-w-md w-full text-center">
           <h2 class="text-2xl font-bold text-wh-text mb-2">Who goes first?</h2>
@@ -28,14 +34,6 @@ export function renderFirstTurnScreen(army) {
           </div>
         </div>
       </main>
-      <footer class="sticky bottom-0 bg-wh-surface border-t border-wh-border p-3">
-        <div class="max-w-2xl mx-auto">
-          <button id="prev-btn"
-            class="w-full py-3 rounded-lg font-semibold text-lg transition-colors bg-wh-card text-wh-text hover:bg-wh-border">
-            &#8592; Back
-          </button>
-        </div>
-      </footer>
     </div>
   `;
 
