@@ -745,6 +745,15 @@ export const SPECIAL_RULES = [
     phases: ["break-test"],
   },
   {
+    id: "exile's vow",
+    displayName: "The Exile's Vow",
+    aliases: ["the exile's vow (replaces the knight's vow)"],
+    passive: true,
+    phases: [],
+    description: "Replaces The Knight's Vow. Grants Stubborn and Veteran.",
+    grantsRules: ["stubborn", "veteran"],
+  },
+  {
     id: "peasantry",
     displayName: "Peasantry",
     description:
@@ -937,8 +946,7 @@ export const SPECIAL_RULES = [
   {
     id: "veteran",
     displayName: "Veteran",
-    passive: true,
-    phases: [],
+    phases: ["rally", "shoot", "choose-fight"],
     description:
       "If majority, unit may re-roll failed Leadership tests (not Break tests).",
   },

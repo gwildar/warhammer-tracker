@@ -57,6 +57,54 @@ describe("From Beneath the Sands shows on your turn command sub-phase", () => {
   });
 });
 
+describe("Bretonnian Exiles: The Exile's Vow", () => {
+  let army;
+
+  beforeEach(() => {
+    army = loadArmy("bretonnian-exiles");
+    saveCharacterAssignments({});
+  });
+
+  it("Baron has exile's vow in specialRules", () => {
+    const baron = army.units.find((u) => u.name === "Baron");
+    expect(baron).toBeDefined();
+    const ruleIds = baron.specialRules.map((r) => r.id);
+    expect(ruleIds).toContain("exile's vow");
+  });
+
+  it("Baron has Stubborn granted by The Exile's Vow", () => {
+    const baron = army.units.find((u) => u.name === "Baron");
+    const ruleIds = baron.specialRules.map((r) => r.id);
+    expect(ruleIds).toContain("stubborn");
+  });
+
+  it("Baron has Veteran granted by The Exile's Vow", () => {
+    const baron = army.units.find((u) => u.name === "Baron");
+    const ruleIds = baron.specialRules.map((r) => r.id);
+    expect(ruleIds).toContain("veteran");
+  });
+
+  it("Fear is not injected for Baron on Barded Pegasus", () => {
+    const baron = army.units.find((u) => u.name === "Baron");
+    const ruleIds = baron.specialRules.map((r) => r.id);
+    expect(ruleIds).not.toContain("fear");
+  });
+
+  it("Stubborn appears in break-test render for Baron", () => {
+    startGame(army);
+    const html = renderSpecialRulesContext(army, { id: "break-test" });
+    expect(html).toContain("Stubborn");
+    expect(html).toContain("Baron");
+  });
+
+  it("Paladin has Stubborn granted by The Exile's Vow", () => {
+    const paladin = army.units.find((u) => u.name === "Paladin");
+    expect(paladin).toBeDefined();
+    const ruleIds = paladin.specialRules.map((r) => r.id);
+    expect(ruleIds).toContain("stubborn");
+  });
+});
+
 describe("optional rules: Shield option does not pollute special rules display", () => {
   it("Skeleton Warriors shield option still grants armour save bonus without appearing as displayed rule", () => {
     const army = loadArmy("mc-skeleton-horde");

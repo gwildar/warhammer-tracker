@@ -18,9 +18,8 @@ const RULES = SPECIAL_RULES.map((rule) => ({
 }));
 
 const TROOP_TYPE_RULES = {
-  MCa: ["Fear"],
-  MCr: ["Fear", "Large Target"],
-  Be: ["Terror", "Large Target", "Lumbering"],
+  MCr: ["Large Target"],
+  Be: ["Large Target", "Lumbering"],
 };
 
 function injectMountRules(unitRules, unit) {

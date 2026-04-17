@@ -200,6 +200,16 @@ function parseCanonicalUnit(raw, category) {
     }
   }
 
+  // Inject rules granted by special rules (e.g. The Exile's Vow grants Stubborn + Veteran)
+  for (const rule of [...specialRules]) {
+    for (const ruleName of rule.grantsRules || []) {
+      if (!specialRules.some((r) => r.id === ruleName)) {
+        const resolved = resolveSpecialRules(ruleName);
+        specialRules.push(...resolved);
+      }
+    }
+  }
+
   // Remove rules suppressed by magic items (e.g. Da Thinkin' Orc's 'At removes Impetuous)
   const removedRuleIds = new Set(
     magicItems.flatMap((item) => item.removesRules || []),
