@@ -8,10 +8,15 @@ import {
   saveSchemaVersion,
   SCHEMA_VERSION,
   resetStartTime,
+  getRound,
+  getPhaseIndex,
+  saveRound,
+  savePhaseIndex,
+  saveIsOpponentTurn,
 } from "./state.js";
-import { registerScreen } from "./navigate.js";
+import { getAllSubPhases, PHASES, subPhaseToIndex } from "./phases.js";
+import { router, navigate } from "./navigate.js";
 
-// Import screens
 import { renderSetupScreen } from "./screens/setup.js";
 import { renderGameScreen } from "./screens/game.js";
 import { renderFirstTurnScreen } from "./screens/first-turn.js";
@@ -23,50 +28,79 @@ import { renderGameOverScreen } from "./screens/game-over.js";
 import { renderSpellSelectionScreen } from "./screens/spell-selection-screen.js";
 import { renderScenarioSetupScreen } from "./screens/scenario-setup.js";
 
-// Register screens for cross-navigation
-registerScreen("render", render);
-registerScreen("setupScreen", renderSetupScreen);
-registerScreen("gameScreen", renderGameScreen);
-registerScreen("firstTurnScreen", renderFirstTurnScreen);
-registerScreen("unitAssignmentScreen", renderUnitAssignmentScreen);
-registerScreen("deploymentScreen", renderDeploymentScreen);
-registerScreen("opponentTurnScreen", renderOpponentTurnScreen);
-registerScreen("aboutScreen", renderAboutScreen);
-registerScreen("gameOverScreen", renderGameOverScreen);
-registerScreen("spellSelectionScreen", renderSpellSelectionScreen);
-registerScreen("scenarioSetupScreen", renderScenarioSetupScreen);
+const allSubPhases = getAllSubPhases();
 
-function render() {
+function guardArmy(fn) {
   const army = getArmy();
   if (!army) {
-    renderSetupScreen();
-  } else if (!getFirstTurn()) {
-    renderSetupScreen();
-  } else if (getIsOpponentTurn()) {
-    renderOpponentTurnScreen(army);
-  } else {
-    renderGameScreen(army);
+    navigate("/setup");
+    return;
   }
+  fn(army);
 }
+
+router
+  .on("/setup", () => renderSetupScreen())
+  .on("/unit-assignment", () => guardArmy(renderUnitAssignmentScreen))
+  .on("/spell-selection", () => guardArmy(renderSpellSelectionScreen))
+  .on("/scenario-setup", () => guardArmy(renderScenarioSetupScreen))
+  .on("/deployment", () => guardArmy(renderDeploymentScreen))
+  .on("/first-turn", () => guardArmy(renderFirstTurnScreen))
+  .on("/about", () => renderAboutScreen())
+  .on("/game-over", () => guardArmy(renderGameOverScreen))
+  .on("/game/:round/:phase/:subphase", ({ data }) => {
+    guardArmy((army) => {
+      const idx = subPhaseToIndex(data.phase, data.subphase);
+      if (idx === -1) {
+        navigate("/setup");
+        return;
+      }
+      saveRound(Number(data.round));
+      saveIsOpponentTurn(false);
+      savePhaseIndex(idx);
+      renderGameScreen(army);
+    });
+  })
+  .on("/opponent/:round/:phase", ({ data }) => {
+    guardArmy((army) => {
+      const idx = PHASES.findIndex((p) => p.id === data.phase);
+      if (idx === -1) {
+        navigate("/setup");
+        return;
+      }
+      saveRound(Number(data.round));
+      saveIsOpponentTurn(true);
+      savePhaseIndex(idx);
+      renderOpponentTurnScreen(army);
+    });
+  })
+  .notFound(() => {
+    const army = getArmy();
+    if (!army || !getFirstTurn()) {
+      navigate("/setup");
+    } else if (getIsOpponentTurn()) {
+      const phase = PHASES[getPhaseIndex()];
+      navigate(`/opponent/${getRound()}/${phase.id}`);
+    } else {
+      const { phase, subPhase } = allSubPhases[getPhaseIndex()];
+      navigate(`/game/${getRound()}/${phase.id}/${subPhase.id}`);
+    }
+  });
 
 // ─── Init ───────────────────────────────────────────────────────────────────
 
-// Schema version guard: clear stale state if schema has changed
 if (getSchemaVersion() !== SCHEMA_VERSION) {
   clearAll();
   saveSchemaVersion(SCHEMA_VERSION);
 }
 
-// Reset start time so timer doesn't accumulate time while page was closed
 resetStartTime();
 
-// Safe render: if anything throws (e.g. stale schema slipped through), clear
-// and restart cleanly rather than leaving the user with a broken screen
 try {
-  render();
+  router.resolve();
 } catch {
   clearAll();
   saveSchemaVersion(SCHEMA_VERSION);
   sessionStorage.setItem("tow-recovered", "1");
-  render();
+  navigate("/setup");
 }
