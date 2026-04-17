@@ -180,6 +180,6 @@ export function bindScoringEvents(army, renderCallback) {
   });
 
   document.getElementById("end-game-btn")?.addEventListener("click", () => {
-    navigate("gameOverScreen", army);
+    navigate("/game-over");
   });
 }

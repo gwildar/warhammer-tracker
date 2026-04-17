@@ -135,7 +135,7 @@ export function renderScenarioSetupScreen(army) {
     });
 
   document.getElementById("prev-btn").addEventListener("click", () => {
-    navigate("unitAssignmentScreen", army);
+    navigate("/unit-assignment");
   });
 
   document.getElementById("next-btn").addEventListener("click", () => {
@@ -154,7 +154,7 @@ export function renderScenarioSetupScreen(army) {
         document.getElementById("toggle-specialFeatures")?.checked ?? false,
     };
     saveScenarioOptions(newOpts);
-    navigate("deploymentScreen", army);
+    navigate("/deployment");
   });
 
   bindSetupHeaderEvents();

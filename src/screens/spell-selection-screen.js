@@ -36,10 +36,10 @@ export function renderSpellSelectionScreen(army) {
   bindSpellSelectors(army);
 
   document.getElementById("prev-btn").addEventListener("click", () => {
-    navigate("setupScreen");
+    navigate("/setup");
   });
 
   document.getElementById("next-btn").addEventListener("click", () => {
-    navigate("unitAssignmentScreen", army);
+    navigate("/unit-assignment");
   });
 }

@@ -137,14 +137,14 @@ export function renderUnitAssignmentScreen(army) {
 
   document.getElementById("prev-btn").addEventListener("click", () => {
     if (getCasters(army).length > 0) {
-      navigate("spellSelectionScreen", army);
+      navigate("/spell-selection");
     } else {
-      navigate("setupScreen");
+      navigate("/setup");
     }
   });
 
   document.getElementById("next-btn").addEventListener("click", () => {
-    navigate("scenarioSetupScreen", army);
+    navigate("/scenario-setup");
   });
 }
 

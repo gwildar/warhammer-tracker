@@ -108,13 +108,13 @@ export function renderDeploymentScreen(army) {
   `;
 
   document.getElementById("prev-btn").addEventListener("click", () => {
-    navigate("scenarioSetupScreen", army);
+    navigate("/scenario-setup");
   });
 
   document.getElementById("next-btn").addEventListener("click", () => {
     saveDeploymentTime(Date.now() - getStartTime());
     resetStartTime(); // seeds the timer for the game screen
-    navigate("firstTurnScreen", army);
+    navigate("/first-turn");
   });
   bindSetupHeaderEvents();
 }
