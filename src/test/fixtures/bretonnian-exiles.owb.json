@@ -447,7 +447,8 @@
           "name_fr": "Le Vœu de l’Exilé (remplace le Vœu du Chevalier)",
           "points": 0,
           "armyComposition": ["bretonnian-exiles"],
-          "id": 3
+          "id": 3,
+          "active": true
         },
         {
           "name_en": "The Crusader's Vow (replaces the Knight's Vow)",
@@ -725,7 +726,8 @@
         "name_de": "Magische Attacken, Magieresistenz (-1), Ungelernter Arkanist",
         "name_fr": "Attaques Magiques, Résistance à la Magie (-1), Arcaniste Autodidacte"
       },
-      "armyComposition": { "bretonnian-exiles": { "category": "characters" } }
+      "armyComposition": { "bretonnian-exiles": { "category": "characters" } },
+      "generatedSpells": { "battle-magic": [] }
     },
     {
       "name_en": "The Green Knight",
@@ -1664,7 +1666,7 @@
   ],
   "mercenaries": [],
   "allies": [],
-  "id": "bylgszcd",
+  "id": "hgcailjiqo",
   "armyComposition": "bretonnian-exiles",
   "compositionRule": "grand-melee-combined-arms",
   "rank": "xB",
