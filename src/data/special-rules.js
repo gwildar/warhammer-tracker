@@ -946,7 +946,7 @@ export const SPECIAL_RULES = [
   {
     id: "veteran",
     displayName: "Veteran",
-    phases: ["rally", "shoot", "choose-fight"],
+    phases: ["rally", "remaining-moves", "shoot", "choose-fight"],
     description:
       "If majority, unit may re-roll failed Leadership tests (not Break tests).",
   },

@@ -99,6 +99,8 @@ export const PHASES = [
           "Conveyance spells may be cast during this sub-phase.",
           "Units can march (double move) but cannot shoot this turn if they do.",
         ],
+        pinnedRule:
+          "Enemy Sighted: if a unit attempts to march within 8\u201d of an enemy (not fleeing), it must pass a Leadership test or fail to march (but may move normally). Still counts as having marched.",
         showMovement: true,
       },
     ],
