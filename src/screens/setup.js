@@ -40,6 +40,27 @@ export function renderSetupScreen() {
         ${wasRecovered ? `<p class="text-wh-red text-sm text-center mt-4 mb-2">Your saved game data was cleared due to an error. Please re-upload your army.</p>` : ""}
         ${army ? renderArmySummary(army) : renderUploadSection()}
       </main>
+
+      ${
+        army
+          ? `
+      <!-- Footer nav -->
+      <footer class="sticky bottom-0 bg-wh-surface border-t border-wh-border p-3">
+        <div class="max-w-2xl mx-auto flex gap-3">
+          <button id="prev-btn"
+            class="flex-1 py-3 rounded-lg font-semibold text-lg transition-colors
+            ${getFirstTurn() ? "bg-wh-card text-wh-text hover:bg-wh-border" : "bg-wh-card text-wh-muted cursor-not-allowed opacity-50"}"
+            ${getFirstTurn() ? "" : "disabled"}>
+            &#8592; Previous
+          </button>
+          <button id="next-btn"
+            class="flex-1 py-3 rounded-lg font-bold text-lg transition-colors bg-wh-accent text-wh-bg hover:bg-wh-accent-dim">
+            Next &#8594;
+          </button>
+        </div>
+      </footer>`
+          : ""
+      }
     </div>
 
     <dialog id="settings-modal" class="bg-wh-surface border border-wh-border rounded-lg p-6 w-full max-w-sm backdrop:bg-black/60 m-auto">
@@ -158,15 +179,10 @@ export function renderArmySummary(army) {
         </div>
 
         <div class="flex gap-2">
-          <button id="start-game-btn"
-            class="flex-1 bg-wh-accent text-wh-bg py-3 rounded-lg font-bold text-lg
-                   hover:bg-wh-accent-dim transition-colors">
-            Start Game
-          </button>
           <button id="replace-army-btn"
-            class="bg-wh-card text-wh-muted px-4 py-3 rounded-lg border border-wh-border
-                   hover:text-wh-text hover:border-wh-accent transition-colors">
-            Replace
+            class="w-full bg-wh-card text-wh-muted px-4 py-2 rounded-lg border border-wh-border
+                   hover:text-wh-text hover:border-wh-accent transition-colors text-sm">
+            Replace Army
           </button>
         </div>
       </div>
@@ -285,7 +301,7 @@ function handleFile(file, errorEl) {
 }
 
 function bindArmyActions() {
-  document.getElementById("start-game-btn").addEventListener("click", () => {
+  document.getElementById("next-btn").addEventListener("click", () => {
     const firstTurn = getFirstTurn();
     if (!firstTurn) {
       const army = getArmy();
@@ -295,6 +311,15 @@ function bindArmyActions() {
         army,
       );
     } else if (getIsOpponentTurn()) {
+      navigate("opponentTurnScreen", getArmy());
+    } else {
+      navigate("gameScreen", getArmy());
+    }
+  });
+
+  document.getElementById("prev-btn").addEventListener("click", () => {
+    if (!getFirstTurn()) return;
+    if (getIsOpponentTurn()) {
       navigate("opponentTurnScreen", getArmy());
     } else {
       navigate("gameScreen", getArmy());
