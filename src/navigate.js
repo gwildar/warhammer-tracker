@@ -1,10 +1,7 @@
-// Navigation registry — screens register themselves to avoid circular imports
-const screens = {};
+import Navigo from "navigo";
 
-export function registerScreen(name, fn) {
-  screens[name] = fn;
-}
+export const router = new Navigo("/", { hash: true });
 
-export function navigate(name, ...args) {
-  screens[name](...args);
+export function navigate(path) {
+  router.navigate(path);
 }
