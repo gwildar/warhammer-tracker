@@ -2,6 +2,11 @@ import { describe, it, expect, beforeEach } from "vitest";
 import { renderUnitAssignmentScreen } from "../../screens/unit-assignment.js";
 import { saveCharacterAssignments } from "../../state.js";
 import { getApp, loadArmy } from "../helpers.js";
+import { getCasters } from "../../army.js";
+import { registerScreen } from "../../navigate.js";
+import { renderSetupScreen } from "../../screens/setup.js";
+import { renderSpellSelectionScreen } from "../../screens/spell-selection-screen.js";
+import { renderScenarioSetupScreen } from "../../screens/scenario-setup.js";
 
 describe("Unit assignment screen", () => {
   let army;
@@ -47,9 +52,9 @@ describe("Unit assignment screen", () => {
     expect(card.textContent).toContain(charWithItems.magicItems[0].name);
   });
 
-  it("save button exists", () => {
+  it("next button exists", () => {
     renderUnitAssignmentScreen(army);
-    expect(getApp().querySelector("#save-assignments-btn")).toBeTruthy();
+    expect(getApp().querySelector("#next-btn")).toBeTruthy();
   });
 
   it("pre-seeded assignments render in the unit card, not the pool", () => {
@@ -94,7 +99,7 @@ describe("Unit assignment screen", () => {
     expect(header.textContent).toContain("Who Goes First");
     expect(header.querySelector("#setup-army-btn")).toBeTruthy();
     expect(header.querySelector("#setup-new-game-btn")).toBeTruthy();
-    expect(getApp().querySelector("main #save-assignments-btn")).toBeTruthy();
+    expect(getApp().querySelector("footer #next-btn")).toBeTruthy();
   });
 
   it("shows GENERAL tag on the general's character card", () => {
@@ -122,5 +127,37 @@ describe("Unit assignment screen", () => {
       `[data-assigned-char="${general.id}"]`,
     );
     expect(assignedRow.textContent).toContain("GENERAL");
+  });
+});
+
+describe("Unit Assignment Screen — navigation", () => {
+  beforeEach(() => {
+    saveCharacterAssignments({});
+    registerScreen("setupScreen", renderSetupScreen);
+    registerScreen("spellSelectionScreen", renderSpellSelectionScreen);
+    registerScreen("scenarioSetupScreen", renderScenarioSetupScreen);
+  });
+
+  it("prev-btn navigates to spell selection when army has casters", () => {
+    const army = loadArmy("dark-elves");
+    renderUnitAssignmentScreen(army);
+    getApp().querySelector("#prev-btn").click();
+    expect(getApp().textContent).toContain("Select Spells");
+  });
+
+  it("prev-btn navigates to setup screen when army has no casters", () => {
+    const army = loadArmy("forest-goblins");
+    if (getCasters(army).length === 0) {
+      renderUnitAssignmentScreen(army);
+      getApp().querySelector("#prev-btn").click();
+      expect(getApp().querySelector("#start-game-btn")).toBeTruthy();
+    }
+  });
+
+  it("next-btn navigates to scenario setup", () => {
+    const army = loadArmy("dark-elves");
+    renderUnitAssignmentScreen(army);
+    getApp().querySelector("#next-btn").click();
+    expect(getApp().textContent).toContain("Scenario Setup");
   });
 });

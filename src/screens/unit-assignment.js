@@ -2,6 +2,7 @@ import { getCharacterAssignments, saveCharacterAssignments } from "../state.js";
 import { navigate } from "../navigate.js";
 import { displayUnitName } from "../utils/unit-name.js";
 import { renderSetupHeader, bindSetupHeaderEvents } from "./setup-header.js";
+import { getCasters } from "../army.js";
 
 const app = document.getElementById("app");
 
@@ -115,22 +116,36 @@ export function renderUnitAssignmentScreen(army) {
             </div>
           </div>
         </div>
-        <button id="save-assignments-btn"
-          class="mt-6 w-full py-3 bg-wh-accent text-wh-bg rounded font-semibold hover:opacity-90">
-          Save &amp; Continue
-        </button>
       </main>
+      <footer class="sticky bottom-0 bg-wh-surface border-t border-wh-border p-3">
+        <div class="max-w-2xl mx-auto flex gap-3">
+          <button id="prev-btn"
+            class="flex-1 py-3 rounded-lg font-semibold text-lg transition-colors bg-wh-card text-wh-text hover:bg-wh-border">
+            &#8592; Back
+          </button>
+          <button id="next-btn"
+            class="flex-1 py-3 rounded-lg font-bold text-lg transition-colors bg-wh-accent text-wh-bg hover:bg-wh-accent-dim">
+            Next &#8594;
+          </button>
+        </div>
+      </footer>
     </div>
   `;
 
   bindDragDrop(army);
   bindSetupHeaderEvents();
 
-  document
-    .getElementById("save-assignments-btn")
-    .addEventListener("click", () => {
-      navigate("scenarioSetupScreen", army);
-    });
+  document.getElementById("prev-btn").addEventListener("click", () => {
+    if (getCasters(army).length > 0) {
+      navigate("spellSelectionScreen", army);
+    } else {
+      navigate("setupScreen");
+    }
+  });
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    navigate("scenarioSetupScreen", army);
+  });
 }
 
 function bindDragDrop(army) {
