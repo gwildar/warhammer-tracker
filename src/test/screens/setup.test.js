@@ -49,9 +49,12 @@ describe("Setup Screen", () => {
       expect(getApp().textContent).toContain(`${totalPts} pts`);
     });
 
-    it("shows Next button", () => {
+    it("shows Start Game button", () => {
       renderSetupScreen();
-      expect(getApp().querySelector("#next-btn")).toBeTruthy();
+      expect(getApp().querySelector("#start-game-btn")).toBeTruthy();
+      expect(getApp().querySelector("#start-game-btn").textContent.trim()).toBe(
+        "Start Game",
+      );
     });
 
     it("shows Replace button", () => {
@@ -82,7 +85,7 @@ describe("Setup Screen", () => {
       renderSetupScreen();
       const casters = army.units.filter((u) => u.isCaster);
       if (casters.length > 0) {
-        getApp().querySelector("#next-btn").click();
+        getApp().querySelector("#start-game-btn").click();
         expect(getApp().textContent).toContain("Select Spells");
       }
     });
@@ -138,7 +141,7 @@ describe("Setup Screen", () => {
 
     it("navigates to unit assignment screen on new game", () => {
       renderSetupScreen();
-      getApp().querySelector("#next-btn").click();
+      getApp().querySelector("#start-game-btn").click();
       // bretonnia has casters — go through spell selection first
       getApp().querySelector("#spell-continue-btn").click();
       expect(getApp().textContent).toContain("Place Characters in Units");
@@ -181,7 +184,7 @@ describe("Setup Screen — Skeleton Horde army (Casket of Souls)", () => {
 
   it("spell selection screen shows bound spells without checkboxes for the Casket", () => {
     renderSetupScreen();
-    getApp().querySelector("#next-btn").click();
+    getApp().querySelector("#start-game-btn").click();
     expect(getApp().textContent).toContain("Light of Death");
     expect(getApp().textContent).toContain("Light of Protection");
     expect(getApp().textContent).toContain("Bound Spells");
