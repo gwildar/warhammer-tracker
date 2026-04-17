@@ -1,6 +1,9 @@
-import { saveFirstTurn, saveIsOpponentTurn, savePhaseIndex } from "../state.js";
+import { saveFirstTurn } from "../state.js";
+import { PHASES, getAllSubPhases } from "../phases.js";
 import { navigate } from "../navigate.js";
 import { renderSetupHeader, bindSetupHeaderEvents } from "./setup-header.js";
+
+const allSubPhases = getAllSubPhases();
 
 const app = document.getElementById("app");
 
@@ -38,23 +41,20 @@ export function renderFirstTurnScreen(army) {
 
   document.getElementById("first-you-btn").addEventListener("click", () => {
     saveFirstTurn("you");
-    saveIsOpponentTurn(false);
-    savePhaseIndex(0);
-    navigate("gameScreen", army);
+    const { phase, subPhase } = allSubPhases[0];
+    navigate(`/game/1/${phase.id}/${subPhase.id}`);
   });
 
   document
     .getElementById("first-opponent-btn")
     .addEventListener("click", () => {
       saveFirstTurn("opponent");
-      saveIsOpponentTurn(true);
-      savePhaseIndex(0);
-      navigate("opponentTurnScreen", army);
+      navigate(`/opponent/1/${PHASES[0].id}`);
     });
 
   bindSetupHeaderEvents();
 
   document.getElementById("prev-btn").addEventListener("click", () => {
-    navigate("deploymentScreen", army);
+    navigate("/deployment");
   });
 }
