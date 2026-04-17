@@ -1,6 +1,7 @@
 import {
   getScores,
   getRound,
+  getPhaseIndex,
   getIsOpponentTurn,
   getFirstTurn,
   getTimings,
@@ -9,8 +10,11 @@ import {
   saveFirstTurn,
   getScenarioOptions,
 } from "../state.js";
+import { getAllSubPhases, PHASES } from "../phases.js";
 import { navigate } from "../navigate.js";
 import { formatDuration } from "../helpers.js";
+
+const allSubPhases = getAllSubPhases();
 
 const app = document.getElementById("app");
 
@@ -215,15 +219,18 @@ export function renderGameOverScreen(army) {
     </div>
   `;
 
-  bindGameOverActions(army);
+  bindGameOverActions();
 }
 
-function bindGameOverActions(army) {
+function bindGameOverActions() {
   const goBack = () => {
+    const round = getRound();
+    const phaseIdx = getPhaseIndex();
     if (getIsOpponentTurn()) {
-      navigate("opponentTurnScreen", army);
+      navigate(`/opponent/${round}/${PHASES[phaseIdx].id}`);
     } else {
-      navigate("gameScreen", army);
+      const { phase, subPhase } = allSubPhases[phaseIdx];
+      navigate(`/game/${round}/${phase.id}/${subPhase.id}`);
     }
   };
 
@@ -233,6 +240,6 @@ function bindGameOverActions(army) {
   document.getElementById("new-game-btn")?.addEventListener("click", () => {
     resetGame();
     saveFirstTurn(null);
-    navigate("setupScreen");
+    navigate("/setup");
   });
 }
