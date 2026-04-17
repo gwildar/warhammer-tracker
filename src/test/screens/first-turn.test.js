@@ -1,8 +1,7 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, vi } from "vitest";
 import { renderFirstTurnScreen } from "../../screens/first-turn.js";
 import { loadArmy, getApp } from "../helpers.js";
-import { registerScreen } from "../../navigate.js";
-import { renderDeploymentScreen } from "../../screens/deployment.js";
+import * as Nav from "../../navigate.js";
 
 describe("First Turn Screen", () => {
   let army;
@@ -39,10 +38,11 @@ describe("First Turn Screen", () => {
   });
 
   it("has a prev-btn that navigates back to deployment", () => {
-    registerScreen("deploymentScreen", renderDeploymentScreen);
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     renderFirstTurnScreen(army);
     expect(getApp().querySelector("#prev-btn")).toBeTruthy();
     getApp().querySelector("#prev-btn").click();
-    expect(getApp().textContent).toContain("Deployment");
+    expect(Nav.navigate).toHaveBeenCalledWith("/deployment");
+    vi.restoreAllMocks();
   });
 });

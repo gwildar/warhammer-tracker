@@ -1,5 +1,6 @@
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { renderGameScreen } from "../../screens/game.js";
+import * as Nav from "../../navigate.js";
 import { getKnownSpells } from "../../context/caster.js";
 import { loadArmy, startGame, getApp } from "../helpers.js";
 import {
@@ -64,23 +65,15 @@ describe("Game Screen", () => {
     expect(getApp().querySelector("#new-game-btn")).toBeTruthy();
   });
 
-  it("New Game button navigates to setupScreen", async () => {
-    const { registerScreen } = await import("../../navigate.js");
-    let navigated = null;
-    registerScreen("setupScreen", () => {
-      navigated = "setupScreen";
-    });
-    registerScreen("render", () => {
-      navigated = "render";
-    });
-
+  it("New Game button navigates to setup", () => {
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     renderGameScreen(army);
     const origConfirm = window.confirm;
     window.confirm = () => true;
     document.getElementById("new-game-btn").click();
     window.confirm = origConfirm;
-
-    expect(navigated).toBe("setupScreen");
+    expect(Nav.navigate).toHaveBeenCalledWith("/setup");
+    vi.restoreAllMocks();
   });
 
   it("shows Manage Army button", () => {

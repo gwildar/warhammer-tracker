@@ -1,9 +1,8 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { renderSetupScreen } from "../../screens/setup.js";
 import { renderSpellSelectionScreen } from "../../screens/spell-selection-screen.js";
-import { renderUnitAssignmentScreen } from "../../screens/unit-assignment.js";
-import { registerScreen } from "../../navigate.js";
 import { loadArmy, getApp } from "../helpers.js";
+import * as Nav from "../../navigate.js";
 import { displayUnitName } from "../../utils/unit-name.js";
 import { getDisplayMode, saveDisplayMode } from "../../state.js";
 
@@ -81,13 +80,11 @@ describe("Setup Screen", () => {
     });
 
     it("navigates to spell selection for casters", () => {
-      registerScreen("spellSelectionScreen", renderSpellSelectionScreen);
+      vi.spyOn(Nav, "navigate").mockImplementation(() => {});
       renderSetupScreen();
-      const casters = army.units.filter((u) => u.isCaster);
-      if (casters.length > 0) {
-        getApp().querySelector("#start-game-btn").click();
-        expect(getApp().textContent).toContain("Select Spells");
-      }
+      getApp().querySelector("#start-game-btn").click();
+      expect(Nav.navigate).toHaveBeenCalledWith("/spell-selection");
+      vi.restoreAllMocks();
     });
   });
 
@@ -134,17 +131,19 @@ describe("Setup Screen", () => {
 
   describe("start game navigation", () => {
     beforeEach(() => {
-      registerScreen("spellSelectionScreen", renderSpellSelectionScreen);
-      registerScreen("unitAssignmentScreen", renderUnitAssignmentScreen);
       loadArmy("bretonnia");
     });
 
-    it("navigates to unit assignment screen on new game", () => {
+    afterEach(() => {
+      vi.restoreAllMocks();
+    });
+
+    it("navigates to spell selection on new game for army with casters", () => {
+      vi.spyOn(Nav, "navigate").mockImplementation(() => {});
       renderSetupScreen();
       getApp().querySelector("#start-game-btn").click();
-      // bretonnia has casters — go through spell selection first
-      getApp().querySelector("#next-btn").click();
-      expect(getApp().textContent).toContain("Place Characters in Units");
+      // bretonnia has casters — goes to spell selection first
+      expect(Nav.navigate).toHaveBeenCalledWith("/spell-selection");
     });
   });
 
@@ -177,14 +176,9 @@ describe("Setup Screen", () => {
 });
 
 describe("Setup Screen — Skeleton Horde army (Casket of Souls)", () => {
-  beforeEach(() => {
-    registerScreen("spellSelectionScreen", renderSpellSelectionScreen);
-    loadArmy("mc-skeleton-horde");
-  });
-
   it("spell selection screen shows bound spells without checkboxes for the Casket", () => {
-    renderSetupScreen();
-    getApp().querySelector("#start-game-btn").click();
+    const army = loadArmy("mc-skeleton-horde");
+    renderSpellSelectionScreen(army);
     expect(getApp().textContent).toContain("Light of Death");
     expect(getApp().textContent).toContain("Light of Protection");
     expect(getApp().textContent).toContain("Bound Spells");
@@ -195,20 +189,24 @@ describe("Spell Selection Screen — navigation", () => {
   let army;
 
   beforeEach(() => {
-    registerScreen("setupScreen", renderSetupScreen);
-    registerScreen("unitAssignmentScreen", renderUnitAssignmentScreen);
     army = loadArmy("dark-elves");
   });
 
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
   it("has a prev-btn that navigates back to setup screen", () => {
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     renderSpellSelectionScreen(army);
     getApp().querySelector("#prev-btn").click();
-    expect(getApp().querySelector("#start-game-btn")).toBeTruthy();
+    expect(Nav.navigate).toHaveBeenCalledWith("/setup");
   });
 
   it("has a next-btn that navigates to unit assignment", () => {
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     renderSpellSelectionScreen(army);
     getApp().querySelector("#next-btn").click();
-    expect(getApp().textContent).toContain("Place Characters in Units");
+    expect(Nav.navigate).toHaveBeenCalledWith("/unit-assignment");
   });
 });

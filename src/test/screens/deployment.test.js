@@ -1,10 +1,8 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { renderDeploymentScreen } from "../../screens/deployment.js";
 import { getApp, loadArmy } from "../helpers.js";
 import { getDeploymentTime } from "../../state.js";
-import { registerScreen } from "../../navigate.js";
-import { renderScenarioSetupScreen } from "../../screens/scenario-setup.js";
-import { renderFirstTurnScreen } from "../../screens/first-turn.js";
+import * as Nav from "../../navigate.js";
 
 describe("Deployment screen", () => {
   let army;
@@ -167,12 +165,13 @@ describe("Deployment screen", () => {
   });
 
   it("Next button saves deployment time", () => {
-    registerScreen("firstTurnScreen", renderFirstTurnScreen);
-    localStorage.setItem("tow-start-time", String(Date.now() - 60000)); // 1 minute ago
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
+    localStorage.setItem("tow-start-time", String(Date.now() - 60000));
     renderDeploymentScreen(army);
     getApp().querySelector("#next-btn").click();
     expect(getDeploymentTime()).not.toBeNull();
     expect(getDeploymentTime()).toBeGreaterThan(0);
+    vi.restoreAllMocks();
   });
 });
 
@@ -181,20 +180,24 @@ describe("Deployment Screen — navigation", () => {
 
   beforeEach(() => {
     army = loadArmy("dark-elves");
-    registerScreen("scenarioSetupScreen", renderScenarioSetupScreen);
-    registerScreen("firstTurnScreen", renderFirstTurnScreen);
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
   });
 
   it("prev-btn navigates back to scenario setup", () => {
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     renderDeploymentScreen(army);
     getApp().querySelector("#prev-btn").click();
-    expect(getApp().textContent).toContain("Scenario Setup");
+    expect(Nav.navigate).toHaveBeenCalledWith("/scenario-setup");
   });
 
   it("next-btn navigates to first turn", () => {
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     localStorage.setItem("tow-start-time", String(Date.now() - 1000));
     renderDeploymentScreen(army);
     getApp().querySelector("#next-btn").click();
-    expect(getApp().textContent).toContain("Who goes first?");
+    expect(Nav.navigate).toHaveBeenCalledWith("/first-turn");
   });
 });

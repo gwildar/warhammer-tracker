@@ -1,12 +1,8 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { renderUnitAssignmentScreen } from "../../screens/unit-assignment.js";
 import { saveCharacterAssignments } from "../../state.js";
 import { getApp, loadArmy } from "../helpers.js";
-import { getCasters } from "../../army.js";
-import { registerScreen } from "../../navigate.js";
-import { renderSetupScreen } from "../../screens/setup.js";
-import { renderSpellSelectionScreen } from "../../screens/spell-selection-screen.js";
-import { renderScenarioSetupScreen } from "../../screens/scenario-setup.js";
+import * as Nav from "../../navigate.js";
 
 describe("Unit assignment screen", () => {
   let army;
@@ -133,31 +129,72 @@ describe("Unit assignment screen", () => {
 describe("Unit Assignment Screen — navigation", () => {
   beforeEach(() => {
     saveCharacterAssignments({});
-    registerScreen("setupScreen", renderSetupScreen);
-    registerScreen("spellSelectionScreen", renderSpellSelectionScreen);
-    registerScreen("scenarioSetupScreen", renderScenarioSetupScreen);
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
   });
 
   it("prev-btn navigates to spell selection when army has casters", () => {
-    const army = loadArmy("dark-elves");
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
+    const army = loadArmy("dark-elves"); // dark-elves has casters
     renderUnitAssignmentScreen(army);
     getApp().querySelector("#prev-btn").click();
-    expect(getApp().textContent).toContain("Select Spells");
+    expect(Nav.navigate).toHaveBeenCalledWith("/spell-selection");
   });
 
   it("prev-btn navigates to setup screen when army has no casters", () => {
-    const army = loadArmy("forest-goblins");
-    if (getCasters(army).length === 0) {
-      renderUnitAssignmentScreen(army);
-      getApp().querySelector("#prev-btn").click();
-      expect(getApp().querySelector("#start-game-btn")).toBeTruthy();
-    }
+    const noCasterArmy = {
+      name: "No Caster Army",
+      armySlug: "test",
+      faction: "Test",
+      points: 100,
+      composition: null,
+      skipPhases: [],
+      units: [
+        {
+          id: "unit-001",
+          name: "Spearmen",
+          category: "core",
+          strength: 10,
+          points: 100,
+          stats: [],
+          weapons: [],
+          shootingWeapons: [],
+          magicItems: [],
+          specialRules: [],
+          mount: null,
+          armourSave: null,
+          ward: null,
+          regen: null,
+          magicResistance: null,
+          poisonedAttacks: false,
+          stomp: null,
+          impactHits: null,
+          isGeneral: false,
+          isBSB: false,
+          hasStandard: false,
+          hasMusician: false,
+          isCaster: false,
+          lores: [],
+          activeLore: null,
+          factionLores: [],
+          champions: [],
+          crew: [],
+        },
+      ],
+    };
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
+    renderUnitAssignmentScreen(noCasterArmy);
+    getApp().querySelector("#prev-btn").click();
+    expect(Nav.navigate).toHaveBeenCalledWith("/setup");
   });
 
   it("next-btn navigates to scenario setup", () => {
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     const army = loadArmy("dark-elves");
     renderUnitAssignmentScreen(army);
     getApp().querySelector("#next-btn").click();
-    expect(getApp().textContent).toContain("Scenario Setup");
+    expect(Nav.navigate).toHaveBeenCalledWith("/scenario-setup");
   });
 });

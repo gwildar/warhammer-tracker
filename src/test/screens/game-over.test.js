@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { renderGameOverScreen } from "../../screens/game-over.js";
 import { loadArmy, startGame, getApp } from "../helpers.js";
 import {
@@ -9,7 +9,7 @@ import {
   getFirstTurn,
   updateScore,
 } from "../../state.js";
-import { registerScreen } from "../../navigate.js";
+import * as Nav from "../../navigate.js";
 
 describe("Game Over Screen", () => {
   let army;
@@ -26,6 +26,10 @@ describe("Game Over Screen", () => {
       strategicLocations: { enabled: false, count: 3 },
       specialFeatures: false,
     });
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
   });
 
   it("renders Game Over heading", () => {
@@ -57,45 +61,33 @@ describe("Game Over Screen", () => {
     expect(getApp().querySelector("#new-game-btn")).toBeTruthy();
   });
 
-  it("header Back navigates to gameScreen when not opponent turn", () => {
-    let navigated = null;
-    registerScreen("gameScreen", () => {
-      navigated = "gameScreen";
-    });
+  it("header Back navigates to game screen when not opponent turn", () => {
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     renderGameOverScreen(army);
     getApp().querySelector("#back-btn").click();
-    expect(navigated).toBe("gameScreen");
+    expect(Nav.navigate).toHaveBeenCalledWith("/game/1/strategy/start-of-turn");
   });
 
-  it("footer Back navigates to gameScreen when not opponent turn", () => {
-    let navigated = null;
-    registerScreen("gameScreen", () => {
-      navigated = "gameScreen";
-    });
+  it("footer Back navigates to game screen when not opponent turn", () => {
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     renderGameOverScreen(army);
     getApp().querySelector("#back-btn-footer").click();
-    expect(navigated).toBe("gameScreen");
+    expect(Nav.navigate).toHaveBeenCalledWith("/game/1/strategy/start-of-turn");
   });
 
-  it("Back navigates to opponentTurnScreen when on opponent turn", () => {
+  it("Back navigates to opponent screen when on opponent turn", () => {
     saveIsOpponentTurn(true);
-    let navigated = null;
-    registerScreen("opponentTurnScreen", () => {
-      navigated = "opponentTurnScreen";
-    });
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     renderGameOverScreen(army);
     getApp().querySelector("#back-btn").click();
-    expect(navigated).toBe("opponentTurnScreen");
+    expect(Nav.navigate).toHaveBeenCalledWith("/opponent/1/strategy");
   });
 
-  it("New Game resets state and navigates to setupScreen", () => {
-    let navigated = null;
-    registerScreen("setupScreen", () => {
-      navigated = "setupScreen";
-    });
+  it("New Game resets state and navigates to setup", () => {
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     renderGameOverScreen(army);
     getApp().querySelector("#new-game-btn").click();
-    expect(navigated).toBe("setupScreen");
+    expect(Nav.navigate).toHaveBeenCalledWith("/setup");
     expect(getRound()).toBe(1);
     expect(getFirstTurn()).toBeNull();
   });

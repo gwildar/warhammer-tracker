@@ -1,10 +1,8 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { renderScenarioSetupScreen } from "../../screens/scenario-setup.js";
-import { renderUnitAssignmentScreen } from "../../screens/unit-assignment.js";
-import { renderDeploymentScreen } from "../../screens/deployment.js";
 import { getApp, loadArmy } from "../helpers.js";
-import { registerScreen } from "../../navigate.js";
 import { saveCharacterAssignments } from "../../state.js";
+import * as Nav from "../../navigate.js";
 
 describe("Scenario Setup Screen", () => {
   let army;
@@ -33,19 +31,23 @@ describe("Scenario Setup Screen — navigation", () => {
   beforeEach(() => {
     saveCharacterAssignments({});
     army = loadArmy("dark-elves");
-    registerScreen("unitAssignmentScreen", renderUnitAssignmentScreen);
-    registerScreen("deploymentScreen", renderDeploymentScreen);
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
   });
 
   it("prev-btn navigates back to unit assignment", () => {
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     renderScenarioSetupScreen(army);
     getApp().querySelector("#prev-btn").click();
-    expect(getApp().textContent).toContain("Place Characters in Units");
+    expect(Nav.navigate).toHaveBeenCalledWith("/unit-assignment");
   });
 
   it("next-btn navigates to deployment", () => {
+    vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     renderScenarioSetupScreen(army);
     getApp().querySelector("#next-btn").click();
-    expect(getApp().textContent).toContain("Deployment");
+    expect(Nav.navigate).toHaveBeenCalledWith("/deployment");
   });
 });
