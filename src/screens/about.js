@@ -36,6 +36,13 @@ export function renderAboutScreen() {
         </div>
 
         <div class="bg-wh-surface rounded-lg border border-wh-border p-4 space-y-3">
+          <h2 class="text-lg font-bold text-wh-text">OWB View button</h2>
+          <p class="text-wh-muted text-sm">
+            The View in OWB button links to your army list in Old World Builder. This only works if you created the army on the same device and browser — OWB stores army lists locally.
+          </p>
+        </div>
+
+        <div class="bg-wh-surface rounded-lg border border-wh-border p-4 space-y-3">
           <h2 class="text-lg font-bold text-wh-text">A note on rules</h2>
           <p class="text-wh-muted text-sm">
             This app uses abbreviated rules for brevity, for the exact wording please use <a href="https://tow.whfb.app" target="_blank" rel="noopener noreferrer"
