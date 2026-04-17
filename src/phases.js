@@ -213,3 +213,9 @@ export function getAllSubPhases() {
   }
   return result;
 }
+
+export function subPhaseToIndex(phaseId, subPhaseId) {
+  return getAllSubPhases().findIndex(
+    (s) => s.phase.id === phaseId && s.subPhase.id === subPhaseId,
+  );
+}
