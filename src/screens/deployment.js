@@ -91,15 +91,27 @@ export function renderDeploymentScreen(army) {
         </div>
         ${renderExplainer()}
         ${renderDeploymentUnits(army)}
-        <button id="continue-btn"
-          class="mt-6 w-full py-3 bg-wh-accent text-wh-bg rounded font-semibold hover:opacity-90">
-          Continue
-        </button>
       </main>
+      <footer class="sticky bottom-0 bg-wh-surface border-t border-wh-border p-3">
+        <div class="max-w-2xl mx-auto flex gap-3">
+          <button id="prev-btn"
+            class="flex-1 py-3 rounded-lg font-semibold text-lg transition-colors bg-wh-card text-wh-text hover:bg-wh-border">
+            &#8592; Back
+          </button>
+          <button id="next-btn"
+            class="flex-1 py-3 rounded-lg font-bold text-lg transition-colors bg-wh-accent text-wh-bg hover:bg-wh-accent-dim">
+            Next &#8594;
+          </button>
+        </div>
+      </footer>
     </div>
   `;
 
-  document.getElementById("continue-btn").addEventListener("click", () => {
+  document.getElementById("prev-btn").addEventListener("click", () => {
+    navigate("scenarioSetupScreen", army);
+  });
+
+  document.getElementById("next-btn").addEventListener("click", () => {
     saveDeploymentTime(Date.now() - getStartTime());
     resetStartTime(); // seeds the timer for the game screen
     navigate("firstTurnScreen", army);
