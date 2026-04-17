@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from "vitest";
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { renderFirstTurnScreen } from "../../screens/first-turn.js";
 import { loadArmy, getApp } from "../helpers.js";
 import * as Nav from "../../navigate.js";
@@ -9,6 +9,8 @@ describe("First Turn Screen", () => {
   beforeEach(() => {
     army = loadArmy("dark-elves");
   });
+
+  afterEach(() => vi.restoreAllMocks());
 
   it('shows "Who goes first?" heading', () => {
     renderFirstTurnScreen(army);
@@ -43,6 +45,5 @@ describe("First Turn Screen", () => {
     expect(getApp().querySelector("#prev-btn")).toBeTruthy();
     getApp().querySelector("#prev-btn").click();
     expect(Nav.navigate).toHaveBeenCalledWith("/deployment");
-    vi.restoreAllMocks();
   });
 });

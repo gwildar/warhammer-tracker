@@ -78,14 +78,6 @@ describe("Setup Screen", () => {
         expect(text).toContain(unit.mount.name);
       }
     });
-
-    it("navigates to spell selection for casters", () => {
-      vi.spyOn(Nav, "navigate").mockImplementation(() => {});
-      renderSetupScreen();
-      getApp().querySelector("#start-game-btn").click();
-      expect(Nav.navigate).toHaveBeenCalledWith("/spell-selection");
-      vi.restoreAllMocks();
-    });
   });
 
   describe("with Lizardmen army", () => {
@@ -143,6 +135,14 @@ describe("Setup Screen", () => {
       renderSetupScreen();
       getApp().querySelector("#start-game-btn").click();
       // bretonnia has casters — goes to spell selection first
+      expect(Nav.navigate).toHaveBeenCalledWith("/spell-selection");
+    });
+
+    it("navigates to spell selection for casters", () => {
+      loadArmy("dark-elves"); // ensure we have casters in localStorage
+      vi.spyOn(Nav, "navigate").mockImplementation(() => {});
+      renderSetupScreen(); // uses army already in localStorage from loadArmy
+      getApp().querySelector("#start-game-btn").click();
       expect(Nav.navigate).toHaveBeenCalledWith("/spell-selection");
     });
   });

@@ -11,6 +11,8 @@ describe("Deployment screen", () => {
     army = loadArmy("dark-elves");
   });
 
+  afterEach(() => vi.restoreAllMocks());
+
   it("renders Deployment heading", () => {
     renderDeploymentScreen(army);
     expect(getApp().querySelector("h2").textContent).toContain("Deployment");
@@ -171,7 +173,6 @@ describe("Deployment screen", () => {
     getApp().querySelector("#next-btn").click();
     expect(getDeploymentTime()).not.toBeNull();
     expect(getDeploymentTime()).toBeGreaterThan(0);
-    vi.restoreAllMocks();
   });
 });
 

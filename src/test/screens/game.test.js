@@ -22,6 +22,8 @@ describe("Game Screen", () => {
     startGame(army);
   });
 
+  afterEach(() => vi.restoreAllMocks());
+
   it("shows round counter", () => {
     renderGameScreen(army);
     expect(getApp().textContent).toContain("Round 1");
@@ -73,7 +75,6 @@ describe("Game Screen", () => {
     document.getElementById("new-game-btn").click();
     window.confirm = origConfirm;
     expect(Nav.navigate).toHaveBeenCalledWith("/setup");
-    vi.restoreAllMocks();
   });
 
   it("shows Manage Army button", () => {
