@@ -503,6 +503,79 @@ export const RANGED_WEAPONS = {
     ap: "-2",
     rules: "Armour Bane (2), Cumbersome",
   },
+
+  // ─── Empire Ranged ───────────────────────────────────────────────────
+  "grenade launching blunderbuss": {
+    name: "Grenade Launching Blunderbuss",
+    range: '24"',
+    s: "4",
+    ap: "-2",
+    rules: "Cumbersome, Ponderous. D3+1 hits on successful To Hit.",
+  },
+  "helblaster volley gun": {
+    name: "Helblaster Volley Gun",
+    range: '24"',
+    s: "5",
+    ap: "-1",
+    rules: "Armour Bane (2), Cumbersome, Helblaster, Move or Shoot",
+    misfireTable: "black-powder",
+    noBS: true,
+  },
+  "hochland long rifle": {
+    name: "Hochland Long Rifle",
+    range: '36"',
+    s: "4",
+    ap: "-1",
+    rules:
+      "Armour Bane (1), Cumbersome, Ponderous. Can target a specific model within the target unit.",
+  },
+  "light cannon": {
+    name: "Light Cannon",
+    range: '18"',
+    s: "4",
+    ap: "-1",
+    rules: "Armour Bane (2). D3 hits on successful To Hit.",
+  },
+  "long rifle": {
+    name: "Long Rifle",
+    range: '36"',
+    s: "4",
+    ap: "-1",
+    rules:
+      "Armour Bane (1), Cumbersome. Can target a specific model within the target unit.",
+  },
+  "pigeon bombs": {
+    name: "Pigeon Bombs",
+    range: '24"',
+    s: "—",
+    ap: "—",
+    rules:
+      'Roll D6: 1=Bird Brain (3" blast on firer, S4, AP-1); 2-3=Fly Away Home (no effect); 4-5=Dud (single hit on target, S5, AP-2); 6=Perfect Delivery (3" blast on target, S4, AP-1).',
+    noBS: true,
+  },
+  "repeating rifle": {
+    name: "Repeating Rifle",
+    range: '24"',
+    s: "4",
+    ap: "-1",
+    rules: "Armour Bane (1), Multiple Shots (3)",
+  },
+  "steam cannon": {
+    name: "Steam Cannon",
+    range: '24"',
+    s: "8",
+    ap: "-2",
+    rules:
+      "Armour Bane (2), Cannon Fire, Cumbersome, Multiple Wounds (D3). Front arc only. Misfire: lose 1W.",
+    noBS: true,
+  },
+  "steam gun": {
+    name: "Steam Gun (Empire)",
+    range: "Template",
+    s: "2",
+    ap: "—",
+    rules: "Breath Weapon. No armour saves.",
+  },
 };
 
 export const COMBAT_WEAPONS = {
@@ -865,6 +938,33 @@ export const COMBAT_WEAPONS = {
     ap: "-2",
     rules:
       "One bonus attack per turn. Hits automatically. Must be made last, after all other attacks including Stomp Attacks.",
+  },
+
+  // ─── Empire Combat ───────────────────────────────────────────────────
+  "ball & chain": {
+    name: "Ball & Chain",
+    s: "S+3",
+    ap: "-2",
+    rules: "Armour Bane (1), Requires Two Hands, Strike Last",
+  },
+  "hooked halberd": {
+    name: "Hooked Halberd",
+    s: "S+1",
+    ap: "-2",
+    rules: "Armour Bane (2), Requires Two Hands",
+  },
+  "man-catcher": {
+    name: "Man-Catcher",
+    s: "S",
+    ap: "-1",
+    rules: "Killing Blow, Requires Two Hands",
+  },
+  "wolf hammer": {
+    name: "Wolf Hammer",
+    s: "S+1",
+    ap: "-2",
+    rules:
+      'Requires Two Hands. +2 Strength modifier (instead of +1) on turns the wielder charged 3" or more.',
   },
 };
 
