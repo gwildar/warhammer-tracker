@@ -306,6 +306,6 @@ function bindArmyActions() {
 
   document.getElementById("replace-army-btn").addEventListener("click", () => {
     clearArmy();
-    navigate("/");
+    renderSetupScreen();
   });
 }
