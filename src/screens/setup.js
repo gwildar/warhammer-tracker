@@ -9,11 +9,16 @@ import {
   resetGame,
   getFirstTurn,
   getIsOpponentTurn,
+  getRound,
+  getPhaseIndex,
   getDisplayMode,
   saveDisplayMode,
 } from "../state.js";
+import { getAllSubPhases, PHASES } from "../phases.js";
 import { formatSlug } from "../helpers.js";
 import { navigate } from "../navigate.js";
+
+const allSubPhases = getAllSubPhases();
 
 const app = document.getElementById("app");
 
@@ -68,7 +73,7 @@ export function renderSetupScreen() {
   }
 
   document.getElementById("about-btn")?.addEventListener("click", () => {
-    navigate("aboutScreen");
+    navigate("/about");
   });
 
   document.getElementById("settings-btn")?.addEventListener("click", () => {
@@ -275,7 +280,7 @@ function handleFile(file, errorEl) {
       }
       saveSpellSelections(selections);
       resetGame();
-      navigate("render");
+      navigate("/setup");
     } catch (err) {
       errorEl.textContent = `Failed to parse file: ${err.message}`;
       errorEl.classList.remove("hidden");
@@ -290,19 +295,17 @@ function bindArmyActions() {
     if (!firstTurn) {
       const army = getArmy();
       const casters = getCasters(army);
-      navigate(
-        casters.length > 0 ? "spellSelectionScreen" : "unitAssignmentScreen",
-        army,
-      );
+      navigate(casters.length > 0 ? "/spell-selection" : "/unit-assignment");
     } else if (getIsOpponentTurn()) {
-      navigate("opponentTurnScreen", getArmy());
+      navigate(`/opponent/${getRound()}/${PHASES[getPhaseIndex()].id}`);
     } else {
-      navigate("gameScreen", getArmy());
+      const { phase, subPhase } = allSubPhases[getPhaseIndex()];
+      navigate(`/game/${getRound()}/${phase.id}/${subPhase.id}`);
     }
   });
 
   document.getElementById("replace-army-btn").addEventListener("click", () => {
     clearArmy();
-    navigate("render");
+    navigate("/setup");
   });
 }
