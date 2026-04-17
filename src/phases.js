@@ -33,10 +33,8 @@ export const PHASES = [
           "Repeat for all Wizards in the army.",
           "Enchantment and Hex spells only \u2014 Magic Missiles and Magical Vortexes are cast in the Shooting phase.",
         ],
-        note: {
-          title: "Dispel Remains in Play",
-          text: "Attempt to dispel enemy Remains in Play spells. You only need to beat the spell\u2019s minimum casting value (not the original roll). Wizardly dispel range: 18\u201d (Lvl 1\u20132) or 24\u201d (Lvl 3\u20134).",
-        },
+        pinnedRule:
+          "Attempt to dispel enemy Remains in Play spells. You only need to beat the spell\u2019s minimum casting value (not the original roll). Wizardly dispel range: 18\u201d (Lvl 1\u20132) or 24\u201d (Lvl 3\u20134).",
         showCasters: true,
       },
       {

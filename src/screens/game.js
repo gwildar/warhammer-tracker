@@ -134,21 +134,6 @@ export function renderGameScreen(army) {
               : ""
           }
 
-          ${
-            subPhase.note
-              ? `
-                <div class="bg-wh-surface rounded-lg border border-wh-border p-4 mt-1 mb-4">
-                  <ul class="space-y-2">
-                    <li class="flex gap-2 text-sm">
-                      <span class="${PHASE_TEXT[phase.colour]} mt-0.5 shrink-0">&#9654;</span>
-                      <span>${subPhase.note.text}</span>
-                    </li>
-                  </ul>
-                </div>
-              `
-              : ""
-          }
-
           <!-- Contextual army info -->
           ${renderPhaseContext(army, phase, subPhase)}
 
