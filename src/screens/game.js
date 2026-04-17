@@ -1,10 +1,7 @@
 import { PHASES, getAllSubPhases } from "../phases.js";
 import {
   getPhaseIndex,
-  savePhaseIndex,
   getRound,
-  saveRound,
-  saveIsOpponentTurn,
   getFirstTurn,
   saveFirstTurn,
   resetGame,
@@ -240,19 +237,17 @@ function renderPhaseContext(army, phase, subPhase) {
 
 function recordAndNavigate(army, newPhaseIdx, isOpponentTurn, isPrev) {
   recordCurrentPhaseTime(false);
-
+  const newRound =
+    isOpponentTurn && !isPrev && getFirstTurn() === "opponent"
+      ? getRound() + 1
+      : isOpponentTurn && isPrev && getFirstTurn() === "you"
+        ? getRound() - 1
+        : getRound();
   if (isOpponentTurn) {
-    savePhaseIndex(newPhaseIdx);
-    saveIsOpponentTurn(true);
-    if (isPrev) {
-      if (getFirstTurn() === "you") saveRound(getRound() - 1);
-    } else {
-      if (getFirstTurn() === "opponent") saveRound(getRound() + 1);
-    }
-    navigate("opponentTurnScreen", army);
+    navigate(`/opponent/${newRound}/${PHASES[newPhaseIdx].id}`);
   } else {
-    savePhaseIndex(newPhaseIdx);
-    renderGameScreen(army);
+    const { phase, subPhase } = allSubPhases[newPhaseIdx];
+    navigate(`/game/${newRound}/${phase.id}/${subPhase.id}`);
   }
 }
 
@@ -300,14 +295,14 @@ function bindGameActions(army) {
   });
 
   document.getElementById("manage-army-btn")?.addEventListener("click", () => {
-    navigate("setupScreen");
+    navigate("/setup");
   });
 
   document.getElementById("new-game-btn")?.addEventListener("click", () => {
     if (confirm("Start a new game? This will reset the round counter.")) {
       resetGame();
       saveFirstTurn(null);
-      navigate("setupScreen");
+      navigate("/setup");
     }
   });
 }
