@@ -90,7 +90,7 @@ describe("Unit assignment screen", () => {
     renderUnitAssignmentScreen(army);
     const header = getApp().querySelector("header");
     expect(header.textContent).toContain(army.name);
-    expect(header.textContent).toContain("Place Characters");
+    expect(header.textContent).toContain("Characters");
     expect(header.textContent).toContain("Deploy");
     expect(header.textContent).toContain("Who Goes First");
     expect(header.querySelector("#setup-army-btn")).toBeTruthy();

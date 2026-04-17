@@ -3,7 +3,7 @@ import { resetGame, saveFirstTurn } from "../state.js";
 
 const SETUP_PHASES = [
   { id: "spells", label: "Select Spells", bg: "bg-wh-setup-spells" },
-  { id: "characters", label: "Place Characters", bg: "bg-wh-setup-characters" },
+  { id: "characters", label: "Characters", bg: "bg-wh-setup-characters" },
   { id: "scenario", label: "Scenario", bg: "bg-wh-setup-scenario" },
   { id: "deploy", label: "Deploy", bg: "bg-wh-setup-deploy" },
   { id: "first-turn", label: "Who Goes First", bg: "bg-wh-setup-first-turn" },
