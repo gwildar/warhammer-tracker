@@ -280,7 +280,7 @@ function handleFile(file, errorEl) {
       }
       saveSpellSelections(selections);
       resetGame();
-      navigate("/setup");
+      renderSetupScreen();
     } catch (err) {
       errorEl.textContent = `Failed to parse file: ${err.message}`;
       errorEl.classList.remove("hidden");
@@ -306,6 +306,6 @@ function bindArmyActions() {
 
   document.getElementById("replace-army-btn").addEventListener("click", () => {
     clearArmy();
-    navigate("/setup");
+    navigate("/");
   });
 }

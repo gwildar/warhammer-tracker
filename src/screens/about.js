@@ -69,6 +69,6 @@ export function renderAboutScreen() {
   `;
 
   document.getElementById("back-btn").addEventListener("click", () => {
-    navigate("/setup");
+    navigate("/");
   });
 }

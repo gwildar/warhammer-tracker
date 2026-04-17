@@ -187,7 +187,7 @@ describe("Unit Assignment Screen — navigation", () => {
     vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     renderUnitAssignmentScreen(noCasterArmy);
     getApp().querySelector("#prev-btn").click();
-    expect(Nav.navigate).toHaveBeenCalledWith("/setup");
+    expect(Nav.navigate).toHaveBeenCalledWith("/");
   });
 
   it("next-btn navigates to scenario setup", () => {

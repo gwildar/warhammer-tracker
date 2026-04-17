@@ -240,6 +240,6 @@ function bindGameOverActions() {
   document.getElementById("new-game-btn")?.addEventListener("click", () => {
     resetGame();
     saveFirstTurn(null);
-    navigate("/setup");
+    navigate("/");
   });
 }

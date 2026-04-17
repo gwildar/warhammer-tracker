@@ -200,7 +200,7 @@ describe("Spell Selection Screen — navigation", () => {
     vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     renderSpellSelectionScreen(army);
     getApp().querySelector("#prev-btn").click();
-    expect(Nav.navigate).toHaveBeenCalledWith("/setup");
+    expect(Nav.navigate).toHaveBeenCalledWith("/");
   });
 
   it("has a next-btn that navigates to unit assignment", () => {

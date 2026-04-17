@@ -74,7 +74,7 @@ describe("Game Screen", () => {
     window.confirm = () => true;
     document.getElementById("new-game-btn").click();
     window.confirm = origConfirm;
-    expect(Nav.navigate).toHaveBeenCalledWith("/setup");
+    expect(Nav.navigate).toHaveBeenCalledWith("/");
   });
 
   it("shows Manage Army button", () => {

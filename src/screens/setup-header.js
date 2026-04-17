@@ -52,7 +52,7 @@ export function renderSetupHeader(army, currentPhaseId) {
 
 export function bindSetupHeaderEvents() {
   document.getElementById("setup-army-btn")?.addEventListener("click", () => {
-    navigate("/setup");
+    navigate("/");
   });
   document
     .getElementById("setup-new-game-btn")
@@ -60,7 +60,7 @@ export function bindSetupHeaderEvents() {
       if (confirm("Start a new game? This will reset the round counter.")) {
         resetGame();
         saveFirstTurn(null);
-        navigate("/setup");
+        navigate("/");
       }
     });
 }

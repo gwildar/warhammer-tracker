@@ -33,14 +33,14 @@ const allSubPhases = getAllSubPhases();
 function guardArmy(fn) {
   const army = getArmy();
   if (!army) {
-    navigate("/setup");
+    navigate("/");
     return;
   }
   fn(army);
 }
 
 router
-  .on("/setup", () => renderSetupScreen())
+  .on("/", () => renderSetupScreen())
   .on("/unit-assignment", () => guardArmy(renderUnitAssignmentScreen))
   .on("/spell-selection", () => guardArmy(renderSpellSelectionScreen))
   .on("/scenario-setup", () => guardArmy(renderScenarioSetupScreen))
@@ -52,7 +52,7 @@ router
     guardArmy((army) => {
       const idx = subPhaseToIndex(data.phase, data.subphase);
       if (idx === -1) {
-        navigate("/setup");
+        navigate("/");
         return;
       }
       saveRound(Number(data.round));
@@ -65,7 +65,7 @@ router
     guardArmy((army) => {
       const idx = PHASES.findIndex((p) => p.id === data.phase);
       if (idx === -1) {
-        navigate("/setup");
+        navigate("/");
         return;
       }
       saveRound(Number(data.round));
@@ -77,7 +77,7 @@ router
   .notFound(() => {
     const army = getArmy();
     if (!army || !getFirstTurn()) {
-      navigate("/setup");
+      navigate("/");
     } else if (getIsOpponentTurn()) {
       const phase = PHASES[getPhaseIndex()];
       navigate(`/opponent/${getRound()}/${phase.id}`);

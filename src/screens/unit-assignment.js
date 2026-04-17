@@ -139,7 +139,7 @@ export function renderUnitAssignmentScreen(army) {
     if (getCasters(army).length > 0) {
       navigate("/spell-selection");
     } else {
-      navigate("/setup");
+      navigate("/");
     }
   });
 

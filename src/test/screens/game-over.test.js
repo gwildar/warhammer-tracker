@@ -87,7 +87,7 @@ describe("Game Over Screen", () => {
     vi.spyOn(Nav, "navigate").mockImplementation(() => {});
     renderGameOverScreen(army);
     getApp().querySelector("#new-game-btn").click();
-    expect(Nav.navigate).toHaveBeenCalledWith("/setup");
+    expect(Nav.navigate).toHaveBeenCalledWith("/");
     expect(getRound()).toBe(1);
     expect(getFirstTurn()).toBeNull();
   });

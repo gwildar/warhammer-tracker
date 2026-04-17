@@ -36,7 +36,7 @@ export function renderSpellSelectionScreen(army) {
   bindSpellSelectors(army);
 
   document.getElementById("prev-btn").addEventListener("click", () => {
-    navigate("/setup");
+    navigate("/");
   });
 
   document.getElementById("next-btn").addEventListener("click", () => {
