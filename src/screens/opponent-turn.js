@@ -2,10 +2,7 @@ import { PHASES } from "../phases.js";
 import { getAllSubPhases } from "../phases.js";
 import {
   getPhaseIndex,
-  savePhaseIndex,
   getRound,
-  saveRound,
-  saveIsOpponentTurn,
   getFirstTurn,
   saveFirstTurn,
   resetGame,
@@ -28,6 +25,8 @@ import {
 import { renderScoringUI, bindScoringEvents } from "./scoring.js";
 import { renderSpecialFeaturesTable } from "../context/scenario-context.js";
 import { navigate } from "../navigate.js";
+
+const allSubPhases = getAllSubPhases();
 
 const app = document.getElementById("app");
 
@@ -148,19 +147,17 @@ function renderOpponentPhaseContext(army, phase) {
 
 function recordAndNavigate(army, newPhaseIdx, isOpponentTurn, isPrev) {
   recordCurrentPhaseTime(true);
-
   if (!isOpponentTurn) {
-    savePhaseIndex(newPhaseIdx);
-    saveIsOpponentTurn(false);
-    if (isPrev) {
-      if (getFirstTurn() === "opponent") saveRound(getRound() - 1);
-    } else {
-      if (getFirstTurn() === "you") saveRound(getRound() + 1);
-    }
-    navigate("gameScreen", army);
+    const newRound =
+      isPrev && getFirstTurn() === "opponent"
+        ? getRound() - 1
+        : !isPrev && getFirstTurn() === "you"
+          ? getRound() + 1
+          : getRound();
+    const { phase, subPhase } = allSubPhases[newPhaseIdx];
+    navigate(`/game/${newRound}/${phase.id}/${subPhase.id}`);
   } else {
-    savePhaseIndex(newPhaseIdx);
-    renderOpponentTurnScreen(army);
+    navigate(`/opponent/${getRound()}/${PHASES[newPhaseIdx].id}`);
   }
 }
 
@@ -172,7 +169,6 @@ function bindOpponentTurnActions(army) {
     if (idx > 0) {
       recordAndNavigate(army, idx - 1, true, true);
     } else if (canGoBackToPreviousTurn()) {
-      const allSubPhases = getAllSubPhases();
       recordAndNavigate(army, allSubPhases.length - 1, false, true);
     }
   });
@@ -187,14 +183,14 @@ function bindOpponentTurnActions(army) {
   });
 
   document.getElementById("manage-army-btn")?.addEventListener("click", () => {
-    navigate("setupScreen");
+    navigate("/setup");
   });
 
   document.getElementById("new-game-btn")?.addEventListener("click", () => {
     if (confirm("Start a new game? This will reset the round counter.")) {
       resetGame();
       saveFirstTurn(null);
-      navigate("render");
+      navigate("/setup");
     }
   });
 }
