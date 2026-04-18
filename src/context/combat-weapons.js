@@ -822,7 +822,11 @@ export function renderCombatWeaponsContext(army) {
       riderI,
       riderWS,
       riderS,
-      t: isRiddenMonster ? `${baseT + mount.tBonus}` : stats.T || "?",
+      t: isRiddenMonster
+        ? `${baseT + mount.tBonus}`
+        : stats.crewed && stats.A === "-"
+          ? crew[0]?.T || "?"
+          : stats.T || "?",
       w: isRiddenMonster ? `${baseW + mount.wBonus}` : stats.W || "?",
       as: u.armourSave ?? null,
       mr: mergedMR,
@@ -1307,7 +1311,12 @@ export function renderCombatLeadershipContext(army, title = "Break Test") {
 
     const key = `${u.name}||${maxLd}`;
     if (!deduped[key])
-      deduped[key] = { name: u.name, ld: maxLd, ldNum: parseInt(maxLd) || 0 };
+      deduped[key] = {
+        name: u.name,
+        ld: maxLd,
+        ldNum: parseInt(maxLd) || 0,
+        chars: assignedChars.map((c) => c.name),
+      };
   }
 
   const rows = Object.values(deduped).sort((a, b) => b.ldNum - a.ldNum);
@@ -1362,8 +1371,11 @@ export function renderCombatLeadershipContext(army, title = "Break Test") {
           .map(
             (r) => `
           <div class="flex items-center gap-2 p-2 rounded bg-wh-card text-sm">
-            <span class="text-wh-text">${r.name}</span>
-            <span class="text-wh-phase-combat font-mono text-xs ml-auto">Ld${r.ld}</span>
+            <div>
+              <span class="text-wh-text">${r.name}</span>
+              ${r.chars.map((c) => `<div class="text-wh-muted text-xs">${c}</div>`).join("")}
+            </div>
+            <span class="text-wh-phase-combat font-mono text-xs ml-auto self-start">Ld${r.ld}</span>
           </div>
         `,
           )
