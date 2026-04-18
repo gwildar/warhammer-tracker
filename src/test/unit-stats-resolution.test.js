@@ -109,6 +109,12 @@ describe("findMount", () => {
     expect(mount.troopType).toBe("MCr");
   });
 
+  it("resolves OWB {faction} variant mounts — Warhorse {bretonnia}", () => {
+    const mount = findMount("Warhorse {bretonnia}");
+    expect(mount).not.toBeNull();
+    expect(mount.m).toBe(8);
+  });
+
   it("resolves Rhinox standalone entry", () => {
     const mount = findMount("Rhinox");
     expect(mount).not.toBeNull();

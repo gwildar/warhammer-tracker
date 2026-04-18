@@ -103,7 +103,8 @@ export function findMount(name) {
   if (typeof name === "object") return name;
 
   const lower = name.toLowerCase();
-  const key = MOUNT_KEY_OVERRIDES[lower] ?? lower.replace(/\s+/g, "-");
+  const normalised = lower.replace(/[{}]/g, "");
+  const key = MOUNT_KEY_OVERRIDES[lower] ?? normalised.replace(/\s+/g, "-");
   const entry = UNIT_STATS[key];
   if (!entry) return null;
 
