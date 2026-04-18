@@ -266,6 +266,61 @@ describe("renderCombatLeadershipContext — character assignment grouping", () =
   });
 });
 
+describe("war machine toughness in combat", () => {
+  const warmachineArmy = {
+    units: [
+      {
+        id: "bolt-thrower.test",
+        name: "Bolt Thrower",
+        category: "war-machines",
+        strength: 1,
+        unitStrength: 1,
+        points: 45,
+        stats: [
+          {
+            crewed: true,
+            A: "-",
+            I: "-",
+            M: "-",
+            S: "-",
+            T: "6",
+            W: "3",
+            BS: "-",
+            Ld: "-",
+            WS: "-",
+            Name: "Bolt Thrower",
+          },
+          {
+            A: "3",
+            I: "2",
+            M: "3",
+            S: "3",
+            T: "4",
+            W: "3",
+            BS: "3",
+            Ld: "9",
+            WS: "3",
+            Name: "Dwarf Crew",
+          },
+        ],
+        mount: null,
+        specialRules: [],
+        weapons: [],
+        magicItems: [],
+        detachments: [],
+        hasStandard: false,
+        hasMusician: false,
+      },
+    ],
+  };
+
+  it("uses crew toughness (T4) not machine toughness (T6) in combat", () => {
+    const html = renderCombatWeaponsContext(warmachineArmy);
+    expect(html).toContain("T:4");
+    expect(html).not.toContain("T:6");
+  });
+});
+
 describe("combat screen deduplication — units with different magic items are not merged", () => {
   it("both Exalted Champions appear separately when they have different magic items", () => {
     const army = fromOwb(chaosJson);

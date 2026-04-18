@@ -3,7 +3,7 @@ import { findMount } from "../parsers/resolve.js";
 import { getCharacterAssignments } from "../state.js";
 import { displayUnitName } from "../utils/unit-name.js";
 
-const HAND_WEAPON = { name: "Hand Weapon", s: "S", ap: "—", rules: "" };
+const HAND_WEAPON = { name: "Hand Weapon", s: "S", ap: "—", rules: [] };
 
 const CHARACTER_CATEGORIES = new Set(["characters", "lords", "heroes"]);
 
@@ -44,7 +44,7 @@ function findMagicWeapon(unit) {
         name: item.name,
         s: item.s,
         ap: item.ap || "—",
-        rules: item.effect || "",
+        rules: item.effect ? [item.effect] : [],
         attacks: item.attacks || virtueAttacks || null,
         profiles: item.profiles || null,
       };
@@ -79,7 +79,7 @@ function matchRiderWeapons(unit) {
           name: weapon.name,
           s: weapon.s || null,
           ap: weapon.ap || "—",
-          rules: weapon.rules || "",
+          rules: weapon.rules || [],
           attacks: weapon.attacks || null,
           reservedAttacks: weapon.reservedAttacks || null,
         });
@@ -162,21 +162,21 @@ function mergeStrength(baseS, weaponS) {
 
 // Rules already represented visually (tags, stats) — stripped from the rules text line
 const REDUNDANT_RULE_PATTERNS = [
-  { pattern: /,?\s*Extra Attacks\s*\([^)]*\)/i, condition: (w) => w.attacks },
-  { pattern: /,?\s*Magical Attacks/i },
-  { pattern: /,?\s*Poisoned Attacks/i, condition: (w) => w.reservedAttacks },
+  { pattern: /^Extra Attacks\s*\(/i, condition: (w) => w.attacks },
+  { pattern: /^Magical Attacks/i },
+  { pattern: /^Poisoned Attacks/i, condition: (w) => w.reservedAttacks },
 ];
 
 function stripRedundantRules(rules, w) {
-  if (!rules) return "";
-  let cleaned = rules;
-  for (const { pattern, condition } of REDUNDANT_RULE_PATTERNS) {
-    if (!condition || condition(w)) cleaned = cleaned.replace(pattern, "");
-  }
-  return cleaned
-    .replace(/^[,.\s]+/, "")
-    .replace(/[,.\s]+$/, "")
-    .trim();
+  if (!rules?.length) return "";
+  return rules
+    .filter((r) => {
+      for (const { pattern, condition } of REDUNDANT_RULE_PATTERNS) {
+        if ((!condition || condition(w)) && pattern.test(r)) return false;
+      }
+      return true;
+    })
+    .join(", ");
 }
 
 function renderWeaponLine(
@@ -321,7 +321,7 @@ function buildRiderTags(unit, externalGrantedRules = null) {
 }
 
 function isWeaponMagical(w) {
-  return w.rules?.includes("Magical Attacks") || false;
+  return w.rules?.some((r) => /^Magical Attacks/i.test(r)) || false;
 }
 
 function buildMountWeaponTags(w) {
@@ -334,7 +334,7 @@ function buildMountWeaponTags(w) {
 }
 
 function weaponPoisonTags(w) {
-  if (!w.rules?.toLowerCase().includes("poisoned attacks"))
+  if (!w.rules?.some((r) => r.toLowerCase().includes("poisoned attacks")))
     return { inline: "", sub: "" };
   return {
     inline:
@@ -422,7 +422,7 @@ function getChampionWeapons(unit) {
           name: item.name,
           s: item.s || "S",
           ap: item.ap || "—",
-          rules: item.effect || "",
+          rules: item.effect ? [item.effect] : [],
           attacks: item.attacks || null,
         },
       ];
@@ -1065,8 +1065,8 @@ export function renderCombatWeaponsContext(army) {
                 s: "",
                 ap: "—",
                 rules: r.mountArmourBane
-                  ? `Armour Bane (${r.mountArmourBane})`
-                  : "",
+                  ? [`Armour Bane (${r.mountArmourBane})`]
+                  : [],
               },
               null,
               null,

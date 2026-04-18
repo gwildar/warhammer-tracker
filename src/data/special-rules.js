@@ -284,7 +284,7 @@ export const SPECIAL_RULES = [
     id: "cumbersome",
     displayName: "Cumbersome",
     description: "Weapon cannot be used for Stand & Shoot charge reactions.",
-    phases: ["declare-charges"],
+    phases: ["declare-charges", "shoot"],
   },
   {
     id: "evasive",
@@ -946,7 +946,17 @@ export const SPECIAL_RULES = [
   {
     id: "veteran",
     displayName: "Veteran",
-    phases: ["rally", "remaining-moves", "shoot", "choose-fight"],
+    phases: [
+      "rally",
+      "remaining-moves",
+      {
+        subPhaseId: "shoot",
+        description:
+          "If majority, unit may re-roll failed Leadership tests (not Break tests).",
+        opponentOnly: true,
+      },
+      "choose-fight",
+    ],
     description:
       "If majority, unit may re-roll failed Leadership tests (not Break tests).",
   },

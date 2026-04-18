@@ -111,6 +111,9 @@ function buildUnitRules(unit) {
       if (weapon.name) {
         unitRules.push(weapon.name);
       }
+      if (weapon.rules?.length) {
+        unitRules.push(...weapon.rules);
+      }
     }
   }
 

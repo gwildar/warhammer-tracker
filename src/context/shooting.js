@@ -250,7 +250,7 @@ export function renderShootingContext(army) {
                     ${r.weapon.ap && r.weapon.ap !== "—" ? `<span class="text-wh-muted font-mono text-xs">AP${r.weapon.ap}</span>` : ""}
                     ${group.championBS && !r.weapon?.noBS ? `<div class="text-xs text-wh-muted pl-1">Champion: <span class="text-wh-phase-shooting font-mono">BS${group.championBS}</span></div>` : ""}
                   </div>
-                  ${r.weapon.rules ? `<p class="text-xs text-wh-muted mt-0.5">${r.weapon.rules}</p>` : ""}
+                  ${r.weapon.rules?.length ? `<p class="text-xs text-wh-muted mt-0.5">${r.weapon.rules.join(", ")}</p>` : ""}
                   ${group.hasArrowsOfIsha && r.weapon.name.toLowerCase().includes("bow") ? '<p class="text-xs text-wh-accent mt-0.5">+Arrows of Isha: AP -1, Armour Bane (1)</p>' : ""}
 
                 </div>
