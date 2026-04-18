@@ -33,11 +33,23 @@ export function renderMovementStatsContext(army) {
     )
     .map((u) => {
       const mountData = u.mount ?? null;
+      const chars = (charsByUnitId[u.id] || []).map((c) => c.name);
+
+      // War machines: use crew M stat, no march allowed
+      const crewProfile =
+        u.stats?.[0]?.crewed === true
+          ? u.stats.find((s) => s.Ld && s.Ld !== "-")
+          : null;
+      if (crewProfile) {
+        const baseMv =
+          crewProfile.M && crewProfile.M !== "-" ? Number(crewProfile.M) : null;
+        return { u, baseMv, march: null, flyMv: null, chars };
+      }
+
       const mv = resolveMovement(u);
       const baseMv = resolveBaseMv(mountData, mv);
       const march = baseMv != null ? baseMv * 2 : null;
       const flyMv = extractFlyMovement(u, mountData);
-      const chars = (charsByUnitId[u.id] || []).map((c) => c.name);
       return { u, baseMv, march, flyMv, chars };
     })
     .filter(({ baseMv }) => baseMv != null)
@@ -63,7 +75,11 @@ export function renderMovementStatsContext(army) {
               </div>
               <div class="text-right shrink-0 ml-2">
                 <span class="text-wh-phase-movement font-mono text-xs">${baseMv}"</span>
-                <span class="text-wh-muted font-mono text-xs ml-2">March ${march}"</span>
+                ${
+                  march != null
+                    ? `<span class="text-wh-muted font-mono text-xs ml-2">March ${march}"</span>`
+                    : `<span class="text-wh-muted text-xs ml-2">No march</span>`
+                }
                 ${
                   flyMv != null
                     ? `<div class="mt-0.5"><span class="text-blue-400 text-xs mr-1">Fly</span><span class="text-blue-400 font-mono text-xs">${flyMv}"</span></div>`

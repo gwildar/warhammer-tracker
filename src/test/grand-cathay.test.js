@@ -1,5 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { loadArmy } from "./helpers.js";
+import { saveCharacterAssignments } from "../state.js";
+import { renderMovementStatsContext } from "../context/movement.js";
 
 describe("Grand Cathay — army parsing", () => {
   let army;
@@ -99,5 +101,20 @@ describe("Grand Cathay — army parsing", () => {
 
   it("army total points equal 2000", () => {
     expect(army.points).toBe(2000);
+  });
+
+  // ── War machine movement ──────────────────────────────────────────────
+
+  it('Grand Cannon appears in movement table with crew M (4")', () => {
+    saveCharacterAssignments({});
+    const html = renderMovementStatsContext(army);
+    expect(html).toContain("Grand Cannon");
+    expect(html).toContain('4"');
+  });
+
+  it("Grand Cannon shows No march in movement table", () => {
+    saveCharacterAssignments({});
+    const html = renderMovementStatsContext(army);
+    expect(html).toContain("No march");
   });
 });
