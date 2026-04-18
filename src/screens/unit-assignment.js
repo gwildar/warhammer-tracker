@@ -95,6 +95,7 @@ export function renderUnitAssignmentScreen(army) {
         <div class="mb-4">
           <h2 class="text-2xl font-bold text-wh-text">Place Characters in Units</h2>
           <span class="text-xs text-wh-muted">Optional</span>
+          <p class="text-xs text-wh-muted mt-0.5">Hold to drag on mobile</p>
         </div>
         <div class="flex gap-4">
           <div class="w-1/3 shrink-0">
