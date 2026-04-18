@@ -14,12 +14,30 @@ describe("banner highlight in combat card", () => {
     );
   });
 
+  it("shows Totem of Wrath modifiers on the banner row", () => {
+    const army = loadArmy("bretonnia-charge");
+    const html = renderCombatWeaponsContext(army);
+    expect(html).toContain("Totem of Wrath");
+    expect(html).toContain("+1AP");
+    expect(html).toContain("re-roll 1s to wound");
+  });
+
   it("does not include banner name in the plain muted items line", () => {
     const army = loadArmy("bretonnia-charge");
     const html = renderCombatWeaponsContext(army);
     // Plain items line looks like: class="text-xs text-wh-muted ...">Item, Item</div>
     // Banner name must not appear inside that pattern
     expect(html).not.toMatch(/text-wh-muted[^"]*">[^<]*Totem of Wrath/);
+  });
+});
+
+describe("Errantry Banner modifier display", () => {
+  it("shows +1S on charge label on the Errantry Banner row", () => {
+    const army = loadArmy("forest-goblins");
+    saveCharacterAssignments({ "paladin.altni": "pegasus-knights.ddysojsbrl" });
+    const html = renderCombatWeaponsContext(army);
+    expect(html).toContain("Errantry Banner");
+    expect(html).toContain("+1S on charge");
   });
 });
 

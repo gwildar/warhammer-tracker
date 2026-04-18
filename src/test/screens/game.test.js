@@ -1019,7 +1019,7 @@ describe("Errantry Banner conditional strength display", () => {
               points: 30,
               effect: "",
               phases: ["combat"],
-              strengthMod: "+1 on charge",
+              label: "+1S on charge",
             },
           ],
           specialRules: [],

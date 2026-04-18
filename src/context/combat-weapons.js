@@ -373,12 +373,14 @@ function buildFilteredItems(u) {
   const suItems = detectSingleUseItems(u);
   const suNames = new Set(suItems.map((i) => i.name.toLowerCase()));
   const bannerNames = [];
+  const bannerLabels = {};
   const itemNames = buildItemNames(u).filter((n) => {
     if (suNames.has(n.toLowerCase())) return false;
     const item = (u.magicItems || []).find((i) => i.name === n);
     if (!item) return true; // vow entries — always show
     if (item.type === "banner" || item.type === "standard") {
       bannerNames.push(n);
+      if (item.label) bannerLabels[n] = item.label;
       return false;
     }
     if (
@@ -397,7 +399,7 @@ function buildFilteredItems(u) {
       return false;
     return true;
   });
-  return { itemNames, bannerNames, singleUseItems: suItems };
+  return { itemNames, bannerNames, bannerLabels, singleUseItems: suItems };
 }
 
 function findChampions(unit) {
@@ -588,6 +590,15 @@ export function renderCombatWeaponsContext(army) {
         .filter((i) => i.type === "banner" || i.type === "standard")
         .map((i) => i.name),
     );
+    const charBannerLabels = Object.fromEntries(
+      assignedChars.flatMap((char) =>
+        (char.magicItems || [])
+          .filter(
+            (i) => (i.type === "banner" || i.type === "standard") && i.label,
+          )
+          .map((i) => [i.name, i.label]),
+      ),
+    );
 
     // Shared computation (applies to both stats and no-stats paths)
     const unitMRNum = u.magicResistance ? parseInt(u.magicResistance) : 0;
@@ -622,6 +633,7 @@ export function renderCombatWeaponsContext(army) {
       const {
         itemNames: noStatsItemNames,
         bannerNames: noStatsBannerNames,
+        bannerLabels: noStatsBannerLabels,
         singleUseItems: noStatsSuItems,
       } = buildFilteredItems(u);
       entries.push({
@@ -652,6 +664,7 @@ export function renderCombatWeaponsContext(army) {
         singleUseItems: noStatsSuItems,
         itemNames: noStatsItemNames,
         bannerNames: [...noStatsBannerNames, ...charBannerNames],
+        bannerLabels: { ...noStatsBannerLabels, ...charBannerLabels },
         riderTags: buildRiderTags(u, grantedRules),
         combatRules: extractCombatRules(u),
         apMod,
@@ -812,6 +825,7 @@ export function renderCombatWeaponsContext(army) {
     const {
       itemNames: filteredItemNames,
       bannerNames: filteredBannerNames,
+      bannerLabels: filteredBannerLabels,
       singleUseItems: filteredSuItems,
     } = buildFilteredItems(u);
     entries.push({
@@ -850,6 +864,7 @@ export function renderCombatWeaponsContext(army) {
       singleUseItems: filteredSuItems,
       itemNames: filteredItemNames,
       bannerNames: [...filteredBannerNames, ...charBannerNames],
+      bannerLabels: { ...filteredBannerLabels, ...charBannerLabels },
       riderTags: buildRiderTags(u),
       combatRules: extractCombatRules(u),
       crew: [
@@ -1086,14 +1101,11 @@ export function renderCombatWeaponsContext(army) {
   }
 
   function renderBanners(r) {
-    const bannerModMap = Object.fromEntries(
-      (r.conditionalStrengthMods || []).map((m) => [m.source, m]),
-    );
     return (r.bannerNames || [])
       .map((name) => {
-        const mod = bannerModMap[name];
-        const modHtml = mod
-          ? `<span class="text-[10px] text-wh-accent-dim ml-2">${mod.numeric}S ${mod.condition}</span>`
+        const label = r.bannerLabels?.[name];
+        const modHtml = label
+          ? `<span class="text-[10px] text-wh-accent-dim ml-2">${label}</span>`
           : "";
         return `<div class="text-xs mt-0.5 pl-2 border-l-2 border-wh-accent bg-wh-accent/8"><span class="text-[9px] uppercase tracking-wide text-wh-accent-dim mr-1">Banner</span><span class="text-wh-accent">${name}</span>${modHtml}</div>`;
       })

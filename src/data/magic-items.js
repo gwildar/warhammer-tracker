@@ -578,6 +578,7 @@ export const MAGIC_ITEMS = [
     effect:
       "During a turn in which the unit charged, models improve the Armour Piercing characteristic of their weapons by 1, and may re-roll any rolls To Wound of a natural 1.",
     phases: ["combat"],
+    label: "+1AP, re-roll 1s to wound (on charge)",
   },
   {
     name: "Razor Standard",
@@ -1071,8 +1072,7 @@ export const MAGIC_ITEMS = [
     effect:
       "The unit gains +1 Strength on a turn in which it charged. The unit also gains Impetuous.",
     phases: ["combat"],
-
-    strengthMod: "+1 on charge",
+    label: "+1S on charge",
   },
   {
     name: "Banner of Chalons",
@@ -2606,8 +2606,7 @@ export const MAGIC_ITEMS = [
     effect:
       "All models in the unit gain +1 Strength during a turn in which they charged.",
     phases: ["combat"],
-
-    strengthMod: "+1 on charge",
+    label: "+1S on charge",
   },
   {
     name: "Da Spider Banner",
