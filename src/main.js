@@ -14,6 +14,7 @@ import {
   savePhaseIndex,
   saveIsOpponentTurn,
 } from "./state.js";
+import { showErrorOverlay } from "./error-overlay.js";
 import { getAllSubPhases, PHASES, subPhaseToIndex } from "./phases.js";
 import { router, navigate } from "./navigate.js";
 
@@ -96,11 +97,18 @@ if (getSchemaVersion() !== SCHEMA_VERSION) {
 
 resetStartTime();
 
+window.addEventListener("error", (e) => {
+  showErrorOverlay(e.error || new Error(e.message));
+});
+
+window.addEventListener("unhandledrejection", (e) => {
+  showErrorOverlay(
+    e.reason instanceof Error ? e.reason : new Error(String(e.reason)),
+  );
+});
+
 try {
   router.resolve();
-} catch {
-  clearAll();
-  saveSchemaVersion(SCHEMA_VERSION);
-  sessionStorage.setItem("tow-recovered", "1");
-  navigate("/setup");
+} catch (err) {
+  showErrorOverlay(err);
 }
