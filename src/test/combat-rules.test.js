@@ -1,6 +1,9 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { loadArmy } from "./helpers.js";
-import { renderCombatWeaponsContext } from "../context/combat-weapons.js";
+import {
+  renderCombatWeaponsContext,
+  renderCombatLeadershipContext,
+} from "../context/combat-weapons.js";
 import { saveCharacterAssignments } from "../state.js";
 import { getCasters } from "../army.js";
 import { fromOwb } from "../parsers/from-owb.js";
@@ -228,6 +231,38 @@ describe("perModel items in slots — points scale with unit size", () => {
     const army = fromOwb(chaosJson);
     const unit = army.units.find((u) => u.id === "marauder-horsemen.ygvvm");
     expect(unit.points).toBe(108);
+  });
+});
+
+describe("renderCombatLeadershipContext — character assignment grouping", () => {
+  it("character assigned to unit shows no separate Ld row for the character", () => {
+    const army = loadArmy("bretonnian-exiles");
+    const baron = army.units.find((u) => u.name === "Baron");
+    const knights = army.units.find((u) => u.name === "Knight of the Realm");
+    expect(baron).toBeDefined();
+    expect(knights).toBeDefined();
+    saveCharacterAssignments({ [baron.id]: knights.id });
+    const html = renderCombatLeadershipContext(army);
+    // Baron must not appear as its own unit row (text-wh-text span contains the unit name)
+    expect(html).not.toContain('<span class="text-wh-text">Baron</span>');
+  });
+
+  it("unit shows Baron's Ld 9 (higher than Knights Ld 8) when assigned", () => {
+    const army = loadArmy("bretonnian-exiles");
+    const baron = army.units.find((u) => u.name === "Baron");
+    const knights = army.units.find((u) => u.name === "Knight of the Realm");
+    saveCharacterAssignments({ [baron.id]: knights.id });
+    const html = renderCombatLeadershipContext(army);
+    expect(html).toContain("Knight of the Realm");
+    expect(html).toContain("Ld9");
+  });
+
+  it("unassigned character shows as its own row", () => {
+    const army = loadArmy("bretonnian-exiles");
+    saveCharacterAssignments({});
+    const html = renderCombatLeadershipContext(army);
+    expect(html).toContain("Baron");
+    expect(html).toContain("Ld9");
   });
 });
 

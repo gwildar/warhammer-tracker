@@ -1266,23 +1266,48 @@ export function renderCombatResultContext(army) {
   `;
 }
 
+function getUnitLd(u) {
+  if (u.stats) {
+    for (const profile of u.stats) {
+      if (profile.Ld && profile.Ld !== "-") return profile.Ld;
+    }
+  }
+  return "?";
+}
+
 export function renderCombatLeadershipContext(army, title = "Break Test") {
   if (army.units.length === 0) return "";
 
+  const assignments = getCharacterAssignments();
+  const assignedCharIds = new Set(
+    Object.entries(assignments)
+      .filter(([, unitId]) => unitId)
+      .map(([charId]) => charId),
+  );
+  const unitById = Object.fromEntries(army.units.map((u) => [u.id, u]));
+  const charsByUnitId = {};
+  for (const [charId, unitId] of Object.entries(assignments)) {
+    if (!unitId) continue;
+    const charUnit = unitById[charId];
+    if (charUnit) {
+      if (!charsByUnitId[unitId]) charsByUnitId[unitId] = [];
+      charsByUnitId[unitId].push(charUnit);
+    }
+  }
+
   const deduped = {};
   for (const u of army.units) {
-    let ld = "?";
-    if (u.stats) {
-      for (const profile of u.stats) {
-        if (profile.Ld && profile.Ld !== "-") {
-          ld = profile.Ld;
-          break;
-        }
-      }
-    }
-    const key = `${u.name}||${ld}`;
+    if (isCharacter(u) && assignedCharIds.has(u.id)) continue;
+
+    const assignedChars = charsByUnitId[u.id] || [];
+    const allLds = [u, ...assignedChars]
+      .map((x) => parseInt(getUnitLd(x)) || 0)
+      .filter((x) => x > 0);
+    const maxLd = allLds.length > 0 ? String(Math.max(...allLds)) : "?";
+
+    const key = `${u.name}||${maxLd}`;
     if (!deduped[key])
-      deduped[key] = { name: u.name, ld, ldNum: parseInt(ld) || 0 };
+      deduped[key] = { name: u.name, ld: maxLd, ldNum: parseInt(maxLd) || 0 };
   }
 
   const rows = Object.values(deduped).sort((a, b) => b.ldNum - a.ldNum);
