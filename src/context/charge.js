@@ -76,8 +76,10 @@ export function renderChargeContext(army) {
     charsByUnitId.get(unitId).push(charUnit);
   }
 
-  // Exclude assigned characters — their chargeMods are merged into the host unit
-  const unitsToRender = units.filter((u) => !assignedCharIds.has(u.id));
+  // Exclude assigned characters and war machines (cannot charge)
+  const unitsToRender = units.filter(
+    (u) => !assignedCharIds.has(u.id) && u.stats?.[0]?.crewed !== true,
+  );
 
   const rows = unitsToRender.map((u) => {
     const mv = resolveMovement(u);
