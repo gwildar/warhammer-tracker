@@ -1,6 +1,8 @@
 import { describe, it, expect } from "vitest";
 import { validateArmy } from "../army-validation.js";
 import { loadArmy } from "./helpers.js";
+import bretonnianExilesJson from "./fixtures/bretonnian-exiles.owb.json";
+import { parseArmyList } from "../army.js";
 
 describe("validateArmy", () => {
   it("returns empty array for a clean dark-elves army", () => {
@@ -273,5 +275,60 @@ describe("checkNoStatProfile", () => {
       w.message.includes("No stat profile"),
     );
     expect(statWarnings).toHaveLength(0);
+  });
+});
+
+describe("checkExilesMissingVow", () => {
+  it("warns for vow-eligible units in an Exiles army with no active vow", () => {
+    const army = parseArmyList(bretonnianExilesJson);
+    const warnings = validateArmy(bretonnianExilesJson, army);
+    const vowWarnings = warnings.filter((w) =>
+      w.message.includes("No vow is active"),
+    );
+    // "Knights of the Realm on Foot" has vow options but none active
+    expect(
+      vowWarnings.some((w) => w.unitName === "Knights of the Realm on Foot"),
+    ).toBe(true);
+  });
+
+  it("does not warn for vow-eligible units that have an active vow", () => {
+    const army = parseArmyList(bretonnianExilesJson);
+    const warnings = validateArmy(bretonnianExilesJson, army);
+    const vowWarnings = warnings.filter((w) =>
+      w.message.includes("No vow is active"),
+    );
+    // Baron has "The Exile's Vow" active — should not warn
+    expect(vowWarnings.some((w) => w.unitName === "Baron")).toBe(false);
+  });
+
+  it("does not warn for non-vow units in the Exiles army", () => {
+    const army = parseArmyList(bretonnianExilesJson);
+    const warnings = validateArmy(bretonnianExilesJson, army);
+    const vowWarnings = warnings.filter((w) =>
+      w.message.includes("No vow is active"),
+    );
+    // Peasant Bowmen have no vow options — must not appear
+    expect(vowWarnings.some((w) => w.unitName === "Peasant Bowmen")).toBe(
+      false,
+    );
+  });
+
+  it("does not warn for non-Exiles armies", () => {
+    const army = loadArmy("dark-elves");
+    const rawJson = {
+      game: "the-old-world",
+      armyComposition: "dark-elves",
+      characters: [],
+      core: [],
+      special: [],
+      rare: [],
+      mercenaries: [],
+      allies: [],
+    };
+    const warnings = validateArmy(rawJson, army);
+    const vowWarnings = warnings.filter((w) =>
+      w.message.includes("No vow is active"),
+    );
+    expect(vowWarnings).toHaveLength(0);
   });
 });

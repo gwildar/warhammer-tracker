@@ -94,11 +94,31 @@ function checkNoStatProfile(rawJson, army) {
   return warnings;
 }
 
+function checkExilesMissingVow(rawJson) {
+  if (rawJson.armyComposition !== "bretonnian-exiles") return [];
+  const warnings = [];
+  for (const unit of getRawUnits(rawJson)) {
+    const vowOptions = (unit.options || []).filter((o) =>
+      o.name_en?.toLowerCase().includes("vow"),
+    );
+    if (vowOptions.length === 0) continue; // not vow-eligible
+    const hasActiveVow = vowOptions.some((o) => o.active === true);
+    if (!hasActiveVow) {
+      warnings.push({
+        unitName: unit.name_en,
+        message: "No vow is active — is this correct?",
+      });
+    }
+  }
+  return warnings;
+}
+
 const CHECKS = [
   checkShieldInMultipleArrays,
   checkBardingWithoutMount,
   checkMagicWeaponWithMundane,
   checkNoStatProfile,
+  checkExilesMissingVow,
 ];
 
 export function validateArmy(rawJson, army) {
