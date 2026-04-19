@@ -385,9 +385,19 @@ export function computeArmourSave(
     baseAS = parseInt(stats[0].AS);
   }
 
-  // Check armour base from armour strings
-  for (const armourStr of armourStrings) {
-    const lower = armourStr.toLowerCase();
+  // Equipment from units.js stat profile — fallback source for armour/barding when OWB
+  // export omits armor[] entries (e.g. Knights of the Realm on Foot have heavy armour in
+  // units.js but no armor[] array in the OWB export).
+  const statsEquipment = (stats?.[0]?.equipment ?? []).map((e) =>
+    e.toLowerCase(),
+  );
+
+  // Check armour base from armour strings and units.js stat profile equipment
+  const allArmourSources = [
+    ...armourStrings.map((s) => s.toLowerCase()),
+    ...statsEquipment,
+  ];
+  for (const lower of allArmourSources) {
     if (lower.includes("gromril")) {
       if (baseAS === null || 4 < baseAS) baseAS = 4;
       break;
@@ -424,15 +434,9 @@ export function computeArmourSave(
   const hasShield =
     hasMagicShield ||
     equipmentStrings.some((e) => e.toLowerCase().includes("shield")) ||
-    armourStrings.some((a) => a.toLowerCase().includes("shield"));
+    armourStrings.some((a) => a.toLowerCase().includes("shield")) ||
+    statsEquipment.some((e) => e.includes("shield"));
   if (hasShield) modifier -= 1;
-
-  // Barding bonus — from armour string, equipment/options string, mount's equipment,
-  // or the unit's stat profile in units.js (catches OWB exports that omit barding from
-  // the armour string, e.g. Aliénor Pegasus Knights).
-  const statsEquipment = (stats?.[0]?.equipment ?? []).map((e) =>
-    e.toLowerCase(),
-  );
   if (
     armourStrings.some((a) => a.toLowerCase().includes("barding")) ||
     equipmentStrings.some((e) => e.toLowerCase().includes("barding")) ||

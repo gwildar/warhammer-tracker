@@ -17,7 +17,8 @@ export function renderMagicItemsContext(army, phaseId, subPhaseId) {
         phaseId === "shooting" &&
         !subPhaseId &&
         (item.type === "weapon" ||
-          item.effect?.toLowerCase().includes("poisoned attacks"))
+          item.effect?.toLowerCase().includes("poisoned attacks")) &&
+        !item.mr
       )
         continue;
       if (

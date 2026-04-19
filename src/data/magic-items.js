@@ -95,7 +95,7 @@ export const MAGIC_ITEMS = [
     type: "weapon",
     points: 35,
     effect: "Magical Attacks, Magic Resistance (-2).",
-    phases: ["combat", "strategy"],
+    phases: ["combat", "strategy", "shooting"],
     subPhases: ["combat"],
     s: "S",
     ap: "-1",
@@ -495,6 +495,7 @@ export const MAGIC_ITEMS = [
     effect:
       "The wielder can cast the Fireball spell from the Lore of Battle Magic as a Bound spell, with a Power Level of 1.",
     phases: ["shooting"],
+    yourTurnOnly: true,
   },
   {
     name: "Potion of Fervour",

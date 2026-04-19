@@ -986,12 +986,27 @@ export function buildCombatEntries(army) {
 export function buildDefensiveStatsEntries(army) {
   if (army.units.length === 0) return [];
 
-  const deduped = {};
-  for (const u of army.units) {
+  const assignments = getCharacterAssignments();
+  const assignedCharIds = new Set(
+    Object.entries(assignments)
+      .filter(([, unitId]) => unitId)
+      .map(([charId]) => charId),
+  );
+  const unitById = Object.fromEntries(army.units.map((u) => [u.id, u]));
+  const charsByUnitId = {};
+  for (const [charId, unitId] of Object.entries(assignments)) {
+    if (!unitId) continue;
+    const charUnit = unitById[charId];
+    if (charUnit) {
+      if (!charsByUnitId[unitId]) charsByUnitId[unitId] = [];
+      charsByUnitId[unitId].push(charUnit);
+    }
+  }
+
+  function extractStats(u) {
     const stats = u.stats?.[0];
     const mount = u.mount ?? null;
     const isRiddenMonster = mount && mount.wBonus > 0;
-
     const baseT = parseInt(stats?.T) || 0;
     const baseW = parseInt(stats?.W) || 0;
     const t = isRiddenMonster ? `${baseT + mount.tBonus}` : stats?.T || "?";
@@ -999,7 +1014,7 @@ export function buildDefensiveStatsEntries(army) {
     const as = u.armourSave ?? null;
     const ward = u.ward ?? null;
     const regen = u.regen ?? null;
-
+    const mr = u.magicResistance ?? null;
     let ld = "?";
     if (u.stats) {
       for (const profile of u.stats) {
@@ -1009,26 +1024,47 @@ export function buildDefensiveStatsEntries(army) {
         }
       }
     }
-
     const hasEvasive = (u.specialRules || []).some((r) =>
       r.displayName?.toLowerCase().includes("evasive"),
     );
+    return {
+      t,
+      w,
+      as,
+      ward,
+      regen,
+      mr,
+      ld,
+      hasEvasive,
+      mount: isRiddenMonster ? mount.name : null,
+    };
+  }
+
+  const deduped = {};
+  for (const u of army.units) {
+    if (isCharacter(u) && assignedCharIds.has(u.id)) continue;
+
+    const { t, w, as, ward, regen, mr, ld, hasEvasive, mount } =
+      extractStats(u);
+    const assignedChars = charsByUnitId[u.id] || [];
 
     const key = `${u.name}||${t}||${w}||${as}`;
     if (!deduped[key]) {
       deduped[key] = {
         name: u.name,
         strength: u.strength,
-        mount: isRiddenMonster ? mount.name : null,
+        mount,
         t,
         w,
         as,
         ward,
         regen,
+        mr,
         ld,
         ldNum: parseInt(ld) || 0,
         hasEvasive,
         merged: false,
+        chars: assignedChars.map((c) => ({ name: c.name, ...extractStats(c) })),
       };
     } else {
       deduped[key].merged = true;

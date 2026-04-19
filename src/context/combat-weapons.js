@@ -454,9 +454,19 @@ export function renderDefensiveStatsContext(army) {
               ${r.as ? `<span class="text-blue-400 font-mono text-xs">\u{1F6E1}\uFE0FAS:${r.as}</span>` : ""}
               ${r.ward ? `<span class="text-purple-400 font-mono text-xs">\u{1F52E}Ward:${r.ward}</span>` : ""}
               ${r.regen ? `<span class="text-green-400 font-mono text-xs">\u{1F49A}Regen:${r.regen}</span>` : ""}
+              ${r.mr ? `<span class="text-purple-400 font-mono text-xs">\u2728MR:${r.mr}</span>` : ""}
               ${r.hasEvasive ? '<span class="text-green-400 font-mono text-xs">\u{1F3C3}\u200D\u2640\uFE0FEvasive</span>' : ""}
               <span class="text-wh-muted font-mono text-xs ml-auto">Ld${r.ld}</span>
             </div>
+            ${(r.chars || [])
+              .map(
+                (c) => `
+              <div class="flex items-center gap-2 flex-wrap text-sm mt-1 ml-2 border-l border-wh-border pl-2">
+                <span class="text-wh-muted font-semibold">${c.name}${c.mount ? ` (${c.mount})` : ""}</span>
+                ${statRow(c.t, c.w, c.as, c.mr, c.ward, c.regen)}
+              </div>`,
+              )
+              .join("")}
           </div>
         `,
           )
