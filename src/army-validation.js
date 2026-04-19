@@ -59,7 +59,33 @@ function checkBardingWithoutMount(rawJson) {
   return warnings;
 }
 
-const CHECKS = [checkShieldInMultipleArrays, checkBardingWithoutMount];
+function checkMagicWeaponWithMundane(rawJson) {
+  const warnings = [];
+  for (const unit of getRawUnits(rawJson)) {
+    const hasMagicWeapon = (unit.items || []).some((slot) =>
+      (slot.selected || []).some((item) => item.type === "weapon"),
+    );
+    if (!hasMagicWeapon) continue;
+
+    const mundaneWeapons = (unit.equipment || []).filter(
+      (e) =>
+        e.active === true && !e.name_en?.toLowerCase().includes("hand weapon"),
+    );
+    for (const w of mundaneWeapons) {
+      warnings.push({
+        unitName: unit.name_en,
+        message: `Magic weapon equipped alongside ${w.name_en} — only the magic weapon is used in combat.`,
+      });
+    }
+  }
+  return warnings;
+}
+
+const CHECKS = [
+  checkShieldInMultipleArrays,
+  checkBardingWithoutMount,
+  checkMagicWeaponWithMundane,
+];
 
 export function validateArmy(rawJson, army) {
   return CHECKS.flatMap((check) => check(rawJson, army));

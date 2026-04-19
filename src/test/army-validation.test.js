@@ -164,3 +164,77 @@ describe("checkBardingWithoutMount", () => {
     expect(validateArmy(rawJson, { units: [] })).toEqual([]);
   });
 });
+
+describe("checkMagicWeaponWithMundane", () => {
+  it("warns when magic weapon is equipped alongside an active non-hand mundane weapon", () => {
+    const rawJson = {
+      game: "the-old-world",
+      characters: [
+        {
+          name_en: "Baron",
+          equipment: [
+            { name_en: "Hand weapon", active: true },
+            { name_en: "Lance", active: true },
+          ],
+          armor: [],
+          options: [],
+          items: [{ selected: [{ type: "weapon", name_en: "Frontier Axe" }] }],
+        },
+      ],
+      core: [],
+      special: [],
+      rare: [],
+      mercenaries: [],
+      allies: [],
+    };
+    const warnings = validateArmy(rawJson, { units: [] });
+    expect(warnings).toHaveLength(1);
+    expect(warnings[0].unitName).toBe("Baron");
+    expect(warnings[0].message).toContain("Lance");
+    expect(warnings[0].message).toContain(
+      "only the magic weapon is used in combat",
+    );
+  });
+
+  it("does not warn when magic weapon is alongside only a hand weapon", () => {
+    const rawJson = {
+      game: "the-old-world",
+      characters: [
+        {
+          name_en: "Baron",
+          equipment: [{ name_en: "Hand weapon", active: true }],
+          armor: [],
+          options: [],
+          items: [{ selected: [{ type: "weapon", name_en: "Frontier Axe" }] }],
+        },
+      ],
+      core: [],
+      special: [],
+      rare: [],
+      mercenaries: [],
+      allies: [],
+    };
+    expect(validateArmy(rawJson, { units: [] })).toEqual([]);
+  });
+
+  it("does not warn when unit has no magic weapon", () => {
+    const rawJson = {
+      game: "the-old-world",
+      characters: [
+        {
+          name_en: "Baron",
+          equipment: [{ name_en: "Lance", active: true }],
+          armor: [],
+          options: [],
+          items: [{ selected: [{ type: "talisman", name_en: "Lucky Charm" }] }],
+        },
+      ],
+      core: [],
+      special: [],
+      rare: [],
+      mercenaries: [],
+      allies: [],
+    };
+    expect(validateArmy(rawJson, { units: [] })).toEqual([]);
+  });
+});
