@@ -7,6 +7,7 @@ import {
   mergeTagParts,
   getUnitLd,
   buildCombatEntries,
+  buildCombatResultEntries,
 } from "./combat-data.js";
 import { getCharacterAssignments } from "../state.js";
 
@@ -375,57 +376,7 @@ export function renderCombatWeaponsContext(army) {
 }
 
 export function renderCombatResultContext(army) {
-  if (army.units.length === 0) return "";
-
-  const entries = [];
-  for (const u of army.units) {
-    const bonuses = [];
-    let total = 0;
-
-    const hasCloseOrder = (u.specialRules || []).some((r) =>
-      r.displayName?.toLowerCase().includes("close order"),
-    );
-    const primaryTroopType = u.stats?.[0]?.troopType?.find(
-      (t) => !["Ch", "NCh"].includes(t),
-    );
-    const isMonsterOrRiddenMonster =
-      ["MCr", "Be"].includes(primaryTroopType) || u.mount?.wBonus > 0;
-    const isCharacterUnit = ["characters", "lords", "heroes"].includes(
-      u.category,
-    );
-    const closeOrderBlocked =
-      (isMonsterOrRiddenMonster || isCharacterUnit) &&
-      (u.unitStrength ?? 1) < 10;
-    if (hasCloseOrder && !closeOrderBlocked) {
-      bonuses.push("Close Order +1");
-      total += 1;
-    }
-    if (u.hasStandard) {
-      bonuses.push("Standard +1");
-      total += 1;
-    }
-    if (u.hasMusician) {
-      bonuses.push("Musician");
-    }
-
-    if (total === 0 && !u.hasMusician) continue;
-
-    entries.push({
-      name: u.name,
-      strength: u.strength,
-      total,
-      bonuses,
-    });
-  }
-
-  const deduped = {};
-  for (const e of entries) {
-    const key = `${e.name}||${e.total}||${e.bonuses.join(",")}`;
-    if (!deduped[key]) deduped[key] = { ...e, merged: false };
-    else deduped[key].merged = true;
-  }
-
-  const rows = Object.values(deduped).sort((a, b) => b.total - a.total);
+  const rows = buildCombatResultEntries(army);
   if (rows.length === 0) return "";
 
   return `

@@ -1,6 +1,9 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { loadArmy } from "./helpers.js";
-import { buildCombatEntries } from "../context/combat-data.js";
+import {
+  buildCombatEntries,
+  buildCombatResultEntries,
+} from "../context/combat-data.js";
 import { saveCharacterAssignments } from "../state.js";
 
 describe("buildCombatEntries", () => {
@@ -37,5 +40,29 @@ describe("buildCombatEntries", () => {
     const peasant = rows.find((r) => r.unitName === "Peasant Bowman");
     expect(peasant).toBeDefined();
     expect(peasant.merged).toBe(true);
+  });
+});
+
+describe("buildCombatResultEntries", () => {
+  it("returns entries with static bonus shape", () => {
+    const army = loadArmy("bretonnia");
+    const rows = buildCombatResultEntries(army);
+    expect(rows.length).toBeGreaterThan(0);
+    for (const r of rows) {
+      expect(r).toHaveProperty("name");
+      expect(r).toHaveProperty("total");
+      expect(r).toHaveProperty("bonuses");
+      expect(Array.isArray(r.bonuses)).toBe(true);
+    }
+  });
+
+  it("excludes units with neither standard nor musician", () => {
+    const army = loadArmy("dark-elves");
+    const rows = buildCombatResultEntries(army);
+    for (const r of rows) {
+      const hasAny =
+        r.total > 0 || r.bonuses.some((b) => b.includes("Musician"));
+      expect(hasAny).toBe(true);
+    }
   });
 });
