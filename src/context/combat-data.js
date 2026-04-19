@@ -6,7 +6,7 @@ export const HAND_WEAPON = { name: "Hand Weapon", s: "S", ap: "—", rules: [] }
 
 const CHARACTER_CATEGORIES = new Set(["characters", "lords", "heroes"]);
 
-export function isCharacter(unit) {
+function isCharacter(unit) {
   return CHARACTER_CATEGORIES.has(unit.category);
 }
 
@@ -45,7 +45,7 @@ function findMagicWeapon(unit) {
   return null;
 }
 
-export function matchRiderWeapons(unit) {
+function matchRiderWeapons(unit) {
   const weapons = [];
   const matched = new Set();
 
@@ -83,7 +83,7 @@ export function matchRiderWeapons(unit) {
   return { weapons, matched };
 }
 
-export function matchMountWeapons(unit, alreadyMatched) {
+function matchMountWeapons(unit, alreadyMatched) {
   const weapons = [];
   if (!unit.mount) return weapons;
 
@@ -126,7 +126,7 @@ function hasRiderMagicalAttacks(unit) {
   return false;
 }
 
-export function detectItemBonuses(units) {
+function detectItemBonuses(units) {
   let armourBane = 0;
   let apMod = 0;
   const conditionalStrengthMods = [];
@@ -164,11 +164,11 @@ export function detectItemBonuses(units) {
   };
 }
 
-export function isWeaponMagical(w) {
+function isWeaponMagical(w) {
   return w.rules?.some((r) => /^Magical Attacks/i.test(r)) || false;
 }
 
-export function buildRiderTags(unit, externalGrantedRules = null) {
+function buildRiderTags(unit, externalGrantedRules = null) {
   const inlineParts = [];
   const subSpans = [];
   if (hasRiderMagicalAttacks(unit)) {
@@ -254,7 +254,7 @@ function buildItemNames(unit) {
   return names;
 }
 
-export function buildFilteredItems(u) {
+function buildFilteredItems(u) {
   const suItems = detectSingleUseItems(u);
   const suNames = new Set(suItems.map((i) => i.name.toLowerCase()));
   const bannerNames = [];
@@ -287,7 +287,7 @@ export function buildFilteredItems(u) {
   return { itemNames, bannerNames, bannerLabels, singleUseItems: suItems };
 }
 
-export function findChampions(unit) {
+function findChampions(unit) {
   if (!unit.stats || unit.stats.length < 2) return [];
   // Champion is a non-mount stat line (T is a real number, not "-" or "(+N)")
   const champions = [];
@@ -300,7 +300,7 @@ export function findChampions(unit) {
   return champions;
 }
 
-export function getChampionWeapons(unit) {
+function getChampionWeapons(unit) {
   for (const item of unit.magicItems || []) {
     if (!item.championOnly) continue;
     if (item.type === "weapon") {
@@ -318,7 +318,7 @@ export function getChampionWeapons(unit) {
   return null;
 }
 
-export function findCrewProfiles(unit) {
+function findCrewProfiles(unit) {
   const stats0 = unit.stats?.[0];
   if (!stats0 || unit.stats.length < 2) return [];
   if (stats0.crewed || stats0.A === "-") {
@@ -327,7 +327,7 @@ export function findCrewProfiles(unit) {
   return [];
 }
 
-export function findEmbeddedMount(unit) {
+function findEmbeddedMount(unit) {
   if (!unit.stats || unit.stats.length < 2) return null;
   // Look for a mount profile: T is "-" or "(+N)", Ld is "-", not the first line
   for (let idx = 1; idx < unit.stats.length; idx++) {
@@ -390,7 +390,7 @@ const RIDER_ONLY_RULES = new Set(["strike first", "elven reflexes"]);
 // Troop types where rider and mount are distinct models (Elven Reflexes applies to rider only)
 const CAVALRY_TROOP_TYPES = new Set(["LC", "HC", "MCa"]);
 
-export function extractCombatRules(unit) {
+function extractCombatRules(unit) {
   const hasMount = !!unit.mount;
   const isCavalryMount = hasMount && !(unit.mount.wBonus > 0);
   // Regular cavalry units store their type in stats.troopType with no explicit mount object
@@ -442,7 +442,7 @@ export function extractCombatRules(unit) {
   return results;
 }
 
-export function getUnitLd(u) {
+function getUnitLd(u) {
   if (u.stats) {
     for (const profile of u.stats) {
       if (profile.Ld && profile.Ld !== "-") return profile.Ld;
