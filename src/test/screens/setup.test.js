@@ -1,5 +1,9 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
-import { renderSetupScreen, renderArmySummary } from "../../screens/setup.js";
+import {
+  renderSetupScreen,
+  renderArmySummary,
+  setCurrentWarnings,
+} from "../../screens/setup.js";
 import { renderSpellSelectionScreen } from "../../screens/spell-selection-screen.js";
 import { loadArmy, getApp } from "../helpers.js";
 import * as Nav from "../../navigate.js";
@@ -187,6 +191,32 @@ describe("Setup Screen", () => {
       renderSetupScreen();
       getApp().querySelector("#mode-standard").click();
       expect(getDisplayMode()).toBe("standard");
+    });
+  });
+
+  describe("warning panel integration", () => {
+    beforeEach(() => {
+      loadArmy("dark-elves");
+    });
+
+    it("shows warning panel when currentWarnings has entries", () => {
+      setCurrentWarnings([{ unitName: "Dreadlord", message: "test warning" }]);
+      renderSetupScreen();
+      expect(getApp().querySelector("#validation-warnings")).toBeTruthy();
+      expect(getApp().textContent).toContain("test warning");
+    });
+
+    it("hides warning panel after dismiss is clicked", () => {
+      setCurrentWarnings([{ unitName: "Dreadlord", message: "test warning" }]);
+      renderSetupScreen();
+      getApp().querySelector("#dismiss-warnings-btn").click();
+      expect(getApp().querySelector("#validation-warnings")).toBeFalsy();
+    });
+
+    it("does not show warning panel when warnings are empty", () => {
+      setCurrentWarnings([]);
+      renderSetupScreen();
+      expect(getApp().querySelector("#validation-warnings")).toBeFalsy();
     });
   });
 });

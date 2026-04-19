@@ -17,8 +17,15 @@ import {
 import { getAllSubPhases, PHASES } from "../phases.js";
 import { formatSlug } from "../helpers.js";
 import { navigate } from "../navigate.js";
+import { validateArmy } from "../army-validation.js";
 
 const allSubPhases = getAllSubPhases();
+
+let currentWarnings = [];
+
+export function setCurrentWarnings(w) {
+  currentWarnings = w;
+}
 
 const app = document.getElementById("app");
 
@@ -45,7 +52,7 @@ export function renderSetupScreen() {
 
       <main class="flex-1 p-4 max-w-2xl mx-auto w-full">
         ${wasRecovered ? `<p class="text-wh-red text-sm text-center mt-4 mb-2">Your saved game data was cleared due to an error. Please re-upload your army.</p>` : ""}
-        ${army ? renderArmySummary(army) : renderUploadSection()}
+        ${army ? renderArmySummary(army, currentWarnings) : renderUploadSection()}
       </main>
     </div>
 
@@ -302,6 +309,7 @@ function handleFile(file, errorEl) {
     try {
       const json = JSON.parse(reader.result);
       const army = parseArmyList(json);
+      currentWarnings = validateArmy(json, army);
       saveArmy(army);
       const casters = getCasters(army);
       const selections = {};
@@ -336,6 +344,14 @@ function bindArmyActions() {
 
   document.getElementById("replace-army-btn").addEventListener("click", () => {
     clearArmy();
+    currentWarnings = [];
     renderSetupScreen();
   });
+
+  document
+    .getElementById("dismiss-warnings-btn")
+    ?.addEventListener("click", () => {
+      currentWarnings = [];
+      renderSetupScreen();
+    });
 }
