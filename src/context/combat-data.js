@@ -8,7 +8,7 @@ export function isCharacter(unit) {
   return CHARACTER_CATEGORIES.has(unit.category);
 }
 
-export function findVirtueAttacks(unit) {
+function findVirtueAttacks(unit) {
   for (const item of unit.magicItems || []) {
     if (
       item.type === "virtue" &&
@@ -21,7 +21,7 @@ export function findVirtueAttacks(unit) {
   return null;
 }
 
-export function findMagicWeapon(unit) {
+function findMagicWeapon(unit) {
   const virtueAttacks = findVirtueAttacks(unit);
   for (const item of unit.magicItems || []) {
     if (item.championOnly) continue;
