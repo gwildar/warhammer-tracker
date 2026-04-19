@@ -81,6 +81,35 @@ function checkMagicWeaponWithMundane(rawJson) {
   return warnings;
 }
 
+function checkMagicShieldWithMundane(rawJson) {
+  const warnings = [];
+  for (const unit of getRawUnits(rawJson)) {
+    const magicShield = (unit.items || [])
+      .flatMap((slot) => slot.selected || [])
+      .find(
+        (item) =>
+          item.type === "armor" &&
+          item.name_en?.toLowerCase().includes("shield"),
+      );
+    if (!magicShield) continue;
+
+    const hasMundaneShield = [
+      ...(unit.equipment || []),
+      ...(unit.armor || []),
+      ...(unit.options || []),
+    ].some(
+      (e) => e.active === true && e.name_en?.toLowerCase().includes("shield"),
+    );
+    if (hasMundaneShield) {
+      warnings.push({
+        unitName: unit.name_en,
+        message: `Magic shield (${magicShield.name_en}) equipped alongside Shield — only the magic shield applies.`,
+      });
+    }
+  }
+  return warnings;
+}
+
 function checkNoStatProfile(rawJson, army) {
   const warnings = [];
   for (const unit of army.units) {
@@ -117,6 +146,7 @@ const CHECKS = [
   checkShieldInMultipleArrays,
   checkBardingWithoutMount,
   checkMagicWeaponWithMundane,
+  checkMagicShieldWithMundane,
   checkNoStatProfile,
   checkExilesMissingVow,
 ];

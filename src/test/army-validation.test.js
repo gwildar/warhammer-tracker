@@ -241,6 +241,79 @@ describe("checkMagicWeaponWithMundane", () => {
   });
 });
 
+describe("checkMagicShieldWithMundane", () => {
+  it("warns when a magic shield item is selected alongside an active mundane shield", () => {
+    const rawJson = {
+      game: "the-old-world",
+      characters: [
+        {
+          name_en: "Dark Elf Master",
+          equipment: [],
+          armor: [],
+          options: [{ name_en: "Shield", active: true }],
+          items: [
+            { selected: [{ type: "armor", name_en: "Charmed Shield*" }] },
+          ],
+        },
+      ],
+      core: [],
+      special: [],
+      rare: [],
+      mercenaries: [],
+      allies: [],
+    };
+    const warnings = validateArmy(rawJson, { units: [] });
+    expect(warnings).toHaveLength(1);
+    expect(warnings[0].unitName).toBe("Dark Elf Master");
+    expect(warnings[0].message).toContain("Charmed Shield*");
+    expect(warnings[0].message).toContain("Shield");
+  });
+
+  it("does not warn when unit has a magic shield but no mundane shield", () => {
+    const rawJson = {
+      game: "the-old-world",
+      characters: [
+        {
+          name_en: "Dark Elf Master",
+          equipment: [],
+          armor: [],
+          options: [],
+          items: [
+            { selected: [{ type: "armor", name_en: "Charmed Shield*" }] },
+          ],
+        },
+      ],
+      core: [],
+      special: [],
+      rare: [],
+      mercenaries: [],
+      allies: [],
+    };
+    expect(validateArmy(rawJson, { units: [] })).toEqual([]);
+  });
+
+  it("does not warn when unit has a mundane shield but no magic shield", () => {
+    const rawJson = {
+      game: "the-old-world",
+      characters: [
+        {
+          name_en: "Dark Elf Master",
+          equipment: [],
+          armor: [],
+          options: [{ name_en: "Shield", active: true }],
+          items: [{ selected: [{ type: "armor", name_en: "Lucky Charm" }] }],
+        },
+      ],
+      core: [],
+      special: [],
+      rare: [],
+      mercenaries: [],
+      allies: [],
+    };
+    expect(validateArmy(rawJson, { units: [] })).toEqual([]);
+  });
+});
+
 describe("checkNoStatProfile", () => {
   it("warns for a parsed unit with no stats", () => {
     const rawJson = {
