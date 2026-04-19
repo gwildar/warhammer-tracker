@@ -467,9 +467,7 @@ export function buildCombatResultEntries(army) {
     );
     const isMonsterOrRiddenMonster =
       ["MCr", "Be"].includes(primaryTroopType) || u.mount?.wBonus > 0;
-    const isCharacterUnit = ["characters", "lords", "heroes"].includes(
-      u.category,
-    );
+    const isCharacterUnit = isCharacter(u);
     const closeOrderBlocked =
       (isMonsterOrRiddenMonster || isCharacterUnit) &&
       (u.unitStrength ?? 1) < 10;
