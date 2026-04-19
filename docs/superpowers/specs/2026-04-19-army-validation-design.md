@@ -76,11 +76,13 @@ For units with `mounts[]`: if any active entry in `equipment[]`, `armor[]`, or `
 
 Message: `"Barding equipped but no mount is active."`
 
-### 3. Magic weapon + non-hand mundane weapon (parsed unit)
+### 3. Magic weapon + non-hand mundane weapon (raw JSON)
 
-For each unit in `army.units`: if `unit.magicItems` contains an entry with `type === "weapon"` and `phases` includes `"combat"`, and `unit.weapons` contains any entry whose name is not `"Hand Weapon"`, emit a warning.
+Note: this check must use the raw JSON, not the parsed army. `resolveWeapons` in the parser already replaces mundane weapons with a magic weapon and returns early, so `unit.weapons` on the parsed army will never contain both simultaneously — the inconsistency is invisible from parsed data.
 
-Message: `"Magic weapon equipped alongside [weapon name] — only the magic weapon is used in combat."`
+For each unit: find magic weapon items in `unit.items[n].selected[]` where `type === "weapon"`. If any exist, check `unit.equipment[]` for active entries (where `active === true`) whose `name_en` does not include "hand weapon" (case-insensitive). If any such entry exists, emit a warning per mundane weapon name.
+
+Message: `"Magic weapon equipped alongside [name_en] — only the magic weapon is used in combat."`
 
 ### 4. No stat profile (parsed unit)
 
