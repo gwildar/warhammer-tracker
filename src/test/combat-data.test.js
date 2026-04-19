@@ -4,6 +4,7 @@ import {
   buildCombatEntries,
   buildCombatResultEntries,
   buildCombatLeadershipData,
+  buildDefensiveStatsEntries,
 } from "../context/combat-data.js";
 import { saveCharacterAssignments } from "../state.js";
 
@@ -96,5 +97,31 @@ describe("buildCombatResultEntries", () => {
         r.total > 0 || r.bonuses.some((b) => b.includes("Musician"));
       expect(hasAny).toBe(true);
     }
+  });
+});
+
+describe("buildDefensiveStatsEntries", () => {
+  it("returns entries with defensive stat shape", () => {
+    const army = loadArmy("dark-elves");
+    const rows = buildDefensiveStatsEntries(army);
+    expect(rows.length).toBeGreaterThan(0);
+    const entry = rows[0];
+    expect(entry).toHaveProperty("name");
+    expect(entry).toHaveProperty("t");
+    expect(entry).toHaveProperty("w");
+    expect(entry).toHaveProperty("ld");
+    expect(entry).toHaveProperty("ldNum");
+  });
+
+  it("sorts by leadership descending", () => {
+    const army = loadArmy("dark-elves");
+    const rows = buildDefensiveStatsEntries(army);
+    for (let i = 1; i < rows.length; i++) {
+      expect(rows[i].ldNum).toBeLessThanOrEqual(rows[i - 1].ldNum);
+    }
+  });
+
+  it("returns empty array for empty army", () => {
+    expect(buildDefensiveStatsEntries({ units: [] })).toEqual([]);
   });
 });

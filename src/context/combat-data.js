@@ -982,3 +982,58 @@ export function buildCombatEntries(army) {
 
   return Object.values(deduped).sort((a, b) => b.iNum - a.iNum);
 }
+
+export function buildDefensiveStatsEntries(army) {
+  if (army.units.length === 0) return [];
+
+  const deduped = {};
+  for (const u of army.units) {
+    const stats = u.stats?.[0];
+    const mount = u.mount ?? null;
+    const isRiddenMonster = mount && mount.wBonus > 0;
+
+    const baseT = parseInt(stats?.T) || 0;
+    const baseW = parseInt(stats?.W) || 0;
+    const t = isRiddenMonster ? `${baseT + mount.tBonus}` : stats?.T || "?";
+    const w = isRiddenMonster ? `${baseW + mount.wBonus}` : stats?.W || "?";
+    const as = u.armourSave ?? null;
+    const ward = u.ward ?? null;
+    const regen = u.regen ?? null;
+
+    let ld = "?";
+    if (u.stats) {
+      for (const profile of u.stats) {
+        if (profile.Ld && profile.Ld !== "-") {
+          ld = profile.Ld;
+          break;
+        }
+      }
+    }
+
+    const hasEvasive = (u.specialRules || []).some((r) =>
+      r.displayName?.toLowerCase().includes("evasive"),
+    );
+
+    const key = `${u.name}||${t}||${w}||${as}`;
+    if (!deduped[key]) {
+      deduped[key] = {
+        name: u.name,
+        strength: u.strength,
+        mount: isRiddenMonster ? mount.name : null,
+        t,
+        w,
+        as,
+        ward,
+        regen,
+        ld,
+        ldNum: parseInt(ld) || 0,
+        hasEvasive,
+        merged: false,
+      };
+    } else {
+      deduped[key].merged = true;
+    }
+  }
+
+  return Object.values(deduped).sort((a, b) => b.ldNum - a.ldNum);
+}
