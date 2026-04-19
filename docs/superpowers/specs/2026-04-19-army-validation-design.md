@@ -86,6 +86,16 @@ For each unit in `army.units`: if `!unit.stats?.length`, emit a warning.
 
 Message: `"No stat profile found — combat display will be incomplete."`
 
+### 5. Missing vow in Bretonnian Exiles army (raw JSON)
+
+Only runs when `rawJson.armyComposition === "bretonnian-exiles"`.
+
+For each unit across all categories: collect options whose `name_en` contains "Vow" (case-insensitive). If at least one such option exists (unit is vow-eligible) and none has `active: true`, emit a warning.
+
+This naturally excludes non-vow units (Peasant Bowmen, Yeomen, Outcast Wizard, etc.) which have no vow options. It does not warn about units that deliberately took the Questing Vow — it only fires when no vow is active at all.
+
+Message: `"No vow is active — is this correct?"`
+
 ## Warning Panel
 
 Rendered in `renderArmySummary`, above the Start button. Only shown if warnings exist.
