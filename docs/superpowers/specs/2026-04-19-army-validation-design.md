@@ -70,7 +70,9 @@ Message: `"Shield appears in multiple data fields — check your OWB export."`
 
 ### 2. Barding with no active mount (raw JSON)
 
-For each unit, check if any active entry in `equipment[]`, `armor[]`, or `options[]` includes "barding" (case-insensitive). If yes, check `mounts[]` for an entry with `active: true` and `name_en` not equal to "On foot". If no such mount exists, emit a warning.
+Only applies to units that have at least one entry in `mounts[]` (i.e. mounting is optional for this unit). Fixed cavalry (Blood Knights, Knights Errant, etc.) have no `mounts[]` array and are skipped — their barding is part of their permanent equipment.
+
+For units with `mounts[]`: if any active entry in `equipment[]`, `armor[]`, or `options[]` includes "barding" (case-insensitive), check `mounts[]` for an entry with `active: true` and `name_en` not equal to "On foot". If no such mount exists, emit a warning.
 
 Message: `"Barding equipped but no mount is active."`
 
