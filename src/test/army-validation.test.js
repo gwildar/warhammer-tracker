@@ -87,3 +87,80 @@ describe("checkShieldInMultipleArrays", () => {
     expect(validateArmy(rawJson, { units: [] })).toEqual([]);
   });
 });
+
+describe("checkBardingWithoutMount", () => {
+  it("warns when barding is active but no non-foot mount is selected", () => {
+    const rawJson = {
+      game: "the-old-world",
+      characters: [
+        {
+          name_en: "Baron",
+          equipment: [],
+          armor: [],
+          options: [{ name_en: "Barding", active: true }],
+          mounts: [
+            { name_en: "On foot", active: true },
+            { name_en: "Barded Warhorse", active: false },
+          ],
+        },
+      ],
+      core: [],
+      special: [],
+      rare: [],
+      mercenaries: [],
+      allies: [],
+    };
+    const warnings = validateArmy(rawJson, { units: [] });
+    expect(warnings).toHaveLength(1);
+    expect(warnings[0].unitName).toBe("Baron");
+    expect(warnings[0].message).toContain(
+      "Barding equipped but no mount is active",
+    );
+  });
+
+  it("does not warn when barding is active and a mount is selected", () => {
+    const rawJson = {
+      game: "the-old-world",
+      characters: [
+        {
+          name_en: "Baron",
+          equipment: [],
+          armor: [],
+          options: [{ name_en: "Barding", active: true }],
+          mounts: [
+            { name_en: "On foot", active: false },
+            { name_en: "Barded Warhorse", active: true },
+          ],
+        },
+      ],
+      core: [],
+      special: [],
+      rare: [],
+      mercenaries: [],
+      allies: [],
+    };
+    expect(validateArmy(rawJson, { units: [] })).toEqual([]);
+  });
+
+  it("does not warn for fixed cavalry with no mounts[] array", () => {
+    // Blood Knights, Knights Errant, etc. have barding in armor but no mounts[] choice
+    const rawJson = {
+      game: "the-old-world",
+      core: [
+        {
+          name_en: "Blood Knights",
+          equipment: [],
+          armor: [{ name_en: "Full plate armour, Barding", active: true }],
+          options: [],
+          mounts: [],
+        },
+      ],
+      characters: [],
+      special: [],
+      rare: [],
+      mercenaries: [],
+      allies: [],
+    };
+    expect(validateArmy(rawJson, { units: [] })).toEqual([]);
+  });
+});
