@@ -99,7 +99,7 @@ export function matchMountWeapons(unit, alreadyMatched) {
   return weapons;
 }
 
-export function detectSingleUseItems(unit) {
+function detectSingleUseItems(unit) {
   return (unit.magicItems || []).filter(
     (item) =>
       (item.type === "armour" || item.type === "talisman") &&
