@@ -470,6 +470,46 @@ describe("Combat phase with Bretonnian Exiles", () => {
   });
 });
 
+describe("Armour saves with barding from mount (Aliénor de Parravon)", () => {
+  let army;
+
+  beforeEach(() => {
+    army = loadArmy("aliénor-de-parravon-");
+    startGame(army);
+    savePhaseIndex(10); // choose-fight
+  });
+
+  it("Baron on Barded Pegasus gets AS:3+ (heavy armour + shield + barding from mount)", () => {
+    renderGameScreen(army);
+    const combatPanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    const baronCard = [...combatPanel.querySelectorAll(".bg-wh-card")].find(
+      (el) => el.textContent.includes("Baron"),
+    );
+    expect(baronCard).toBeTruthy();
+    expect(baronCard.textContent).toContain("AS:3+");
+  });
+
+  it("Paladin on Barded Pegasus gets AS:3+ (heavy armour + shield + barding from mount)", () => {
+    renderGameScreen(army);
+    const combatPanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    const paladinCard = [...combatPanel.querySelectorAll(".bg-wh-card")].find(
+      (el) => el.textContent.includes("Paladin"),
+    );
+    expect(paladinCard).toBeTruthy();
+    expect(paladinCard.textContent).toContain("AS:3+");
+  });
+
+  it("Pegasus Knights get AS:3+ (heavy armour + barding in armour string + shield)", () => {
+    renderGameScreen(army);
+    const combatPanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    const knightsCard = [...combatPanel.querySelectorAll(".bg-wh-card")].find(
+      (el) => el.textContent.includes("Pegasus Knight"),
+    );
+    expect(knightsCard).toBeTruthy();
+    expect(knightsCard.textContent).toContain("AS:3+");
+  });
+});
+
 describe("Vampire Counts army", () => {
   let army;
 
