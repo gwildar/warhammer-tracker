@@ -27,7 +27,9 @@
           function (i) {
             plausible.o = i || {};
           }));
-      plausible.init();
+      plausible.init({
+        hashBasedRouting: true,
+      });
     </script>
   </head>
   <body class="bg-wh-bg text-wh-text min-h-dvh">
