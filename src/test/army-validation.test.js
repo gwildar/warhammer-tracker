@@ -238,3 +238,40 @@ describe("checkMagicWeaponWithMundane", () => {
     expect(validateArmy(rawJson, { units: [] })).toEqual([]);
   });
 });
+
+describe("checkNoStatProfile", () => {
+  it("warns for a parsed unit with no stats", () => {
+    const rawJson = {
+      game: "the-old-world",
+      characters: [],
+      core: [],
+      special: [],
+      rare: [],
+      mercenaries: [],
+      allies: [],
+    };
+    const army = { units: [{ name: "Mysterious Unit", stats: [] }] };
+    const warnings = validateArmy(rawJson, army);
+    expect(warnings).toHaveLength(1);
+    expect(warnings[0].unitName).toBe("Mysterious Unit");
+    expect(warnings[0].message).toContain("No stat profile found");
+  });
+
+  it("does not warn for units with stats", () => {
+    const rawJson = {
+      game: "the-old-world",
+      characters: [],
+      core: [],
+      special: [],
+      rare: [],
+      mercenaries: [],
+      allies: [],
+    };
+    const army = loadArmy("dark-elves");
+    const warnings = validateArmy(rawJson, army);
+    const statWarnings = warnings.filter((w) =>
+      w.message.includes("No stat profile"),
+    );
+    expect(statWarnings).toHaveLength(0);
+  });
+});

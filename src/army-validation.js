@@ -81,10 +81,24 @@ function checkMagicWeaponWithMundane(rawJson) {
   return warnings;
 }
 
+function checkNoStatProfile(rawJson, army) {
+  const warnings = [];
+  for (const unit of army.units) {
+    if (!unit.stats?.length) {
+      warnings.push({
+        unitName: unit.name,
+        message: "No stat profile found — combat display will be incomplete.",
+      });
+    }
+  }
+  return warnings;
+}
+
 const CHECKS = [
   checkShieldInMultipleArrays,
   checkBardingWithoutMount,
   checkMagicWeaponWithMundane,
+  checkNoStatProfile,
 ];
 
 export function validateArmy(rawJson, army) {
