@@ -415,25 +415,29 @@ export function computeArmourSave(
     if (item.armourMod) modifier += item.armourMod;
   }
 
-  // Magic shield bonus (items like Shield of Ghrond that are armour-type with "Shield." effect)
+  // Shield bonus (magic shield, equipment, or armour strings — at most once).
+  // A magic shield (e.g. Charmed Shield, Enchanted Shield) and a mundane shield are
+  // mutually exclusive; only one -1 applies regardless of how many sources detect a shield.
   const hasMagicShield = magicItems.some(
     (item) => item.type === "armour" && item.effect?.startsWith("Shield."),
   );
-  if (hasMagicShield) modifier -= 1;
+  const hasShield =
+    hasMagicShield ||
+    equipmentStrings.some((e) => e.toLowerCase().includes("shield")) ||
+    armourStrings.some((a) => a.toLowerCase().includes("shield"));
+  if (hasShield) modifier -= 1;
 
-  // Shield bonus from equipment/armour strings
-  if (equipmentStrings.some((e) => e.toLowerCase().includes("shield"))) {
-    modifier -= 1;
-  }
-  if (armourStrings.some((a) => a.toLowerCase().includes("shield"))) {
-    modifier -= 1;
-  }
-
-  // Barding bonus — from armour string, equipment/options string, or mount's equipment
+  // Barding bonus — from armour string, equipment/options string, mount's equipment,
+  // or the unit's stat profile in units.js (catches OWB exports that omit barding from
+  // the armour string, e.g. Aliénor Pegasus Knights).
+  const statsEquipment = (stats?.[0]?.equipment ?? []).map((e) =>
+    e.toLowerCase(),
+  );
   if (
     armourStrings.some((a) => a.toLowerCase().includes("barding")) ||
     equipmentStrings.some((e) => e.toLowerCase().includes("barding")) ||
-    mount?.weapons?.includes("barding")
+    mount?.weapons?.includes("barding") ||
+    statsEquipment.some((e) => e.includes("barding"))
   ) {
     modifier -= 1;
   }
