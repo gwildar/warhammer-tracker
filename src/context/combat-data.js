@@ -1,4 +1,5 @@
 import { COMBAT_WEAPONS, getWeapon } from "../data/weapons.js";
+import { findMount } from "../parsers/resolve.js";
 
 export const HAND_WEAPON = { name: "Hand Weapon", s: "S", ap: "—", rules: [] };
 
@@ -283,4 +284,168 @@ export function buildFilteredItems(u) {
     return true;
   });
   return { itemNames, bannerNames, bannerLabels, singleUseItems: suItems };
+}
+
+export function findChampions(unit) {
+  if (!unit.stats || unit.stats.length < 2) return [];
+  // Champion is a non-mount stat line (T is a real number, not "-" or "(+N)")
+  const champions = [];
+  for (let idx = 1; idx < unit.stats.length; idx++) {
+    const s = unit.stats[idx];
+    if (s.Ld !== "-" && s.T !== "-" && !s.T?.startsWith("(+")) {
+      champions.push(s);
+    }
+  }
+  return champions;
+}
+
+export function getChampionWeapons(unit) {
+  for (const item of unit.magicItems || []) {
+    if (!item.championOnly) continue;
+    if (item.type === "weapon") {
+      return [
+        {
+          name: item.name,
+          s: item.s || "S",
+          ap: item.ap || "—",
+          rules: item.effect ? [item.effect] : [],
+          attacks: item.attacks || null,
+        },
+      ];
+    }
+  }
+  return null;
+}
+
+export function findCrewProfiles(unit) {
+  const stats0 = unit.stats?.[0];
+  if (!stats0 || unit.stats.length < 2) return [];
+  if (stats0.crewed || stats0.A === "-") {
+    return unit.stats.slice(1).filter((s) => s.A && s.A !== "-");
+  }
+  return [];
+}
+
+export function findEmbeddedMount(unit) {
+  if (!unit.stats || unit.stats.length < 2) return null;
+  // Look for a mount profile: T is "-" or "(+N)", Ld is "-", not the first line
+  for (let idx = 1; idx < unit.stats.length; idx++) {
+    const s = unit.stats[idx];
+    if (s.Ld === "-" && (s.T === "-" || s.T?.startsWith("(+"))) {
+      // Try to match name against known mounts, stripping "(xN)" suffixes
+      const cleanName = s.Name.replace(/\s*\(x?\d+\)$/i, "").trim();
+      const mount = findMount(cleanName) || findMount(s.Name);
+      return { statLine: s, mountData: mount };
+    }
+  }
+  return null;
+}
+
+const COMBAT_RELEVANT_RULES = [
+  "Untutored Arcanist",
+  "armour bane",
+  "beguiling aura",
+  "killing blow",
+  "flaming attacks",
+  "immune to psychology",
+  "stubborn",
+  "unbreakable",
+  "frenzy",
+  "hatred",
+  "eternal hatred",
+  "counter charge",
+  "furious charge",
+  "first charge",
+  "strike first",
+  "strike last",
+  "cleaving blow",
+  "multiple wounds",
+  "shield of the lady",
+  "aura of the lady",
+  "living saints",
+  "murderous",
+  "elven reflexes",
+  "mighty constitution",
+  "valour of ages",
+  "arcane backlash",
+  "unstable",
+  "aspect of the hound",
+  "aspect of the bear",
+  "aspect of the boar",
+  "aspect of the cat",
+  "dance of death",
+  "dark venom",
+  "manbane",
+  "rune of khaine",
+  "stony stare",
+  "wilful beast",
+  "witchbrew",
+  "sea dragon cloak",
+  "abyssal howl",
+];
+
+// Rules that apply only to the controlling model (rider/handler), not beasts or mounts
+const RIDER_ONLY_RULES = new Set(["strike first", "elven reflexes"]);
+// Troop types where rider and mount are distinct models (Elven Reflexes applies to rider only)
+const CAVALRY_TROOP_TYPES = new Set(["LC", "HC", "MCa"]);
+
+export function extractCombatRules(unit) {
+  const hasMount = !!unit.mount;
+  const isCavalryMount = hasMount && !(unit.mount.wBonus > 0);
+  // Regular cavalry units store their type in stats.troopType with no explicit mount object
+  const hasCavalryTroopType = (unit.stats?.[0]?.troopType ?? []).some((t) =>
+    CAVALRY_TROOP_TYPES.has(t),
+  );
+  const isRiderContext = isCavalryMount || hasCavalryTroopType;
+  const hasDetachments = (unit.detachments?.length ?? 0) > 0;
+  const results = [];
+  for (const rule of unit.specialRules || []) {
+    const lower = (rule.displayName || "")
+      .toLowerCase()
+      .replace(/\s*\([^)]*\)/g, "")
+      .replace(/\s*\{[^}]*\}/g, "")
+      .trim();
+    if (COMBAT_RELEVANT_RULES.some((cr) => lower.includes(cr))) {
+      let displayName = rule.displayName.replace(/\s*\{[^}]*\}/g, "").trim();
+      if (lower === "elven reflexes") {
+        if (isRiderContext) displayName += " (rider)";
+        else if (hasDetachments) displayName += " (handler)";
+      } else if (RIDER_ONLY_RULES.has(lower)) {
+        if (hasMount) displayName += " (rider)";
+        else if (hasDetachments) displayName += " (handler)";
+      }
+      results.push(displayName);
+    }
+  }
+  if (
+    unit.mount?.counterCharge &&
+    !results.some((r) => r.toLowerCase().includes("counter charge"))
+  ) {
+    results.push("Counter Charge");
+  }
+  if (
+    unit.mount?.furiousCharge &&
+    !results.some((r) => r.toLowerCase().includes("furious charge"))
+  ) {
+    results.push("Furious Charge");
+  }
+  if (
+    unit.mount?.firstCharge &&
+    !results.some((r) => r.toLowerCase().includes("first charge"))
+  ) {
+    results.push("First Charge");
+  }
+  if (unit.mount?.strikeFirst) {
+    results.push("Strike First (mount)");
+  }
+  return results;
+}
+
+export function getUnitLd(u) {
+  if (u.stats) {
+    for (const profile of u.stats) {
+      if (profile.Ld && profile.Ld !== "-") return profile.Ld;
+    }
+  }
+  return "?";
 }
