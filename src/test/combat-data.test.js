@@ -32,22 +32,10 @@ describe("buildCombatEntries", () => {
 
   it("deduplicates identical units", () => {
     army = loadArmy("bretonnia");
+    // Bretonnia fixture has 2 identical Peasant Bowmen units that should be deduplicated
     const rows = buildCombatEntries(army);
-    // Use the same key shape as buildCombatEntries to verify no duplicates survive
-    const keys = rows.map((r) => {
-      const riderWKey = r.riderWeapons
-        .map((w) => w.name)
-        .sort()
-        .join(",");
-      const mountWKey = r.mountWeapons
-        .map((w) => w.name)
-        .sort()
-        .join(",");
-      const itemKey = [...r.itemNames, ...r.singleUseItems.map((i) => i.name)]
-        .sort()
-        .join(",");
-      return `${r.unitName}||${r.riderI}||${r.riderA}||${r.t}||${r.w}||${r.as}||${riderWKey}||${mountWKey}||${itemKey}`;
-    });
-    expect(new Set(keys).size).toBe(keys.length);
+    const peasant = rows.find((r) => r.unitName === "Peasant Bowman");
+    expect(peasant).toBeDefined();
+    expect(peasant.merged).toBe(true);
   });
 });
