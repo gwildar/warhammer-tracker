@@ -429,9 +429,10 @@ export function computeArmourSave(
     modifier -= 1;
   }
 
-  // Barding bonus — from rider's own armour string, or from mount's equipment
+  // Barding bonus — from armour string, equipment/options string, or mount's equipment
   if (
     armourStrings.some((a) => a.toLowerCase().includes("barding")) ||
+    equipmentStrings.some((e) => e.toLowerCase().includes("barding")) ||
     mount?.weapons?.includes("barding")
   ) {
     modifier -= 1;

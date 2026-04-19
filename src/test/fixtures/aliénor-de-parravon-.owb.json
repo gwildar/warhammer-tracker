@@ -139,7 +139,7 @@
       ],
       "armor": [
         {
-          "name_en": "Heavy armour, Barding",
+          "name_en": "Heavy armour",
           "points": 0,
           "perModel": true,
           "active": true,
@@ -147,7 +147,15 @@
           "id": 0
         }
       ],
-      "options": [],
+      "options": [
+        {
+          "name_en": "Barding",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "id": 0
+        }
+      ],
       "mounts": [],
       "items": [],
       "specialRules": {
