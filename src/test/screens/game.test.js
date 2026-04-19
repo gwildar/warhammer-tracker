@@ -508,6 +508,26 @@ describe("Armour saves with barding from mount (Aliénor de Parravon)", () => {
     expect(knightsCard).toBeTruthy();
     expect(knightsCard.textContent).toContain("AS:3+");
   });
+
+  it("Baron on Barded Pegasus shows W:4 (W3 + wBonus 1)", () => {
+    renderGameScreen(army);
+    const combatPanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    const baronCard = [...combatPanel.querySelectorAll(".bg-wh-card")].find(
+      (el) => el.textContent.includes("Baron"),
+    );
+    expect(baronCard).toBeTruthy();
+    expect(baronCard.textContent).toContain("W:4");
+  });
+
+  it("Paladin on Barded Pegasus shows W:3 (W2 + wBonus 1)", () => {
+    renderGameScreen(army);
+    const combatPanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    const paladinCard = [...combatPanel.querySelectorAll(".bg-wh-card")].find(
+      (el) => el.textContent.includes("Paladin"),
+    );
+    expect(paladinCard).toBeTruthy();
+    expect(paladinCard.textContent).toContain("W:3");
+  });
 });
 
 describe("Vampire Counts army", () => {
