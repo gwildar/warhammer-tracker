@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
-import { renderSetupScreen } from "../../screens/setup.js";
+import { renderSetupScreen, renderArmySummary } from "../../screens/setup.js";
 import { renderSpellSelectionScreen } from "../../screens/spell-selection-screen.js";
 import { loadArmy, getApp } from "../helpers.js";
 import * as Nav from "../../navigate.js";
@@ -77,6 +77,22 @@ describe("Setup Screen", () => {
       for (const unit of mountedUnits) {
         expect(text).toContain(unit.mount.name);
       }
+    });
+
+    it("shows warning panel when warnings are provided", () => {
+      getApp().innerHTML = renderArmySummary(army, [
+        { unitName: "Dreadlord", message: "test warning" },
+      ]);
+      const panel = getApp().querySelector("#validation-warnings");
+      expect(panel).toBeTruthy();
+      expect(panel.textContent).toContain("Dreadlord");
+      expect(panel.textContent).toContain("test warning");
+      expect(panel.textContent).toContain("1 warning");
+    });
+
+    it("does not show warning panel when no warnings", () => {
+      getApp().innerHTML = renderArmySummary(army, []);
+      expect(getApp().querySelector("#validation-warnings")).toBeFalsy();
     });
   });
 

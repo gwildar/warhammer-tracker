@@ -142,7 +142,33 @@ function renderUploadSection() {
   `;
 }
 
-export function renderArmySummary(army) {
+function renderWarningPanel(warnings) {
+  const byUnit = {};
+  for (const w of warnings) {
+    if (!byUnit[w.unitName]) byUnit[w.unitName] = [];
+    byUnit[w.unitName].push(w.message);
+  }
+  const unitHtml = Object.entries(byUnit)
+    .map(
+      ([name, messages]) => `
+      <div class="mb-2 last:mb-0">
+        <div class="font-semibold text-sm text-amber-200">${name}</div>
+        ${messages.map((m) => `<div class="text-sm text-wh-muted ml-2">• ${m}</div>`).join("")}
+      </div>`,
+    )
+    .join("");
+  const count = warnings.length;
+  return `
+    <div id="validation-warnings" class="mb-4 p-3 rounded-lg border border-amber-400/40 bg-amber-400/10">
+      <div class="flex justify-between items-start">
+        <span class="text-amber-400 text-sm font-semibold">&#9888; ${count} warning${count !== 1 ? "s" : ""} — check before playing</span>
+        <button id="dismiss-warnings-btn" class="text-wh-muted hover:text-wh-text transition-colors text-sm ml-3 leading-none">&#215;</button>
+      </div>
+      <div class="mt-2">${unitHtml}</div>
+    </div>`;
+}
+
+export function renderArmySummary(army, warnings = []) {
   const totalPts = army.units.reduce((sum, u) => sum + u.points, 0);
   const totalUS = army.units.reduce((sum, u) => sum + (u.unitStrength ?? 0), 0);
 
@@ -163,6 +189,8 @@ export function renderArmySummary(army) {
         <div class="space-y-1 mb-4">
           ${renderUnitList(army)}
         </div>
+
+        ${warnings.length > 0 ? renderWarningPanel(warnings) : ""}
 
         <div class="flex gap-2">
           <button id="start-game-btn"
