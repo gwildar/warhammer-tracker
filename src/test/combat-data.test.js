@@ -3,6 +3,7 @@ import { loadArmy } from "./helpers.js";
 import {
   buildCombatEntries,
   buildCombatResultEntries,
+  buildCombatLeadershipData,
 } from "../context/combat-data.js";
 import { saveCharacterAssignments } from "../state.js";
 
@@ -40,6 +41,37 @@ describe("buildCombatEntries", () => {
     const peasant = rows.find((r) => r.unitName === "Peasant Bowman");
     expect(peasant).toBeDefined();
     expect(peasant.merged).toBe(true);
+  });
+});
+
+describe("buildCombatLeadershipData", () => {
+  beforeEach(() => {
+    saveCharacterAssignments({});
+  });
+
+  it("returns rows sorted by leadership descending", () => {
+    const army = loadArmy("dark-elves");
+    const { rows } = buildCombatLeadershipData(army);
+    expect(rows.length).toBeGreaterThan(0);
+    for (let i = 1; i < rows.length; i++) {
+      expect(rows[i].ldNum).toBeLessThanOrEqual(rows[i - 1].ldNum);
+    }
+  });
+
+  it("returns the expected data shape", () => {
+    const army = loadArmy("dark-elves");
+    const data = buildCombatLeadershipData(army);
+    expect(data).toHaveProperty("rows");
+    expect(data).toHaveProperty("general");
+    expect(data).toHaveProperty("generalLd");
+    expect(data).toHaveProperty("generalRange");
+    expect(data).toHaveProperty("bsb");
+    expect(data).toHaveProperty("bsbRange");
+  });
+
+  it("returns empty rows for empty army", () => {
+    const { rows } = buildCombatLeadershipData({ units: [] });
+    expect(rows).toEqual([]);
   });
 });
 

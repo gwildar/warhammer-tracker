@@ -1,15 +1,13 @@
 import { displayUnitName } from "../utils/unit-name.js";
 import {
   HAND_WEAPON,
-  isCharacter,
   buildMountWeaponTags,
   weaponPoisonTags,
   mergeTagParts,
-  getUnitLd,
   buildCombatEntries,
   buildCombatResultEntries,
+  buildCombatLeadershipData,
 } from "./combat-data.js";
-import { getCharacterAssignments } from "../state.js";
 
 function applyApMod(ap, mod) {
   if (!mod) return ap;
@@ -402,78 +400,9 @@ export function renderCombatResultContext(army) {
 }
 
 export function renderCombatLeadershipContext(army, title = "Break Test") {
-  if (army.units.length === 0) return "";
-
-  const assignments = getCharacterAssignments();
-  const assignedCharIds = new Set(
-    Object.entries(assignments)
-      .filter(([, unitId]) => unitId)
-      .map(([charId]) => charId),
-  );
-  const unitById = Object.fromEntries(army.units.map((u) => [u.id, u]));
-  const charsByUnitId = {};
-  for (const [charId, unitId] of Object.entries(assignments)) {
-    if (!unitId) continue;
-    const charUnit = unitById[charId];
-    if (charUnit) {
-      if (!charsByUnitId[unitId]) charsByUnitId[unitId] = [];
-      charsByUnitId[unitId].push(charUnit);
-    }
-  }
-
-  const deduped = {};
-  for (const u of army.units) {
-    if (isCharacter(u) && assignedCharIds.has(u.id)) continue;
-
-    const assignedChars = charsByUnitId[u.id] || [];
-    const allLds = [u, ...assignedChars]
-      .map((x) => parseInt(getUnitLd(x)) || 0)
-      .filter((x) => x > 0);
-    const maxLd = allLds.length > 0 ? String(Math.max(...allLds)) : "?";
-
-    const key = `${u.name}||${maxLd}`;
-    if (!deduped[key])
-      deduped[key] = {
-        name: u.name,
-        ld: maxLd,
-        ldNum: parseInt(maxLd) || 0,
-        chars: assignedChars.map((c) => c.name),
-      };
-  }
-
-  const rows = Object.values(deduped).sort((a, b) => b.ldNum - a.ldNum);
+  const { rows, general, generalLd, generalRange, bsb, bsbRange } =
+    buildCombatLeadershipData(army);
   if (rows.length === 0) return "";
-
-  // Find General and BSB for Inspiring Presence / Hold Your Ground
-  const general = army.units.find((u) => u.isGeneral);
-  const bsb = army.units.find((u) => u.isBSB);
-
-  let generalLd = null;
-  let generalRange = 12;
-  if (general) {
-    if (general.stats) {
-      for (const profile of general.stats) {
-        if (profile.Ld && profile.Ld !== "-") {
-          generalLd = profile.Ld;
-          break;
-        }
-      }
-    }
-    const hasLargeTarget =
-      (general.specialRules || []).some((r) =>
-        r.displayName?.toLowerCase().includes("large target"),
-      ) || !!general.mount?.largeTarget;
-    if (hasLargeTarget) generalRange = 18;
-  }
-
-  let bsbRange = 12;
-  if (bsb) {
-    const hasLargeTarget =
-      (bsb.specialRules || []).some((r) =>
-        r.displayName?.toLowerCase().includes("large target"),
-      ) || !!bsb.mount?.largeTarget;
-    if (hasLargeTarget) bsbRange = 18;
-  }
 
   return `
     <div class="bg-wh-surface rounded-lg border border-wh-phase-combat/30 p-4 mb-4">
