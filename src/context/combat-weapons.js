@@ -26,6 +26,7 @@ function renderMountWeapons(
   options = {},
 ) {
   if (weapons.length === 0) return "";
+  const { mountName = null, ...renderOptions } = options;
   const totalA = parseInt(mountA) || 0;
   const reserved = weapons.filter((w) => w.reservedAttacks);
   const remaining = weapons.filter((w) => !w.reservedAttacks);
@@ -40,9 +41,9 @@ function renderMountWeapons(
         mountS,
         remaining.length === 1 ? freeA : "?",
         w,
-        null,
+        mountName,
         buildMountWeaponTags(w),
-        options,
+        renderOptions,
       ),
     ),
     ...reserved.map((w) =>
@@ -52,9 +53,9 @@ function renderMountWeapons(
         mountS,
         w.reservedAttacks,
         w,
-        null,
+        mountName,
         buildMountWeaponTags(w),
-        options,
+        renderOptions,
       ),
     ),
   ].join("");
@@ -231,7 +232,11 @@ function renderUnitWeapons(r) {
           r.mountS,
           r.mountI || r.riderI,
           r.mountWS || r.riderWS,
-          { apMod: r.apMod, conditionalSMods: r.conditionalStrengthMods },
+          {
+            apMod: r.apMod,
+            conditionalSMods: r.conditionalStrengthMods,
+            mountName: r.mountName,
+          },
         )
       : r.mountA
         ? renderWeaponLine(
@@ -364,6 +369,7 @@ export function renderCombatWeaponsContext(army) {
                               {
                                 apMod: r.apMod,
                                 conditionalSMods: r.conditionalStrengthMods,
+                                mountName: ch.mountName,
                               },
                             )
                           : ch.mountA
