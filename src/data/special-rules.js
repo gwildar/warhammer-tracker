@@ -247,6 +247,14 @@ export const SPECIAL_RULES = [
     phases: ["shoot"],
   },
   {
+    id: "needs more nails",
+    displayName: "Needs More Nails",
+    description:
+      "When firing Grapeshot: declare target and check range, then roll an Artillery dice. On a Misfire, roll on the Misfire table immediately. On a number, the target suffers that many automatic hits.",
+    phases: ["shoot"],
+    yourTurnOnly: true,
+  },
+  {
     id: "thunderous impact",
     displayName: "Thunderous Impact",
     description:
