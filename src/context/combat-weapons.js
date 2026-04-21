@@ -403,11 +403,11 @@ export function renderCombatWeaponsContext(army) {
                 <div class="text-wh-muted text-[10px] font-mono">US:${r.unitStrength}</div>
               </div>
             </div>
-            ${renderBanners(r)}
             ${
               (r.assignedCharProfiles || []).length === 0
                 ? `
                 ${statRow(r.t, r.w, r.as, r.mr, r.ward, r.regen)}
+                ${renderBanners(r)}
                 ${renderSingleUseItems(r)}
                 <div class="mt-1">
                   ${renderUnitWeapons(r)}
@@ -420,6 +420,7 @@ export function renderCombatWeaponsContext(army) {
                 <div class="mt-1">
                   <div class="text-[9px] uppercase tracking-wide text-wh-muted mb-0.5">${displayUnitName(r.unitName, r.strength)}</div>
                   ${statRow(r.t, r.w, r.as, r.mr, r.ward, r.regen)}
+                  ${renderBanners(r)}
                   ${renderUnitWeapons(r)}
                   ${renderCombatRulesHtml(r.combatRules)}
                   ${(r.assignedCharProfiles || [])

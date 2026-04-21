@@ -172,6 +172,20 @@ function renderRulesBlock(grouped, title) {
   `;
 }
 
+export function hasSpecialRulesForSubPhase(army, subPhaseId) {
+  for (const unit of army.units) {
+    const unitRules = buildUnitRules(unit);
+    for (const ruleName of unitRules) {
+      const normName = normaliseRuleName(ruleName);
+      for (const rule of RULES) {
+        if (!ruleMatches(rule, normName)) continue;
+        if (rule.phases.some((p) => p.subPhaseId === subPhaseId)) return true;
+      }
+    }
+  }
+  return false;
+}
+
 export function renderSpecialRulesContext(army, subPhase) {
   const round = getRound();
   const matches = [];

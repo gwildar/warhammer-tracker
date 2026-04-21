@@ -25,7 +25,10 @@ import { renderMovementStatsContext } from "../context/movement.js";
 import { renderRandomMoverContext } from "../context/random-mover.js";
 import { renderMagicItemsContext } from "../context/items.js";
 import { renderVirtuesContext } from "../context/virtues.js";
-import { renderSpecialRulesContext } from "../context/special-rules-context.js";
+import {
+  renderSpecialRulesContext,
+  hasSpecialRulesForSubPhase,
+} from "../context/special-rules-context.js";
 import { renderScoringUI, bindScoringEvents } from "./scoring.js";
 import { renderSpecialFeaturesTable } from "../context/scenario-context.js";
 import { navigate } from "../navigate.js";
@@ -256,12 +259,22 @@ function hasReserveMove(army) {
   );
 }
 
+function hasCommandContent(army) {
+  if (hasSpecialRulesForSubPhase(army, "command")) return true;
+  return army.units.some((u) =>
+    (u.specialRules || []).some((r) =>
+      r.displayName?.toLowerCase().includes("rallying cry"),
+    ),
+  );
+}
+
 function nextVisibleIdx(army, from, direction) {
   let idx = from + direction;
   while (idx >= 0 && idx < allSubPhases.length) {
     const subPhaseId = allSubPhases[idx].subPhase.id;
     if (
       (subPhaseId !== "reserve-moves" || hasReserveMove(army)) &&
+      (subPhaseId !== "command" || hasCommandContent(army)) &&
       !(army.skipPhases || []).includes(subPhaseId)
     )
       return idx;
