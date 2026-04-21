@@ -353,7 +353,42 @@ export function renderCombatWeaponsContext(army) {
                           ),
                         )
                         .join("")}
+                      ${
+                        ch.mountWeapons?.length > 0
+                          ? renderMountWeapons(
+                              ch.mountWeapons,
+                              ch.mountA,
+                              ch.mountS,
+                              ch.mountI || ch.i,
+                              ch.mountWS || ch.ws,
+                              {
+                                apMod: r.apMod,
+                                conditionalSMods: r.conditionalStrengthMods,
+                              },
+                            )
+                          : ch.mountA
+                            ? renderWeaponLine(
+                                ch.mountI || ch.i,
+                                ch.mountWS || ch.ws,
+                                ch.mountS,
+                                ch.mountA,
+                                {
+                                  name: ch.mountName || "Mount",
+                                  s: "",
+                                  ap: "—",
+                                  rules: [],
+                                },
+                                null,
+                                null,
+                                {
+                                  apMod: r.apMod,
+                                  conditionalSMods: r.conditionalStrengthMods,
+                                },
+                              )
+                            : ""
+                      }
                       ${renderCombatRulesHtml(ch.combatRules)}
+                      ${ch.singleUseItems?.length > 0 ? `<div class="mt-1">${ch.singleUseItems.map((item) => `<div class="text-xs"><span class="text-wh-accent">\u{1F6E1} ${item.name}</span> <span class="text-wh-muted">(single use)</span></div>`).join("")}</div>` : ""}
                       ${ch.itemNames?.length > 0 ? `<div class="text-xs text-wh-muted mt-0.5">${ch.itemNames.join(", ")}</div>` : ""}
                     </div>
                   `,

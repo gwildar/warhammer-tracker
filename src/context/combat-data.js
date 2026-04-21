@@ -630,7 +630,24 @@ export function buildCombatEntries(army) {
       detectItemBonuses(allUnitsForBonuses);
     const assignedCharProfiles = assignedChars.map((char) => {
       const cStats = char.stats?.[0];
-      const { weapons: charWeapons } = matchRiderWeapons(char);
+      const { weapons: charWeapons, matched: charMatched } =
+        matchRiderWeapons(char);
+      const charMountWeapons = matchMountWeapons(char, charMatched);
+      const charMount = char.mount ?? null;
+      let charMountA = null,
+        charMountS = null,
+        charMountI = null,
+        charMountWS = null,
+        charMountName = null;
+      if (charMount?.a) {
+        charMountA = charMount.a;
+        charMountS = charMount.s;
+        charMountI = charMount.i;
+        charMountWS = charMount.ws;
+        charMountName = charMount.name;
+      }
+      const { itemNames: charItemNames, singleUseItems: charSuItems } =
+        buildFilteredItems(char);
       return {
         name: char.name,
         points: char.points,
@@ -645,9 +662,16 @@ export function buildCombatEntries(army) {
         ward: char.ward ?? null,
         regen: char.regen ?? null,
         weapons: charWeapons.length > 0 ? charWeapons : [HAND_WEAPON],
+        mountWeapons: charMountWeapons,
+        mountA: charMountA,
+        mountS: charMountS,
+        mountI: charMountI,
+        mountWS: charMountWS,
+        mountName: charMountName,
         tags: buildRiderTags(char, grantedRules),
         combatRules: extractCombatRules(char),
-        itemNames: buildFilteredItems(char).itemNames,
+        itemNames: charItemNames,
+        singleUseItems: charSuItems,
       };
     });
 
