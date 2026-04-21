@@ -10,6 +10,7 @@ const DEPLOYMENT_RULE_IDS = new Set([
   "vanguard",
   "ambushers",
   "ambush", // alias for ambushers in special-rules.js
+  "the arrow of kurnous",
 ]);
 
 function normaliseRuleId(displayName) {

@@ -13,6 +13,18 @@
 
 export const SPECIAL_RULES = [
   {
+    id: "the arrow of kurnous",
+    displayName: "The Arrow of Kurnous",
+    passive: true,
+    phases: [
+      {
+        subPhaseId: "deployment",
+        description:
+          'Once deployment is complete (before the first-turn roll-off): if the enemy General is within 36" of any model with this rule, the enemy General suffers a single S3 hit (no armour or Regeneration saves; Ward saves allowed). The opponent gains +1 to their first-turn roll-off if the arrow is fired.',
+      },
+    ],
+  },
+  {
     id: "scouts",
     displayName: "Scouts",
     passive: true,
