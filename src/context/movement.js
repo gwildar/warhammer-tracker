@@ -47,9 +47,32 @@ export function renderMovementStatsContext(army) {
       }
 
       const mv = resolveMovement(u);
-      const baseMv = resolveBaseMv(mountData, mv);
-      const march = baseMv != null ? baseMv * 2 : null;
+      let baseMv = resolveBaseMv(mountData, mv);
+      let march = baseMv != null ? baseMv * 2 : null;
       const flyMv = extractFlyMovement(u, mountData);
+
+      // Run with the Pack: unit moves at the majority M when beasts outnumber keepers
+      if (u.detachments && u.detachments.length > 0) {
+        const keeperCount = u.strength || 1;
+        const mCounts = {};
+        let totalBeastCount = 0;
+        for (const d of u.detachments) {
+          const dM = d.stats?.[0]?.M;
+          if (dM && dM !== "-") {
+            const count = d.strength || 1;
+            totalBeastCount += count;
+            mCounts[dM] = (mCounts[dM] || 0) + count;
+          }
+        }
+        if (totalBeastCount > keeperCount) {
+          const majorityM = Number(
+            Object.entries(mCounts).reduce((a, b) => (b[1] > a[1] ? b : a))[0],
+          );
+          baseMv = majorityM;
+          march = majorityM * 2;
+        }
+      }
+
       return { u, baseMv, march, flyMv, chars };
     })
     .filter(({ baseMv }) => baseMv != null)

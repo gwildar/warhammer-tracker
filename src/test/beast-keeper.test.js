@@ -1,5 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { loadArmy } from "./helpers.js";
+import { renderMovementStatsContext } from "../context/movement.js";
+import { saveCharacterAssignments } from "../state.js";
 
 describe("wood-elves fixture loads", () => {
   it("loadArmy('wood-elves') returns an army with units", () => {
@@ -80,5 +82,57 @@ describe("Beast Pack unit strength includes detachments", () => {
     );
     expect(pack).toBeDefined();
     expect(pack.unitStrength).toBe(2);
+  });
+});
+
+describe("Beast Pack movement uses majority M (Run with the Pack)", () => {
+  it("shows beast M when beasts outnumber keepers", () => {
+    saveCharacterAssignments({});
+    const packUnit = {
+      id: "wood-elf-beast-pack.test",
+      name: "Wood Elf Beast Pack",
+      category: "rare",
+      strength: 1,
+      mount: null,
+      stats: [
+        { M: "5", Name: "Beast Keeper", troopType: ["RI"], crewed: false },
+      ],
+      detachments: [
+        {
+          id: "deepwood-hounds.test",
+          strength: 2,
+          stats: [{ M: "9", Name: "Deepwood Hound", troopType: ["WB"] }],
+        },
+      ],
+      specialRules: [],
+    };
+    const html = renderMovementStatsContext({ units: [packUnit] });
+    expect(html).toContain('9"');
+    expect(html).toContain("March 18");
+  });
+
+  it("keeps keeper M when beasts do not outnumber keepers", () => {
+    saveCharacterAssignments({});
+    const packUnit = {
+      id: "wood-elf-beast-pack.test2",
+      name: "Wood Elf Beast Pack",
+      category: "rare",
+      strength: 1,
+      mount: null,
+      stats: [
+        { M: "5", Name: "Beast Keeper", troopType: ["RI"], crewed: false },
+      ],
+      detachments: [
+        {
+          id: "deepwood-hounds.test2",
+          strength: 1,
+          stats: [{ M: "9", Name: "Deepwood Hound", troopType: ["WB"] }],
+        },
+      ],
+      specialRules: [],
+    };
+    const html = renderMovementStatsContext({ units: [packUnit] });
+    expect(html).toContain('5"');
+    expect(html).toContain("March 10");
   });
 });
