@@ -218,7 +218,7 @@ function renderPhaseContext(army, phase, subPhase) {
     html += renderVirtuesContext(army, phase.id, subPhase.id);
   }
   if (subPhase.id === "scoring") {
-    html += renderScoringUI();
+    html += renderScoringUI(army);
   }
   html += renderSpecialRulesContext(army, subPhase);
   if (

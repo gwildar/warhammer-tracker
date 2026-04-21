@@ -11,7 +11,7 @@ import {
 } from "../state.js";
 import { formatDuration } from "../helpers.js";
 
-export function renderScoringUI() {
+export function renderScoringUI(army = null) {
   const scores = getScores();
   const round = getRound();
   const isOpponentTurn = getIsOpponentTurn();
@@ -139,6 +139,16 @@ export function renderScoringUI() {
           </tfoot>
         </table>
       </div>
+
+      ${
+        army?.composition === "orions-wild-hunt"
+          ? `
+      <div class="mt-4 bg-wh-surface border border-wh-purple/30 rounded-lg p-3">
+        <div class="text-xs font-semibold text-wh-purple mb-1">Worthy of Kurnous</div>
+        <div class="text-xs text-wh-muted">+100 VP if the nominated model is slain, flees, or is fleeing at game end</div>
+      </div>`
+          : ""
+      }
 
       <div class="mt-4 flex justify-end">
         <button id="end-game-btn"

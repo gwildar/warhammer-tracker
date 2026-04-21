@@ -67,6 +67,20 @@ function renderUnitCard(unit) {
   `;
 }
 
+function renderWorthyOfKurnous(army) {
+  if (army.composition !== "orions-wild-hunt") return "";
+  return `
+    <div class="bg-wh-surface border border-wh-purple/30 rounded-lg p-4 mb-4">
+      <div class="text-xs uppercase tracking-wider text-wh-purple mb-2">Worthy of Kurnous</div>
+      <p class="text-sm text-wh-text mb-2">After all units are deployed, nominate a single enemy character or monster.</p>
+      <ul class="space-y-1 text-xs text-wh-muted list-disc list-inside">
+        <li>All friendly models re-roll To Hit rolls of 1 (shooting &amp; combat) when targeting the nominated unit</li>
+        <li>+100 VP if the nominated model is slain, flees, or is fleeing at game end</li>
+      </ul>
+    </div>
+  `;
+}
+
 function renderDeploymentUnits(army) {
   const units = army.units.filter((u) => getDeploymentRules(u).length > 0);
   if (units.length === 0) return "";
@@ -90,6 +104,7 @@ export function renderDeploymentScreen(army) {
           <h2 class="text-2xl font-bold text-wh-text">Deployment</h2>
         </div>
         ${renderExplainer()}
+        ${renderWorthyOfKurnous(army)}
         ${renderDeploymentUnits(army)}
       </main>
       <footer class="sticky bottom-0 bg-wh-surface border-t border-wh-border p-3">
