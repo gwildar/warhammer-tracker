@@ -17,55 +17,11 @@ function applyApMod(ap, mod) {
   return result >= 0 ? "—" : `${result}`;
 }
 
-function renderMountWeapons(
-  weapons,
-  mountA,
-  mountS,
-  mountI,
-  mountWS,
-  options = {},
-) {
-  if (weapons.length === 0) return "";
-  const { mountName = null, ...renderOptions } = options;
-  const totalA = parseInt(mountA) || 0;
-  const reserved = weapons.filter((w) => w.reservedAttacks);
-  const remaining = weapons.filter((w) => !w.reservedAttacks);
-  const reservedCount = reserved.reduce((sum, w) => sum + w.reservedAttacks, 0);
-  const freeA = Math.max(totalA - reservedCount, 0);
-
-  return [
-    ...remaining.map((w) =>
-      renderWeaponLine(
-        mountI,
-        mountWS,
-        mountS,
-        remaining.length === 1 ? freeA : "?",
-        w,
-        mountName,
-        buildMountWeaponTags(w),
-        renderOptions,
-      ),
-    ),
-    ...reserved.map((w) =>
-      renderWeaponLine(
-        mountI,
-        mountWS,
-        mountS,
-        w.reservedAttacks,
-        w,
-        mountName,
-        buildMountWeaponTags(w),
-        renderOptions,
-      ),
-    ),
-  ].join("");
-}
-
 function mergeStrength(baseS, weaponS) {
   if (!weaponS) return `${baseS}`;
   if (weaponS === "S") return `${baseS}`;
   const mod = weaponS.match(/^S([+-]\d+)$/);
-  if (mod) return `${baseS}${mod[1]}`;
+  if (mod) return `${parseInt(baseS) + parseInt(mod[1])}`;
   return weaponS;
 }
 
@@ -88,41 +44,287 @@ function stripRedundantRules(rules, w) {
     .join(", ");
 }
 
-function renderWeaponLine(
-  initiative,
-  ws,
-  s,
-  attacks,
-  w,
-  label,
-  tags,
-  options = {},
-) {
-  const { apMod = 0 } = options;
+// Builds a plain descriptor for one weapon row — no HTML yet
+function buildWeaponRow(i, ws, s, attacks, weapon, label, tags, apMod = 0) {
+  return {
+    i,
+    ws,
+    displayS: mergeStrength(s, weapon.s),
+    displayA: weapon.attacks ? `${attacks}${weapon.attacks}` : `${attacks}`,
+    label: label || null,
+    name: weapon.name,
+    ap: applyApMod(weapon.ap, apMod),
+    rules: stripRedundantRules(weapon.rules, weapon),
+    tags,
+  };
+}
 
-  const displayS = mergeStrength(s, w.s);
-
-  const displayA = w.attacks ? `${attacks}${w.attacks}` : attacks;
-  const displayRules = stripRedundantRules(w.rules, w);
-  const effectiveAP = applyApMod(w.ap, apMod);
-
+// Renders a row descriptor as a <tbody class="text-xs"> containing one or two <tr>s.
+// Each weapon gets its own tbody so querySelectorAll(".text-xs") still finds individual
+// weapon lines (tests depend on this isolation).
+function renderWeaponRow(row) {
   const inlineTags =
-    typeof tags === "object" && tags !== null ? tags.inline || "" : tags || "";
-  const subLine =
-    typeof tags === "object" && tags !== null ? tags.sub || "" : "";
+    typeof row.tags === "object" && row.tags !== null
+      ? row.tags.inline || ""
+      : row.tags || "";
+  const subParts = [
+    typeof row.tags === "object" && row.tags !== null ? row.tags.sub || "" : "",
+    row.rules
+      ? `<span class="text-wh-muted text-[9px]">${row.rules}</span>`
+      : "",
+  ].filter(Boolean);
 
-  return `<div class="text-xs mb-1">
-    <span class="text-wh-phase-combat font-mono">I${initiative}</span>
-    <span class="text-wh-phase-combat font-mono ml-1">A${displayA}</span>
-    <span class="text-wh-muted font-mono ml-1">WS${ws}</span>
-    <span class="text-wh-muted font-mono ml-1">S${displayS}</span>
-    ${label ? `<span class="text-wh-accent text-xs ml-1">${label}</span>` : ""}
-    <span class="text-wh-text ml-1">${w.name}</span>
-    ${effectiveAP && effectiveAP !== "—" ? `<span class="text-wh-muted font-mono ml-1">AP${effectiveAP}</span>` : ""}
-    ${inlineTags}
-    ${displayRules ? `<div class="text-wh-muted">${displayRules}</div>` : ""}
-    ${subLine}
-  </div>`;
+  return `
+    <tbody class="text-xs">
+      <tr class="align-baseline ${subParts.length === 0 ? "border-b border-wh-border/80" : ""}">
+        <td class="w-8 pl-1 pr-1 text-wh-phase-combat font-mono whitespace-nowrap">I${row.i}</td>
+        <td class="w-12 pl-1 pr-1 text-wh-phase-combat font-mono whitespace-nowrap">A${row.displayA}</td>
+        <td class="w-10 pl-1 pr-1 text-wh-muted font-mono whitespace-nowrap">WS${row.ws}</td>
+        <td class="w-8 pl-1 pr-1 text-wh-muted font-mono whitespace-nowrap">S${row.displayS}</td>
+        <td class="w-10 pl-1 pr-2 font-mono text-wh-muted whitespace-nowrap">${row.ap !== "—" ? `AP${row.ap}` : "-"}</td>
+        <td class="pl-1">
+          <span class="text-wh-text">${row.name}</span>
+          ${inlineTags}
+        </td>
+      </tr>
+      ${subParts.length > 0 ? `<tr class="border-b border-wh-border/80"><td colspan="6" class="pl-1 pb-1">${subParts.join("")}</td></tr>` : ""}
+    </tbody>
+  `;
+}
+
+function renderWeaponTable(rows) {
+  if (rows.length === 0) return "";
+  let html = "";
+  let currentLabel = undefined;
+  for (const row of rows) {
+    if (row.label !== currentLabel) {
+      currentLabel = row.label;
+      if (row.label) {
+        html += `<tbody><tr><td colspan="6" class="pl-1 pt-1 text-[9px] uppercase tracking-wide text-wh-accent">${row.label}</td></tr></tbody>`;
+      }
+    }
+    html += renderWeaponRow(row);
+  }
+  return `<table class="w-full mt-1 border-collapse table-fixed">
+    <colgroup>
+      <col class="w-8">
+      <col class="w-12">
+      <col class="w-10">
+      <col class="w-8">
+      <col class="w-10">
+      <col>
+    </colgroup>
+    ${html}</table>`;
+}
+
+// Collects all weapon row descriptors for a full unit entry
+function collectWeaponRows(r) {
+  const rows = [];
+  const apMod = r.apMod || 0;
+
+  // Champions
+  for (const ch of r.champions || []) {
+    const tags = ch.tags !== null ? ch.tags : r.riderTags;
+    for (const w of ch.weapons) {
+      rows.push(
+        buildWeaponRow(ch.i, ch.ws, ch.s, ch.a, w, ch.name, tags, apMod),
+      );
+    }
+  }
+
+  // Rider weapons (with reserved/remaining A-budget)
+  {
+    const reserved = r.riderWeapons.filter((w) => w.reservedAttacks);
+    const remaining = r.riderWeapons.filter((w) => !w.reservedAttacks);
+    const totalA = parseInt(r.riderA) || 0;
+    const reservedCount = reserved.reduce(
+      (sum, w) => sum + w.reservedAttacks,
+      0,
+    );
+    const freeA = Math.max(totalA - reservedCount, 0);
+    const mainA = reserved.length > 0 ? `${freeA}/${r.riderA}` : r.riderA;
+    for (const w of remaining) {
+      rows.push(
+        buildWeaponRow(
+          r.riderI,
+          r.riderWS,
+          r.riderS,
+          mainA,
+          w,
+          r.riderName,
+          mergeTagParts(r.riderTags, weaponPoisonTags(w)),
+          apMod,
+        ),
+      );
+    }
+    for (const w of reserved) {
+      rows.push(
+        buildWeaponRow(
+          r.riderI,
+          r.riderWS,
+          r.riderS,
+          w.reservedAttacks,
+          w,
+          r.riderName,
+          mergeTagParts(r.riderTags, weaponPoisonTags(w)),
+          apMod,
+        ),
+      );
+    }
+  }
+
+  // Crew
+  for (const c of r.crew) {
+    const weapons = c.weapons.length > 0 ? c.weapons : [HAND_WEAPON];
+    for (const w of weapons) {
+      rows.push(buildWeaponRow(c.i, c.ws, c.s, c.a, w, c.name, null, apMod));
+    }
+  }
+
+  // Detachments
+  for (const d of r.detachments || []) {
+    const weapons = d.weapons.length > 0 ? d.weapons : [HAND_WEAPON];
+    for (const w of weapons) {
+      rows.push(buildWeaponRow(d.i, d.ws, d.s, d.a, w, d.name, null, apMod));
+    }
+  }
+
+  // Mount weapons (with A-budget)
+  if (r.mountWeapons.length > 0) {
+    const mountI = r.mountI || r.riderI;
+    const mountWS = r.mountWS || r.riderWS;
+    const totalA = parseInt(r.mountA) || 0;
+    const reserved = r.mountWeapons.filter((w) => w.reservedAttacks);
+    const remaining = r.mountWeapons.filter((w) => !w.reservedAttacks);
+    const reservedCount = reserved.reduce(
+      (sum, w) => sum + w.reservedAttacks,
+      0,
+    );
+    const freeA = Math.max(totalA - reservedCount, 0);
+    for (const w of remaining) {
+      rows.push(
+        buildWeaponRow(
+          mountI,
+          mountWS,
+          r.mountS,
+          remaining.length === 1 ? freeA : "?",
+          w,
+          r.mountName,
+          buildMountWeaponTags(w),
+          apMod,
+        ),
+      );
+    }
+    for (const w of reserved) {
+      rows.push(
+        buildWeaponRow(
+          mountI,
+          mountWS,
+          r.mountS,
+          w.reservedAttacks,
+          w,
+          r.mountName,
+          buildMountWeaponTags(w),
+          apMod,
+        ),
+      );
+    }
+  } else if (r.mountA) {
+    // Mount has attacks but no weapon list — synthesise a row
+    const syntheticWeapon = {
+      name: r.mountName || "Mount",
+      s: "",
+      ap: "—",
+      rules: r.mountArmourBane ? [`Armour Bane (${r.mountArmourBane})`] : [],
+    };
+    rows.push(
+      buildWeaponRow(
+        r.mountI || r.riderI,
+        r.mountWS || r.riderWS,
+        r.mountS,
+        r.mountA,
+        syntheticWeapon,
+        null,
+        null,
+        apMod,
+      ),
+    );
+  }
+
+  return rows;
+}
+
+// Collects weapon row descriptors for an assigned character profile
+function collectCharWeaponRows(ch, apMod = 0) {
+  const rows = [];
+
+  // Rider weapons — use ch.a for all (no reserved split for character profiles)
+  for (const w of ch.weapons) {
+    rows.push(buildWeaponRow(ch.i, ch.ws, ch.s, ch.a, w, null, ch.tags, apMod));
+  }
+
+  // Mount weapons (with A-budget)
+  if (ch.mountWeapons?.length > 0) {
+    const mountI = ch.mountI || ch.i;
+    const mountWS = ch.mountWS || ch.ws;
+    const totalA = parseInt(ch.mountA) || 0;
+    const reserved = ch.mountWeapons.filter((w) => w.reservedAttacks);
+    const remaining = ch.mountWeapons.filter((w) => !w.reservedAttacks);
+    const reservedCount = reserved.reduce(
+      (sum, w) => sum + w.reservedAttacks,
+      0,
+    );
+    const freeA = Math.max(totalA - reservedCount, 0);
+    for (const w of remaining) {
+      rows.push(
+        buildWeaponRow(
+          mountI,
+          mountWS,
+          ch.mountS,
+          remaining.length === 1 ? freeA : "?",
+          w,
+          ch.mountName,
+          buildMountWeaponTags(w),
+          apMod,
+        ),
+      );
+    }
+    for (const w of reserved) {
+      rows.push(
+        buildWeaponRow(
+          mountI,
+          mountWS,
+          ch.mountS,
+          w.reservedAttacks,
+          w,
+          ch.mountName,
+          buildMountWeaponTags(w),
+          apMod,
+        ),
+      );
+    }
+  } else if (ch.mountA) {
+    const syntheticWeapon = {
+      name: ch.mountName || "Mount",
+      s: "",
+      ap: "—",
+      rules: [],
+    };
+    rows.push(
+      buildWeaponRow(
+        ch.mountI || ch.i,
+        ch.mountWS || ch.ws,
+        ch.mountS,
+        ch.mountA,
+        syntheticWeapon,
+        null,
+        null,
+        apMod,
+      ),
+    );
+  }
+
+  return rows;
 }
 
 function renderSingleUseItems(r) {
@@ -132,9 +334,9 @@ function renderSingleUseItems(r) {
 
 function statRow(t, w, as_, mr, ward, regen) {
   // as_ avoids shadowing the reserved word 'as'
-  return `<div class="flex items-center gap-2 flex-wrap mt-0.5">
-      <span class="text-wh-muted font-mono text-xs">T:${t}</span>
-      <span class="text-wh-muted font-mono text-xs">W:${w}</span>
+  return `<div class="flex items-center gap-2 flex-wrap mt-0.5 pb-1 border-b border-wh-border">
+      <span class="text-wh-text font-mono text-xs">T:${t}</span>
+      <span class="text-wh-text font-mono text-xs">W:${w}</span>
       ${as_ ? `<span class="text-blue-400 font-mono text-xs">\u{1F6E1}\uFE0FAS:${as_}</span>` : ""}
       ${mr ? `<span class="text-wh-phase-combat font-mono text-xs">\u2728MR:${mr}</span>` : ""}
       ${ward ? `<span class="text-purple-400 font-mono text-xs">\u{1F52E}Ward:${ward}</span>` : ""}
@@ -143,124 +345,12 @@ function statRow(t, w, as_, mr, ward, regen) {
 }
 
 function renderUnitWeapons(r) {
-  return [
-    ...(r.champions || []).flatMap((ch) =>
-      ch.weapons.map((w) =>
-        renderWeaponLine(
-          ch.i,
-          ch.ws,
-          ch.s,
-          ch.a,
-          w,
-          ch.name,
-          ch.tags !== null ? ch.tags : r.riderTags,
-          { apMod: r.apMod, conditionalSMods: r.conditionalStrengthMods },
-        ),
-      ),
-    ),
-    ...(() => {
-      const reserved = r.riderWeapons.filter((w) => w.reservedAttacks);
-      const remaining = r.riderWeapons.filter((w) => !w.reservedAttacks);
-      const totalA = parseInt(r.riderA) || 0;
-      const reservedCount = reserved.reduce(
-        (sum, w) => sum + w.reservedAttacks,
-        0,
-      );
-      const freeA = Math.max(totalA - reservedCount, 0);
-      const mainA = reserved.length > 0 ? `${freeA}/${r.riderA}` : r.riderA;
-      return [
-        ...remaining.map((w) =>
-          renderWeaponLine(
-            r.riderI,
-            r.riderWS,
-            r.riderS,
-            mainA,
-            w,
-            r.riderName,
-            mergeTagParts(r.riderTags, weaponPoisonTags(w)),
-            { apMod: r.apMod, conditionalSMods: r.conditionalStrengthMods },
-          ),
-        ),
-        ...reserved.map((w) =>
-          renderWeaponLine(
-            r.riderI,
-            r.riderWS,
-            r.riderS,
-            w.reservedAttacks,
-            w,
-            r.riderName,
-            mergeTagParts(r.riderTags, weaponPoisonTags(w)),
-            { apMod: r.apMod, conditionalSMods: r.conditionalStrengthMods },
-          ),
-        ),
-      ];
-    })(),
-    ...r.crew.map((c) =>
-      c.weapons.length > 0
-        ? c.weapons
-            .map((w) =>
-              renderWeaponLine(c.i, c.ws, c.s, c.a, w, c.name, null, {
-                apMod: r.apMod,
-                conditionalSMods: r.conditionalStrengthMods,
-              }),
-            )
-            .join("")
-        : renderWeaponLine(c.i, c.ws, c.s, c.a, HAND_WEAPON, c.name, null, {
-            apMod: r.apMod,
-            conditionalSMods: r.conditionalStrengthMods,
-          }),
-    ),
-    ...(r.detachments || []).map((d) =>
-      d.weapons.length > 0
-        ? d.weapons
-            .map((w) =>
-              renderWeaponLine(d.i, d.ws, d.s, d.a, w, d.name, null, {
-                apMod: r.apMod,
-                conditionalSMods: r.conditionalStrengthMods,
-              }),
-            )
-            .join("")
-        : renderWeaponLine(d.i, d.ws, d.s, d.a, HAND_WEAPON, d.name, null, {
-            apMod: r.apMod,
-            conditionalSMods: r.conditionalStrengthMods,
-          }),
-    ),
-    r.mountWeapons.length > 0
-      ? renderMountWeapons(
-          r.mountWeapons,
-          r.mountA,
-          r.mountS,
-          r.mountI || r.riderI,
-          r.mountWS || r.riderWS,
-          {
-            apMod: r.apMod,
-            conditionalSMods: r.conditionalStrengthMods,
-            mountName: r.mountName,
-          },
-        )
-      : r.mountA
-        ? renderWeaponLine(
-            r.mountI || r.riderI,
-            r.mountWS || r.riderWS,
-            r.mountS,
-            r.mountA,
-            {
-              name: r.mountName || "Mount",
-              s: "",
-              ap: "—",
-              rules: r.mountArmourBane
-                ? [`Armour Bane (${r.mountArmourBane})`]
-                : [],
-            },
-            null,
-            null,
-            { apMod: r.apMod, conditionalSMods: r.conditionalStrengthMods },
-          )
-        : "",
+  const rows = collectWeaponRows(r);
+  const stomp =
     r.stomp || r.impactHits
-      ? `<div class="text-xs text-wh-phase-combat">${r.impactHits ? `\u{1F4A5} Impact ${r.impactHits}` : ""}${r.stomp && r.impactHits ? " | " : ""}${r.stomp ? `\u{1F9B6} Stomp ${r.stomp}` : ""}</div>`
-      : "",
-  ].join("");
+      ? `<div class="text-xs text-wh-phase-combat mt-0.5">${r.impactHits ? `\u{1F4A5} Impact ${r.impactHits}` : ""}${r.stomp && r.impactHits ? " | " : ""}${r.stomp ? `\u{1F9B6} Stomp ${r.stomp}` : ""}</div>`
+      : "";
+  return renderWeaponTable(rows) + stomp;
 }
 
 function renderCombatRulesHtml(rules) {
@@ -335,64 +425,13 @@ export function renderCombatWeaponsContext(army) {
                   ${(r.assignedCharProfiles || [])
                     .map(
                       (ch) => `
-                    <div class="border-t border-wh-border mt-1.5 pt-1.5">
+                    <div class="border-t-2 border-wh-text/40 mt-1.5 pt-1.5">
                       <div class="flex justify-between items-center">
                         <div class="text-[9px] uppercase tracking-wide text-wh-muted">${ch.name}</div>
                         <div class="text-[9px] text-wh-muted font-mono">${ch.points}pts</div>
                       </div>
                       ${statRow(ch.t, ch.w, ch.as, ch.mr, ch.ward, ch.regen)}
-                      ${ch.weapons
-                        .map((w) =>
-                          renderWeaponLine(
-                            ch.i,
-                            ch.ws,
-                            ch.s,
-                            ch.a,
-                            w,
-                            null,
-                            ch.tags,
-                            {
-                              apMod: r.apMod,
-                              conditionalSMods: r.conditionalStrengthMods,
-                            },
-                          ),
-                        )
-                        .join("")}
-                      ${
-                        ch.mountWeapons?.length > 0
-                          ? renderMountWeapons(
-                              ch.mountWeapons,
-                              ch.mountA,
-                              ch.mountS,
-                              ch.mountI || ch.i,
-                              ch.mountWS || ch.ws,
-                              {
-                                apMod: r.apMod,
-                                conditionalSMods: r.conditionalStrengthMods,
-                                mountName: ch.mountName,
-                              },
-                            )
-                          : ch.mountA
-                            ? renderWeaponLine(
-                                ch.mountI || ch.i,
-                                ch.mountWS || ch.ws,
-                                ch.mountS,
-                                ch.mountA,
-                                {
-                                  name: ch.mountName || "Mount",
-                                  s: "",
-                                  ap: "—",
-                                  rules: [],
-                                },
-                                null,
-                                null,
-                                {
-                                  apMod: r.apMod,
-                                  conditionalSMods: r.conditionalStrengthMods,
-                                },
-                              )
-                            : ""
-                      }
+                      ${renderWeaponTable(collectCharWeaponRows(ch, r.apMod))}
                       ${renderCombatRulesHtml(ch.combatRules)}
                       ${ch.singleUseItems?.length > 0 ? `<div class="mt-1">${ch.singleUseItems.map((item) => `<div class="text-xs"><span class="text-wh-accent">\u{1F6E1} ${item.name}</span> <span class="text-wh-muted">(single use)</span></div>`).join("")}</div>` : ""}
                       ${ch.itemNames?.length > 0 ? `<div class="text-xs text-wh-muted mt-0.5">${ch.itemNames.join(", ")}</div>` : ""}
@@ -453,20 +492,16 @@ export function renderCombatLeadershipContext(army, title = "Break Test") {
         <div class="p-2 rounded bg-wh-card mb-2">
           <p class="text-xs"><span class="font-semibold text-wh-text">Inspiring Presence:</span> <span class="text-wh-muted">Units within ${generalRange}" of ${general.name} (Ld${generalLd}) may use their Ld.</span></p>
           ${bsb ? `<p class="text-xs mt-1"><span class="font-semibold text-wh-text">Hold Your Ground:</span> <span class="text-wh-muted">Units within ${bsbRange}" of ${bsb.name} may re-roll Break tests.</span></p>` : ""}
-        </div>
-      `
+        </div>`
           : ""
       }
       <div class="space-y-1">
         ${rows
           .map(
             (r) => `
-          <div class="flex items-center gap-2 p-2 rounded bg-wh-card text-sm">
-            <div>
-              <span class="text-wh-text">${r.name}</span>
-              ${r.chars.map((c) => `<div class="text-wh-muted text-xs">${c}</div>`).join("")}
-            </div>
-            <span class="text-wh-phase-combat font-mono text-xs ml-auto self-start">Ld${r.ld}</span>
+          <div class="p-2 rounded bg-wh-card flex justify-between items-center">
+            <span class="text-wh-text text-sm">${r.name}${!r.merged && r.strength > 1 ? ` x${r.strength}` : ""}</span>
+            <span class="text-wh-muted font-mono text-xs">Ld${r.ld}</span>
           </div>
         `,
           )
