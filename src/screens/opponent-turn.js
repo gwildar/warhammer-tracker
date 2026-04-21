@@ -142,7 +142,7 @@ function renderOpponentPhaseContext(army, phase) {
   html += renderMagicItemsContext(army, phase.id, null);
   html += renderVirtuesContext(army, phase.id, null);
   html += renderSpecialRulesForPhase(army, phase);
-  html += renderMiscastPanel();
+  if (phase.id !== "scoring") html += renderMiscastPanel();
 
   return html;
 }
