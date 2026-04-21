@@ -335,8 +335,8 @@ function renderSingleUseItems(r) {
 function statRow(t, w, as_, mr, ward, regen) {
   // as_ avoids shadowing the reserved word 'as'
   return `<div class="flex items-center gap-2 flex-wrap mt-0.5 pb-1 border-b border-wh-border">
-      <span class="text-wh-text font-mono text-xs">T:${t}</span>
-      <span class="text-wh-text font-mono text-xs">W:${w}</span>
+      <span class="text-wh-text font-mono text-sm">T:${t}</span>
+      <span class="text-wh-text font-mono text-sm">W:${w}</span>
       ${as_ ? `<span class="text-blue-400 font-mono text-xs">\u{1F6E1}\uFE0FAS:${as_}</span>` : ""}
       ${mr ? `<span class="text-wh-phase-combat font-mono text-xs">\u2728MR:${mr}</span>` : ""}
       ${ward ? `<span class="text-purple-400 font-mono text-xs">\u{1F52E}Ward:${ward}</span>` : ""}
