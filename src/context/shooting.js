@@ -20,6 +20,7 @@ function getS(unit) {
 
 function getChampionBS(unit) {
   if (unit.category === "characters") return null;
+  if (!unit.hasChampion) return null;
   if (!unit.stats || unit.stats.length < 2) return null;
   for (let idx = 1; idx < unit.stats.length; idx++) {
     const s = unit.stats[idx];

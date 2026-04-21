@@ -267,6 +267,17 @@ function parseCanonicalUnit(raw, category) {
     raw.command?.some(
       (cmd) => cmd.active && cmd.name_en?.toLowerCase().includes("musician"),
     ) || false;
+  const hasChampion =
+    raw.command?.some((cmd) => {
+      if (!cmd.active) return false;
+      const n = cmd.name_en?.toLowerCase() ?? "";
+      return (
+        !n.includes("standard bearer") &&
+        !n.includes("musician") &&
+        !n.includes("general") &&
+        !n.includes("battle standard bearer")
+      );
+    }) || false;
 
   // Caster check and faction lores extraction
   // These locals drive lore assignment only (see lores derivation below).
@@ -371,6 +382,7 @@ function parseCanonicalUnit(raw, category) {
     crew: [], // TODO: parse from stat lines
     isGeneral,
     isBSB,
+    hasChampion,
     hasStandard,
     hasMusician,
     isCaster,
