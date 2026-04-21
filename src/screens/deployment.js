@@ -67,6 +67,21 @@ function renderUnitCard(unit) {
   `;
 }
 
+function renderWoodlandAmbush(army) {
+  if (army.armySlug !== "wood-elf-realms") return "";
+  return `
+    <div class="bg-wh-surface border border-wh-green/30 rounded-lg p-4 mb-4">
+      <div class="text-xs uppercase tracking-wider text-wh-green mb-2">Woodland Ambush — Before Deployment</div>
+      <p class="text-sm text-wh-text mb-2">Place one additional wood on the battlefield.</p>
+      <ul class="space-y-1 text-xs text-wh-muted list-disc list-inside">
+        <li>Between 3" and 9" wide</li>
+        <li>Cannot be placed within the opponent's deployment zone</li>
+        <li>Cannot be placed within 12" of the centre of the battlefield</li>
+      </ul>
+    </div>
+  `;
+}
+
 function renderWorthyOfKurnous(army) {
   if (army.composition !== "orions-wild-hunt") return "";
   return `
@@ -103,6 +118,7 @@ export function renderDeploymentScreen(army) {
         <div class="mb-4">
           <h2 class="text-2xl font-bold text-wh-text">Deployment</h2>
         </div>
+        ${renderWoodlandAmbush(army)}
         ${renderExplainer()}
         ${renderWorthyOfKurnous(army)}
         ${renderDeploymentUnits(army)}
