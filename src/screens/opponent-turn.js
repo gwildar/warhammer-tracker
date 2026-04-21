@@ -24,6 +24,7 @@ import {
 } from "../context/combat-weapons.js";
 import { renderScoringUI, bindScoringEvents } from "./scoring.js";
 import { renderSpecialFeaturesTable } from "../context/scenario-context.js";
+import { renderMiscastPanel } from "../context/miscast.js";
 import { navigate } from "../navigate.js";
 
 const allSubPhases = getAllSubPhases();
@@ -141,6 +142,7 @@ function renderOpponentPhaseContext(army, phase) {
   html += renderMagicItemsContext(army, phase.id, null);
   html += renderVirtuesContext(army, phase.id, null);
   html += renderSpecialRulesForPhase(army, phase);
+  html += renderMiscastPanel();
 
   return html;
 }
