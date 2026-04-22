@@ -318,6 +318,21 @@ function getChampionWeapons(unit) {
   return null;
 }
 
+function resolveCrewWeapons(equipmentStrings) {
+  const weapons = [];
+  const seen = new Set();
+  for (const equipStr of equipmentStrings) {
+    const lower = equipStr.toLowerCase();
+    for (const [key, weapon] of Object.entries(COMBAT_WEAPONS)) {
+      if (lower.includes(key) && !seen.has(weapon.name)) {
+        seen.add(weapon.name);
+        weapons.push(weapon);
+      }
+    }
+  }
+  return weapons;
+}
+
 function findCrewProfiles(unit) {
   const stats0 = unit.stats?.[0];
   if (!stats0 || unit.stats.length < 2) return [];
@@ -538,8 +553,27 @@ export function buildCombatLeadershipData(army) {
 export function buildCombatResultEntries(army) {
   if (army.units.length === 0) return [];
 
+  const assignments = getCharacterAssignments();
+  const assignedCharIds = new Set(
+    Object.entries(assignments)
+      .filter(([, uid]) => uid)
+      .map(([cid]) => cid),
+  );
+  const unitById = Object.fromEntries(army.units.map((u) => [u.id, u]));
+  const charsByUnitId = {};
+  for (const [charId, unitId] of Object.entries(assignments)) {
+    if (!unitId) continue;
+    const charUnit = unitById[charId];
+    if (charUnit) {
+      if (!charsByUnitId[unitId]) charsByUnitId[unitId] = [];
+      charsByUnitId[unitId].push(charUnit);
+    }
+  }
+
   const entries = [];
   for (const u of army.units) {
+    if (isCharacter(u) && assignedCharIds.has(u.id)) continue;
+
     const bonuses = [];
     let total = 0;
 
@@ -565,6 +599,17 @@ export function buildCombatResultEntries(army) {
     }
     if (u.hasMusician) {
       bonuses.push("Musician");
+    }
+
+    const assignedChars = charsByUnitId[u.id] || [];
+    const allUnits = [u, ...assignedChars];
+    for (const unit of allUnits) {
+      for (const item of unit.magicItems || []) {
+        if (item.combatResBonus) {
+          bonuses.push(`${item.name} +${item.combatResBonus}`);
+          total += item.combatResBonus;
+        }
+      }
     }
 
     if (total === 0 && !u.hasMusician) continue;
@@ -885,7 +930,9 @@ export function buildCombatEntries(army) {
       riderS,
       t: isRiddenMonster
         ? `${baseT + mount.tBonus}`
-        : stats.crewed && stats.A === "-"
+        : stats.crewed &&
+            stats.A === "-" &&
+            !stats.troopType?.some((t) => t.endsWith("Ch"))
           ? crew[0]?.T || "?"
           : stats.T || "?",
       w: isRiddenMonster ? `${baseW + mount.wBonus}` : stats.W || "?",
@@ -935,9 +982,12 @@ export function buildCombatEntries(army) {
           ws: c.WS,
           s: c.S,
           a: c.A,
-          weapons: (c.weapons || [])
-            .map((wKey) => getWeapon(COMBAT_WEAPONS, wKey))
-            .filter(Boolean),
+          weapons:
+            c.weapons?.length > 0
+              ? c.weapons
+                  .map((wKey) => getWeapon(COMBAT_WEAPONS, wKey))
+                  .filter(Boolean)
+              : resolveCrewWeapons(c.equipment || []),
         })),
       ],
       champions: champions.map((champion) => {

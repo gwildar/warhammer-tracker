@@ -628,6 +628,7 @@ export const MAGIC_ITEMS = [
     effect:
       "When calculating combat result, the unit may claim an additional +1 combat result point.",
     phases: ["combat"],
+    combatResBonus: 1,
   },
 
   // ─── Dark Elves ──────────────────────────────────────────────────────
@@ -755,6 +756,7 @@ export const MAGIC_ITEMS = [
     effect:
       "The unit gains the Stubborn special rule. When calculating combat result, the unit may claim an additional +1 combat result point.",
     phases: ["combat"],
+    combatResBonus: 1,
   },
   {
     name: "Standard of Slaughter",
@@ -2279,6 +2281,7 @@ export const MAGIC_ITEMS = [
     effect:
       'When within 6" of a woodland, the unit may claim an additional +1 combat result point.',
     phases: ["combat"],
+    combatResBonus: 1,
   },
   {
     name: "Banner of Springtide",
@@ -2590,6 +2593,7 @@ export const MAGIC_ITEMS = [
     effect:
       "The unit gains +1 WS (max 10). When calculating combat result, may claim an additional +1 combat result point.",
     phases: ["combat"],
+    combatResBonus: 1,
   },
   {
     name: "Waaagh! Banner",
