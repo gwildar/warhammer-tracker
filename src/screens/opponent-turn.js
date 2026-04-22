@@ -15,6 +15,7 @@ import {
 } from "../state.js";
 import { PHASE_BG } from "../helpers.js";
 import { renderChargeContext } from "../context/charge.js";
+import { renderCasterContext } from "../context/caster.js";
 import { renderMagicItemsContext } from "../context/items.js";
 import { renderVirtuesContext } from "../context/virtues.js";
 import { renderSpecialRulesForPhase } from "../context/special-rules-context.js";
@@ -138,6 +139,7 @@ function renderOpponentPhaseContext(army, phase) {
     html += renderDefensiveStatsContext(army);
   if (!lightweight && phase.id === "combat")
     html += renderCombatWeaponsContext(army);
+  if (phase.id === "combat") html += renderCasterContext(army, ["assailment"]);
   if (phase.id === "scoring") html += renderScoringUI();
   html += renderMagicItemsContext(army, phase.id, null);
   html += renderVirtuesContext(army, phase.id, null);

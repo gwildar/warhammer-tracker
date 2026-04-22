@@ -6,11 +6,31 @@
  * to the bonus rules they inject.
  *
  * Each composition has:
- *   id       – matches the armyComposition field from OWB JSON
- *   rules    – array of { rule, unitIds }
+ *   id              – matches the armyComposition field from OWB JSON
+ *   deploymentCards – array of { title, colour, description, items } shown on the deployment screen
+ *   rules           – array of { rule, unitIds }
  *     rule    – special rule string to inject into unit.specialRules
  *     unitIds – array of OWB unit ID prefixes (before the dot) that gain the rule
  */
+
+/**
+ * Deployment cards that apply to all armies of a given armySlug,
+ * regardless of army-of-infamy composition.
+ */
+export const ARMY_SLUG_DEPLOYMENT_CARDS = {
+  "wood-elf-realms": [
+    {
+      title: "Woodland Ambush — Before Deployment",
+      colour: "wh-green",
+      description: "Place one additional wood on the battlefield.",
+      items: [
+        'Between 3" and 9" wide',
+        "Cannot be placed within the opponent's deployment zone",
+        'Cannot be placed within 12" of the centre of the battlefield',
+      ],
+    },
+  ],
+};
 
 export const ARMY_COMPOSITIONS = {
   "mortuary-cults": {
@@ -39,6 +59,43 @@ export const ARMY_COMPOSITIONS = {
           "pegasus-knights",
           "mounted-yeomen",
         ],
+      },
+    ],
+  },
+  "orions-wild-hunt": {
+    name: "Orion's Wild Hunt",
+    deploymentCards: [
+      {
+        title: "Worthy of Kurnous",
+        colour: "wh-purple",
+        description:
+          "After all units are deployed, nominate a single enemy character or monster.",
+        items: [
+          "All friendly models re-roll To Hit rolls of 1 (shooting & combat) when targeting the nominated unit",
+          "+100 VP if the nominated model is slain, flees, or is fleeing at game end",
+        ],
+      },
+    ],
+    rules: [],
+  },
+  "the-chracian-warhost": {
+    name: "The Chracian Warhost",
+    deploymentCards: [
+      {
+        title: "Warriors of the Wilderness — Before Deployment",
+        colour: "wh-green",
+        description: "Place one additional wood on the battlefield.",
+        items: [
+          'Between 3" and 9" wide',
+          "Cannot be placed within the opponent's deployment zone",
+          'Cannot be placed within 6" of any special terrain features',
+        ],
+      },
+    ],
+    rules: [
+      {
+        rule: "Warriors of the Wilderness",
+        unitIds: ["prince", "noble", "archmage", "mage"],
       },
     ],
   },

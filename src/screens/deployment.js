@@ -1,4 +1,8 @@
 import { SPECIAL_RULES } from "../data/special-rules.js";
+import {
+  ARMY_COMPOSITIONS,
+  ARMY_SLUG_DEPLOYMENT_CARDS,
+} from "../data/army-compositions.js";
 import { getStartTime, saveDeploymentTime, resetStartTime } from "../state.js";
 import { navigate } from "../navigate.js";
 import { renderSetupHeader, bindSetupHeaderEvents } from "./setup-header.js";
@@ -68,33 +72,25 @@ function renderUnitCard(unit) {
   `;
 }
 
-function renderWoodlandAmbush(army) {
-  if (army.armySlug !== "wood-elf-realms") return "";
+function renderDeploymentCard(card) {
   return `
-    <div class="bg-wh-surface border border-wh-green/30 rounded-lg p-4 mb-4">
-      <div class="text-xs uppercase tracking-wider text-wh-green mb-2">Woodland Ambush — Before Deployment</div>
-      <p class="text-sm text-wh-text mb-2">Place one additional wood on the battlefield.</p>
+    <div class="bg-wh-surface border border-${card.colour}/30 rounded-lg p-4 mb-4">
+      <div class="text-xs uppercase tracking-wider text-${card.colour} mb-2">${card.title}</div>
+      <p class="text-sm text-wh-text mb-2">${card.description}</p>
       <ul class="space-y-1 text-xs text-wh-muted list-disc list-inside">
-        <li>Between 3" and 9" wide</li>
-        <li>Cannot be placed within the opponent's deployment zone</li>
-        <li>Cannot be placed within 12" of the centre of the battlefield</li>
+        ${card.items.map((item) => `<li>${item}</li>`).join("")}
       </ul>
     </div>
   `;
 }
 
-function renderWorthyOfKurnous(army) {
-  if (army.composition !== "orions-wild-hunt") return "";
-  return `
-    <div class="bg-wh-surface border border-wh-purple/30 rounded-lg p-4 mb-4">
-      <div class="text-xs uppercase tracking-wider text-wh-purple mb-2">Worthy of Kurnous</div>
-      <p class="text-sm text-wh-text mb-2">After all units are deployed, nominate a single enemy character or monster.</p>
-      <ul class="space-y-1 text-xs text-wh-muted list-disc list-inside">
-        <li>All friendly models re-roll To Hit rolls of 1 (shooting &amp; combat) when targeting the nominated unit</li>
-        <li>+100 VP if the nominated model is slain, flees, or is fleeing at game end</li>
-      </ul>
-    </div>
-  `;
+function renderDeploymentCards(army) {
+  const slugCards = ARMY_SLUG_DEPLOYMENT_CARDS[army.armySlug] || [];
+  const compositionCards =
+    (army.composition &&
+      ARMY_COMPOSITIONS[army.composition]?.deploymentCards) ||
+    [];
+  return [...slugCards, ...compositionCards].map(renderDeploymentCard).join("");
 }
 
 function renderDeploymentUnits(army) {
@@ -119,9 +115,8 @@ export function renderDeploymentScreen(army) {
         <div class="mb-4">
           <h2 class="text-2xl font-bold text-wh-text">Deployment</h2>
         </div>
-        ${renderWoodlandAmbush(army)}
+        ${renderDeploymentCards(army)}
         ${renderExplainer()}
-        ${renderWorthyOfKurnous(army)}
         ${renderDeploymentUnits(army)}
       </main>
       <footer class="sticky bottom-0 bg-wh-surface border-t border-wh-border p-3">
