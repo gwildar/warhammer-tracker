@@ -846,6 +846,7 @@ export const UNIT_STATS = {
         Name: "Black Coach",
         Regen: "6+",
         "Impact-Hits": "D6+2",
+        AS: "4",
         equipment: [],
       },
       {
@@ -910,6 +911,7 @@ export const UNIT_STATS = {
         Name: "Black Coach",
         Regen: "6+",
         "Impact-Hits": "D6+2",
+        AS: "4",
         equipment: [],
       },
       {
@@ -1139,6 +1141,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Chariot",
         "Impact-Hits": "D6+1",
+        AS: "4",
         equipment: [],
       },
       {
@@ -1347,6 +1350,7 @@ export const UNIT_STATS = {
         WS: "5",
         Name: "Blood Throne",
         "Impact-Hits": "D6+1",
+        AS: "4",
         equipment: ["hand weapon"],
       },
       {
@@ -1617,6 +1621,7 @@ export const UNIT_STATS = {
         Name: "Bloodwrack Shrine",
         "Magic-Res": "-1",
         "Impact-Hits": "D6+1",
+        AS: "4",
         equipment: [],
       },
       {
@@ -2273,6 +2278,7 @@ export const UNIT_STATS = {
         Name: "Burning Chariot of Tzeentch",
         "Impact-Hits": "D6+1",
         Fly: "9",
+        AS: "4",
         equipment: [],
       },
       {
@@ -2685,6 +2691,7 @@ export const UNIT_STATS = {
         Name: "Cauldron of Blood",
         "Magic-Res": "-1",
         "Impact-Hits": "D6+1",
+        AS: "4",
         equipment: [],
       },
       {
@@ -2738,6 +2745,7 @@ export const UNIT_STATS = {
         Name: "Cauldron of Blood",
         "Magic-Res": "-1",
         "Impact-Hits": "D6+1",
+        AS: "4",
         equipment: [],
       },
       {
@@ -2881,6 +2889,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Chariot",
         "Impact-Hits": "D6+1",
+        AS: "4",
         equipment: [],
       },
       {
@@ -3496,6 +3505,7 @@ export const UNIT_STATS = {
         Name: "Chariot of Tzeentch",
         "Impact-Hits": "D6+1",
         Fly: "9",
+        AS: "4",
         equipment: [],
       },
       {
@@ -3630,6 +3640,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Chariot",
         "Impact-Hits": "D6+1, Chariot only",
+        AS: "4",
         equipment: [],
       },
       {
@@ -4020,6 +4031,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Chariot",
         "Impact-Hits": "D6+1",
+        AS: "4",
         equipment: [],
       },
       {
@@ -4287,6 +4299,7 @@ export const UNIT_STATS = {
         Name: "Corpse Cart",
         Regen: "6+",
         "Impact-Hits": "D3+1",
+        AS: "4",
         equipment: [],
       },
       {
@@ -4354,6 +4367,7 @@ export const UNIT_STATS = {
         Regen: "6+",
         "Impact-Hits": "D6+1",
         Fly: "8",
+        AS: "4",
         equipment: [],
       },
       {
@@ -6040,6 +6054,7 @@ export const UNIT_STATS = {
         Name: "Dwarf Cart",
         "Magic-Res": "-1",
         "Impact-Hits": "D3",
+        AS: "5",
         equipment: [],
       },
       {
@@ -6568,6 +6583,7 @@ export const UNIT_STATS = {
         Name: "Steam Tank",
         Stomps: "D3+1",
         "Impact-Hits": "D6+1",
+        AS: "1",
         equipment: ["Steam Cannon", "steam gun"],
       },
       {
@@ -6614,6 +6630,7 @@ export const UNIT_STATS = {
         Name: "War Wagon",
         Stomps: "D3+1",
         "Impact-Hits": "D6+1, War Wagon only",
+        AS: "4",
         equipment: [],
       },
       {
@@ -6827,6 +6844,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Exalted Seeker Chariot",
         "Impact-Hits": "D6+1",
+        AS: "4",
         equipment: [],
       },
       {
@@ -8264,6 +8282,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Scraplauncher",
         "Impact-Hits": "D6+1",
+        AS: "4",
         equipment: ["Scraplauncher catapult"],
       },
       {
@@ -8655,6 +8674,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Chariot",
         "Impact-Hits": "D3+1",
+        AS: "5",
         equipment: [],
       },
       {
@@ -8824,6 +8844,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Chariot",
         "Impact-Hits": "D6+2",
+        AS: "4",
         equipment: [],
       },
       {
@@ -10058,6 +10079,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Hellflayer",
         "Impact-Hits": "2D6+1",
+        AS: "5",
         equipment: [],
       },
       {
@@ -10133,6 +10155,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Hellflayer",
         "Impact-Hits": "2D6+1",
+        AS: "5",
         equipment: [],
       },
       {
@@ -11040,6 +11063,7 @@ export const UNIT_STATS = {
         Name: "Iron Daemon",
         Stomps: "D3+1",
         "Impact-Hits": "D6+1",
+        AS: "4",
         equipment: ["Steam Cannonade"],
       },
       {
@@ -12331,6 +12355,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Lion Chariot",
         "Impact-Hits": "D6",
+        AS: "4",
         equipment: [],
       },
       {
@@ -12633,6 +12658,7 @@ export const UNIT_STATS = {
         Name: "Lothern Skycutter",
         "Impact-Hits": "D3+1",
         Fly: "10",
+        AS: "4",
         equipment: [],
       },
       {
@@ -13633,6 +13659,7 @@ export const UNIT_STATS = {
         Regen: "6+",
         "Impact-Hits": "D6+1",
         Fly: "8",
+        AS: "4",
         equipment: [],
       },
       {
@@ -14913,6 +14940,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Chariot",
         "Impact-Hits": "D6+1",
+        AS: "4",
         equipment: [],
       },
       {
@@ -15933,6 +15961,7 @@ export const UNIT_STATS = {
         "Magic-Res": "-1",
         Stomps: "D3+1",
         "Impact-Hits": "D3+1",
+        AS: "4",
         equipment: ["Billowing Death"],
       },
       {
@@ -15985,6 +16014,7 @@ export const UNIT_STATS = {
         "Magic-Res": "-1",
         Stomps: "D3+1",
         "Impact-Hits": "D3+1",
+        AS: "4",
         equipment: ["Billowing Death"],
       },
       {
@@ -16767,6 +16797,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Chariot",
         "Impact-Hits": "D6+2",
+        AS: "4",
         equipment: [],
       },
       {
@@ -17444,6 +17475,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Chariot",
         "Impact-Hits": "D6",
+        AS: "5",
         equipment: [],
       },
       {
@@ -17573,6 +17605,7 @@ export const UNIT_STATS = {
         Name: "Screaming Bell",
         "Magic-Res": "-3",
         "Impact-Hits": "D6+1",
+        AS: "4",
         equipment: [],
       },
       {
@@ -17624,6 +17657,7 @@ export const UNIT_STATS = {
         Name: "Screaming Bell",
         "Magic-Res": "-3",
         "Impact-Hits": "D6+1",
+        AS: "4",
         equipment: [],
       },
       {
@@ -17746,6 +17780,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Seeker Chariot",
         "Impact-Hits": "D3+1",
+        AS: "5",
         equipment: [],
       },
       {
@@ -18736,6 +18771,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Chariot",
         "Impact-Hits": "D3",
+        AS: "5",
         equipment: [],
       },
       {
@@ -18785,6 +18821,7 @@ export const UNIT_STATS = {
         Name: "Chariot",
         Regen: "6+",
         "Impact-Hits": "D3",
+        AS: "5",
         equipment: [],
       },
       {
@@ -19294,6 +19331,7 @@ export const UNIT_STATS = {
         Name: "Skull Cannon",
         Stomps: "D3",
         "Impact-Hits": "D3+1",
+        AS: "4",
         equipment: ["cannon of Khorne", "hand weapon"],
       },
       {
@@ -19351,6 +19389,7 @@ export const UNIT_STATS = {
         Name: "Sky Lantern",
         "Impact-Hits": "D3+1, Sky Lantern only",
         Fly: "8",
+        AS: "4",
         equipment: [],
       },
       {
@@ -19621,6 +19660,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Pump Wagon",
         "Impact-Hits": "D3+1",
+        AS: "5",
         equipment: [],
       },
       {
@@ -21102,6 +21142,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Tiranoc Chariot",
         "Impact-Hits": "D6",
+        AS: "5",
         equipment: [],
       },
       {
@@ -21634,6 +21675,7 @@ export const UNIT_STATS = {
         WS: "-",
         Name: "Chariot",
         "Impact-Hits": "D6+1",
+        AS: "4",
         equipment: [],
       },
       {
@@ -22295,6 +22337,7 @@ export const UNIT_STATS = {
         Name: "War Altar",
         "Magic-Res": "-2",
         "Impact-Hits": "D6+1",
+        AS: "4",
         equipment: [],
       },
       {
