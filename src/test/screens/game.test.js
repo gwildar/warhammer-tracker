@@ -1351,6 +1351,77 @@ describe("Charge ranges with assigned characters", () => {
   });
 });
 
+describe("Charge ranges — flying chariots", () => {
+  beforeEach(() => {
+    saveCharacterAssignments({});
+    const army = loadArmy("santas-jolly-elves");
+    startGame(army);
+    savePhaseIndex(4); // declare-charges
+  });
+
+  it("shows Pooch Express (Lothern Skycutter) in max charge range with Fly movement", () => {
+    const army = loadArmy("santas-jolly-elves");
+    renderGameScreen(army);
+
+    const chargePanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    expect(chargePanel).toBeTruthy();
+
+    const cards = [...chargePanel.querySelectorAll(".bg-wh-card")];
+    const poochCard = cards.find((c) =>
+      c.textContent.includes("Pooch Express"),
+    );
+    expect(poochCard).toBeTruthy();
+    // Ground: Roc M2 + 6 + Swiftstride 3 = 11"
+    expect(poochCard.textContent).toContain('11"');
+    // Fly: 10 + 6 + Swiftstride 3 = 19"
+    expect(poochCard.textContent).toContain('19"');
+  });
+});
+
+describe("Lothern Skycutter (Pooch Express) combat stats", () => {
+  let army;
+
+  beforeEach(() => {
+    saveCharacterAssignments({});
+    army = loadArmy("santas-jolly-elves");
+    startGame(army);
+    savePhaseIndex(10); // choose-fight (combat phase)
+  });
+
+  it("shows chariot body toughness T4 not crew toughness", () => {
+    renderGameScreen(army);
+    const combatPanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    const cards = [...combatPanel.querySelectorAll(".bg-wh-card")];
+    const poochCard = cards.find((c) =>
+      c.textContent.includes("Pooch Express"),
+    );
+    expect(poochCard).toBeTruthy();
+    expect(poochCard.textContent).toContain("T:4");
+  });
+
+  it("shows armour save 4+", () => {
+    renderGameScreen(army);
+    const combatPanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    const cards = [...combatPanel.querySelectorAll(".bg-wh-card")];
+    const poochCard = cards.find((c) =>
+      c.textContent.includes("Pooch Express"),
+    );
+    expect(poochCard).toBeTruthy();
+    expect(poochCard.textContent).toContain("4+");
+  });
+
+  it("shows Sea Guard crew with Cavalry Spear", () => {
+    renderGameScreen(army);
+    const combatPanel = getApp().querySelector(".border-wh-phase-combat\\/30");
+    const cards = [...combatPanel.querySelectorAll(".bg-wh-card")];
+    const poochCard = cards.find((c) =>
+      c.textContent.includes("Pooch Express"),
+    );
+    expect(poochCard).toBeTruthy();
+    expect(poochCard.textContent).toContain("Cavalry Spear");
+  });
+});
+
 describe("Combat card special rules per section", () => {
   function buildRulesArmy() {
     return {

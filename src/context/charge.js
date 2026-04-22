@@ -76,13 +76,15 @@ export function renderChargeContext(army) {
     charsByUnitId.get(unitId).push(charUnit);
   }
 
-  // Exclude assigned characters and war machines (cannot charge)
+  // Exclude assigned characters and war machines (cannot charge).
+  // Chariots (HCh, Ch, etc.) can charge; only units with troopType "WM" cannot.
   const unitsToRender = units.filter(
-    (u) => !assignedCharIds.has(u.id) && u.stats?.[0]?.crewed !== true,
+    (u) =>
+      !assignedCharIds.has(u.id) && !u.stats?.[0]?.troopType?.includes("WM"),
   );
 
   const rows = unitsToRender.map((u) => {
-    const mv = resolveMovement(u);
+    const rawMv = resolveMovement(u);
     const mountData = u.mount ?? null;
 
     const flyMv = extractFlyMovement(u, mountData);
@@ -104,7 +106,7 @@ export function renderChargeContext(army) {
 
     const rangeBonus = chargeMods.reduce((sum, m) => sum + m.range, 0);
 
-    const baseMv = resolveBaseMv(mountData, mv);
+    const baseMv = resolveBaseMv(mountData, rawMv);
     const groundCharge = baseMv != null ? baseMv + 6 + rangeBonus : null;
     const flyCharge = hasFly ? flyMv + 6 + rangeBonus : null;
     const maxCharge = Math.max(groundCharge || 0, flyCharge || 0);

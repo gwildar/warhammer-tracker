@@ -1,0 +1,2494 @@
+{
+  "name": "Santa's Jolly Elves",
+  "description": "2-0-1 first at Nexus ",
+  "game": "the-old-world",
+  "points": 2000,
+  "army": "high-elf-realms",
+  "characters": [
+    {
+      "name_en": "Prince",
+      "name_cn": "王子",
+      "name_it": "Prince",
+      "name_de": "Prinz",
+      "name_fr": "Prince",
+      "name_es": "Príncipe",
+      "id": "prince.esmmkiysr",
+      "points": 130,
+      "armyComposition": {
+        "high-elf-realms": { "category": "characters" },
+        "the-chracian-warhost": {
+          "category": "characters",
+          "notes": {
+            "name_en": "0-1 High Elf Prince or Archmage per 1000 points",
+            "name_cn": "每1000分0-1高等精灵王子或大法师",
+            "name_fr": "0-1 Prince Haut Elfe ou Archimage par tranche de 1000 points",
+            "name_de": "0-1 Prinz oder Erzmagier pro 1.000 Punkte"
+          }
+        }
+      },
+      "command": [
+        {
+          "name_en": "General",
+          "name_cn": "主将",
+          "name_it": "Generale",
+          "name_de": "General",
+          "name_fr": "Général",
+          "name_es": "General",
+          "points": 0,
+          "id": 0,
+          "active": true
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapon",
+          "name_cn": "单手武器",
+          "name_it": "Arma Bianca",
+          "name_de": "Handwaffe",
+          "name_es": "Arma de mano",
+          "points": 0,
+          "perModel": true,
+          "active": false,
+          "name_fr": "Arme de base",
+          "equippedDefault": true,
+          "id": 0
+        },
+        {
+          "name_en": "Additional hand weapon",
+          "name_cn": "额外单手武器",
+          "name_it": "Arma Addizionale",
+          "name_de": "Zusätzliche Handwaffe",
+          "name_es": "Arma de mano adicional",
+          "points": 3,
+          "perModel": true,
+          "name_fr": "Arme de base additionnelle",
+          "id": 1,
+          "active": false
+        },
+        {
+          "name_en": "Cavalry spear",
+          "name_cn": "骑兵长矛",
+          "name_it": "Lancia Leggera",
+          "name_de": "Kavalleriespeer",
+          "name_es": "Lanza de caballería",
+          "points": 2,
+          "perModel": true,
+          "name_fr": "Lance de cavalerie",
+          "id": 2,
+          "active": false
+        },
+        {
+          "name_en": "Great weapon",
+          "name_cn": "重型武器",
+          "name_it": "Grande Arma",
+          "name_de": "Zweihandwaffe",
+          "name_es": "Arma a dos manos",
+          "points": 4,
+          "perModel": true,
+          "name_fr": "Arme lourde",
+          "id": 3,
+          "active": false
+        },
+        {
+          "name_en": "Halberd",
+          "name_cn": "长戟",
+          "name_it": "Alabarda",
+          "name_de": "Hellebarde",
+          "name_es": "Alabarda",
+          "points": 3,
+          "perModel": true,
+          "name_fr": "Hallebarde",
+          "id": 4,
+          "active": true
+        },
+        {
+          "name_en": "Lance",
+          "name_cn": "长枪",
+          "name_it": "Lancia Pesante",
+          "name_de": "Lanze",
+          "name_es": "Lanza",
+          "points": 4,
+          "perModel": true,
+          "name_fr": "Lance de joute",
+          "id": 5,
+          "active": false
+        },
+        {
+          "name_en": "Sword of Hoeth",
+          "name_cn": "荷斯之剑",
+          "name_it": "Sword of Hoeth",
+          "name_de": "Schwert aus Hoeth",
+          "name_es": "Sword of Hoeth",
+          "name_fr": "Épée de Hoeth",
+          "points": 0,
+          "requiredMagicItem": "Loremaster",
+          "notes": {
+            "name_en": "Requires Loremaster Elven Honour",
+            "name_cn": "需要魔剑士精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Lehrmeister",
+            "name_fr": "Nécessite l’Honneur Elfique Maître du Savoir"
+          },
+          "id": 6,
+          "active": false
+        },
+        {
+          "name_en": "Sword of Hoeth",
+          "name_cn": "荷斯之剑",
+          "name_it": "Sword of Hoeth",
+          "name_de": "Schwert aus Hoeth",
+          "name_es": "Sword of Hoeth",
+          "name_fr": "Épée de Hoeth",
+          "points": 0,
+          "requiredMagicItem": "Warden of Saphery",
+          "notes": {
+            "name_en": "Requires Warden of Saphery Elven Honour",
+            "name_cn": "需要萨芙睿典卫精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Wächter von Saphery",
+            "name_fr": "Nécessite l’Honneur Elfique Gardien de Saphery"
+          },
+          "id": 7,
+          "active": false
+        },
+        {
+          "name_en": "Bow of Avelorn",
+          "name_cn": "阿瓦隆之弓",
+          "name_it": "Arco di Avelorn",
+          "name_de": "Bogen von Avelorn",
+          "name_es": "Arco de Avelorn",
+          "name_fr": "Arc d’Avelorn",
+          "points": 0,
+          "requiredMagicItem": "Shadow Stalker",
+          "notes": {
+            "name_en": "Requires Shadow Stalker Elven Honour",
+            "name_cn": "需要阴影阔步者精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Schattenpirscher",
+            "name_fr": "Nécessite l’Honneur Elfique Rôdeur des Ombres"
+          },
+          "id": 8,
+          "active": false
+        },
+        {
+          "name_en": "Ceremonial halberd",
+          "name_cn": "仪式戟",
+          "name_it": "Ceremonial halberd",
+          "name_de": "Zeremoniehellebarde",
+          "name_es": "Ceremonial halberd",
+          "name_fr": "Hallebarde de cérémonie",
+          "points": 0,
+          "requiredMagicItem": "Anointed of Asuryan",
+          "notes": {
+            "name_en": "Requires Anointed of Asuryan Elven Honour",
+            "name_cn": "需要阿苏焉圣选者精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Gesalbter des Asuryan",
+            "name_fr": "Nécessite l’Honneur Elfique Élu d’Asuryan"
+          },
+          "id": 9,
+          "active": false
+        },
+        {
+          "name_en": "Chracian great blade",
+          "name_cn": "查瑞斯巨斧",
+          "name_it": "Chracian great blade",
+          "name_de": "Chracianische Zweihandklinge",
+          "name_es": "Chracian great blade",
+          "name_fr": "Grande lame de Chrace",
+          "points": 0,
+          "requiredMagicItem": "Chracian Hunter",
+          "notes": {
+            "name_en": "Requires Chracian Hunter Elven Honour",
+            "name_cn": "需要查里安寻猎者精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Chracianischer Jäger",
+            "name_fr": "Nécessite l’Honneur Elfique Chasseur Chracien"
+          },
+          "id": 10,
+          "active": false
+        },
+        {
+          "name_en": "Warbow",
+          "name_cn": "战弓",
+          "name_it": "Arco da Guerra",
+          "name_de": "Kriegsbogen",
+          "name_es": "Arco de guerra",
+          "name_fr": "Arc de guerre",
+          "points": 0,
+          "requiredMagicItem": "Sea Guard",
+          "notes": {
+            "name_en": "Requires Sea Guard Elven Honour",
+            "name_cn": "需要海护卫精灵荣耀",
+            "name_fr": "Nécessite l’Honneur Elfique Garde Maritime",
+            "name_de": "Benötigt die Elfenehrung Seegard"
+          },
+          "id": 11,
+          "active": false
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_it": "Armatura Leggera",
+          "name_de": "Leichte Rüstung",
+          "name_es": "Armadura ligera",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "name_fr": "Armure légère",
+          "activeDefault": false,
+          "id": 0
+        },
+        {
+          "name_en": "Heavy armour",
+          "name_cn": "重甲",
+          "name_it": "Armatura Pesante",
+          "name_de": "Schwere Rüstung",
+          "name_es": "Armadura pesada",
+          "points": 3,
+          "perModel": true,
+          "name_fr": "Armure lourde",
+          "id": 1
+        },
+        {
+          "name_en": "Full plate armour",
+          "name_cn": "全身甲",
+          "name_it": "Armatura Completa",
+          "name_de": "Plattenrüstung",
+          "name_es": "Armadura completa",
+          "points": 6,
+          "perModel": true,
+          "name_fr": "Armure de plate complète",
+          "id": 2
+        },
+        {
+          "name_en": "Full plate armour",
+          "name_cn": "全身甲",
+          "name_it": "Armatura Completa",
+          "name_de": "Plattenrüstung",
+          "name_es": "Armadura completa",
+          "name_fr": "Armure de plate complète",
+          "points": 0,
+          "requiredMagicItem": "Blood of Caledor",
+          "notes": {
+            "name_en": "Requires Blood of Caledor Elven Honour",
+            "name_cn": "需要卡勒多之血精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Blut von Caledor",
+            "name_fr": "Nécessite l’Honneur Elfique Sang de Caledor"
+          },
+          "id": 3
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Shield",
+          "name_cn": "盾牌",
+          "name_it": "Scudo",
+          "name_de": "Schild",
+          "name_es": "Escudo",
+          "points": 2,
+          "perModel": true,
+          "name_fr": "Bouclier",
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Longbow",
+          "name_cn": "长弓",
+          "name_it": "Arco Lungo",
+          "name_de": "Langbogen",
+          "name_es": "Arco largo",
+          "points": 4,
+          "perModel": true,
+          "name_fr": "Arc long",
+          "id": 1
+        },
+        {
+          "name_en": "Bow of Avelorn",
+          "name_cn": "阿瓦隆之弓",
+          "name_it": "Arco di Avelorn",
+          "name_de": "Bogen von Avelorn",
+          "name_es": "Arco de Avelorn",
+          "points": 12,
+          "perModel": true,
+          "name_fr": "Arc d’Avelorn",
+          "id": 2
+        }
+      ],
+      "mounts": [
+        {
+          "name_en": "On foot",
+          "name_cn": "步行",
+          "name_it": "A Piedi",
+          "name_de": "Zu Fuß",
+          "name_es": "A pie",
+          "name_fr": "À Pied",
+          "points": 0,
+          "active": false,
+          "id": 0
+        },
+        {
+          "name_en": "Elven Steed",
+          "name_cn": "精灵骏马",
+          "name_it": "Cavallo Elfico",
+          "name_de": "Elfenross",
+          "name_fr": "Coursier Elfique",
+          "name_es": "Corcel élfico",
+          "points": 14,
+          "id": 1,
+          "active": false
+        },
+        {
+          "name_en": "Barded Elven Steed",
+          "name_cn": "披甲精灵骏马",
+          "name_it": "Cavallo Elfico Bardato",
+          "name_de": "Elfenross mit Rossharnisch",
+          "name_fr": "Coursier Elfique Caparaçonné",
+          "name_es": "Corcel élfico con barda",
+          "points": 18,
+          "id": 2,
+          "active": false
+        },
+        {
+          "name_en": "Great Eagle {mount}",
+          "name_cn": "巨鹰{mount}",
+          "name_it": "Grandi Aquile",
+          "name_de": "Riesenadler",
+          "name_fr": "Grand Aigle",
+          "name_es": "Gran águila",
+          "points": 60,
+          "id": 3,
+          "active": false
+        },
+        {
+          "name_en": "Tiranoc Chariot",
+          "name_cn": "泰伦洛克战车",
+          "name_it": "Carro di Tiranoc",
+          "name_de": "Tiranoc-Streitwagen",
+          "name_fr": "Char de Tiranoc",
+          "name_es": "Carro de Tiranoc",
+          "points": 75,
+          "id": 4,
+          "active": false
+        },
+        {
+          "name_en": "Lothern Skycutter",
+          "name_cn": "洛瑟恩斩天艇",
+          "name_it": "Lothern Skycutter",
+          "name_de": "Himmelssegler von Lothern",
+          "name_es": "Escolta celeste",
+          "name_fr": "Cotre Volant de Lothern",
+          "points": 90,
+          "options": [
+            {
+              "name_en": "Eagle-Eye Bolt Thrower",
+              "name_cn": "鹰眼弩炮",
+              "name_it": "Eagle-Eye Balista",
+              "name_de": "Adlerauge-Speerschleuder",
+              "name_fr": "Baliste Œil-d’aigle",
+              "name_es": "Lanzavirotes ojo de águila",
+              "points": 25
+            }
+          ],
+          "requiredMagicItem": "Sea Guard",
+          "notes": {
+            "name_en": "Requires Sea Guard Elven Honour",
+            "name_cn": "需要海护卫精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Seegard",
+            "name_fr": "Nécessite l’Honneur Elfique Garde Maritime"
+          },
+          "id": 5,
+          "active": false
+        },
+        {
+          "name_en": "Lion Chariot of Chrace",
+          "name_cn": "查瑞斯白狮战车",
+          "name_it": "Carro dei Leoni di Chrace",
+          "name_de": "Löwenstreitwagen von Chrace",
+          "name_fr": "Char à Lions de Chrace",
+          "name_es": "Carro de leones de Cracia",
+          "points": 125,
+          "requiredMagicItem": "Chracian Hunter",
+          "notes": {
+            "name_en": "Requires Chractian Hunter Elven Honour",
+            "name_cn": "需要查里安寻猎者精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Chracianischer Jäger",
+            "name_fr": "Nécessite l’Honneur Elfique Chasseur Chracien"
+          },
+          "id": 6,
+          "active": false
+        },
+        {
+          "name_en": "Griffon {high elves}",
+          "name_cn": "狮鹫 {high elves}",
+          "name_it": "Grifone {high elves}",
+          "name_de": "Greif",
+          "name_fr": "Griffon",
+          "name_es": "Grifo",
+          "points": 130,
+          "id": 7,
+          "active": false
+        },
+        {
+          "name_en": "Flamespyre Phoenix {mount}",
+          "name_cn": "炽焰凤凰 {mount}",
+          "name_it": "Fenice di Fuoco",
+          "name_de": "Flammensäulen-Phönix",
+          "name_fr": "Phénix Spire-de-feu",
+          "name_es": "Fénix pico llameante",
+          "points": 170,
+          "requiredMagicItem": "Anointed of Asuryan",
+          "notes": {
+            "name_en": "Requires Anointed of Asuryan Elven Honour",
+            "name_cn": "需要阿苏焉圣选者精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Gesalbter des Asuryan",
+            "name_fr": "Nécessite l’Honneur Elfique Élu d’Asuryan"
+          },
+          "id": 8,
+          "active": false
+        },
+        {
+          "name_en": "Sun Dragon",
+          "name_cn": "烈阳龙",
+          "name_it": "Drago del Sole",
+          "name_de": "Sonnendrache",
+          "name_fr": "Dragon Solaire",
+          "name_es": "Dragón solar",
+          "points": 180,
+          "requiredMagicItem": "Blood of Caledor",
+          "notes": {
+            "name_en": "Requires Blood of Caledor Elven Honour",
+            "name_cn": "需要卡勒多之血精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Blut des Caledor",
+            "name_fr": "Nécessite l’Honneur Elfique Sang de Caledor"
+          },
+          "id": 9,
+          "active": false
+        },
+        {
+          "name_en": "Frostheart Phoenix {mount}",
+          "name_cn": "霜心凤凰 {mount}",
+          "name_it": "Fenice di Ghiaccio",
+          "name_de": "Frostherz-Phönix",
+          "name_fr": "Phénix Cœur-de-Givre",
+          "name_es": "Fénix corazón gélido",
+          "points": 205,
+          "requiredMagicItem": "Anointed of Asuryan",
+          "notes": {
+            "name_en": "Requires Anointed of Asuryan Elven Honour",
+            "name_cn": "需要阿苏焉圣选者精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Gesalbter des Asuryan",
+            "name_fr": "Nécessite l’Honneur Elfique Élu d’Asuryan"
+          },
+          "id": 10,
+          "active": false
+        },
+        {
+          "name_en": "Moon Dragon",
+          "name_cn": "银月龙",
+          "name_it": "Drago della Luna",
+          "name_de": "Monddrache",
+          "name_fr": "Dragon Lunaire",
+          "name_es": "Dragón lunar",
+          "points": 235,
+          "id": 11,
+          "active": false
+        },
+        {
+          "name_en": "Star Dragon",
+          "name_cn": "耀星龙",
+          "name_it": "Drago delle Stelle",
+          "name_de": "Sternendrache",
+          "name_fr": "Dragon Stellaire",
+          "name_es": "Dragón estelar",
+          "points": 290,
+          "id": 12,
+          "active": true
+        }
+      ],
+      "items": [
+        {
+          "name_en": "Magic Items",
+          "name_cn": "魔法物品",
+          "name_it": "Oggetti Magici",
+          "name_de": "Magische Gegenstände",
+          "name_es": "Objetos mágicos",
+          "types": [
+            "weapon",
+            "armor",
+            "talisman",
+            "enchanted-item",
+            "arcane-item"
+          ],
+          "selected": [
+            {
+              "name_de": "Samen der Wiedergeburt*",
+              "name_en": "Seed of Rebirth*",
+              "name_cn": "重生之种*",
+              "name_fr": "Graine de Renaissance*",
+              "name_it": "Seed of Rebirth*",
+              "points": 20,
+              "stackable": true,
+              "type": "enchanted-item",
+              "onePerArmy": false,
+              "name": "seed of rebirth",
+              "id": 28
+            },
+            {
+              "name_de": "Rüstung von Caledor",
+              "name_en": "Armour of Caledor",
+              "name_cn": "卡勒多盔甲",
+              "name_fr": "Armure de Caledor",
+              "name_it": "Armour of Caledor",
+              "points": 35,
+              "type": "armor",
+              "onePerArmy": true,
+              "name": "armour of caledor",
+              "id": 9
+            },
+            {
+              "name_de": "Opalamulett*",
+              "name_en": "Opal Amulet*",
+              "name_cn": "猫眼石护符*",
+              "name_fr": "Amulette d’Opale*",
+              "name_it": "Opal Amulet*",
+              "points": 20,
+              "stackable": true,
+              "type": "talisman",
+              "onePerArmy": false,
+              "name": "opal amulet",
+              "id": 15
+            }
+          ],
+          "maxPoints": 100,
+          "name_fr": "Objets Magiques"
+        },
+        {
+          "name_en": "Elven Honours",
+          "name_cn": "精灵荣耀",
+          "name_it": "Onoroficenze Elfiche",
+          "name_de": "Elfenehrungen",
+          "name_es": "Honores élficos",
+          "types": ["elven-honour"],
+          "selected": [
+            {
+              "name_de": "Reinherzig",
+              "name_en": "Pure of Heart",
+              "name_cn": "纯洁之心",
+              "name_fr": "Pur de Cœur",
+              "name_it": "Pure of Cuore",
+              "points": 0,
+              "type": "elven-honour",
+              "armyComposition": [
+                "high-elf-realms",
+                "sea-guard-garrison",
+                "the-chracian-warhost"
+              ],
+              "onePerArmy": false,
+              "name": "pure of heart",
+              "id": 6
+            }
+          ],
+          "maxPoints": 0,
+          "name_fr": "Honneurs Elfiques"
+        }
+      ],
+      "specialRules": {
+        "name_en": "Ithilmar Weapons, Strike First, Valour of Ages",
+        "name_cn": "伊瑟拉玛武器, 先攻, 岁月的荣耀",
+        "name_it": "Ithilmar Weapons, Attacca Per Primo, Valore delle Ere",
+        "name_fr": "Armes en Ithilmar, Frappe En Premier, Valeur des Âges",
+        "name_es": "Armas de Ithilmar, Siempre ataca primero, Valor de las eras",
+        "name_de": "Ithilmar-Waffen, Schlägt zuerst zu, Mut der Zeitalter"
+      },
+      "magic": { "items": [] },
+      "name": "Buddy"
+    },
+    {
+      "name_en": "Noble",
+      "name_cn": "贵族",
+      "name_it": "Noble",
+      "name_de": "Edler",
+      "name_fr": "Noble",
+      "name_es": "Noble",
+      "id": "noble.btrvinm",
+      "points": 70,
+      "armyComposition": {
+        "high-elf-realms": { "category": "characters" },
+        "the-chracian-warhost": { "category": "characters" },
+        "sea-guard-garrison": {
+          "category": "characters",
+          "notes": {
+            "name_en": "0-1 Dragon Mage, High Elf Noble or High Elf Mage per 1000 points",
+            "name_cn": "每1000分0-1龙法师, 高等精灵贵族或高等精灵法师",
+            "name_fr": "0-1 Mage Dragon, Noble Haut Elfe ou Mage Haut Elfe par tranche de 1000 points",
+            "name_de": "0-1 Dragenmagier, Edler oder Magier pro 1.000 Punkte "
+          }
+        }
+      },
+      "command": [
+        {
+          "name_en": "General",
+          "name_cn": "主将",
+          "name_it": "Generale",
+          "name_de": "General",
+          "name_fr": "Général",
+          "name_es": "General",
+          "points": 0,
+          "id": 0
+        },
+        {
+          "name_en": "Battle Standard Bearer",
+          "name_cn": "战旗手",
+          "name_it": "Stendardo da Battaglia",
+          "name_de": "Armeestandartenträger",
+          "name_es": "Portaestandarte de batalla",
+          "points": 25,
+          "magic": { "types": ["banner"], "maxPoints": 0, "selected": [] },
+          "name_fr": "Porteur de la Grande Bannière",
+          "id": 1,
+          "active": true
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapon",
+          "name_cn": "单手武器",
+          "name_it": "Arma Bianca",
+          "name_de": "Handwaffe",
+          "name_es": "Arma de mano",
+          "name_fr": "Arme de base",
+          "points": 0,
+          "perModel": true,
+          "active": false,
+          "equippedDefault": true,
+          "id": 0
+        },
+        {
+          "name_en": "Additional hand weapon",
+          "name_cn": "额外单手武器",
+          "name_it": "Arma Addizionale",
+          "name_de": "Zusätzliche Handwaffe",
+          "name_es": "Arma de mano adicional",
+          "points": 3,
+          "perModel": true,
+          "name_fr": "Arme de base additionnelle",
+          "id": 1,
+          "active": false
+        },
+        {
+          "name_en": "Cavalry spear",
+          "name_cn": "骑兵长矛",
+          "name_it": "Lancia Leggera",
+          "name_de": "Kavalleriespeer",
+          "name_es": "Lanza de caballería",
+          "points": 2,
+          "perModel": true,
+          "name_fr": "Lance de cavalerie",
+          "id": 2,
+          "active": false
+        },
+        {
+          "name_en": "Great weapon",
+          "name_cn": "重型武器",
+          "name_it": "Grande Arma",
+          "name_de": "Zweihandwaffe",
+          "name_es": "Arma a dos manos",
+          "points": 4,
+          "perModel": true,
+          "name_fr": "Arme lourde",
+          "id": 3,
+          "active": true
+        },
+        {
+          "name_en": "Halberd",
+          "name_cn": "长戟",
+          "name_it": "Alabarda",
+          "name_de": "Hellebarde",
+          "name_es": "Alabarda",
+          "points": 3,
+          "perModel": true,
+          "name_fr": "Hallebarde",
+          "id": 4,
+          "active": false
+        },
+        {
+          "name_en": "Lance",
+          "name_cn": "长枪",
+          "name_it": "Lancia Pesante",
+          "name_de": "Lanze",
+          "name_es": "Lanza",
+          "points": 4,
+          "perModel": true,
+          "name_fr": "Lance de joute",
+          "id": 5,
+          "active": false
+        },
+        {
+          "name_en": "Sword of Hoeth",
+          "name_cn": "荷斯之剑",
+          "name_it": "Sword of Hoeth",
+          "name_de": "Schwert aus Hoeth",
+          "name_es": "Sword of Hoeth",
+          "name_fr": "Épée de Hoeth",
+          "points": 0,
+          "requiredMagicItem": "Loremaster",
+          "notes": {
+            "name_en": "Requires Loremaster Elven Honour",
+            "name_cn": "需要魔剑士精灵荣耀",
+            "name_fr": "Nécessite l’Honneur Elfique Maître du Savoir",
+            "name_de": "Benötigt die Elfenehrung Lehrmeister"
+          },
+          "id": 6,
+          "active": false
+        },
+        {
+          "name_en": "Sword of Hoeth",
+          "name_cn": "荷斯之剑",
+          "name_it": "Sword of Hoeth",
+          "name_de": "Schwert aus Hoeth",
+          "name_es": "Sword of Hoeth",
+          "name_fr": "Épée de Hoeth",
+          "points": 0,
+          "requiredMagicItem": "Warden of Saphery",
+          "notes": {
+            "name_en": "Requires Warden of Saphery Elven Honour",
+            "name_cn": "需要萨芙睿典卫精灵荣耀",
+            "name_fr": "Nécessite l’Honneur Elfique Gardien de Saphery",
+            "name_de": "Benötigt die Elfenehrung Wächter von Saphery"
+          },
+          "id": 7,
+          "active": false
+        },
+        {
+          "name_en": "Bow of Avelorn",
+          "name_cn": "阿瓦隆之弓",
+          "name_it": "Arco di Avelorn",
+          "name_de": "Bogen von Avelorn",
+          "name_es": "Arco de Avelorn",
+          "name_fr": "Arc d’Avelorn",
+          "points": 0,
+          "requiredMagicItem": "Shadow Stalker",
+          "notes": {
+            "name_en": "Requires Shadow Stalker Elven Honour",
+            "name_cn": "需要阴影阔步者精灵荣耀",
+            "name_fr": "Nécessite l’Honneur Elfique Rôdeur des Ombres",
+            "name_de": "Benötigt die Elfenehrung Schattenpirscher"
+          },
+          "id": 8,
+          "active": false
+        },
+        {
+          "name_en": "Ceremonial halberd",
+          "name_cn": "仪式戟",
+          "name_it": "Ceremonial halberd",
+          "name_de": "Zeremoniehellebarde",
+          "name_es": "Ceremonial halberd",
+          "name_fr": "Hallebarde de cérémonie",
+          "points": 0,
+          "requiredMagicItem": "Anointed of Asuryan",
+          "notes": {
+            "name_en": "Requires Anointed of Asuryan Elven Honour",
+            "name_cn": "需要阿苏焉圣选者精灵荣耀",
+            "name_fr": "Nécessite l’Honneur Elfique Élu d’Asuryan",
+            "name_de": "Benötigt die Elfenehrung Gesalbter des Asuryan"
+          },
+          "id": 9,
+          "active": false
+        },
+        {
+          "name_en": "Chracian great blade",
+          "name_cn": "查瑞斯巨斧",
+          "name_it": "Chracian great blade",
+          "name_de": "Chracianische Zweihandklinge",
+          "name_es": "Chracian great blade",
+          "name_fr": "Grande lame de Chrace",
+          "points": 0,
+          "requiredMagicItem": "Chracian Hunter",
+          "notes": {
+            "name_en": "Requires Chracian Hunter Elven Honour",
+            "name_cn": "需要查里安寻猎者精灵荣耀",
+            "name_fr": "Nécessite l’Honneur Elfique Chasseur Chracien",
+            "name_de": "Benötigt die Elfenehrung Chracianischer Jäger"
+          },
+          "id": 10,
+          "active": false
+        },
+        {
+          "name_en": "Warbow",
+          "name_cn": "战弓",
+          "name_it": "Arco da Guerra",
+          "name_de": "Kriegsbogen",
+          "name_es": "Arco de guerra",
+          "name_fr": "Arc de guerre",
+          "points": 0,
+          "requiredMagicItem": "Sea Guard",
+          "notes": {
+            "name_en": "Requires Sea Guard Elven Honour",
+            "name_cn": "需要海护卫精灵荣耀",
+            "name_fr": "Nécessite l’Honneur Elfique Garde Maritime",
+            "name_de": "Benötigt die Elfenehrung Seegard"
+          },
+          "id": 11,
+          "active": false
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_it": "Armatura Leggera",
+          "name_de": "Leichte Rüstung",
+          "name_es": "Armadura ligera",
+          "points": 0,
+          "perModel": true,
+          "active": false,
+          "name_fr": "Armure légère",
+          "activeDefault": false,
+          "id": 0
+        },
+        {
+          "name_en": "Heavy armour",
+          "name_cn": "重甲",
+          "name_it": "Armatura Pesante",
+          "name_de": "Schwere Rüstung",
+          "name_es": "Armadura pesada",
+          "points": 3,
+          "perModel": true,
+          "name_fr": "Armure lourde",
+          "id": 1,
+          "active": false
+        },
+        {
+          "name_en": "Full plate armour",
+          "name_cn": "全身甲",
+          "name_it": "Armatura Completa",
+          "name_de": "Plattenrüstung",
+          "name_es": "Armadura de placas",
+          "points": 6,
+          "perModel": true,
+          "name_fr": "Armure de plate complète",
+          "id": 2,
+          "active": true
+        },
+        {
+          "name_en": "Full plate armour",
+          "name_cn": "全身甲",
+          "name_it": "Armatura Completa",
+          "name_de": "Plattenrüstung",
+          "name_es": "Armadura completa",
+          "name_fr": "Armure de plate complète",
+          "points": 0,
+          "requiredMagicItem": "Blood of Caledor",
+          "notes": {
+            "name_en": "Requires Blood of Caledor Elven Honour",
+            "name_cn": "需要卡勒多之血精灵荣耀",
+            "name_fr": "Nécessite l’Honneur Elfique Sang de Caledor",
+            "name_de": "Benötigt die Elfenehrung Blut des Caledor"
+          },
+          "id": 3,
+          "active": false
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Shield",
+          "name_cn": "盾牌",
+          "name_it": "Scudo",
+          "name_de": "Schild",
+          "name_es": "Escudo",
+          "points": 2,
+          "perModel": true,
+          "name_fr": "Bouclier",
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Longbow",
+          "name_cn": "长弓",
+          "name_it": "Arco Lungo",
+          "name_de": "Langbogen",
+          "name_es": "Arco largo",
+          "points": 4,
+          "perModel": true,
+          "name_fr": "Arc long",
+          "id": 1
+        },
+        {
+          "name_en": "Bow of Avelorn",
+          "name_cn": "阿瓦隆之弓",
+          "name_it": "Arco di Avelorn",
+          "name_de": "Bogen von Avelorn",
+          "name_es": "Arco de Avelorn",
+          "points": 12,
+          "perModel": true,
+          "name_fr": "Arc d’Avelorn",
+          "id": 2
+        }
+      ],
+      "mounts": [
+        {
+          "name_en": "On foot",
+          "name_cn": "步行",
+          "name_it": "A Piedi",
+          "name_de": "Zu Fuß",
+          "name_es": "A pie",
+          "name_fr": "À Pied",
+          "points": 0,
+          "active": false,
+          "id": 0
+        },
+        {
+          "name_en": "Elven Steed",
+          "name_cn": "精灵骏马",
+          "name_it": "Cavallo Elfico",
+          "name_de": "Elfenross",
+          "name_fr": "Coursier Elfique",
+          "name_es": "Corcel élfico",
+          "points": 14,
+          "id": 1,
+          "active": false
+        },
+        {
+          "name_en": "Barded Elven Steed",
+          "name_cn": "披甲精灵骏马",
+          "name_it": "Cavallo Elfico Bardato",
+          "name_de": "Elfenross mit Rossharnisch",
+          "name_fr": "Coursier Elfique Caparaçonné",
+          "name_es": "Corcel élfico con barda",
+          "points": 18,
+          "id": 2,
+          "active": false
+        },
+        {
+          "name_en": "Great Eagle {mount}",
+          "name_cn": "巨鹰{mount}",
+          "name_it": "Grandi Aquile",
+          "name_de": "Riesenadler",
+          "name_fr": "Grand Aigle",
+          "name_es": "Gran águila",
+          "points": 60,
+          "id": 3,
+          "active": false
+        },
+        {
+          "name_en": "Tiranoc Chariot",
+          "name_cn": "泰伦洛克战车",
+          "name_it": "Carro di Tiranoc",
+          "name_de": "Tiranoc-Streitwagen",
+          "name_fr": "Char de Tiranoc",
+          "name_es": "Carro de Tiranoc",
+          "points": 75,
+          "id": 4,
+          "active": false
+        },
+        {
+          "name_en": "Lothern Skycutter",
+          "name_cn": "洛瑟恩斩天艇",
+          "name_it": "Lothern Skycutter",
+          "name_de": "Himmelssegler von Lothern",
+          "name_es": "Escolta celeste",
+          "name_fr": "Cotre Volant de Lothern",
+          "points": 90,
+          "options": [
+            {
+              "name_en": "Eagle-Eye Bolt Thrower",
+              "name_cn": "鹰眼弩炮",
+              "name_it": "Eagle-Eye Balista",
+              "name_de": "Adlerauge-Speerschleuder",
+              "name_fr": "Baliste Œil-d’aigle",
+              "name_es": "Lanzavirotes ojo de águila",
+              "points": 25
+            },
+            {
+              "name_en": "Ambushers",
+              "name_cn": "伏击",
+              "name_it": "Ambushers",
+              "name_de": "Überfall",
+              "name_fr": "Embusqueurs",
+              "name_es": "Ambushers",
+              "points": 10,
+              "perModel": true,
+              "armyComposition": "sea-guard-garrison",
+              "notes": {
+                "name_en": "0-1 unit per 1000 points",
+                "name_cn": "每1000分0-1单位",
+                "name_fr": "0-1 unité par tranche de 1000 points",
+                "name_de": "0-1 Einheit pro 1.000 Punkte"
+              }
+            }
+          ],
+          "requiredMagicItem": "Sea Guard",
+          "notes": {
+            "name_en": "Requires Sea Guard Elven Honour",
+            "name_cn": "需要海护卫精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Seegard",
+            "name_fr": "Nécessite l’Honneur Elfique Garde Maritime"
+          },
+          "id": 5,
+          "active": false
+        },
+        {
+          "name_en": "Lion Chariot of Chrace",
+          "name_cn": "查瑞斯白狮战车",
+          "name_it": "Carro dei Leoni di Chrace",
+          "name_de": "Löwenstreitwagen von Chrace",
+          "name_fr": "Char à Lions de Chrace",
+          "name_es": "Carro de leones de Cracia",
+          "points": 125,
+          "requiredMagicItem": "Chracian Hunter",
+          "notes": {
+            "name_en": "Requires Chractian Hunter Elven Honour",
+            "name_cn": "需要查里安寻猎者精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Charcianischer Jäger",
+            "name_fr": "Nécessite l’Honneur Elfique Chasseur Chracien"
+          },
+          "id": 6,
+          "active": false
+        },
+        {
+          "name_en": "Griffon {high elves}",
+          "name_cn": "狮鹫 {high elves}",
+          "name_it": "Grifone {high elves}",
+          "name_de": "Greif",
+          "name_fr": "Griffon",
+          "name_es": "Grifo",
+          "points": 130,
+          "id": 7,
+          "active": true
+        },
+        {
+          "name_en": "Flamespyre Phoenix {mount}",
+          "name_cn": "炽焰凤凰 {mount}",
+          "name_it": "Fenice di Fuoco",
+          "name_de": "Flammensäulen-Phönix",
+          "name_fr": "Phénix Spire-de-feu",
+          "name_es": "Fénix pico llameante",
+          "points": 170,
+          "requiredMagicItem": "Anointed of Asuryan",
+          "notes": {
+            "name_en": "Requires Anointed of Asuryan Elven Honour",
+            "name_cn": "需要阿苏焉圣选者精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Gesalbter des Asuryan",
+            "name_fr": "Nécessite l’Honneur Elfique Élu d’Asuryan"
+          },
+          "id": 8,
+          "active": false
+        },
+        {
+          "name_en": "Sun Dragon",
+          "name_cn": "烈阳龙",
+          "name_it": "Drago del Sole",
+          "name_de": "Sonnendrache",
+          "name_fr": "Dragon Solaire",
+          "name_es": "Dragón solar",
+          "points": 180,
+          "requiredMagicItem": "Blood of Caledor",
+          "notes": {
+            "name_en": "Requires Blood of Caledor Elven Honour",
+            "name_cn": "需要卡勒多之血精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Blut des Caledor",
+            "name_fr": "Nécessite l’Honneur Elfique Sang de Caledor"
+          },
+          "id": 9,
+          "active": false
+        },
+        {
+          "name_en": "Frostheart Phoenix {mount}",
+          "name_cn": "霜心凤凰 {mount}",
+          "name_it": "Fenice di Ghiaccio",
+          "name_de": "Frostherz-Phönix",
+          "name_fr": "Phénix Cœur-de-Givre",
+          "name_es": "Fénix corazón gélido",
+          "points": 205,
+          "requiredMagicItem": "Anointed of Asuryan",
+          "notes": {
+            "name_en": "Requires Anointed of Asuryan Elven Honour",
+            "name_cn": "需要阿苏焉圣选者精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Gesalbter des Asuryan",
+            "name_fr": "Nécessite l’Honneur Elfique Élu d’Asuryan"
+          },
+          "id": 10,
+          "active": false
+        }
+      ],
+      "items": [
+        {
+          "name_en": "Magic Items",
+          "name_cn": "魔法物品",
+          "name_it": "Oggetti Magici",
+          "name_de": "Magische Gegenstände",
+          "name_fr": "Objets Magiques",
+          "name_es": "Objetos mágicos",
+          "types": [
+            "weapon",
+            "armor",
+            "talisman",
+            "enchanted-item",
+            "arcane-item"
+          ],
+          "selected": [
+            {
+              "name_cn": "保护护符",
+              "name_de": "Talisman des Schutzes",
+              "name_en": "Talisman of Protection",
+              "name_fr": "Talisman de Protection",
+              "name_it": "Talismano Di Protezione",
+              "name_pl": "Talizman Ochrony",
+              "points": 30,
+              "type": "talisman",
+              "onePerArmy": true,
+              "name": "talisman of protection",
+              "id": 31
+            },
+            {
+              "name_de": "Samen der Wiedergeburt*",
+              "name_en": "Seed of Rebirth*",
+              "name_cn": "重生之种*",
+              "name_fr": "Graine de Renaissance*",
+              "name_it": "Seed of Rebirth*",
+              "points": 20,
+              "stackable": true,
+              "type": "enchanted-item",
+              "onePerArmy": false,
+              "name": "seed of rebirth",
+              "id": 28
+            }
+          ],
+          "maxPoints": 50
+        },
+        {
+          "name_en": "Elven Honours",
+          "name_cn": "精灵荣耀",
+          "name_it": "Onoroficenze Elfiche",
+          "name_de": "Elfenehrungen",
+          "name_es": "Honores élficos",
+          "types": ["elven-honour"],
+          "selected": [
+            {
+              "name_de": "Reinherzig",
+              "name_en": "Pure of Heart",
+              "name_cn": "纯洁之心",
+              "name_fr": "Pur de Cœur",
+              "name_it": "Pure of Cuore",
+              "points": 0,
+              "type": "elven-honour",
+              "armyComposition": [
+                "high-elf-realms",
+                "sea-guard-garrison",
+                "the-chracian-warhost"
+              ],
+              "onePerArmy": false,
+              "name": "pure of heart",
+              "id": 6
+            }
+          ],
+          "maxPoints": 0,
+          "name_fr": "Honneurs Elfiques"
+        }
+      ],
+      "specialRules": {
+        "name_en": "Ithilmar Weapons, Strike First, Valour of Ages",
+        "name_cn": "伊瑟拉玛武器, 先攻, 岁月的荣耀",
+        "name_it": "Ithilmar Weapons, Attacca Per Primo, Valore delle Ere",
+        "name_fr": "Armes en Ithilmar, Frappe En Premier, Valeur des Âges",
+        "name_es": "Armas de Ithilmar, Siempre ataca primero, Valor de las eras",
+        "name_de": "Ithilmar-Waffen, Schlägt zuerst zu, Mut der Zeitalter"
+      },
+      "magic": { "items": [] },
+      "name": "Hermie"
+    },
+    {
+      "name_en": "Archmage",
+      "name_cn": "大法师",
+      "name_it": "Archmage",
+      "name_de": "Erzmagier",
+      "name_fr": "Archimage",
+      "name_es": "Archimago",
+      "id": "archmage.uvxayrkr",
+      "points": 155,
+      "armyComposition": {
+        "high-elf-realms": { "category": "characters" },
+        "the-chracian-warhost": {
+          "category": "characters",
+          "notes": {
+            "name_en": "0-1 High Elf Prince or Archmage per 1000 points",
+            "name_cn": "每1000分0-1高等精灵王子或大法师",
+            "name_fr": "0-1 Prince Haut Elfe ou Archimage par tranche de 1000 points",
+            "name_de": "0-1 Prinz oder Erzmagier pro 1.000 Punkte"
+          }
+        }
+      },
+      "command": [
+        {
+          "name_en": "General",
+          "name_cn": "主将",
+          "name_it": "Generale",
+          "name_de": "General",
+          "name_fr": "Général",
+          "name_es": "General",
+          "points": 0,
+          "id": 0
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapon",
+          "name_cn": "单手武器",
+          "name_it": "Arma Bianca",
+          "name_de": "Handwaffe",
+          "name_es": "Arma de mano",
+          "points": 0,
+          "perModel": true,
+          "active": true,
+          "name_fr": "Arme de base",
+          "id": 0
+        },
+        {
+          "name_en": "Sword of Hoeth",
+          "name_cn": "荷斯之剑",
+          "name_it": "Sword of Hoeth",
+          "name_de": "Schwert aus Hoeth",
+          "name_es": "Sword of Hoeth",
+          "name_fr": "Épée de Hoeth",
+          "points": 0,
+          "requiredMagicItem": "Warden of Saphery",
+          "notes": {
+            "name_en": "Requires Warden of Saphery Elven Honour",
+            "name_cn": "需要萨芙睿典卫精灵荣耀",
+            "name_fr": "Nécessite l’Honneur Elfique Gardien de Saphery",
+            "name_de": "Benötigt die Elfenehrung Wächter von Saphery"
+          },
+          "id": 1,
+          "active": false
+        },
+        {
+          "name_en": "Bow of Avelorn",
+          "name_cn": "阿瓦隆之弓",
+          "name_it": "Arco di Avelorn",
+          "name_de": "Bogen von Avelorn",
+          "name_es": "Arco de Avelorn",
+          "name_fr": "Arc d’Avelorn",
+          "points": 0,
+          "requiredMagicItem": "Shadow Stalker",
+          "notes": {
+            "name_en": "Requires Shadow Stalker Elven Honour",
+            "name_cn": "需要阴影阔步者精灵荣耀",
+            "name_fr": "Nécessite l’Honneur Elfique Rôdeur des Ombres",
+            "name_de": "Benötigt die Elfenehrung Schattenpirscher"
+          },
+          "id": 2,
+          "active": false
+        },
+        {
+          "name_en": "Ceremonial halberd",
+          "name_cn": "仪式戟",
+          "name_it": "Ceremonial halberd",
+          "name_de": "Zeremoniehellebarde",
+          "name_es": "Ceremonial halberd",
+          "name_fr": "Hallebarde de cérémonie",
+          "points": 0,
+          "requiredMagicItem": "Anointed of Asuryan",
+          "notes": {
+            "name_en": "Requires Anointed of Asuryan Elven Honour",
+            "name_cn": "需要阿苏焉圣选者精灵荣耀",
+            "name_fr": "Nécessite l’Honneur Elfique Élu d’Asuryan",
+            "name_de": "Benötigt die Elfenehrung Gesalbter des Asuryan"
+          },
+          "id": 3,
+          "active": false
+        },
+        {
+          "name_en": "Chracian great blade",
+          "name_cn": "查瑞斯巨斧",
+          "name_it": "Chracian great blade",
+          "name_de": "Chracianische Zweihandklinge",
+          "name_es": "Chracian great blade",
+          "name_fr": "Grande lame de Chrace",
+          "points": 0,
+          "requiredMagicItem": "Chracian Hunter",
+          "notes": {
+            "name_en": "Requires Chracian Hunter Elven Honour",
+            "name_cn": "需要查里安寻猎者精灵荣耀",
+            "name_fr": "Nécessite l’Honneur Elfique Chasseur Chracien",
+            "name_de": "Benötigt die Elfenehrung Charcianischer Jäger"
+          },
+          "id": 4,
+          "active": false
+        },
+        {
+          "name_en": "Warbow",
+          "name_cn": "战弓",
+          "name_it": "Arco da Guerra",
+          "name_de": "Kriegsbogen",
+          "name_es": "Arco de guerra",
+          "name_fr": "Arc de guerre",
+          "points": 0,
+          "requiredMagicItem": "Sea Guard",
+          "notes": {
+            "name_en": "Requires Sea Guard Elven Honour",
+            "name_cn": "需要海护卫精灵荣耀",
+            "name_fr": "Nécessite l’Honneur Elfique Garde Maritime",
+            "name_de": "Benötigt die Elfenehrung Seegarde"
+          },
+          "id": 5,
+          "active": false
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Full plate armour",
+          "name_cn": "全身甲",
+          "name_it": "Armatura Completa",
+          "name_de": "Plattenrüstung",
+          "name_es": "Armadura completa",
+          "name_fr": "Armure de plate complète",
+          "points": 0,
+          "requiredMagicItem": "Blood of Caledor",
+          "notes": {
+            "name_en": "Requires Blood of Caledor Elven Honour",
+            "name_cn": "需要卡勒多之血精灵荣耀",
+            "name_fr": "Nécessite l’Honneur Elfique Sang de Caledor",
+            "name_de": "Benötigt die Elfenehrung Blut von Caledor"
+          },
+          "id": 0,
+          "active": true
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Wizard",
+          "name_cn": "法师",
+          "name_de": "Zauberer",
+          "name_fr": "Sorcier",
+          "name_es": "Hechicero",
+          "points": 0,
+          "active": true,
+          "alwaysActive": true,
+          "options": [
+            {
+              "name_en": "Level 3 Wizard",
+              "name_cn": "3级法师",
+              "name_de": "Stufe 3 Zauberer",
+              "name_fr": "Sorcier de Niveau 3",
+              "name_es": "Hechicero de Nivel 3",
+              "points": 0,
+              "exclusive": true,
+              "active": true
+            },
+            {
+              "name_en": "Level 4 Wizard",
+              "name_cn": "4级法师",
+              "name_de": "Stufe 4 Zauberer",
+              "name_fr": "Sorcier de Niveau 4",
+              "name_es": "Hechicero de Nivel 4",
+              "points": 30,
+              "exclusive": true,
+              "active": false
+            }
+          ],
+          "id": 0
+        }
+      ],
+      "mounts": [
+        {
+          "name_en": "On foot",
+          "name_cn": "步行",
+          "name_it": "A Piedi",
+          "name_de": "Zu Fuß",
+          "name_es": "A pie",
+          "name_fr": "À Pied",
+          "points": 0,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Elven Steed",
+          "name_cn": "精灵骏马",
+          "name_it": "Cavallo Elfico",
+          "name_de": "Elfenross",
+          "name_fr": "Coursier Elfique",
+          "name_es": "Corcel élfico",
+          "points": 14,
+          "id": 1,
+          "active": false
+        },
+        {
+          "name_en": "Barded Elven Steed",
+          "name_cn": "披甲精灵骏马",
+          "name_it": "Cavallo Elfico Bardato",
+          "name_de": "Elfenross mit Rossharnisch",
+          "name_fr": "Coursier Elfique Caparaçonné",
+          "name_es": "Corcel élfico con barda",
+          "points": 18,
+          "id": 2,
+          "active": false
+        },
+        {
+          "name_en": "Great Eagle {mount}",
+          "name_cn": "巨鹰{mount}",
+          "name_it": "Grandi Aquile",
+          "name_de": "Riesenadler",
+          "name_fr": "Grand Aigle",
+          "name_es": "Gran águila",
+          "points": 60,
+          "id": 3,
+          "active": false
+        },
+        {
+          "name_en": "Lothern Skycutter",
+          "name_cn": "洛瑟恩斩天艇",
+          "name_it": "Lothern Skycutter",
+          "name_de": "Himmelssegler von Lothern",
+          "name_es": "Escolta celeste",
+          "name_fr": "Cotre Volant de Lothern",
+          "points": 90,
+          "options": [
+            {
+              "name_en": "Eagle-Eye Bolt Thrower",
+              "name_cn": "鹰眼弩炮",
+              "name_it": "Eagle-Eye Balista",
+              "name_de": "Adlerauge-Speerschleuder",
+              "name_fr": "Baliste Œil-d’aigle",
+              "name_es": "Lanzavirotes ojo de águila",
+              "points": 25
+            }
+          ],
+          "requiredMagicItem": "Sea Guard",
+          "notes": {
+            "name_en": "Requires Sea Guard Elven Honour",
+            "name_cn": "需要海护卫精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Seegarde",
+            "name_fr": "Nécessite l’Honneur Elfique Garde Maritime"
+          },
+          "id": 4,
+          "active": false
+        },
+        {
+          "name_en": "Lion Chariot of Chrace",
+          "name_cn": "查瑞斯白狮战车",
+          "name_it": "Carro dei Leoni di Chrace",
+          "name_de": "Löwenstreitwagen von Chrace",
+          "name_fr": "Char à Lions de Chrace",
+          "name_es": "Carro de leones de Cracia",
+          "points": 125,
+          "requiredMagicItem": "Chracian Hunter",
+          "notes": {
+            "name_en": "Requires Chractian Hunter Elven Honour",
+            "name_cn": "需要查里安寻猎者精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Chracianischer Jäger",
+            "name_fr": "Nécessite l’Honneur Elfique Chasseur Chracien"
+          },
+          "id": 5,
+          "active": false
+        },
+        {
+          "name_en": "Flamespyre Phoenix {mount}",
+          "name_cn": "炽焰凤凰 {mount}",
+          "name_it": "Fenice di Fuoco",
+          "name_de": "Flammensäulen-Phönix",
+          "name_fr": "Phénix Spire-de-feu",
+          "name_es": "Fénix pico llameante",
+          "points": 170,
+          "requiredMagicItem": "Anointed of Asuryan",
+          "notes": {
+            "name_en": "Requires Anointed of Asuryan Elven Honour",
+            "name_cn": "需要阿苏焉圣选者精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Gesalbter des Asuryan",
+            "name_fr": "Nécessite l’Honneur Elfique Élu d’Asuryan"
+          },
+          "id": 6,
+          "active": false
+        },
+        {
+          "name_en": "Sun Dragon",
+          "name_cn": "烈阳龙",
+          "name_it": "Drago del Sole",
+          "name_de": "Sonnendrache",
+          "name_fr": "Dragon Solaire",
+          "name_es": "Dragón solar",
+          "points": 180,
+          "requiredMagicItem": "Blood of Caledor",
+          "notes": {
+            "name_en": "Requires Blood of Caledor Elven Honour",
+            "name_cn": "需要卡勒多之血精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Blut des Caledor",
+            "name_fr": "Nécessite l’Honneur Elfique Sang de Caledor"
+          },
+          "id": 7,
+          "active": false
+        },
+        {
+          "name_en": "Frostheart Phoenix {mount}",
+          "name_cn": "霜心凤凰 {mount}",
+          "name_it": "Fenice di Ghiaccio",
+          "name_de": "Frostherz-Phönix",
+          "name_fr": "Phénix Cœur-de-Givre",
+          "name_es": "Fénix corazón gélido",
+          "points": 205,
+          "requiredMagicItem": "Anointed of Asuryan",
+          "notes": {
+            "name_en": "Requires Anointed of Asuryan Elven Honour",
+            "name_cn": "需要阿苏焉圣选者精灵荣耀",
+            "name_de": "Benötigt die Elfenehrung Gesalbter des Asuryan",
+            "name_fr": "Nécessite l’Honneur Elfique Élu d’Asuryan"
+          },
+          "id": 8,
+          "active": false
+        },
+        {
+          "name_en": "Moon Dragon",
+          "name_cn": "银月龙",
+          "name_it": "Drago della Luna",
+          "name_de": "Monddrache",
+          "name_fr": "Dragon Lunaire",
+          "name_es": "Dragón lunar",
+          "points": 235,
+          "id": 9,
+          "active": false
+        },
+        {
+          "name_en": "Star Dragon",
+          "name_cn": "耀星龙",
+          "name_it": "Drago delle Stelle",
+          "name_de": "Sternendrache",
+          "name_fr": "Dragon Stellaire",
+          "name_es": "Dragón estelar",
+          "points": 290,
+          "id": 10,
+          "active": false
+        }
+      ],
+      "items": [
+        {
+          "name_en": "Magic Items",
+          "name_cn": "魔法物品",
+          "name_it": "Oggetti Magici",
+          "name_de": "Magische Gegenstände",
+          "name_es": "Objetos mágicos",
+          "name_fr": "Objets Magiques",
+          "types": [
+            "weapon",
+            "armor",
+            "talisman",
+            "enchanted-item",
+            "arcane-item"
+          ],
+          "selected": [
+            {
+              "name_cn": "法系仆从",
+              "name_de": "Gelehrsamer Homunkulus",
+              "name_en": "Lore Familiar",
+              "name_fr": "Familier de Savoir",
+              "name_it": "Famiglio del Sapere",
+              "name_pl": "Chowaniec Wiedzy",
+              "points": 30,
+              "type": "arcane-item",
+              "onePerArmy": true,
+              "name": "lore familiar",
+              "id": 61
+            },
+            {
+              "name_de": "Umhang des Lehrmeisters",
+              "name_en": "The Loremaster's Cloak",
+              "name_cn": "博学者斗篷",
+              "name_fr": "Cape du Maître du Savoir",
+              "name_it": "The Loremaster's Mantello",
+              "points": 25,
+              "type": "talisman",
+              "onePerArmy": true,
+              "name": "the loremaster's cloak",
+              "id": 14
+            }
+          ],
+          "maxPoints": 100,
+          "notes": {
+            "name_en": "Magic armour requires Blood of Caledor Elven Honour",
+            "name_fr": "Une armure magique nécessite l’Honneur Elfique Sang de Caledor",
+            "name_de": "Magische Rüstung benötigt die Elfenehrung Blut des Caledor oder Wächter von Saphery"
+          }
+        },
+        {
+          "name_en": "Elven Honours",
+          "name_cn": "精灵荣耀",
+          "name_it": "Onoroficenze Elfiche",
+          "name_de": "Elfenehrungen",
+          "name_es": "Honores élficos",
+          "name_fr": "Honneurs Elfiques",
+          "types": ["elven-honour"],
+          "selected": [
+            {
+              "name_de": "Reinherzig",
+              "name_en": "Pure of Heart",
+              "name_cn": "纯洁之心",
+              "name_fr": "Pur de Cœur",
+              "name_it": "Pure of Cuore",
+              "points": 0,
+              "type": "elven-honour",
+              "armyComposition": [
+                "high-elf-realms",
+                "sea-guard-garrison",
+                "the-chracian-warhost"
+              ],
+              "onePerArmy": false,
+              "name": "pure of heart",
+              "id": 6
+            }
+          ],
+          "maxPoints": 0
+        }
+      ],
+      "lores": ["battle-magic", "elementalism", "high-magic", "illusion"],
+      "specialRules": {
+        "name_en": "Elven Reflexes, Ithilmar Weapons, Lileath's Blessing, Lore of Saphery, Valour of Ages",
+        "name_cn": "精灵反应, 伊瑟拉玛武器, 莉莉丝祝福, 萨芙睿法系, 岁月的荣耀",
+        "name_it": "Riflessi Elfici, Ithilmar Weapons, Lileath's Blessing, Lore of Saphery, Valore delle Ere",
+        "name_fr": "Réflexes Elfiques, Armes en Ithilmar, Bienfait de Lileath, Domaine de Saphery, Valeur des Âges",
+        "name_es": "Reflejos élficos, Armas de Ithilmar, Bendición de Lileath, Saber de Saphery, Valor de las eras",
+        "name_de": "Elfenreflexe, Ithilmar-Waffen, Lileaths Segen, Lehre von Saphery, Mut der Zeitalter"
+      },
+      "activeLore": "high-magic",
+      "name": "Bernard"
+    }
+  ],
+  "core": [
+    {
+      "name_en": "Elven Spearmen",
+      "name_cn": "精灵矛兵",
+      "name_it": "Elven Spearmen",
+      "name_de": "Elfische Speerträger",
+      "name_fr": "Lanciers Elfiques",
+      "name_es": "Lanceros elfos",
+      "id": "elven-spearmen.pjnfurddn",
+      "points": 9,
+      "armyComposition": {
+        "high-elf-realms": { "category": "core" },
+        "the-chracian-warhost": { "category": "core" }
+      },
+      "minimum": 5,
+      "maximum": 0,
+      "command": [
+        {
+          "name_en": "Sentinel (champion)",
+          "name_cn": "哨卫(冠军)",
+          "name_it": "Sentinel (campione)",
+          "name_de": "Wächter (Champion)",
+          "name_fr": "Sentinelle (champion)",
+          "name_es": "Centinela (campeón)",
+          "points": 5,
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Standard bearer",
+          "name_cn": "旗手",
+          "name_it": "Alfiere",
+          "name_de": "Standartenträger",
+          "name_es": "Portaestandarte",
+          "points": 5,
+          "magic": {
+            "types": ["banner"],
+            "maxPoints": 50,
+            "selected": [
+              {
+                "name_cn": "战旗",
+                "name_de": "Kriegsbanner",
+                "name_en": "War Banner",
+                "name_fr": "Bannière de Guerre",
+                "name_it": "Stendardo da Guerra",
+                "name_pl": "Sztandar wojenny",
+                "points": 25,
+                "type": "banner",
+                "onePerArmy": true,
+                "name": "war banner",
+                "id": 43
+              }
+            ]
+          },
+          "name_fr": "Porte-étendard",
+          "id": 1,
+          "active": true
+        },
+        {
+          "name_en": "Musician",
+          "name_cn": "乐手",
+          "name_it": "Musico",
+          "name_de": "Musiker",
+          "name_fr": "Musicien",
+          "name_es": "Músico",
+          "points": 5,
+          "id": 2,
+          "active": true
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapons",
+          "name_cn": "单手武器",
+          "name_it": "Armi Bianche",
+          "name_de": "Handwaffen",
+          "name_fr": "Armes de base",
+          "name_es": "Arma de mano",
+          "points": 0,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Thrusting spears",
+          "name_cn": "刺矛",
+          "name_it": "Picche [Combattere su Ranghi Extra]",
+          "name_de": "Stoßspeere",
+          "name_fr": "Lances d’infanterie",
+          "name_es": "Lanzas largas",
+          "points": 0,
+          "active": true,
+          "id": 1
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour, Shields",
+          "name_cn": "轻甲, 盾牌",
+          "name_it": "Armatura Leggera, Scudi",
+          "name_de": "Leichte Rüstung, Schilde",
+          "name_es": "Armadura ligera, escudos",
+          "points": 0,
+          "active": true,
+          "name_fr": "Armure légère, Boucliers",
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Shieldwall",
+          "name_cn": "盾墙",
+          "name_it": "Muro di Scudi",
+          "name_de": "Schildwall",
+          "name_fr": "Mur de Boucliers",
+          "name_es": "Muralla de escudos",
+          "points": 10,
+          "id": 0,
+          "active": false
+        },
+        {
+          "name_en": "Veteran",
+          "name_cn": "老兵",
+          "name_it": "Veterani",
+          "name_de": "Veteranen",
+          "name_es": "Veteranos",
+          "points": 1,
+          "perModel": true,
+          "name_fr": "Vétérans",
+          "id": 1,
+          "active": true
+        },
+        {
+          "name_en": "Move Through Cover",
+          "name_cn": "穿行掩体",
+          "name_it": "Move Through Cover",
+          "name_de": "Durch Deckung bewegen",
+          "name_fr": "Mouvement à Couvert",
+          "name_es": "Move Through Cover",
+          "points": 1,
+          "perModel": true,
+          "armyComposition": "the-chracian-warhost",
+          "notes": {
+            "name_en": "0-1 unit per 1000 points",
+            "name_cn": "每1000分0-1单位",
+            "name_fr": "0-1 unité par tranche de 1000 points",
+            "name_de": "0-1 Einheit pro 1.000 Punkte"
+          },
+          "id": 2
+        },
+        {
+          "name_en": "Lion Cloak",
+          "name_cn": "白狮斗篷",
+          "name_it": "Lion Cloak",
+          "name_de": "Löwenpelz",
+          "name_fr": "Cape de Lion",
+          "name_es": "Lion Cloak",
+          "points": 10,
+          "armyComposition": "the-chracian-warhost",
+          "id": 3
+        }
+      ],
+      "mounts": [],
+      "items": [],
+      "specialRules": {
+        "name_en": "Close Order, Elven Reflexes, Martial Prowess, Regimental Unit, Valour of Ages",
+        "name_cn": "紧密阵型, 精灵反应, 精湛武艺, 主团单位, 岁月的荣耀",
+        "name_it": "Formazione Serrata, Riflessi Elfici, Martial Prowess, Unità Madre, Valore delle Ere",
+        "name_fr": "Ordre Serré, Réflexes Elfiques, Prouesses Martiales, Unité Régimentaire, Valeur des Âges",
+        "name_es": "Orden cerrado, Reflejos élficos, Destreza marcial, Unidad regimental, Valor de las eras",
+        "name_de": "Geschlossene Ränge, Elfenreflexe, Kriegerisches Können, Hauptregiment, Mut der Zeitalter"
+      },
+      "strength": 27,
+      "magic": { "items": [] },
+      "name": "Toy Makers"
+    },
+    {
+      "name_en": "Elven Archers",
+      "name_cn": "精灵弓箭手",
+      "name_it": "Elven Archers",
+      "name_de": "Elfische Bogenschützen",
+      "name_fr": "Archers Elfiques",
+      "name_es": "Arqueros elfos",
+      "id": "elven-archers.vdsenhf",
+      "points": 10,
+      "armyComposition": {
+        "high-elf-realms": { "category": "core" },
+        "the-chracian-warhost": { "category": "core" }
+      },
+      "minimum": 5,
+      "maximum": 0,
+      "minDetachmentSize": 5,
+      "command": [
+        {
+          "name_en": "Sentinel (champion)",
+          "name_cn": "哨卫(冠军)",
+          "name_it": "Sentinel (campione)",
+          "name_de": "Wächter (Champion)",
+          "name_fr": "Sentinelle (champion)",
+          "name_es": "Centinela (Campeón)",
+          "points": 5,
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Standard bearer",
+          "name_cn": "旗手",
+          "name_it": "Alfiere",
+          "name_de": "Standartenträger",
+          "name_es": "Portaestandarte",
+          "points": 5,
+          "magic": { "types": ["banner"], "maxPoints": 25 },
+          "name_fr": "Porte-étendard",
+          "id": 1
+        },
+        {
+          "name_en": "Musician",
+          "name_cn": "乐手",
+          "name_it": "Musico",
+          "name_de": "Musiker",
+          "name_fr": "Musicien",
+          "name_es": "Músico",
+          "points": 5,
+          "id": 2
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapons, Longbows",
+          "name_cn": "单手武器, 长弓",
+          "name_it": "Arco Lungos, Armi Bianche",
+          "name_de": "Handwaffen, Langbögen",
+          "name_es": "Arma de mano, Arco largo",
+          "points": 0,
+          "active": true,
+          "name_fr": "Armes de base, Arcs longs",
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_it": "Armatura Leggera",
+          "name_de": "Leichte Rüstung",
+          "name_es": "Armadura ligera",
+          "points": 1,
+          "perModel": true,
+          "name_fr": "Armure légère",
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Veteran",
+          "name_cn": "老兵",
+          "name_it": "Veterani",
+          "name_de": "Veteranen",
+          "name_es": "Veteranos",
+          "points": 1,
+          "perModel": true,
+          "name_fr": "Vétérans",
+          "id": 0,
+          "active": false
+        },
+        {
+          "name_en": "Detachment",
+          "name_cn": "分遣队",
+          "name_it": "Distaccamento",
+          "name_de": "Abteilung",
+          "name_fr": "Détachement",
+          "name_es": "Destacamento",
+          "points": 0,
+          "id": 1
+        },
+        {
+          "name_en": "Move Through Cover",
+          "name_cn": "穿行掩体",
+          "name_it": "Move Through Cover",
+          "name_de": "Durch Deckung bewegen",
+          "name_fr": "Mouvement à Couvert",
+          "name_es": "Move Through Cover",
+          "points": 1,
+          "perModel": true,
+          "armyComposition": "the-chracian-warhost",
+          "notes": {
+            "name_en": "0-1 unit per 1000 points",
+            "name_cn": "每1000分0-1单位",
+            "name_fr": "0-1 unité par tranche de 1000 points",
+            "name_de": "0-1 Einheit pro 1.000 Punkte"
+          },
+          "id": 2
+        },
+        {
+          "name_en": "Lion Cloak",
+          "name_cn": "白狮斗篷",
+          "name_it": "Lion Cloak",
+          "name_de": "Löwenpelz",
+          "name_fr": "Cape de Lion",
+          "name_es": "Lion Cloak",
+          "points": 10,
+          "armyComposition": "the-chracian-warhost",
+          "id": 3
+        }
+      ],
+      "mounts": [],
+      "items": [],
+      "specialRules": {
+        "name_en": "Close Order, Detachment, Elven Reflexes, Valour of Ages",
+        "name_cn": "紧密阵型, 分遣队, 精灵反应, 岁月的荣耀",
+        "name_it": "Formazione Serrata, Distaccamento, Riflessi Elfici, Valore delle Ere",
+        "name_fr": "Ordre Serré, Détachement, Réflexes Elfiques, Valeur des Âges",
+        "name_es": "Orden cerrado, Destacamento, Reflejos élficos, Valor de las eras",
+        "name_de": "Geschlossene Ränge, Abteilung, Elfenreflexe, Mut der Zeitalter"
+      },
+      "strength": 14,
+      "magic": { "items": [] },
+      "name": "Gift Wrappers"
+    },
+    {
+      "name_en": "Ellyrian Reavers",
+      "name_cn": "艾里昂掠夺者",
+      "name_it": "Ellyrian Reavers",
+      "name_de": "Ellyrianische Grenzreiter",
+      "name_fr": "Patrouilleurs Ellyriens",
+      "name_es": "Guardianes de Ellyrion",
+      "id": "ellyrian-reavers.gstqfa",
+      "points": 16,
+      "armyComposition": {
+        "high-elf-realms": { "category": "core" },
+        "sea-guard-garrison": { "category": "rare" }
+      },
+      "minimum": 5,
+      "maximum": 0,
+      "command": [
+        {
+          "name_en": "Harbinger (champion)",
+          "name_cn": "先驱者(冠军)",
+          "name_it": "Harbinger (campione)",
+          "name_de": "Herold (Champion)",
+          "name_es": "Heraldo (campeón)",
+          "points": 8,
+          "magic": {
+            "types": ["weapon", "armor", "talisman", "enchanted-item"],
+            "maxPoints": 25
+          },
+          "name_fr": "Émissaire (champion)",
+          "id": 0,
+          "active": false
+        },
+        {
+          "name_en": "Standard bearer",
+          "name_cn": "旗手",
+          "name_it": "Alfiere",
+          "name_de": "Standartenträger",
+          "name_es": "Portaestandarte",
+          "points": 6,
+          "magic": { "types": ["banner"], "maxPoints": 25 },
+          "name_fr": "Porte-étendard",
+          "id": 1
+        },
+        {
+          "name_en": "Musician",
+          "name_cn": "乐手",
+          "name_it": "Musico",
+          "name_de": "Musiker",
+          "name_fr": "Musicien",
+          "name_es": "Músico",
+          "points": 6,
+          "id": 2,
+          "active": true
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapons, Cavalry spears",
+          "name_cn": "单手武器, 骑兵长矛",
+          "name_it": "Armi Bianche, Lancia Leggera",
+          "name_de": "Handwaffen, Kavalleriespeere",
+          "name_es": "Armas de mano, Lanzas de caballería",
+          "name_fr": "Armes de base, Lances de cavalerie",
+          "points": 0,
+          "active": true,
+          "perModel": true,
+          "id": 0
+        },
+        {
+          "name_en": "Hand weapons, Shortbows",
+          "name_cn": "单手武器, 短弓",
+          "name_it": "Armi Bianche, Archi Corti",
+          "name_de": "Handwaffen, Kurzbögen",
+          "name_es": "Armas de mano, Arcos cortos",
+          "name_fr": "Armes de base, Arcs courts",
+          "points": 1,
+          "perModel": true,
+          "id": 1,
+          "active": false
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_it": "Armatura Leggera",
+          "name_de": "Leichte Rüstung",
+          "name_es": "Armadura ligera",
+          "points": 0,
+          "active": true,
+          "name_fr": "Armure légère",
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Shortbows",
+          "name_cn": "短弓",
+          "name_it": "Archi Corti",
+          "name_de": "Kurzbögen",
+          "name_es": "Arcos cortos",
+          "points": 2,
+          "perModel": true,
+          "name_fr": "Arcs courts",
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Scouts",
+          "name_cn": "侦察",
+          "name_it": "Esploratori",
+          "name_de": "Kundschafter",
+          "name_es": "Exploradores",
+          "points": 2,
+          "perModel": true,
+          "name_fr": "Éclaireurs",
+          "id": 1,
+          "active": false
+        },
+        {
+          "name_en": "Skirmishers",
+          "name_cn": "散兵",
+          "name_it": "Skirmishers",
+          "name_de": "Plänkler",
+          "name_fr": "Tirailleurs",
+          "name_es": "Escaramuzadores",
+          "points": 1,
+          "perModel": true,
+          "id": 2
+        }
+      ],
+      "mounts": [],
+      "specialRules": {
+        "name_en": "Elven Reflexes, Fast Cavalry, Open Order, Swiftstride, Valour of Ages",
+        "name_cn": "精灵反应, 快速骑兵, 开放阵型, 快速行进, 岁月的荣耀",
+        "name_it": "Riflessi Elfici, Cavalleria Veloce, Formazione Aperta, Passo Rapido, Valore delle Ere",
+        "name_fr": "Réflexes Elfiques, Cavalerie Rapide, Ordre Dispersé, Rapide, Valeur des Âges",
+        "name_es": "Reflejos élficos, Caballería veloz, Orden abierto, Veloces, Valor de las eras",
+        "name_de": "Elfenreflexe, Wendige Kavallerie, Offene Ränge, Schnelle Bewegung, Mut der Zeitalter"
+      },
+      "strength": 6,
+      "magic": { "items": [] },
+      "name": "No Donner or Blitzen"
+    }
+  ],
+  "special": [],
+  "rare": [
+    {
+      "name_en": "Sisters of Avelorn",
+      "name_cn": "阿瓦隆姐妹",
+      "name_it": "Sorelle di Avelorn",
+      "name_de": "Schwestern Avelorn",
+      "name_fr": "Sœurs d’Avelorn",
+      "name_es": "Hermanas de Avelorn",
+      "id": "sister-of-avelorn.jahdtcmwjo",
+      "points": 15,
+      "armyComposition": {
+        "high-elf-realms": { "category": "rare" },
+        "the-chracian-warhost": {
+          "category": "rare",
+          "notes": {
+            "name_en": "0-1 unit of Shadow Warriors or Sisters of Avelorn per 1000 points",
+            "name_cn": "每1000分0-1个单位的阴影战士或阿瓦隆姐妹",
+            "name_fr": "0-1 unité de Guerriers Fantômes ou Sœurs d’Avelorn par tranche de 1000 points",
+            "name_de": "0-1 Einheit Schattenkrieger oder Schwestern von Avelorn pro 1.000 Punkte"
+          }
+        }
+      },
+      "minimum": 5,
+      "maximum": 0,
+      "command": [
+        {
+          "name_en": "High Sister",
+          "name_cn": "高阶姐妹",
+          "name_it": "High Sister",
+          "name_de": "Hohe Schwester",
+          "name_es": "Hermana superiora",
+          "points": 7,
+          "magic": {
+            "types": ["weapon", "armor", "talisman", "enchanted-item"],
+            "maxPoints": 50,
+            "selected": [
+              {
+                "name_cn": "毁灭红宝石之戒",
+                "name_de": "Rubinring der Zerstörung",
+                "name_en": "Ruby Ring of Ruin",
+                "name_fr": "Anneau Rubis de Ruine",
+                "name_it": "Anello Di Rubino Della Rovina",
+                "name_pl": "Rubinowy Pierścień Zguby",
+                "points": 35,
+                "type": "enchanted-item",
+                "onePerArmy": true,
+                "name": "ruby ring of ruin",
+                "id": 48
+              }
+            ]
+          },
+          "name_fr": "Sœur Supérieure",
+          "id": 0,
+          "active": true
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapons, Bows of Avelorn",
+          "name_cn": "单手武器, 阿瓦隆之弓",
+          "name_it": "Armi Bianche, Bows of Avelorn",
+          "name_de": "Handwaffen, Bögen von Avelorn",
+          "name_es": "Armas de mano, Arcos de Avelorn",
+          "points": 0,
+          "active": true,
+          "name_fr": "Arcs d’Avelorn",
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_it": "Armatura Leggera",
+          "name_de": "Leichte Rüstung",
+          "name_es": "Armadura ligera",
+          "points": 0,
+          "active": true,
+          "name_fr": "Armure légère",
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Stubborn",
+          "name_cn": "坚毅",
+          "name_it": "Determinato",
+          "name_de": "Unnachgiebig",
+          "name_es": "Tozudas",
+          "name_fr": "Obstiné",
+          "points": 1,
+          "perModel": true,
+          "notes": {
+            "name_en": "0-1 unit",
+            "name_cn": "0-1单位",
+            "name_fr": "0-1 unité",
+            "name_es": "0-1 unidad",
+            "name_de": "0-1 Einheit",
+            "name_it": "0-1 unit"
+          },
+          "id": 0,
+          "active": true
+        },
+        {
+          "name_en": "Ambushers",
+          "name_cn": "伏击",
+          "name_it": "Agguatatori",
+          "name_de": "Überfall",
+          "name_es": "Emboscadoras",
+          "name_fr": "Embusqueurs",
+          "points": 1,
+          "perModel": true,
+          "notes": {
+            "name_en": "0-1 unit",
+            "name_cn": "0-1单位",
+            "name_fr": "0-1 unité",
+            "name_es": "0-1 unidad",
+            "name_de": "0-1 Einheit",
+            "name_it": "0-1 unit"
+          },
+          "id": 1
+        }
+      ],
+      "mounts": [],
+      "specialRules": {
+        "name_en": "Arrows of Isha, Evasive, Ignores Cover, Immune to Psychology, Ithilmar Armour, Ithilmar Weapons, Open Order, Skirmishers, Strike First",
+        "name_cn": "爱莎之箭, 闪避, 无视掩体, 心理免疫, 伊瑟拉玛护甲, 伊瑟拉玛武器, 开放阵型, 散兵, 先攻",
+        "name_it": "Freccie di Isha, Evasione, Ignores Cover, Immune alla Psicologia, Ithilmar Armour, Ithilmar Weapons, Formazione Aperta, Schermagliatori, Attacca Per Primo",
+        "name_fr": "Flèches d’Isha, Esquiveur, Ignore les Couverts, Immunisé à la Psychologie, Armure en Ithilmar, Armes en Ithilmar, Ordre Dispersé, Tirailleurs, Frappe En Premier",
+        "name_es": "Flechas de Isha, Evasivas Ignora cobertura, Inmune a la psicolgía, Armadura de Ithilmar, Armas de Ithilmar, Orden abierto, Escaramuzadoras, Siempre ataca primero",
+        "name_de": "Pfeile der Isha, Ausweichen, Deckung ignorieren, Immun gegen Psychologie, Ithilmar-Rüstung, Ithilmar-Waffen, Offene Ränge, Plänkler, Schlägt zuerst zu"
+      },
+      "strength": 5,
+      "magic": { "items": [] },
+      "name": "E.L.F.S"
+    },
+    {
+      "name_en": "Sisters of Avelorn",
+      "name_cn": "阿瓦隆姐妹",
+      "name_it": "Sorelle di Avelorn",
+      "name_de": "Schwestern Avelorn",
+      "name_fr": "Sœurs d’Avelorn",
+      "name_es": "Hermanas de Avelorn",
+      "id": "sister-of-avelorn.xkfoqganj",
+      "points": 15,
+      "armyComposition": {
+        "high-elf-realms": { "category": "rare" },
+        "the-chracian-warhost": {
+          "category": "rare",
+          "notes": {
+            "name_en": "0-1 unit of Shadow Warriors or Sisters of Avelorn per 1000 points",
+            "name_cn": "每1000分0-1个单位的阴影战士或阿瓦隆姐妹",
+            "name_fr": "0-1 unité de Guerriers Fantômes ou Sœurs d’Avelorn par tranche de 1000 points",
+            "name_de": "0-1 Einheit Schattenkrieger oder Schwestern von Avelorn pro 1.000 Punkte"
+          }
+        }
+      },
+      "minimum": 5,
+      "maximum": 0,
+      "command": [
+        {
+          "name_en": "High Sister",
+          "name_cn": "高阶姐妹",
+          "name_it": "High Sister",
+          "name_de": "Hohe Schwester",
+          "name_es": "Hermana superiora",
+          "points": 7,
+          "magic": {
+            "types": ["weapon", "armor", "talisman", "enchanted-item"],
+            "maxPoints": 50,
+            "selected": [
+              {
+                "name_de": "Bogen des Seefahrers",
+                "name_en": "Bow of the Seafarer",
+                "name_cn": "航海者长弓",
+                "name_fr": "Arc du Voyageur",
+                "name_it": "Bow of the Seafarer",
+                "points": 50,
+                "type": "weapon",
+                "onePerArmy": true,
+                "name": "bow of the seafarer",
+                "id": 3
+              }
+            ]
+          },
+          "name_fr": "Sœur Supérieure",
+          "id": 0,
+          "active": true
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapons, Bows of Avelorn",
+          "name_cn": "单手武器, 阿瓦隆之弓",
+          "name_it": "Armi Bianche, Bows of Avelorn",
+          "name_de": "Handwaffen, Bögen von Avelorn",
+          "name_es": "Armas de mano, Arcos de Avelorn",
+          "points": 0,
+          "active": true,
+          "name_fr": "Arcs d’Avelorn",
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Light armour",
+          "name_cn": "轻甲",
+          "name_it": "Armatura Leggera",
+          "name_de": "Leichte Rüstung",
+          "name_es": "Armadura ligera",
+          "points": 0,
+          "active": true,
+          "name_fr": "Armure légère",
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Stubborn",
+          "name_cn": "坚毅",
+          "name_it": "Determinato",
+          "name_de": "Unnachgiebig",
+          "name_es": "Tozudas",
+          "name_fr": "Obstiné",
+          "points": 1,
+          "perModel": true,
+          "notes": {
+            "name_en": "0-1 unit",
+            "name_cn": "0-1单位",
+            "name_fr": "0-1 unité",
+            "name_es": "0-1 unidad",
+            "name_de": "0-1 Einheit",
+            "name_it": "0-1 unit"
+          },
+          "id": 0,
+          "active": false
+        },
+        {
+          "name_en": "Ambushers",
+          "name_cn": "伏击",
+          "name_it": "Agguatatori",
+          "name_de": "Überfall",
+          "name_es": "Emboscadoras",
+          "name_fr": "Embusqueurs",
+          "points": 1,
+          "perModel": true,
+          "notes": {
+            "name_en": "0-1 unit",
+            "name_cn": "0-1单位",
+            "name_fr": "0-1 unité",
+            "name_es": "0-1 unidad",
+            "name_de": "0-1 Einheit",
+            "name_it": "0-1 unit"
+          },
+          "id": 1,
+          "active": false
+        }
+      ],
+      "mounts": [],
+      "specialRules": {
+        "name_en": "Arrows of Isha, Evasive, Ignores Cover, Immune to Psychology, Ithilmar Armour, Ithilmar Weapons, Open Order, Skirmishers, Strike First",
+        "name_cn": "爱莎之箭, 闪避, 无视掩体, 心理免疫, 伊瑟拉玛护甲, 伊瑟拉玛武器, 开放阵型, 散兵, 先攻",
+        "name_it": "Freccie di Isha, Evasione, Ignores Cover, Immune alla Psicologia, Ithilmar Armour, Ithilmar Weapons, Formazione Aperta, Schermagliatori, Attacca Per Primo",
+        "name_fr": "Flèches d’Isha, Esquiveur, Ignore les Couverts, Immunisé à la Psychologie, Armure en Ithilmar, Armes en Ithilmar, Ordre Dispersé, Tirailleurs, Frappe En Premier",
+        "name_es": "Flechas de Isha, Evasivas Ignora cobertura, Inmune a la psicolgía, Armadura de Ithilmar, Armas de Ithilmar, Orden abierto, Escaramuzadoras, Siempre ataca primero",
+        "name_de": "Pfeile der Isha, Ausweichen, Deckung ignorieren, Immun gegen Psychologie, Ithilmar-Rüstung, Ithilmar-Waffen, Offene Ränge, Plänkler, Schlägt zuerst zu"
+      },
+      "strength": 5,
+      "magic": { "items": [] },
+      "name": "Elf Secret Service"
+    },
+    {
+      "name_en": "Lothern Skycutter",
+      "name_cn": "洛瑟恩斩天艇",
+      "name_it": "Lothern Skycutter",
+      "name_de": "Himmelssegler von Lothern",
+      "name_fr": "Cotre Volant de Lothern",
+      "name_es": "Escolta celeste de Lothern",
+      "id": "lothern-skycutters.mhlpvqclcn",
+      "points": 90,
+      "armyComposition": { "high-elf-realms": { "category": "rare" } },
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Cavalry spears, Shortbows, Wicked claws (Swiftfeather Roc)",
+          "name_cn": "骑兵长矛, 短弓, 恶毒之爪 (Swiftfeather Roc)",
+          "name_it": "Lancia Leggera, Archi Corti, Artigli Malvagi (Swiftfeather Roc)",
+          "name_de": "Kavalleriespeere, Kurzbögen, Scheußliche Krallen (Flinkfeder-Roch)",
+          "name_es": "Lanzas de caballería, Arcos cortos, Garras crueles (Swiftfeather Roc)",
+          "name_fr": "Lances de cavalerie, Arcs courts, Griffes mortelles (Rokh d’Écume)",
+          "points": 0,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [],
+      "options": [
+        {
+          "name_en": "Eagle-Eye Bolt Thrower",
+          "name_cn": "鹰眼弩炮",
+          "name_it": "Eagle-Eye Balista",
+          "name_de": "Adlerauge-Speerschleuder",
+          "name_es": "Lanzavirotes ojo de águila",
+          "points": 25,
+          "perModel": true,
+          "name_fr": "Baliste Œil-d’aigle",
+          "id": 0
+        }
+      ],
+      "mounts": [],
+      "specialRules": {
+        "name_en": "Close Order, Fear, Fly (10), Elven Reflexes (Sea Guard Crew only), Impact Hits (D3+1), Swiftstride, Valour of Ages",
+        "name_cn": "紧密阵型, 恐惧, 飞行(10), 精灵反应(仅海卫组员), 撞击(D3+1), 快速行进, 岁月的荣耀",
+        "name_it": "Formazione Serrata, Paura, Volo (10), Riflessi Elfici (Sea Guard Crew only), Colpi da Impatto (D3+1), Passo Rapido, Valore delle Ere",
+        "name_fr": "Ordre Serré, Peur, Vol (10), Réflexes Elfiques (Équipage Garde Maritime uniquement), Touches d’Impact (D3+1), Rapide, Valeur des Âges",
+        "name_es": "Orden cerrado, Miedo, Volar (10), Reflejos élficos (solo la tripulación de Guardias del mar), Golpes de impacto (D3+1), Veloz, Valor de las eras",
+        "name_de": "Geschlossene Ränge, Angst, Fliegen (10), Elfenreflexe (Nur Seegarde Besatzung), Aufpralltreffer (W3+1), Schnelle Bewegung, Mut der Zeitalter"
+      },
+      "name": "Red Sleigh One"
+    },
+    {
+      "name_en": "Lothern Skycutter",
+      "name_cn": "洛瑟恩斩天艇",
+      "name_it": "Lothern Skycutter",
+      "name_de": "Himmelssegler von Lothern",
+      "name_fr": "Cotre Volant de Lothern",
+      "name_es": "Escolta celeste de Lothern",
+      "id": "lothern-skycutters.bkkjsyt",
+      "points": 90,
+      "armyComposition": { "high-elf-realms": { "category": "rare" } },
+      "command": [],
+      "equipment": [
+        {
+          "name_en": "Cavalry spears, Shortbows, Wicked claws (Swiftfeather Roc)",
+          "name_cn": "骑兵长矛, 短弓, 恶毒之爪 (Swiftfeather Roc)",
+          "name_it": "Lancia Leggera, Archi Corti, Artigli Malvagi (Swiftfeather Roc)",
+          "name_de": "Kavalleriespeere, Kurzbögen, Scheußliche Krallen (Flinkfeder-Roch)",
+          "name_es": "Lanzas de caballería, Arcos cortos, Garras crueles (Swiftfeather Roc)",
+          "name_fr": "Lances de cavalerie, Arcs courts, Griffes mortelles (Rokh d’Écume)",
+          "points": 0,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [],
+      "options": [
+        {
+          "name_en": "Eagle-Eye Bolt Thrower",
+          "name_cn": "鹰眼弩炮",
+          "name_it": "Eagle-Eye Balista",
+          "name_de": "Adlerauge-Speerschleuder",
+          "name_es": "Lanzavirotes ojo de águila",
+          "points": 25,
+          "perModel": true,
+          "name_fr": "Baliste Œil-d’aigle",
+          "id": 0
+        }
+      ],
+      "mounts": [],
+      "specialRules": {
+        "name_en": "Close Order, Fear, Fly (10), Elven Reflexes (Sea Guard Crew only), Impact Hits (D3+1), Swiftstride, Valour of Ages",
+        "name_cn": "紧密阵型, 恐惧, 飞行(10), 精灵反应(仅海卫组员), 撞击(D3+1), 快速行进, 岁月的荣耀",
+        "name_it": "Formazione Serrata, Paura, Volo (10), Riflessi Elfici (Sea Guard Crew only), Colpi da Impatto (D3+1), Passo Rapido, Valore delle Ere",
+        "name_fr": "Ordre Serré, Peur, Vol (10), Réflexes Elfiques (Équipage Garde Maritime uniquement), Touches d’Impact (D3+1), Rapide, Valeur des Âges",
+        "name_es": "Orden cerrado, Miedo, Volar (10), Reflejos élficos (solo la tripulación de Guardias del mar), Golpes de impacto (D3+1), Veloz, Valor de las eras",
+        "name_de": "Geschlossene Ränge, Angst, Fliegen (10), Elfenreflexe (Nur Seegarde Besatzung), Aufpralltreffer (W3+1), Schnelle Bewegung, Mut der Zeitalter"
+      },
+      "name": "Pooch Express"
+    }
+  ],
+  "mercenaries": [],
+  "allies": [],
+  "id": "srtcqmuv",
+  "armyComposition": "high-elf-realms",
+  "compositionRule": "grand-melee-combined-arms",
+  "folder": "folder-uuhjzhbwd"
+}

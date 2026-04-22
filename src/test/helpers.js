@@ -24,6 +24,7 @@ import woodElvesJson from "./fixtures/wood-elves.owb.json";
 import trollsJson from "./fixtures/trolls.owb.json";
 import grandCathayJson from "./fixtures/grand-cathay.owb.json";
 import alienorJson from "./fixtures/aliénor-de-parravon-.owb.json";
+import santasJollyElvesJson from "./fixtures/santas-jolly-elves.owb.json";
 
 export function loadArmy(fixture) {
   const jsonMap = {
@@ -42,6 +43,7 @@ export function loadArmy(fixture) {
     trolls: trollsJson,
     "grand-cathay": grandCathayJson,
     "aliénor-de-parravon-": alienorJson,
+    "santas-jolly-elves": santasJollyElvesJson,
   };
   const json = jsonMap[fixture];
   const army = parseArmyList(json);
