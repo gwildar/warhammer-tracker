@@ -14,8 +14,9 @@ const DEPLOYMENT_RULE_IDS = new Set([
   "vanguard",
   "ambushers",
   "ambush", // alias for ambushers in special-rules.js
-  "the arrow of kurnous",
 ]);
+
+const POST_DEPLOYMENT_RULE_IDS = new Set(["the arrow of kurnous"]);
 
 function normaliseRuleId(displayName) {
   return (displayName || "")
@@ -27,6 +28,12 @@ function normaliseRuleId(displayName) {
 function getDeploymentRules(unit) {
   return (unit.specialRules || []).filter((r) =>
     DEPLOYMENT_RULE_IDS.has(normaliseRuleId(r.displayName)),
+  );
+}
+
+function getPostDeploymentRules(unit) {
+  return (unit.specialRules || []).filter((r) =>
+    POST_DEPLOYMENT_RULE_IDS.has(normaliseRuleId(r.displayName)),
   );
 }
 
@@ -104,6 +111,35 @@ function renderDeploymentUnits(army) {
   `;
 }
 
+function renderPostDeploymentUnits(army) {
+  const units = army.units.filter((u) => getPostDeploymentRules(u).length > 0);
+  if (units.length === 0) return "";
+  const cardsHtml = units
+    .map((unit) => {
+      const rules = getPostDeploymentRules(unit);
+      return rules
+        .map((r) => {
+          const desc = ruleDescription(r.displayName);
+          return `
+          <div class="p-2 rounded border border-wh-border bg-wh-card mb-2">
+            <div class="text-sm font-semibold text-wh-text">${unit.name}</div>
+            <div class="mt-1">
+              <span class="text-xs text-wh-accent font-semibold">${r.displayName}</span>
+              ${desc ? `<div class="text-xs text-wh-muted mt-0.5">${desc}</div>` : ""}
+            </div>
+          </div>`;
+        })
+        .join("");
+    })
+    .join("");
+  return `
+    <div class="mt-4">
+      <h3 class="text-xs font-bold text-wh-muted mb-2 uppercase tracking-wide">After Deployment</h3>
+      ${cardsHtml}
+    </div>
+  `;
+}
+
 export function renderDeploymentScreen(army) {
   if (getStartTime() === null) {
     resetStartTime();
@@ -118,6 +154,7 @@ export function renderDeploymentScreen(army) {
         ${renderDeploymentCards(army)}
         ${renderExplainer()}
         ${renderDeploymentUnits(army)}
+        ${renderPostDeploymentUnits(army)}
       </main>
       <footer class="sticky bottom-0 bg-wh-surface border-t border-wh-border p-3">
         <div class="max-w-2xl mx-auto flex gap-3">

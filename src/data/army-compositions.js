@@ -78,6 +78,25 @@ export const ARMY_COMPOSITIONS = {
     ],
     rules: [],
   },
+  "wolves-of-the-sea": {
+    name: "Wolves of the Sea",
+    deploymentCards: [
+      {
+        title: "Warriors' Duel — Before First Turn",
+        colour: "wh-red",
+        description:
+          "Before the first-turn roll-off, either player may propose a Warriors' Duel.",
+        items: [
+          "Each side nominates one champion (infantry or cavalry, exactly 1 Wound)",
+          "Champions fight in a challenge until one falls — winner's army takes the first turn",
+          "If both fall simultaneously, revert to a standard roll-off",
+          "If declined, Wolves of the Sea automatically takes the first turn",
+          "Bretonnian opponent: accepting triggers Blessings of the Lady; declining causes units with Grail Vow to lose it",
+        ],
+      },
+    ],
+    rules: [],
+  },
   "the-chracian-warhost": {
     name: "The Chracian Warhost",
     deploymentCards: [
