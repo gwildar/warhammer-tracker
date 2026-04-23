@@ -2,7 +2,7 @@ import { saveFirstTurn } from "../state.js";
 import { PHASES, getAllSubPhases } from "../phases.js";
 import { navigate } from "../navigate.js";
 import { renderSetupHeader, bindSetupHeaderEvents } from "./setup-header.js";
-import { hasStartOfTurnContent } from "./game.js";
+import { nextVisibleIdx } from "./game.js";
 
 const allSubPhases = getAllSubPhases();
 
@@ -40,8 +40,8 @@ export function renderFirstTurnScreen(army) {
 
   document.getElementById("first-you-btn").addEventListener("click", () => {
     saveFirstTurn("you");
-    const startIdx = hasStartOfTurnContent(army) ? 0 : 1;
-    const { phase, subPhase } = allSubPhases[startIdx];
+    const firstIdx = nextVisibleIdx(army, -1, 1);
+    const { phase, subPhase } = allSubPhases[firstIdx];
     navigate(`/game/1/${phase.id}/${subPhase.id}`);
   });
 
