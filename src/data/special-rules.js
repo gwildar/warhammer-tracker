@@ -787,7 +787,7 @@ export const SPECIAL_RULES = [
     id: "guardian of the sacred sites",
     displayName: "Guardian of the Sacred Sites",
     description:
-      "D6 roll of 3+ to awaken the Green Knight (automatic from round 5). Place within any natural terrain feature.",
+      'D6 roll of 3+ to awaken the Green Knight. If the Green Knight has not yet been awakened by the start of round five, he awakens automatically. Place within any natural terrain feature. 1" rule applies',
     phases: ["start-of-turn"],
     yourTurnOnly: true,
   },
