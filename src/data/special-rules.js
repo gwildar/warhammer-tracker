@@ -193,6 +193,7 @@ export const SPECIAL_RULES = [
     displayName: "Fast Cavalry",
     description: "In Open Order, may perform Quick Turn even after marching.",
     phases: ["remaining-moves"],
+    yourTurnOnly: true,
   },
   {
     id: "move through cover",
@@ -208,6 +209,7 @@ export const SPECIAL_RULES = [
     description:
       "After moving, unless it charged, marched or fled, a Lumbering model may pivot about its centre to change its facing by up to 90°.",
     phases: ["remaining-moves"],
+    yourTurnOnly: true,
   },
   {
     id: "dragged along",
