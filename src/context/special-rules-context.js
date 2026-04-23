@@ -186,6 +186,25 @@ export function hasSpecialRulesForSubPhase(army, subPhaseId) {
   return false;
 }
 
+export function hasStartOfTurnRules(army, round) {
+  for (const unit of army.units) {
+    const unitRules = buildUnitRules(unit);
+    for (const ruleName of unitRules) {
+      const normName = normaliseRuleName(ruleName);
+      for (const rule of RULES) {
+        if (!ruleMatches(rule, normName)) continue;
+        for (const phase of rule.phases) {
+          if (phase.subPhaseId !== "start-of-turn") continue;
+          if (phase.fromRound && round < phase.fromRound) continue;
+          if (phase.opponentOnly) continue;
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+}
+
 export function renderSpecialRulesContext(army, subPhase) {
   const round = getRound();
   const matches = [];

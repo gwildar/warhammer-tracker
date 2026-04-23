@@ -28,6 +28,7 @@ import { renderVirtuesContext } from "../context/virtues.js";
 import {
   renderSpecialRulesContext,
   hasSpecialRulesForSubPhase,
+  hasStartOfTurnRules,
 } from "../context/special-rules-context.js";
 import { renderScoringUI, bindScoringEvents } from "./scoring.js";
 import { renderSpecialFeaturesTable } from "../context/scenario-context.js";
@@ -45,6 +46,10 @@ export function renderGameScreen(army) {
   const { phase, subPhase } = allSubPhases[phaseIdx];
   const isFirst = phaseIdx === 0;
   const isLast = phaseIdx === allSubPhases.length - 1;
+  const visiblePhases = getVisibleSubPhases(army);
+  const visibleStep =
+    visiblePhases.findIndex((sp) => sp.subPhase.id === subPhase.id) + 1;
+  const visibleTotal = visiblePhases.length;
 
   app.innerHTML = `
     <div class="min-h-dvh flex flex-col">
@@ -97,7 +102,7 @@ export function renderGameScreen(army) {
           <div class="mb-4">
             <span class="text-xs uppercase tracking-wider ${PHASE_TEXT[phase.colour]}">${phase.name}</span>
             <h2 class="text-2xl font-bold text-wh-text">${subPhase.name}</h2>
-            <span class="text-xs text-wh-muted">Step ${phaseIdx + 1} of ${allSubPhases.length}</span>
+            <span class="text-xs text-wh-muted">Step ${visibleStep} of ${visibleTotal}</span>
           </div>
 
           <!-- Rules -->
@@ -268,11 +273,42 @@ function hasCommandContent(army) {
   );
 }
 
+export function hasStartOfTurnContent(army) {
+  if (getScenarioOptions().specialFeatures) return true;
+  const round = getRound();
+  if (hasStartOfTurnRules(army, round)) return true;
+  return army.units.some((unit) =>
+    (unit.magicItems || []).some(
+      (item) =>
+        item &&
+        item.phases?.includes("strategy") &&
+        !(item.subPhases && !item.subPhases.includes("start-of-turn")) &&
+        !item.opponentOnly,
+    ),
+  );
+}
+
+function getVisibleSubPhases(army) {
+  return allSubPhases.filter(({ subPhase }) => {
+    const id = subPhase.id;
+    if (id === "start-of-turn" && !hasStartOfTurnContent(army)) return false;
+    if (id === "reserve-moves" && !hasReserveMove(army)) return false;
+    if (id === "command" && !hasCommandContent(army)) return false;
+    if ((army.skipPhases || []).includes(id)) return false;
+    return true;
+  });
+}
+
 function nextVisibleIdx(army, from, direction) {
   let idx = from + direction;
   while (idx >= 0 && idx < allSubPhases.length) {
     const subPhaseId = allSubPhases[idx].subPhase.id;
+    const skipStartOfTurn =
+      direction > 0 &&
+      subPhaseId === "start-of-turn" &&
+      !hasStartOfTurnContent(army);
     if (
+      !skipStartOfTurn &&
       (subPhaseId !== "reserve-moves" || hasReserveMove(army)) &&
       (subPhaseId !== "command" || hasCommandContent(army)) &&
       !(army.skipPhases || []).includes(subPhaseId)
