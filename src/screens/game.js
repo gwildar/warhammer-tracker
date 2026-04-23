@@ -268,11 +268,26 @@ function hasCommandContent(army) {
   );
 }
 
-function nextVisibleIdx(army, from, direction) {
+function hasStartOfTurnContent(army) {
+  if (getScenarioOptions().specialFeatures) return true;
+  if (hasSpecialRulesForSubPhase(army, "start-of-turn")) return true;
+  return army.units.some((unit) =>
+    (unit.magicItems || []).some(
+      (item) =>
+        item &&
+        item.phases?.includes("strategy") &&
+        !(item.subPhases && !item.subPhases.includes("start-of-turn")) &&
+        !item.opponentOnly,
+    ),
+  );
+}
+
+export function nextVisibleIdx(army, from, direction) {
   let idx = from + direction;
   while (idx >= 0 && idx < allSubPhases.length) {
     const subPhaseId = allSubPhases[idx].subPhase.id;
     if (
+      (subPhaseId !== "start-of-turn" || hasStartOfTurnContent(army)) &&
       (subPhaseId !== "reserve-moves" || hasReserveMove(army)) &&
       (subPhaseId !== "command" || hasCommandContent(army)) &&
       !(army.skipPhases || []).includes(subPhaseId)
