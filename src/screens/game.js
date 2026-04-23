@@ -268,7 +268,7 @@ function hasCommandContent(army) {
   );
 }
 
-function hasStartOfTurnContent(army) {
+export function hasStartOfTurnContent(army) {
   if (getScenarioOptions().specialFeatures) return true;
   if (hasSpecialRulesForSubPhase(army, "start-of-turn")) return true;
   return army.units.some((unit) =>
