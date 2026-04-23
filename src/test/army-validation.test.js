@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import { validateArmy } from "../army-validation.js";
 import { loadArmy } from "./helpers.js";
 import bretonnianExilesJson from "./fixtures/bretonnian-exiles.owb.json";
+import bretonniaJson from "./fixtures/bretonnia.owb.json";
 import { parseArmyList } from "../army.js";
 
 describe("validateArmy", () => {
@@ -403,5 +404,59 @@ describe("checkExilesMissingVow", () => {
       w.message.includes("No vow is active"),
     );
     expect(vowWarnings).toHaveLength(0);
+  });
+});
+
+describe("checkPeasantBowmenSkirmishers", () => {
+  it("warns for Peasant Bowmen without Skirmishers active", () => {
+    const army = parseArmyList(bretonniaJson);
+    const warnings = validateArmy(bretonniaJson, army);
+    const skirmWarnings = warnings.filter((w) =>
+      w.message.includes("Skirmishers"),
+    );
+    expect(skirmWarnings.some((w) => w.unitName === "Peasant Bowmen")).toBe(
+      true,
+    );
+  });
+
+  it("does not warn for Peasant Bowmen with Skirmishers active", () => {
+    const json = {
+      ...bretonniaJson,
+      core: bretonniaJson.core.map((u) =>
+        u.name_en === "Peasant Bowmen"
+          ? {
+              ...u,
+              options: (u.options || []).map((o) =>
+                o.name_en === "Skirmishers" ? { ...o, active: true } : o,
+              ),
+            }
+          : u,
+      ),
+    };
+    const army = parseArmyList(json);
+    const warnings = validateArmy(json, army);
+    const skirmWarnings = warnings.filter((w) =>
+      w.message.includes("Skirmishers"),
+    );
+    expect(skirmWarnings.some((w) => w.unitName === "Peasant Bowmen")).toBe(
+      false,
+    );
+  });
+
+  it("does not warn for armies with no Peasant Bowmen", () => {
+    const army = loadArmy("dark-elves");
+    const rawJson = {
+      game: "the-old-world",
+      characters: [],
+      core: [],
+      special: [],
+      rare: [],
+      mercenaries: [],
+      allies: [],
+    };
+    const warnings = validateArmy(rawJson, army);
+    expect(
+      warnings.filter((w) => w.message.includes("Skirmishers")),
+    ).toHaveLength(0);
   });
 });

@@ -123,6 +123,23 @@ function checkNoStatProfile(rawJson, army) {
   return warnings;
 }
 
+function checkPeasantBowmenSkirmishers(rawJson) {
+  const warnings = [];
+  for (const unit of getRawUnits(rawJson)) {
+    if (!unit.name_en?.toLowerCase().includes("peasant bow")) continue;
+    const hasSkirmishers = (unit.options || []).some(
+      (o) => o.name_en?.toLowerCase() === "skirmishers" && o.active === true,
+    );
+    if (!hasSkirmishers) {
+      warnings.push({
+        unitName: unit.name_en,
+        message: "Skirmishers option is not selected — is this intentional?",
+      });
+    }
+  }
+  return warnings;
+}
+
 function checkExilesMissingVow(rawJson) {
   if (rawJson.armyComposition !== "bretonnian-exiles") return [];
   const warnings = [];
@@ -149,6 +166,7 @@ const CHECKS = [
   checkMagicShieldWithMundane,
   checkNoStatProfile,
   checkExilesMissingVow,
+  checkPeasantBowmenSkirmishers,
 ];
 
 export function validateArmy(rawJson, army) {
