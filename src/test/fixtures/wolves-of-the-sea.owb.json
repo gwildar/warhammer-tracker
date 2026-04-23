@@ -1,0 +1,345 @@
+{
+  "name": "Wolves of the Sea",
+  "description": "",
+  "game": "the-old-world",
+  "points": 2000,
+  "army": "warriors-of-chaos",
+  "characters": [
+    {
+      "name_en": "Sorcerer Lord",
+      "name_cn": "术士领主",
+      "name_de": "Meisterhexer",
+      "name_es": "Sorcerer Lord",
+      "name_fr": "Seigneur Sorcier",
+      "id": "sorcerer-lord.iocqldqf",
+      "points": 195,
+      "armyComposition": {
+        "warriors-of-chaos": {
+          "category": "characters",
+          "notes": {
+            "name_en": "0-1 Exalted Champion or Sorcerer Lord per 1000 points",
+            "name_cn": "每1000分0-1至尊冠军或术士领主",
+            "name_de": "0-1 Erhabener Champion oder Meisterhexer pro 1.000 Punkte",
+            "name_es": "0-1 Exalted Champion or Sorcerer Lord per 1000 points",
+            "name_fr": "0-1 Champion Exalté ou Seigneur Sorcier par tranche de 1000 points"
+          }
+        },
+        "wolves-of-the-sea": {
+          "category": "characters",
+          "notes": {
+            "name_en": "0-1 Chaos Lord, Daemon Prince or Sorcerer Lord",
+            "name_cn": "0-1 混沌领主, 恶魔亲王或术士领主",
+            "name_de": "0-1 Kriegsherr des Chaos, Dämonenprinz oder Meisterhexer",
+            "name_es": "0-1 Chaos Lord, Daemon Prince or Sorcerer Lord",
+            "name_fr": "0-1 Seigneur du Chaos, Prince Démon ou Seigneur Sorcier"
+          }
+        },
+        "heralds-of-darkness": {
+          "category": "characters",
+          "notes": {
+            "name_en": "0-1 Exalted Champion or Sorcerer Lord per 1000 points",
+            "name_cn": "每1000分0-1至尊冠军或术士领主",
+            "name_de": "0-1 Erhabener Champion oder Meisterhexer pro 1.000 Punkte",
+            "name_es": "0-1 Exalted Champion or Sorcerer Lord per 1000 points",
+            "name_fr": "0-1 Champion Exalté ou Seigneur Sorcier par tranche de 1000 points"
+          }
+        }
+      },
+      "command": [
+        {
+          "name_en": "General",
+          "name_cn": "主将",
+          "name_de": "General",
+          "name_es": "General",
+          "name_fr": "Général",
+          "points": 0,
+          "id": 0
+        }
+      ],
+      "equipment": [
+        {
+          "name_en": "Hand weapon",
+          "name_cn": "单手武器",
+          "name_de": "Handwaffe",
+          "name_es": "Hand weapon",
+          "name_fr": "Arme de base",
+          "points": 0,
+          "active": true,
+          "id": 0
+        }
+      ],
+      "armor": [
+        {
+          "name_en": "Heavy armour",
+          "name_cn": "重甲",
+          "name_de": "Schwere Rüstung",
+          "name_es": "Heavy armour",
+          "name_fr": "Armure lourde",
+          "points": 0,
+          "active": true,
+          "activeDefault": true,
+          "id": 0
+        }
+      ],
+      "options": [
+        {
+          "name_en": "Mark of Chaos",
+          "name_cn": "混沌之印",
+          "name_de": "Mal des Chaos",
+          "name_es": "Mark of Chaos",
+          "name_fr": "Marque du Chaos",
+          "name_it": "Mark of Chaos",
+          "name_pl": "Mark of Chaos",
+          "points": 0,
+          "active": true,
+          "alwaysActive": true,
+          "options": [
+            {
+              "name_en": "Mark of Chaos Undivided",
+              "name_cn": "混沌无分之印",
+              "name_de": "Mal des Ungeteilten Chaos",
+              "name_es": "Mark of Chaos Undivided",
+              "name_fr": "Marque du Chaos Universel",
+              "points": 0,
+              "active": true,
+              "perModel": true,
+              "exclusive": true
+            },
+            {
+              "name_en": "Mark of Nurgle",
+              "name_cn": "纳垢之印",
+              "name_de": "Mal des Nurgle",
+              "name_es": "Mark of Nurgle",
+              "name_fr": "Marque de Nurgle",
+              "points": 10,
+              "perModel": true,
+              "exclusive": true
+            },
+            {
+              "name_en": "Mark of Slaanesh",
+              "name_cn": "色孽之印",
+              "name_de": "Mal des Slaanesh",
+              "name_es": "Mark of Slaanesh",
+              "name_fr": "Marque de Slaanesh",
+              "points": 10,
+              "perModel": true,
+              "exclusive": true
+            },
+            {
+              "name_en": "Mark of Tzeentch",
+              "name_cn": "奸奇之印",
+              "name_de": "Mal des Tzeentch",
+              "name_es": "Mark of Tzeentch",
+              "name_fr": "Marque de Tzeentch",
+              "points": 10,
+              "perModel": true,
+              "exclusive": true
+            }
+          ],
+          "id": 0
+        },
+        {
+          "name_en": "Wizard",
+          "name_cn": "法师",
+          "name_de": "Wizard",
+          "name_fr": "Sorcier",
+          "name_es": "Hechicero",
+          "points": 0,
+          "active": true,
+          "alwaysActive": true,
+          "options": [
+            {
+              "name_en": "Level 3 Wizard",
+              "name_cn": "3级法师",
+              "name_de": "Zauberer der Stufe 3",
+              "name_fr": "Sorcier de Niveau 3",
+              "name_es": "Hechicero de Nivel 3",
+              "points": 0,
+              "exclusive": true,
+              "active": true
+            },
+            {
+              "name_en": "Level 4 Wizard",
+              "name_cn": "4级法师",
+              "name_de": "Zauberer der Stufe 4",
+              "name_fr": "Sorcier de Niveau 4",
+              "name_es": "Hechicero de Nivel 4",
+              "points": 30,
+              "exclusive": true
+            }
+          ],
+          "id": 1
+        }
+      ],
+      "mounts": [
+        {
+          "name_en": "On foot",
+          "name_cn": "步行",
+          "name_de": "Zu Fuß",
+          "name_es": "On foot",
+          "name_fr": "À Pied",
+          "points": 0,
+          "active": true,
+          "id": 0
+        },
+        {
+          "name_en": "Chaos Steed",
+          "name_cn": "混沌战马",
+          "name_de": "Chaosross",
+          "name_es": "Chaos Steed",
+          "name_fr": "Destrier du Chaos",
+          "points": 16,
+          "id": 1
+        },
+        {
+          "name_en": "Daemonic Mount",
+          "name_cn": "恶魔坐骑",
+          "name_de": "Dämonisches Reittier",
+          "name_es": "Daemonic Mount",
+          "name_fr": "Monture Démoniaque",
+          "points": 35,
+          "id": 2
+        },
+        {
+          "name_en": "Chaos Chariot",
+          "name_cn": "混沌战车",
+          "name_de": "Chaos-Streitwagen",
+          "name_es": "Chaos Chariot",
+          "name_fr": "Char du Chaos",
+          "points": 110,
+          "options": [
+            {
+              "name_en": "Mark of Chaos Undivided",
+              "name_cn": "混沌无分之印",
+              "name_de": "Mal des Ungeteilten Chaos",
+              "name_es": "Mark of Chaos Undivided",
+              "name_fr": "Marque du Chaos Universel",
+              "points": 0,
+              "exclusive": true
+            },
+            {
+              "name_en": "Mark of Khorne",
+              "name_cn": "恐虐之印",
+              "name_de": "Mal des Khorne",
+              "name_es": "Mark of Khorne",
+              "name_fr": "Marque de Khorne",
+              "points": 10,
+              "exclusive": true
+            },
+            {
+              "name_en": "Mark of Nurgle",
+              "name_cn": "纳垢之印",
+              "name_de": "Mal des Nurgle",
+              "name_es": "Mark of Nurgle",
+              "name_fr": "Marque de Nurgle",
+              "points": 10,
+              "exclusive": true
+            },
+            {
+              "name_en": "Mark of Slaanesh",
+              "name_cn": "色孽之印",
+              "name_de": "Mal des Slaanesh",
+              "name_es": "Mark of Slaanesh",
+              "name_fr": "Marque de Slaanesh",
+              "points": 10,
+              "exclusive": true
+            },
+            {
+              "name_en": "Mark of Tzeentch",
+              "name_cn": "奸奇之印",
+              "name_de": "Mal des Tzeentch",
+              "name_es": "Mark of Tzeentch",
+              "name_fr": "Marque de Tzeentch",
+              "points": 10,
+              "exclusive": true
+            }
+          ],
+          "id": 3
+        },
+        {
+          "name_en": "Manticore {warriors of chaos}",
+          "name_cn": "蝎尾狮 {warriors of chaos}",
+          "name_de": "Mantikor",
+          "name_es": "Manticore",
+          "name_fr": "Manticore",
+          "points": 120,
+          "options": [
+            {
+              "name_en": "Venomous tail",
+              "name_cn": "毒液尾刺",
+              "name_de": "Giftigen Schwanz",
+              "name_es": "Venomous tail",
+              "name_fr": "Queue venimeuse",
+              "points": 15
+            }
+          ],
+          "id": 4
+        },
+        {
+          "name_en": "Chaos Dragon",
+          "name_cn": "混沌龙",
+          "name_de": "Chaosdrache",
+          "name_es": "Chaos Dragon",
+          "name_fr": "Dragon du Chaos",
+          "points": 285,
+          "id": 5
+        }
+      ],
+      "items": [
+        {
+          "name_en": "Magic Items",
+          "name_cn": "魔法物品",
+          "name_de": "Magische Gegenstände",
+          "name_es": "Magic Items",
+          "name_fr": "Objets Magiques",
+          "types": [
+            "weapon",
+            "armor",
+            "talisman",
+            "arcane-item",
+            "enchanted-item"
+          ],
+          "selected": [],
+          "maxPoints": 100
+        },
+        {
+          "name_en": "Gifts of Chaos",
+          "name_cn": "混沌赠礼",
+          "name_de": "Gaben des Chaos",
+          "name_es": "Gifts of Chaos",
+          "name_fr": "Dons du Chaos",
+          "types": ["gift-of-chaos"],
+          "selected": [],
+          "maxPoints": 50
+        },
+        {
+          "name_en": "Chaotic Traits",
+          "name_cn": "混沌特质",
+          "name_it": "Chaotic Traits",
+          "name_de": "Chaotic Traits",
+          "name_fr": "Traits Chaotiques",
+          "types": ["chaotic-trait"],
+          "selected": [],
+          "maxPoints": 0,
+          "maxItemsPerCategory": 2
+        }
+      ],
+      "lores": ["battle-magic", "daemonology", "dark-magic", "shadowlands"],
+      "specialRules": {
+        "name_en": "Chaos Armour {warriors of chaos} (5+), Ensorcelled Weapons, Gaze of the Gods, Lore of Chaos",
+        "name_cn": "混沌甲 {warriors of chaos}(5+), 附魔武器, 诸神凝视, 混沌法系",
+        "name_de": "Chaosrüstung (5+), Verzauberte Waffen, Blick der Götter, Lehre des Chaos",
+        "name_es": "Chaos Armour (5+), Ensorcelled Weapons, Gaze of the Gods, Lore of Chaos",
+        "name_fr": "Armure du Chaos (5+), Armes Ensorcelées, Regard des Dieux, Domaine du Chaos"
+      }
+    }
+  ],
+  "core": [],
+  "special": [],
+  "rare": [],
+  "mercenaries": [],
+  "allies": [],
+  "id": "atdihgzb",
+  "armyComposition": "wolves-of-the-sea",
+  "compositionRule": "open-war"
+}
