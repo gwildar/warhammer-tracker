@@ -102,6 +102,7 @@ export const SPECIAL_RULES = [
         description: "Cannot make Restraint tests — must pursue.",
       },
     ],
+    yourTurnOnly: true,
   },
   {
     id: "impetuous",
