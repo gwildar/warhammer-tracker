@@ -5844,6 +5844,582 @@ export const MAGIC_ITEMS = [
     subPhases: ["conjuration"],
     extremely: true,
   },
+
+  // ─── chaos-mutations ─────────────────────────────
+  {
+    name: `Crown of Horns (Beastmen)`,
+    type: "enchanted-item",
+    points: 45,
+    effect: `Characters only. This character and any unit they have joined gains the Stubborn special rule.`,
+    phases: ["passive"],
+  },
+
+  // ─── chaotic-gifts ─────────────────────────────
+  {
+    name: `Æther Blade`,
+    type: "enchanted-item",
+    points: 55,
+    effect: `No armour saves are permitted against wounds caused by this Daemon's hand weapon (Ward and Regeneration saves can be attempted as normal).`,
+    phases: ["combat"],
+  },
+  {
+    name: `Daemonic Robes`,
+    type: "enchanted-item",
+    points: 35,
+    effect: `This model cannot be wounded by a roll To Wound of 2, regardless of the Strength of the attack.`,
+    phases: ["passive"],
+  },
+  {
+    name: `Many Arms*`,
+    type: "enchanted-item",
+    points: 55,
+    effect: `This model has a +1 modifier to its Attacks characteristic.`,
+    phases: ["combat"],
+    extremely: true,
+  },
+  {
+    name: `Winged Horror`,
+    type: "enchanted-item",
+    points: 45,
+    effect: `Daemonic Heralds whose troop type is regular infantry only. This model gains the Fly (8) and Swiftstride special rules.`,
+    phases: ["passive"],
+  },
+
+  // ─── chaotic-icons ─────────────────────────────
+  {
+    name: `Banner of Unholy Victory`,
+    type: "banner",
+    points: 60,
+    effect: `When calculating its combat result, a unit carrying the Banner of Unholy Victory may claim an additional bonus of +D3 combat result points.`,
+    phases: ["passive"],
+  },
+  {
+    name: `Standard of Chaotic Glory`,
+    type: "banner",
+    points: 30,
+    effect: `Daemonic Locus only. Friendly Daemonic units gain a +1 modifier to their Leadership characteristic whilst within this character's Command range (to a maximum of 10).`,
+    phases: ["passive"],
+  },
+  {
+    name: `Totem of Eternal War`,
+    type: "banner",
+    points: 45,
+    effect: `Daemonic Locus only. Friendly Daemonic units reduce the number of wounds suffered due to the Daemonic Instability special rule by an additional D3 whilst within the Command range of this model.`,
+    phases: ["passive"],
+  },
+
+  // ─── chaotic-traits ─────────────────────────────
+  {
+    name: `Battle Hunger`,
+    type: "enchanted-item",
+    points: 10,
+    effect: `Models whose Troop Type is infantry only. A unit which consists entirely of models with this Chaotic Trait increases its maximum possible charge range by 2" and, when making a Charge or Pursuit roll, may apply a + D3 modifier to the result.`,
+    phases: ["combat"],
+  },
+  {
+    name: `Brazen Will`,
+    type: "enchanted-item",
+    points: 10,
+    effect: `Models whose Troop Type is infantry or cavalry only. A unit with this Chaotic Trait gains the Magic Resistance (-1) special rule.`,
+    phases: ["combat"],
+  },
+  {
+    name: `Dark Hearts`,
+    type: "enchanted-item",
+    points: 20,
+    effect: `Models whose Troop Type is infantry or cavalry only. If the winning side of a combat includes one or more units in which the majority of models have this Chaotic Trait, each unit that belongs to the losing side suffers a -1 modifier to its Leadership characteristic when making its Break test. Models that have this Chaotic Trait, that cause Terror, or that are Immune to Psychology are unaffected.`,
+    phases: ["combat"],
+  },
+  {
+    name: `Enhanced Reflexes`,
+    type: "enchanted-item",
+    points: 10,
+    effect: `Whilst engaged in combat, models with this Chaotic Trait that choose to fight with a hand weapon gain a +2 modifier to their Initiative characteristic. Note that this Chaotic Trait only applies to a single, non-magical hand weapon, or an Ensorcelled Weapon, and does not apply to a model's mount (should it have one). If the model is using two hand weapons or any other sort of weapon, this Chaotic Trait ceases to apply.`,
+    phases: ["combat"],
+  },
+  {
+    name: `Longstriders`,
+    type: "enchanted-item",
+    points: 15,
+    effect: `0-1 unit per 1,000 points. Unless they are wearing heavy armour or full plate armour, models with this Chaotic Trait gain the Vanguard special rule.`,
+    phases: ["movement"],
+  },
+  {
+    name: `Prophetic Foresight`,
+    type: "enchanted-item",
+    points: 10,
+    effect: `Enemy units that deploy using the Scouts special rule cannot be deployed within 18" of a unit in which every model has this Chaotic Trait (rather than the usual 12"). In addition, enemy units that deploy using the Ambushers special rule may not be placed within 12" (rather than the usual 8") of a unit in which every model has this Chaotic Trait.`,
+    phases: ["passive"],
+  },
+  {
+    name: `Unnatural Fortitude`,
+    type: "enchanted-item",
+    points: 20,
+    effect: `Unless they are wearing heavy armour or full plate armour, models with this Chaotic Trait improve their Toughness characteristic by 1 (to a maximum of 10).`,
+    phases: ["combat"],
+  },
+
+  // ─── engineers-weapon-runes ─────────────────────────────
+  {
+    name: `Enchanted Rune`,
+    type: "weapon",
+    points: 5,
+    effect: `A weapon inscribed with this rune gains the Magical Attacks special rule.`,
+    phases: ["shooting"],
+  },
+  {
+    name: `Master Rune of Bursting Flame`,
+    type: "weapon",
+    points: 35,
+    effect: `If the roll To Hit is successful, a weapon inscribed with this rune causes 2D3 hits to the target enemy unit, rather than the usual one hit.`,
+    phases: ["shooting"],
+  },
+  {
+    name: `Master Rune of Piercing`,
+    type: "weapon",
+    points: 40,
+    effect: `A weapon inscribed with this rune has a +1 modifier to its Strength characteristic. In addition, a weapon inscribed with this rune shoots like a bolt thrower, using the Through & Through special rule.`,
+    phases: ["shooting"],
+  },
+  {
+    name: `Master Rune of Slaying`,
+    type: "weapon",
+    points: 50,
+    effect: `When making a roll To Wound against an enemy whose troop type is behemoth with a weapon inscribed with this rune, a roll of 3+ is always a success regardless of the target's Toughness. In addition, a weapon inscribed with this rune gains the Multiple Wounds (D3) special rule.`,
+    phases: ["shooting"],
+  },
+  {
+    name: `Rune of Accuracy`,
+    type: "weapon",
+    points: 20,
+    effect: `A weapon inscribed with this rune does not suffer any negative To Hit modifiers.`,
+    phases: ["shooting"],
+  },
+  {
+    name: `Rune of Concussive Force`,
+    type: "weapon",
+    points: 30,
+    effect: `A unit hit with an attack made by a weapon inscribed with this rune gains the Stupidity special rule until your next Start of Turn sub-phase.`,
+    phases: ["shooting"],
+  },
+  {
+    name: `Rune of Molten Steel`,
+    type: "weapon",
+    points: 10,
+    effect: `A weapon inscribed with this rune gains the Flaming Attacks special rule.`,
+    phases: ["shooting"],
+  },
+  {
+    name: `Rune of Rapid Fire`,
+    type: "weapon",
+    points: 15,
+    effect: `A weapon inscribed with this rune gains the Multiple Shots (2) and Quick Shot special rules.`,
+    phases: ["shooting"],
+  },
+
+  // ─── gifts-of-khorne ─────────────────────────────
+  {
+    name: `Armour of Khorne`,
+    type: "enchanted-item",
+    points: 40,
+    effect: `The Armour of Khorne is a suit of heavy armour. In addition, its wearer has a 5+ Ward save against any wounds suffered.`,
+    phases: ["passive"],
+  },
+  {
+    name: `Axe of Khorne*`,
+    type: "enchanted-item",
+    points: 35,
+    effect: ``,
+    phases: ["combat"],
+    extremely: true,
+  },
+  {
+    name: `Collar of Khorne*`,
+    type: "enchanted-item",
+    points: 25,
+    effect: `The wearer of a Collar of Khorne improves its Magic Resistance by 1. For example, a model with Magic Resistance (-2) wearing a Collar of Khorne would have Magic Resistance (-3).`,
+    phases: ["passive"],
+    extremely: true,
+  },
+  {
+    name: `Might of Khorne`,
+    type: "enchanted-item",
+    points: 25,
+    effect: `This model has a +1 modifier to its Strength characteristic.`,
+    phases: ["passive"],
+  },
+  {
+    name: `Spell Eater`,
+    type: "enchanted-item",
+    points: 50,
+    effect: `This model may be nominated to attempt a Wizardly Dispel, as if it were a Wizard. For the purposes of Wizardly Dispel attempts, this model counts as a Level 2 Wizard.`,
+    phases: ["passive"],
+  },
+
+  // ─── gifts-of-nurgle ─────────────────────────────
+  {
+    name: `Nurgling Infestation`,
+    type: "enchanted-item",
+    points: 45,
+    effect: `Great Unclean One only. Whilst engaged in combat, this model may make an additional D6 attacks. These attacks are resolved at Initiative 2, with a Weapon Skill and Strength of 2, and with an AP of -. Additionally, when this model loses its last Wound, place a Nurgling Swarm of D3 models so that each model is within 3" of this model before removing this model from play. Note that these Nurgling Swarms are not worth any Victory Points.`,
+    phases: ["combat"],
+  },
+  {
+    name: `Sloppity Bilepiper`,
+    type: "enchanted-item",
+    points: 35,
+    effect: `Daemonic Heralds whose troop type is infantry only. Friendly units with the Daemons of Nurgle special rule that begin their movement within this model's Command range have a +1 modifier to their Movement characteristic.`,
+    phases: ["passive"],
+  },
+  {
+    name: `Spoilpox Scrivener`,
+    type: "enchanted-item",
+    points: 30,
+    effect: `Daemonic Heralds whose troop type is infantry only. Whilst within this model's Command range, friendly units with the Daemons of Nurgle special rule may re-roll any rolls To Hit of a natural 1.`,
+    phases: ["combat"],
+  },
+  {
+    name: `Stream of Contagion*`,
+    type: "enchanted-item",
+    points: 25,
+    effect: ``,
+    phases: ["passive"],
+    extremely: true,
+  },
+  {
+    name: `Trappings of Nurgle`,
+    type: "enchanted-item",
+    points: 30,
+    effect: `The Trappings of Nurgle is a suit of armour that gives its wearer an armour value of 4+ which cannot be improved in any way.`,
+    phases: ["passive"],
+  },
+
+  // ─── gifts-of-slaanesh ─────────────────────────────
+  {
+    name: `Allure of Slaanesh`,
+    type: "enchanted-item",
+    points: 35,
+    effect: `Enemy units must make a Leadership test before making any rolls To Hit against this model during the Combat phase. If this test is failed, only rolls of a natural 6 will hit.`,
+    phases: ["combat"],
+  },
+  {
+    name: `Enrapturing Gaze*`,
+    type: "enchanted-item",
+    points: 20,
+    effect: `Enemy models engaged in combat with this model cannot use the Inspiring Presence special rule of their General.`,
+    phases: ["passive"],
+    extremely: true,
+  },
+  {
+    name: `Infernal Enrapturess`,
+    type: "enchanted-item",
+    points: 50,
+    effect: `Daemonic Heralds whose troop type is infantry only. Whilst within this character's Command range, friendly Daemons of Slaanesh that are also Wizards (not including this model) may apply a +1 modifier to any Casting roll they make. Whilst within this character's Command range, enemy Wizards suffer a -1 modifier to any Casting roll they make.`,
+    phases: ["passive"],
+  },
+  {
+    name: `Siren Song`,
+    type: "enchanted-item",
+    points: 30,
+    effect: `Single use. At the start of your opponent's Declare Charges & Charge Reactions sub-phase, nominate a single enemy unit that is able to declare a charge against this model (or its unit). That enemy unit must make a Leadership test Leadership Tests. If this test is passed, the unit may act as normal. However, if this test is failed, it must declare a charge against this model (or its unit).`,
+    phases: ["combat"],
+  },
+  {
+    name: `Soporific Musk*`,
+    type: "enchanted-item",
+    points: 30,
+    effect: `Enemy models engaged in combat with this model cannot use the Strike First special rule. Enemy models that do not have the Strike First special rule become subject to the Strike Last special rule instead.`,
+    phases: ["passive"],
+    extremely: true,
+  },
+
+  // ─── gifts-of-tzeentch ─────────────────────────────
+  {
+    name: `Iridescent Corona*`,
+    type: "enchanted-item",
+    points: 30,
+    effect: `Any enemy model that targets this model during the Shooting phase suffers an additional -1 To Hit modifier.`,
+    phases: ["shooting"],
+    extremely: true,
+  },
+  {
+    name: `Power Vortex`,
+    type: "enchanted-item",
+    points: 35,
+    effect: `Whilst within this Wizard's dispel range, enemy Wizards suffer a -1 modifier to their Casting rolls.`,
+    phases: ["passive"],
+  },
+  {
+    name: `Staff of Change`,
+    type: "enchanted-item",
+    points: 65,
+    effect: `Notes: Any enemy model that suffers one or more unsaved wounds from the Staff of Change must immediately make a Toughness test. If this test is failed, the wounded model loses all of its remaining Wounds.`,
+    phases: ["combat"],
+  },
+  {
+    name: `Twin Heads`,
+    type: "enchanted-item",
+    points: 20,
+    effect: `This model knows one more spell (chosen in the usual way) than is normal for their Level of Wizardry. Note that this does not increase the Wizard's Level.`,
+    phases: ["passive"],
+  },
+  {
+    name: `Will of Tzeentch`,
+    type: "enchanted-item",
+    points: 55,
+    effect: `Once per round, this model may re-roll a single D6. This may be a D6 rolled on its own, as part of a batch of dice, or as part of a multiple dice roll.`,
+    phases: ["passive"],
+  },
+
+  // ─── icons-of-khorne ─────────────────────────────
+  {
+    name: `Great Standard of Sundering`,
+    type: "banner",
+    points: 45,
+    effect: `Any enemy Wizard that can draw a line of sight to the model carrying the Great Standard of Sundering suffers a -1 modifier to any Casting roll it makes.`,
+    phases: ["passive"],
+  },
+  {
+    name: `Icon of Endless War`,
+    type: "banner",
+    points: 30,
+    effect: `When a unit carrying the Banner of Rage declares a charge, it may re-roll its Charge roll.`,
+    phases: ["passive"],
+  },
+  {
+    name: `Skull Totem`,
+    type: "banner",
+    points: 50,
+    effect: `A unit carrying the Skull Totem (but not its mounts) gains the Furious Charge special rule.`,
+    phases: ["passive"],
+  },
+
+  // ─── icons-of-nurgle ─────────────────────────────
+  {
+    name: `Icon of Eternal Virulence`,
+    type: "banner",
+    points: 50,
+    effect: `When calculating its combat result, a unit carrying the Icon of Eternal Virulence may claim an additional bonus of +1 combat result point (to a maximum of +3) for each unsaved wound caused by a Poisoned Attack.`,
+    phases: ["passive"],
+  },
+  {
+    name: `Rotten Icon`,
+    type: "banner",
+    points: 10,
+    effect: `Enemy units cannot claim any bonus combat result points for being engaged with the rear arc of a unit carrying the Rotten Icon.`,
+    phases: ["passive"],
+  },
+  {
+    name: `Standard of Seeping Decay`,
+    type: "banner",
+    points: 35,
+    effect: `During the Combat phase, a unit carrying the Standard of Seeping Decay may re-roll any rolls To Wound of a natural 1.`,
+    phases: ["passive"],
+  },
+
+  // ─── icons-of-slaanesh ─────────────────────────────
+  {
+    name: `Banner of Acquiescence`,
+    type: "banner",
+    points: 55,
+    effect: `A single enemy unit engaged in combat with the bearer of the Banner of Acquiescence suffers a -D3 modifier to its Weapon Skill and Initiative characteristics (to a minimum of 1).`,
+    phases: ["passive"],
+  },
+  {
+    name: `Rapturous Standard`,
+    type: "banner",
+    points: 35,
+    effect: `Any enemy unit that charges the front arc of a unit carrying the Rapturous Standard makes a disordered charge.`,
+    phases: ["passive"],
+  },
+  {
+    name: `Siren Standard`,
+    type: "banner",
+    points: 25,
+    effect: `If an enemy unit charged by a unit carrying the Siren Standard wishes to Flee (or Fire & Flee) as a charge reaction, it must first make a Leadership test. If this test is passed, the unit may Flee (or Fire & Flee). However, if this test is failed, the unit must Hold.`,
+    phases: ["passive"],
+  },
+
+  // ─── icons-of-tzeentch ─────────────────────────────
+  {
+    name: `Banner of Change`,
+    type: "banner",
+    points: 45,
+    effect: `At the start of the Combat phase, a single enemy unit engaged in combat with this model suffers 3D6 Strength 2 hits, each with an AP of -.`,
+    phases: ["passive"],
+  },
+  {
+    name: `Banner of Discord`,
+    type: "banner",
+    points: 60,
+    effect: `A unit carrying the Banner of Discord gains the Magic Resistance (-3) special rule. In addition, friendly units within 6" of the model carrying this standard gain the Magic Resistance (-1) special rule.`,
+    phases: ["passive"],
+  },
+  {
+    name: `Icon of Sorcery*`,
+    type: "banner",
+    points: 35,
+    effect: `Pink Horrors only. When a unit carrying the Icon of Sorcery casts a Bound spell, it does so with a power level equal to twice its Rank Bonus.`,
+    phases: ["passive"],
+    extremely: true,
+  },
+
+  // ─── incantations-scrolls ─────────────────────────────
+  {
+    name: `Scroll of Awakening`,
+    type: "arcane-item",
+    points: 40,
+    effect: `Type Magic Missile Casting Value 9 Range 27" Place a small (3") blast template so that its central hole is directly over the centre of the target enemy unit. Any enemy model whose base lies underneath the template risks being hit and suffering a single Strength 4 hit with an AP of -2.`,
+    phases: ["strategy"],
+  },
+  {
+    name: `Scroll of Righteous Smiting`,
+    type: "arcane-item",
+    points: 10,
+    effect: `Type Enchantment Casting Value 7 Range Self Remains in play. Whilst this spell is in play, friendly units whose troop type is war machine that are within the caster's Command range can re-roll a single Artillery dice or Scatter dice per turn.`,
+    phases: ["strategy"],
+  },
+  {
+    name: `Scroll of Summoning`,
+    type: "arcane-item",
+    points: 45,
+    effect: `Type Enchantment Casting Value 8 Range 21" The target friendly unit regains D3 lost Wounds and, until your next Start of Turn sub-phase, improves the armour value of its Regeneration save by 1.`,
+    phases: ["strategy"],
+  },
+  {
+    name: `Scroll of the Outcast Dead`,
+    type: "arcane-item",
+    points: 35,
+    effect: `Type Magical Vortex Casting Value 8 Range 18" Remains in play. Place a small (3") blast template so that its central hole is within 18" of the caster. Whilst in play, the template is treated as difficult terrain. The template scatters D6" during every Start of Turn sub-phase. Any unit (friend or foe) that moves through the template, or that the template moves over, suffers a single Strength 4 hit with an AP of -2. This hit has the Multiple Wounds (D3) special rule. Any unit that suffers one or more unsaved wounds from this weapon must make a Panic test as if it had taken heavy casualties.`,
+    phases: ["strategy"],
+  },
+  {
+    name: `Scroll of Urgency`,
+    type: "arcane-item",
+    points: 30,
+    effect: `Type Conveyance Casting Value 7 Range 21" If the target friendly unit has already moved during this Movement phase (not including failed charge moves), it can immediately move again.`,
+    phases: ["strategy"],
+  },
+  {
+    name: `Scroll of Withering`,
+    type: "arcane-item",
+    points: 50,
+    effect: `Type Hex Casting Value 8 Range 21" Until your next Start of Turn sub-phase, the target enemy unit suffers a -1 modifier to its Strength and Initiative characteristics and cannot make any Ward or Regeneration saves. This Bound spell may target an enemy unit engaged in combat.`,
+    phases: ["strategy"],
+  },
+
+  // ─── infamous-origins ─────────────────────────────
+  {
+    name: `The Might of Miragliano`,
+    type: "enchanted-item",
+    points: 25,
+    effect: `A model with the Might of Miragliano Infamous Origin: - Has a +1 modifier to their Leadership characteristic.; - Gains the Stubborn and Tilean Stoicism special rules..`,
+    phases: ["passive"],
+  },
+  {
+    name: `The Noble Outlaw`,
+    type: "enchanted-item",
+    points: 20,
+    effect: `A model with the Noble Outlaw Infamous Origin: - Has a +1 modifier to their Ballistic Skill and Leadership characteristics.; - Gains the "Hold the Line" special rule.; - May purchase magic items from the Empire of Man magic item lists in Forces of Fantasy and Arcane Journal - Empire of Man.; - May take one of the following: - Handgun (+6 points); - Repeater handgun (+8 points); - Repeater pistol (+8 points); - Shortbow (+2 points); - Longbow (+4 points).; - May take one of the following special rules: - Ambushers (+10 points); - Scouts (+10 points)..`,
+    phases: ["passive"],
+  },
+  {
+    name: `The Renegade Knight`,
+    type: "enchanted-item",
+    points: 25,
+    effect: `A model with the Renegade Knight Infamous Origin: - Has a +1 modifier to their Weapon Skill and Strength characteristics.; - May purchase magic items from the Kingdom of Bretonnia magic item lists in Forces of Fantasy and Arcane Journal - Kingdom of Bretonnia.; - Gains the Noble Disdain and Veteran special rules..`,
+    phases: ["passive"],
+  },
+  {
+    name: `The Wandering Diestro`,
+    type: "enchanted-item",
+    points: 20,
+    effect: `A model with the Wandering Diestro Infamous Origin: - Has a +2 modifier to their Weapon Skill characteristic.; - Gains the Feint & Dodge special rule.; - May not take any weapons with the Strike Last special rule.; - May take an additional hand weapon (+3 points).`,
+    phases: ["passive"],
+  },
+
+  // ─── magic-weapons ─────────────────────────────
+  {
+    name: `Dragonblade`,
+    type: "weapon",
+    points: 0,
+    effect: `Notes: Dragonblade is inscribed with a Rune of Fury and a Grudge Rune, as described in Forces of Fantasy.`,
+    phases: ["combat"],
+  },
+
+  // ─── runic-tattoos ─────────────────────────────
+  {
+    name: `Rune of Blazing Fury`,
+    type: "talisman",
+    points: 5,
+    effect: `A model with this runic tattoo has the Flaming Attacks special rule.`,
+    phases: ["combat"],
+  },
+  {
+    name: `Rune of Endless Battle`,
+    type: "talisman",
+    points: 40,
+    effect: `During the Combat phase of any turn in which a model with this runic tattoo charged, every attack it makes that causes an unsaved wound allows it to immediately make one additional attack. Note that any additional attacks that cause unsaved wounds and any unsaved wounds caused by the Impact Hits (X) special rule do not benefit from this special rule.`,
+    phases: ["combat"],
+  },
+  {
+    name: `Rune of Grit`,
+    type: "talisman",
+    points: 25,
+    effect: `A model with this runic tattoo has a +1 modifier to its Toughness characteristic.`,
+    phases: ["passive"],
+  },
+  {
+    name: `Rune of the Dauntless`,
+    type: "talisman",
+    points: 15,
+    effect: `A model with this runic tattoo must always issue and accept challenges (if possible). During a challenge, this model may re-roll any failed rolls To Hit.`,
+    phases: ["combat"],
+  },
+  {
+    name: `Rune of the Dishonoured`,
+    type: "talisman",
+    points: 50,
+    effect: `Daemon Slayers and Dragon Slayers only. Once a model with this runic tattoo is reduced to their last Wound, they gain a 3+ Ward save against any further wounds suffered. However, at the end of the battle, a model with this runic tattoo that has been slain is worth no Victory Points. If it is still alive, the enemy player wins a bonus number of Victory Points equal to 100% of its points cost.`,
+    phases: ["combat"],
+  },
+  {
+    name: `Rune of the Hateful`,
+    type: "talisman",
+    points: 30,
+    effect: `A model with this runic tattoo gains the Hatred (all enemies) special rule.`,
+    phases: ["combat"],
+  },
+  {
+    name: `Rune of the Reckless`,
+    type: "talisman",
+    points: 35,
+    effect: `A model with this runic tattoo gains the Frenzy special rule and, during the Combat phase, has a +1 modifier to their rolls To Hit. However, enemy models that target this model during the Combat phase also have a +1 modifier to their rolls To Hit.`,
+    phases: ["combat"],
+  },
+  {
+    name: `Rune of Wrath`,
+    type: "talisman",
+    points: 15,
+    effect: `A model with this runic tattoo has a +1 modifier to its Attacks characteristic.`,
+    phases: ["combat"],
+  },
+  {
+    name: `Warrior's Rune`,
+    type: "talisman",
+    points: 10,
+    effect: `A model with this runic tattoo has a +1 modifier to its Weapon Skill characteristic.`,
+    phases: ["combat"],
+  },
+
+  // ─── vampire-counts-magic-items ─────────────────────────────
+  {
+    name: `Sceptre of De Noirot`,
+    type: "enchanted-item",
+    points: 35,
+    effect: `The bearer of the Sceptre of de Noirot may attempt to resurrect the fallen by using the Invocation of Nehek special rule twice during their Command sub-phase (rather than the usual once). Roll a D6 each time the sceptre is used. On a roll of 1, the bearer loses a single Wound.`,
+    phases: ["passive"],
+  },
 ];
 
 /**
