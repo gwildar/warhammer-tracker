@@ -184,9 +184,7 @@ function rtToMd(node, listDepth = 0) {
       };
       const header = pad(cells(rows[0]));
       const sep = header.map(() => "---");
-      const body = rows
-        .slice(1)
-        .map((r) => `| ${pad(cells(r)).join(" | ")} |`);
+      const body = rows.slice(1).map((r) => `| ${pad(cells(r)).join(" | ")} |`);
       return (
         [`| ${header.join(" | ")} |`, `| ${sep.join(" | ")} |`, ...body].join(
           "\n",
@@ -279,10 +277,12 @@ function typePageToMarkdown(typeSlug, pageProps, entryPages) {
     }
   }
 
-  return lines
-    .join("\n")
-    .replace(/\n{3,}/g, "\n\n")
-    .trim() + "\n";
+  return (
+    lines
+      .join("\n")
+      .replace(/\n{3,}/g, "\n\n")
+      .trim() + "\n"
+  );
 }
 
 // ---------------------------------------------------------------------------
@@ -341,7 +341,9 @@ async function main() {
     // Read saved buildId
     const buildIdFile = path.join(outputDir, ".buildid");
     if (!fs.existsSync(buildIdFile))
-      throw new Error("No .buildid file found — run without --subpages-only first");
+      throw new Error(
+        "No .buildid file found — run without --subpages-only first",
+      );
     buildId = fs.readFileSync(buildIdFile, "utf8").trim();
     console.log(`Using saved buildId: ${buildId}`);
     topRoutes = fs
@@ -381,9 +383,7 @@ async function main() {
     const subRawDir = path.join(rawDir, typeSlug);
     fs.mkdirSync(subRawDir, { recursive: true });
 
-    console.log(
-      `  ${typeSlug}: ${entries.length} entries`,
-    );
+    console.log(`  ${typeSlug}: ${entries.length} entries`);
 
     const entryPages = [];
 
