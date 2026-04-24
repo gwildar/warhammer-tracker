@@ -19,6 +19,6 @@ Common lookups:
 - Weapons → `~/tow-rules/pages/weapons-of-war.md`
 - Troop types → `~/tow-rules/pages/troop-types-in-detail.md`
 
-Use `grep` to find a specific rule by name across all pages.
+Use `rtk grep` to find a specific rule by name across all pages.
 
 To refresh the snapshot: `node scripts/crawl-tow-rules.mjs`
