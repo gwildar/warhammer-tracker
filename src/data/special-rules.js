@@ -1719,6 +1719,390 @@ export const SPECIAL_RULES = [
       "Unit ignores the movement penalties for difficult terrain. Enemy models moving into base contact with this unit treat that movement as difficult terrain.",
   },
 
+  // ─── Undead ──────────────────────────────────────────────────────────
+
+  {
+    id: "necromantic undead",
+    displayName: "Necromantic Undead",
+    phases: [
+      {
+        subPhaseId: "remaining-moves",
+        description:
+          "Cannot march (unless using Fly). Immune to Psychology. Unbreakable — Gives Ground instead of breaking.",
+      },
+      {
+        subPhaseId: "combat-result",
+        description:
+          "Unstable: if combat is lost, unit suffers additional Wounds equal to combat result lost (no saves). Characters with this rule cannot join units without it.",
+      },
+    ],
+  },
+
+  // ─── Beastmen ────────────────────────────────────────────────────────
+
+  {
+    id: "primal fury",
+    displayName: "Primal Fury",
+    description:
+      "When combat is chosen (step 1.1 of Choose & Fight), the unit must make a Leadership test. If passed, it may re-roll To Hit rolls of a natural 1 until the end of this Combat phase.",
+    phases: ["choose-fight"],
+  },
+  {
+    id: "blood rage",
+    displayName: "Blood Rage",
+    description:
+      "If the Primal Fury Leadership test is passed with a natural double, the unit also becomes Frenzied. This applies even if Frenzy was lost earlier in the game.",
+    phases: ["choose-fight"],
+  },
+  {
+    id: "bestial charge",
+    displayName: "Bestial Charge",
+    description:
+      'During a turn in which it made a charge move of 3" or more, gains +1 Strength.',
+    phases: ["choose-fight"],
+  },
+
+  // ─── Greenskins ──────────────────────────────────────────────────────
+
+  {
+    id: "waaagh!",
+    displayName: "Waaagh!",
+    aliases: ["waaagh"],
+    description:
+      "Once per game during the Command sub-phase: take a Leadership test. If passed, this character, their mount, and any joined Orc unit may re-roll To Hit rolls of 1, and gains +1 to combat result, until next Start of Turn.",
+    phases: ["command"],
+    yourTurnOnly: true,
+  },
+
+  // ─── Marks of Chaos ──────────────────────────────────────────────────
+
+  {
+    id: "mark of chaos undivided",
+    displayName: "Mark of Chaos Undivided",
+    passive: true,
+    description: "Re-roll any failed Fear, Panic, or Terror tests.",
+    phases: [],
+  },
+  {
+    id: "mark of khorne",
+    displayName: "Mark of Khorne",
+    passive: true,
+    description: "Grants the Frenzy special rule.",
+    phases: [],
+  },
+  {
+    id: "mark of nurgle",
+    displayName: "Mark of Nurgle",
+    description:
+      "Enemy models directing attacks against this model must re-roll To Hit rolls of a natural 6.",
+    phases: ["choose-fight"],
+    opponentOnly: true,
+  },
+  {
+    id: "mark of slaanesh",
+    displayName: "Mark of Slaanesh",
+    phases: [
+      {
+        subPhaseId: "choose-fight",
+        description:
+          "+1 Initiative during the first round of any combat. If the majority have this mark, the unit automatically passes any Panic tests.",
+      },
+    ],
+  },
+  {
+    id: "mark of tzeentch",
+    displayName: "Mark of Tzeentch",
+    description:
+      "Grants Flaming Attacks and Magic Resistance (-1). If a Wizard with this mark has joined an same-mark unit with Unit Strength 10+, gains +1 to Casting rolls.",
+    phases: ["conjuration"],
+  },
+  {
+    id: "forsaken by khorne",
+    displayName: "Forsaken by Khorne",
+    passive: true,
+    description: "Grants the Hatred (all enemies) special rule.",
+    phases: [],
+  },
+  {
+    id: "forsaken by nurgle",
+    displayName: "Forsaken by Nurgle",
+    passive: true,
+    description: "Grants the Fear special rule.",
+    phases: [],
+  },
+  {
+    id: "forsaken by slaanesh",
+    displayName: "Forsaken by Slaanesh",
+    passive: true,
+    description: "Grants the Swiftstride special rule.",
+    phases: [],
+  },
+  {
+    id: "forsaken by tzeentch",
+    displayName: "Forsaken by Tzeentch",
+    passive: true,
+    description: "Grants the Magic Resistance (-3) special rule.",
+    phases: [],
+  },
+
+  // ─── Daemons of Chaos ────────────────────────────────────────────────
+
+  {
+    id: "daemonic",
+    displayName: "Daemonic",
+    description:
+      "5+ Ward save against wounds caused by non-magical attacks. Also grants: Daemonic Instability, Fear, Immune to Psychology, Magical Attacks, Unbreakable, Warp-spawned. Characters cannot join units without this rule.",
+    phases: ["choose-fight", "shoot"],
+  },
+  {
+    id: "daemonic instability",
+    displayName: "Daemonic Instability",
+    description:
+      "If combat is lost, take a Leadership test with +1 modifier per combat result point lost. If failed, lose Wounds equal to the amount failed by. Double 6 = unit is immediately removed from play.",
+    phases: ["break-test"],
+  },
+  {
+    id: "daemonic locus",
+    displayName: "Daemonic Locus",
+    description:
+      'Friendly units with the same Daemonic Alignment within 12" reduce Daemonic Instability wounds by 1. Natural double 6 on Daemonic Instability test while within 12" does not destroy the unit.',
+    phases: ["break-test"],
+  },
+  {
+    id: "daemon of khorne",
+    displayName: "Daemon of Khorne",
+    description:
+      "Hatred (Daemons of Slaanesh). During a turn in which it charged, gains +1 Strength (not its mount).",
+    phases: ["choose-fight"],
+  },
+  {
+    id: "daemon of nurgle",
+    displayName: "Daemon of Nurgle",
+    description:
+      "Hatred (Daemons of Tzeentch). Enemy models directing attacks against this model must re-roll To Hit rolls of a natural 6.",
+    phases: ["choose-fight"],
+    opponentOnly: true,
+  },
+  {
+    id: "daemon of slaanesh",
+    displayName: "Daemon of Slaanesh",
+    phases: [
+      {
+        subPhaseId: "declare-charges",
+        yourTurnOnly: true,
+        description:
+          'Hatred (Daemons of Khorne). +1" maximum charge range and +1 to Charge/Pursuit roll result.',
+      },
+      {
+        subPhaseId: "charge-moves",
+        yourTurnOnly: true,
+        description:
+          '+1" maximum charge range and +1 to Charge/Pursuit roll result.',
+      },
+      {
+        subPhaseId: "pursuit",
+        description: "+1 to Pursuit roll result.",
+      },
+    ],
+  },
+  {
+    id: "daemon of tzeentch",
+    displayName: "Daemon of Tzeentch",
+    description:
+      "Hatred (Daemons of Nurgle). If a Wizard with this rule, gains +1 to Casting rolls.",
+    phases: ["conjuration"],
+  },
+
+  // ─── Dwarfs ───────────────────────────────────────────────────────────
+
+  {
+    id: "ancestral grudge",
+    displayName: "Ancestral Grudge",
+    description:
+      "Hatred (enemy characters). If joined to Longbeards or Hammerers, that unit also gains this rule.",
+    phases: ["choose-fight"],
+  },
+  {
+    id: "ancestral fury",
+    displayName: "Ancestral Fury",
+    description:
+      'During a turn in which the unit charged 3" or more, or made a follow-up move, gains +1 Strength.',
+    phases: ["choose-fight"],
+    yourTurnOnly: true,
+  },
+  {
+    id: "gromril armour",
+    displayName: "Gromril Armour",
+    description: "Re-roll natural 1s on Armour Save rolls.",
+    phases: ["shoot", "choose-fight"],
+    opponentOnly: false,
+  },
+  {
+    id: "gromril weapons",
+    displayName: "Gromril Weapons",
+    description:
+      "Hand weapon has AP -1. Does not apply with two hand weapons, other weapon types, or runed weapons.",
+    phases: ["choose-fight"],
+  },
+  {
+    id: "deathblow",
+    displayName: "Deathblow",
+    description:
+      "When reduced to zero Wounds by an enemy attack during Combat, the unit that killed it suffers a S3 AP -1 hit (or the attacking model if in a challenge).",
+    phases: ["choose-fight"],
+    opponentOnly: true,
+  },
+  {
+    id: "resolute",
+    displayName: "Resolute",
+    description: "-1 to Flee rolls and Pursuit rolls (minimum 1).",
+    phases: ["pursuit", "break-test"],
+  },
+
+  // ─── Vampire Counts ───────────────────────────────────────────────────
+
+  {
+    id: "the hunger",
+    displayName: "The Hunger",
+    phases: [
+      {
+        subPhaseId: "combat-result",
+        description:
+          "At end of any Combat phase in which this character inflicted 1+ unsaved wounds, roll D6: on 6, recover 1 Wound.",
+      },
+      {
+        subPhaseId: "pursuit",
+        description:
+          "This character (and any joined unit) rolls only a single D6 for Pursuit rolls.",
+      },
+    ],
+  },
+
+  // ─── Tomb Kings ───────────────────────────────────────────────────────
+
+  {
+    id: "fear of elves",
+    displayName: "Fear of Elves",
+    passive: true,
+    description:
+      "Elves of any type cause Fear in models with this special rule.",
+    phases: [],
+  },
+
+  // ─── Universal combat ─────────────────────────────────────────────────
+
+  {
+    id: "daemonic charge",
+    displayName: "Daemonic Charge",
+    description: "Impact Hits caused by this model have AP -2.",
+    phases: ["choose-fight"],
+  },
+  {
+    id: "stampede",
+    displayName: "Stampede",
+    description: "Impact Hits caused by this model have AP -2.",
+    phases: ["choose-fight"],
+  },
+  {
+    id: "bestial fury",
+    displayName: "Bestial Fury",
+    description:
+      "Enemy units cannot claim bonus combat result points for being engaged with this model's flank or rear arc.",
+    phases: ["combat-result"],
+    opponentOnly: true,
+  },
+  {
+    id: "slayer",
+    displayName: "Slayer",
+    description:
+      "To Wound rolls of 4+ always succeed, regardless of target's Toughness.",
+    phases: ["choose-fight"],
+  },
+  {
+    id: "slayer of dragons",
+    displayName: "Slayer of Dragons",
+    description:
+      "To Wound rolls of 4+ always succeed. Each unsaved wound against a behemoth has Multiple Wounds (D3).",
+    phases: ["choose-fight"],
+  },
+  {
+    id: "ghoulish glamour",
+    displayName: "Ghoulish Glamour",
+    description:
+      "Enemy models must pass a Leadership test before rolling To Hit during Combat. If failed, only natural 6s hit.",
+    phases: ["choose-fight"],
+    opponentOnly: true,
+  },
+  {
+    id: "blood frenzy",
+    displayName: "Blood Frenzy",
+    description:
+      "When this model inflicts an unsaved wound, it becomes Frenzied (not its rider). May gain Frenzy this way even if lost previously.",
+    phases: ["choose-fight"],
+  },
+  {
+    id: "slashing attack",
+    displayName: "Slashing Attack",
+    description:
+      "May fly over a single unengaged enemy unit during Remaining Moves. That unit suffers D3 S4 AP- hits per model that flew over it.",
+    phases: ["remaining-moves"],
+    yourTurnOnly: true,
+  },
+  {
+    id: "too horrible to die",
+    displayName: "Too Horrible To Die",
+    description:
+      "First time this model loses its last Wound, roll D6: 1-3 removed; 4-5 replaced with a Rat Swarm (Skaven) or equivalent; 6 recovers D3 Wounds.",
+    phases: ["remove-casualties"],
+  },
+  {
+    id: "enhanced regeneration",
+    displayName: "Enhanced Regeneration",
+    description:
+      "Models with Regeneration (X+) may re-roll failed Regeneration saves against Wounds caused by non-magical attacks.",
+    phases: ["shoot", "choose-fight"],
+  },
+  {
+    id: "cold blooded",
+    displayName: "Cold Blooded",
+    passive: true,
+    description:
+      "When making a Fear, Panic, or Terror test, roll an extra D6 and discard the highest result.",
+    phases: [],
+  },
+  {
+    id: "aquatic",
+    displayName: "Aquatic",
+    passive: true,
+    description:
+      "No movement penalty in water terrain features (streams, rivers, lakes, swamps designated as water features).",
+    phases: [],
+  },
+  {
+    id: "hold the line!",
+    displayName: '"Hold the Line!"',
+    aliases: ["hold the line"],
+    description:
+      "This character and any joined unit automatically pass any Panic tests they are required to make.",
+    phases: ["break-test"],
+  },
+  {
+    id: "prayers of sigmar",
+    displayName: "Prayers of Sigmar",
+    description:
+      "During Command sub-phase: take a Leadership test. If passed, one Prayer takes effect until next Start of Turn. Includes: Hammer of Sigmar (+1S, +1A for self and joined unit), Shield of Sigmar (5+ Ward), Sigmar's Condemnation (fear-causing, auto-wound on 6 vs chaos/undead).",
+    phases: ["command"],
+    yourTurnOnly: true,
+  },
+  {
+    id: "prayers of ulric",
+    displayName: "Prayers of Ulric",
+    description:
+      "During Command sub-phase: take a Leadership test. If passed, one Prayer takes effect. Includes: Battle Howl (Terror and +1S for self and joined unit until next Start of Turn), Winter's Fury (Flaming Attacks, re-roll 1s To Wound), Wolf's Speed (+D3\" Movement).",
+    phases: ["command"],
+    yourTurnOnly: true,
+  },
+
   // ─── Grand Cathay ────────────────────────────────────────────────────
 
   {
