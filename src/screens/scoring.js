@@ -21,11 +21,18 @@ export function renderScoringUI(army = null) {
   const deploymentTime = getDeploymentTime();
   const scenarioOpts = getScenarioOptions();
   const slOpts = scenarioOpts.strategicLocations;
+  const noObjectives =
+    !scenarioOpts.domination &&
+    !scenarioOpts.baggageTrains &&
+    !slOpts.enabled &&
+    !scenarioOpts.specialFeatures;
   const maxScore = slOpts.enabled ? slOpts.count : 4;
   const scoreOptions = Array.from({ length: maxScore + 1 }, (_, i) => i);
-  const scoreLabel = slOpts.enabled
-    ? `Strategic Locations (${slOpts.count})`
-    : "Strategic Objectives";
+  const scoreLabel = noObjectives
+    ? "Turn Times"
+    : slOpts.enabled
+      ? `Strategic Locations (${slOpts.count})`
+      : "Strategic Objectives";
 
   const currentTurnScores = (scores[round] && scores[round][turnKey]) || {
     you: 0,
@@ -49,8 +56,12 @@ export function renderScoringUI(army = null) {
     <tr>
       <td class="px-3 py-2 text-wh-muted font-mono">0</td>
       <td class="px-3 py-2 text-wh-muted italic text-xs">Deployment</td>
-      <td class="px-3 py-2 text-wh-text">—</td>
-      <td class="px-3 py-2 text-wh-text">—</td>
+      ${
+        noObjectives
+          ? ""
+          : `<td class="px-3 py-2 text-wh-text">—</td>
+      <td class="px-3 py-2 text-wh-text">—</td>`
+      }
       <td class="px-3 py-2 font-mono text-xs">${formatDuration(deploymentTime)}</td>
     </tr>
   `
@@ -60,7 +71,10 @@ export function renderScoringUI(army = null) {
     <div class="mt-8 border-t border-wh-border pt-6 pb-4">
       <h3 class="text-lg font-bold text-wh-text mb-4">${scoreLabel}</h3>
 
-      <div class="grid grid-cols-2 gap-4 mb-6">
+      ${
+        noObjectives
+          ? ""
+          : `<div class="grid grid-cols-2 gap-4 mb-6">
         <div>
           <label class="block text-xs uppercase tracking-wider text-wh-muted mb-1">Your Score</label>
           <select id="score-you" class="w-full bg-wh-card border border-wh-border text-wh-text rounded p-2 outline-none focus:border-wh-accent transition-colors">
@@ -73,7 +87,8 @@ export function renderScoringUI(army = null) {
             ${scoreOptions.map((v) => `<option value="${v}" ${currentTurnScores.opponent === v ? "selected" : ""}>${v}</option>`).join("")}
           </select>
         </div>
-      </div>
+      </div>`
+      }
 
       <div class="overflow-hidden border border-wh-border rounded-lg">
         <table class="w-full text-sm text-left">
@@ -81,8 +96,12 @@ export function renderScoringUI(army = null) {
             <tr>
               <th class="px-3 py-2 font-semibold">Rd</th>
               <th class="px-3 py-2 font-semibold">Turn</th>
-              <th class="px-3 py-2 font-semibold text-wh-accent">You</th>
-              <th class="px-3 py-2 font-semibold text-wh-red">Opp</th>
+              ${
+                noObjectives
+                  ? ""
+                  : `<th class="px-3 py-2 font-semibold text-wh-accent">You</th>
+              <th class="px-3 py-2 font-semibold text-wh-red">Opp</th>`
+              }
               <th class="px-3 py-2 font-semibold">Time</th>
             </tr>
           </thead>
@@ -119,8 +138,12 @@ export function renderScoringUI(army = null) {
                   <tr class="${isCurrent ? "bg-wh-accent/5" : ""}">
                     <td class="px-3 py-2 text-wh-muted font-mono">${turn === turnsInOrder[0] ? r : ""}</td>
                     <td class="px-3 py-2 text-wh-muted italic text-xs capitalize">${turn === "you" ? "Yours" : "Opponents"}</td>
-                    ${scoreSelect("you")}
-                    ${scoreSelect("opponent")}
+                    ${
+                      noObjectives
+                        ? ""
+                        : `${scoreSelect("you")}
+                    ${scoreSelect("opponent")}`
+                    }
                     <td class="px-3 py-2 font-mono text-xs">${timeCell}</td>
                   </tr>
                 `;
@@ -129,14 +152,18 @@ export function renderScoringUI(army = null) {
               })
               .join("")}
           </tbody>
-          <tfoot class="bg-wh-card border-t border-wh-border font-bold">
+          ${
+            noObjectives
+              ? ""
+              : `<tfoot class="bg-wh-card border-t border-wh-border font-bold">
             <tr>
               <td class="px-3 py-2 text-wh-muted" colspan="2">Total</td>
               <td class="px-3 py-2 text-wh-accent">${totalYou}</td>
               <td class="px-3 py-2 text-wh-red">${totalOpponent}</td>
               <td class="px-3 py-2"></td>
             </tr>
-          </tfoot>
+          </tfoot>`
+          }
         </table>
       </div>
 

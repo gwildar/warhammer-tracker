@@ -24,6 +24,13 @@ export function renderGameOverScreen(army) {
   const firstTurn = getFirstTurn();
   const timings = getTimings();
   const deploymentTime = getDeploymentTime();
+  const scenarioOpts = getScenarioOptions();
+  const slOpts = scenarioOpts.strategicLocations;
+  const noObjectives =
+    !scenarioOpts.domination &&
+    !scenarioOpts.baggageTrains &&
+    !slOpts.enabled &&
+    !scenarioOpts.specialFeatures;
 
   const turnsInOrder =
     firstTurn === "opponent" ? ["opponent", "you"] : ["you", "opponent"];
@@ -36,8 +43,12 @@ export function renderGameOverScreen(army) {
       ? `<tr>
           <td class="px-3 py-2 text-wh-muted font-mono">0</td>
           <td class="px-3 py-2 text-wh-muted italic text-xs">Deployment</td>
-          <td class="px-3 py-2 text-wh-text">—</td>
-          <td class="px-3 py-2 text-wh-text">—</td>
+          ${
+            noObjectives
+              ? ""
+              : `<td class="px-3 py-2 text-wh-text">—</td>
+          <td class="px-3 py-2 text-wh-text">—</td>`
+          }
           <td class="px-3 py-2 font-mono text-xs">${formatDuration(deploymentTime)}</td>
         </tr>`
       : "";
@@ -59,8 +70,12 @@ export function renderGameOverScreen(army) {
           return `<tr>
             <td class="px-3 py-2 text-wh-muted font-mono">${turn === turnsInOrder[0] ? r : ""}</td>
             <td class="px-3 py-2 text-wh-muted italic text-xs capitalize">${turn === "you" ? "Yours" : "Opponents"}</td>
-            <td class="px-3 py-2 text-wh-text font-bold">${s.you}</td>
-            <td class="px-3 py-2 text-wh-text font-bold">${s.opponent}</td>
+            ${
+              noObjectives
+                ? ""
+                : `<td class="px-3 py-2 text-wh-text font-bold">${s.you}</td>
+            <td class="px-3 py-2 text-wh-text font-bold">${s.opponent}</td>`
+            }
             <td class="px-3 py-2 font-mono text-xs">${timeCell}</td>
           </tr>`;
         })
@@ -68,11 +83,11 @@ export function renderGameOverScreen(army) {
     )
     .join("");
 
-  const scenarioOpts = getScenarioOptions();
-  const slOpts = scenarioOpts.strategicLocations;
-  const scoreLabel = slOpts.enabled
-    ? `Strategic Locations (${slOpts.count})`
-    : "Strategic Objectives";
+  const scoreLabel = noObjectives
+    ? "Turn Times"
+    : slOpts.enabled
+      ? `Strategic Locations (${slOpts.count})`
+      : "Strategic Objectives";
 
   app.innerHTML = `
     <div class="min-h-dvh flex flex-col">
@@ -87,7 +102,10 @@ export function renderGameOverScreen(army) {
       <main class="flex-1 overflow-y-auto p-4">
         <div class="max-w-2xl mx-auto">
           <h3 class="text-lg font-bold text-wh-text mb-4">${scoreLabel}</h3>
-          <div class="grid grid-cols-2 gap-4 mb-6">
+          ${
+            noObjectives
+              ? ""
+              : `<div class="grid grid-cols-2 gap-4 mb-6">
             <div class="bg-wh-surface rounded-lg border border-wh-border p-4 text-center">
               <div class="text-xs uppercase tracking-wider text-wh-muted mb-1">Your Total</div>
               <div class="text-4xl font-black text-wh-accent">${totalYou}</div>
@@ -96,7 +114,8 @@ export function renderGameOverScreen(army) {
               <div class="text-xs uppercase tracking-wider text-wh-muted mb-1">Opponent Total</div>
               <div class="text-4xl font-black text-wh-red">${totalOpponent}</div>
             </div>
-          </div>
+          </div>`
+          }
 
           <div class="overflow-hidden border border-wh-border rounded-lg mb-6">
             <table class="w-full text-sm text-left">
@@ -104,8 +123,12 @@ export function renderGameOverScreen(army) {
                 <tr>
                   <th class="px-3 py-2 font-semibold">Rd</th>
                   <th class="px-3 py-2 font-semibold">Turn</th>
-                  <th class="px-3 py-2 font-semibold text-wh-accent">You</th>
-                  <th class="px-3 py-2 font-semibold text-wh-red">Opp</th>
+                  ${
+                    noObjectives
+                      ? ""
+                      : `<th class="px-3 py-2 font-semibold text-wh-accent">You</th>
+                  <th class="px-3 py-2 font-semibold text-wh-red">Opp</th>`
+                  }
                   <th class="px-3 py-2 font-semibold">Time</th>
                 </tr>
               </thead>
@@ -113,14 +136,18 @@ export function renderGameOverScreen(army) {
                 ${deploymentRow}
                 ${tableRows}
               </tbody>
-              <tfoot class="bg-wh-card border-t border-wh-border font-bold">
+              ${
+                noObjectives
+                  ? ""
+                  : `<tfoot class="bg-wh-card border-t border-wh-border font-bold">
                 <tr>
                   <td class="px-3 py-2 text-wh-muted" colspan="2">Total</td>
                   <td class="px-3 py-2 text-wh-accent">${totalYou}</td>
                   <td class="px-3 py-2 text-wh-red">${totalOpponent}</td>
                   <td class="px-3 py-2"></td>
                 </tr>
-              </tfoot>
+              </tfoot>`
+              }
             </table>
           </div>
 

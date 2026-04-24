@@ -10,6 +10,7 @@ import {
   saveTimings,
   saveDeploymentTime,
   saveDisplayMode,
+  saveScenarioOptions,
 } from "../../state.js";
 import { getAllSubPhases } from "../../phases.js";
 
@@ -691,7 +692,19 @@ describe("Scoring UI", () => {
     saveDeploymentTime(null);
   });
 
-  it("shows scoring section", () => {
+  it("shows scoring section with Turn Times title when no objectives", () => {
+    savePhaseIndex(14); // Scoring
+    renderGameScreen(army);
+    expect(getApp().textContent).toContain("Turn Times");
+  });
+
+  it("shows Strategic Objectives title and score inputs when objectives enabled", () => {
+    saveScenarioOptions({
+      domination: true,
+      baggageTrains: false,
+      strategicLocations: { enabled: false, count: 3 },
+      specialFeatures: false,
+    });
     savePhaseIndex(14); // Scoring
     renderGameScreen(army);
     expect(getApp().textContent).toContain("Strategic Objectives");
@@ -699,7 +712,13 @@ describe("Scoring UI", () => {
     expect(getApp().querySelector("#score-opponent")).toBeTruthy();
   });
 
-  it("shows total scores", () => {
+  it("shows total scores when objectives enabled", () => {
+    saveScenarioOptions({
+      domination: true,
+      baggageTrains: false,
+      strategicLocations: { enabled: false, count: 3 },
+      specialFeatures: false,
+    });
     savePhaseIndex(14); // Scoring
     renderGameScreen(army);
     expect(getApp().textContent).toContain("Total");
@@ -708,7 +727,7 @@ describe("Scoring UI", () => {
   it("hides magic items in scoring sub-phase", () => {
     savePhaseIndex(14); // Scoring
     renderGameScreen(army);
-    expect(getApp().textContent).toContain("Strategic Objectives");
+    expect(getApp().textContent).toContain("Turn Times");
     // Should NOT contain any magic items (e.g. Spelleater Axe)
     expect(getApp().textContent).not.toContain("Spelleater Axe");
   });

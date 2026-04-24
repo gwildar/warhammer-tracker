@@ -37,7 +37,13 @@ describe("Game Over Screen", () => {
     expect(getApp().textContent).toContain("Game Over");
   });
 
-  it("shows Your Total and Opponent Total labels", () => {
+  it("shows Your Total and Opponent Total labels when objectives enabled", () => {
+    saveScenarioOptions({
+      domination: true,
+      baggageTrains: false,
+      strategicLocations: { enabled: false, count: 3 },
+      specialFeatures: false,
+    });
     renderGameOverScreen(army);
     const text = getApp().textContent;
     expect(text).toContain("Your Total");
@@ -104,7 +110,13 @@ describe("Game Over Screen", () => {
     expect(getApp().textContent).not.toContain("Deploy");
   });
 
-  it("totals reflect recorded scores", () => {
+  it("totals reflect recorded scores when objectives enabled", () => {
+    saveScenarioOptions({
+      domination: true,
+      baggageTrains: false,
+      strategicLocations: { enabled: false, count: 3 },
+      specialFeatures: false,
+    });
     updateScore(1, false, "you", 3);
     updateScore(1, true, "opponent", 2);
     renderGameOverScreen(army);
