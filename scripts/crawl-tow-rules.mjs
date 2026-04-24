@@ -1,10 +1,17 @@
 #!/usr/bin/env node
 // crawl-tow-rules.mjs — snapshot tow.whfb.app rules for offline reference
-// Usage: node scripts/crawl-tow-rules.mjs [--output ~/path/to/output]
 //
-// Saves to ~/tow-rules/ by default. Data is NOT committed to the repo.
-// Fetches _next/data JSON endpoints — same requests the browser makes.
-// Rate-limited to 1 req/sec to be respectful.
+// Usage:
+//   node scripts/crawl-tow-rules.mjs [--output ~/path/to/output]
+//   node scripts/crawl-tow-rules.mjs --subpages-only   # skip top-level re-fetch
+//
+// Output (default: ~/tow-rules/):
+//   index.json                      — route index
+//   raw/{type}.json                 — top-level page props
+//   raw/{type}/{entry}.json         — sub-page props
+//   pages/{type}.md                 — consolidated Markdown per type
+//
+// Rate-limited to 1 req/sec. Data NOT committed to repo.
 
 import https from "node:https";
 import fs from "node:fs";
@@ -16,13 +23,23 @@ const USER_AGENT =
   "warhammer-tracker-scraper/1.0 (personal project; https://github.com/gwildar/warhammer-tracker)";
 const DELAY_MS = 1000;
 
+// ---------------------------------------------------------------------------
+// CLI args
+// ---------------------------------------------------------------------------
+
 function parseArgs(argv) {
-  const idx = argv.indexOf("--output");
-  if (idx !== -1 && argv[idx + 1]) {
-    return argv[idx + 1].replace(/^~/, os.homedir());
-  }
-  return path.join(os.homedir(), "tow-rules");
+  const outputIdx = argv.indexOf("--output");
+  const outputDir =
+    outputIdx !== -1 && argv[outputIdx + 1]
+      ? argv[outputIdx + 1].replace(/^~/, os.homedir())
+      : path.join(os.homedir(), "tow-rules");
+  const subpagesOnly = argv.includes("--subpages-only");
+  return { outputDir, subpagesOnly };
 }
+
+// ---------------------------------------------------------------------------
+// HTTP
+// ---------------------------------------------------------------------------
 
 function get(url) {
   return new Promise((resolve, reject) => {
@@ -32,7 +49,7 @@ function get(url) {
       (res) => {
         if (res.statusCode !== 200) {
           res.resume();
-          reject(new Error(`HTTP ${res.statusCode} for ${url}`));
+          reject(new Error(`HTTP ${res.statusCode}`));
           return;
         }
         let body = "";
@@ -41,15 +58,19 @@ function get(url) {
       },
     );
     req.on("error", reject);
-    req.setTimeout(15000, () => {
-      req.destroy(new Error(`Timeout fetching ${url}`));
-    });
+    req.setTimeout(15000, () =>
+      req.destroy(new Error(`Timeout fetching ${url}`)),
+    );
   });
 }
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+// ---------------------------------------------------------------------------
+// Bootstrap
+// ---------------------------------------------------------------------------
 
 function extractNextData(html) {
   const match = html.match(
@@ -59,12 +80,12 @@ function extractNextData(html) {
   return JSON.parse(match[1]);
 }
 
-function extractRoutes(html) {
+function extractTopLevelRoutes(html) {
   const routes = new Set();
-  const linkRegex = /href="(\/[a-z][a-z0-9-]*)"/g;
-  let match;
-  while ((match = linkRegex.exec(html)) !== null) {
-    const href = match[1];
+  const re = /href="(\/[a-z][a-z0-9-]*)"/g;
+  let m;
+  while ((m = re.exec(html)) !== null) {
+    const href = m[1];
     if (
       href === "/" ||
       href.startsWith("/_") ||
@@ -72,18 +93,17 @@ function extractRoutes(html) {
       href.startsWith("/apps")
     )
       continue;
-    // Flat single-segment paths only
-    if (href.split("/").filter(Boolean).length === 1) {
-      routes.add(href.slice(1));
-    }
+    if (href.split("/").filter(Boolean).length === 1) routes.add(href.slice(1));
   }
   return [...routes].sort();
 }
 
-// Contentful rich-text → Markdown
+// ---------------------------------------------------------------------------
+// Rich-text → Markdown
+// ---------------------------------------------------------------------------
+
 function rtToMd(node, listDepth = 0) {
   if (!node) return "";
-
   switch (node.nodeType) {
     case "document":
       return (node.content || [])
@@ -95,47 +115,40 @@ function rtToMd(node, listDepth = 0) {
       const text = (node.content || [])
         .map((n) => rtToMd(n, listDepth))
         .join("");
-      const trimmed = text.trim();
-      return trimmed ? `${trimmed}\n\n` : "";
+      return text.trim() ? `${text.trim()}\n\n` : "";
     }
 
     case "heading-1":
-      return `# ${inlineContent(node, listDepth)}\n\n`;
+      return `# ${inline(node, listDepth)}\n\n`;
     case "heading-2":
-      return `## ${inlineContent(node, listDepth)}\n\n`;
+      return `## ${inline(node, listDepth)}\n\n`;
     case "heading-3":
-      return `### ${inlineContent(node, listDepth)}\n\n`;
+      return `### ${inline(node, listDepth)}\n\n`;
     case "heading-4":
-      return `#### ${inlineContent(node, listDepth)}\n\n`;
+      return `#### ${inline(node, listDepth)}\n\n`;
     case "heading-5":
-      return `##### ${inlineContent(node, listDepth)}\n\n`;
+      return `##### ${inline(node, listDepth)}\n\n`;
     case "heading-6":
-      return `###### ${inlineContent(node, listDepth)}\n\n`;
+      return `###### ${inline(node, listDepth)}\n\n`;
 
     case "unordered-list": {
+      const indent = "  ".repeat(listDepth);
       const items = (node.content || [])
-        .map((item) => {
-          const text = listItemText(item, listDepth + 1);
-          const indent = "  ".repeat(listDepth);
-          return `${indent}- ${text}`;
-        })
+        .map((li) => `${indent}- ${liText(li, listDepth + 1)}`)
         .join("\n");
       return `${items}\n\n`;
     }
 
     case "ordered-list": {
+      const indent = "  ".repeat(listDepth);
       const items = (node.content || [])
-        .map((item, i) => {
-          const text = listItemText(item, listDepth + 1);
-          const indent = "  ".repeat(listDepth);
-          return `${indent}${i + 1}. ${text}`;
-        })
+        .map((li, i) => `${indent}${i + 1}. ${liText(li, listDepth + 1)}`)
         .join("\n");
       return `${items}\n\n`;
     }
 
     case "list-item":
-      return listItemText(node, listDepth);
+      return liText(node, listDepth);
 
     case "blockquote": {
       const text = (node.content || [])
@@ -145,7 +158,7 @@ function rtToMd(node, listDepth = 0) {
       return (
         text
           .split("\n")
-          .map((line) => `> ${line}`)
+          .map((l) => `> ${l}`)
           .join("\n") + "\n\n"
       );
     }
@@ -155,44 +168,40 @@ function rtToMd(node, listDepth = 0) {
 
     case "table": {
       const rows = node.content || [];
-      if (rows.length === 0) return "";
-
-      const allRows = rows.map((row) =>
+      if (!rows.length) return "";
+      const cells = (row) =>
         (row.content || []).map((cell) =>
           (cell.content || [])
             .map((n) => rtToMd(n, listDepth))
             .join("")
             .trim()
             .replace(/\|/g, "\\|"),
-        ),
+        );
+      const colCount = Math.max(...rows.map((r) => (r.content || []).length));
+      const pad = (arr) => {
+        while (arr.length < colCount) arr.push("");
+        return arr;
+      };
+      const header = pad(cells(rows[0]));
+      const sep = header.map(() => "---");
+      const body = rows
+        .slice(1)
+        .map((r) => `| ${pad(cells(r)).join(" | ")} |`);
+      return (
+        [`| ${header.join(" | ")} |`, `| ${sep.join(" | ")} |`, ...body].join(
+          "\n",
+        ) + "\n\n"
       );
-
-      const colCount = Math.max(...allRows.map((r) => r.length));
-      const header = allRows[0] || [];
-      while (header.length < colCount) header.push("");
-      const separator = header.map(() => "---");
-
-      const bodyRows = allRows.slice(1).map((row) => {
-        while (row.length < colCount) row.push("");
-        return `| ${row.join(" | ")} |`;
-      });
-
-      return [
-        `| ${header.join(" | ")} |`,
-        `| ${separator.join(" | ")} |`,
-        ...bodyRows,
-      ].join("\n") + "\n\n";
     }
 
     case "hyperlink": {
-      const text = inlineContent(node, listDepth);
       const uri = node.data?.uri || "";
-      return `[${text}](${uri})`;
+      return `[${inline(node, listDepth)}](${uri})`;
     }
 
     case "entry-hyperlink":
     case "asset-hyperlink":
-      return inlineContent(node, listDepth);
+      return inline(node, listDepth);
 
     case "embedded-entry-block":
     case "embedded-asset-block":
@@ -200,15 +209,15 @@ function rtToMd(node, listDepth = 0) {
       return "";
 
     case "text": {
-      let text = node.value || "";
-      if (!text) return "";
+      let t = node.value || "";
+      if (!t) return "";
       const marks = (node.marks || []).map((m) => m.type);
-      if (marks.includes("code")) return `\`${text}\``;
+      if (marks.includes("code")) return `\`${t}\``;
       if (marks.includes("bold") && marks.includes("italic"))
-        return `**_${text}_**`;
-      if (marks.includes("bold")) return `**${text}**`;
-      if (marks.includes("italic")) return `_${text}_`;
-      return text;
+        return `**_${t}_**`;
+      if (marks.includes("bold")) return `**${t}**`;
+      if (marks.includes("italic")) return `_${t}_`;
+      return t;
     }
 
     default:
@@ -216,50 +225,54 @@ function rtToMd(node, listDepth = 0) {
   }
 }
 
-function inlineContent(node, listDepth) {
-  return (node.content || []).map((n) => rtToMd(n, listDepth)).join("").trim();
+function inline(node, depth) {
+  return (node.content || [])
+    .map((n) => rtToMd(n, depth))
+    .join("")
+    .trim();
 }
 
-function listItemText(item, listDepth) {
-  // A list-item contains paragraphs and possibly nested lists
-  return (item.content || [])
+function liText(li, depth) {
+  return (li.content || [])
     .map((child) => {
       if (
         child.nodeType === "unordered-list" ||
         child.nodeType === "ordered-list"
       ) {
-        return "\n" + rtToMd(child, listDepth);
+        return "\n" + rtToMd(child, depth).trimEnd();
       }
-      return rtToMd(child, listDepth).trim();
+      return rtToMd(child, depth).trim();
     })
     .join(" ")
     .trim();
 }
 
-function pageToMarkdown(pageProps, route) {
-  const entry = pageProps?.entry;
-  const entries = pageProps?.entries || [];
+// ---------------------------------------------------------------------------
+// Markdown builders
+// ---------------------------------------------------------------------------
 
-  const lines = [];
+function typePageToMarkdown(typeSlug, pageProps, entryPages) {
+  const topEntry = pageProps?.entry;
+  const name = topEntry?.fields?.name || typeSlug;
+  const ref = topEntry?.fields?.pageReference;
+  const topBody = topEntry?.fields?.body;
 
-  const pageTitle = entry?.fields?.name || route;
-  lines.push(`# ${pageTitle}\n`);
-
-  const pageRef = entry?.fields?.pageReference;
-  if (pageRef) lines.push(`_Rulebook page: ${pageRef}_\n`);
-
-  if (entry?.fields?.body) {
-    lines.push(rtToMd(entry.fields.body));
+  const lines = [`# ${name}\n`];
+  if (ref) lines.push(`_Rulebook page: ${ref}_\n`);
+  if (topBody) {
+    lines.push(rtToMd(topBody));
     lines.push("");
   }
 
-  for (const e of entries) {
-    const name = e?.fields?.name;
-    const body = e?.fields?.body;
-    const ref = e?.fields?.pageReference;
+  for (const { slug, pageProps: sub } of entryPages) {
+    const e = sub?.entry;
+    if (!e) continue;
+    const entryName = e.fields?.name || slug;
+    const entryRef = e.fields?.pageReference;
+    const body = e.fields?.body;
 
-    if (name) lines.push(`## ${name}\n`);
-    if (ref) lines.push(`_Rulebook page: ${ref}_\n`);
+    lines.push(`## ${entryName}\n`);
+    if (entryRef) lines.push(`_Rulebook page: ${entryRef}_\n`);
     if (body) {
       lines.push(rtToMd(body));
       lines.push("");
@@ -272,63 +285,152 @@ function pageToMarkdown(pageProps, route) {
     .trim() + "\n";
 }
 
+// ---------------------------------------------------------------------------
+// Main
+// ---------------------------------------------------------------------------
+
 async function main() {
-  const outputDir = parseArgs(process.argv.slice(2));
+  const { outputDir, subpagesOnly } = parseArgs(process.argv.slice(2));
   const rawDir = path.join(outputDir, "raw");
   const pagesDir = path.join(outputDir, "pages");
-
   fs.mkdirSync(rawDir, { recursive: true });
   fs.mkdirSync(pagesDir, { recursive: true });
 
   console.log(`Output: ${outputDir}`);
-  console.log("Fetching homepage...");
 
-  const homeHtml = await get(`${BASE_URL}/`);
-  const nextData = extractNextData(homeHtml);
-  const { buildId } = nextData;
+  let buildId;
+  let topRoutes;
 
-  if (!buildId) throw new Error("Could not extract buildId from __NEXT_DATA__");
-  console.log(`buildId: ${buildId}`);
+  // ------------------------------------------------------------------
+  // Phase 1: top-level pages
+  // ------------------------------------------------------------------
+  if (!subpagesOnly) {
+    console.log("\nPhase 1: top-level pages");
+    console.log("Fetching homepage...");
 
-  const routes = extractRoutes(homeHtml);
-  console.log(`Found ${routes.length} routes: ${routes.join(", ")}\n`);
+    const homeHtml = await get(`${BASE_URL}/`);
+    const nextData = extractNextData(homeHtml);
+    buildId = nextData.buildId;
+    if (!buildId) throw new Error("Could not extract buildId");
+    console.log(`buildId: ${buildId}`);
+
+    // Save buildId for resumption
+    fs.writeFileSync(path.join(outputDir, ".buildid"), buildId);
+
+    topRoutes = extractTopLevelRoutes(homeHtml);
+    console.log(`Found ${topRoutes.length} top-level routes\n`);
+
+    for (const route of topRoutes) {
+      const url = `${BASE_URL}/_next/data/${buildId}/${route}.json`;
+      try {
+        process.stdout.write(`  /${route}... `);
+        const body = await get(url);
+        const json = JSON.parse(body);
+        fs.writeFileSync(
+          path.join(rawDir, `${route}.json`),
+          JSON.stringify(json, null, 2),
+        );
+        const title = json.pageProps?.entry?.fields?.name || route;
+        console.log(`OK (${title})`);
+      } catch (err) {
+        console.log(`FAILED: ${err.message}`);
+      }
+      await sleep(DELAY_MS);
+    }
+  } else {
+    // Read saved buildId
+    const buildIdFile = path.join(outputDir, ".buildid");
+    if (!fs.existsSync(buildIdFile))
+      throw new Error("No .buildid file found — run without --subpages-only first");
+    buildId = fs.readFileSync(buildIdFile, "utf8").trim();
+    console.log(`Using saved buildId: ${buildId}`);
+    topRoutes = fs
+      .readdirSync(rawDir)
+      .filter((f) => f.endsWith(".json"))
+      .map((f) => f.replace(".json", ""))
+      .sort();
+    console.log(`Found ${topRoutes.length} cached top-level routes`);
+  }
+
+  // ------------------------------------------------------------------
+  // Phase 2: sub-pages
+  // ------------------------------------------------------------------
+  console.log("\nPhase 2: sub-pages");
 
   const index = {};
-  let saved = 0;
-  let failed = 0;
+  let savedSub = 0;
+  let failedSub = 0;
 
-  for (const route of routes) {
-    const url = `${BASE_URL}/_next/data/${buildId}/${route}.json`;
+  for (const typeSlug of topRoutes) {
+    const topRawPath = path.join(rawDir, `${typeSlug}.json`);
+    if (!fs.existsSync(topRawPath)) continue;
 
-    try {
-      process.stdout.write(`  /${route}... `);
-      const body = await get(url);
-      const json = JSON.parse(body);
+    const topJson = JSON.parse(fs.readFileSync(topRawPath, "utf8"));
+    const pageProps = topJson.pageProps;
+    const entries = pageProps?.entries || [];
 
-      fs.writeFileSync(
-        path.join(rawDir, `${route}.json`),
-        JSON.stringify(json, null, 2),
-      );
-
-      const pageProps = json?.pageProps;
-      const md = pageToMarkdown(pageProps, route);
-      fs.writeFileSync(path.join(pagesDir, `${route}.md`), md);
-
-      const title = pageProps?.entry?.fields?.name || route;
-      index[route] = {
-        title,
-        rawFile: `raw/${route}.json`,
-        mdFile: `pages/${route}.md`,
-      };
-
-      console.log(`OK (${title})`);
-      saved++;
-    } catch (err) {
-      console.log(`FAILED: ${err.message}`);
-      failed++;
+    if (entries.length === 0) {
+      // No sub-entries — write page as-is from top-level body
+      const md = typePageToMarkdown(typeSlug, pageProps, []);
+      fs.writeFileSync(path.join(pagesDir, `${typeSlug}.md`), md);
+      const title = pageProps?.entry?.fields?.name || typeSlug;
+      index[typeSlug] = { title, mdFile: `pages/${typeSlug}.md`, entries: 0 };
+      continue;
     }
 
-    await sleep(DELAY_MS);
+    const subRawDir = path.join(rawDir, typeSlug);
+    fs.mkdirSync(subRawDir, { recursive: true });
+
+    console.log(
+      `  ${typeSlug}: ${entries.length} entries`,
+    );
+
+    const entryPages = [];
+
+    for (let i = 0; i < entries.length; i++) {
+      const entrySlug = entries[i].fields?.slug;
+      if (!entrySlug) continue;
+
+      const subRawPath = path.join(subRawDir, `${entrySlug}.json`);
+
+      // Skip already fetched
+      if (fs.existsSync(subRawPath)) {
+        const cached = JSON.parse(fs.readFileSync(subRawPath, "utf8"));
+        entryPages.push({ slug: entrySlug, pageProps: cached.pageProps });
+        continue;
+      }
+
+      const url = `${BASE_URL}/_next/data/${buildId}/${typeSlug}/${entrySlug}.json`;
+      try {
+        const body = await get(url);
+        const json = JSON.parse(body);
+        fs.writeFileSync(subRawPath, JSON.stringify(json, null, 2));
+        entryPages.push({ slug: entrySlug, pageProps: json.pageProps });
+        savedSub++;
+
+        if ((i + 1) % 50 === 0) {
+          console.log(`    ... ${i + 1}/${entries.length}`);
+        }
+      } catch (err) {
+        console.log(`    FAILED /${typeSlug}/${entrySlug}: ${err.message}`);
+        failedSub++;
+        entryPages.push({ slug: entrySlug, pageProps: null });
+      }
+
+      await sleep(DELAY_MS);
+    }
+
+    // Write consolidated Markdown
+    const md = typePageToMarkdown(typeSlug, pageProps, entryPages);
+    fs.writeFileSync(path.join(pagesDir, `${typeSlug}.md`), md);
+
+    const title = pageProps?.entry?.fields?.name || typeSlug;
+    index[typeSlug] = {
+      title,
+      mdFile: `pages/${typeSlug}.md`,
+      entries: entries.length,
+    };
+    console.log(`    → pages/${typeSlug}.md (${entries.length} entries)`);
   }
 
   fs.writeFileSync(
@@ -337,7 +439,7 @@ async function main() {
   );
 
   console.log(
-    `\nSaved ${saved} pages${failed ? `, ${failed} failed` : ""} → ${outputDir}`,
+    `\nDone. Sub-pages fetched: ${savedSub}${failedSub ? `, failed: ${failedSub}` : ""} → ${outputDir}`,
   );
 }
 
