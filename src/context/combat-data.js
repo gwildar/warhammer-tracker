@@ -628,16 +628,7 @@ export function buildCombatResultEntries(army) {
     const hasCloseOrder = (u.specialRules || []).some((r) =>
       r.displayName?.toLowerCase().includes("close order"),
     );
-    const primaryTroopType = u.stats?.[0]?.troopType?.find(
-      (t) => !["Ch", "NCh"].includes(t),
-    );
-    const isMonsterOrRiddenMonster =
-      ["MCr", "Be"].includes(primaryTroopType) || u.mount?.wBonus > 0;
-    const isCharacterUnit = isCharacter(u);
-    const closeOrderBlocked =
-      (isMonsterOrRiddenMonster || isCharacterUnit) &&
-      (u.unitStrength ?? 1) < 10;
-    if (hasCloseOrder && !closeOrderBlocked) {
+    if (hasCloseOrder && u.unitStrength >= 10) {
       bonuses.push("Close Order +1");
       total += 1;
     }
