@@ -249,6 +249,28 @@ describe("Close Order restriction: monsters and characters (US < 10)", () => {
     expect(renderCombatResultContext(army)).not.toContain("Close Order");
   });
 
+  it("RI infantry (US 8) with Close Order DOES NOT get the bonus", () => {
+    const army = {
+      units: [
+        {
+          id: "skeletons.t",
+          name: "Skeleton Warriors",
+          category: "core",
+          strength: 8,
+          unitStrength: 8,
+          stats: [{ troopType: ["RI"], Name: "Skeleton Warriors" }],
+          mount: null,
+          specialRules: [
+            { id: "close order", displayName: "Close Order", phases: [] },
+          ],
+          hasStandard: false,
+          hasMusician: false,
+        },
+      ],
+    };
+    expect(renderCombatResultContext(army)).not.toContain("Close Order");
+  });
+
   it("RI infantry (US 20) with Close Order DOES get the bonus", () => {
     const army = {
       units: [
